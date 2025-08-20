@@ -1,0 +1,30 @@
+INFO    : PreTeXt-CLI version: 2.6.2
+
+INFO    : PreTeXt project found in `/Users/samuelling/Desktop/ML-Notes`.
+WARNING : Using CLI version 2.6.2 but project's `requirements.txt`
+WARNING : is configured to use 2.23.0. Consider either installing
+WARNING : CLI version 2.23.0 or running `pretext init --refresh`
+WARNING : to update `requirements.txt` to match 2.6.2.
+INFO    : Building target web
+INFO    : Preparing to build into /Users/samuelling/Desktop/ML-Notes/output/web.
+INFO    : discovering source file's directory name: /Users/samuelling/Desktop/ML-Notes/source
+INFO    : verifying and expanding input directory: /Users/samuelling/Desktop/ML-Notes/source/../generated-assets
+INFO    : input directory expanded to absolute path: /Users/samuelling/Desktop/ML-Notes/generated-assets
+INFO    : verifying and expanding input directory: /Users/samuelling/Desktop/ML-Notes/source/../assets
+INFO    : input directory expanded to absolute path: /Users/samuelling/Desktop/ML-Notes/assets
+INFO    : Runestone Services (via PreTeXt repository): version 7.3.3
+INFO    : Runestone Services (using newer, via online CDN query): version 7.9.8
+INFO    : Downloading Runestone Services, version 7.9.8
+INFO    : Extracting Runestone Services from archive file
+INFO    : converting /Users/samuelling/Desktop/ML-Notes/source/main.ptx to HTML in /var/folders/s7/kjqtpnqs1337hf_09jvy4d8r0000gn/T/ptx-kro4qy0e
+INFO    : XSL conversion of /Users/samuelling/Desktop/ML-Notes/source/main.ptx by /Users/samuelling/.ptx/2.6.2/core/xsl/pretext-html.xsl
+INFO    : messages from the log for XSL processing:
+WARNING : * PTX:DEPRECATE: (2016-05-23) <br> can no longer be used to create multiline output; you may use <line> elements in select situations (2 times)
+INFO    : *              located within: "sec-Numerical-and-Categorical-Data" (xml:id), "Numerical and Categorical Data" (title)
+INFO    : *              located within: "sec-Numerical-and-Categorical-Data" (xml:id), "Numerical and Categorical Data" (title)
+INFO    : * --------------
+INFO    : successful application of /Users/samuelling/.ptx/2.6.2/core/xsl/pretext-html.xsl
+INFO    : 
+Success! Run `pretext view` to see the results.
+
+INFO    : 

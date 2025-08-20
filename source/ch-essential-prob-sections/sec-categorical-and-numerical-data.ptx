@@ -1,0 +1,78 @@
+  <section xml:id="sec-Numerical-and-Categorical-Data"  xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Numerical and Categorical Data</title>
+    <introduction>
+      <p>
+        When analyzing data, it is important to know what kind of data you are working with. There are three key data types:
+      </p> 
+        <ol>
+          <li>
+            <p>
+              <alert>Categorical Data: </alert> This type of data represents discrete groups or labels with no inherent order between the values. For example you may have a variable named 'Color', which can take values from the set {"red", "blue", "green"}.  Another variable may be 'Animal' with value from the set {"cat", "dog", "parrot"}. In Pandas, you can store as object type or convert to category for efficiency and clarity. For instance, 
+            </p>
+            <p>
+                colors = pd.Series(["red", "blue", "red", "green"], dtype="category")
+            </p>
+            <p>
+              Many ML algorithms require numerical representation of these symbolic/qualitative values of a categorical variable. A very popular way to represent them is by a one-hot vector. 
+            </p>
+            <p>
+              <alert>One hot vector: </alert> To get a one hot representation of a categorical variable, suppose there are C different values of a categorial value, e.g., for the 'Color' variable above, we have C=3. Now, we represent ech color by a 4-dimensional vector with 1 at only one entry and zero at other places. Thus
+              <me>
+                \text{"red"} = [1, 0, 0], \ \text{"blue"} = [0, 1, 0], \  \text{"green"} = [0, 0, 1].
+              </me>
+              That is each value is now represented by a C-dimensional vector. If C becomes large, such as words in a language, it is better to represent each word by a more dense embedding, which we will learn in due course of time.
+            </p>
+            
+          </li>
+          <li> 
+
+            <p>
+              <alert>Ordinal Data: </alert> This is a type of categorical data with a defined order. For example, "small" &lt; "medium" &lt; "large" or "low" &lt; "medium" &lt; "high". The order matters, but the difference between categories is not necessarily meaningful. You can define an ordered category in Pandas as follows. 
+              <br/>
+               
+                sizes = pd.Series(["medium", "small", "large", "small"], 
+                  dtype=pd.CategoricalDtype(categories=["small", "medium", "large"], ordered=True))
+              <br />
+              For analysis and processing in machine learning, ordinal numbers have to be mapped to integers. But, if you do it naively, you will mislead the algorithm in learning something wrong about your data. For instance, suppose you have the variable called "Education_Level" with order: High School &lt; Bachelor's &lt; Master's &lt; PhD. If you naively map  High School <m>\rightarrow</m> 1; Bachelor <m>\rightarrow</m> 2, Master's <m>\rightarrow</m> 3, PhD <m>\rightarrow</m> 4, you would be implying that difference between these levels is 1 for all of them. In reality, the meaning of that step is qualitative, not quantitative.
+            </p> 
+
+            <p>
+              Despite this difficulties with mapping ordinal numbers, we must find a reasonable way to cast ordinal numbers numerically for many ML algorithms. Ordinal-to-numeric mapping allows models to recognize ordering, but we must avoid letting the model misinterpret the numbers as proportional differences. there are some safe strategies to do that.
+            </p>
+            <p>
+              <alert>How to Map Ordinals Safely: </alert>
+            </p> 
+            <p>  
+              1. Integer Encoding (Simple Mapping)
+              Use integers to represent order but remember they’re order markers, not measures.
+              Example:
+              education_order = {"High School": 1, "Bachelor's": 2, "Master's": 3, "PhD": 4}
+              df['Education_Level_Code'] = df['Education_Level'].map(education_order)
+              This works for tree-based models (e.g., Random Forest, XGBoost) because they split data based on order, not arithmetic differences.
+            </p> 
+            <p> 
+              2. Custom Binning or Grouping
+              For wide ranges of categories, group into fewer meaningful bins before mapping.
+            </p>
+            <p> 
+              3. Use of Embeddings
+              In deep learning, treat ordinal categories like tokens and learn their position in a multidimensional space. This captures ordering without assuming equal numeric gaps.
+            </p> 
+            <p> 
+              4. Don't One-Hot Encode Ordinal Data
+              One-hot removes the order information entirely. Use it only when the “order” is not meaningful.
+            </p>
+          </li>
+          <li>
+            <p>
+              <alert>Numerical Data: </alert> A numerical variable represents quantities that can be measured and compared numerically. The values can be <alert>discrete</alert>, i.e., countable items such as number of rooms in a house, or <alert>continuous</alert>, which are measurable quantities with potentially infinite precision (e.g., height, weight, etc). In most algorithms, every variable needs to be cast in some numerical representation for the algorithm to perform calculations on the variables.
+            </p>
+          </li>          
+        </ol>
+
+
+
+      
+    </introduction>
+    
+  </section>

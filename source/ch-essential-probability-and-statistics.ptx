@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-Essential-Probability-and-Statistics" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Essential Probability and Statistics</title>
+
+  <introduction>
+    <p> Machine learning systems often face uncertainty, variability, and incomplete information. To handle these, we rely on probability and statistics. These fields help us describe data, model randomness, and make decisions based on evidence. This document provides a compact guide to essential ideas, using simple language and practical examples. </p>
+  </introduction>
+
+  <!-- include sections -->
+  <xi:include href="ch-essential-prob-sections/sec-descriptive-statistics.ptx" />
+  <xi:include href="ch-essential-prob-sections/sec-useful-descriptive-statistics-tools.ptx" />
+  <xi:include href="ch-essential-prob-sections/sec-categorical-and-numerical-data.ptx" />
+  
+  <xi:include href="ch-essential-prob-sections/sec-basic-probability.ptx" />
+  <xi:include href="ch-essential-prob-sections/sec-joint-conditional-and-marginal.ptx" />
+  <xi:include href="ch-essential-prob-sections/sec-discrete-probability-distributions.ptx" />
+
+  <xi:include href="ch-essential-prob-sections/sec-continuous-probability-distributions.ptx" />
+
+
+</chapter>

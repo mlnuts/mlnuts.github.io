@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sec-Example-Continuous-Probability-Distributions">
+    <title>Example Continuous Probability Distributions</title>
+    <introduction>
+
+        <p>
+            Continuous random variables take values on an interval of the real line. Unlike discrete random variables, we do not assign probability to single points (which would be zero). Instead, we assign probability to intervals, using probability density functions (<alert>PDFs</alert>).
+        </p>
+        <p>
+            In this section, we will discuss three distributions that are important for ML use.
+            <ul>
+                <li>
+                    <p>
+                        <alert>Uniform:</alert> All values equally likely 
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <alert>Normal (Gaussian):</alert> Bell-shaped curve 
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <alert>Exponential:</alert> Time until an event occurs
+                    </p>
+                </li>
+            </ul>
+            There are, of course, other distributions such as beta and gamma distributions that are also in common use. By presenting just these three here, I hope to give the reader enough feel for what to look for when studying other distributions.
+        </p>
+ 
+    </introduction>
+    <subsection xml:id="subsec-Uniform-Distribution">
+        <title>Uniform Distribution</title>
+        <introduction>
+            <p>
+                When a random variable <m>X</m> is equally likely to take any value between two real numbers <m>a</m> and <m>b</m>, we say that the distribution is uniform between these values. The distribution is usually designated by <m>U(a,b)</m> with <m>a \lt b</m>, and say that
+                <me>
+                    X \sim U(a,b),
+                </me>
+                which means that 
+                <men xml:id="eqn-uniform-distribution">
+                    P(x \le X \le x + dx) \equiv \rho(x)\, dx = \begin{cases}
+                            \frac{1}{b-a}\, dx \amp \text{if } a \le x \le b \\
+                            0 \amp \text{otherwise} 
+                            \end{cases}
+                </men>
+                where the part without the <m>dx</m> is the PDF of the distribution, which we denote by the Greek letter rho, <m>\rho</m>. 
+            </p>      
+                
+                
+            <p>
+                The mean value of the distribution will clearly be half way between <m>a</m> and <m>b</m> as can easily be computed by performing the simple integral.
+                <me>
+                    \langle X \rangle = \int_{a}^{b}\, x\, \rho(x)\, dx = \frac{1}{b-a}\,\int_a^b x dx = \frac{1}{b-a}\left( b^2 - a^2\right) = \frac{b + a}{2}.
+                </me>
+                The variance, which is square of the standard deviation <m>\sigma</m>, is similarly calculated to yield
+                <me>
+                    \text{Var}(X) = \langle X^2 \rangle - \langle X \rangle^2 = \frac{(b-a)^2}{12},
+                </me>
+                where
+                <me>
+                    \langle X^2 \rangle = \int_a^b x^2\,\rho(x)\, dx = \frac{1}{3}\left(b^2 + ba + a^2 \right).
+                </me>
+                Thus, standard deviation of <m>U(a,b)</m> is:
+                <me>
+                    \sigma = \frac{|b-a|}{2\sqrt{3}}.
+                </me>
+                
+
+            </p>
+            <p>
+                The cumulative distribution function, <m>F(x)</m>, which gives the probability that <m>X \le x</m> is easily calculated for uniform distribution.
+                <men xml:id="eqn-cumulative-distribution-function-uniform">
+                    F(x) = \int_{-\infty}^x\, \rho(x')\,dx' \equiv \text{ Probability that } X \lt x,
+                </men>
+                where I used <m>x'</m> for the dummy variable since <m>x</m> now is a particular value. This will be a step function since the formula resulting from the integration depends on where the point <m>x</m> happens to lie.
+                <men xml:id="eqn-uniform-cumulative-distribution">
+                    F(x) = \begin{cases}
+                            0 \, \amp \text{if } x \lt a \\
+                            \frac{x-a}{b-a} \amp \text{if } a \le x \le b \\
+                            1 \amp \text{if } x \gt b. 
+                            \end{cases}
+                </men> 
+                The last line says that probability that <m>X</m> has any value less than any value in <m>(b,\infty)</m> is 1.0 since obviously the entire range <m>[a,b]</m> is included in this case. The second line says that the probability increases linearly between <m>a</m> and <m>b</m>.           
+            </p>
+            <p>
+                <xref ref="fig-uniform-pdf-cdf"/> shows plots of PDF and CDF of uniform distribution <m>U(0,10)</m>. You can see that as we scan through the interval of the uniform PDF, the probability accumulates in the CDF and eventually, CDF becomes <m>1</m>, which represents probability of any of the values in the interval.
+            </p>
+
+            <figure xml:id="fig-uniform-pdf-cdf">
+                <caption>PDF and CDF of Uniform distribution <m>U(0,10)</m>. Note the value of PDF is uniformly <m>0.1</m> while that of CDF increases linear in the interval.</caption>
+                <image source="./images/essential-probability-and-statistics/uniform.png" width="100%" height="50%">
+                    <shortdescription>PDF and CDF of Uniform distribution <m>U(0,10)</m>. Note the value of PDF is uniformly <m>0.1</m> while that of CDF increases linear in the interval.</shortdescription>
+                </image>
+            </figure>
+            <p>
+                To generate these plots import: from scipy.stats import uniform and then use the methods uniform.pdf() and uniform.cdf(). 
+            </p>
+        </introduction>
+        <subsubsection xml:id="subsubsec-Inverse-Uniform-CDF">
+            <title>Inverse Uniform CDF</title>
+            <p>
+                Inverse of a CDF is used for sampling from a distribution. Although, we will see below that inverse CDF of the uniform distribution is trivial, the inverse CDF is highly useful when you need to generate samples from some other distributions such as Normal, Exponential, Gamma, etx.
+            </p>
+            <p>
+                The inverse of CDF <m>F(x)</m> is written as <m>F^{-1}(x)</m> - it's not a negative one power of <m>F</m>; that is just the name of the inverse function. As the name implies when you successively apply <m>F</m> an <m>F^{-1}</m> to some number <m>x</m>, you would get that number back.
+                <me>
+                    x = F^{-1}\left(\ F (x) \ \right).
+                </me>
+                So, what does it look like for the uniform distribution <m>U(a,b</m>? The CDF in the range <m>[a,b]</m> is
+                <me>
+                    F(x) = \frac{x - a}{b - a}\quad a\le x \le b.
+                </me>
+                The inverse will be
+                <me>
+                    F^{-1}(u) = a + (b-a) u.
+                </me>
+                Let's check if that's true.
+                <me>
+                    F^{-1}(\ F(x)\ ) = a + (b-a) F(x) = a + (b-a) \frac{x - a}{b - a} = x.
+                </me>
+                So, if you wanted to generate samples in the range <m>a \le x \le b</m> that act like they are sampled from the uniform distribution <m>U(a,b)</m>, you would first generate pseudo-random numbers in unit interval <m>[0,1]</m> using algorithms lke Mersenne Twister. Suppose, you have <m>100</m> such sample <m>u_1, u_2, \cdots, u_{100}</m>. Then, you will plug them in the inverse CDF <m>F^{-1}</m> to generate samples <m>x_1, x_2, \cdots, x_{100}</m> from <m>U(a,b)</m>.
+                <me>
+                    x_i = F^{-1}(u_i) = a + (b-a) u_i.
+                </me>
+                This is trivial here since we have an analytic expression for the inverse CDF. In other districutions, such as the Gaussian, i.e., Normal distribution, the inverse can only be computed numerically. The stats packages usually have functions that do it for you. For instance, ppf() method in Python/scipy.stats is used for that purpose. In case of uniform distribution, the command is
+                <program language="python">
+                    <code>
+                        from scipy.stats import uniform
+                        samples = uniform.ppf(u, loc=a, scale=b-a).
+                    </code>
+                </program>
+                
+
+
+                
+                
+
+            </p>
+            
+        </subsubsection>
+            
+
+        
+    </subsection>
+
+    <subsection xml:id="subsec-Normal-Distribution">
+        <title>Normal (Gaussian) Distribution</title>
+        <introduction>
+
+            <p>
+                The PDF of a Gaussian or Normal distribution is a bell-shaped curve with only two parameters, a mean <m>\mu</m> and a standard deviation <m>\sigma</m>. The name Gaussian is preferred in Physics and Engineering, and Normal is preferred in statistics and data science. In these notes I will use both of them, just for fun.
+            </p>
+            <p>
+                The PDF of the Gaussian distribution of mean <m>\mu</m> and standard deviation <m>\sigma</m> for a scalar variable <m>X</m> is defined by
+                <men xml:id="eqn-Gaussian-PDF">
+                    \rho(x) = \frac{1}{\sqrt{2\pi \sigma^2}}\,\exp\left( - \frac{(x-\mu)^2}{2\sigma^2} \right),
+                </men>
+                where
+                <me>
+                    \exp(a) = e^a.
+                </me>
+                The reason I am writing <m>\exp(a)</m> rather than <m>e^a</m> is that exponent in the latter expression usually prints too small on the screen. While doing calculations by hand, you should stick to <m>e^a</m> notation.
+            </p>
+            <p>
+                When the distribution of a random variable <m>X</m> is Gaussian of mean <m>\mu</m> and standard deviation <m>\sigma</m>, i.e., variance <m>\sigma^2</m> we denote this as a short hand notation by
+                <me>
+                    X \sim \mathcal{N}\left( \mu, \sigma^2\right).
+                </me>
+                The special case of <m>\mu = 0</m> and <m>\sigma = 1</m> is called <alert>standard normal distribution</alert>. A standard normal random variable <m>X</m> will obey
+                <me>
+                    X \sim \mathcal{N}\left( 0, 1\right).
+                </me>            
+            </p>
+            <p>
+                As always, the PDF in Eq. <xref ref="eqn-Gaussian-PDF"/> has the probability interpretation in an infinitesimal interval around <m>x</m>.
+                <me>
+                    P(x \le X \le x + dx) = \rho(x)\, dx.
+                </me>
+                Thus, if you want the probability of <m>X \in [-1, 3]</m>, you will just integrate it.
+                <me>
+                    P(X \in [-1, 3]) = \int_{-1}^3\, \rho(x) dx = \int_{-1}^3\, \frac{1}{\sqrt{2\pi \sigma^2}}\,\exp\left( - \frac{(x-\mu)^2}{2\sigma^2} \right)\, dx.
+                </me>
+                The CDF <m>F(x)</m> is just such an integral for the probability of <m>X in (-\infty, x]</m>. 
+                <men xml:id="eqn-Gaussian-CDF">
+                    F(x) = \int_{-\infty}^x\, \frac{1}{\sqrt{2\pi \sigma^2}}\,\exp\left( - \frac{(x'-\mu)^2}{2\sigma^2} \right)\, dx'.
+                </men>
+                If <m>x=\infty</m>, then entire real line is included. That would make 
+                <me>
+                    F(\infty) = \int_{-\infty}^\infty\, \frac{1}{\sqrt{2\pi \sigma^2}}\,\exp\left( - \frac{(x-\mu)^2}{2\sigma^2} \right)\, dx = 1.
+                </me>
+                
+                The integral is unwieldy and only done numerically. The Fundamental Theorem of Calculus gives us an analytic expression of the derivative of CDF, which is used in formal analytical work.
+                <men xml:id="eqn-Derivative-of-CDF">
+                    \frac{dF}{dx} = \rho(x) = \frac{1}{\sqrt{2\pi \sigma^2}}\,\exp\left( - \frac{(x-\mu)^2}{2\sigma^2} \right).
+                </men>
+                This is, of course, a general result and applies to all PDF/CDF and forms a powerful tool of formal work. We are not going to do much in that direction.
+                
+            </p>
+
+            <p>
+                <xref ref="fig-gaussian-pdf-cdf"/> shows plots of PDF and CDF of Gaussian distribution <m>\mathcal{N}(0,1)</m>.
+            </p>
+
+                <figure xml:id="fig-gaussian-pdf-cdf">
+                    <caption>PDF and CDF of Gaussian distribution <m>\mathcal{N}(0,1)</m>. Note the bell-shape of the PDF and the soft step of the CDF which goes from <m>0</m> to <m>1</m>.</caption>
+                    <image source="./images/essential-probability-and-statistics/gaussian.png" width="100%" height="50%">
+                        <shortdescription>PDF and CDF of Gaussian distribution <m>\mathcal{N}(0,1)</m>. Note the bell-shape of the PDF and the soft step of the CDF which goes from <m>0</m> to <m>1</m>.</shortdescription>
+                    </image>
+                </figure>
+                <p>
+                    To generate these plots import: from scipy.stats import uniform and then use the methods uniform.pdf() and uniform.cdf(). 
+                </p>
+
+            <p>
+                The <alert>mean</alert> and <alert>variance</alert> of a Gaussian is in the definition itself and can be readily checked if you know how do Gaussian integrals.
+                <md>
+                    <mrow> \amp \text{Mean}(X) = \langle X \rangle = \int_{-\infty}^\infty\, x\, \rho(x)\, dx = \frac{1}{\sqrt{2\pi \sigma^2}}\, \int_{-\infty}^\infty\, x\, \exp\left( - \frac{(x-\mu)^2}{2\sigma^2} \right) dx = \mu. </mrow>
+                    <mrow>  \amp \text{Var}(X) = \langle X^2 \rangle  - \langle X \rangle^2 = \sigma^2.</mrow>
+                </md>
+                Here are couple of tricks of doing Gaussian integrals.
+                <md>
+                    <mrow> \amp \int_{-\infty}^\infty \exp\left( -kx^2\right)\, dx = \sqrt{ \frac{\pi}{k} }</mrow>
+                    <mrow> \amp\int_{-\infty}^\infty x^{2n+1}\,\exp\left( - kx^2 \right)\, dx = 0,\ \text{for } n = 0, 1,2, \cdots</mrow>
+                    <mrow> \amp \int_{-\infty}^\infty x^{2n}\,\exp\left( - kx^2 \right)\, dx =  \int_{-\infty}^\infty \left( -\frac{d}{dk}\right)^n\,\exp\left( - kx^2 \right)\, dx </mrow>
+                    <mrow> \amp\qquad = \left( -\frac{d}{dk}\right)^n \, \int_{-\infty}^\infty \exp\left( -kx^2\right)\, dx </mrow>
+                    <mrow> \amp\qquad =  \left( -\frac{d}{dk}\right)^n\,\sqrt{ \frac{\pi}{k} }  = \frac{\sqrt{\pi}}{4^n}\,\frac{(2n)!}{n!}\frac{1}{k^{n + \frac{1}{2}}}. </mrow>
+                </md>
+            </p>
+
+        </introduction>
+        <subsubsection xml:id="subsubsec-Inverse-CDF-and-Sampling">
+            <title>Inverse CDF and Sampling</title>
+            <p>
+                As we defined for the uniform distribution above, inverse of the Cumulative Distribution Function (CDF) <m>F</m> is another function, denoted by <m>F^{-1}</m> (NotE: it's not <m>1/F</m>. The negative power in the symbol is just a symbol.) The functions <m>F</m> and <m>F^{-1}</m> are inverses so that when you act by them, one does the effect of the other.
+                <me>
+                    F^{-1}\left(  F(x) \right) = x.
+                </me>
+                But unlike the case was with the uniform distribution, here we only know <m>F(x)</m> in the integral form. However, you can find <m>F^{-1}</m> of Gaussian distribution numerically. It is already programmed in stats packages. For instance, we can compute the percent point function (PPF), which is the numerical inverse CDF by scipy.stats.norm.ppf() function by passing the appropriate parameters.
+            </p>
+            <p>
+                The CDF function <m>F(x)</m> is a mapping from <m>\R</m> to <m>[0,1]</m>. The inverse <m>F^{-1}</m> will map <m>[0,1]</m> to <m>\R</m>. To sample randomly from Gaussian distribution means producing random values of <m>x \in \R</m>. That means if we obtain random values <m>u \in [0,1]</m> and feed that into <m>F^{-1}</m>, the result will be random values of <m>x</m> sampled according to the distribution of the <m>F</m>, which is Gaussian in the present case. Obtaining random values <m>u \in [0,1]</m> can be done by just sampling from the uniform distribution <m>U(0,1)</m>.
+            </p>
+            <p>
+                Thus the steps of sampling from a distribution <m>F</m> is:
+                <ul>
+                    <li>
+                        <p>
+                            Generate uniform random numbers <m>u_1, u_2, \cdots, u_N\, \sim \, U(0,1)</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Apply <m>x_i = \mu + \sigma \times F^{-1}(u_i)</m>, if using inverse of standard normal. If using scipy.stats pacakge, the code for <m>F^{-1}</m> will be <code>scipy.stats.norm.ppf(<m>u_i</m>, loc = <m>0</m>, scale = <m>1</m>)</code>. In scipy.stats, you can include the actual loc and scale in the argument itself as shown in the program listing below.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Use <m>x_i</m> as your Gaussian samples.
+                        </p>
+                    </li>
+                </ul>
+                Let us look at an example of <alert>drawing from a Gaussian distribution</alert> and how the samples match up with the theoretical distribution. This is shown in <xref ref="fig-gaussian-sampling"/>.  It was produced by the code below. Clearly, the histogram based on the samples is very representative of the theoretical curve.
+                
+
+
+            
+            </p>
+            <program language="python">
+                <code>
+                import numpy as np
+                import matplotlib.pyplot as plt
+                from scipy.stats import norm
+
+                # Parameters
+                mu, sigma = 0, 1
+                n_samples = 1000
+
+                # Step 1: uniform samples
+                u = np.random.rand(n_samples)
+
+                # Step 2: transform with inverse CDF (ppf)
+                samples = norm.ppf(u, loc=mu, scale=sigma)
+
+                # Plot histogram vs theoretical PDF
+                x = np.linspace(-4, 4, 200)
+                pdf = norm.pdf(x, mu, sigma)
+
+                plt.figure(figsize=(7,5))
+                plt.hist(samples, bins=30, density=True, alpha=0.6, label="Sampled (inverse CDF)")
+                plt.plot(x, pdf, 'r-', lw=2, label="Theoretical PDF")
+                plt.xlabel("x")
+                plt.ylabel("Density")
+                plt.title("Sampling from Normal(0,1) using Inverse CDF")
+                plt.legend()
+                plt.show()
+                </code>
+            </program>            
+
+                <figure xml:id="fig-gaussian-sampling">
+                    <caption>Samples from a Gaussian distribution <m>\mathcal{N}(0,1)</m> and the theoretical curve. The histogram is based on 1000 sample points.</caption>
+                    <image source="./images/essential-probability-and-statistics/gaussian-sampling.png" width="100%">
+                        <shortdescription>Samples from a Gaussian distribution <m>\mathcal{N}(0,1)</m> and the theoretical curve. The histogram is based on 1000 sample points.</shortdescription>
+                    </image>
+                </figure>
+
+        </subsubsection>
+
+    </subsection>
+    <subsection xml:id="subsec-Exponential-Distribution">
+        <title>Exponential Distribution</title>
+        <p>
+            Exponential distribution is commonly used to model the time between successive events in a Poisson process, where events occur independently and at a constant average rate. The distribution is defined for non-negative values (<m>X \ge 0</m>) and is characterized by a single parameter, <m>\lambda</m>(lambda), which is the rate parameter, as described in the section on the Poisson distribution.
+        </p>
+        <p>
+            The PDF of Exponential distribution is given by
+            <men xml:id="eqn-PDF-Exponential">
+                \rho(x) = \lambda\,e^{-\lambda\,x}.
+            </men>
+            As usual, it has the following probability interpretation.
+            <me>
+                P(x \le X \le x+dx) = \rho(x)\, dx = \lambda\,e^{-\lambda\,x}\,dx.
+            </me>
+            You can verify that the PDF in Eq. <xref ref="eqn-PDF-Exponential"/> is properly normalized to give probability over the entire range f values, i.e, <m>0 \le X \lt \infty</m> is <m>1</m>.
+            <me>
+                \int_{0}^\infty\, \rho(x)\, dx = \int_{0}^\infty\, \lambda\, e^{-\lambda\,x}\, dx  = 1.
+            </me>
+            The Cumulative Distribution Function, (CDF), is the probability for <m>(0 \le X \le x</m>. Therefore,
+            <men xml:id="eqn-CDF-Exponential-Distribution">
+                F(x) = \int_{0}^x\, \lambda\, e^{-\lambda\,x'}\, dx' =  1 - e^{-\lambda x}. 
+            </men>
+
+            <xref ref="fig-exponential-pdf-cdf"/> shows the PDF and CDF of the exponential distribution for <m>\lambda = 1</m>.
+        </p>  
+        <figure xml:id="fig-exponential-pdf-cdf">
+            <caption>PDF and CDF of Exponential distribution <m>\mathcal{E}(1.0)</m>. Note the exponential decaying property of the PDF and the corresponding rise of the CDF which goes from <m>0</m> to <m>1</m>.</caption>
+            <image source="./images/essential-probability-and-statistics/exponential.png" width="100%" height="50%">
+            <shortdescription>PDF and CDF of Exponential distribution <m>\mathcal{E}(1.0)</m>. Note the exponential decaying property of the PDF and the corresponding rise of the CDF which goes from <m>0</m> to <m>1</m>.</shortdescription>
+            </image>
+        </figure>
+        <p>
+            The complement of the CDF, i.e., the probability that <m>X \gt x</m> is called <alert>survival function</alert> (SF).
+            <men xml:id="eqn-survival-function-Exponential">
+                \text{SF}(x) \equiv P(X \gt x) = 1 - F(x) = 1 - \left( 1 - e^{-\lambda x} \right)   =    e^{-\lambda x}.        
+            </men>
+        </p>
+        <p>  
+            From the survival function, it is possible to prove and important property of exponential distribution: that it is <alert>meomryless</alert>, meaning that the probability of an event occurring in the next time interval does not depend on how much time has already elapsed. In formulas, this will be a condition on the conditional probability.
+            <men xml:id="eqn-Memoryless-Exponential">
+                P(X \gt t + s | X \gt s) = P(X \gt t).
+            </men>
+            That is, whether you wait upto <m>X=s</m> and then look at the next <m>t</m> units of time ot you don't wait and look at the next <m>t</m> interval of time, the two will give the same probability - same probability for <m>t</m> intervals of time will be independent of the starting instant.
+        </p>  
+        <p>  
+            <alert>Proof of Memoryless Property</alert>: Let's write the left side of Eq. <xref ref="eqn-Memoryless-Exponential"/> in terms of joint and prior, based on the definition of conditional probabilities given in an earlier section.
+            <me>
+                P(X \gt t + s | X \gt s) = \frac{P( (X \gt t + s) \text{ AND } (X \gt s) )}{ P(X \gt s) }.
+            </me>
+            Since <m>(t+s \ge s)</m> the joint probability, you see that joint probability will simply equal <m>P(X \gt t + s)</m>.
+            <me>
+                P( (X \gt t + s) \text{ AND } (X \gt s) ) = P(X \gt t + s).
+            </me>
+            Therefore,
+            <me>
+                 P(X \gt t + s | X \gt s) = \frac{P(X \gt t + s) }{ P(X \gt s) }.
+            </me>
+            Now, we use the survival function given in Eq. <xref ref="eqn-survival-function-Exponential"/> to write the right hand side quantities and then simplify.
+            <me>
+                P(X \gt t + s | X \gt s) = \frac{\exp(-\lambda(t + s))}{\exp(-\lambda s)} = e^{-\lambda t} = P(X \gt t).\quad \blacksquare
+            </me> 
+        </p>
+        <p>
+            Finally, let's go over the mean and variance of exponential distribution. <alert>Mean</alert> as usual is the expectation value of the random variable <m>X</m>.
+            <me>
+                \text{Mean}(X) \equiv \langle X \rangle = \int_0^\infty\, x\,\lambda\,e^{-\lambda x}\,dx = \frac{1}{\lambda}.
+            </me>
+            The variance will be
+            <me>
+                \text{Var}(X) = \langle X^2 \rangle - \langle X \rangle^2 = \frac{1}{\lambda^2},
+            </me>
+            from which we get the standard deviation <m>\sigma</m>.
+            <me>
+                \sigma = \sqrt{ \text{Var}(X) } = \frac{1}{\lambda}.
+            </me>
+            
+            
+            
+        </p>
+        <p>
+            <alert>Real-World Examples</alert>: 
+            
+            <dl>
+                <li>
+                    <title>Radioactive Decay:</title>
+                    <p>
+                        Time until the next decay event for a particle with decay rate <m>\lambda</m>.
+                    </p>
+                </li>
+                <li>
+                    <title>Queueing Systems:</title>
+                    <p>
+                        Time until the next customer arrives at a store, assuming arrivals follow a Poisson process with rate <m>\lambda = 2</m> customers per hour. Mean waiting time = <m>0.5</m> hours.
+                    </p>
+                </li>
+                <li>
+                    <title>Reliability:</title>
+                    <p>
+                        Lifetime of a lightbulb that fails at a constant rate <m>λ=0.001</m> failures per hour. The probability it lasts more than <m>1000</m> hours is 
+                        <me>
+                            1 - F(1000; 0.001) = e^{-0.001 \times 1000} = e^{-1} \approx 0.3679
+                        </me>.
+                    </p>
+                </li>
+            </dl>
+
+ 
+ 
+ 
+        </p>
+        
+    </subsection>
+
+</section>

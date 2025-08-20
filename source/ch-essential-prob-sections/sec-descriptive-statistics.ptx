@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-Descriptive-Statistics" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Descriptive Statistics</title>
+
+  <p> Descriptive statistics summarize and describe the main features of a dataset. These numbers are very useful for getting a first look at the patterns in the data and goes by the name <alert>Exploratory Data Analysis</alert>. The main numbers you would be interested in here are as follows.
+  
+  <ol>
+    <li>
+      <p>
+        <alert>Mean (Average)</alert>: The mean is the average of all data values. We will usually denote mean by the Greek symbol <m>\mu</m>. So, if your data contains the five values <m>\{ 1, 2, 2, 3, 4\}</m>. Then mean will be 
+        <me>
+          \mu = \frac{1+2+2+3+4}{5} = \frac{12}{5} = 2.4.
+        </me>
+        In general the formula fot a dataset containing <m>N</m> values, <m>\{x^{(1)}, x^{(2)}, \cdots, x^{(N)}\}</m>, will be
+        <men xml:id="eqn-mean-of-N-data-points">
+          \mu = \frac{1}{N} \sum_{i=1}^{N}\, x^{(i)},
+        </men>
+        where I have used a common summation symbol <m>\sum</m> for brevity, which stands for
+        <me>
+          \sum_{i=1}^{N}\, x^{(i)} \equiv x^{(1)} +  x^{(2)} +  \cdots + x^{(N)}.
+        </me>
+        Note also that we are using superscripts to denote individual data points. We will try to use this notation in this book whenever appropriate.
+        
+      </p>
+    </li>
+    <li>
+      <p>
+        <alert>Median</alert>: Median is the number below (or above) which 50% of the data resides; it does not have to be any of the data points in the data itself. To calculate median, you would first <alert>sort the data</alert>. Then, if the data has odd number of data points, then median is the middle data and if the data has even number of points, then median would be the average of the two middle numbers. Thus, suppose the data is <m>\{3,1,4 \}</m>, then you would first sort the data, giving you <m>\{1, 3, 4\}</m>, then the median will be the middle number 3.  Suppose you have the data <m>\{3,1,4,2\}</m>. First sort it to <m>\{1,2,3,4\}</m>. Now, we have two middle data points, that is 2 and 3. Median will be their average, 2.5. 
+      </p>
+    </li>
+    <li>
+      <p>
+        <alert>Mode</alert>: Mode is the most frequently occurring value in the dataset.  A dataset may have no mode, one mode, two mode, or any number of modes. For instance the dataset <m>{2,4,3,7,1}</m> does not have a mode, <m>\{2, 4,4,5,7\}</m> has one mode equal to <m>4</m>, the data <m>\{2,4,4,5,7,7,7\}</m> has one mode equal to <m>7</m> and the data <m>\{1,12,12,12, 3, 4,4,4\}</m> has two modes, one at <m>4</m> and the other at <m>12</m>.
+      </p>
+    </li>
+    <li>
+      <p>
+        <alert>Variance</alert>: Variance measures how much the data varies from the mean. The square root of variance is called <alert>standard deviation</alert>, which is usually denoted by the symbol <m>\sigma</m> (pronounced sigma). The variance, itself is denoted by just squaring this symbol, viz., <m>\sigma^2</m>. Suppose we have a dataset containing <m>N</m> values, <m>\{x^{(1)}, x^{(2)}, \cdots, x^{(N)}\}</m>, whose mean is <m>\mu</m>, whose formula is given above in Eq. <xref ref="eqn-mean-of-N-data-points"/>, then variance will be
+        <men xml:id="eqn-variance-of-N-data-points">
+          \text{Variance},\ \sigma^2 = \frac{1}{N} \sum_{i=1}^{N} \left( x^{(i)} - \mu \right)^2. 
+        </men>
+        Let's calculate variance of dataset <m>\{ 1, 2, 2, 3, 4\}</m>. We first calculate mean.
+        <me>
+          \mu = \frac{1}{5} \times (1+2+2+3+4) = 2.5.
+        </me>
+        Then, variance
+        <md>
+          <mrow> \sigma^2 \amp  = \frac{1}{5}  \left[ \left( 1 - 2.5 \right)^2 + \left( 2 - 2.5 \right)^2  + \left( 2 - 2.5 \right)^2 + \left( 3 - 2.5 \right)^2 + \left( 4 - 2.5 \right)^2\right] </mrow>
+          <mrow> \amp = \frac{1}{5}  \left[. 1.5^2 + 0.5^2 + 0.5^2 + 0.5^2 + 1.5^2 \right]  = \frac{5.25}{5} = 1.05.</mrow>
+        </md>
+        Finally, we can find the standard deviation.
+        <me>
+          \sigma = \sqrt{\sigma^2} = \sqrt{1.05} = 1.024.
+        </me>
+        Note that the unit of <m>\sigma</m> is same as that of the data points themselves, but that of variance will be square of the units of the data points. Thus, if the data were  height in <m>\text{m}</m>, then <m>\sigma</m> will be in <m>\text{m}</m>, but variance will be in <m>\text{m}^2</m>.
+      </p>
+      <p>
+        Standard deviation has considerable importance in understanding data that are nearly Gaussian in their distribution since that distribution is fully specified by only its mean and the standard deviation. Considerable interpretive statistics is based on the data that are distributed approximately Gaussian. We will study this aspect of statistics in a late section.
+      </p>
+    </li>
+
+
+    <li>
+      <p>
+        <alert>Histogram</alert>: A histogram refers to a frequency distribution of values. It is usually presented as a plot with bins in which data may be distributed. Suppose you have data, whose values denoted by letter <m>x</m>, in the range from <m>0</m> to <m>10</m>. Then, with a bin size of <m>2</m>, you can distribute the data, with minimum value <m>0</m> and maximum value <m>10</m> in bins: <m>0\le x \lt 2</m>, <m>2\le x \lt 4</m>, <m>4\le x\lt 6</m>, <m>6\le x \lt 8</m>, <m>8\le x \lt 10</m>, <m>10\le x \lt 12</m>. Suppose, you have the following dataset <m>\{ 0, 2, 2, 3, 3, 6, 7, 7, 8, 10  \}</m> Then, you will get the table <xref ref="tab-Histogram-Table"/> showing how the data is distributed across the bins.
+
+      </p>
+    
+
+        <table xml:id="tab-Histogram-Table">
+          <title>Histogram</title>
+          <tabular>
+            <row>
+              <cell>Bin</cell> <cell>Range</cell> <cell>Data</cell><cell>Count</cell><cell>Frequency</cell>
+            </row>
+            <row>
+              <cell>1</cell> <cell><m>0\le x \lt 2</m></cell><cell><m>\{ 1\}</m></cell><cell>1</cell><cell>0.1</cell>
+            </row>
+            <row>
+              <cell>2</cell> <cell><m>2\le x \lt 4</m></cell><cell><m>\{ 2, 2, 3,3\}</m></cell><cell>4</cell><cell>0.4</cell>
+            </row>
+            <row>
+              <cell>3</cell> <cell><m>4\le x \lt 6</m></cell><cell><m>\{\}</m></cell><cell>0</cell><cell>0</cell>
+            </row>
+            <row>
+              <cell>4</cell> <cell><m>6\le x \lt 8</m></cell><cell><m>\{ 6, 7, 7\}</m></cell><cell>3</cell><cell>0.3</cell>
+            </row>
+            <row>
+              <cell>5</cell> <cell><m>8\le x \lt 10</m></cell><cell><m>\{ 8\}</m></cell><cell>1</cell><cell>0.1</cell>
+            </row>
+            <row>
+              <cell>6</cell> <cell><m>10\le x \lt 12</m></cell><cell><m>\{ 10\}</m></cell><cell>1</cell><cell>0.1</cell>
+            </row>
+          </tabular>
+        </table>
+        <p>
+          Graphically, you would plot the frequency column against the Bin or the Range column. The following Python Code will produce the plot given in <xref ref="fig-descriptive-statistics-histogram"/>. The visual picture obviously gives you a very direct way to see the pattern in the data, including a coarse view of the probability distribution of various values in the data.
+        </p>
+        
+        <program language="python" line-numbers="yes">
+            import matplotlib.pyplot as plt
+            import numpy as np
+
+            # Data
+            data = [0, 2, 2, 3, 3, 6, 7, 7, 8, 10]
+            # Desired bin size
+            bin_size = 2
+
+            def plot_histogram(data, bin_size=2):
+              # Calculate bin edges
+              min_val = min(data)
+              max_val = max(data)
+              bins = np.arange(min_val, max_val + bin_size, bin_size)
+
+              # Plotting the histogram
+              plt.hist(data, bins=bins, edgecolor='black', alpha=0.7)
+
+              # Adding labels and title
+              plt.xlabel('Value')
+              plt.ylabel('Frequency')
+              plt.title(f'Histogram of Data with Bin Size = {bin_size}')
+
+              # Display the plot
+              plt.xticks(bins) # Optional: to show bin edges as x-axis ticks
+              plt.grid(axis='y', alpha=0.75) # Optional: add a grid for better readability
+              plt.show()
+              return None
+            
+            plot_histogram(data, bin_size)
+
+        </program>
+        <figure xml:id="fig-descriptive-statistics-histogram">
+          <caption>Histogram with data in range 1 to 10 with bin size 2.</caption>
+          <image source="./images/essential-probability-and-statistics/histogram.png">
+            <shortdescription>Display of a histogram with data in range 1 to 10 with bin size 2.</shortdescription>
+          </image>
+        </figure>
+
+    </li>
+
+    <li>
+      <p>
+        <alert>Range and Quartiles</alert>: First, we sort the data.  Range of data is simply Max minus Min of the data. It gives a measure of how widely do the values in the data lie.  For quartiles, we then divide data into 4 parts. The first quartile (Q1), also known as the lower quartile, represents the 25th percentile, meaning 25% of the data falls below this value. The second quartile (Q2), also known as the median, represents the 50th percentile, meaning 50% of the data falls below this value. The third quartile (Q3), also known as the upper quartile,  represents the 75th percentile, meaning 75% of the data falls below this value. Finally, the fourth quartile (Q4) represents the top 25% of the values of the dataset. for simplicity, suppose the sorted dataset contains <m>\{1,1, 3,4, 5, 5, 7,8\}</m> Then <m>Q1 = 1</m>, <m>Q2 = 4</m>, <m>Q3 = 5</m>, and <m>Q4 = 8</m>.
+      </p>
+      <p>
+        A <alert>boxplot</alert> or a <alert>box-and-whisker plot</alert> is a compact way to display the min, quartiles and the max. We draw a box that spans the range from Q1 to Q3, called the <alert>interquartile (IQR)</alert> showing the middle <m>50\%</m> of the data. By using IQR with Q1 and Q3, we also define thresholds for spotting <alert>outliers</alert> in the data. The outliers are shown as points on boxplots as shown in <xref ref="fig-descriptive-statistics-boxplots"/>.
+      </p>
+      <p>
+        Example: Suppose we have the following dataset representing student scores on a quiz:
+        <me>
+          \text{scores} = [20, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 120, 150]
+        </me>
+        In this data, we can conclude: Median (Q2) = (75 + 80)/2 = 77.5, Q1 = median of lower half = 60, Q3 = median of upper half = 90. The IQR for the box will be IQR = Q3-Q1 = 30. We also can notice outliers in the data by calculating the lower bound for the data from:
+        <men xml:id="eqn-lower-and-upper-bounds-for-outliers">
+          \text{lower bound} = Q1 - 1.5 \times IQR = 60 - 1.5 \times 30 = 15,
+        </men>
+        <men xml:id="eqn-upper-and-upper-bounds-for-outliers">
+          \text{upper bound} = Q3 + 1.5 \times IQR = 90 + 1.5 \times 30 = 135,
+        </men>
+        Here, we see that the data of 150 is an outlier.
+      </p>
+      <p>
+        The following Python program will generate a good looking boxplot of the data. 
+        <program language="python" line-numbers="yes">
+          import matplotlib.pyplot as plt
+          import numpy as np
+
+          # Sample data
+          scores = [20, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 120, 150]
+
+          def gen_boxplot(data):
+            # Create the boxplot using matplotlib
+            plt.figure(figsize=(8, 4))
+            plt.boxplot(data, vert=False, patch_artist=True,
+                        boxprops=dict(facecolor='lightblue'),
+                        medianprops=dict(color='red'))
+
+            plt.title('Boxplot of Student Scores')
+            plt.xlabel('Score')
+            plt.grid(True)
+            plt.savefig("boxplot.png")
+            plt.show()
+          #-----------
+          gen_boxplot(scores)
+
+        </program>
+        <figure xml:id="fig-descriptive-statistics-boxplots">
+          <caption>Illustration of a Boxplot. The box shows the middle 50% of the data and the outliers are shown as point, here the point at 150 is the only outlier. The net range, other than outlier is shown between the two lines.</caption>
+          <image source="./images/essential-probability-and-statistics/boxplot.png">
+            <shortdescription>Display of a boxplot with one outlier.</shortdescription>
+          </image>
+        </figure>
+      </p>
+    </li>
+  </ol>
+</p>
+</section>
+
+
+

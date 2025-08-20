@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sec-Example-Discrete-Probability-Distributions">
+    <title>Example Discrete Probability Distributions</title>
+    <introduction>
+        <p>
+            Distributions describe how probabilities are spread across values of a random variable. We will given examples of <alert>Probability Mass Function (PMF)</alert> for the discrete random variables. We will discuss examples of <alert>Probability Density Function (PDF)</alert> for continuous random variable in the next section.
+        </p>
+    </introduction>
+
+        <subsection xml:id="subsec-Bernoulli-Distribution">
+            <title>Bernoulli Distribution</title>
+            <p>
+                the outcome of each elementary event of a Bernoulli trial is either a failure or success of something 9false or true of some statement, or any myriads of two states problems, which is usually represented by a random variable <m>X</m> having values <m>0</m> and <m>1</m>. That is
+                <men xml:id="eqn-Bernoulli-Omega">
+                    \Omega = \{ X=0, X=1\}
+                </men>
+                We call such random variables <alert>Bernoulli variables</alert>. The values of probability of each value of <m>X</m> gives us the Probability Mass Function (PMF) of the Bernoulli distribution. Suppose probability of <m>(X=1)</m> is <m>p</m>. Then, probability of <m>(X=0)</m> will be <m>1-p</m>. 
+                    <mdn>
+                        <mrow xml:id="eqn-Bernoulli-X1-choice">P(X=1) \amp = p</mrow>
+                        <mrow xml:id="eqn-Bernoulli-X0-choice">P(X=0) \amp = 1 - p \equiv q</mrow>
+                    </mdn>
+                Sometimes <m>1-p </m> is denote by <m>q</m>, with <m>p+q=1</m>. 
+            </p> 
+            
+            <p>
+                The separate listing of the probability of the two values of <m>X</m> in Eqs. <xref ref="eqn-Bernoulli-X1-choice"/> and <xref ref="eqn-Bernoulli-X0-choice"/> can actually be written more conveniently in one formula.
+                <men xml:id="eqn-Bernoulli-prob-in-one-formula">
+                    P(X=x) = p^x\:(1-p)^{1-x}.
+                </men>
+                From this formula, you will get <m>P(X=1)</m> and <m>P(X=0)</m> by substitting appropriate value of <m>x</m>.
+                
+            </p>
+            <sidebyside widths="45% 10% 45%">
+
+                <p>  
+                    Graphically, Bernoulli distribution is plotted as bars with a dot at the top of the bar. Figure to the side shows an illustration with <m>p=0.6</m> for <m>X=1</m>, and of course, <m>q= 0.4</m> for <m>X=0</m>.
+                </p>
+                <p>
+                      
+                </p>
+                <image source="./images/essential-probability-and-statistics/bernoulli.png">
+                    <shortdescription>Bernoulli distribution with <m>p=0.6</m>.</shortdescription>
+                </image>
+            </sidebyside>
+
+            <p>
+                For any distribution, we can find the mean of variable <m>X</m> by weighing each value of <m>X</m> with its probability.
+                <men xml:id="eqn-mean-of-Bernoulli-variable">
+                    \langle X \rangle = 0 \times P(X=0) + 1\times P(X=1) = 0 + p = p
+                </men>
+                Similarly we can find the expectation value of any power of <m>X</m>. For instance, the expectation value of the <m>n^\text{th}</m> power of <m>X</m> will be
+                <men xml:id="eqn-expectation-of-Bernoulli-variable">
+                    \langle X^n \rangle = 0^n \times P(X=0) + 1^n\times P(X=1) = 0 + p = p
+                </men>
+                Thus, variance of a Bernoulli variable will be
+                <men xml:id="eqn-Variance-of-Bernoulli-variable">
+                    \text{Var}(X) = \langle X^2 \rangle - (\langle X \rangle)^2 = p - (p)^2 = p(1-p).
+                </men>
+                Therefore, the standard deviation, <m>\sigma</m> ,of Bernoulli variable is
+                <men xml:id="eqn-stdev-Bernoulli-variable">
+                    \sigma = \sqrt{ \text{Var}(X) } = \sqrt{p(1-p)}.
+                </men>
+            </p>
+
+            
+            
+        </subsection>
+
+        <subsection xml:id="subsec-Binomial-Distribution">
+            <title>Binomial Distribution</title>
+            <p>
+                Imagine tossing a single coin a fixed number number of times, say <m>10</m> times. You might get no Heads at all or 1 Heads and 9 Tails, or 2 Heads and 8 Tails, etc. Record how many Heads you got in this trial, say you got 3 Heads. Now, toss the same coin 10 times again. This will be the second trial of experiment "tossing a particular coin 10 times". In the second trial, you might get a different number of Heads, say this time you got 8 Heads. 
+            </p>
+            <p>                  
+                If you repeated the experiment above hundreds or thousands of times, you can build a table of number of trials that resulted in a total of <m>0</m> Heads, <m>1</m> Heads, <m>2</m> Heads, <m>\cdots</m>, <m>10</m> Heads, which are all the possibilities. This table, an example shown in <xref ref="tab-Binomial-frequency-and-prob"/> for 2000 trials, will be our <alert>Frequency Table</alert>. By dividing each of these numbers by the total number of trials you performed, you will get an estimate of probabilities of each outcome. The exact formula that gives the distribution you found is called Bernoulli distribution for the <alert><m>10</m>-toss experiment</alert>.
+            </p>
+
+            <table xml:id="tab-Binomial-frequency-and-prob">
+                <title>Binomial Experiment: Frequency and Approximate Probability </title>
+                <tabular>
+                <row>
+                    <cell>Total Number of Heads</cell>
+                    <cell>Frequency</cell>
+                    <cell>Approximate Probability</cell>
+                </row>
+                <row>
+                    <cell>0</cell>
+                    <cell>8</cell>
+                    <cell>P(0) \approx 0.004</cell>
+                </row>
+                <row>
+                    <cell>1</cell>
+                    <cell>45</cell>
+                    <cell>P(1) \approx 0.0225</cell>
+                </row>
+                <row>
+                    <cell>2</cell>
+                    <cell>120</cell>
+                    <cell>P(2) \approx 0.06</cell>
+                </row>
+                <row>
+                    <cell>3</cell>
+                    <cell>220</cell>
+                    <cell>P(3) \approx 0.11</cell>
+                </row>
+                <row>
+                    <cell>4</cell>
+                    <cell>300</cell>
+                    <cell>P(4) \approx 0.15</cell>
+                </row>
+                <row>
+                    <cell>5</cell>
+                    <cell>350</cell>
+                    <cell>P(5) \approx 0.175</cell>
+                </row>
+                <row>
+                    <cell>6</cell>
+                    <cell>300</cell>
+                    <cell>P(6) \approx 0.15</cell>
+                </row>
+                <row>
+                    <cell>7</cell>
+                    <cell>250</cell>
+                    <cell>P(7) \approx 0.125</cell>
+                </row>
+                <row>
+                    <cell>8</cell>
+                    <cell>200</cell>
+                    <cell>P(8) \approx 0.10</cell>
+                </row>
+                <row>
+                    <cell>9</cell>
+                    <cell>150</cell>
+                    <cell>P(9) \approx 0.075</cell>
+                </row>
+                <row>
+                    <cell>10</cell>
+                    <cell>57</cell>
+                    <cell>P(10) \approx 0.0285</cell>
+                </row>
+                <row>
+                    <cell>Total Number of Trials: </cell> <cell>2000</cell><cell></cell>
+                </row>
+                </tabular>
+            </table>
+
+            <p>
+                In general, Binomial distribution gives us the probability of different number of successes in a fixed number of independent Bernoulli trials, each with the same probability of success <m>p</m>. In each trial of a Binomial experiments you have a sequence of <m>N</m> Bernoulli repeats of <m>H</m> (for success) and <m>T</m> (for failure).
+                <me>
+                    \text{One Binomial Trial: } THTTTTHHTHHHTH...H\quad \text{(a total of N symbols.)}
+                </me>
+                Suppose this sequence has <m>m</m> Heads (<m>H</m>) and <m>N-m</m> Tails (<m>T</m>). The probability of this sequence of Bernoulli outcomes will be
+                <me>
+                    p^m\,(1-p)^{N-m}.
+                </me>
+                But the <m>H</m> and <m>T</m> could have occurred in any order.To get the probability of getting a total of <m>m</m> Heads in any order, we multiply number of different orders in which we could have got the same total number of Heads. That turns out to be the Binomial coefficient, and hence the name Binomial distribution. 
+                <men xml:id="eqn-Binomial-distribution">
+                    P(X = m; N, p) = \frac{N!}{m! (N-m)!}\,p^m\,(1-p)^{N-m}.
+                </men>
+                Note that this distribution has two <alert>fixed parameters</alert>, the number of independent Bernoulli trials <m>N</m> in each Binomial trial and <m>p</m>, the probability of <q>success</q> in each Bernoulli trial. 
+                Beware of the importance of <m>N</m>; you can think of there being infinitely many Binomial distributions, each corresponding to different values of <m>N</m>. For instance, in Table <xref ref="tab-Binomial-frequency-and-prob"/>, if you had conducted the experiment with <m>15</m> Bernoulli trials in each Binomial experiment, instead of <m>10</m>, you would have gotten much different probabilities for <m>P(0),\ P(1), P(2), \cdots</m>. This is illustrated in the following figure, <xref ref="fig-binomial-10N20"/>.
+            </p>
+                <figure xml:id="fig-binomial-10N20">
+                    <caption>Illustrating that different <m>N</m> values in Binomial distribution correspond to different distributions. Here, with <m>N=10</m> and <m>N=20</m>. See that the probabilities for same <m>X</m> value are different for the two distributions.</caption>
+                    <image source="./images/essential-probability-and-statistics/binomial-10N20.png">
+                        <shortdescription>llustrating that different <m>N</m> values in Binomial distribution correspond to different distributions. Here, with <m>N=10</m> and <m>N=20</m>. See that the probabilities for same <m>X</m> value are different for the two distributions.</shortdescription>
+                    </image>
+                </figure>
+            <p>
+                Following code was used to create the plot above.
+            </p>
+            <program language="python">
+                <code>
+                    import numpy as np
+                    import matplotlib.pyplot as plt
+                    from scipy.stats import binom
+
+                    # Parameters
+                    p = 0.5  # probability of success
+                    N1 = 20  # number of trials for first distribution
+                    N2 = 10  # number of trials for second distribution
+
+                    # Support for each distribution
+                    x1 = np.arange(0, N1+1)
+                    x2 = np.arange(0, N2+1)
+
+                    # PMFs
+                    pmf1 = binom.pmf(x1, N1, p)
+                    pmf2 = binom.pmf(x2, N2, p)
+
+                    # Plot
+                    fig, ax = plt.subplots(figsize=(8,5))
+
+                    # Binomial N1
+                    ax.vlines(x1, 0, pmf1, colors='blue', lw=2, label=f'Bin{N1}')
+                    ax.plot(x1, pmf1, 'o', color='blue')
+
+                    # Binomial N2
+                    ax.vlines(x2, 0, pmf2, colors='orange', lw=2, label=f'Bin{N2}')
+                    ax.plot(x2, pmf2, 'o', color='orange')
+
+                    # Labels and grid
+                    ax.set_title(f'Binomial Distribution PMFs (p={p})')
+                    ax.set_xlabel('Number of Successes')
+                    ax.set_ylabel('Probability')
+                    ax.grid(axis='y', linestyle='--', alpha=0.6)
+                    ax.legend()
+
+                    plt.show()
+
+                </code>
+            </program>
+
+            <p>
+                Another way to improve your intuition about the Binomial distribution is to look at the impact of changing <m>p</m> value for the Bernoulli trials themselves - what impact do they have on a <m>10</m>-Binomial? It is shown in <xref ref="fig-binomial-N10p2p5pp8"/>. These plots show that low <m> p (0.2)</m> skews the PMF toward fewer successes; <m> p = 0.5</m> produces a symmetric distribution centered at <m>N/2</m>; high  <m>p (0.8)</m> skews toward more successes.
+
+            </p>
+            <figure xml:id="fig-binomial-N10p2p5pp8">
+                <caption>Illustrating that different <m>p</m> values in Binomial distribution correspond to different distributions but  with <m>N=10</m>. </caption>
+                <image source="./images/essential-probability-and-statistics/binomial-N10p2p5pp8.png">
+                    <shortdescription>Illustrating that different <m>p</m> values in Binomial distribution correspond to different distributions but  with <m>N=10</m>.</shortdescription>
+                </image>
+            </figure>
+
+
+            <p>
+                For doing analytical calculations with the Binomial distribution, it is important to recall the following algebraic identity, called Binomial expansion.
+                <men xml:id="eqn-Binomial-expansion">
+                    (a + b)^N = \sum_{m=0}^{N}\, \frac{N!}{m! (N-m)!}\,a^m\,b^{N-m}.
+                </men>
+                Using this it is straightforward to show that Binomial distribution is normalized properly since
+                <me>
+                    \sum_{m=0}^{N}\,P(X = m; N, p) = \sum_{m=0}^{N}\,\frac{N!}{m! (N-m)!}\,p^m\,(1-p)^{N-m} = \left[ p + (1-p)\right]^N = 1.
+                </me>
+                The mean of the Binomial random variable <m>X</m> can be obtained by weighing each value of <m>X \in \{0, 1, 2, \cdots, N\} </m> by the corresponding probability.
+                <men xml:id="eqn-men-Binomial-distribution">
+                    \langle X \rangle = \sum_{m=0}^{N}\, m \, P(X = m; N, p) = N\,p.
+                </men>
+                A simple method of showing the result involves taking an appropriate derivative appropriately. 
+                <md>
+                    <mrow> \sum_{m=0}^{N}\,m\,\frac{N!}{m! (N-m)!}\,p^m\,(1-p)^{N-m} \amp  = \left[ p\frac{d}{dp}\sum_{m=0}^{N}\,\frac{N!}{m! (N-m)!}\,p^m\,q^{N-m} \right]_{q=1-p}</mrow>
+                    <mrow> \amp = \left[ p\frac{d}{dp}(p + q)^N \right]_{q=1-p} </mrow>
+                    <mrow> \amp = \left[p N(p + q)^{N-1} \right]_{q=1-p} = N\, p.</mrow>
+                </md>
+                
+                The variance is similarly shown to be
+                <men xml:id="eqn-variance-Binomial-distribution">
+                    \text{Var}(X) = \langle X^2 \rangle - \langle X \rangle ^2 = N\,p\,(1-p).
+                </men>
+                And, the standard deviation <m>\sigma</m> is just the square root.
+                <men xml:id="eqn-stdev-Binomial-distribution">
+                    \sigma = \sqrt{\text{Var}(X) } = \sqrt{N\,p\,(1-p)}.
+                </men>
+
+            </p>
+            <p>
+                Binomial distribution plays important role in understanding average of several Bernoulli random variables, say <m>N</m>,  which have the same <m>p</m>. Suppose, we denote <m>N</m> Bernoulli variables by <m>X_1,\ X_2, \ \cdots\ , X_N</m>. Then, their sum will be a Binomial random variable, if Bernoulli random variables take <m>0</m> or <m>1</m> as awe have discussed above.
+                <me>
+                    X_\text{sum} = X_1 + X_2 + \cdots + X_N.
+                </me>
+                The average will be a scaled Binomial variable. We will denote this random variable by <m>\bar{X}_N</m> with a bar above the symbol and a reminder that it is average of <m>N</m> Bernoulli variables.
+                <me>
+                    \bar{X}_N = \frac{X_\text{sum}}{N} = \frac{X_1 + X_2 + \cdots + X_N}{N}.
+                </me>
+                This random variable is called <alert>sample mean</alert>. It will take the following values:
+                <me>
+                    \bar{X}_N \in \{  0, \frac{1}{N}, \frac{2}{N}, \cdots, \frac{N}{N}=1 \}
+                </me>
+                With <m>p</m> being probability of any of the individual Bernoulli variables to produce a success, i.e., <m>p = P(X_i = 1)</m> for every one of the <m>i = 1, 2, \cdots, N</m>.
+                <me>
+                    \langle \bar{X}_N \rangle = p,\qquad \text{independent of } N.
+                </me>
+                But the variance is quite interesting
+                <me>
+                    \text{Var}(\bar{X}_N) = \frac{p(1-p)}{N},
+                </me>
+                which translates to the standard deviation
+                <me>
+                    \sigma = \sqrt{ \text{Var}(\bar{X}_N) } = \frac{\sqrt{p(1-p)}}{\sqrt{N}}.
+                </me>
+                <alert>Where does this matter? </alert> 
+            </p>
+            <p> 
+                <ul>
+                    <li>
+                        <p>
+                            <alert>Estimation:</alert> In statistics, we often estimate <m>p</m> by <m>\langle \bar{X}_N \rangle</m> from data.
+
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <alert>Interpretation: </alert> If you run multiple experiments, your average success rate will be centered at <m>p</m> and become more concentrated as <m>N</m> grows since the standard deviation drops as <m>\sim 1/\sqrt{N}</m>. This is illustrated in <xref ref="fig-bernoulli-to-CLT"/>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <alert>Connection to the Central Limit Theorem:</alert> For large <m>N</m>, it can be shown that the probability distribution of the random variable <m>\bar{X}_N</m> tends to become Gaussian with the mean <m>p</m> and variance <m>p(1-p)/N</m>. We write this as
+                            <me>
+                                \bar{X}_N \approx \text{Gaussian}\left( p, \frac{p(1-p)}{N}\right),
+                            </me>
+                            even though each <m>X_i</m> is a discrete random variable. This goes by the name <alert>Central Limit Theorem</alert>.
+                            
+
+                        </p>
+                    </li>
+                </ul>
+                <figure xml:id="fig-bernoulli-to-CLT">
+                    <caption>Illustrating that for large <m>N</m> the distribution of the average of <m>N</m> Bernoulli variables of the same <m>p</m> tends towards a Gaussian distribution. </caption>
+                    <image source="./images/essential-probability-and-statistics/bernoulli-to-CLT.png">
+                        <shortdescription>Illustrating that for large <m>N</m> the distribution of the average of <m>N</m> Bernoulli variables of the same <m>p</m> tends towards a Gaussian distribution.</shortdescription>
+                    </image>
+                </figure> 
+
+                    
+                
+
+
+
+
+                
+                
+                
+                
+                
+                
+                
+                
+            </p>
+        </subsection>
+
+        <subsection xml:id="subsec-Poisson-Distribution">
+            <title>Poisson Distribution</title>
+            <introduction>
+                <p>
+                    The Poisson distribution models the number of times an event occurs in a fixed interval of time or space, given that:
+                    <ul>
+                        <li>
+                            <p>
+                                Events occur independently.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Events happen at a constant average rate, usually denoted by Greek letter lambda <m>\lambda</m>.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Two events cannot occur at the exact same instant. That means we are usually interested in events that are rare within the interval we choose to work with so that it can be safely assumed that two events do not coincide.
+                            </p>
+                        </li>
+                    </ul>
+                    A Poisson random variable <m>X</m> can take any non-negative integer values since it's just a count. 
+                    The probability mass function for a Poisson random variable will give probabilities for <m>X = k</m> for each non-negative value <m>k</m> for a constant average rate <m>\lambda</m> is given by
+                    <men xml:id="eqn-poisson-distribution">
+                        P(X = k) = e^{-\lambda}\, \frac{\lambda^{k}}{k!}.
+                    </men>
+                    It is obviously normalized since
+                    <me>
+                        e^{\lambda} = \sum_{k=0}^\infty\, \frac{\lambda^{k}}{k!}
+                    </me>
+                    Therefore
+                    <me>
+                        \sum_{k=0}^\infty\, P(X = k) = e^{-\lambda}\times e^\lambda = 1.
+                    </me>
+                    The mean of Poisson distribution is the average count, \lambda.
+                    <men xml:id="eqn-mean-Poisson">
+                        \langle X \rangle = \sum_{k=0}^\infty\, k\, P(X = k) = \lambda,
+                    </men>
+                    as we can show by the following calculations.
+                    <md>
+                        <mrow> \langle X \rangle \amp = \sum_{k=0}^\infty\, k\, P(X = k)  = e^{-\lambda}\sum_{k=0}^\infty\, k\, \frac{\lambda^{k}}{k!} </mrow> 
+                        <mrow> \amp =  e^{-\lambda}\, \left( \lambda\,\frac{d}{d\lambda} \right)\sum_{k=0}^\infty\, \frac{\lambda^{k}}{k!}  = e^{-\lambda}\, \left( \lambda\,\frac{d}{d\lambda} \right)\, e^\lambda = \lambda.</mrow>
+
+                    </md>
+                    The variance of Poisson distribution is similarly shown to be also <m>\lambda</m>.
+                    <md>
+                        <mrow>\text{Var}(X) \amp = \langle X^2 \rangle - \langle X \rangle^2</mrow>
+                        <mrow> \amp = (\lambda + \lambda^2) - \lambda^2 = \lambda. </mrow>
+                    </md>
+                    where the missing steps are left for the student to practice, using the same type of argument as introducing <m>\lambda\,(d/d\lambda)</m> operators appropriately.
+                </p>
+                <p>
+                    A mathematically interesting result is that in an appropriate limit, a Binomial distribution can be shown to become same as Poisson distribution. I will just state the result without giving you the detailed calculations. (hint: You can get <m>k</m> factors of <m>N</m> from <m>N!/(N-k)!</m>).
+                    <me>
+                        \frac{N!}{k! (N-k)!}\, p^k\, (1-p)^{N-k} \xrightarrow{N\rightarrow \infty,\ p\rightarrow 0,\ Np=\lambda, \text{fixed}} e^{-\lambda}\,\frac{\lambda^k}{k!}
+                    </me>
+                </p>
+                <p>
+                    <alert>Example</alert> Radioactivity is one of the classic and most intuitive real-life examples of the Poisson distribution. Let's look at it a little closely. Radioactive decay is a random process. Each atom has a constant probability of decaying in a fixed time interval. The decays are:
+                    <ul>
+                        <li>
+                            <p>
+                                <alert>Independent</alert> (one decay does not affect another).
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <alert>Rare events</alert> relative to the huge number of atoms.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Occurring with a <alert>constant average rate</alert>.
+                            </p>
+                        </li>
+                    </ul>
+                    These aspects make the Poisson distribution a perfect model for studying the statistics of radioactivity.
+                </p>
+                <p>
+                    Suppose we measure the number of particles emitted from a radioactive source in 10-second intervals. From past experiments, we know that the detector records on average 3 decays per 10 seconds. So, per second, we expect on-average <m>0.3</m> decays.
+                    <me>
+                        \lambda = 0.3.\ \ \text{(per second)}
+                    </me>
+                    That completely specifies the Poisson distribution. Therefore, we can immediately calculate all sorts of things for the phenomenon. For instance, probability of seeing exactly <m>0</m> decays in <m>1</m> seconds will be
+                    <me>
+                        P(X=0) = e^{-\lambda}\,\frac{\lambda^0}{0!} = e^{-0.3} \approx 0.7408.
+                    </me>
+                    Probability of exactly 3 decays in a second will be
+                    <me>
+                        P(X=0) = e^{-\lambda}\,\frac{\lambda^3}{3!} = e^{-0.3}\times \frac{0.3^3}{3!} \approx 0.0033.
+                    </me>
+                    Now, for a trick question. What will be the probability of 10 decays in one minute? Well, we will convert our lambda per second to a new lambda per minute. Let's label lambda's by the intervals they refer to.
+                    <me>
+                        \lambda_{60} = 60 * \lambda_{1} = 60 \times 0.3 = 18.
+                    </me>
+                    Then
+                    <me>
+                        P_{60}(X=10) = e^{-\lambda_{60}}\, \frac{\lambda^{10}}{10!} \approx 0.014.
+                    </me>
+                    
+                    
+                    
+                </p>
+                <p>
+                    A visual representation of the PMF often helps to build intuition. A simple program in Python can be used to to do that. The plot with <m>\lambda = 3</m> is shown in <xref ref="fig-poisson-distribution"/>.
+                    <program language="python">
+                        <code>
+                            import numpy as np
+                            import matplotlib.pyplot as plt
+                            from scipy.stats import poisson
+
+                            # Average decay rate
+                            lam = 3  
+
+                            # Range of possible counts
+                            x = np.arange(0, 15)
+                            pmf = poisson.pmf(x, lam)
+
+                            plt.figure(figsize=(8,5))
+                            plt.vlines(x, 0, pmf, colors='darkred', lw=2, alpha=0.7, label=f'λ={lam}')
+                            plt.plot(x, pmf, 'o', color='black', markersize=5)
+
+                            plt.xlabel('Number of Decays in One Interval')
+                            plt.ylabel('Probability P(X=k)')
+                            plt.title('Poisson Distribution of Radioactive Decays (λ=3)')
+                            plt.grid(axis='y', linestyle='--', alpha=0.6)
+                            plt.legend()
+
+                            plt.show()
+                        </code>
+                    </program>
+                </p>
+                <figure xml:id="fig-poisson-distribution">
+                    <caption>Poisson Distribution for <m>\lambda=3</m>. The most likely outcome is 3 decays per 10 seconds (the mean). Note that 0 or 1 decay is possible, but much less likely. Seeing 6 or more decays is rare, but not impossible.</caption>
+                    <image source="./images/essential-probability-and-statistics/poisson.png">
+                        <shortdescription>Poisson Distribution for <m>\lambda=3</m>.</shortdescription>
+                    </image>
+                </figure>
+
+            </introduction>
+            <subsubsection xml:id="subsub-Poisson-Process">
+                <title>Poisson Process</title>
+                <p>
+                    A <alert>Poisson process</alert> is a stochastic process used to model the occurrence of events that happen independently and at a constant average rate over time or space.
+                </p>
+                <p>
+                    Formally, a Poisson process is a counting process <m>( \{N(t), t \ge 0\} )</m>, where <m>N(t)</m> represents the number of events that have occurred <alert>up to time</alert> <m>t</m>, and it satisfies the following properties:
+                    <ol>
+                        <li>
+                            <p>
+                                <alert>Initial Condition</alert>: <m>( N(0) = 0 )</m>, meaning the process starts with no events at time zero.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <alert>Independent Increments</alert>: The number of events in non-overlapping time intervals is independent. For example, the number of events in <m>(t_1, t_2]</m> is independent of the number in <m>(t_3, t_4]</m> if the intervals do not overlap.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <alert>Stationary Increments</alert>: The number of events in a time interval of length <m> t </m>, i.e., <m> N(s+t) - N(s) </m>, depends only on the length <m> t </m> and not on the starting point <m> s </m>.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <alert>Poisson Distribution</alert>: The number of events in any interval of length <m> t </m> follows a Poisson distribution with mean <m> \lambda t </m>, where <m> \lambda > 0 </m> is the <alert>rate parameter</alert> (average number of events per unit time). The probability of <m> k </m> events in an interval of length <m> t </m> is:
+                                <me>
+                                P(N(t) = k) = \frac{(\lambda t)^k e^{-\lambda t}}{k!}, \quad k = 0, 1, 2, \dots
+                                </me>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                 <alert>No Simultaneous Events</alert>: The probability of two or more events occurring at exactly the same time is negligible (technically, the probability of multiple events in an infinitesimally small interval is zero).
+                            </p>
+                        </li>
+                    </ol>
+          
+                </p>
+                <p>
+                    <!--
+                    <alert>Key Characteristics</alert> of a Poisson process are:
+                    <dl>
+                        <li>
+                            <title>Rate Parameter (<m> \lambda </m>)</title>:
+                            
+                            
+                            <p>
+                                Represents the average number of events per unit time. For example, if <m> \lambda = 2 </m> events per hour, then in 1 hour, the expected number of events is 2.
+                            </p>
+                        </li>
+                        <li>
+                            <title>Inter-Arrival Times</title>
+                            
+                            
+                            <p>
+                                The time between consecutive events (inter-arrival times) in a Poisson process follows an <alert>Exponential distribution</alert>, to be described in greater detail in the next section on Example Continuous Distributions, with parameter <m> \lambda </m>. The mean inter-arrival time is <m> 1/\lambda </m>.
+                            </p>
+                        </li>
+                        <li>
+                            <title>Memoryless Property</title>
+                            
+                            
+                            <p>
+                                Due to the Exponential distribution of inter-arrival times, the Poisson process is memoryless, meaning the probability of an event occurring in the next time interval does not depend on how much time has already passed.
+                            </p>
+                        </li>
+                    </dl>
+                    -->
+                    <alert>Examples</alert>: 
+                    <ol>
+                        <li>
+                            <p>
+                                <alert>Queueing Systems</alert>: Customers arriving at a store at an average rate of <m> \lambda = 5 </m> customers per hour.
+                             
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <alert>Telecommunications</alert>: Phone calls arriving at a call center with a constant average rate.
+ 
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <alert>Reliability</alert>: Failures of a machine occurring randomly at an average rate of <m> \lambda = 0.01 </m> failures per hour.
+
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <alert>Traffic</alert>: Cars passing a checkpoint on a highway at a constant average rate. 
+                            </p>
+                        </li>
+                    </ol>
+
+                   
+                </p>
+            </subsubsection>
+        </subsection>
+
+</section>
