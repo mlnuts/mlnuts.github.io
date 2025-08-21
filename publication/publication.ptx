@@ -10,6 +10,19 @@
 <!-- make from the default values.                                        -->
 
 <publication>
+
+  <target>
+    <name>GitHubPages</name>      <!-- Just a descriptive name for the deployment target -->
+    <type>web</type>              <!-- We're deploying a website -->
+    <format>html</format>         <!-- PreTeXt will deploy the HTML output -->
+    <destination>
+      <git-repo>git@github-mlnuts:mlnuts/mlnuts.github.io.git</git-repo>
+      <branch>main</branch>      <!-- Branch where the HTML will be pushed -->
+      <directory>.</directory>   <!-- Deploy to root of the branch -->
+      <url>https://mlnuts.github.io/</url> <!-- The live site URL -->
+    </destination>
+  </target>
+
   <common>
     <!-- Level at which are html files generated (chapter/section/etc): -->
       <!--<chunking level="1" />-->
