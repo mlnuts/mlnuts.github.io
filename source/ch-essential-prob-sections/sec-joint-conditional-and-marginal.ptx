@@ -61,43 +61,88 @@
     </subsection>
     <subsection xml:id="subsec-Joint-Probability">
         <title>Joint ad Marginal Probabilities</title>
-        <p>
-            Suppose you have two discrete random variables, e.g, does the patient have a disease <m>(X)</m> and is the diagnosis positive <m>(Y)</m>. Both of these variables have just two values: <m>\Omega_X = \{ x_1 = \text{Yes}, x_2 = \text{No}\}</m> and <m>\Omega_Y = \{ y_1 = \text{Yes}, y_2 = \text{No}\}</m>
-        </p>
-        <p>
-            <alert>Joint probability</alert> is probability measure over the outcome space <m>\Omega</m> that has all the combinations of the elements of <m>\Omega_X
-            </m> and <m>\Omega_Y</m>. That is, we will specify probability measure for each of the elements of following <m>\Omega</m>
-            <me>
-                \Omega = \{ (x_1, y_1), (x_1, y_2), (x_2, y_1), (x_2, y_2) \}.
-            </me>
-            That is we need the following probabilities.
-            <md>
-                <mrow>p_{11} \amp = P(X=x_1, Y=y_1) </mrow>
-                <mrow>p_{12} \amp = P(X=x_1, Y=y_2) </mrow>
-                <mrow>p_{21} \amp = P(X=x_2, Y=y_1) </mrow>
-                <mrow>p_{22} \amp = P(X=x_2, Y=y_2) </mrow>
-            </md>
-            These probabilities are joint probabilities over the joint space of <m>X</m> and <m>Y</m>. We often write joint probability by just listing the variable names or even a symbol for variable values, e.g., <m>x</m>, without specifying <m>x_1, x_2, \text{etc}</m>
-            <me>
-                \text{Joint Probability } \equiv P(X,Y) \equiv p(x,y).
-            </me>
+        <introduction>
+            <p>
+                Suppose you have two discrete random variables, e.g, does the patient have a disease <m>(X)</m> and is the diagnosis positive <m>(Y)</m>. Both of these variables have just two values: <m>\Omega_X = \{ x_1 = \text{Yes}, x_2 = \text{No}\}</m> and <m>\Omega_Y = \{ y_1 = \text{Yes}, y_2 = \text{No}\}</m>
+            </p>
+            <p>
+                <alert>Joint probability</alert> is probability measure over the outcome space <m>\Omega</m> that has all the combinations of the elements of <m>\Omega_X
+                </m> and <m>\Omega_Y</m>. That is, we will specify probability measure for each of the elements of following <m>\Omega</m>
+                <me>
+                    \Omega = \{ (x_1, y_1), (x_1, y_2), (x_2, y_1), (x_2, y_2) \}.
+                </me>
+                That is we need the following probabilities.
+                <md>
+                    <mrow>p_{11} \amp = P(X=x_1, Y=y_1) </mrow>
+                    <mrow>p_{12} \amp = P(X=x_1, Y=y_2) </mrow>
+                    <mrow>p_{21} \amp = P(X=x_2, Y=y_1) </mrow>
+                    <mrow>p_{22} \amp = P(X=x_2, Y=y_2) </mrow>
+                </md>
+                These probabilities are joint probabilities over the joint space of <m>X</m> and <m>Y</m>. We often write joint probability by just listing the variable names or even a symbol for variable values, e.g., <m>x</m>, without specifying <m>x_1, x_2, \text{etc}</m>
+                <me>
+                    \text{Joint Probability } \equiv P(X,Y) \equiv p(x,y).
+                </me>
+                
+            </p>
+            <p>
+                If you ignore <m>Y</m> and just look at the probabilities of patient having the disease and not having the disease, they are called <alert>Marginal Probabilities</alert> of <m>X</m>. If you had more than two variables, say <m>Y, Z, A, B, \cdots</m>, you would just ignore all the other variables to focus only on <m>X</m> to obtain its marginal probabilities.
+                <men xml:id="eqn-marginal-probability-of-X">
+                    P(x=x_1) = p_1,\ \ P(X=x_2) = p_2.
+                </men>
+                Similar to the notation of joint probabilities, we often write the marginal probabilities by simply <m>P(X)</m> or <m>p(x)</m>.
+            </p>
+            <p>
+                It turns out that the marginal probabilities can be obtained from joint probabilities by just summing out the other variable's values in the joint probability. Thus, in our example, the p_1 and p_2 of <m>X</m> alone will be
+                <md>
+                    <mrow>p_1 \amp = p_{11} + p_{12} \equiv \sum_{y=1}^2 P(X=1,Y=y) </mrow>
+                    <mrow>p_2 \amp = p_{21} + p_{22} \equiv \sum_{y=1}^2 P(X=2,Y=y) </mrow>
+                </md>
+                Same will be the case if you are interested in the marginal probability of <m>Y</m>.
+            </p>
+        </introduction>
+        <subsubsection xml:id="subsubsec-Covariance-and-Correlation">
+            <title>Covariance and Correlation</title>
+            <p>
+                A very common aspect of dealing with more than one random variable, say <m>X</m> (e.g., height of a man) and <m>Y</m> (e.g., the weight of the man) is to find out to what extent they tend to vary together. <alert>Covariance</alert> is a measure of their varying together either in the same direction or in the opposite direction. The normalized version of covariance so that result lies between <m>-1</m> and <m>+1</m> is called <alert>correlation</alert>.
+            </p>
+            <p>
+                Let <m>P(X,Y)</m> denote the joint probability of <m>X</m> and <m>Y</m>. Then, covariance is the following expectation value computed in this probability distribution.
+                <men xml:id="eqn-Covariance">
+                    \text{Cov}(X,Y) = \langle  \left( X - \mu_X \right)   \left( Y - \mu_Y \right) \rangle,
+                </men>
+                where to keep the formula simpler, the mean values of <m>X</m> and <m>Y</m> are dented by <m>\mu_X</m> and <m>\mu_Y</m> respectively.
+                <me>
+                    \mu_X = \langle X \rangle,\quad \mu_Y = \langle Y \rangle
+                </me>
+                By opening the braces inside the angle brackets in Eq. <xref ref="eqn-Covariance"/>, we can rewrite the Covariance formula in another way.
+                <men xml:id="eqn-Covariance-2">
+                    \text{Cov}(X,Y) = \langle  X\,Y \rangle - \mu_X\,\mu_Y,
+                </men> 
+                where <m>\langle  X\,Y \rangle</m> is to be computed using <m>P(X,Y)</m>. For <m>X</m> and <m>Y</m> discrete variable and <m>P(X,Y)</m> a PMF, the calculation will be
+                <me>
+                    \langle  X\,Y \rangle = \sum_{x_i} \sum_{y_j} x_i y_j P(x_i, y_j).
+                </me>
+                Themean values <m>\mu_X</m> and <m>\mu_Y</m> in this case would relate to the marginals <m>P(X</m> and <m>P(Y)</m>
+                <md>
+                    <mrow> \mu_X\amp = \sum_{x_i} \sum_{y_j} x_i P(x_i, y_j) = \sum_{x_i} x_i\, P(x_i).</mrow>
+                    <mrow> \mu_Y\amp = \sum_{x_i} \sum_{y_j} y_j P(x_i, y_j) = \sum_{y_j} y_j\, P(y_j). </mrow>
+                </md>
+                Covariance can take any real value, <m>\text{Cov}(X,Y) \in (-\infty, +\infty)</m>. By dividing the covariance by the standard deviations of <m>X</m> and <m>Y</m> we get correlations, whose values are in the range <m>\text{Corr}(X,Y) \in [-1, +]</m>. 
+                <men xml:id="eqn-Correlation">
+                    \text{Corr}(X,Y) = \frac{ \text{Cov}(X,Y) }{ \sigma_X\, \sigma_Y }.
+                </men>
+                The standard deviations in the joint distribution are the same as the standard deviation in the marginal as was the case for the means <m>\mu_X</m> and <m>\mu_Y</m>. For instance, in the case of discrete random variables, we will get the following for the variances, which is the square of standard deviations.
+                <md>
+                    <mrow> \sigma_X^2 \amp = \sum_{x_i} \sum_{y_j} \left( x_i -\mu_X \right)^2 P(x_i, y_j) = \sum_{x_i} \left( x_i -\mu_X \right)^2\, P(x_i).</mrow>
+                    <mrow> \sigma_Y^2\amp = \sum_{x_i} \sum_{y_j}  \left( y_j -\mu_Y \right)^2 P(x_i, y_j) = \sum_{y_j} \left( y_j -\mu_Y \right)^2\, P(y_j). </mrow>
+                </md>                
+                The positive correlation (or covariance) means <m>X</m> vary in the same direction, i.e., increasing <m>X</m> and increasing <m>Y</m> occur together. The opposite is the case for negative correlation (or covariance).
+            </p>
+            <p>
+                <alert>Beware, Correlation is not the same thing as Causation!</alert> Just because two things move together doesn't mean one causes the other. For example, suppose you find that ice cream sales and shark attacks may rise together (both happen in hot weather when people flock to the beaches), but it would be ludicurous to suggest that it means ice cream sales cause the shark attack or vice versa! Machine learning models may find patterns, but not always causal ones.
+            </p>
             
-        </p>
-        <p>
-            If you ignore <m>Y</m> and just look at the probabilities of patient having the disease and not having the disease, they are called <alert>Marginal Probabilities</alert> of <m>X</m>. If you had more than two variables, say <m>Y, Z, A, B, \cdots</m>, you would just ignore all the other variables to focus only on <m>X</m> to obtain its marginal probabilities.
-            <men xml:id="eqn-marginal-probability-of-X">
-                P(x=x_1) = p_1,\ \ P(X=x_2) = p_2.
-            </men>
-            Similar to the notation of joint probabilities, we often write the marginal probabilities by simply <m>P(X)</m> or <m>p(x)</m>.
-        </p>
-        <p>
-            It turns out that the marginal probabilities can be obtained from joint probabilities by just summing out the other variable's values in the joint probability. Thus, in our example, the p_1 and p_2 of <m>X</m> alone will be
-            <md>
-                <mrow>p_1 \amp = p_{11} + p_{12} \equiv \sum_{y=1}^2 P(X=1,Y=y) </mrow>
-                <mrow>p_2 \amp = p_{21} + p_{22} \equiv \sum_{y=1}^2 P(X=2,Y=y) </mrow>
-            </md>
-            Same will be the case if you are interested in the marginal probability of <m>Y</m>.
-        </p>
+        </subsubsection>
     </subsection>
     <subsection xml:id="subsec-Conditional-Probability">
         <title>Conditional Probability</title>

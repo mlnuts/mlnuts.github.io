@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Descriptive Statistics</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="ML Notes">
+<meta property="book:author" content="Samuel Ling">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.9.8';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.b215b0da62d655bd.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.28cc3c4821792be5.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8141ae22fd347e48.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="ML-Notes" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="my-ML-Notes.html"><span class="title">ML Notes</span> <span class="subtitle">Theoretical and Practical ML Concepts</span></a></h1>
+<p class="byline">Samuel Ling</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="ch-Essential-Probability-and-Statistics.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-Essential-Probability-and-Statistics.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-useful-descriptive-statistics-tools.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-Essential-Probability-and-Statistics.html" class="internal"><span class="codenumber">1</span> <span class="title">Essential Probability and Statistics</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-Descriptive-Statistics.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Descriptive Statistics</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-useful-descriptive-statistics-tools.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Useful Descriptive Statistics Tools</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-useful-descriptive-statistics-tools.html#subsec-Pandas" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Pandas</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-Numerical-and-Categorical-Data.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Numerical and Categorical Data</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Basic-Probability.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Basic Probability</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Basic-Probability.html#subsec-Axiomatic-View-of-Probability" class="internal"><span class="codenumber">1.4.1</span> <span class="title">Axiomatic View of Probability</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Basic-Probability.html#subsec-three-types-of-probabilities" class="internal"><span class="codenumber">1.4.2</span> <span class="title">Three Types of Probabilities</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Joint-Conditional-and-Marginal-Probabilities.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Joint, Conditional and Marginal Probabilities</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Joint-Conditional-and-Marginal-Probabilities.html#subsec-Random-Variables" class="internal"><span class="codenumber">1.5.1</span> <span class="title">Random Variables, Probabilities, and Expections</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Joint-Conditional-and-Marginal-Probabilities.html#subsec-Joint-Probability" class="internal"><span class="codenumber">1.5.2</span> <span class="title">Joint ad Marginal Probabilities</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Joint-Conditional-and-Marginal-Probabilities.html#subsec-Conditional-Probability" class="internal"><span class="codenumber">1.5.3</span> <span class="title">Conditional Probability</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Joint-Conditional-and-Marginal-Probabilities.html#subsec-conditional-probability-from-joint-probability" class="internal"><span class="codenumber">1.5.4</span> <span class="title">Bayes’ Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Joint-Conditional-and-Marginal-Probabilities.html#subsec-Independent-Variables" class="internal"><span class="codenumber">1.5.5</span> <span class="title">Independent Variables</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-Joint-Conditional-and-Marginal-Probabilities.html#subsec-Complications-For-Continuous-Variables" class="internal"><span class="codenumber">1.5.6</span> <span class="title">Complications-For-Continuous-Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Joint-Conditional-and-Marginal-Probabilities.html#subsubsec-Probability-Density" class="internal"><span class="codenumber">1.5.6.1</span> <span class="title">Probability Density</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Joint-Conditional-and-Marginal-Probabilities.html#subsubsec-Cumulative-Distribution-Function" class="internal"><span class="codenumber">1.5.6.2</span> <span class="title">Cumulative Distribution Function (CDF)</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Example-Discrete-Probability-Distributions.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Example Discrete Probability Distributions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Example-Discrete-Probability-Distributions.html#subsec-Bernoulli-Distribution" class="internal"><span class="codenumber">1.6.1</span> <span class="title">Bernoulli Distribution</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Example-Discrete-Probability-Distributions.html#subsec-Binomial-Distribution" class="internal"><span class="codenumber">1.6.2</span> <span class="title">Binomial Distribution</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-Example-Discrete-Probability-Distributions.html#subsec-Poisson-Distribution" class="internal"><span class="codenumber">1.6.3</span> <span class="title">Poisson Distribution</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Example-Discrete-Probability-Distributions.html#subsub-Poisson-Process" class="internal"><span class="codenumber">1.6.3.1</span> <span class="title">Poisson Process</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Example-Continuous-Probability-Distributions.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Example Continuous Probability Distributions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-Example-Continuous-Probability-Distributions.html#subsec-Uniform-Distribution" class="internal"><span class="codenumber">1.7.1</span> <span class="title">Uniform Distribution</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Example-Continuous-Probability-Distributions.html#subsubsec-Inverse-Uniform-CDF" class="internal"><span class="codenumber">1.7.1.1</span> <span class="title">Inverse Uniform CDF</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-Example-Continuous-Probability-Distributions.html#subsec-Normal-Distribution" class="internal"><span class="codenumber">1.7.2</span> <span class="title">Normal (Gaussian) Distribution</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Example-Continuous-Probability-Distributions.html#subsubsec-Inverse-CDF-and-Sampling" class="internal"><span class="codenumber">1.7.2.1</span> <span class="title">Inverse CDF and Sampling</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Example-Continuous-Probability-Distributions.html#subsec-Exponential-Distribution" class="internal"><span class="codenumber">1.7.3</span> <span class="title">Exponential Distribution</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-Descriptive-Statistics"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.1</span><span class="space"> </span><span class="title">Descriptive Statistics</span>
+</h2>
+<div class="para logical" id="sec-Descriptive-Statistics-2">
+<div class="para">Descriptive statistics summarize and describe the main features of a dataset. These numbers are very useful for getting a first look at the patterns in the data and goes by the name <em class="alert">Exploratory Data Analysis</em>. The main numbers you would be interested in here are as follows.</div>
+<ol class="decimal" id="sec-Descriptive-Statistics-2-2">
+<li id="sec-Descriptive-Statistics-2-2-1">
+<div class="para logical" id="sec-Descriptive-Statistics-2-2-1-1">
+<div class="para">
+<em class="alert">Mean (Average)</em>: The mean is the average of all data values. We will usually denote mean by the Greek symbol <span class="process-math">\(\mu\text{.}\)</span> So, if your data contains the five values <span class="process-math">\(\{ 1, 2, 2, 3, 4\}\text{.}\)</span> Then mean will be</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mu = \frac{1+2+2+3+4}{5} = \frac{12}{5} = 2.4.
+\end{equation*}
+</div>
+<div class="para">In general the formula fot a dataset containing <span class="process-math">\(N\)</span> values, <span class="process-math">\(\{x^{(1)}, x^{(2)}, \cdots, x^{(N)}\}\text{,}\)</span> will be</div>
+<div class="displaymath process-math" id="eqn-mean-of-N-data-points">
+\begin{equation}
+\mu = \frac{1}{N} \sum_{i=1}^{N}\, x^{(i)},\tag{1.1.1}
+\end{equation}
+</div>
+<div class="para">where I have used a common summation symbol <span class="process-math">\(\sum\)</span> for brevity, which stands for</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{i=1}^{N}\, x^{(i)} \equiv x^{(1)} +  x^{(2)} +  \cdots + x^{(N)}.
+\end{equation*}
+</div>
+<div class="para">Note also that we are using superscripts to denote individual data points. We will try to use this notation in this book whenever appropriate.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-Descriptive-Statistics-2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#sec-Descriptive-Statistics-2-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="sec-Descriptive-Statistics-2-2-2">
+<div class="para" id="sec-Descriptive-Statistics-2-2-2-1">
+<em class="alert">Median</em>: Median is the number below (or above) which 50% of the data resides; it does not have to be any of the data points in the data itself. To calculate median, you would first <em class="alert">sort the data</em>. Then, if the data has odd number of data points, then median is the middle data and if the data has even number of points, then median would be the average of the two middle numbers. Thus, suppose the data is <span class="process-math">\(\{3,1,4 \}\text{,}\)</span> then you would first sort the data, giving you <span class="process-math">\(\{1, 3, 4\}\text{,}\)</span> then the median will be the middle number 3.  Suppose you have the data <span class="process-math">\(\{3,1,4,2\}\text{.}\)</span> First sort it to <span class="process-math">\(\{1,2,3,4\}\text{.}\)</span> Now, we have two middle data points, that is 2 and 3. Median will be their average, 2.5.<div class="autopermalink" data-description="Paragraph"><a href="#sec-Descriptive-Statistics-2-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#sec-Descriptive-Statistics-2-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="sec-Descriptive-Statistics-2-2-3">
+<div class="para" id="sec-Descriptive-Statistics-2-2-3-1">
+<em class="alert">Mode</em>: Mode is the most frequently occurring value in the dataset.  A dataset may have no mode, one mode, two mode, or any number of modes. For instance the dataset <span class="process-math">\({2,4,3,7,1}\)</span> does not have a mode, <span class="process-math">\(\{2, 4,4,5,7\}\)</span> has one mode equal to <span class="process-math">\(4\text{,}\)</span> the data <span class="process-math">\(\{2,4,4,5,7,7,7\}\)</span> has one mode equal to <span class="process-math">\(7\)</span> and the data <span class="process-math">\(\{1,12,12,12, 3, 4,4,4\}\)</span> has two modes, one at <span class="process-math">\(4\)</span> and the other at <span class="process-math">\(12\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-Descriptive-Statistics-2-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#sec-Descriptive-Statistics-2-2-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="sec-Descriptive-Statistics-2-2-4">
+<div class="para logical" id="sec-Descriptive-Statistics-2-2-4-1">
+<div class="para">
+<em class="alert">Variance</em>: Variance measures how much the data varies from the mean. The square root of variance is called <em class="alert">standard deviation</em>, which is usually denoted by the symbol <span class="process-math">\(\sigma\)</span> (pronounced sigma). The variance, itself is denoted by just squaring this symbol, viz., <span class="process-math">\(\sigma^2\text{.}\)</span> Suppose we have a dataset containing <span class="process-math">\(N\)</span> values, <span class="process-math">\(\{x^{(1)}, x^{(2)}, \cdots, x^{(N)}\}\text{,}\)</span> whose mean is <span class="process-math">\(\mu\text{,}\)</span> whose formula is given above in Eq. <a href="sec-Descriptive-Statistics.html#eqn-mean-of-N-data-points" class="xref" data-knowl="./knowl/xref/eqn-mean-of-N-data-points.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.1.1">(1.1.1)</a>, then variance will be</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-mean-of-N-data-points.html" id="eqn-variance-of-N-data-points">
+\begin{equation}
+\text{Variance},\ \sigma^2 = \frac{1}{N} \sum_{i=1}^{N} \left( x^{(i)} - \mu \right)^2. \tag{1.1.2}
+\end{equation}
+</div>
+<div class="para">Let’s calculate variance of dataset <span class="process-math">\(\{ 1, 2, 2, 3, 4\}\text{.}\)</span> We first calculate mean.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-mean-of-N-data-points.html">
+\begin{equation*}
+\mu = \frac{1}{5} \times (1+2+2+3+4) = 2.5.
+\end{equation*}
+</div>
+<div class="para">Then, variance</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-mean-of-N-data-points.html" id="sec-Descriptive-Statistics-2-2-4-1-12">
+\begin{align*}
+\sigma^2 \amp  = \frac{1}{5}  \left[ \left( 1 - 2.5 \right)^2 + \left( 2 - 2.5 \right)^2  + \left( 2 - 2.5 \right)^2 + \left( 3 - 2.5 \right)^2 + \left( 4 - 2.5 \right)^2\right] \\
+\amp = \frac{1}{5}  \left[. 1.5^2 + 0.5^2 + 0.5^2 + 0.5^2 + 1.5^2 \right]  = \frac{5.25}{5} = 1.05.
+\end{align*}
+</div>
+<div class="para">Finally, we can find the standard deviation.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-mean-of-N-data-points.html">
+\begin{equation*}
+\sigma = \sqrt{\sigma^2} = \sqrt{1.05} = 1.024.
+\end{equation*}
+</div>
+<div class="para">Note that the unit of <span class="process-math">\(\sigma\)</span> is same as that of the data points themselves, but that of variance will be square of the units of the data points. Thus, if the data were  height in <span class="process-math">\(\text{m}\text{,}\)</span> then <span class="process-math">\(\sigma\)</span> will be in <span class="process-math">\(\text{m}\text{,}\)</span> but variance will be in <span class="process-math">\(\text{m}^2\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-Descriptive-Statistics-2-2-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-Descriptive-Statistics-2-2-4-2">Standard deviation has considerable importance in understanding data that are nearly Gaussian in their distribution since that distribution is fully specified by only its mean and the standard deviation. Considerable interpretive statistics is based on the data that are distributed approximately Gaussian. We will study this aspect of statistics in a late section.<div class="autopermalink" data-description="Paragraph"><a href="#sec-Descriptive-Statistics-2-2-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 4"><a href="#sec-Descriptive-Statistics-2-2-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+<li id="sec-Descriptive-Statistics-2-2-5">
+<div class="para" id="sec-Descriptive-Statistics-2-2-5-1">
+<em class="alert">Histogram</em>: A histogram refers to a frequency distribution of values. It is usually presented as a plot with bins in which data may be distributed. Suppose you have data, whose values denoted by letter <span class="process-math">\(x\text{,}\)</span> in the range from <span class="process-math">\(0\)</span> to <span class="process-math">\(10\text{.}\)</span> Then, with a bin size of <span class="process-math">\(2\text{,}\)</span> you can distribute the data, with minimum value <span class="process-math">\(0\)</span> and maximum value <span class="process-math">\(10\)</span> in bins: <span class="process-math">\(0\le x \lt 2\text{,}\)</span> <span class="process-math">\(2\le x \lt 4\text{,}\)</span> <span class="process-math">\(4\le x\lt 6\text{,}\)</span> <span class="process-math">\(6\le x \lt 8\text{,}\)</span> <span class="process-math">\(8\le x \lt 10\text{,}\)</span> <span class="process-math">\(10\le x \lt 12\text{.}\)</span> Suppose, you have the following dataset <span class="process-math">\(\{ 0, 2, 2, 3, 3, 6, 7, 7, 8, 10  \}\)</span> Then, you will get the table <a href="sec-Descriptive-Statistics.html#tab-Histogram-Table" class="xref" data-knowl="./knowl/xref/tab-Histogram-Table.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 1.1.1: Histogram">Table 1.1.1</a> showing how the data is distributed across the bins.<div class="autopermalink" data-description="Paragraph"><a href="#sec-Descriptive-Statistics-2-2-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="table table-like" id="tab-Histogram-Table"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.1.1<span class="period">.</span></span><span class="space"> </span>Histogram<div class="autopermalink" data-description="Table 1.1.1: Histogram"><a href="#tab-Histogram-Table" title="Copy heading and permalink for Table 1.1.1: Histogram" aria-label="Copy heading and permalink for Table 1.1.1: Histogram">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Bin</td>
+<td class="l m b0 r0 l0 t0 lines">Range</td>
+<td class="l m b0 r0 l0 t0 lines">Data</td>
+<td class="l m b0 r0 l0 t0 lines">Count</td>
+<td class="l m b0 r0 l0 t0 lines">Frequency</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0\le x \lt 2\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\{ 1\}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">0.1</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(2\le x \lt 4\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\{ 2, 2, 3,3\}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">0.4</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(4\le x \lt 6\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\{\}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(6\le x \lt 8\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\{ 6, 7, 7\}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">0.3</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(8\le x \lt 10\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\{ 8\}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">0.1</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(10\le x \lt 12\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\{ 10\}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">0.1</td>
+</tr>
+</table></div></figure><div class="para" id="sec-Descriptive-Statistics-2-2-5-3">Graphically, you would plot the frequency column against the Bin or the Range column. The following Python Code will produce the plot given in <a href="sec-Descriptive-Statistics.html#fig-descriptive-statistics-histogram" class="xref" data-knowl="./knowl/xref/fig-descriptive-statistics-histogram.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.1.2">Figure 1.1.2</a>. The visual picture obviously gives you a very direct way to see the pattern in the data, including a coarse view of the probability distribution of various values in the data.<div class="autopermalink" data-description="Paragraph"><a href="#sec-Descriptive-Statistics-2-2-5-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="code-box"><pre class="program clipboardable line-numbers"><code class="language-py">import matplotlib.pyplot as plt
+import numpy as np
+
+# Data
+data = [0, 2, 2, 3, 3, 6, 7, 7, 8, 10]
+# Desired bin size
+bin_size = 2
+
+def plot_histogram(data, bin_size=2):
+  # Calculate bin edges
+  min_val = min(data)
+  max_val = max(data)
+  bins = np.arange(min_val, max_val + bin_size, bin_size)
+
+  # Plotting the histogram
+  plt.hist(data, bins=bins, edgecolor='black', alpha=0.7)
+
+  # Adding labels and title
+  plt.xlabel('Value')
+  plt.ylabel('Frequency')
+  plt.title(f'Histogram of Data with Bin Size = {bin_size}')
+
+  # Display the plot
+  plt.xticks(bins) # Optional: to show bin edges as x-axis ticks
+  plt.grid(axis='y', alpha=0.75) # Optional: add a grid for better readability
+  plt.show()
+  return None
+
+plot_histogram(data, bin_size)
+</code></pre></div>
+<figure class="figure figure-like" id="fig-descriptive-statistics-histogram"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/histogram.png" class="contained" alt="Display of a histogram with data in range 1 to 10 with bin size 2."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.2<span class="period">.</span></span><span class="space"> </span>Histogram with data in range 1 to 10 with bin size 2.<div class="autopermalink" data-description="Figure 1.1.2"><a href="#fig-descriptive-statistics-histogram" title="Copy heading and permalink for Figure 1.1.2" aria-label="Copy heading and permalink for Figure 1.1.2">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Item 5"><a href="#sec-Descriptive-Statistics-2-2-5" title="Copy heading and permalink for Item 5" aria-label="Copy heading and permalink for Item 5">🔗</a></div>
+</li>
+<li id="sec-Descriptive-Statistics-2-2-6">
+<div class="para" id="sec-Descriptive-Statistics-2-2-6-1">
+<em class="alert">Range and Quartiles</em>: First, we sort the data.  Range of data is simply Max minus Min of the data. It gives a measure of how widely do the values in the data lie.  For quartiles, we then divide data into 4 parts. The first quartile (Q1), also known as the lower quartile, represents the 25th percentile, meaning 25% of the data falls below this value. The second quartile (Q2), also known as the median, represents the 50th percentile, meaning 50% of the data falls below this value. The third quartile (Q3), also known as the upper quartile,  represents the 75th percentile, meaning 75% of the data falls below this value. Finally, the fourth quartile (Q4) represents the top 25% of the values of the dataset. for simplicity, suppose the sorted dataset contains <span class="process-math">\(\{1,1, 3,4, 5, 5, 7,8\}\)</span> Then <span class="process-math">\(Q1 = 1\text{,}\)</span> <span class="process-math">\(Q2 = 4\text{,}\)</span> <span class="process-math">\(Q3 = 5\text{,}\)</span> and <span class="process-math">\(Q4 = 8\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-Descriptive-Statistics-2-2-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-Descriptive-Statistics-2-2-6-2">A <em class="alert">boxplot</em> or a <em class="alert">box-and-whisker plot</em> is a compact way to display the min, quartiles and the max. We draw a box that spans the range from Q1 to Q3, called the <em class="alert">interquartile (IQR)</em> showing the middle <span class="process-math">\(50\%\)</span> of the data. By using IQR with Q1 and Q3, we also define thresholds for spotting <em class="alert">outliers</em> in the data. The outliers are shown as points on boxplots as shown in <a href="sec-Descriptive-Statistics.html#fig-descriptive-statistics-boxplots" class="xref" data-knowl="./knowl/xref/fig-descriptive-statistics-boxplots.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.1.3">Figure 1.1.3</a>.<div class="autopermalink" data-description="Paragraph"><a href="#sec-Descriptive-Statistics-2-2-6-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-Descriptive-Statistics-2-2-6-3">
+<div class="para">Example: Suppose we have the following dataset representing student scores on a quiz:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\text{scores} = [20, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 120, 150]
+\end{equation*}
+</div>
+<div class="para">In this data, we can conclude: Median (Q2) = (75 + 80)/2 = 77.5, Q1 = median of lower half = 60, Q3 = median of upper half = 90. The IQR for the box will be IQR = Q3-Q1 = 30. We also can notice outliers in the data by calculating the lower bound for the data from:</div>
+<div class="displaymath process-math" id="eqn-lower-and-upper-bounds-for-outliers">
+\begin{equation}
+\text{lower bound} = Q1 - 1.5 \times IQR = 60 - 1.5 \times 30 = 15,\tag{1.1.3}
+\end{equation}
+</div>
+<div class="displaymath process-math" id="eqn-upper-and-upper-bounds-for-outliers">
+\begin{equation}
+\text{upper bound} = Q3 + 1.5 \times IQR = 90 + 1.5 \times 30 = 135,\tag{1.1.4}
+\end{equation}
+</div>
+<div class="para">Here, we see that the data of 150 is an outlier.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-Descriptive-Statistics-2-2-6-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-Descriptive-Statistics-2-2-6-4">The following Python program will generate a good looking boxplot of the data. <div class="code-box"><pre class="program clipboardable line-numbers"><code class="language-py">import matplotlib.pyplot as plt
+import numpy as np
+
+# Sample data
+scores = [20, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 120, 150]
+
+def gen_boxplot(data):
+  # Create the boxplot using matplotlib
+  plt.figure(figsize=(8, 4))
+  plt.boxplot(data, vert=False, patch_artist=True,
+              boxprops=dict(facecolor='lightblue'),
+              medianprops=dict(color='red'))
+
+  plt.title('Boxplot of Student Scores')
+  plt.xlabel('Score')
+  plt.grid(True)
+  plt.savefig("boxplot.png")
+  plt.show()
+#-----------
+gen_boxplot(scores)
+</code></pre></div> <figure class="figure figure-like" id="fig-descriptive-statistics-boxplots"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/boxplot.png" class="contained" alt="Display of a boxplot with one outlier."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.3<span class="period">.</span></span><span class="space"> </span>Illustration of a Boxplot. The box shows the middle 50% of the data and the outliers are shown as point, here the point at 150 is the only outlier. The net range, other than outlier is shown between the two lines.<div class="autopermalink" data-description="Figure 1.1.3"><a href="#fig-descriptive-statistics-boxplots" title="Copy heading and permalink for Figure 1.1.3" aria-label="Copy heading and permalink for Figure 1.1.3">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Paragraph"><a href="#sec-Descriptive-Statistics-2-2-6-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 6"><a href="#sec-Descriptive-Statistics-2-2-6" title="Copy heading and permalink for Item 6" aria-label="Copy heading and permalink for Item 6">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-Descriptive-Statistics-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Section 1.1: Descriptive Statistics"><a href="#sec-Descriptive-Statistics" title="Copy heading and permalink for Section 1.1: Descriptive Statistics" aria-label="Copy heading and permalink for Section 1.1: Descriptive Statistics">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="ch-Essential-Probability-and-Statistics.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-useful-descriptive-statistics-tools.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

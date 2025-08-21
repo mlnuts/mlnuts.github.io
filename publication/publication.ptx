@@ -11,39 +11,15 @@
 
 <publication>
 
-
-    <deploy>
-        <!-- Branch to push the HTML files to -->
-        <target branch="main"/>
-        
-        <!-- Folder inside the branch to deploy; empty means root -->
-        <folder/>
-        
-        <!-- Commit message for deployment -->
-        <message>Deploy PreTeXt HTML to main branch</message>
-        
-        <!-- Strategy can be default_target or force; default_target is standard -->
-        <strategy>default_target</strategy>
-        
-        <!-- Optional: staging area before deployment -->
-        <stage>output/stage</stage>
-        
-        <!-- Optional: remote repository name, usually 'origin' -->
-        <remote>origin</remote>
-        
-        <!-- Optional: toggle whether to automatically push -->
-        <!-- <push>true</push> -->
-    </deploy>
-
   <target>
-    <name>GitHubPages</name>      <!-- Just a descriptive name for the deployment target -->
-    <type>web</type>              <!-- We're deploying a website -->
-    <format>html</format>         <!-- PreTeXt will deploy the HTML output -->
+    <name>GitHubPages</name>
+    <type>web</type>
+    <format>html</format>
     <destination>
       <git-repo>git@github-mlnuts:mlnuts/mlnuts.github.io.git</git-repo>
-      <branch>main</branch>      <!-- Branch where the HTML will be pushed -->
-      <directory>.</directory>   <!-- Deploy to root of the branch -->
-      <url>https://mlnuts.github.io/</url> <!-- The live site URL -->
+      <branch>main</branch>
+      <directory>.</directory>   <!-- Deploy to root of branch -->
+      <url>https://mlnuts.github.io/</url>
     </destination>
   </target>
 
