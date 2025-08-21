@@ -68,7 +68,7 @@
         <p>
             The Central Limit Theorem says that regardless of the distribution <m>P(X_i)</m> of <m>X_i</m>'s, which may be Bernouli, Binomial, Exponential, or whatever, the distribution of a <m>\bar{X}_n</m> tends towards a bell-shaped Gaussian wil larger and larger values of <m>n</m>. Specifically,
             <men xml:id="eqn-CLT">
-                \lim_{n\rightarrow \infty}\sqrt{n}\left( \bar{X}_n - \mu\right)  \xrightarrow{d} \, \matcal{N}(0, \sigma^2),          
+                \lim_{n\rightarrow \infty}\sqrt{n}\left( \bar{X}_n - \mu\right)  \xrightarrow{d} \, \mathcal{N}(0, \sigma^2),          
             </men>
             where <m>d</m> above arrow just indicates the result <q>in distribution</q> and <m>\sigma^2</m> is the true variance of the component <m>X_i</m> variables. The convergence in distribution simly means that the CDF of the random variables on the left, i.e., <m>\sqrt{n}\left( \bar{X}_n - \mu\right)</m> converge to the Gaussian CDF, although it is written as <m>\mathcal{N}</m> in these equations.
         </p>  
