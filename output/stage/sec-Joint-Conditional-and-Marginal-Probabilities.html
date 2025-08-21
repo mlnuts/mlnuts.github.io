@@ -161,7 +161,10 @@ eBookConfig.enable_chatcodes =  false;
 <div class="toc-title-box"><a href="sec-Joint-Conditional-and-Marginal-Probabilities.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Joint, Conditional and Marginal Probabilities</span></a></div>
 <ul class="structural toc-item-list active">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Joint-Conditional-and-Marginal-Probabilities.html#subsec-Random-Variables" class="internal"><span class="codenumber">1.5.1</span> <span class="title">Random Variables, Probabilities, and Expections</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Joint-Conditional-and-Marginal-Probabilities.html#subsec-Joint-Probability" class="internal"><span class="codenumber">1.5.2</span> <span class="title">Joint ad Marginal Probabilities</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-Joint-Conditional-and-Marginal-Probabilities.html#subsec-Joint-Probability" class="internal"><span class="codenumber">1.5.2</span> <span class="title">Joint ad Marginal Probabilities</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Joint-Conditional-and-Marginal-Probabilities.html#subsubsec-Covariance-and-Correlation" class="internal"><span class="codenumber">1.5.2.1</span> <span class="title">Covariance and Correlation</span></a></div></li></ul>
+</li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Joint-Conditional-and-Marginal-Probabilities.html#subsec-Conditional-Probability" class="internal"><span class="codenumber">1.5.3</span> <span class="title">Conditional Probability</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Joint-Conditional-and-Marginal-Probabilities.html#subsec-conditional-probability-from-joint-probability" class="internal"><span class="codenumber">1.5.4</span> <span class="title">Bayes’ Rule</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Joint-Conditional-and-Marginal-Probabilities.html#subsec-Independent-Variables" class="internal"><span class="codenumber">1.5.5</span> <span class="title">Independent Variables</span></a></div></li>
@@ -274,9 +277,9 @@ P(\Omega) = \sum_{i=1}^N P(X=x_i) = \sum_{i=1}^N p_1 = 1.\tag{1.5.2}
 <div class="autopermalink" data-description="Subsection 1.5.1: Random Variables, Probabilities, and Expections"><a href="#subsec-Random-Variables" title="Copy heading and permalink for Subsection 1.5.1: Random Variables, Probabilities, and Expections" aria-label="Copy heading and permalink for Subsection 1.5.1: Random Variables, Probabilities, and Expections">🔗</a></div></section><section class="subsection" id="subsec-Joint-Probability"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.5.2</span><span class="space"> </span><span class="title">Joint ad Marginal Probabilities</span>
 </h3>
-<div class="para" id="subsec-Joint-Probability-2">Suppose you have two discrete random variables, e.g, does the patient have a disease <span class="process-math">\((X)\)</span> and is the diagnosis positive <span class="process-math">\((Y)\text{.}\)</span> Both of these variables have just two values: <span class="process-math">\(\Omega_X = \{ x_1 = \text{Yes}, x_2 = \text{No}\}\)</span> and <span class="process-math">\(\Omega_Y = \{ y_1 = \text{Yes}, y_2 = \text{No}\}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Joint-Probability-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<section class="introduction" id="subsec-Joint-Probability-2"><div class="para" id="subsec-Joint-Probability-2-1">Suppose you have two discrete random variables, e.g, does the patient have a disease <span class="process-math">\((X)\)</span> and is the diagnosis positive <span class="process-math">\((Y)\text{.}\)</span> Both of these variables have just two values: <span class="process-math">\(\Omega_X = \{ x_1 = \text{Yes}, x_2 = \text{No}\}\)</span> and <span class="process-math">\(\Omega_Y = \{ y_1 = \text{Yes}, y_2 = \text{No}\}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Joint-Probability-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="subsec-Joint-Probability-3">
+<div class="para logical" id="subsec-Joint-Probability-2-2">
 <div class="para">
 <em class="alert">Joint probability</em> is probability measure over the outcome space <span class="process-math">\(\Omega\)</span> that has all the combinations of the elements of <span class="process-math">\(\Omega_X\)</span> and <span class="process-math">\(\Omega_Y\text{.}\)</span> That is, we will specify probability measure for each of the elements of following <span class="process-math">\(\Omega\)</span>
 </div>
@@ -286,7 +289,7 @@ P(\Omega) = \sum_{i=1}^N P(X=x_i) = \sum_{i=1}^N p_1 = 1.\tag{1.5.2}
 \end{equation*}
 </div>
 <div class="para">That is we need the following probabilities.</div>
-<div class="displaymath process-math" id="subsec-Joint-Probability-3-7">
+<div class="displaymath process-math" id="subsec-Joint-Probability-2-2-7">
 \begin{align*}
 p_{11} \amp = P(X=x_1, Y=y_1) \\
 p_{12} \amp = P(X=x_1, Y=y_2) \\
@@ -301,9 +304,9 @@ p_{22} \amp = P(X=x_2, Y=y_2)
 \text{Joint Probability } \equiv P(X,Y) \equiv p(x,y).
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Joint-Probability-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Joint-Probability-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="subsec-Joint-Probability-4">
+<div class="para logical" id="subsec-Joint-Probability-2-3">
 <div class="para">If you ignore <span class="process-math">\(Y\)</span> and just look at the probabilities of patient having the disease and not having the disease, they are called <em class="alert">Marginal Probabilities</em> of <span class="process-math">\(X\text{.}\)</span> If you had more than two variables, say <span class="process-math">\(Y, Z, A, B, \cdots\text{,}\)</span> you would just ignore all the other variables to focus only on <span class="process-math">\(X\)</span> to obtain its marginal probabilities.</div>
 <div class="displaymath process-math" id="eqn-marginal-probability-of-X">
 \begin{equation}
@@ -312,11 +315,11 @@ P(x=x_1) = p_1,\ \ P(X=x_2) = p_2.\tag{1.5.8}
 </div>
 <div class="para">Similar to the notation of joint probabilities, we often write the marginal probabilities by simply <span class="process-math">\(P(X)\)</span> or <span class="process-math">\(p(x)\text{.}\)</span>
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Joint-Probability-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Joint-Probability-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="subsec-Joint-Probability-5">
+<div class="para logical" id="subsec-Joint-Probability-2-4">
 <div class="para">It turns out that the marginal probabilities can be obtained from joint probabilities by just summing out the other variable’s values in the joint probability. Thus, in our example, the p_1 and p_2 of <span class="process-math">\(X\)</span> alone will be</div>
-<div class="displaymath process-math" id="subsec-Joint-Probability-5-2">
+<div class="displaymath process-math" id="subsec-Joint-Probability-2-4-2">
 \begin{align*}
 p_1 \amp = p_{11} + p_{12} \equiv \sum_{y=1}^2 P(X=1,Y=y) \\
 p_2 \amp = p_{21} + p_{22} \equiv \sum_{y=1}^2 P(X=2,Y=y) 
@@ -324,9 +327,63 @@ p_2 \amp = p_{21} + p_{22} \equiv \sum_{y=1}^2 P(X=2,Y=y)
 </div>
 <div class="para">Same will be the case if you are interested in the marginal probability of <span class="process-math">\(Y\text{.}\)</span>
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Joint-Probability-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Joint-Probability-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section><section class="subsubsection" id="subsubsec-Covariance-and-Correlation"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">1.5.2.1</span><span class="space"> </span><span class="title">Covariance and Correlation</span>
+</h4>
+<div class="para" id="subsubsec-Covariance-and-Correlation-2">A very common aspect of dealing with more than one random variable, say <span class="process-math">\(X\)</span> (e.g., height of a man) and <span class="process-math">\(Y\)</span> (e.g., the weight of the man) is to find out to what extent they tend to vary together. <em class="alert">Covariance</em> is a measure of their varying together either in the same direction or in the opposite direction. The normalized version of covariance so that result lies between <span class="process-math">\(-1\)</span> and <span class="process-math">\(+1\)</span> is called <em class="alert">correlation</em>.<div class="autopermalink" data-description="Paragraph"><a href="#subsubsec-Covariance-and-Correlation-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Subsection 1.5.2: Joint ad Marginal Probabilities"><a href="#subsec-Joint-Probability" title="Copy heading and permalink for Subsection 1.5.2: Joint ad Marginal Probabilities" aria-label="Copy heading and permalink for Subsection 1.5.2: Joint ad Marginal Probabilities">🔗</a></div></section><section class="subsection" id="subsec-Conditional-Probability"><h3 class="heading hide-type">
+<div class="para logical" id="subsubsec-Covariance-and-Correlation-3">
+<div class="para">Let <span class="process-math">\(P(X,Y)\)</span> denote the joint probability of <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\text{.}\)</span> Then, covariance is the following expectation value computed in this probability distribution.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-Covariance.html" id="eqn-Covariance">
+\begin{equation}
+\text{Cov}(X,Y) = \langle  \left( X - \mu_X \right)   \left( Y - \mu_Y \right) \rangle,\tag{1.5.9}
+\end{equation}
+</div>
+<div class="para">where to keep the formula simpler, the mean values of <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> are dented by <span class="process-math">\(\mu_X\)</span> and <span class="process-math">\(\mu_Y\)</span> respectively.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-Covariance.html">
+\begin{equation*}
+\mu_X = \langle X \rangle,\quad \mu_Y = \langle Y \rangle
+\end{equation*}
+</div>
+<div class="para">By opening the braces inside the angle brackets in Eq. <a href="sec-Joint-Conditional-and-Marginal-Probabilities.html#eqn-Covariance" class="xref" data-knowl="./knowl/xref/eqn-Covariance.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.5.9">(1.5.9)</a>, we can rewrite the Covariance formula in another way.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-Covariance.html" id="eqn-Covariance-2">
+\begin{equation}
+\text{Cov}(X,Y) = \langle  X\,Y \rangle - \mu_X\,\mu_Y,\tag{1.5.10}
+\end{equation}
+</div>
+<div class="para">where <span class="process-math">\(\langle  X\,Y \rangle\)</span> is to be computed using <span class="process-math">\(P(X,Y)\text{.}\)</span> For <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> discrete variable and <span class="process-math">\(P(X,Y)\)</span> a PMF, the calculation will be</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-Covariance.html">
+\begin{equation*}
+\langle  X\,Y \rangle = \sum_{x_i} \sum_{y_j} x_i y_j P(x_i, y_j).
+\end{equation*}
+</div>
+<div class="para">Themean values <span class="process-math">\(\mu_X\)</span> and <span class="process-math">\(\mu_Y\)</span> in this case would relate to the marginals <span class="process-math">\(P(X\)</span> and <span class="process-math">\(P(Y)\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-Covariance.html" id="subsubsec-Covariance-and-Correlation-3-22">
+\begin{align*}
+\mu_X\amp = \sum_{x_i} \sum_{y_j} x_i P(x_i, y_j) = \sum_{x_i} x_i\, P(x_i).\\
+\mu_Y\amp = \sum_{x_i} \sum_{y_j} y_j P(x_i, y_j) = \sum_{y_j} y_j\, P(y_j). 
+\end{align*}
+</div>
+<div class="para">Covariance can take any real value, <span class="process-math">\(\text{Cov}(X,Y) \in (-\infty, +\infty)\text{.}\)</span> By dividing the covariance by the standard deviations of <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> we get correlations, whose values are in the range <span class="process-math">\(\text{Corr}(X,Y) \in [-1, +]\text{.}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-Covariance.html" id="eqn-Correlation">
+\begin{equation}
+\text{Corr}(X,Y) = \frac{ \text{Cov}(X,Y) }{ \sigma_X\, \sigma_Y }.\tag{1.5.11}
+\end{equation}
+</div>
+<div class="para">The standard deviations in the joint distribution are the same as the standard deviation in the marginal as was the case for the means <span class="process-math">\(\mu_X\)</span> and <span class="process-math">\(\mu_Y\text{.}\)</span> For instance, in the case of discrete random variables, we will get the following for the variances, which is the square of standard deviations.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-Covariance.html" id="subsubsec-Covariance-and-Correlation-3-30">
+\begin{align*}
+\sigma_X^2 \amp = \sum_{x_i} \sum_{y_j} \left( x_i -\mu_X \right)^2 P(x_i, y_j) = \sum_{x_i} \left( x_i -\mu_X \right)^2\, P(x_i).\\
+\sigma_Y^2\amp = \sum_{x_i} \sum_{y_j}  \left( y_j -\mu_Y \right)^2 P(x_i, y_j) = \sum_{y_j} \left( y_j -\mu_Y \right)^2\, P(y_j). 
+\end{align*}
+</div>
+<div class="para">The positive correlation (or covariance) means <span class="process-math">\(X\)</span> vary in the same direction, i.e., increasing <span class="process-math">\(X\)</span> and increasing <span class="process-math">\(Y\)</span> occur together. The opposite is the case for negative correlation (or covariance).</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsubsec-Covariance-and-Correlation-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsubsection 1.5.2.1: Covariance and Correlation"><a href="#subsubsec-Covariance-and-Correlation" title="Copy heading and permalink for Subsubsection 1.5.2.1: Covariance and Correlation" aria-label="Copy heading and permalink for Subsubsection 1.5.2.1: Covariance and Correlation">🔗</a></div></section><div class="autopermalink" data-description="Subsection 1.5.2: Joint ad Marginal Probabilities"><a href="#subsec-Joint-Probability" title="Copy heading and permalink for Subsection 1.5.2: Joint ad Marginal Probabilities" aria-label="Copy heading and permalink for Subsection 1.5.2: Joint ad Marginal Probabilities">🔗</a></div></section><section class="subsection" id="subsec-Conditional-Probability"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.5.3</span><span class="space"> </span><span class="title">Conditional Probability</span>
 </h3>
 <div class="para" id="subsec-Conditional-Probability-2">Conditional probability is a little tricky and is the most used in Machine Learning. Conditional probability is denoted by <span class="process-math">\(P(X|Y)\text{.}\)</span> But, this is too abstract a notation. I will denote it by <span class="process-math">\(P(X|Y=y)\)</span> to be a conditional probability  of <span class="process-math">\(X\)</span> given that the random variable <span class="process-math">\(Y\)</span> HAS A PARTICULAR VALUE <span class="process-math">\(y\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Conditional-Probability-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -448,7 +505,7 @@ p(+\ |\ D ) \ne 1 -  p(+\ |\ N ).
 <div class="para">By product rule of probabilities, it’s clear that</div>
 <div class="displaymath process-math" id="eqn-joint-prob-and-cond-prob-event">
 \begin{equation}
-P(X=x_i, Y=y_j) = P(X=x_i|Y=y_j) P(Y=y_j).\tag{1.5.9}
+P(X=x_i, Y=y_j) = P(X=x_i|Y=y_j) P(Y=y_j).\tag{1.5.12}
 \end{equation}
 </div>
 <div class="para">You can write this as</div>
@@ -460,7 +517,7 @@ P(X=x_i|Y=y_j) = \frac{P(X=x_i, Y=y_j)}{ P(Y=y_j)}\ \ \left(  P(Y=y_j) \ne 0\rig
 <div class="para">Often, we write this relation in a more general language rather then event by event.</div>
 <div class="displaymath process-math" id="eqn-joint-prob-and-cond-prob-general">
 \begin{equation}
-P(X|Y) = \frac{P(X, Y)}{ P(Y)}.\tag{1.5.10}
+P(X|Y) = \frac{P(X, Y)}{ P(Y)}.\tag{1.5.13}
 \end{equation}
 </div>
 <div class="para">The marginal <span class="process-math">\(P(Y=y_j)\)</span> can, of course be obtained from the joint probability by marginalizing <span class="process-math">\(X\text{,}\)</span> meaning summing over all <span class="process-math">\(X\text{.}\)</span>
@@ -473,7 +530,7 @@ P(Y=y_j) = \sum_{x_i} P(X=x_i, Y=y_j).
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec-conditional-probability-from-joint-probability-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="subsec-conditional-probability-from-joint-probability-4">
-<div class="para">Notice that on the left side of Eq. <a href="sec-Joint-Conditional-and-Marginal-Probabilities.html#eqn-joint-prob-and-cond-prob-event" class="xref" data-knowl="./knowl/xref/eqn-joint-prob-and-cond-prob-event.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.5.9">(1.5.9)</a>, the order of listing of <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> values is arbitrary, i.e.,</div>
+<div class="para">Notice that on the left side of Eq. <a href="sec-Joint-Conditional-and-Marginal-Probabilities.html#eqn-joint-prob-and-cond-prob-event" class="xref" data-knowl="./knowl/xref/eqn-joint-prob-and-cond-prob-event.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.5.12">(1.5.12)</a>, the order of listing of <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> values is arbitrary, i.e.,</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-joint-prob-and-cond-prob-event.html ./knowl/xref/eqn-joint-prob-and-cond-prob-event.html ./knowl/xref/eqn-joint-prob-and-conditional-prob-second-way.html">
 \begin{equation*}
 P(X=x_i, Y=y_j) =  P(Y=y_j, X=x_i).
@@ -482,19 +539,19 @@ P(X=x_i, Y=y_j) =  P(Y=y_j, X=x_i).
 <div class="para">Thus, it is equally possible to work with a given <span class="process-math">\(X=x_i\)</span> and the associated conditional probability of <span class="process-math">\(Y\text{,}\)</span> i.e., <span class="process-math">\(P(Y=y_j | X=x_i)\)</span> and the marginal probability <span class="process-math">\(P(X=x_i)\text{.}\)</span> This will give us</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-joint-prob-and-cond-prob-event.html ./knowl/xref/eqn-joint-prob-and-cond-prob-event.html ./knowl/xref/eqn-joint-prob-and-conditional-prob-second-way.html" id="eqn-joint-prob-and-conditional-prob-second-way">
 \begin{equation}
-P(X=x_i, Y=y_j) = P(Y=y_j|X=x_i) P(X=x_i).\tag{1.5.11}
+P(X=x_i, Y=y_j) = P(Y=y_j|X=x_i) P(X=x_i).\tag{1.5.14}
 \end{equation}
 </div>
-<div class="para">From Eqs. <a href="sec-Joint-Conditional-and-Marginal-Probabilities.html#eqn-joint-prob-and-cond-prob-event" class="xref" data-knowl="./knowl/xref/eqn-joint-prob-and-cond-prob-event.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.5.9">(1.5.9)</a> and <a href="sec-Joint-Conditional-and-Marginal-Probabilities.html#eqn-joint-prob-and-conditional-prob-second-way" class="xref" data-knowl="./knowl/xref/eqn-joint-prob-and-conditional-prob-second-way.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.5.11">(1.5.11)</a>, we get the following relation.</div>
+<div class="para">From Eqs. <a href="sec-Joint-Conditional-and-Marginal-Probabilities.html#eqn-joint-prob-and-cond-prob-event" class="xref" data-knowl="./knowl/xref/eqn-joint-prob-and-cond-prob-event.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.5.12">(1.5.12)</a> and <a href="sec-Joint-Conditional-and-Marginal-Probabilities.html#eqn-joint-prob-and-conditional-prob-second-way" class="xref" data-knowl="./knowl/xref/eqn-joint-prob-and-conditional-prob-second-way.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.5.14">(1.5.14)</a>, we get the following relation.</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-joint-prob-and-cond-prob-event.html ./knowl/xref/eqn-joint-prob-and-cond-prob-event.html ./knowl/xref/eqn-joint-prob-and-conditional-prob-second-way.html" id="eqn-Bayes-specific">
 \begin{equation}
-P(X=x_i|Y=y_j) P(Y=y_j) = P(Y=y_j|X=x_i) P(X=x_i).\tag{1.5.12}
+P(X=x_i|Y=y_j) P(Y=y_j) = P(Y=y_j|X=x_i) P(X=x_i).\tag{1.5.15}
 \end{equation}
 </div>
 <div class="para">Writing this in more general notation, we get the relation that is known as <em class="alert">Bayes’ theorem</em> or <em class="alert">Bayes’ Rule</em>.</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-joint-prob-and-cond-prob-event.html ./knowl/xref/eqn-joint-prob-and-cond-prob-event.html ./knowl/xref/eqn-joint-prob-and-conditional-prob-second-way.html" id="eqn-Bayes-general">
 \begin{equation}
-P(X|Y) P(Y) = P(Y|X) P(X).\tag{1.5.13}
+P(X|Y) P(Y) = P(Y|X) P(X).\tag{1.5.16}
 \end{equation}
 </div>
 <div class="para">It has become very important in the age of ML since many algorithms rely on it.</div>
@@ -576,7 +633,7 @@ P(C\ |\ +) = \frac{ P(+\ |\ C) P(C) }{P(+)} = \frac{0.80 \times 0.01}{0.9485} = 
 <div class="para">Two random variables are said to be independent if their joint probability factors in the product of their marginal probabilities.</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-independent-variables.html" id="eqn-independent-variables">
 \begin{equation}
-P(X,Y) = P(X) P(Y)\ \ \text{(Independent variables)}\tag{1.5.14}
+P(X,Y) = P(X) P(Y)\ \ \text{(Independent variables)}\tag{1.5.17}
 \end{equation}
 </div>
 <div class="para">Keep in mind that behind the scene, probabilities in this equation are over events, i.e., it’s for <span class="process-math">\(X\)</span> having some particular value and <span class="process-math">\(Y\)</span> having its own particular value. If <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> are independent variables, we aexpect</div>
@@ -585,7 +642,7 @@ P(X,Y) = P(X) P(Y)\ \ \text{(Independent variables)}\tag{1.5.14}
 P(X = x_i\, \text{and}\, Y-+y_j) = P(X=x_i) P(Y=y_j)\ \ \text{for all }x_i \text{ and } y_j.
 \end{equation*}
 </div>
-<div class="para">We wouldn’t write our equations in the verbose manner, prefering to keep it simple. But, beware that probabilities are probabilities of events! Now, we write the left side of Eq. <a href="sec-Joint-Conditional-and-Marginal-Probabilities.html#eqn-independent-variables" class="xref" data-knowl="./knowl/xref/eqn-independent-variables.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.5.14">(1.5.14)</a> using marginal and conditional probabilities.</div>
+<div class="para">We wouldn’t write our equations in the verbose manner, prefering to keep it simple. But, beware that probabilities are probabilities of events! Now, we write the left side of Eq. <a href="sec-Joint-Conditional-and-Marginal-Probabilities.html#eqn-independent-variables" class="xref" data-knowl="./knowl/xref/eqn-independent-variables.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.5.17">(1.5.17)</a> using marginal and conditional probabilities.</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-independent-variables.html">
 \begin{equation*}
 P(X|Y)P(Y) = P(X) P(Y)\ \ \text{(Independent variables)}
@@ -622,7 +679,7 @@ P( 0.1 \le X \le 0.3 ), \text{Probability that outcome of the experiment will li
 <div class="para">To help with computing such probabilities, we introduce a concept of probability density <span class="process-math">\(\rho(x)\text{,}\)</span> which will be probability per unit of <span class="process-math">\(x\text{.}\)</span> Now, probability of outcome of an experiment falling in an infinitesimal range <span class="process-math">\(x \le X \le x+dx\)</span> will be</div>
 <div class="displaymath process-math" id="eqn-probability-density">
 \begin{equation}
-P(x \le X \le x+dx) = \rho(x)\,dx.\tag{1.5.15}
+P(x \le X \le x+dx) = \rho(x)\,dx.\tag{1.5.18}
 \end{equation}
 </div>
 <div class="para">Then, probability in a range will just be an integral over that range</div>
@@ -634,13 +691,13 @@ P( 0.1 \le X \le 0.3 ) =  \int_{0.1}^{0.3}\, \rho(x)\,dx.
 <div class="para">The probability density must be such that when integrated over all possible outcomes, i.e., the set <span class="process-math">\(\Omega\text{,}\)</span> it should give a value of 1. Thus in the case of outcomes being in the range <span class="process-math">\(0 \le X \le 1\text{,}\)</span> we require the following normalization condition.</div>
 <div class="displaymath process-math" id="eqn-probability-density-normalized">
 \begin{equation}
-P( \Omega ) =  \int_{\text{full range}}\, \rho(x)\,dx = 1.\tag{1.5.16}
+P( \Omega ) =  \int_{\text{full range}}\, \rho(x)\,dx = 1.\tag{1.5.19}
 \end{equation}
 </div>
 <div class="para">You may have heard of a Gaussian probability density of a variable <span class="process-math">\(X\text{,}\)</span> whose range of possibilities is the entire real line, i.e., <span class="process-math">\(-\infty \lt X \lt +\infty\text{,}\)</span> the probability density  with mean <span class="process-math">\(\mu\)</span> and standard deviation <span class="process-math">\(\sigma\)</span> is</div>
 <div class="displaymath process-math" id="eqn-gaussian-probability-density">
 \begin{equation}
-\rho(x) = \frac{1}{\sqrt{2\pi \sigma^2}}\, e^{ -\frac{(x-\mu)^2}{2\sigma^2} },\tag{1.5.17}
+\rho(x) = \frac{1}{\sqrt{2\pi \sigma^2}}\, e^{ -\frac{(x-\mu)^2}{2\sigma^2} },\tag{1.5.20}
 \end{equation}
 </div>
 <div class="para">where the factor in front of the exponential makes sure that ir is properly normalized to give 1.</div>
@@ -654,32 +711,32 @@ P( \Omega ) =  \int_{\text{full range}}\, \rho(x)\,dx = 1.\tag{1.5.16}
 </div>
 <div class="displaymath process-math" id="eqn-distribution-function">
 \begin{equation}
-F(x) = \int_{-\infty}^x\, \rho(x)\, dx\tag{1.5.18}
+F(x) = \int_{-\infty}^x\, \rho(x)\, dx\tag{1.5.21}
 \end{equation}
 </div>
 <div class="para">Clearly, distribution function is probability of the event that the random variable <span class="process-math">\(X\)</span> is in the range <span class="process-math">\(-\infty \lt X \le x\text{.}\)</span>
 </div>
 <div class="displaymath process-math" id="eqn-distribution-func-as-prob">
 \begin{equation}
-F(x) = P( \{ -\infty \lt X \le x \} ) \equiv P( -\infty \lt X \le x ).\tag{1.5.19}
+F(x) = P( \{ -\infty \lt X \le x \} ) \equiv P( -\infty \lt X \le x ).\tag{1.5.22}
 \end{equation}
 </div>
 <div class="para">It is readily seen that probability of <span class="process-math">\(X\)</span> over any finite range <span class="process-math">\(a \le X \le b\)</span> will simply be</div>
 <div class="displaymath process-math" id="eqn-probability-over-a-range-and-">
 \begin{equation}
-P( a \le X \le b ) = F(b) - F(a).\tag{1.5.20}
+P( a \le X \le b ) = F(b) - F(a).\tag{1.5.23}
 \end{equation}
 </div>
 <div class="para">From complementarity of events <span class="process-math">\(\{  -\infty \lt X \le x \}\)</span> and  <span class="process-math">\(\{  X \gt x \}\text{,}\)</span> we immediately know that</div>
 <div class="displaymath process-math" id="eqn-rpob-for-X-gt-x">
 \begin{equation}
-P( X &gt; x) = 1 - P( -\infty \lt X \le x ) = 1 - F(x).\tag{1.5.21}
+P( X &gt; x) = 1 - P( -\infty \lt X \le x ) = 1 - F(x).\tag{1.5.24}
 \end{equation}
 </div>
 <div class="para">Using the fundamental theorem of Calculus, it is immediately obvious that probability density is just the detivative of the distribution function.</div>
 <div class="displaymath process-math" id="eqn-prob-density-as-derivative">
 \begin{equation}
-\rho(x) = \frac{dF}{dx}.\tag{1.5.22}
+\rho(x) = \frac{dF}{dx}.\tag{1.5.25}
 \end{equation}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#subsubsec-Cumulative-Distribution-Function-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -689,7 +746,7 @@ P( X &gt; x) = 1 - P( -\infty \lt X \le x ) = 1 - F(x).\tag{1.5.21}
 </div>
 <div class="displaymath process-math" id="eqn-distribution-function-Normal">
 \begin{equation}
-\Phi(x) = \int_{-\infty}^{x}\, \frac{1}{\sqrt{2}}\,\exp\left(-x^2/2\right)\, dx.\tag{1.5.23}
+\Phi(x) = \int_{-\infty}^{x}\, \frac{1}{\sqrt{2}}\,\exp\left(-x^2/2\right)\, dx.\tag{1.5.26}
 \end{equation}
 </div>
 <div class="para">From complementarity of events <span class="process-math">\(\{  -\infty \lt X \le x \}\)</span> and  <span class="process-math">\(\{  X \gt x \}\text{,}\)</span> it is clear that</div>
