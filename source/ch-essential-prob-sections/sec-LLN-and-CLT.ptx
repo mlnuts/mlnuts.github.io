@@ -3,7 +3,81 @@
     <title>Law of Large Numbers and Central Limit Theorem</title>
     <introduction>
         <p>
+            The Law of Large Numbers (LLN) is often hand-waved as <q>averages go to the mean,</q> but there are really two distinct theorems (weak vs strong), different modes of convergence, and subtle conditions. Similary, the Central Limit Theorem (CLT) is one of the deepest ideas in probability, and it's often glossed over as <q>averages look normal.</q> 
+        </p>  
+        <p>  
+            Let's take a slow, detailed walk through them. Although I do not intend our treatment here to be exhaustive, but there will be enough detail for you to get a fuller understanding of what they represent and how to use them.
         </p>
+        <p>
+            <alert>The Setup:</alert>
+        </p>
+        <p>
+            The set up for both LLN and CLT is the same. Suppose you have a number of independent random variables <m>X_1, X_2, \cdots, X_n</m>, all with identical distribution functions <m>P(X)</m>, same for every <m>X_i</m>. Let <m>\mu</m> be the man and <m>\sigma^2</m> the variance of the common distribution.
+            <mdn>
+                <mrow xml:id="eqn-true-mean"> \amp \mu  = \langle X_i\rangle,\qquad \text{same for every }X_i </mrow>
+                <mrow xml:id="eqn-true-var">\amp \sigma^2  = \langle X_i^2\rangle - \mu^2,\qquad \text{same for every }X_i </mrow>
+            </mdn>
+            We will call these values <alert>true mean</alert> and <alert>true variance</alert>.   
+            Now, we introduce a new random variable, called the <alert>sample mean</alert> by 
+            <men xml:id="eqn-sample-mean-random-variable">
+                \bar{X}_n = \frac{1}{n}\,\left( X_1 + X_2 + \cdots + X_n  \right).
+            </men>
+            The bar over <m>X</m> just distinguishes it from the <m>n^\text{th}\, X</m> in the collection of random variables. More importantly, <m>\bar{X}_n</m> is not one number, but a random variable, which will take values in the range given by the components <m>X_i</m>. For instance, if <m>X_i \in \{ 0, 1 \}</m>, a Bernoulli random variable, then, <m>\bar{X}_n</m> would actually take many values, here  <m>\bar{X}_n \in \{ 0, 1/n, 2/n, \cdots, (n-1)/n, 1\}</m>.
+        </p>  
+        <p>
+            The random variable <m>\bar{X}_n</m> will have it's own probability distribution, <m>P(\bar{X}_n)</m>. We call the mean and variance of this dstribution <alert>sample mean</alert> and <alert>sample variance</alert>.
+            <men xml:id="eqn-">
+                \bar{\mu}_n = \langle \bar{X}_n \rangle,\qquad \bar{\sigma}_n^2 =  \langle \bar{X}_n^2 \rangle - \bar{\mu}^2.
+            </men>
+            
+        </p>
+
     </introduction>
+    <subsection xml:id="subsec-Law-of-Large-Numbers">
+        <title>Law of Large Numbers (LLN) </title>
+        <p>
+            The LLN addresses the question: <alert>What can we say about the mean of the sample mean <m>\bar{X}_n</m></alert> as <m>n</m> grows large? Clearly, the probability distribution of <m>\bar{X}_n</m> varies if we change <m>n</m>. 
+        </p>
+        <p>
+            <alert>The weak law of LLN</alert> asserts that probablity that <m>|\bar{X}_n - \mu|</m>, where <m>\mu</m> is the true mean defined above in Eq. <xref ref="eqn-true-mean"/>, can be made smaller than any positive real number as long s you go sufficiently large <m>n</m>. Mathematically, we express it as the complement of this probility.
+            <me>
+                \lim_{n\rightarrow\infty}P(|\bar{X}_n - \mu| \gt \epsilon ) = 0,\qquad \text{for all } \epsilon\gt 0.
+            </me>
+
+            That is, the probability that <m>\bar{X}_n</m> strays outside of <m>\mu \pm \epsilon</m> goes to zero as <n>n \rightarrow \infty</n>. 
+            This result is also expressed in a more compact notation, with a letter <m>P</m> above arrow implying <q>in probability</q>.
+            <me>
+                \bar{X}_n \xrightarrow{P}\, \mu.
+            </me>
+        </p>
+        <p>
+            <alert>The stron LLN</alert> uses a different criteria. You look at the sequency of sample random variables <m>\bar{X}_n</m> with increasing value of <m>n</m> and ask if these random variables themselves ted to <m>\mu</m>. The claim is
+            <me>
+                P(\lim_{n\rightarrow \infty} = \mu) = 1.
+            </me>
+            We say that <m>\bar{X}_n</m> <alert>almost surely</alert> converges to <m>\mu</m>, the true mean. 
+        </p>
+        <p>
+            Although nt that hard, the proofs of these results are beyond these notes.
+        </p>
+ 
+        
+    </subsection>
+    <subsection xml:id="subsec-Central-Limit-Theorem">
+        <title>Central Limit Theorem</title>
+        <p>
+            The Central Limit Theorem says that regardless of the distribution <m>P(X_i)</m> of <m>X_i</m>'s, which may be Bernouli, Binomial, Exponential, or whatever, the distribution of a <m>\bar{X}_n</m> tends towards a bell-shaped Gaussian wil larger and larger values of <m>n</m>. Specifically,
+            <men xml:id="eqn-CLT">
+                \lim_{n\rightarrow \infty}\sqrt{n}\left( \bar{X}_n - \mu\right)  \xrightarrow{d} \, \matcal{N}(0, \sigma^2),          
+            </men>
+            where <m>d</m> above arrow just indicates the result <q>in distribution</q> and <m>\sigma^2</m> is the true variance of the component <m>X_i</m> variables. The convergence in distribution simly means that the CDF of the random variables on the left, i.e., <m>\sqrt{n}\left( \bar{X}_n - \mu\right)</m> converge to the Gaussian CDF, although it is written as <m>\mathcal{N}</m> in these equations.
+        </p>  
+        <p>     
+            
+            To emphasize the fact that this happens regarless of the original distribution of <m>X_i</m>'s. This is why we see Gaussian curves everywhere in nature — measurement errors, heights, test scores, etc. aren't inherently normal, but they are aggregates of many small random effects.
+            
+        </p>
+        
+    </subsection>
 
 </section>

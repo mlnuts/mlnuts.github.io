@@ -202,7 +202,13 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Example-Continuous-Probability-Distributions.html#subsec-Exponential-Distribution" class="internal"><span class="codenumber">1.7.3</span> <span class="title">Exponential Distribution</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-LLN-and-CLT.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Law of Large Numbers and Central Limit Theorem</span></a></div></li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="sec-LLN-and-CLT.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Law of Large Numbers and Central Limit Theorem</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LLN-and-CLT.html#subsec-Law-of-Large-Numbers" class="internal"><span class="codenumber">1.8.1</span> <span class="title">Law of Large Numbers (LLN)</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LLN-and-CLT.html#subsec-Central-Limit-Theorem" class="internal"><span class="codenumber">1.8.2</span> <span class="title">Central Limit Theorem</span></a></div></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
@@ -210,7 +216,89 @@ eBookConfig.enable_chatcodes =  false;
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-LLN-and-CLT"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">1.8</span><span class="space"> </span><span class="title">Law of Large Numbers and Central Limit Theorem</span>
 </h2>
-<section class="introduction" id="sec-LLN-and-CLT-2"><div class="para" id="sec-LLN-and-CLT-2-1"><div class="autopermalink" data-description="Paragraph"><a href="#sec-LLN-and-CLT-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div></section><div class="autopermalink" data-description="Section 1.8: Law of Large Numbers and Central Limit Theorem"><a href="#sec-LLN-and-CLT" title="Copy heading and permalink for Section 1.8: Law of Large Numbers and Central Limit Theorem" aria-label="Copy heading and permalink for Section 1.8: Law of Large Numbers and Central Limit Theorem">🔗</a></div></section></div>
+<section class="introduction" id="sec-LLN-and-CLT-2"><div class="para" id="sec-LLN-and-CLT-2-1">The Law of Large Numbers (LLN) is often hand-waved as “averages go to the mean,” but there are really two distinct theorems (weak vs strong), different modes of convergence, and subtle conditions. Similary, the Central Limit Theorem (CLT) is one of the deepest ideas in probability, and it’s often glossed over as “averages look normal.”<div class="autopermalink" data-description="Paragraph"><a href="#sec-LLN-and-CLT-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-LLN-and-CLT-2-2">Let’s take a slow, detailed walk through them. Although I do not intend our treatment here to be exhaustive, but there will be enough detail for you to get a fuller understanding of what they represent and how to use them.<div class="autopermalink" data-description="Paragraph"><a href="#sec-LLN-and-CLT-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-LLN-and-CLT-2-3">
+<em class="alert">The Setup:</em><div class="autopermalink" data-description="Paragraph"><a href="#sec-LLN-and-CLT-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-LLN-and-CLT-2-4">
+<div class="para">The set up for both LLN and CLT is the same. Suppose you have a number of independent random variables <span class="process-math">\(X_1, X_2, \cdots, X_n\text{,}\)</span> all with identical distribution functions <span class="process-math">\(P(X)\text{,}\)</span> same for every <span class="process-math">\(X_i\text{.}\)</span> Let <span class="process-math">\(\mu\)</span> be the man and <span class="process-math">\(\sigma^2\)</span> the variance of the common distribution.</div>
+<div class="displaymath process-math" id="sec-LLN-and-CLT-2-4-6">
+\begin{align}
+\amp \mu  = \langle X_i\rangle,\qquad \text{same for every }X_i \tag{1.8.1}\\
+\amp \sigma^2  = \langle X_i^2\rangle - \mu^2,\qquad \text{same for every }X_i \tag{1.8.2}
+\end{align}
+</div>
+<div class="para">We will call these values <em class="alert">true mean</em> and <em class="alert">true variance</em>. Now, we introduce a new random variable, called the <em class="alert">sample mean</em> by</div>
+<div class="displaymath process-math" id="eqn-sample-mean-random-variable">
+\begin{equation}
+\bar{X}_n = \frac{1}{n}\,\left( X_1 + X_2 + \cdots + X_n  \right).\tag{1.8.3}
+\end{equation}
+</div>
+<div class="para">The bar over <span class="process-math">\(X\)</span> just distinguishes it from the <span class="process-math">\(n^\text{th}\, X\)</span> in the collection of random variables. More importantly, <span class="process-math">\(\bar{X}_n\)</span> is not one number, but a random variable, which will take values in the range given by the components <span class="process-math">\(X_i\text{.}\)</span> For instance, if <span class="process-math">\(X_i \in \{ 0, 1 \}\text{,}\)</span> a Bernoulli random variable, then, <span class="process-math">\(\bar{X}_n\)</span> would actually take many values, here  <span class="process-math">\(\bar{X}_n \in \{ 0, 1/n, 2/n, \cdots, (n-1)/n, 1\}\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-LLN-and-CLT-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-LLN-and-CLT-2-5">
+<div class="para">The random variable <span class="process-math">\(\bar{X}_n\)</span> will have it’s own probability distribution, <span class="process-math">\(P(\bar{X}_n)\text{.}\)</span> We call the mean and variance of this dstribution <em class="alert">sample mean</em> and <em class="alert">sample variance</em>.</div>
+<div class="displaymath process-math" id="eqn-">
+\begin{equation}
+\bar{\mu}_n = \langle \bar{X}_n \rangle,\qquad \bar{\sigma}_n^2 =  \langle \bar{X}_n^2 \rangle - \bar{\mu}^2.\tag{1.8.4}
+\end{equation}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-LLN-and-CLT-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section><section class="subsection" id="subsec-Law-of-Large-Numbers"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.8.1</span><span class="space"> </span><span class="title">Law of Large Numbers (LLN)</span>
+</h3>
+<div class="para" id="subsec-Law-of-Large-Numbers-2">The LLN addresses the question: <em class="alert">What can we say about the mean of the sample mean <span class="process-math">\(\bar{X}_n\)</span></em> as <span class="process-math">\(n\)</span> grows large? Clearly, the probability distribution of <span class="process-math">\(\bar{X}_n\)</span> varies if we change <span class="process-math">\(n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Law-of-Large-Numbers-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Law-of-Large-Numbers-3">
+<div class="para">
+<em class="alert">The weak law of LLN</em> asserts that probablity that <span class="process-math">\(|\bar{X}_n - \mu|\text{,}\)</span> where <span class="process-math">\(\mu\)</span> is the true mean defined above in Eq. <a href="sec-LLN-and-CLT.html#sec-LLN-and-CLT-2-4-6" class="xref" data-knowl="./knowl/xref/eqn-true-mean.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.8.1">(1.8.1)</a>, can be made smaller than any positive real number as long s you go sufficiently large <span class="process-math">\(n\text{.}\)</span> Mathematically, we express it as the complement of this probility.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-true-mean.html">
+\begin{equation*}
+\lim_{n\rightarrow\infty}P(|\bar{X}_n - \mu| \gt \epsilon ) = 0,\qquad \text{for all } \epsilon\gt 0.
+\end{equation*}
+</div>
+<div class="para">That is, the probability that <span class="process-math">\(\bar{X}_n\)</span> strays outside of <span class="process-math">\(\mu \pm \epsilon\)</span> goes to zero as <span class="process-math">\(\text{}\)</span>. This result is also expressed in a more compact notation, with a letter <span class="process-math">\(P\)</span> above arrow implying “in probability”.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-true-mean.html">
+\begin{equation*}
+\bar{X}_n \xrightarrow{P}\, \mu.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Law-of-Large-Numbers-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Law-of-Large-Numbers-4">
+<div class="para">
+<em class="alert">The stron LLN</em> uses a different criteria. You look at the sequency of sample random variables <span class="process-math">\(\bar{X}_n\)</span> with increasing value of <span class="process-math">\(n\)</span> and ask if these random variables themselves ted to <span class="process-math">\(\mu\text{.}\)</span> The claim is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P(\lim_{n\rightarrow \infty} = \mu) = 1.
+\end{equation*}
+</div>
+<div class="para">We say that <span class="process-math">\(\bar{X}_n\)</span> <em class="alert">almost surely</em> converges to <span class="process-math">\(\mu\text{,}\)</span> the true mean.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Law-of-Large-Numbers-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Law-of-Large-Numbers-5">Although nt that hard, the proofs of these results are beyond these notes.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Law-of-Large-Numbers-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 1.8.1: Law of Large Numbers (LLN)"><a href="#subsec-Law-of-Large-Numbers" title="Copy heading and permalink for Subsection 1.8.1: Law of Large Numbers (LLN)" aria-label="Copy heading and permalink for Subsection 1.8.1: Law of Large Numbers (LLN)">🔗</a></div></section><section class="subsection" id="subsec-Central-Limit-Theorem"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.8.2</span><span class="space"> </span><span class="title">Central Limit Theorem</span>
+</h3>
+<div class="para logical" id="subsec-Central-Limit-Theorem-2">
+<div class="para">The Central Limit Theorem says that regardless of the distribution <span class="process-math">\(P(X_i)\)</span> of <span class="process-math">\(X_i\)</span>’s, which may be Bernouli, Binomial, Exponential, or whatever, the distribution of a <span class="process-math">\(\bar{X}_n\)</span> tends towards a bell-shaped Gaussian wil larger and larger values of <span class="process-math">\(n\text{.}\)</span> Specifically,</div>
+<div class="displaymath process-math" id="eqn-CLT">
+\begin{equation}
+\lim_{n\rightarrow \infty}\sqrt{n}\left( \bar{X}_n - \mu\right)  \xrightarrow{d} \, \matcal{N}(0, \sigma^2),          \tag{1.8.5}
+\end{equation}
+</div>
+<div class="para">where <span class="process-math">\(d\)</span> above arrow just indicates the result “in distribution” and <span class="process-math">\(\sigma^2\)</span> is the true variance of the component <span class="process-math">\(X_i\)</span> variables. The convergence in distribution simly means that the CDF of the random variables on the left, i.e., <span class="process-math">\(\sqrt{n}\left( \bar{X}_n - \mu\right)\)</span> converge to the Gaussian CDF, although it is written as <span class="process-math">\(\mathcal{N}\)</span> in these equations.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Central-Limit-Theorem-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Central-Limit-Theorem-3">To emphasize the fact that this happens regarless of the original distribution of <span class="process-math">\(X_i\)</span>’s. This is why we see Gaussian curves everywhere in nature — measurement errors, heights, test scores, etc. aren’t inherently normal, but they are aggregates of many small random effects.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Central-Limit-Theorem-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 1.8.2: Central Limit Theorem"><a href="#subsec-Central-Limit-Theorem" title="Copy heading and permalink for Subsection 1.8.2: Central Limit Theorem" aria-label="Copy heading and permalink for Subsection 1.8.2: Central Limit Theorem">🔗</a></div></section><div class="autopermalink" data-description="Section 1.8: Law of Large Numbers and Central Limit Theorem"><a href="#sec-LLN-and-CLT" title="Copy heading and permalink for Section 1.8: Law of Large Numbers and Central Limit Theorem" aria-label="Copy heading and permalink for Section 1.8: Law of Large Numbers and Central Limit Theorem">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sec-Example-Continuous-Probability-Distributions.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
