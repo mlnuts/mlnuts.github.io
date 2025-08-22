@@ -207,8 +207,7 @@ eBookConfig.enable_chatcodes =  false;
 <ul class="structural toc-item-list active">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LLN-and-CLT.html#subsec-Law-of-Large-Numbers" class="internal"><span class="codenumber">1.8.1</span> <span class="title">Law of Large Numbers (LLN)</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LLN-and-CLT.html#subsec-Central-Limit-Theorem" class="internal"><span class="codenumber">1.8.2</span> <span class="title">Central Limit Theorem</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LLN-and-CLT.html#subsec-LLN-vs-CLT" class="internal"><span class="codenumber">1.8.3</span> <span class="title">LLN vs CLT</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LLN-and-CLT.html#subsec-Why-Large-n-Matters" class="internal"><span class="codenumber">1.8.4</span> <span class="title">Why LLN and CLT Matter?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LLN-and-CLT.html#subsec-Why-Large-n-Matters" class="internal"><span class="codenumber">1.8.3</span> <span class="title">Why LLN and CLT Matter?</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -320,100 +319,43 @@ P(\lim_{n\rightarrow \infty} = \mu) = 1.
 <div class="para">The Central Limit Theorem says that regardless of the distribution <span class="process-math">\(P(X_i)\)</span> of <span class="process-math">\(X_i\)</span>’s, which may be Bernouli, Binomial, Exponential, or whatever, the distribution of a <span class="process-math">\(\bar{X}_n\)</span> tends towards a bell-shaped Gaussian wil larger and larger values of <span class="process-math">\(n\text{.}\)</span> Specifically,</div>
 <div class="displaymath process-math" id="eqn-CLT">
 \begin{equation}
-\lim_{n\rightarrow \infty}\sqrt{n}\left( \bar{X}_n - \mu\right)  \xrightarrow{d} \, \mathcal{N}(0, \sigma^2),          \tag{1.8.5}
+\lim_{n\rightarrow \infty}\, \bar{X}_n \xrightarrow{d} \, \mathcal{N}\left(\mu, \frac{\sigma^2}{n}\right),          \tag{1.8.5}
 \end{equation}
 </div>
-<div class="para">where <span class="process-math">\(d\)</span> above arrow just indicates the result “in distribution” and <span class="process-math">\(\sigma^2\)</span> is the true variance of the component <span class="process-math">\(X_i\)</span> variables. The convergence in distribution simly means that the CDF of the random variables on the left, i.e., <span class="process-math">\(\sqrt{n}\left( \bar{X}_n - \mu\right)\)</span> converge to the Gaussian CDF, although it is written as <span class="process-math">\(\mathcal{N}\)</span> in these equations.</div>
+<div class="para">where <span class="process-math">\(d\)</span> above arrow just indicates the result is to be understood as converging “in distribution” and <span class="process-math">\(\sigma^2\)</span> is the true variance of the component <span class="process-math">\(X_i\)</span> variables. In terms ofprobability this means</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P(x \le \bar{X}_n \le x+dx) = \frac{1}{\sqrt{2\pi\sigma^2}}\, \exp\left( - \frac{( x - \mu )^2}{2 \sigma^2/n}  \right)\, dx.
+\end{equation*}
+</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec-Central-Limit-Theorem-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-Central-Limit-Theorem-3">To emphasize the fact that this happens regarless of the original distribution of <span class="process-math">\(X_i\)</span>’s. This is why we see Gaussian curves everywhere in nature — measurement errors, heights, test scores, etc. aren’t inherently normal, but they are aggregates of many small random effects.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Central-Limit-Theorem-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Subsection 1.8.2: Central Limit Theorem"><a href="#subsec-Central-Limit-Theorem" title="Copy heading and permalink for Subsection 1.8.2: Central Limit Theorem" aria-label="Copy heading and permalink for Subsection 1.8.2: Central Limit Theorem">🔗</a></div></section><section class="subsection" id="subsec-LLN-vs-CLT"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.8.3</span><span class="space"> </span><span class="title">LLN vs CLT</span>
-</h3>
-<div class="para logical" id="subsec-LLN-vs-CLT-2">
-<div class="para">Let’s summarize the basic features of the Law of Large Numbers and Central Limit Theorem.</div>
-<dl class="description-list">
-<dt id="subsec-LLN-vs-CLT-2-1-1">Law of Large Numbers (LLN)<div class="autopermalink" data-description="Item: Law of Large Numbers (LLN)"><a href="#subsec-LLN-vs-CLT-2-1-1" title="Copy heading and permalink for Item: Law of Large Numbers (LLN)" aria-label="Copy heading and permalink for Item: Law of Large Numbers (LLN)">🔗</a></div>
-</dt>
-<dd><ul class="disc" id="subsec-LLN-vs-CLT-2-1-1-2">
-<li id="subsec-LLN-vs-CLT-2-1-1-2-1">
-<div class="para" id="subsec-LLN-vs-CLT-2-1-1-2-1-1">
-<span class="process-math">\(\bar{X}_n \rightarrow \mu\)</span> as <span class="process-math">\(n\rightarrow \infty\)</span> in the context of either in probability or almost surely.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-LLN-vs-CLT-2-1-1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item"><a href="#subsec-LLN-vs-CLT-2-1-1-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
-</li>
-<li id="subsec-LLN-vs-CLT-2-1-1-2-2">
-<div class="para" id="subsec-LLN-vs-CLT-2-1-1-2-2-1">Says the sample mean stabilizes around the true mean.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-LLN-vs-CLT-2-1-1-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item"><a href="#subsec-LLN-vs-CLT-2-1-1-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
-</li>
-</ul></dd>
-<dt id="subsec-LLN-vs-CLT-2-1-2">Central Limit Theorem (CLT)<div class="autopermalink" data-description="Item: Central Limit Theorem (CLT)"><a href="#subsec-LLN-vs-CLT-2-1-2" title="Copy heading and permalink for Item: Central Limit Theorem (CLT)" aria-label="Copy heading and permalink for Item: Central Limit Theorem (CLT)">🔗</a></div>
-</dt>
-<dd><ul class="disc" id="subsec-LLN-vs-CLT-2-1-2-2">
-<li id="subsec-LLN-vs-CLT-2-1-2-2-1">
-<div class="para" id="subsec-LLN-vs-CLT-2-1-2-2-1-1">Tells you how the deviations of <span class="process-math">\(\bar{X}_n\)</span> from <span class="process-math">\(\mu\)</span> are distributed.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-LLN-vs-CLT-2-1-2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item"><a href="#subsec-LLN-vs-CLT-2-1-2-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
-</li>
-<li id="subsec-LLN-vs-CLT-2-1-2-2-2">
-<div class="para" id="subsec-LLN-vs-CLT-2-1-2-2-2-1">Specifically, deviations are of order <span class="process-math">\(1/\sqrt{n}\text{,}\)</span> and tend towards a Gaussian.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-LLN-vs-CLT-2-1-2-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item"><a href="#subsec-LLN-vs-CLT-2-1-2-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
-</li>
-</ul></dd>
-</dl>
-<div class="para">So, LLN = consistency (where averages go) and CLT = fluctuations (how they’re spread around).</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-LLN-vs-CLT-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="subsec-LLN-vs-CLT-3">
-<em class="alert">How large is <span class="process-math">\(n\)</span> when we say n large?</em> A rule of thumb is that often <span class="process-math">\(n \ge 30 \)</span> is enough. Why? <span class="process-math">\(1/\sqrt{30} = 5.5\)</span> and when <span class="process-math">\(\sigma = 1\text{,}\)</span> then probability of deviation from true <span class="process-math">\(\mu\)</span> larger than this value is about <span class="process-math">\(1\times 10^{-7}\text{,}\)</span> which can be safely ignored in most cases. There is actually a mathematical result that quantifies the rate of convergence. Berry-Esseen Theorem gives rates of convergence.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-LLN-vs-CLT-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="subsec-LLN-vs-CLT-4">
-<div class="para">Let <span class="process-math">\(Y_1, Y_2, \cdots, Y_n\)</span> be i.i.d. (independent identically distributed) random variables as above. But, we now have subtracted away the true mean so that these have zero true mean. We state the conditions on <span class="process-math">\(Y_1\)</span> since all others are same.</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\langle Y_1 \rangle = 0.
-\end{equation*}
-</div>
-<div class="para">Furthermore,</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\text{Var}(Y_1) = \sigma^2 \gt 0,\quad \text{finite},
-\end{equation*}
-</div>
-<div class="para">and third absolute moment is also finite.</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\rho \equiv \langle Y_1^3 \rangle \lt \infty.
-\end{equation*}
-</div>
-<div class="para">In place of sample mean random variable, let us define <em class="alert">normalized sum</em> random variable:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-S_n = \frac{Y_1 + Y_2 + \cdots + Y_n}{ \sigma\,\sqrt{n} }.
-\end{equation*}
-</div>
-<div class="para">Let <span class="process-math">\(F_n\)</span> be the Cumulative Distribution Function (CDF) of the distribution of <span class="process-math">\(S_n\text{,}\)</span> meaning</div>
-<div class="displaymath process-math">
-\begin{equation*}
-F_n(x) = P(S_n \le x),
-\end{equation*}
-</div>
-<div class="para">and let us denote the CDF of standard normal, <span class="process-math">\(\mathcal{N}(0,1)\)</span> by the Greek letter, <span class="process-math">\(\Phi\text{.}\)</span> This is a standard notation. We keep <span class="process-math">\(F\)</span> for other distributions. Then, Berry-Essen Theorem states that</div>
-<div class="displaymath process-math" id="eqn-Berry-Esseen-Theorem">
+<div class="para logical" id="subsec-Central-Limit-Theorem-3">
+<div class="para">In applications of this formula, it is convenient to express it in another form by shifting the random variable <span class="process-math">\(\bar{X}_n\)</span> and scaling the result.</div>
+<div class="displaymath process-math" id="eqn-the-Zn-variable">
 \begin{equation}
-\underset{x \in \R}{\sup}\, \left| F_n(x) - \Phi(x)  \right| \le \frac{C\, \rho}{ \sigma^3\,\sqrt{n}},\tag{1.8.6}
+\bar{Z}_n = \frac{ \sqrt{n}\left( \bar{X}_n -\mu \right) }{\sigma}.\tag{1.8.6}
 \end{equation}
 </div>
-<div class="para">where <span class="process-math">\(C\)</span> is a universal constant, independent of the distribution of the <span class="process-math">\(Y_i\)</span>’s, so that the result holds for all i.i.d. variables satisfying the conditions above. Shevtsova (2011) showed <span class="process-math">\(C \le 0.4748\)</span> and the best known lower bound is <span class="process-math">\(C \ge 0.4097\text{.}\)</span> IExact value is not that important since in most applications <span class="process-math">\(C \approx 1\)</span> is enough.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-LLN-vs-CLT-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">Then, you can show that <span class="process-math">\(\bar{Z}_n\)</span> has a standard normal distribution, which lends itself to looking up standard tables and standard computations.</div>
+<div class="displaymath process-math" id="eqn-the-normalized-CLT">
+\begin{equation}
+\bar{Z}_n \sim \mathcal{N}(0, 1).\tag{1.8.7}
+\end{equation}
 </div>
-<div class="para" id="subsec-LLN-vs-CLT-5">The CLT says that as <span class="process-math">\(n \rightarrow \infty\text{,}\)</span> <span class="process-math">\(F_n \rightarrow \Phi\text{,}\)</span> and Berry-Esseen theorem tells us the rate at which this approach occurs. It says that the difference shrinks as <span class="process-math">\(1/\sqrt{n}\)</span> with a "tail-heaviness" factor <span class="process-math">\(\rho/\sigma^3\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-LLN-vs-CLT-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">the CDF of standard normal is denoted by <span class="process-math">\(\Phi\)</span> instead of <span class="process-math">\(F\text{.}\)</span>
 </div>
-<div class="autopermalink" data-description="Subsection 1.8.3: LLN vs CLT"><a href="#subsec-LLN-vs-CLT" title="Copy heading and permalink for Subsection 1.8.3: LLN vs CLT" aria-label="Copy heading and permalink for Subsection 1.8.3: LLN vs CLT">🔗</a></div></section><section class="subsection" id="subsec-Why-Large-n-Matters"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.8.4</span><span class="space"> </span><span class="title">Why LLN and CLT Matter?</span>
+<div class="displaymath process-math">
+\begin{equation*}
+\Phi(z) = P( \bar{Z}_n \le z ) = \int_{-\infty}^z\frac{1}{\sqrt{2\pi}}\, \exp\left( - \frac{z^2}{2}  \right)\, dz.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Central-Limit-Theorem-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Central-Limit-Theorem-4">Let’s emphasize once again the fact that the convergence to a Gaussian happens regarless of the original distribution of <span class="process-math">\(X_i\)</span>’s. This is why we see Gaussian curves everywhere in nature — measurement errors, heights, test scores, etc. aren’t inherently normal, but they are aggregates of many small random effects.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Central-Limit-Theorem-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 1.8.2: Central Limit Theorem"><a href="#subsec-Central-Limit-Theorem" title="Copy heading and permalink for Subsection 1.8.2: Central Limit Theorem" aria-label="Copy heading and permalink for Subsection 1.8.2: Central Limit Theorem">🔗</a></div></section><section class="subsection" id="subsec-Why-Large-n-Matters"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.8.3</span><span class="space"> </span><span class="title">Why LLN and CLT Matter?</span>
 </h3>
 <div class="para" id="subsec-Why-Large-n-Matters-2">
 <em class="alert">Why LLN Matter?</em><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Why-Large-n-Matters-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -421,10 +363,10 @@ F_n(x) = P(S_n \le x),
 <div class="para" id="subsec-Why-Large-n-Matters-3">In statistics, we distinguish between a sample mean and a population mean. The population mean, also called true mean <span class="process-math">\(\mu\text{,}\)</span> is usually not known since we either do not have access to every point of interest, we only look at a small part. For instance, when we poll the population on some issue, we do not ask everybody, we just take <em class="alert">sample</em>. The LLN gives us confidence that if <span class="process-math">\(n\)</span> is <em class="alert">large enough</em>, sample mean will be close to the population mean.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Why-Large-n-Matters-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="subsec-Why-Large-n-Matters-4">
-<div class="para">As a numerical illustration of how sample mean “hugs” the true mean as <span class="process-math">\(n\)</span> gets large, consider rolls of a fair six-sided die, whose faces are labeled <span class="process-math">\(1, 2, 3, 4, 5, 6\text{.}\)</span> The true mean of these rolls will be just</div>
+<div class="para">As a numerical illustration of how sample mean <span class="process-math">\(\bar{X}_n\)</span> “hugs” the true mean as <span class="process-math">\(n\)</span> gets large, consider rolls of a fair six-sided die, whose faces are labeled <span class="process-math">\(1, 2, 3, 4, 5, 6\text{.}\)</span> The true mean of these rolls will be just</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-die-rolls-sample-mean-vs-true-mean.html">
 \begin{equation*}
-\text{True Mean}, \mu = 3.5.
+\text{True Mean}, \mu = 3.5,\qquad \text{Estimated Mean}, \bar{X}_n \approx 3.5.
 \end{equation*}
 </div>
 <div class="para">Can you see how this can be shown? Anyway, let’s roll this die <span class="process-math">\(n\)</span> times and plot the sample means of the results obtained in rolls for various <span class="process-math">\(n\)</span> values. This is shown in <a href="sec-LLN-and-CLT.html#fig-die-rolls-sample-mean-vs-true-mean" class="xref" data-knowl="./knowl/xref/fig-die-rolls-sample-mean-vs-true-mean.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.8.1">Figure 1.8.1</a>. You can see that As the number of rolls increases, the sample mean stabilizes around <span class="process-math">\(3.5\)</span> <figure class="figure figure-like" id="fig-die-rolls-sample-mean-vs-true-mean"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/die-rolls-sample-mean-vs-true-mean.png" class="contained" alt="Illustration of the Law of Large Numbers with rolls of a fair six-sided die."></div>
@@ -432,73 +374,95 @@ F_n(x) = P(S_n \le x),
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec-Why-Large-n-Matters-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="subsec-Why-Large-n-Matters-5">
-<div class="para">In <em class="alert">Supervised Machine Learning</em> we want to find the function <span class="process-math">\(f\)</span> of the independent variables, called “features”, that minimizes the expected loss <span class="process-math">\(L\)</span> which is a function of <span class="process-math">\(f\)</span> and independent variable, also called “target” <span class="process-math">\(Y\text{.}\)</span>
+<div class="para" id="subsec-Why-Large-n-Matters-5">Maybe an example from Physics as well: In statistical mechanics, we often can’t observe all particles in a macroscopic system. Instead, suppose we observe one particle over a long time. LLN guarantees that if the system is <em class="alert">ergodic</em>, the time average converges to the ensemble (population) average.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Why-Large-n-Matters-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
+<div class="para" id="subsec-Why-Large-n-Matters-6">
+<em class="alert">Why CLT Matter? The Confidence Interval</em><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Why-Large-n-Matters-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Why-Large-n-Matters-7">Although LLN tells us that in the large <span class="process-math">\(n\)</span> limit sample mean will be close to the population or true mean <span class="process-math">\(\mu\text{.}\)</span> But, we don’t only want to know the approximate value of the true mean. We also would like to know the <em class="alert">uncertainty</em> in this knowledge, especially since we often do not know the value of true mean. This is where we <em class="alert">need the Central Limit Theorem</em>. The CLT says that <span class="process-math">\(\bar{X}_n\)</span> is approximately Gaussian, which gives as tools to build <em class="alert">confidence intervals</em>.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Why-Large-n-Matters-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Why-Large-n-Matters-8">
+<div class="para">Let us look at the fair six-sided die rolls. Suppose, want to answer the question: what is the mean of face value of a roll of a single die? The result of a signle roll is a random variable, which are calling <span class="process-math">\(X\text{.}\)</span> Of course, each time you roll the die, you will get a single value from <span class="process-math">\(1, 2, 3, 4, 5, \text{or}, 6\)</span> in a equiprobable way. From this you can calculate the true mean to be <span class="process-math">\(\mu = 3.5\text{,}\)</span> and standard deviation <span class="process-math">\(\sigma = \sqrt{35/12}\text{,}\)</span> which is left as an exercise for you. (Just use the mean and variance formulas.)</div>
 <div class="displaymath process-math">
 \begin{equation*}
-R(f) = \langle \mathcal{L}(f(X), Y)  \rangle
+\mu = 3.5,\quad \sigma = \sqrt{35/12}.
 \end{equation*}
 </div>
-<div class="para">Now, the “true minimum” is not possible. The only thing we have are <span class="process-math">\((x,y)\)</span> pairs of values in each trial, i.e., each data point. Say you have <span class="process-math">\(n\)</span> data points. So, we build the expectation on the right based on these <span class="process-math">\(n\)</span> data points and get “an approximation” of <span class="process-math">\(R(f)\text{,}\)</span> which we can designate as <span class="process-math">\(R_n(f)\text{.}\)</span>
+<div class="para">Now, we are going to pretend that we didn’t know these values and want to figure out the mean by doing experiments and generating data.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Why-Large-n-Matters-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="displaymath process-math">
+<div class="para" id="subsec-Why-Large-n-Matters-9">To get the estimates of mean and standard deviation, we can just roll the die <span class="process-math">\(n\)</span> times, say for <span class="process-math">\(n=100\text{.}\)</span> The outcome of this experiment will be a sequence of face values, <span class="process-math">\(\{X_1 = 2, X_2 = 5, X_3 = 1, X_4 = 3, \cdots, X_{100}=4 \}\text{.}\)</span> The average, denoted by <span class="process-math">\(\bar{X}_{n}\)</span> and standard deviation of this data can be an estimate of the corresponding true quantities. Since <span class="process-math">\(n=100\)</span> is fairly large number, the law of large numbers tells us that the average will be a good estimate of <span class="process-math">\(\mu\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Why-Large-n-Matters-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Why-Large-n-Matters-10">Suppose you got a value of <span class="process-math">\(\bar{X}_{n} = 3.6\)</span> in our first try of a 100 rolls. Now, when you repeat another <span class="process-math">\(100\)</span> rolls, you will get another set of data, <span class="process-math">\(\{X_1 = 5, X_2 = 1, X_3 = 6, X_4 = 1, \cdots, X_{100}=2 \}\text{.}\)</span> Their average and standard deviation will be different from what you got the first time. Say, for average you got this time <span class="process-math">\(\bar{X}_{n}= 3.55\)</span> this time.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Why-Large-n-Matters-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Why-Large-n-Matters-11">A simulation of <span class="process-math">\(N=10000\)</span> repeats of this <span class="process-math">\(100\)</span>-roll experimets is presented in <a href="sec-LLN-and-CLT.html#fig-confidence-interval-die-roll" class="xref" data-knowl="./knowl/xref/fig-confidence-interval-die-roll.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.8.2">Figure 1.8.2</a> as a histogram. The theoretical true mean is near the peak of the Gaussian as expected. But, if we didn’t know the value of the true mean, we will need to guess where it is. That guess can be quantified with a degree of confidence in the guess. The figure shows a range of values of the sample mean (the abscissa in the plot) within which there is <span class="process-math">\(95\%\)</span> chance of finding the true <span class="process-math">\(\mu\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Why-Large-n-Matters-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Why-Large-n-Matters-12">
+<div class="para">Here is the breakdown of how the confidence interval was obtained. Let’s recall that as per CLT for a large <span class="process-math">\(n\text{.}\)</span> </div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-confidence-interval-die-roll.html" id="eqn-clt-gaussian-approx">
+\begin{equation}
+\bar{X}_n  \sim  \mathcal{N}\left( \mu, \frac{ \sigma^2 }{n}\right),\tag{1.8.8}
+\end{equation}
+</div>
+<div class="para">where <span class="process-math">\(\mu\)</span> and <span class="process-math">\(\sigma\)</span> are the true mean and standard deviation of the random variabel <span class="process-math">\(X_1\text{.}\)</span> The last quantity is sample variance</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-confidence-interval-die-roll.html" id="eqn-sample-variance">
+\begin{equation}
+\text{Sample Variance} = \frac{ \sigma^2 }{n}.\tag{1.8.9}
+\end{equation}
+</div>
+<div class="para">This is often referred to as theoretical result. When we simulate the experiment as done in <a href="sec-LLN-and-CLT.html#fig-confidence-interval-die-roll" class="xref" data-knowl="./knowl/xref/fig-confidence-interval-die-roll.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.8.2">Figure 1.8.2</a>, you can get estimated sample mean as well the estimated sample variance directly from the experiment and don’t need to divide it further by <span class="process-math">\(\sqrt{n}\text{.}\)</span> Thus, using the quatities from the simulation, we will write the CLT as follows.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-confidence-interval-die-roll.html" id="eqn-clt-gaussian-approx-simulation">
+\begin{equation}
+\bar{X}_n  \sim  \mathcal{N}\left( \mu_\text{sim}, \sigma_\text{sim}^2 \right),\tag{1.8.10}
+\end{equation}
+</div>
+<div class="para">where I am using the subscript <span class="process-math">\(\text{sim}\)</span> to indicate the simulation quantities.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Why-Large-n-Matters-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Why-Large-n-Matters-13">
+<div class="para">Here, we want a <span class="process-math">\(95\%\)</span> confidence interval (in other applications you may want <span class="process-math">\(99\%\)</span> CI or whatever), which is just the range of values around the mean that covers the <span class="process-math">\(95\%\)</span> of the area under the curve in the Gaussian function. That will leave <span class="process-math">\(5\%\)</span> area outside, which will be <span class="process-math">\(2.5\%\)</span> on the right and <span class="process-math">\(2.5\%\)</span> on the left. That’s where we can use the inverse of the CDF <span class="process-math">\(F(x)\text{.}\)</span> If we solve</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-confidence-interval-die-roll.html">
 \begin{equation*}
-R_n(f) = \frac{1}{n} \sum_{i=1}^n\mathcal{L}(f(X_i), Y_i).
+F(x) = 0.95 + 0.025 = 0.975, 
 \end{equation*}
 </div>
-<div class="para">The LLN gives us confidence that</div>
-<div class="displaymath process-math">
+<div class="para">we will get the value of <span class="process-math">\(x\)</span> that is the right edge. By symmetry, we will go to the left edge, or for the left edge solve</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-confidence-interval-die-roll.html">
 \begin{equation*}
-R_n(f) \rightarrow R(f)\quad \text{as long as }n \text{ is large enough}.
+F(x) = 0.025.
 \end{equation*}
 </div>
-<div class="para">Hence, more the data, better the approximation!</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Why-Large-n-Matters-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="subsec-Why-Large-n-Matters-6">Maybe an example from Physics as well: In statistical mechanics, we often can’t observe all particles in a macroscopic system. Instead, suppose we observe one particle over a long time. LLN guarantees that if the system is <em class="alert">ergodic</em>, the time average converges to the ensemble (population) average.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Why-Large-n-Matters-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="subsec-Why-Large-n-Matters-7">
-<em class="alert">Why CLT Matter?</em><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Why-Large-n-Matters-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="subsec-Why-Large-n-Matters-8">Although LLN tells us that in the large <span class="process-math">\(n\)</span> limit sample mean will be close to the population or true mean <span class="process-math">\(\mu\text{.}\)</span> But, we don’t only want to know the approximate value of the true mean <span class="process-math">\(\mu\text{.}\)</span> We also would like to know <em class="alert">uncertainty</em> in this knowledge. This is where we <em class="alert">need the Central Limit Theorem</em>. The CLT says that <span class="process-math">\(\bar{X}_n\)</span> is approximately Gaussian, which gives as tools to build <em class="alert">confidence intervals</em>.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Why-Large-n-Matters-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="subsec-Why-Large-n-Matters-9">
-<div class="para">Let us look at the fair six-sided die rolls. Suppose you N=10000 repeats of n=100 rolls. In each roll you compute the average of the n face up values and the standard deviation of the face up values from this average. In each trial, you will get the values of sample mean. That will give us the distribution of values of smaple mean from all <span class="process-math">\(N\)</span> trials. We can then compute mean of these sample means and their standard deviation or variance as we learned in basic statistics. Then, because of the claim of the CLI, we can assert that</div>
-<div class="displaymath process-math">
+<div class="para">These points will be</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-confidence-interval-die-roll.html">
 \begin{equation*}
-\bar{X}_{100} \sim \mathcal{N}\left( \text{Mean of Sample Means},  \frac{ \text{Variance of Sample Means} }{N} \right).
+x_\text{right} = F^{-1}(0.975),\quad x_\text{left} = F^{-1}(0.025).
 \end{equation*}
 </div>
-<div class="para">Let us use the following symbols:</div>
-<div class="displaymath process-math">
+<div class="para">Altough plot in <a href="sec-LLN-and-CLT.html#fig-confidence-interval-die-roll" class="xref" data-knowl="./knowl/xref/fig-confidence-interval-die-roll.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.8.2">Figure 1.8.2</a> does not show the normalized Gaussian, in practice it is common to shift and scale to the <span class="process-math">\(Z\)</span> vartiable as defined above.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-confidence-interval-die-roll.html">
 \begin{equation*}
-\text{Mean of Sample Means} = \bar{m},\qquad \text{Variance of Sample Means} = \bar{s}^2.
+\bar{Z}_n \equiv \frac{\left( \bar{X}_n -\mu_\text{sim} \right)}{\sigma_\text{sim}} \sim \mathcal{N}\left( 0, 1\right).
 \end{equation*}
 </div>
-<div class="para">Where will the true mean be present at say <span class="process-math">\(95%\)</span> interval? We will study the details in another section,but I want just state here the results that the following range will contain the true mean of <span class="process-math">\(X\text{.}\)</span>
-</div>
-<div class="displaymath process-math">
+<div class="para">Then, it is easy to get the left and right values of <span class="process-math">\(\bar{Z}_n\)</span> by using a standard library function, such as ppf() shown in the program listed below. This gives</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-confidence-interval-die-roll.html">
 \begin{equation*}
-95\% \text{Confindene Interval (CL)} = \left[  \bar{m} - z_{0.975}\, \frac{\bar{s}^2}{N}, \bar{m} + z_{0.975}\, \frac{\bar{s}^2}{N} \right],
+x_\text{right} =  \mu_\text{est} + z_\text{right} \times \sigma_\text{sim},
 \end{equation*}
 </div>
-<div class="para">where <span class="process-math">\(z_a\)</span> is the notation for the inverse of the standard normal CDF, i.e.,</div>
-<div class="displaymath process-math">
+<div class="para">and</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-confidence-interval-die-roll.html">
 \begin{equation*}
-z_{0.975} = \Phi^{-1}(0.975),
+x_\text{left} =  \mu_\text{est} + z_\text{left} \times \sigma_\text{sim}.
 \end{equation*}
 </div>
-<div class="para">and <span class="process-math">\(0.975\)</span> came from the <span class="process-math">\(95\%\)</span> confidence for finding <span class="process-math">\(\mu\)</span> meant <span class="process-math">\(5\%\)</span> being outside, i.e, <span class="process-math">\(2.5\%\)</span> on either side. Thus, it gave us probability value</div>
-<div class="displaymath process-math">
-\begin{equation*}
-0.95 + 0.025 = 0.975,
-\end{equation*}
+<div class="para">The range <span class="process-math">\([x_\text{left}, x_\text{right}]\)</span> gives the range of <span class="process-math">\(\bar{X}_n\)</span> values within which at the chosen confidence level, here illustrated for <span class="process-math">\(95\%\)</span> that the true <span class="process-math">\(\mu\)</span> is expected to reside.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-confidence-interval-die-roll.html" id="eqn-confidence-interval">
+\begin{equation}
+\mu \in [x_\text{left}, x_\text{right}] = [\mu_\text{est} + z_\text{right} \times \sigma_\text{sim},  \mu_\text{est} + z_\text{left} \times \sigma_\text{sim} ].\tag{1.8.11}
+\end{equation}
 </div>
-<div class="para">for the argument of the inverse <span class="process-math">\(\Phi^{-1}\text{,}\)</span> which gave us how far from the estimated mean we need to go on either side of the estimated mean as as to be able to find the true mean. The true mean, of course, usually not known in a real situation, although it is known here simply by the equal probability of each face.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Why-Large-n-Matters-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="subsec-Why-Large-n-Matters-10">A simulation of tossing of die is presented in <a href="sec-LLN-and-CLT.html#fig-confidence-interval-die-roll" class="xref" data-knowl="./knowl/xref/fig-confidence-interval-die-roll.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.8.2">Figure 1.8.2</a>. Runs 10,000 experiments of rolling 100 dice each. The simulation (1) Collects sample means from each trial of 100 tosses; (2) Uses those means to estimate the 95% CI; (3) Draws a double-headed arrow under the histogram showing the CI. The program in Python that does all of this is listed after the figure.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Why-Large-n-Matters-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Why-Large-n-Matters-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="fig-confidence-interval-die-roll"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/confidence-interval-die-roll.png" class="contained" alt="Confidence interval for 10000 trials of the computation of the distribution of mean of face values in 100 rolls of a siz-sided fair die with marking 1, 2, 3, 4, 5, 6."></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.8.2<span class="period">.</span></span><span class="space"> </span>Confidence interval for 10000 trials of the computation of the distribution of mean of face values in 100 rolls of a siz-sided fair die with marking 1, 2, 3, 4, 5, 6. The true mean id just <span class="process-math">\((1+ 2+ 3+ 4+ 5+ 6)/6 = 3.5\text{.}\)</span><div class="autopermalink" data-description="Figure 1.8.2"><a href="#fig-confidence-interval-die-roll" title="Copy heading and permalink for Figure 1.8.2" aria-label="Copy heading and permalink for Figure 1.8.2">🔗</a></div></figcaption></figure><div class="code-box"><pre class="program clipboardable"><code class="language-py">import numpy as np
@@ -555,7 +519,7 @@ plt.ylabel("Density")
 plt.legend()
 plt.show()
 </code></pre></div>
-<div class="autopermalink" data-description="Subsection 1.8.4: Why LLN and CLT Matter?"><a href="#subsec-Why-Large-n-Matters" title="Copy heading and permalink for Subsection 1.8.4: Why LLN and CLT Matter?" aria-label="Copy heading and permalink for Subsection 1.8.4: Why LLN and CLT Matter?">🔗</a></div></section><div class="autopermalink" data-description="Section 1.8: Law of Large Numbers and Central Limit Theorem"><a href="#sec-LLN-and-CLT" title="Copy heading and permalink for Section 1.8: Law of Large Numbers and Central Limit Theorem" aria-label="Copy heading and permalink for Section 1.8: Law of Large Numbers and Central Limit Theorem">🔗</a></div></section></div>
+<div class="autopermalink" data-description="Subsection 1.8.3: Why LLN and CLT Matter?"><a href="#subsec-Why-Large-n-Matters" title="Copy heading and permalink for Subsection 1.8.3: Why LLN and CLT Matter?" aria-label="Copy heading and permalink for Subsection 1.8.3: Why LLN and CLT Matter?">🔗</a></div></section><div class="autopermalink" data-description="Section 1.8: Law of Large Numbers and Central Limit Theorem"><a href="#sec-LLN-and-CLT" title="Copy heading and permalink for Section 1.8: Law of Large Numbers and Central Limit Theorem" aria-label="Copy heading and permalink for Section 1.8: Law of Large Numbers and Central Limit Theorem">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sec-Example-Continuous-Probability-Distributions.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

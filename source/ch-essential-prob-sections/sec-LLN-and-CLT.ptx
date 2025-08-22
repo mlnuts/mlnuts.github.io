@@ -85,8 +85,6 @@
                 </li>
             </ul>
             This is LLN in action. The strong law says: with probability 1, the sequence of averages converges to 0.5.
-
-
         </p>
  
         
@@ -96,18 +94,33 @@
         <p>
             The Central Limit Theorem says that regardless of the distribution <m>P(X_i)</m> of <m>X_i</m>'s, which may be Bernouli, Binomial, Exponential, or whatever, the distribution of a <m>\bar{X}_n</m> tends towards a bell-shaped Gaussian wil larger and larger values of <m>n</m>. Specifically,
             <men xml:id="eqn-CLT">
-                \lim_{n\rightarrow \infty}\sqrt{n}\left( \bar{X}_n - \mu\right)  \xrightarrow{d} \, \mathcal{N}(0, \sigma^2),          
+                \lim_{n\rightarrow \infty}\, \bar{X}_n \xrightarrow{d} \, \mathcal{N}\left(\mu, \frac{\sigma^2}{n}\right),          
             </men>
-            where <m>d</m> above arrow just indicates the result <q>in distribution</q> and <m>\sigma^2</m> is the true variance of the component <m>X_i</m> variables. The convergence in distribution simly means that the CDF of the random variables on the left, i.e., <m>\sqrt{n}\left( \bar{X}_n - \mu\right)</m> converge to the Gaussian CDF, although it is written as <m>\mathcal{N}</m> in these equations.
-        </p>  
+            where <m>d</m> above arrow just indicates the result is to be understood as converging <q>in distribution</q> and <m>\sigma^2</m> is the true variance of the component <m>X_i</m> variables. In terms ofprobability this means 
+            <me>
+                P(x \le \bar{X}_n \le x+dx) = \frac{1}{\sqrt{2\pi\sigma^2}}\, \exp\left( - \frac{( x - \mu )^2}{2 \sigma^2/n}  \right)\, dx.
+            </me>
+        </p> 
+        <p> 
+            In applications of this formula, it is convenient to express it in another form by shifting the random variable <m>\bar{X}_n</m> and scaling the result.
+            <men xml:id="eqn-the-Zn-variable">
+                \bar{Z}_n = \frac{ \sqrt{n}\left( \bar{X}_n -\mu \right) }{\sigma}.
+            </men>
+            Then, you can show that <m>\bar{Z}_n</m> has a standard normal distribution, which lends itself to looking up standard tables and standard computations.
+            <men xml:id="eqn-the-normalized-CLT">
+                \bar{Z}_n \sim \mathcal{N}(0, 1).
+            </men>
+            the CDF of standard normal is denoted by <m>\Phi</m> instead of <m>F</m>.
+            <me>
+                \Phi(z) = P( \bar{Z}_n \le z ) = \int_{-\infty}^z\frac{1}{\sqrt{2\pi}}\, \exp\left( - \frac{z^2}{2}  \right)\, dz.
+            </me>
+        </p> 
         <p>     
-            
-            To emphasize the fact that this happens regarless of the original distribution of <m>X_i</m>'s. This is why we see Gaussian curves everywhere in nature — measurement errors, heights, test scores, etc. aren't inherently normal, but they are aggregates of many small random effects.
-            
+            Let's emphasize once again the fact that the convergence to a Gaussian happens regarless of the original distribution of <m>X_i</m>'s. This is why we see Gaussian curves everywhere in nature — measurement errors, heights, test scores, etc. aren't inherently normal, but they are aggregates of many small random effects.
         </p>
         
     </subsection>
-    <subsection xml:id="subsec-LLN-vs-CLT">
+    <!-- <subsection xml:id="subsec-LLN-vs-CLT">
         <title>LLN vs CLT</title>
         <p>
             Let's summarize the basic features of the Law of Large Numbers and Central Limit Theorem.
@@ -186,7 +199,7 @@
             The CLT says that as <m>n \rightarrow \infty</m>, <m>F_n \rightarrow \Phi</m>, and Berry-Esseen theorem tells us the rate at which this approach occurs. It says that the difference shrinks as <m>1/\sqrt{n}</m> with a "tail-heaviness" factor <m>\rho/\sigma^3</m>.
         </p>
         
-    </subsection>
+    </subsection> -->
     <subsection xml:id="subsec-Why-Large-n-Matters">
         <title>Why LLN and CLT Matter?</title>
         <p>
@@ -196,9 +209,9 @@
             In statistics, we distinguish between a sample mean and a population mean. The population mean, also called true mean <m>\mu</m>, is usually not known since we either do not have access to every point of interest, we only look at a small part. For instance, when we poll the population on some issue, we do not ask everybody, we just take <alert>sample</alert>. The LLN gives us confidence that if <m>n</m> is <alert>large enough</alert>, sample mean will be close to the population mean.
         </p>
         <p>
-            As a numerical illustration of how sample mean <q>hugs</q> the true mean as <m>n</m> gets large, consider rolls of a fair six-sided die, whose faces are labeled <m>1, 2, 3, 4, 5, 6</m>. The true mean of these rolls will be just 
+            As a numerical illustration of how sample mean <m>\bar{X}_n</m> <q>hugs</q> the true mean as <m>n</m> gets large, consider rolls of a fair six-sided die, whose faces are labeled <m>1, 2, 3, 4, 5, 6</m>. The true mean of these rolls will be just 
             <me>
-                \text{True Mean}, \mu = 3.5.
+                \text{True Mean}, \mu = 3.5,\qquad \text{Estimated Mean}, \bar{X}_n \approx 3.5.
             </me>
             Can you see how this can be shown? Anyway, let's roll this die <m>n</m> times and plot the sample means of the results obtained in rolls for various <m>n</m> values. This is shown in <xref ref="fig-die-rolls-sample-mean-vs-true-mean"/>. You can see that As the number of rolls increases, the sample mean stabilizes around <m>3.5</m>
 
@@ -211,12 +224,13 @@
 
             
         </p>
+        <!--
         <p>
             In <alert>Supervised Machine Learning</alert> we want to find the function <m>f</m> of the independent variables, called <q>features</q>, that minimizes the expected loss <m>L</m> which is a function of <m>f</m> and independent variable, also called <q>target</q> <m>Y</m>.
             <me>
                 R(f) = \langle \mathcal{L}(f(X), Y)  \rangle
             </me>
-            Now, the <q>true minimum</q> is not possible. The only thing we have are <m>(x,y)</m> pairs of values in each trial, i.e., each data point. Say you have <m>n</m> data points. So, we build the expectation on the right based on these <m>n</m> data points and get <q>an approximation</q> of <m>R(f)</m>, which we can designate as <m>R_n(f)</m>.
+            Since, we do not know the true distribution, we can find the <q>true minimum</q>. The only thing we have are <m>(x,y)</m> pairs of values in each trial, i.e., each data point. Say you have <m>n</m> data points. So, we build the expectation on the right based on these <m>n</m> data points and get <q>an approximation</q> of <m>R(f)</m>, which we can designate as <m>R_n(f)</m>.
             <me>
                 R_n(f) = \frac{1}{n} \sum_{i=1}^n\mathcal{L}(f(X_i), Y_i).
             </me>
@@ -228,19 +242,112 @@
             
             
         </p>
+        -->
         <p>
             Maybe an example from Physics as well: In statistical mechanics, we often can't observe all particles in a macroscopic system. Instead, suppose we observe one particle over a long time. LLN guarantees that if the system is <alert>ergodic</alert>, the time average converges to the ensemble (population) average.
         </p>
 
         <p>
-            <alert>Why CLT Matter?</alert>
+            <alert>Why CLT Matter? The Confidence Interval</alert>
         </p>
         <p>
-            Although LLN tells us that in the large <m>n</m> limit sample mean will be close to the population or true mean <m>\mu</m>. But, we don't only want to know the approximate value of the true mean <m>\mu</m>. We also would like to know <alert>uncertainty</alert> in this knowledge. This is where we <alert>need the Central Limit Theorem</alert>. The CLT says that <m>\bar{X}_n</m> is approximately Gaussian, which gives as tools to build <alert>confidence intervals</alert>.
+            Although LLN tells us that in the large <m>n</m> limit sample mean will be close to the population or true mean <m>\mu</m>. But, we don't only want to know the approximate value of the true mean. We also would like to know the <alert>uncertainty</alert> in this knowledge, especially since we often do not know the value of true mean. This is where we <alert>need the Central Limit Theorem</alert>. The CLT says that <m>\bar{X}_n</m> is approximately Gaussian, which gives as tools to build <alert>confidence intervals</alert>.
+        </p>
+        
+        <!-- <p>
+            Suppose we have the sample mean <m>\bar{X}_n</m> that gives us and estimate of the true mean <m>\mu</m> by Law of Large Numbers as above. If we knew the true mean <m>\mu</m>, just the absolute difference or percentage difference would suffice to tell us how different is the estimate from the true value. But, if we knew the true mean, we wouldn't need the estimated mean.
+        </p>   -->
+        <!-- <p> 
+            In the absence of any knowledge of the true mean, how do we make any conclusion about how good a estimate we have. That's where we can use Central Limit Theorem. According to the CLT, even though we do not know the true distribution of our original problem of random variables <m>X</m>, by repeatedly performing the experiment that measures <m>X</m> in an identical manner, say <m>n</m> times, we can claim that the mean of these <m>n</m> experimental outcomes has a Gaussian distribution whose mean and standard deviation are related to the mean and standard deviation of individual <m>X</m> themselves.
+        </p> -->
+        <p>
+            Let us look at the fair six-sided die rolls. Suppose, want to answer the question: what is the mean of face value of a roll of a single die? The result of a signle roll is a random variable, which are calling <m>X</m>. Of course, each time you roll the die, you will get a single value from <m>1, 2, 3, 4, 5, \text{or}, 6</m> in a equiprobable way. From this you can calculate the true mean to be <m>\mu = 3.5</m>, and standard deviation <m>\sigma = \sqrt{35/12}</m>, which is left as an exercise for you. (Just use the mean and variance formulas.)
+            <me>
+                \mu = 3.5,\quad \sigma = \sqrt{35/12}.
+            </me>
+            Now, we are going to pretend that we didn't know these values and want to figure out the mean by doing experiments and generating data. 
+        </p>
+        <p>
+            To get the estimates of mean and standard deviation, we can just roll the die <m>n</m> times, say for <m>n=100</m>. The outcome of this experiment will be a sequence of face values, <m>\{X_1 = 2, X_2 = 5, X_3 = 1, X_4 = 3, \cdots, X_{100}=4 \}</m>. The average, denoted by <m>\bar{X}_{n}</m> and standard deviation of this data can be an estimate of the corresponding true quantities. Since <m>n=100</m> is fairly large number, the law of large numbers tells us that the average will be a good estimate of <m>\mu</m>. 
+        </p>
+        <p>
+            Suppose you got a value of <m>\bar{X}_{n} = 3.6</m> in our first try of a 100 rolls. Now, when you repeat another <m>100</m> rolls, you will get another set of data, <m>\{X_1 = 5, X_2 = 1, X_3 = 6, X_4 = 1, \cdots, X_{100}=2 \}</m>. Their average and standard deviation will be different from what you got the first time. Say, for average you got this time <m> \bar{X}_{n}= 3.55</m> this time. 
+        </p>  
+        <!-- <p>  
+            Clearly, <m>\bar{X}_{n}</m> is a random variable. The good news is that Central Limit Theorem tells us that the distribution function of <m>\bar{X}_{n}</m> is a Gausian, whose mean and standard deviation are related to the true mean <m>\mu</m>,  true standard deviation <m>\sigma</m> of the individual rolls, say roll number <m>1</m>, whose random variable is <m>X_1</m> with all rolls being identical, and the number of rolls in one experiment, here <m>n=100</m>. For clarity, I will state the CLT result here a little differently making use the probability of values of the random variable <m>\bar{X}_n</m>.
+            <me>
+                P(x \le \bar{X}_n \le x+dx) = \frac{1}{\sqrt{2\pi\sigma^2}}\, \exp\left( - \frac{( x - \mu )^2}{2 \sigma^2/n}  \right)\, dx
+            </me>
+            Of course writing in such details is not necessary as long as we keep the prpbablity part in the back of our ming and instead, use the following notation, which means the same thing.  
+            <men xml:id="eqn-clt-gaussian">
+                \bar{X}_n \sim \mathcal{N}\left( \mu, \frac{\sigma^2}{n}\right).
+            </men>
+            OF course, we still do not know the true mean and true standard deviation. So, we can estomate them by repeating sets of <m>n</m> rolls, each set of 100 rolls, being one trial. 
+        </p> -->
+        <p>
+            A simulation of <m>N=10000</m> repeats of this <m>100</m>-roll experimets is presented in <xref ref="fig-confidence-interval-die-roll"/> as a histogram. The theoretical true mean is near the peak of the Gaussian as expected. But, if we didn't know the value of the true mean, we will need to guess where it is. That guess can be quantified with a degree of confidence in the guess. The figure shows a range of values of the sample mean (the abscissa in the plot) within which there is <m>95\%</m> chance of finding the true <m>\mu</m>.
+        </p>
+        <p>
+            Here is the breakdown of how the confidence interval was obtained. Let's recall that as per CLT for a large <m>n</m>.
+            
+            <!-- First we re-write the Gaussian result as a standard Gaussian by shifting and scaling the random variable to get a new random variable, which is to the left of the following equation.
+            <men xml:id="eqn-clt-standard-gaussian">
+                \frac{\sqrt{n}\left( \bar{X}_n -\mu \right)}{\sigma} \sim \mathcal{N}\left( 0, 1\right).
+            </men>
+            Since we do not know the true <m>\mu</m> and <m>\sigma</m>, we replace them with the one we can estimate from our rolls, which I will denote by <m>\mu_\text{est}</m> and <m>\sigma_\text{est}</m>.
+            <men xml:id="eqn-clt-standard-gaussian-approx">
+                \frac{\sqrt{n}\left( \bar{X}_n -\mu_\text{est} \right)}{\sigma_\text{est}} \sim \mathcal{N}\left( 0, 1\right).
+            </men>           
+            Or, we can equivalently do the following. -->
+            <men xml:id="eqn-clt-gaussian-approx">
+                \bar{X}_n  \sim  \mathcal{N}\left( \mu, \frac{ \sigma^2 }{n}\right),
+            </men>
+            where <m>\mu</m> and <m>\sigma</m> are the true mean and standard deviation of the random variabel <m>X_1</m>. The last quantity is sample variance
+            <men xml:id="eqn-sample-variance">
+                \text{Sample Variance} = \frac{ \sigma^2 }{n}.
+            </men>
+            This is often referred to as theoretical result. When we simulate the experiment as done in <xref ref="fig-confidence-interval-die-roll"/>, you can get estimated sample mean as well the estimated sample variance directly from the experiment and don't need to divide it further by <m>\sqrt{n}</m>. Thus, using the quatities from the simulation, we will write the CLT as follows.
+            <men xml:id="eqn-clt-gaussian-approx-simulation">
+                \bar{X}_n  \sim  \mathcal{N}\left( \mu_\text{sim}, \sigma_\text{sim}^2 \right),
+            </men>
+            where I am using the subscript <m>\text{sim}</m> to indicate the simulation quantities.
+        </p>  
+        <p>              
+            
+            Here, we want a <m>95\%</m> confidence interval (in other applications you may want <m>99\%</m> CI or whatever), which is just the range of values around the mean that covers the <m>95\%</m> of the area under the curve in the Gaussian function. That will leave <m>5\%</m> area outside, which will be <m>2.5\%</m> on the right and <m>2.5\%</m> on the left. That's where we can use the inverse of the CDF <m>F(x)</m>. If we solve
+            <me>
+                F(x) = 0.95 + 0.025 = 0.975, 
+            </me>
+            we will get the value of <m>x</m> that is the right edge. By symmetry, we will go to the left edge, or for the left edge solve
+            <me>
+                F(x) = 0.025.
+            </me>
+            These points will be
+            <me>
+                x_\text{right} = F^{-1}(0.975),\quad x_\text{left} = F^{-1}(0.025).
+            </me>
+            Altough plot in <xref ref="fig-confidence-interval-die-roll"/> does not show the normalized Gaussian, in practice it is common to shift and scale to the <m>Z</m> vartiable as defined above.
+            <me>
+                \bar{Z}_n \equiv \frac{\left( \bar{X}_n -\mu_\text{sim} \right)}{\sigma_\text{sim}} \sim \mathcal{N}\left( 0, 1\right).
+            </me> 
+            Then, it is easy to get the left and right values of <m>\bar{Z}_n</m> by using a standard library function, such as <code>ppf()</code> shown in the program listed below. This gives
+            <me>
+                 x_\text{right} =  \mu_\text{est} + z_\text{right} \times \sigma_\text{sim},
+            </me>
+            and 
+            <me>
+                 x_\text{left} =  \mu_\text{est} + z_\text{left} \times \sigma_\text{sim}.
+            </me>
+            The range <m>[x_\text{left}, x_\text{right}]</m> gives the range of <m>\bar{X}_n</m> values within which at the chosen confidence level, here illustrated for <m>95\%</m> that the true <m>\mu</m> is expected to reside.
+            <men xml:id="eqn-confidence-interval">
+                \mu \in [x_\text{left}, x_\text{right}] = [\mu_\text{est} + z_\text{right} \times \sigma_\text{sim},  \mu_\text{est} + z_\text{left} \times \sigma_\text{sim} ].
+            </men>
+                        
+            
         </p>
 
-        <p>
-            Let us look at the fair six-sided die rolls. Suppose you N=10000 repeats of n=100 rolls. In each roll you compute the average of the n face up values and the standard deviation of the face up values from this average. In each trial, you will get the values of sample mean. That will give us the distribution of values of smaple mean from all <m>N</m> trials. We can then compute mean of these sample means and their standard deviation or variance as we learned in basic statistics. Then, because of the claim of the CLI, we can assert that
+        <!-- <p>
+            Suppose you N=10000 repeats of n=100 rolls. In each roll you compute the average of the n face up values and the standard deviation of the face up values from this average. In each trial, you will get the values of sample mean. That will give us the distribution of values of smaple mean from all <m>N</m> trials. We can then compute mean of these sample means and their standard deviation or variance as we learned in basic statistics. Then, because of the claim of the CLI, we can assert that
             <me>
                 \bar{X}_{100} \sim \mathcal{N}\left( \text{Mean of Sample Means},  \frac{ \text{Variance of Sample Means} }{N} \right).
             </me>
@@ -263,18 +370,19 @@
             </me>
             for the argument of the inverse <m>\Phi^{-1}</m>, which gave us how far from the estimated mean we need to go on either side of the estimated mean as as to be able to find the true mean. The true mean, of course, usually not known in a real situation, although it is known here simply by the equal probability of each face.
              
-        </p>
-        <p>
+        </p> -->
+        <!-- <p>
             A simulation of tossing of die is presented in <xref ref="fig-confidence-interval-die-roll"/>. Runs 10,000 experiments of rolling 100 dice each. The simulation (1) Collects sample means from each trial of 100 tosses; (2) Uses those means to estimate the 95% CI; (3) Draws a double-headed arrow under the histogram showing the CI. The program in Python that does all of this is listed after the figure.
-        </p>
+        </p> -->
 
         <figure xml:id="fig-confidence-interval-die-roll">
-            <caption>Confidence interval for 10000 trials of the computation of the distribution of mean of face values in 100 rolls of a siz-sided fair die with marking 1, 2, 3, 4, 5, 6. The true mean id just <m>(1+ 2+ 3+ 4+ 5+ 6)/6 = 3.5</m>. </caption>
+            <caption>Confidence interval for 10000 trials of the computation of the distribution of mean of face values in 100 rolls of a siz-sided fair die with marking 1, 2, 3, 4, 5, 6. The true mean is just <m>(1+ 2+ 3+ 4+ 5+ 6)/6 = 3.5</m>. </caption>
             <image source="./images/essential-probability-and-statistics/confidence-interval-die-roll.png">
                 <shortdescription>Confidence interval for 10000 trials of the computation of the distribution of mean of face values in 100 rolls of a siz-sided fair die with marking 1, 2, 3, 4, 5, 6.</shortdescription>
             </image>
         </figure>
         <program language="python">
+            <title>Program for simulating dice rolls and plotting the result</title>
             <code>
                 import numpy as np
                 import matplotlib.pyplot as plt
