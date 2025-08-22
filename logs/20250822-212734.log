@@ -1,0 +1,40 @@
+INFO    : Building target web
+INFO    : XSL conversion of /workspaces/mlnuts.github.io/source/main.ptx by /root/.ptx/2.23.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /root/.ptx/2.23.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : Generating any needed assets.
+INFO    : Finished generating assets.
+
+INFO    : Preparing to build into /workspaces/mlnuts.github.io/output/web.
+INFO    : discovering source file's directory name: /workspaces/mlnuts.github.io/source
+INFO    : verifying and expanding input directory: /workspaces/mlnuts.github.io/source/../generated-assets
+INFO    : input directory expanded to absolute path: /workspaces/mlnuts.github.io/generated-assets
+INFO    : verifying and expanding input directory: /workspaces/mlnuts.github.io/source/../assets
+INFO    : input directory expanded to absolute path: /workspaces/mlnuts.github.io/assets
+INFO    : XSL conversion of /workspaces/mlnuts.github.io/source/main.ptx by /root/.ptx/2.23.0/core/xsl/utilities/report-publisher-variables.xsl
+INFO    : successful application of /root/.ptx/2.23.0/core/xsl/utilities/report-publisher-variables.xsl
+INFO    : Downloading rs services file from https://runestone.academy/cdn/runestone/latest/webpack_static_imports.xml.
+INFO    : Runestone Services via online CDN query: version 7.9.8
+INFO    : Downloading Runestone Services, version 7.9.8
+INFO    : Extracting Runestone Services from archive file
+INFO    : Building custom css theme: theme-default-modern
+INFO    : converting /workspaces/mlnuts.github.io/source/main.ptx to HTML in /ptx-22rbvwbq
+INFO    : XSL conversion of /workspaces/mlnuts.github.io/source/main.ptx by /root/.ptx/2.23.0/core/xsl/pretext-html.xsl
+INFO    : messages from the log for XSL processing:
+ERROR   : * PTX:ERROR: the @xml:id value "fig-die-rolls-sample-mean-vs-true-mean" should be unique, but is authored multiple times.
+INFO    : *            Results will be unpredictable, and likely incorrect.  Information on the locations follows:
+INFO    : *              located within: "fig-die-rolls-sample-mean-vs-true-mean" (xml:id)
+INFO    : * PTX:INFO:   checking ONLY the last TWO YEARS of element deprecations.
+Rerun with the string parameter "author.deprecations.all" set to "yes" to check your source against all deprecations.
+INFO    : successful application of /root/.ptx/2.23.0/core/xsl/pretext-html.xsl
+WARNING : Failed to map codechat path to xml id; codechat will not work.
+INFO    : Removing temporary directory /ptx-22rbvwbq
+INFO    : Removing temporary directory /ptx-xxac02rb
+INFO    : 
+Success! Run `pretext view web` to see the results.
+
+INFO    : 
+----------------------------------------------------
+INFO    : While running pretext, the following errors occurred:
+
+INFO    : (see log messages above or in the 'logs' folder for more information)
+INFO    : ----------------------------------------------------

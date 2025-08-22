@@ -8,7 +8,7 @@
   </introduction>
 
   <!-- include sections -->
-  <xi:include href="ch-essential-prob-sections/sec-descriptive-statistics.ptx" />
+  <xi:include href="ch-essential-prob-sections/sec-descriptive-statistics-rev-1.ptx" />
   <xi:include href="ch-essential-prob-sections/sec-useful-descriptive-statistics-tools.ptx" />
   <xi:include href="ch-essential-prob-sections/sec-categorical-and-numerical-data.ptx" />
   
@@ -17,7 +17,8 @@
   <xi:include href="ch-essential-prob-sections/sec-discrete-probability-distributions.ptx" />
 
   <xi:include href="ch-essential-prob-sections/sec-continuous-probability-distributions.ptx" />
-  <xi:include href="ch-essential-prob-sections/sec-LLN-and-CLT.ptx" />
+  <xi:include href="ch-essential-prob-sections/sec-LLN-and-CLT-rev-1.ptx" />
+  <xi:include href="ch-essential-prob-sections/inferential-statistics.ptx" />
 
 
 </chapter>

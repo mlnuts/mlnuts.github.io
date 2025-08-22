@@ -213,9 +213,9 @@
             <me>
                 \text{True Mean}, \mu = 3.5,\qquad \text{Estimated Mean}, \bar{X}_n \approx 3.5.
             </me>
-            Can you see how this can be shown? Anyway, let's roll this die <m>n</m> times and plot the sample means of the results obtained in rolls for various <m>n</m> values. This is shown in <xref ref="fig-die-rolls-sample-mean-vs-true-mean"/>. You can see that As the number of rolls increases, the sample mean stabilizes around <m>3.5</m>
+            Can you see how this can be shown? Anyway, let's roll this die <m>n</m> times and plot the sample means of the results obtained in rolls for various <m>n</m> values. This is shown in <xref ref="fig-die-rolls-sample-mean-vs-true-mean-x"/>. You can see that As the number of rolls increases, the sample mean stabilizes around <m>3.5</m>
 
-            <figure xml:id="fig-die-rolls-sample-mean-vs-true-mean">
+            <figure xml:id="fig-die-rolls-sample-mean-vs-true-mean-x">
                 <caption>Illustration of the Law of Large Numbers with rolls of a fair six-sided die.</caption>
                 <image source="./images/essential-probability-and-statistics/die-rolls-sample-mean-vs-true-mean.png">
                     <shortdescription>Illustration of the Law of Large Numbers with rolls of a fair six-sided die.</shortdescription>

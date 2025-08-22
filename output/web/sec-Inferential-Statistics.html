@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Inferential Statistics</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="ML Notes">
+<meta property="book:author" content="Samuel Ling">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.9.8';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.b215b0da62d655bd.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.28cc3c4821792be5.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8141ae22fd347e48.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="ML-Notes" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="my-ML-Notes.html"><span class="title">ML Notes</span> <span class="subtitle">Theoretical and Practical ML Concepts</span></a></h1>
+<p class="byline">Samuel Ling</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-LLN-and-CLT.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-Essential-Probability-and-Statistics.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-Essential-Probability-and-Statistics.html" class="internal"><span class="codenumber">1</span> <span class="title">Essential Probability and Statistics</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Descriptive-Statistics.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Descriptive Statistics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Descriptive-Statistics.html#subsec-Central-Tendency" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Measures of Central Tendency</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Descriptive-Statistics.html#subsec-Dispersion" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Measures of Dispersion</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Descriptive-Statistics.html#subsec-Distribution-Shape" class="internal"><span class="codenumber">1.1.3</span> <span class="title">Distribution Shape</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Descriptive-Statistics.html#subsec-Numerical-Summary" class="internal"><span class="codenumber">1.1.4</span> <span class="title">Numerical Summary</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-useful-descriptive-statistics-tools.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Useful Descriptive Statistics Tools</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-useful-descriptive-statistics-tools.html#subsec-Pandas" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Pandas</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-Numerical-and-Categorical-Data.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Numerical and Categorical Data</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Basic-Probability.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Basic Probability</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Basic-Probability.html#subsec-Axiomatic-View-of-Probability" class="internal"><span class="codenumber">1.4.1</span> <span class="title">Axiomatic View of Probability</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Basic-Probability.html#subsec-three-types-of-probabilities" class="internal"><span class="codenumber">1.4.2</span> <span class="title">Three Types of Probabilities</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Joint-Conditional-and-Marginal-Probabilities.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Joint, Conditional and Marginal Probabilities</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Joint-Conditional-and-Marginal-Probabilities.html#subsec-Random-Variables" class="internal"><span class="codenumber">1.5.1</span> <span class="title">Random Variables, Probabilities, and Expections</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-Joint-Conditional-and-Marginal-Probabilities.html#subsec-Joint-Probability" class="internal"><span class="codenumber">1.5.2</span> <span class="title">Joint ad Marginal Probabilities</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Joint-Conditional-and-Marginal-Probabilities.html#subsubsec-Covariance-and-Correlation" class="internal"><span class="codenumber">1.5.2.1</span> <span class="title">Covariance and Correlation</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Joint-Conditional-and-Marginal-Probabilities.html#subsec-Conditional-Probability" class="internal"><span class="codenumber">1.5.3</span> <span class="title">Conditional Probability</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Joint-Conditional-and-Marginal-Probabilities.html#subsec-conditional-probability-from-joint-probability" class="internal"><span class="codenumber">1.5.4</span> <span class="title">Bayes’ Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Joint-Conditional-and-Marginal-Probabilities.html#subsec-Independent-Variables" class="internal"><span class="codenumber">1.5.5</span> <span class="title">Independent Variables</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-Joint-Conditional-and-Marginal-Probabilities.html#subsec-Complications-For-Continuous-Variables" class="internal"><span class="codenumber">1.5.6</span> <span class="title">Complications-For-Continuous-Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Joint-Conditional-and-Marginal-Probabilities.html#subsubsec-Probability-Density" class="internal"><span class="codenumber">1.5.6.1</span> <span class="title">Probability Density</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Joint-Conditional-and-Marginal-Probabilities.html#subsubsec-Cumulative-Distribution-Function" class="internal"><span class="codenumber">1.5.6.2</span> <span class="title">Cumulative Distribution Function (CDF)</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Example-Discrete-Probability-Distributions.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Example Discrete Probability Distributions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Example-Discrete-Probability-Distributions.html#subsec-Bernoulli-Distribution" class="internal"><span class="codenumber">1.6.1</span> <span class="title">Bernoulli Distribution</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Example-Discrete-Probability-Distributions.html#subsec-Binomial-Distribution" class="internal"><span class="codenumber">1.6.2</span> <span class="title">Binomial Distribution</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-Example-Discrete-Probability-Distributions.html#subsec-Poisson-Distribution" class="internal"><span class="codenumber">1.6.3</span> <span class="title">Poisson Distribution</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Example-Discrete-Probability-Distributions.html#subsub-Poisson-Process" class="internal"><span class="codenumber">1.6.3.1</span> <span class="title">Poisson Process</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Example-Continuous-Probability-Distributions.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Example Continuous Probability Distributions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-Example-Continuous-Probability-Distributions.html#subsec-Uniform-Distribution" class="internal"><span class="codenumber">1.7.1</span> <span class="title">Uniform Distribution</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Example-Continuous-Probability-Distributions.html#subsubsec-Inverse-Uniform-CDF" class="internal"><span class="codenumber">1.7.1.1</span> <span class="title">Inverse Uniform CDF</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-Example-Continuous-Probability-Distributions.html#subsec-Normal-Distribution" class="internal"><span class="codenumber">1.7.2</span> <span class="title">Normal (Gaussian) Distribution</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Example-Continuous-Probability-Distributions.html#subsubsec-Inverse-CDF-and-Sampling" class="internal"><span class="codenumber">1.7.2.1</span> <span class="title">Inverse CDF and Sampling</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Example-Continuous-Probability-Distributions.html#subsec-Exponential-Distribution" class="internal"><span class="codenumber">1.7.3</span> <span class="title">Exponential Distribution</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-LLN-and-CLT.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Law of Large Numbers and Central Limit Theorem</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LLN-and-CLT.html#subsec-Law-of-Large-Numbers" class="internal"><span class="codenumber">1.8.1</span> <span class="title">Law of Large Numbers</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LLN-and-CLT.html#subsec-Central-Limit-Theorem" class="internal"><span class="codenumber">1.8.2</span> <span class="title">Central Limit Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LLN-and-CLT.html#subsec-LLN-vs-CLT" class="internal"><span class="codenumber">1.8.3</span> <span class="title">LLN vs. CLT</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LLN-and-CLT.html#subsec-Berry-Esseen" class="internal"><span class="codenumber">1.8.4</span> <span class="title">Berry-Esseen Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LLN-and-CLT.html#subsec-Why-Large-n-Matters" class="internal"><span class="codenumber">1.8.5</span> <span class="title">Why LLN and CLT Matter</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="sec-Inferential-Statistics.html" class="internal"><span class="codenumber">1.9</span> <span class="title">Inferential Statistics</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Inferential-Statistics.html#subsec-Point-Estimation" class="internal"><span class="codenumber">1.9.1</span> <span class="title">Point Estimation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Inferential-Statistics.html#subsec-Sampling-Distributions" class="internal"><span class="codenumber">1.9.2</span> <span class="title">Sampling Distributions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Inferential-Statistics.html#subsec-Hypothesis-Testing" class="internal"><span class="codenumber">1.9.3</span> <span class="title">Hypothesis Testing</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Inferential-Statistics.html#subsec-Confidence-Intervals" class="internal"><span class="codenumber">1.9.4</span> <span class="title">Confidence Intervals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Inferential-Statistics.html#subsec-Types-of-Errors" class="internal"><span class="codenumber">1.9.5</span> <span class="title">Types of Errors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Inferential-Statistics.html#subsec-Power-Effect-Size" class="internal"><span class="codenumber">1.9.6</span> <span class="title">Statistical Power and Effect Size</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Inferential-Statistics.html#subsec-Multiple-Testing" class="internal"><span class="codenumber">1.9.7</span> <span class="title">Multiple Testing</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Inferential-Statistics.html#subsec-Other-Tests" class="internal"><span class="codenumber">1.9.8</span> <span class="title">Common Statistical Tests</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-Inferential-Statistics"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.9</span><span class="space"> </span><span class="title">Inferential Statistics</span>
+</h2>
+<section class="introduction" id="sec-Inferential-Statistics-2"><div class="para" id="sec-Inferential-Statistics-2-1">Inferential statistics is the branch of statistics that enables us to draw conclusions about a population based on data from a sample. Unlike descriptive statistics, which summarize observed data, inferential statistics use probability theory to make generalizations about the population from which the sample is drawn. This is essential in fields such as medicine, economics, and social sciences, where measuring an entire population is often impractical. For example, a survey of 1,000 voters can estimate the preferences of millions. This section focuses on frequentist methods, which rely on hypothesis testing and confidence intervals, but Bayesian methods, which incorporate prior knowledge to compute probabilities of hypotheses, are also used in statistical inference.<div class="autopermalink" data-description="Paragraph"><a href="#sec-Inferential-Statistics-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-Inferential-Statistics-2-2">The core concepts of inferential statistics include:<div class="autopermalink" data-description="Paragraph"><a href="#sec-Inferential-Statistics-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ul class="disc" id="sec-Inferential-Statistics-2-3">
+<li id="sec-Inferential-Statistics-2-3-1">
+<div class="para" id="sec-Inferential-Statistics-2-3-1-1">
+<dfn class="terminology">Population</dfn>: The entire group of interest.<div class="autopermalink" data-description="Paragraph"><a href="#sec-Inferential-Statistics-2-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-Inferential-Statistics-2-3-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-Inferential-Statistics-2-3-2">
+<div class="para" id="sec-Inferential-Statistics-2-3-2-1">
+<dfn class="terminology">Sample</dfn>: A subset of the population that is observed.<div class="autopermalink" data-description="Paragraph"><a href="#sec-Inferential-Statistics-2-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-Inferential-Statistics-2-3-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-Inferential-Statistics-2-3-3">
+<div class="para" id="sec-Inferential-Statistics-2-3-3-1">
+<dfn class="terminology">Parameter</dfn>: A numerical characteristic of the population (e.g., population mean <span class="process-math">\(\mu\text{,}\)</span> variance <span class="process-math">\(\sigma^2\)</span>).<div class="autopermalink" data-description="Paragraph"><a href="#sec-Inferential-Statistics-2-3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-Inferential-Statistics-2-3-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-Inferential-Statistics-2-3-4">
+<div class="para" id="sec-Inferential-Statistics-2-3-4-1">
+<dfn class="terminology">Statistic</dfn>: A numerical characteristic computed from the sample (e.g., sample mean <span class="process-math">\(\bar{x}\text{,}\)</span> sample proportion <span class="process-math">\(\hat{p}\)</span>).<div class="autopermalink" data-description="Paragraph"><a href="#sec-Inferential-Statistics-2-3-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-Inferential-Statistics-2-3-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul></section><section class="subsection" id="subsec-Point-Estimation"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.9.1</span><span class="space"> </span><span class="title">Point Estimation</span>
+</h3>
+<div class="para" id="subsec-Point-Estimation-2">Point estimation involves using a sample statistic to estimate a population parameter. For example, the sample mean <span class="process-math">\(\bar{x}\)</span> is used to estimate the population mean <span class="process-math">\(\mu\text{,}\)</span> and the sample proportion <span class="process-math">\(\hat{p}\)</span> estimates the population proportion <span class="process-math">\(p\text{.}\)</span> A good point estimator should be unbiased (its expected value equals the true parameter) and have low variance (it is precise).<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Point-Estimation-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Point-Estimation-3">For instance, if we measure the heights of 50 randomly selected adults and find a sample mean of <span class="process-math">\(\bar{x} = 170 \, \text{cm}\text{,}\)</span> we use <span class="process-math">\(170 \, \text{cm}\)</span> as a point estimate for the population mean height <span class="process-math">\(\mu\text{.}\)</span> However, point estimates do not convey uncertainty, which is why confidence intervals are often used to provide a range of plausible values.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Point-Estimation-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 1.9.1: Point Estimation"><a href="#subsec-Point-Estimation" title="Copy heading and permalink for Subsection 1.9.1: Point Estimation" aria-label="Copy heading and permalink for Subsection 1.9.1: Point Estimation">🔗</a></div></section><section class="subsection" id="subsec-Sampling-Distributions"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.9.2</span><span class="space"> </span><span class="title">Sampling Distributions</span>
+</h3>
+<div class="para" id="subsec-Sampling-Distributions-2">A sampling distribution is the probability distribution of a statistic over repeated samples of the same size from a population. For example, if we repeatedly draw samples of size <span class="process-math">\(n\)</span> and compute the sample mean <span class="process-math">\(\bar{x}\text{,}\)</span> the distribution of <span class="process-math">\(\bar{x}\)</span> values is the sampling distribution of the mean.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Sampling-Distributions-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Sampling-Distributions-3">The Central Limit Theorem (CLT) states that for large sample sizes, the sampling distribution of the sample mean or proportion is approximately normal, regardless of the population distribution, provided certain conditions are met (e.g., <span class="process-math">\(np \geq 5\)</span> and <span class="process-math">\(n(1-p) \geq 5\)</span> for proportions). This property underpins hypothesis testing and confidence intervals, allowing us to use the normal distribution for inference.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Sampling-Distributions-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 1.9.2: Sampling Distributions"><a href="#subsec-Sampling-Distributions" title="Copy heading and permalink for Subsection 1.9.2: Sampling Distributions" aria-label="Copy heading and permalink for Subsection 1.9.2: Sampling Distributions">🔗</a></div></section><section class="subsection" id="subsec-Hypothesis-Testing"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.9.3</span><span class="space"> </span><span class="title">Hypothesis Testing</span>
+</h3>
+<div class="para" id="subsec-Hypothesis-Testing-2">Hypothesis testing is a cornerstone of inferential statistics, allowing us to test claims about population parameters using sample data. It involves a structured process to determine whether the data provide sufficient evidence to reject a default claim, called the null hypothesis.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Hypothesis-Testing-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Hypothesis-Testing-3">The steps of hypothesis testing are:<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Hypothesis-Testing-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ol class="decimal" id="subsec-Hypothesis-Testing-4">
+<li id="subsec-Hypothesis-Testing-4-1">
+<div class="para" id="subsec-Hypothesis-Testing-4-1-1">
+<dfn class="terminology">Null hypothesis</dfn> (<span class="process-math">\(H_0\)</span>): The default claim, often stating no effect or no difference (e.g., <span class="process-math">\(p = 0.5\)</span>).<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Hypothesis-Testing-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#subsec-Hypothesis-Testing-4-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="subsec-Hypothesis-Testing-4-2">
+<div class="para" id="subsec-Hypothesis-Testing-4-2-1">
+<dfn class="terminology">Alternative hypothesis</dfn> (<span class="process-math">\(H_a\)</span>): The claim we seek evidence for (e.g., <span class="process-math">\(p \neq 0.5\)</span>).<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Hypothesis-Testing-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#subsec-Hypothesis-Testing-4-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="subsec-Hypothesis-Testing-4-3">
+<div class="para" id="subsec-Hypothesis-Testing-4-3-1">Choose a significance level <span class="process-math">\(\alpha\)</span> (e.g., 0.05), the probability of rejecting <span class="process-math">\(H_0\)</span> when it is true.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Hypothesis-Testing-4-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#subsec-Hypothesis-Testing-4-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="subsec-Hypothesis-Testing-4-4">
+<div class="para" id="subsec-Hypothesis-Testing-4-4-1">Compute a test statistic from the sample data.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Hypothesis-Testing-4-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 4"><a href="#subsec-Hypothesis-Testing-4-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+<li id="subsec-Hypothesis-Testing-4-5">
+<div class="para" id="subsec-Hypothesis-Testing-4-5-1">Find the <dfn class="terminology">p-value</dfn> or critical region.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Hypothesis-Testing-4-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 5"><a href="#subsec-Hypothesis-Testing-4-5" title="Copy heading and permalink for Item 5" aria-label="Copy heading and permalink for Item 5">🔗</a></div>
+</li>
+<li id="subsec-Hypothesis-Testing-4-6">
+<div class="para" id="subsec-Hypothesis-Testing-4-6-1">Decision: Reject <span class="process-math">\(H_0\)</span> if the p-value is less than <span class="process-math">\(\alpha\text{;}\)</span> otherwise, fail to reject <span class="process-math">\(H_0\text{.}\)</span> Failing to reject <span class="process-math">\(H_0\)</span> does not prove it is true, only that the evidence is insufficient to reject it.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Hypothesis-Testing-4-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 6"><a href="#subsec-Hypothesis-Testing-4-6" title="Copy heading and permalink for Item 6" aria-label="Copy heading and permalink for Item 6">🔗</a></div>
+</li>
+</ol>
+<div class="para" id="subsec-Hypothesis-Testing-5">A common misconception is that the p-value represents the probability that the null hypothesis is true. Instead, it is the probability of observing data as extreme as the sample, assuming <span class="process-math">\(H_0\)</span> is true. A small p-value (e.g., <span class="process-math">\(p &lt; 0.05\)</span>) suggests strong evidence against <span class="process-math">\(H_0\text{,}\)</span> but it does not quantify the probability of <span class="process-math">\(H_0\)</span> or <span class="process-math">\(H_a\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Hypothesis-Testing-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Hypothesis-Testing-6">
+<em class="alert">Worked Example: Coin Toss</em><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Hypothesis-Testing-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Hypothesis-Testing-7">
+<div class="para">Suppose we suspect a coin is biased because it lands on heads more often. To test if it is fair, we define:</div>
+<div class="displaymath process-math" id="subsec-Hypothesis-Testing-7-1">
+\begin{align*}
+\amp H_0: p = 0.5 \quad (\text{coin is fair})\\
+\amp H_a: p \neq 0.5 \quad (\text{coin is biased})
+\end{align*}
+</div>
+<div class="para">where <span class="process-math">\(p\)</span> is the probability of heads. We toss the coin 100 times and observe 52 heads, so the sample proportion is:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\hat{p} = \frac{52}{100} = 0.52.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Hypothesis-Testing-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Hypothesis-Testing-8">
+<div class="para">We set the significance level at <span class="process-math">\(\alpha = 0.02\)</span> (98% confidence). The Central Limit Theorem applies because <span class="process-math">\(np_0 = 100 \cdot 0.5 = 50 \geq 5\)</span> and <span class="process-math">\(n(1-p_0) = 50 \geq 5\text{,}\)</span> ensuring the sample proportion is approximately normal. The standard error under <span class="process-math">\(H_0\)</span> is:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sigma_\text{samp} = \sqrt{\frac{p_0(1-p_0)}{n}} = \sqrt{\frac{0.5 \cdot 0.5}{100}} = 0.05.
+\end{equation*}
+</div>
+<div class="para">The test statistic is:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+Z = \frac{\hat{p} - p_0}{\sigma_\text{samp}} = \frac{0.52 - 0.5}{0.05} = 0.4.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Hypothesis-Testing-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Hypothesis-Testing-9">
+<div class="para">For a two-tailed test, the p-value is:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\text{p-value} = 2 \cdot (1 - \Phi(0.4)) \approx 2 \cdot (1 - 0.6554) = 0.6892.
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(0.6892 &gt; \alpha = 0.02\text{,}\)</span> we fail to reject <span class="process-math">\(H_0\text{.}\)</span> The significance level <span class="process-math">\(\alpha\)</span> must be chosen before the experiment to avoid bias (e.g., adjusting <span class="process-math">\(\alpha\)</span> to 0.7 after seeing the p-value). There is insufficient evidence to conclude the coin is biased, but this does not prove the coin is fair.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Hypothesis-Testing-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Hypothesis-Testing-10">
+<em class="alert">Visualization</em><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Hypothesis-Testing-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Hypothesis-Testing-11">The following Python code generates a plot of the standard normal distribution with the test statistic <span class="process-math">\(Z = 0.4\)</span> marked and the two-tailed p-value regions shaded:<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Hypothesis-Testing-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="code-box"><pre class="program clipboardable"><code class="language-py">import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import norm
+
+# Define the range for the x-axis
+x = np.linspace(-4, 4, 1000)
+# Standard normal distribution
+y = norm.pdf(x, 0, 1)
+# Test statistic
+z = 0.4
+
+# Create the plot
+plt.figure(figsize=(8, 5))
+plt.plot(x, y, 'b-', label='Standard Normal Distribution')
+# Shade the right tail (z &gt; 0.4)
+x_right = np.linspace(z, 4, 100)
+plt.fill_between(x_right, norm.pdf(x_right, 0, 1), color='red', alpha=0.3, label='p-value region (two-tailed)')
+# Shade the left tail (z &lt; -0.4)
+x_left = np.linspace(-4, -z, 100)
+plt.fill_between(x_left, norm.pdf(x_left, 0, 1), color='red', alpha=0.3)
+# Mark the test statistic
+plt.axvline(z, color='black', linestyle='--', label=f'Z = {z}')
+plt.axvline(-z, color='black', linestyle='--')
+plt.title('Standard Normal Distribution with Test Statistic and p-value')
+plt.xlabel('Z')
+plt.ylabel('Density')
+plt.legend()
+plt.grid(True)
+plt.show()
+</code></pre></div>
+<figure class="figure figure-like" id="fig-p-value"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/p-value.png" class="contained" alt="Plot of the standard normal distribution with the test statistic and p-value regions shaded."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.9.1<span class="period">.</span></span><span class="space"> </span>Plot of the standard normal distribution with the test statistic <span class="process-math">\(Z = 0.4\)</span> marked by dashed lines and the two-tailed p-value regions shaded in red.<div class="autopermalink" data-description="Figure 1.9.1"><a href="#fig-p-value" title="Copy heading and permalink for Figure 1.9.1" aria-label="Copy heading and permalink for Figure 1.9.1">🔗</a></div></figcaption></figure><div class="para" id="subsec-Hypothesis-Testing-14">The plot in <a href="sec-Inferential-Statistics.html#fig-p-value" class="xref" data-knowl="./knowl/xref/fig-p-value.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.9.1">Figure 1.9.1</a> shows the test statistic <span class="process-math">\(Z = 0.4\)</span> close to the mean, indicating a large p-value and weak evidence against <span class="process-math">\(H_0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Hypothesis-Testing-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Hypothesis-Testing-15">
+<div class="para">Alternatively, we can construct a 98% confidence interval for <span class="process-math">\(p\)</span> using the standard error of the proportion, <span class="process-math">\(\sqrt{\frac{\hat{p}(1-\hat{p})}{n}} = \sqrt{\frac{0.52 \cdot 0.48}{100}} \approx 0.05\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="subsec-Hypothesis-Testing-15-3">
+\begin{align*}
+\text{CI} \amp = \left[ 0.52 \pm 2.326 \cdot 0.05 \right] \approx [0.4037, 0.6363].
+\end{align*}
+</div>
+<div class="para">Since <span class="process-math">\(0.5\)</span> lies within this interval, we fail to reject <span class="process-math">\(H_0\text{,}\)</span> consistent with the p-value approach.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Hypothesis-Testing-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Hypothesis-Testing-16">
+<em class="alert">Real-World Application: Drug Efficacy</em><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Hypothesis-Testing-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Hypothesis-Testing-17">In medicine, hypothesis testing is used to evaluate drug efficacy. Suppose a new drug claims to reduce blood pressure by at least 10 mmHg. We test <span class="process-math">\(H_0: \mu = 0\)</span> (no reduction) versus <span class="process-math">\(H_a: \mu &gt; 0\)</span> (reduction). Data from 30 patients show a mean reduction of <span class="process-math">\(\bar{x} = 12 \, \text{mmHg}\)</span> with a sample standard deviation <span class="process-math">\(s = 15 \, \text{mmHg}\text{.}\)</span> Using a t-test (since <span class="process-math">\(\sigma\)</span> is unknown and <span class="process-math">\(n = 30\)</span> is moderate), we compute the t-statistic and p-value to determine if the evidence supports the drug’s efficacy.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Hypothesis-Testing-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 1.9.3: Hypothesis Testing"><a href="#subsec-Hypothesis-Testing" title="Copy heading and permalink for Subsection 1.9.3: Hypothesis Testing" aria-label="Copy heading and permalink for Subsection 1.9.3: Hypothesis Testing">🔗</a></div></section><section class="subsection" id="subsec-Confidence-Intervals"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.9.4</span><span class="space"> </span><span class="title">Confidence Intervals</span>
+</h3>
+<div class="para" id="subsec-Confidence-Intervals-2">A confidence interval (CI) estimates a population parameter with a range of values, associated with a confidence level (e.g., 98%). For the coin toss example, the 98% CI for the true proportion <span class="process-math">\(p\)</span> is <span class="process-math">\([0.4037, 0.6363]\text{,}\)</span> meaning we are 98% confident that <span class="process-math">\(p\)</span> lies within this range. The confidence level indicates that if we repeated the sampling process many times, 98% of such intervals would contain the true parameter. It does not mean there is a 98% probability that <span class="process-math">\(p\)</span> lies in this specific interval.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Confidence-Intervals-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Confidence-Intervals-3">
+<div class="para">For a population mean, the CI is:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[ \bar{x} \pm z_{\alpha/2} \cdot \frac{\sigma}{\sqrt{n}} \right],
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(\bar{x}\)</span> is the sample mean, <span class="process-math">\(\sigma\)</span> is the population standard deviation, <span class="process-math">\(n\)</span> is the sample size, and <span class="process-math">\(z_{\alpha/2}\)</span> is the critical value (e.g., 2.326 for 98% confidence). If <span class="process-math">\(\sigma\)</span> is unknown, the sample standard deviation <span class="process-math">\(s\)</span> is used, and for small samples (<span class="process-math">\(n &lt; 30\)</span>), a t-distribution is applied instead of the normal distribution.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Confidence-Intervals-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Confidence-Intervals-4">CIs complement hypothesis testing by providing a range of plausible values for the parameter. For example, in the drug efficacy case, a 95% CI for the mean blood pressure reduction might be <span class="process-math">\([8, 16] \, \text{mmHg}\text{,}\)</span> suggesting the true effect is likely positive.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Confidence-Intervals-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 1.9.4: Confidence Intervals"><a href="#subsec-Confidence-Intervals" title="Copy heading and permalink for Subsection 1.9.4: Confidence Intervals" aria-label="Copy heading and permalink for Subsection 1.9.4: Confidence Intervals">🔗</a></div></section><section class="subsection" id="subsec-Types-of-Errors"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.9.5</span><span class="space"> </span><span class="title">Types of Errors</span>
+</h3>
+<div class="para" id="subsec-Types-of-Errors-2">Hypothesis testing carries risks of incorrect decisions. A <dfn class="terminology">Type I error</dfn> occurs when we reject <span class="process-math">\(H_0\)</span> when it is true (false positive), with probability <span class="process-math">\(\alpha\)</span> (e.g., 0.02 for a 2% chance). A <dfn class="terminology">Type II error</dfn> occurs when we fail to reject <span class="process-math">\(H_0\)</span> when <span class="process-math">\(H_a\)</span> is true (false negative), with probability <span class="process-math">\(\beta\text{.}\)</span> Reducing <span class="process-math">\(\alpha\)</span> increases <span class="process-math">\(\beta\)</span> unless the sample size or effect size is increased.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Types-of-Errors-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Types-of-Errors-3">In the coin toss example, a Type I error would be concluding the coin is biased when it is fair. A Type II error would be failing to detect a bias when the coin is biased.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Types-of-Errors-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Types-of-Errors-4">
+<em class="alert">Visualization: Types of Errors</em><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Types-of-Errors-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Types-of-Errors-5">The following table illustrates the possible outcomes of a hypothesis test:<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Types-of-Errors-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="table table-like" id="table-error-types"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.9.2<span class="period">.</span></span><span class="space"> </span>Hypothesis Testing Outcomes<div class="autopermalink" data-description="Table 1.9.2: Hypothesis Testing Outcomes"><a href="#table-error-types" title="Copy heading and permalink for Table 1.9.2: Hypothesis Testing Outcomes" aria-label="Copy heading and permalink for Table 1.9.2: Hypothesis Testing Outcomes">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l m b0 r0 l0 t0 lines"></th>
+<th scope="col" class="l m b0 r0 l0 t0 lines">
+<span class="process-math">\(H_0\)</span> True</th>
+<th scope="col" class="l m b0 r0 l0 t0 lines">
+<span class="process-math">\(H_0\)</span> False</th>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Reject <span class="process-math">\(H_0\)</span>
+</td>
+<td class="l m b0 r0 l0 t0 lines">Type I Error (<span class="process-math">\(\alpha\)</span>)</td>
+<td class="l m b0 r0 l0 t0 lines">Correct (Power: <span class="process-math">\(1-\beta\)</span>)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Fail to Reject <span class="process-math">\(H_0\)</span>
+</td>
+<td class="l m b0 r0 l0 t0 lines">Correct (<span class="process-math">\(1-\alpha\)</span>)</td>
+<td class="l m b0 r0 l0 t0 lines">Type II Error (<span class="process-math">\(\beta\)</span>)</td>
+</tr>
+</table></div></figure><div class="autopermalink" data-description="Subsection 1.9.5: Types of Errors"><a href="#subsec-Types-of-Errors" title="Copy heading and permalink for Subsection 1.9.5: Types of Errors" aria-label="Copy heading and permalink for Subsection 1.9.5: Types of Errors">🔗</a></div></section><section class="subsection" id="subsec-Power-Effect-Size"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.9.6</span><span class="space"> </span><span class="title">Statistical Power and Effect Size</span>
+</h3>
+<div class="para" id="subsec-Power-Effect-Size-2">The <dfn class="terminology">power</dfn> of a test is the probability of correctly rejecting a false null hypothesis (<span class="process-math">\(1 - \beta\)</span>). Power depends on the sample size, effect size, and significance level <span class="process-math">\(\alpha\text{.}\)</span> The <dfn class="terminology">effect size</dfn> measures the magnitude of the difference or relationship, such as Cohen’s d for the difference in means or the odds ratio for proportions.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Power-Effect-Size-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Power-Effect-Size-3">For example, in the drug efficacy example, the effect size might be the mean blood pressure reduction (e.g., 10 mmHg). A larger effect size or sample size increases power, making it easier to detect a true effect. Power analysis determines the sample size needed to achieve a desired power (e.g., 80%) for a given effect size and <span class="process-math">\(\alpha\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Power-Effect-Size-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 1.9.6: Statistical Power and Effect Size"><a href="#subsec-Power-Effect-Size" title="Copy heading and permalink for Subsection 1.9.6: Statistical Power and Effect Size" aria-label="Copy heading and permalink for Subsection 1.9.6: Statistical Power and Effect Size">🔗</a></div></section><section class="subsection" id="subsec-Multiple-Testing"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.9.7</span><span class="space"> </span><span class="title">Multiple Testing</span>
+</h3>
+<div class="para" id="subsec-Multiple-Testing-2">When conducting multiple hypothesis tests, the probability of at least one Type I error increases. For example, if 20 tests are performed at <span class="process-math">\(\alpha = 0.05\text{,}\)</span> the chance of at least one false positive is approximately <span class="process-math">\(1 - (1 - 0.05)^{20} \approx 0.64\text{.}\)</span> Methods like the Bonferroni correction adjust the significance level (e.g., <span class="process-math">\(\alpha / m\)</span> for <span class="process-math">\(m\)</span> tests) to control the overall Type I error rate.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Multiple-Testing-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Multiple-Testing-3">For instance, in a study testing 10 drugs, using <span class="process-math">\(\alpha = 0.005\)</span> per test ensures the overall Type I error rate remains near 0.05. However, this reduces power, so researchers must balance error control and test sensitivity.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Multiple-Testing-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 1.9.7: Multiple Testing"><a href="#subsec-Multiple-Testing" title="Copy heading and permalink for Subsection 1.9.7: Multiple Testing" aria-label="Copy heading and permalink for Subsection 1.9.7: Multiple Testing">🔗</a></div></section><section class="subsection" id="subsec-Other-Tests"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.9.8</span><span class="space"> </span><span class="title">Common Statistical Tests</span>
+</h3>
+<div class="para logical" id="subsec-Other-Tests-2">
+<div class="para">Beyond the z-test, other common tests include:</div>
+<ul class="disc" id="subsec-Other-Tests-2-1">
+<li id="subsec-Other-Tests-2-1-1">
+<div class="para" id="subsec-Other-Tests-2-1-1-1">
+<dfn class="terminology">t-test</dfn>: Used for small samples or when the population variance is unknown. For example, to test if a new teaching method improves test scores, we collect scores from 20 students, compute the sample mean difference <span class="process-math">\(\bar{x} = 5\)</span> points and standard deviation <span class="process-math">\(s = 10\text{,}\)</span> and use a t-test to compare against <span class="process-math">\(H_0: \mu = 0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Other-Tests-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-Other-Tests-2-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-Other-Tests-2-1-2">
+<div class="para" id="subsec-Other-Tests-2-1-2-1">
+<dfn class="terminology">Chi-square test</dfn>: Used for categorical data. For example, a survey of 200 people tests if political affiliation (Party A, Party B, Independent) is independent of age group (young, middle-aged, older) by comparing observed and expected frequencies.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Other-Tests-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-Other-Tests-2-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-Other-Tests-2-1-3">
+<div class="para" id="subsec-Other-Tests-2-1-3-1">
+<dfn class="terminology">ANOVA</dfn>: Used to compare means across multiple groups, e.g., testing if different diets affect weight loss.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Other-Tests-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-Other-Tests-2-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-Other-Tests-2-1-4">
+<div class="para" id="subsec-Other-Tests-2-1-4-1">
+<dfn class="terminology">Non-parametric tests</dfn>: Used when assumptions like normality are violated, such as the Mann-Whitney U test for comparing two groups or the Kruskal-Wallis test for multiple groups.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Other-Tests-2-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-Other-Tests-2-1-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Other-Tests-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Other-Tests-3">Each test relies on specific assumptions. For example, z-tests and t-tests assume approximately normal data (or large samples for the CLT) and independent observations. The chi-square test requires expected frequencies of at least 5 per category, and ANOVA assumes homogeneity of variances across groups. Violating these assumptions may necessitate non-parametric tests.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Other-Tests-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 1.9.8: Common Statistical Tests"><a href="#subsec-Other-Tests" title="Copy heading and permalink for Subsection 1.9.8: Common Statistical Tests" aria-label="Copy heading and permalink for Subsection 1.9.8: Common Statistical Tests">🔗</a></div></section><div class="autopermalink" data-description="Section 1.9: Inferential Statistics"><a href="#sec-Inferential-Statistics" title="Copy heading and permalink for Section 1.9: Inferential Statistics" aria-label="Copy heading and permalink for Section 1.9: Inferential Statistics">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec-LLN-and-CLT.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>
