@@ -60,6 +60,34 @@
         <p>
             Although nt that hard, the proofs of these results are beyond these notes.
         </p>
+        <p>
+            For an <alert>intuitive feel</alert>, imagine tossing a fair coin. Suppose you toss it <m>n</m> times. For varying values of <m>n</m> you might find:
+            <ul>
+                <li>
+                    <p>
+                        <m>n=1</m>: <m>X_1</m> = 1 if heads and 0 if tails, with <m>\mu = \langle X_1 \rangle = 0.5</m>. <m>\bar{X}_1 = X_1</m>, hence, <m>\langle \bar{X}_1 \rangle = \mu</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Suppose you flip the coin 10 times, now you have 10 variables, since outcome of each flip is a random variable in its own right. We usually, think of the tosses same experiment done 10 times. With this, <m>n = 10</m>. Suppose, you got <m>(1,1,0,0, 1, 1, 1, 1, 0, 1)</m>. That would mean, for this experiment, you got the following value of the sample mean, <m>\bar{X}_{10} = 0.7</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        f you flip 100 times, the value of the sample mean variable in any one set of 100 tosses will usually be close to <m>0.5</m>, say <m>0.501</m> 
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Now, if you tossed the coin then <m>10,000</m>, you would get even closer to <m>o.5</m>. 
+                    </p>
+                </li>
+            </ul>
+            This is LLN in action. The strong law says: with probability 1, the sequence of averages converges to 0.5.
+
+
+        </p>
  
         
     </subsection>
@@ -78,6 +106,141 @@
             
         </p>
         
+    </subsection>
+    <subsection xml:id="subsec-LLN-vs-CLT">
+        <title>LLN vs CLT</title>
+        <p>
+            Let's summarize the basic features of the Law of Large Numbers and Central Limit Theorem.
+            <dl>
+                <li>
+                    <title>Law of Large Numbers (LLN)</title>
+                    <ul>
+                        <li>
+                            <p>
+                                <m>\bar{X}_n \rightarrow \mu</m> as <m>n\rightarrow \infty</m> in the context of either in probability or almost surely.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Says the sample mean stabilizes around the true mean.
+                            </p>
+                        </li>
+                    </ul>
+
+                </li>
+                <li>
+                    <title>Central Limit Theorem (CLT)</title>
+                    <ul>
+                        <li>
+                            <p>
+                                Tells you how the deviations of <m>\bar{X}_n</m> from <m>\mu</m> are distributed.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Specifically, deviations are of order <m>1/\sqrt{n}</m>, and tend towards a Gaussian.
+                            </p>
+                        </li>
+                    </ul>
+
+                </li>
+            </dl>
+        So, LLN = consistency (where averages go) and CLT = fluctuations (how they’re spread around).
+ 
+
+        </p>
+        <p>
+            <alert>How large is <m>n</m> when we say n large?</alert> A rule of thumb is that often <m>n \ge 30 </m> is enough. Why? <m>1/\sqrt{30} = 5.5</m> and when <m>\sigma = 1</m>, then probability of deviation from true <m>\mu</m> larger than this value is about <m>1\times 10^{-7}</m>, which can be safely ignored in most cases. There is actually a mathematical result that quantifies the rate of convergence. Berry-Esseen Theorem gives rates of convergence.
+        </p>  
+        <p>  
+            Let <m>Y_1, Y_2, \cdots, Y_n</m> be i.i.d. (independent identically distributed) random variables as above. But, we now have subtracted away the true mean so that these have zero true mean. We state the conditions on <m>Y_1</m> since all others are same.
+            <me>
+                \langle Y_1 \rangle = 0.
+            </me>
+            Furthermore,
+            <me>
+                \text{Var}(Y_1) = \sigma^2 \gt 0,\quad \text{finite},
+            </me>
+            and third absolute moment is also finite.
+            <me>
+                \rho \equiv \langle Y_1^3 \rangle \lt \infty.
+            </me>
+            In place of sample mean random variable, let us define <alert>normalized sum </alert> random variable:
+            <me>
+                S_n = \frac{Y_1 + Y_2 + \cdots + Y_n}{ \sigma\,\sqrt{n} }.
+            </me>
+            Let <m>F_n</m> be the Cumulative Distribution Function (CDF) of the distribution of <m>S_n</m>, meaning
+            <me>
+                F_n(x) = P(S_n \le x),
+            </me>
+            and let us denote the CDF of standard normal, <m>\mathcal{N}(0,1)</m> by the Greek letter, <m>\Phi</m>. This is a standard notation. We keep <m>F</m> for other distributions. Then, Berry-Essen Theorem states that
+            
+            <men xml:id="eqn-Berry-Esseen-Theorem">
+                \underset{x \in \R}{\sup}\, \left| F_n(x) - \Phi(x)  \right| \le \frac{C\, \rho}{ \sigma^3\,\sqrt{n}},
+                
+            </men>
+            where <m>C</m> is a universal constant, independent of the distribution of the <m>Y_i</m>'s, so that the result holds for all i.i.d. variables satisfying the conditions above. Shevtsova (2011) showed <m>C \le 0.4748</m> and the best known lower bound is <m>C \ge 0.4097</m>. IExact value is not that important since in most applications <m>C \approx 1</m> is enough.
+            
+        </p>
+        <p>
+            The CLT says that as <m>n \rightarrow \infty</m>, <m>F_n \rightarrow \Phi</m>, and Berry-Esseen theorem tells us the rate at which this approach occurs. It says that the difference shrinks as <m>1/\sqrt{n}</m> with a "tail-heaviness" factor <m>\rho/\sigma^3</m>.
+        </p>
+        
+    </subsection>
+    <subsection xml:id="subsec-Why-Large-n-Matters">
+        <title>Why Large n and CLT Matter?</title>
+        <p>
+            <alert>Why LLN Matter?</alert>
+        </p>
+        <p>
+            In statistics, we distinguish between a sample mean and a population mean. The population mean, also called true mean <m>\mu</m>, is usually not known since we either do not have access to every point of interest, we only look at a small part. For instance, when we poll the population on some issue, we do not ask everybody, we just take <alert>sample</alert>. The LLN gives us confidence that if <m>n</m> is <alert>large enough</alert>, sample mean will be close to the population mean.
+        </p>
+        <p>
+            As a numerical illustration of how sample mean <q>hugs</q> the true mean as <m>n</m> gets large, consider rolls of a fair six-sided die, whose faces are labeled <m>1, 2, 3, 4, 5, 6</m>. The true mean of these rolls will be just 
+            <me>
+                \text{True Mean}, \mu = 3.5.
+            </me>
+            Can you see how this can be shown? Anyway, let's roll this die <m>n</m> times and plot the sample means of the results obtained in rolls for various <m>n</m> values. This is shown in <xref ref="fig-die-rolls-sample-mean-vs-true-mean"/>. You can see that As the number of rolls increases, the sample mean stabilizes around <m>3.5</m>
+
+            <figure xml:id="fig-die-rolls-sample-mean-vs-true-mean">
+                <caption>Illustration of the Law of Large Numbers with rolls of a fair six-sided die.</caption>
+                <image source="./images/essential-probability-and-statistics/die-rolls-sample-mean-vs-true-mean.png">
+                    <shortdescription>Illustration of the Law of Large Numbers with rolls of a fair six-sided die.</shortdescription>
+                </image>
+            </figure>
+
+            
+        </p>
+        <p>
+            In <alert>Supervised Machine Learning</alert> we want to find the function <m>f</m> of the independent variables, called <q>features</q>, that minimizes the expected loss <m>L</m> which is a function of <m>f</m> and independent variable, also called <q>target</q> <m>Y</m>.
+            <me>
+                R(f) = \langle \mathcal{L}(f(X), Y)  \rangle
+            </me>
+            Now, the <q>true minimum</q> is not possible. The only thing we have are <m>(x,y)</m> pairs of values in each trial, i.e., each data point. Say you have <m>n</m> data points. So, we build the expectation on the right based on these <m>n</m> data points and get <q>an approximation</q> of <m>R(f)</m>, which we can designate as <m>R_n(f)</m>.
+            <me>
+                R_n(f) = \frac{1}{n} \sum_{i=1}^n\mathcal{L}(f(X_i), Y_i).
+            </me>
+            The LLN gives us confidence that
+            <me>
+                R_n(f) \rightarrow R(f)\quad \text{as long as }n \text{ is large enough}.
+            </me>
+            Hence, more the data, better the approximation!
+            
+            
+        </p>
+        <p>
+            Maybe an example from Physics as well: In statistical mechanics, we often can't observe all particles in a macroscopic system. Instead, suppose we observe one particle over a long time. LLN guarantees that if the system is <alert>ergodic</alert>, the time average converges to the ensemble (population) average.
+        </p>
+
+        <p>
+            <alert>Why CLT Matter?</alert>
+        </p>
+        <p>
+            Although LLN tells us that in the large <m>n</m> limit sample mean will be close to the population or true mean <m>\mu</m>. But, we don't only want to know the approximate value of the true mean <m>\mu</m>. We also would like to know <alert>uncertainty</alert> in this knowledge. This is where we <alert>need the Central Limit Theorem</alert>. The CLT says that <m>\bar{X}_n</m> is approximately Gaussian, which gives as tools to build <alert>confidence intervals</alert>.
+        </p>
+        <p>
+            
+        </p>
     </subsection>
 
 </section>
