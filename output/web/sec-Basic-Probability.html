@@ -130,7 +130,7 @@ eBookConfig.enable_chatcodes =  false;
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-Numerical-and-Categorical-Data.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-Essential-Probability-and-Statistics.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-Joint-Conditional-and-Marginal-Probabilities.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-data-types-for-machine-learning.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-Essential-Probability-and-Statistics.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-Joint-Conditional-and-Marginal-Probabilities.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
@@ -154,10 +154,22 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-useful-descriptive-statistics-tools.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Useful Descriptive Statistics Tools</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-useful-descriptive-statistics-tools.html#subsec-Pandas" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Pandas</span></a></div></li></ul>
+<div class="toc-title-box"><a href="sec-useful-descriptive-statistics-tools.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Useful Tools for Descriptive Statistics and Exploratory Data Analysis</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-useful-descriptive-statistics-tools.html#subsec-NumPy" class="internal"><span class="codenumber">1.2.1</span> <span class="title">NumPy: Foundation for Numerical Operations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-useful-descriptive-statistics-tools.html#subsec-Pandas" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Pandas: Data Manipulation and Analysis</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-useful-descriptive-statistics-tools.html#subsec-Visualization" class="internal"><span class="codenumber">1.2.3</span> <span class="title">Visualization with Matplotlib and Seaborn</span></a></div></li>
+</ul>
 </li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-Numerical-and-Categorical-Data.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Numerical and Categorical Data</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-data-types-for-machine-learning.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Data Types for Machine Learning</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-types-for-machine-learning.html#subsec-structured-vs-unstructured" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Structured vs. Unstructured Data</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-types-for-machine-learning.html#subsec-sequence-vs-non-sequence" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Sequence vs. Non-Sequence Data</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-types-for-machine-learning.html#subsec-numerical-categorical-ordinal" class="internal"><span class="codenumber">1.3.3</span> <span class="title">Numerical, Categorical, and Ordinal Data</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-types-for-machine-learning.html#subsec-unstructured-text" class="internal"><span class="codenumber">1.3.4</span> <span class="title">Handling Unstructured Text Data</span></a></div></li>
+</ul>
+</li>
 <li class="toc-item toc-section contains-active">
 <div class="toc-title-box"><a href="sec-Basic-Probability.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Basic Probability</span></a></div>
 <ul class="structural toc-item-list active">
@@ -570,7 +582,7 @@ P_1 \sim B(4, 12) \Rightarrow \langle p_1\rangle = \frac{4}{4+12} = \frac{1}{4} 
 </div>
 <div class="autopermalink" data-description="Subsection 1.4.2: Three Types of Probabilities"><a href="#subsec-three-types-of-probabilities" title="Copy heading and permalink for Subsection 1.4.2: Three Types of Probabilities" aria-label="Copy heading and permalink for Subsection 1.4.2: Three Types of Probabilities">🔗</a></div></section><div class="autopermalink" data-description="Section 1.4: Basic Probability"><a href="#sec-Basic-Probability" title="Copy heading and permalink for Section 1.4: Basic Probability" aria-label="Copy heading and permalink for Section 1.4: Basic Probability">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
-<a class="previous-button button" href="sec-Numerical-and-Categorical-Data.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-Joint-Conditional-and-Marginal-Probabilities.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec-data-types-for-machine-learning.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-Joint-Conditional-and-Marginal-Probabilities.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

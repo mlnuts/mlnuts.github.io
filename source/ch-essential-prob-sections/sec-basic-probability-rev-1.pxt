@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sec-Basic-Probability">
+    <title>Basic Probability for Machine Learning</title>
+    <introduction>
+        <p>
+            Probability is the backbone of machine learning, helping us model uncertainty in data, predictions, and outcomes. Imagine probability as a weather forecast for events: it tells us how likely something is to happen, like a student passing an exam or an email being spam. In machine learning, probability underpins tasks like classification (e.g., predicting labels), evaluating model confidence, and handling noisy data. This section introduces probability concepts—sample spaces, events, and axioms—and connects them to practical machine learning applications using Python. We’ll use the student dataset from <xref ref="sec-data-types-for-machine-learning"/> to illustrate ideas.
+        </p>
+        <p>
+            An <alert>event</alert> is a specific outcome or set of outcomes from an experiment, represented as a set. For a coin toss, "heads" is <m>\{H\}</m>, "tails" is <m>\{T\}</m>, and "heads or tails" is <m>\{H, T\}</m>. Each trial answers whether an event occurred (yes/no). For a die roll yielding 2, events like <m>\{2\}</m> or <m>\{1,2,3\}</m> occur if they include 2. Sets allow combining events via union (<m>\cup</m>) or intersection (<m>\cap</m>), such as <m>\{H\} \cup \{T\} = \{H, T\}</m>.
+        </p>
+    </introduction>
+    <subsection xml:id="subsec-Axiomatic-View-of-Probability">
+        <title>Axiomatic View of Probability</title>
+        <p>
+            In 1933, Andrey Kolmogorov formalized probability with three axioms, providing a mathematical framework. Think of these as rules for a game ensuring probabilities make sense, like ensuring a weather forecast never predicts negative rain or more than 100% chance.
+        </p>
+        <p>
+            <alert>Sample Space <m>\Omega</m></alert>: The set of all possible outcomes. For a six-sided die, <m>\Omega = \{1, 2, 3, 4, 5, 6\}</m>. For a student passing an exam, <m>\Omega = \{\text{Pass}, \text{Fail}\}</m>.
+        </p>
+        <p>
+            <alert>Event Space <m>F</m></alert>: All possible subsets of <m>\Omega</m>, including the empty set <m>\varnothing</m> (impossible event) and <m>\Omega</m> (certain event). For a coin toss (<m>\Omega = \{H, T\}</m>), <m>F = \{\varnothing, \{H\}, \{T\}, \{H, T\}\}</m>. With <m>N</m> outcomes, <m>F</m> has <m>2^N</m> events.
+        </p>
+        <p>
+            <alert>Probability Measure <m>P</m></alert>: Assigns a number <m>P(E)</m> to each event <m>E \in F</m>, representing its likelihood. For a fair die, <m>P(\{1\}) = 1/6</m>.
+        </p>
+        <p>
+            The probability space is <m>(\Omega, F, P)</m>. Kolmogorov’s axioms are:
+            <ol marker="1">
+                <li><alert>Non-negativity</alert>: <men xml:id="eqn-first-axiom-non-negativity">P(E) \ge 0</men> for all <m>E \in F</m>.</li>
+                <li><alert>Normalization</alert>: <men xml:id="eqn-second-axiom-normalization">P(\Omega) = 1</men>, ensuring total certainty.</li>
+                <li><alert>Additivity</alert>: For disjoint events (<m>E_1 \cap E_2 = \varnothing</m>), <men xml:id="eqn-third-axiom-additivity">P(E_1 \cup E_2) = P(E_1) + P(E_2)</men>.</li>
+            </ol>
+        </p>
+        <p>
+            Derived results:
+            <mdn>
+                <mrow> \amp P(\varnothing) = 0. </mrow>
+                <mrow> \amp P(E^c) = 1 - P(E), \text{ where } E^c \text{ is the complement of } E. </mrow>
+                <mrow> \amp P(E_1 \cup E_2) = P(E_1) + P(E_2) - P(E_1 \cap E_2). </mrow>
+            </mdn>
+        </p>
+        <p>
+            The union formula accounts for overlap, as shown in <xref ref="fig-venn-diagram-E1-E2"/>. For a die, if <m>E_1 = \{1,3,5\}</m> (odd numbers), <m>E_2 = \{3,5,6\}</m>, then <m>P(E_1 \cup E_2) = P(\{1,3,5,6\}) = 4/6 = 2/3</m>.
+        </p>
+        <figure xml:id="fig-venn-diagram-E1-E2">
+            <caption>Venn diagram illustrating events <m>E_1 = \{1,3,5\}</m> (odd numbers) and <m>E_2 = \{3,5,6\}</m> for 1,000 simulated rolls of a fair six-sided die. The left region (181) counts rolls of 1 (in <m>E_1</m> only), the right region (326) counts rolls of 6 (in <m>E_2</m> only), and the overlap (155) counts rolls of 3 or 5 (in <m>E_1 \cap E_2</m>). These counts estimate probabilities, with theoretical values <m>P(E_1) = 3/6</m>, <m>P(E_2) = 3/6</m>, <m>P(E_1 \cap E_2) = 2/6</m>, and <m>P(E_1 \cup E_2) = 4/6</m>. Deviations (e.g., 326 vs. expected 167 for <m>E_2</m> only) reflect random variation. This visualization supports the union formula <m>P(E_1 \cup E_2) = P(E_1) + P(E_2) - P(E_1 \cap E_2)</m>, used in machine learning for feature probability calculations.</caption>
+            <image source="./images/essential-probability-and-statistics/venn-diagram-E1-E2.png">
+                <shortdescription>Venn diagram of intersecting events.</shortdescription>
+            </image>
+        </figure>
+        <program language="python" line-numbers="yes">
+            <title>Simulating die roll for union probability</title>
+            <code>
+            # --- DIE ROLL VENN DIAGRAM ---
+            import numpy as np
+            from matplotlib_venn import venn2
+            import matplotlib.pyplot as plt
+
+            np.random.seed(42)
+            n_trials = 1000
+            rolls = np.random.randint(1, 7, n_trials)
+
+            # Events
+            e1 = np.isin(rolls, [1, 3, 5])  # Odd numbers
+            e2 = np.isin(rolls, [3, 5, 6])  # 3,5,6
+            e1_only = np.sum(e1 \amp; ~e2)
+            e2_only = np.sum(e2 \amp; ~e1)
+            both = np.sum(e1 \amp; e2)
+
+            # Venn diagram
+            plt.figure(figsize=(6, 4))
+            venn2(subsets=(e1_only, e2_only, both), set_labels=('E1 (Odd)', 'E2 (3,5,6)'))
+            plt.title('Venn Diagram of Die Roll Events')
+            plt.savefig('venn-diagram-E1-E2.png', dpi=300)
+            plt.show()
+
+            # Probabilities
+            p_e1 = np.mean(e1)
+            p_e2 = np.mean(e2)
+            p_inter = np.mean(e1 \amp; e2)
+            p_union = np.mean(e1 | e2)
+            print(f"P(E1): {p_e1:.3f}, P(E2): {p_e2:.3f}, P(E1 ∩ E2): {p_inter:.3f}, P(E1 ∪ E2): {p_union:.3f}")
+            # --- END CODE ---
+            </code>
+        </program>
+    </subsection>
+    <subsection xml:id="subsec-conditional-probability-independence">
+        <title>Conditional Probability and Independence</title>
+        <p>
+            <alert>Conditional Probability</alert>: The probability of an event <m>A</m> given that <m>B</m> has occurred, denoted <m>P(A|B) = \frac{P(A \cap B)}{P(B)}</m>, where <m>P(B) > 0</m>. For example, the probability a student passes given they studied over 20 hours.
+        </p>
+        <p>
+            <alert>Independence</alert>: Events <m>A</m> and <m>B</m> are independent if <m>P(A \cap B) = P(A)P(B)</m>, meaning one event doesn’t affect the other.
+        </p>
+        <p>
+            Example: Using the student dataset from <xref ref="sec-data-types-for-machine-learning"/>, estimate the probability of passing given high study hours.
+        </p>
+        <program language="python" line-numbers="yes">
+            <title>Conditional probability with student data</title>
+            <code>
+# --- CONDITIONAL PROBABILITY ---
+import pandas as pd
+import numpy as np
+
+# Student data
+np.random.seed(42)
+data = pd.DataFrame({
+    'Hours_Studied': np.random.normal(20, 5, 100).clip(0, 40),
+    'Passed': np.random.binomial(1, 0.7, 100)
+})
+data['High_Study'] = data['Hours_Studied'] > 20
+
+# Conditional probability
+p_pass = np.mean(data['Passed'])
+p_high_study = np.mean(data['High_Study'])
+p_pass_and_high = np.mean(data['Passed'] \amp; data['High_Study'])
+p_pass_given_high = p_pass_and_high / p_high_study
+print(f"P(Pass | High Study): {p_pass_given_high:.3f}")
+
+# Bar plot
+counts = data.groupby(['High_Study', 'Passed']).size().unstack()
+counts.plot(kind='bar', stacked=True)
+plt.xlabel('High Study Hours (>20)')
+plt.ylabel('Count')
+plt.title('Pass/Fail by Study Hours')
+plt.legend(['Fail', 'Pass'])
+plt.savefig('./images/essential-probability-and-statistics/conditional-bar.png', dpi=300)
+plt.show()
+# --- END CODE ---
+            </code>
+        </program>
+        <figure xml:id="fig-conditional-bar">
+            <caption>Stacked bar plot showing the distribution of pass/fail outcomes for 100 students, based on whether they studied more than 20 hours (High_Study = True) or not. The dataset is synthetic, with Hours_Studied drawn from a normal distribution (mean 20, std 5) and Passed from a Bernoulli distribution (p=0.7). The plot illustrates conditional probability <m>P(\text{Pass} | \text{High Study})</m>, showing a higher proportion of passes among students with high study hours. This visualization is relevant to machine learning for feature analysis in classification tasks, such as predicting student success based on study habits.</caption>
+            <image source="./images/essential-probability-and-statistics/conditional-bar.png">
+                <shortdescription>Bar plot of conditional probability.</shortdescription>
+            </image>
+        </figure>
+    </subsection>
+    <subsection xml:id="subsec-probability-distributions">
+        <title>Probability Distributions</title>
+        <p>
+            Probability distributions describe how probabilities are distributed over outcomes. In machine learning, distributions model data or predictions.
+        </p>
+        <p>
+            <alert>Bernoulli Distribution</alert>: Models a binary outcome (e.g., pass/fail) with probability <m>p</m>. For passing an exam, <m>P(\text{Pass}) = p</m>, <m>P(\text{Fail}) = 1-p</m>.
+        </p>
+        <p>
+            <alert>Binomial Distribution</alert>: Counts successes in <m>n</m> independent Bernoulli trials. For 10 students, the number who pass follows a binomial distribution.
+        </p>
+        <program language="python" line-numbers="yes">
+            <title>Binomial distribution for student passes</title>
+            <code>
+# --- BINOMIAL DISTRIBUTION ---
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import binom
+
+n, p = 10, 0.7  # 10 students, P(Pass) = 0.7
+k = np.arange(0, 11)
+pmf = binom.pmf(k, n, p)
+
+plt.bar(k, pmf)
+plt.xlabel('Number of Passes')
+plt.ylabel('Probability')
+plt.title('Binomial Distribution (n=10, p=0.7)')
+plt.grid(True, alpha=0.3)
+plt.savefig('./images/essential-probability-and-statistics/binomial-dist.png', dpi=300)
+plt.show()
+# --- END CODE ---
+            </code>
+        </program>
+        <figure xml:id="fig-binomial-dist">
+            <caption>Bar plot of the binomial probability mass function (PMF) for the number of students passing an exam out of 10, with a pass probability <m>p=0.7</m>. Each bar represents the probability of <m>k</m> students passing, calculated as <m>P(k) = \binom{n}{k} p^k (1-p)^{n-k}</m>. The peak around 7 passes reflects the high likelihood of most students passing given <m>p=0.7</m>. This distribution is critical in machine learning for modeling binary outcomes, such as predicting the number of successful predictions in a classification task.</caption>
+            <image source="./images/essential-probability-and-statistics/binomial-dist.png">
+                <shortdescription>Bar plot of binomial distribution.</shortdescription>
+            </image>
+        </figure>
+    </subsection>
+    <subsection xml:id="subsec-three-types-of-probabilities">
+        <title>Three Types of Probabilities</title>
+        <p>
+            Probability can be approached theoretically, empirically (frequentist), or subjectively (Bayesian).
+        </p>
+        <ol>
+            <li>
+                <p>
+                    <alert>Theoretical Probability</alert>: Uses symmetry. For a fair die, <m>P(\{1\}) = 1/6</m>. For even numbers, <m>P(\{2,4,6\}) = 3/6 = 0.5</m>.
+                </p>
+            </li>
+            <li>
+                <p>
+                    <alert>Frequentist Probability</alert>: Estimates probability from trial frequencies: <men xml:id="eqn-frequentist-probability-definition">p = \lim_{N \to \infty} \frac{n}{N}</men>.
+                </p>
+                <program language="python" line-numbers="yes">
+                    <title>Frequentist estimation for fair and biased dice</title>
+                    <code>
+                    # --- FREQUENTIST SIMULATION ---
+                    import numpy as np
+                    import matplotlib.pyplot as plt
+
+                    np.random.seed(42)
+                    n_trials = 1000
+                    fair_rolls = np.random.randint(1, 7, n_trials)
+                    biased_rolls = np.random.choice([1, 2, 3, 4, 5, 6], n_trials, 
+                                                    p=[0.2, 0.2, 0.2, 0.2, 0.1, 0.1])
+
+                    # Cumulative probabilities
+                    cum_fair = np.cumsum(fair_rolls == 1) / np.arange(1, n_trials + 1)
+                    cum_biased = np.cumsum(biased_rolls == 1) / np.arange(1, n_trials + 1)
+
+                    plt.plot(cum_fair, label='Fair Die (P=1/6)')
+                    plt.plot(cum_biased, label='Biased Die (P=0.2)')
+                    plt.axhline(1/6, color='red', linestyle='--', label='Theoretical P=1/6')
+                    plt.xlabel('Trials')
+                    plt.ylabel('Estimated P(1)')
+                    plt.title('Frequentist Estimates: Fair vs. Biased Die')
+                    plt.legend()
+                    plt.grid(True, alpha=0.3)
+                    plt.savefig('frequentist-convergence.png', dpi=300)
+                    plt.show()
+                    # --- END CODE ---
+                    </code>
+                </program>
+                <figure xml:id="fig-frequentist-convergence">
+                    <caption>Plot showing the convergence of frequentist probability estimates for rolling a 1 on a fair die (<m>P(1)=1/6 \approx 0.167</m>) and a biased die (<m>P(1)=0.2</m>) over 1,000 trials. The fair die’s estimate (blue) fluctuates but approaches 1/6 (red dashed line), while the biased die’s estimate (orange) converges to 0.2, reflecting the higher probability of rolling a 1. This visualization demonstrates how empirical frequencies approximate true probabilities in large samples, a technique used in machine learning to estimate probabilities from training data.</caption>
+                    <image source="./images/essential-probability-and-statistics/frequentist-convergence.png">
+                        <shortdescription>Convergence plot for frequentist estimates.</shortdescription>
+                    </image>
+                </figure>
+            </li>
+            <li>
+                <p>
+                    <alert>Bayesian Probability</alert>: Updates prior beliefs with data using Bayes’ theorem: <m>P(\theta|D) = \frac{P(D|\theta)P(\theta)}{P(D)}</m>. For die face 1, use a Beta prior, updated to Beta(<m>\alpha + n_1, \beta + (N - n_1)</m>).
+                </p>
+                <p>
+                    Example: Estimate <m>P(\text{Pass})</m> for students using the dataset, starting with a Beta(1,1) prior.
+                </p>
+                <program language="python" line-numbers="yes">
+                    <title>Bayesian update for student pass probability</title>
+                    <code>
+                    # --- BAYESIAN UPDATE ---
+                    import numpy as np
+                    import matplotlib.pyplot as plt
+                    from scipy.stats import beta
+                    import pandas as pd
+
+                    # Student data
+                    np.random.seed(42)
+                    data = pd.DataFrame({
+                        'Passed': np.random.binomial(1, 0.7, 10)
+                    })
+
+                    # Prior: Beta(1,1)
+                    a, b = 1, 1
+                    n, n1 = len(data), data['Passed'].sum()
+                    a_post, b_post = a + n1, b + n - n1
+
+                    # Plot prior and posterior
+                    x = np.linspace(0, 1, 1000)
+                    plt.plot(x, beta.pdf(x, a, b), label='Prior Beta(1,1)', color='blue')
+                    plt.plot(x, beta.pdf(x, a + 1, b + 1), label='After 1 Pass', color='orange')
+                    plt.plot(x, beta.pdf(x, a_post, b_post), label=f'Posterior Beta({a_post},{b_post})', color='green')
+                    plt.axvline(n1/n, color='red', linestyle='--', label='Frequentist Est.')
+                    plt.xlabel('P(Pass)')
+                    plt.ylabel('Density')
+                    plt.title('Bayesian Update for P(Pass)')
+                    plt.legend()
+                    plt.grid(True, alpha=0.3)
+                    plt.savefig('./images/essential-probability-and-statistics/bayesian-update.png', dpi=300)
+                    plt.show()
+                    # --- END CODE ---
+                    </code>
+                </program>
+                <figure xml:id="fig-bayesian-update">
+
+                    <caption>Plot showing the Bayesian update of the probability of a student passing an exam, starting with a uniform Beta(1,1) prior (blue). After observing one pass (orange) and 10 trials with 3 passes (green, posterior Beta(4,8)), the distribution shifts, with the posterior mean at 4/12 ≈ 0.333. The frequentist estimate (red dashed line, 3/10 = 0.3) is shown for comparison. This visualization illustrates how Bayesian methods incorporate prior beliefs and data to refine probability estimates, a technique used in machine learning for probabilistic models and uncertainty quantification.</caption>
+                    
+                    <image source="./images/essential-probability-and-statistics/bayesian-update.png">
+                        <shortdescription>Bayesian update plot.</shortdescription>
+                    </image>
+                </figure>
+            </li>
+        </ol>
+    </subsection>
+    <subsection xml:id="subsec-ml-application">
+        <title>Probability in Machine Learning: Naive Bayes</title>
+        <p>
+            Probability is central to machine learning models like Naive Bayes, which uses conditional probabilities to classify data (e.g., spam detection).
+        </p>
+        <program language="python" line-numbers="yes">
+            <title>Naive Bayes for pass/fail classification</title>
+            <code>
+            # --- NAIVE BAYES ---
+            import pandas as pd
+            from sklearn.naive_bayes import GaussianNB
+            from sklearn.preprocessing import StandardScaler
+            import numpy as np
+
+            np.random.seed(42)
+            data = pd.DataFrame({
+                'Hours_Studied': np.random.normal(20, 5, 100).clip(0, 40),
+                'Score': np.random.normal(85, 10, 100).clip(0, 100),
+                'Passed': np.random.binomial(1, 0.7, 100)
+            })
+
+            # Preprocess
+            scaler = StandardScaler()
+            X = scaler.fit_transform(data[['Hours_Studied', 'Score']])
+            y = data['Passed']
+
+            # Train Naive Bayes
+            model = GaussianNB()
+            model.fit(X, y)
+
+            # Predict probability
+            new_student = scaler.transform([[25, 90]])
+            prob = model.predict_proba(new_student)
+            print(f"P(Fail), P(Pass) for new student: {prob[0]}")
+
+            # Plot decision boundary (simplified)
+            plt.scatter(X[:, 0], X[:, 1], c=y, cmap='bwr', alpha=0.6)
+            plt.xlabel('Scaled Hours Studied')
+            plt.ylabel('Scaled Score')
+            plt.title('Naive Bayes Classification')
+            plt.savefig('naive-bayes.png', dpi=300)
+            plt.show()
+            # --- END CODE ---
+            </code>
+        </program>
+        <figure xml:id="fig-naive-bayes">
+            
+            <caption>Scatter plot visualizing a Gaussian Naive Bayes classifier’s pass/fail predictions for 100 students, using scaled Hours_Studied (normal, mean 20, std 5) and Score (normal, mean 85, std 10) as features. Blue points represent failures, and red points represent passes, with outcomes drawn from a Bernoulli distribution (p=0.7). The plot shows how Naive Bayes uses conditional probabilities to separate classes, a common approach in machine learning for tasks like spam detection or student performance prediction.</caption>
+            
+            <image source="./images/essential-probability-and-statistics/naive-bayes.png">
+                <shortdescription>Scatter plot of Naive Bayes classification.</shortdescription>
+            </image>
+        </figure>
+    </subsection>
+    <conclusion>
+        <p>
+            Probability provides the foundation for modeling uncertainty in machine learning. Axioms define the rules, while theoretical, frequentist, and Bayesian approaches offer different perspectives. Conditional probability and distributions like binomial are key for models like Naive Bayes. Practice with datasets from <xref ref="sec-data-types-for-machine-learning"/> and libraries from <xref ref="sec-useful-descriptive-statistics-tools"/> to apply these concepts. Explore <url href="https://www.probabilitycourse.com/" visual="probabilitycourse.com">Probability Course</url> for further learning.
+        </p>
+    </conclusion>
+</section>

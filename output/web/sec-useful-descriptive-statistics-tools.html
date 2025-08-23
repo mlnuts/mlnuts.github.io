@@ -14,7 +14,7 @@
 <!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Useful Descriptive Statistics Tools</title>
+<title>Useful Tools for Descriptive Statistics and Exploratory Data Analysis</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
@@ -130,7 +130,7 @@ eBookConfig.enable_chatcodes =  false;
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-Descriptive-Statistics.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-Essential-Probability-and-Statistics.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-Numerical-and-Categorical-Data.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-Descriptive-Statistics.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-Essential-Probability-and-Statistics.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-data-types-for-machine-learning.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
@@ -154,10 +154,22 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 <li class="toc-item toc-section contains-active">
-<div class="toc-title-box"><a href="sec-useful-descriptive-statistics-tools.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Useful Descriptive Statistics Tools</span></a></div>
-<ul class="structural toc-item-list active"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-useful-descriptive-statistics-tools.html#subsec-Pandas" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Pandas</span></a></div></li></ul>
+<div class="toc-title-box"><a href="sec-useful-descriptive-statistics-tools.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Useful Tools for Descriptive Statistics and Exploratory Data Analysis</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-useful-descriptive-statistics-tools.html#subsec-NumPy" class="internal"><span class="codenumber">1.2.1</span> <span class="title">NumPy: Foundation for Numerical Operations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-useful-descriptive-statistics-tools.html#subsec-Pandas" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Pandas: Data Manipulation and Analysis</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-useful-descriptive-statistics-tools.html#subsec-Visualization" class="internal"><span class="codenumber">1.2.3</span> <span class="title">Visualization with Matplotlib and Seaborn</span></a></div></li>
+</ul>
 </li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-Numerical-and-Categorical-Data.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Numerical and Categorical Data</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-data-types-for-machine-learning.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Data Types for Machine Learning</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-types-for-machine-learning.html#subsec-structured-vs-unstructured" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Structured vs. Unstructured Data</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-types-for-machine-learning.html#subsec-sequence-vs-non-sequence" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Sequence vs. Non-Sequence Data</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-types-for-machine-learning.html#subsec-numerical-categorical-ordinal" class="internal"><span class="codenumber">1.3.3</span> <span class="title">Numerical, Categorical, and Ordinal Data</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-types-for-machine-learning.html#subsec-unstructured-text" class="internal"><span class="codenumber">1.3.4</span> <span class="title">Handling Unstructured Text Data</span></a></div></li>
+</ul>
+</li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-Basic-Probability.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Basic Probability</span></a></div>
 <ul class="structural toc-item-list">
@@ -238,160 +250,228 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-useful-descriptive-statistics-tools"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.2</span><span class="space"> </span><span class="title">Useful Descriptive Statistics Tools</span>
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.2</span><span class="space"> </span><span class="title">Useful Tools for Descriptive Statistics and Exploratory Data Analysis</span>
 </h2>
-<section class="introduction" id="sec-useful-descriptive-statistics-tools-2"><div class="para" id="sec-useful-descriptive-statistics-tools-2-1">Here, I want provide a list of data analysis tools that have emerged as important resources for data scientists and can be very useful for machine learning engineer. Among many resources, let us look at just a few important ones.<div class="autopermalink" data-description="Paragraph"><a href="#sec-useful-descriptive-statistics-tools-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></section><section class="subsection" id="subsec-Pandas"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.2.1</span><span class="space"> </span><span class="title">Pandas</span>
+<section class="introduction" id="sec-useful-descriptive-statistics-tools-2"><div class="para" id="sec-useful-descriptive-statistics-tools-2-1">Exploratory Data Analysis (EDA) is a critical step in understanding your data before applying advanced techniques like machine learning. It involves summarizing the main characteristics of a dataset, often using visual methods, to uncover patterns, spot anomalies, test hypotheses, and check assumptions. In this section, we focus on Python-based tools that enable efficient and effective data analysis, tailored for machine learning workflows. While languages like R are powerful for statistics, we emphasize Python due to its widespread use in data science and machine learning communities. Key tools include NumPy for numerical computations, Pandas for data manipulation, and Matplotlib/Seaborn for visualization. These libraries integrate seamlessly, allowing you to load, clean, analyze, and visualize data in a streamlined manner.<div class="autopermalink" data-description="Paragraph"><a href="#sec-useful-descriptive-statistics-tools-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-useful-descriptive-statistics-tools-2-2">A typical EDA workflow includes: loading data, inspecting its structure, handling missing values, computing summary statistics, exploring distributions, and visualizing relationships. Using Jupyter notebooks ensures reproducibility and documentation of your analysis.<div class="autopermalink" data-description="Paragraph"><a href="#sec-useful-descriptive-statistics-tools-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section><section class="subsection" id="subsec-NumPy"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.2.1</span><span class="space"> </span><span class="title">NumPy: Foundation for Numerical Operations</span>
+</h3>
+<div class="para" id="subsec-NumPy-2">NumPy (Numerical Python) is the backbone of scientific computing in Python, providing support for large, multi-dimensional arrays and matrices, along with mathematical functions for efficient operations. It’s foundational for Pandas and essential for computing descriptive statistics.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-NumPy-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-NumPy-3">
+<div class="para"><em class="alert">Key Features:</em></div>
+<ul class="disc" id="subsec-NumPy-3-2">
+<li id="subsec-NumPy-3-2-1">
+<div class="para" id="p-derived-subsec-NumPy-3-2-1">Efficient array creation and manipulation (e.g., reshaping, slicing).</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-NumPy-3-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-NumPy-3-2-2">
+<div class="para" id="p-derived-subsec-NumPy-3-2-2">Statistical functions: mean, median, standard deviation, variance, percentiles.</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-NumPy-3-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-NumPy-3-2-3">
+<div class="para" id="p-derived-subsec-NumPy-3-2-3">Integration with Pandas DataFrames and visualization libraries.</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-NumPy-3-2-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-NumPy-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-NumPy-4">
+<em class="alert">Example:</em> Compute descriptive statistics for exam scores.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-NumPy-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="code-box"><pre class="program clipboardable line-numbers"><code class="language-py">import numpy as np
+
+# Sample data: exam scores
+scores = np.array([85, 92, 78, 95, 88, 76, 90, 82])
+
+# Basic statistics
+mean = np.mean(scores)
+median = np.median(scores)
+std_dev = np.std(scores, ddof=1)  # Sample std dev
+variance = np.var(scores, ddof=1)  # Sample variance
+percentiles = np.percentile(scores, [25, 50, 75])
+
+print(f"Mean: {mean:.2f}")
+print(f"Median: {median:.2f}")
+print(f"Sample Standard Deviation: {std_dev:.2f}")
+print(f"Sample Variance: {variance:.2f}")
+print(f"25th, 50th, 75th Percentiles: {percentiles}")
+</code></pre></div>
+<div class="para" id="subsec-NumPy-6">Output:<pre class="code-block tex2jax_ignore">Mean: 85.75
+Median: 86.50
+Sample Standard Deviation: 6.82
+Sample Variance: 46.50
+25th, 50th, 75th Percentiles: [80.5  86.5  91.25]
+</pre>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-NumPy-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-NumPy-7">
+<em class="alert">NumPy is fast for numerical operations but lacks labeled data handling, which is where Pandas excels.</em><div class="autopermalink" data-description="Paragraph"><a href="#subsec-NumPy-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 1.2.1: NumPy: Foundation for Numerical Operations"><a href="#subsec-NumPy" title="Copy heading and permalink for Subsection 1.2.1: NumPy: Foundation for Numerical Operations" aria-label="Copy heading and permalink for Subsection 1.2.1: NumPy: Foundation for Numerical Operations">🔗</a></div></section><section class="subsection" id="subsec-Pandas"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.2.2</span><span class="space"> </span><span class="title">Pandas: Data Manipulation and Analysis</span>
 </h3>
 <section class="introduction" id="subsec-Pandas-2"><div class="para logical" id="subsec-Pandas-2-1">
-<div class="para">Pandas is a powerful Python library for data manipulation and analysis. It provides two core data structures:</div>
+<div class="para">Pandas is a powerful, flexible library for data manipulation and analysis, built on NumPy. Its core data structures are:</div>
 <ol class="decimal" id="subsec-Pandas-2-1-1">
 <li id="subsec-Pandas-2-1-1-1">
-<div class="para" id="subsec-Pandas-2-1-1-1-1">
-<em class="alert">Series</em>: A one-dimensional labeled array.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Pandas-2-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
+<div class="para" id="p-derived-subsec-Pandas-2-1-1-1">
+<em class="alert">Series</em>: A one-dimensional labeled array for sequences of data.</div>
 <div class="autopermalink" data-description="Item 1"><a href="#subsec-Pandas-2-1-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
 </li>
 <li id="subsec-Pandas-2-1-1-2">
-<div class="para" id="subsec-Pandas-2-1-1-2-1">
-<em class="alert">DataFrame</em>: A two-dimensional labeled table (think Excel or SQL table in Python).<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Pandas-2-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
+<div class="para" id="p-derived-subsec-Pandas-2-1-1-2">
+<em class="alert">DataFrame</em>: A two-dimensional labeled table, similar to a spreadsheet or SQL table, ideal for tabular data.</div>
 <div class="autopermalink" data-description="Item 2"><a href="#subsec-Pandas-2-1-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
 </li>
 </ol>
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec-Pandas-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-Pandas-2-2">Pandas is designed for <em class="alert">cleaning</em>, <em class="alert">transforming</em>, <em class="alert">analyzing</em>, and <em class="alert">visualizing</em> data efficiently. Whether you’re exploring a dataset, preprocessing features for machine learning, or analyzing business metrics, Pandas will likely be your go-to tool.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Pandas-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></section><div class="para" id="subsec-Pandas-3">
-<em class="alert">Why Use Pandas?</em><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Pandas-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<ul class="disc" id="subsec-Pandas-4">
-<li id="subsec-Pandas-4-1">
-<div class="para" id="subsec-Pandas-4-1-1">Handles structured data easily.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Pandas-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item"><a href="#subsec-Pandas-4-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+<div class="para" id="subsec-Pandas-2-2">Pandas is designed for cleaning, transforming, analyzing, and visualizing data. It supports multiple file formats (CSV, Excel, JSON, SQL) and integrates with NumPy, Matplotlib, Seaborn, and Scikit-learn, making it a cornerstone for EDA in machine learning.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Pandas-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section><div class="para logical" id="subsec-Pandas-3">
+<div class="para"><em class="alert">Why Use Pandas?</em></div>
+<ul class="disc" id="subsec-Pandas-3-2">
+<li id="subsec-Pandas-3-2-1">
+<div class="para" id="p-derived-subsec-Pandas-3-2-1">Handles structured data efficiently (e.g., tabular data).</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-Pandas-3-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
-<li id="subsec-Pandas-4-2">
-<div class="para" id="subsec-Pandas-4-2-1">Works well with CSV, Excel, JSON, SQL, and more.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Pandas-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item"><a href="#subsec-Pandas-4-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+<li id="subsec-Pandas-3-2-2">
+<div class="para" id="p-derived-subsec-Pandas-3-2-2">Supports data cleaning (missing values, duplicates, outliers).</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-Pandas-3-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
-<li id="subsec-Pandas-4-3">
-<div class="para" id="subsec-Pandas-4-3-1">Integrates seamlessly with NumPy, Matplotlib, Scikit-learn, and others.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Pandas-4-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item"><a href="#subsec-Pandas-4-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+<li id="subsec-Pandas-3-2-3">
+<div class="para" id="p-derived-subsec-Pandas-3-2-3">Enables grouping, aggregation, and statistical summaries.</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-Pandas-3-2-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
-<li id="subsec-Pandas-4-4">
-<div class="para" id="subsec-Pandas-4-4-1">Fast, expressive, and readable.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Pandas-4-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item"><a href="#subsec-Pandas-4-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+<li id="subsec-Pandas-3-2-4">
+<div class="para" id="p-derived-subsec-Pandas-3-2-4">Scales to large datasets with optimized performance.</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-Pandas-3-2-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
 </ul>
-<div class="para" id="subsec-Pandas-5">
-<em class="alert">A Simple Example</em>: Let’s walk through a simple example of a data that is presented to us in a table form with each column referring to one property or feature or variables in the data. Each row is one datapoint, with values of different variables across the columns. You can feed that data as a Python dictionay or a csv file or an excel file. Here, we keep it simple and feed the data as a dictionary.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Pandas-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Pandas-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="code-box"><pre class="program clipboardable"><code class="language-none">import pandas as pd
-data = {
-    'Name': ['Alice', 'Bob', 'Carol', 'Dave'],
-    'Age': [25, 30, 27, 22],
-    'Score': [85.5, 90.0, 88.0, 76.5]
-}
-df = pd.DataFrame(data)
+<div class="para logical" id="subsec-Pandas-4">
+<div class="para"><em class="alert">EDA Workflow with Pandas:</em></div>
+<ol class="decimal" id="subsec-Pandas-4-2">
+<li id="subsec-Pandas-4-2-1">
+<div class="para" id="p-derived-subsec-Pandas-4-2-1">Load data (<code class="code-inline tex2jax_ignore">pd.read_csv()</code>, <code class="code-inline tex2jax_ignore">pd.read_excel()</code>).</div>
+<div class="autopermalink" data-description="Item 1"><a href="#subsec-Pandas-4-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="subsec-Pandas-4-2-2">
+<div class="para" id="p-derived-subsec-Pandas-4-2-2">Inspect structure (<code class="code-inline tex2jax_ignore">head()</code>, <code class="code-inline tex2jax_ignore">info()</code>, <code class="code-inline tex2jax_ignore">describe()</code>).</div>
+<div class="autopermalink" data-description="Item 2"><a href="#subsec-Pandas-4-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="subsec-Pandas-4-2-3">
+<div class="para" id="p-derived-subsec-Pandas-4-2-3">Clean data (handle missing values, remove duplicates).</div>
+<div class="autopermalink" data-description="Item 3"><a href="#subsec-Pandas-4-2-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="subsec-Pandas-4-2-4">
+<div class="para" id="p-derived-subsec-Pandas-4-2-4">Compute statistics and explore distributions.</div>
+<div class="autopermalink" data-description="Item 4"><a href="#subsec-Pandas-4-2-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+<li id="subsec-Pandas-4-2-5">
+<div class="para" id="p-derived-subsec-Pandas-4-2-5">Visualize (integrate with Matplotlib/Seaborn).</div>
+<div class="autopermalink" data-description="Item 5"><a href="#subsec-Pandas-4-2-5" title="Copy heading and permalink for Item 5" aria-label="Copy heading and permalink for Item 5">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Pandas-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Pandas-5">
+<em class="alert">Example: Analyzing Student Data</em> Let’s use a realistic dataset of student scores, including a missing value, loaded from a CSV file.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Pandas-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="code-box"><pre class="program clipboardable line-numbers"><code class="language-py">import pandas as pd
+
+# Create sample CSV data (in practice, load from disk)
+data = """Name,Age,Score,Passed
+Alice,25,85.5,True
+Bob,30,90.0,True
+Carol,27,88.0,True
+Dave,22,76.5,False
+Eve,28,,True"""
+
+with open('students.csv', 'w') as f:
+    f.write(data)
+
+# Load data
+df = pd.read_csv('students.csv')
 print(df)
 </code></pre></div>
-<div class="para" id="subsec-Pandas-7">This will display the data in a nice table format as in <a href="sec-useful-descriptive-statistics-tools.html#tab-printout-of-dataframe-as-table" class="xref" data-knowl="./knowl/xref/tab-printout-of-dataframe-as-table.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 1.2.1: Printout of the DataFrame df">Table 1.2.1</a><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Pandas-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-Pandas-7">Output as a table:<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Pandas-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<figure class="table table-like" id="tab-printout-of-dataframe-as-table"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.2.1<span class="period">.</span></span><span class="space"> </span>Printout of the DataFrame df<div class="autopermalink" data-description="Table 1.2.1: Printout of the DataFrame df"><a href="#tab-printout-of-dataframe-as-table" title="Copy heading and permalink for Table 1.2.1: Printout of the DataFrame df" aria-label="Copy heading and permalink for Table 1.2.1: Printout of the DataFrame df">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
-<tr>
-<td class="l m b0 r0 l0 t0 lines"></td>
-<td class="l m b0 r0 l0 t0 lines">Name</td>
-<td class="l m b0 r0 l0 t0 lines">Age</td>
-<td class="l m b0 r0 l0 t0 lines">Score</td>
+<figure class="table table-like" id="tab-students-dataframe"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.2.1<span class="period">.</span></span><span class="space"> </span>Student DataFrame<div class="autopermalink" data-description="Table 1.2.1: Student DataFrame"><a href="#tab-students-dataframe" title="Copy heading and permalink for Table 1.2.1: Student DataFrame" aria-label="Copy heading and permalink for Table 1.2.1: Student DataFrame">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l m b0 r0 l0 t0 lines">Name</th>
+<th scope="col" class="l m b0 r0 l0 t0 lines">Age</th>
+<th scope="col" class="l m b0 r0 l0 t0 lines">Score</th>
+<th scope="col" class="l m b0 r0 l0 t0 lines">Passed</th>
 </tr>
 <tr>
-<td class="l m b0 r0 l0 t0 lines">0</td>
 <td class="l m b0 r0 l0 t0 lines">Alice</td>
 <td class="l m b0 r0 l0 t0 lines">25</td>
 <td class="l m b0 r0 l0 t0 lines">85.5</td>
+<td class="l m b0 r0 l0 t0 lines">True</td>
 </tr>
 <tr>
-<td class="l m b0 r0 l0 t0 lines">1</td>
 <td class="l m b0 r0 l0 t0 lines">Bob</td>
 <td class="l m b0 r0 l0 t0 lines">30</td>
 <td class="l m b0 r0 l0 t0 lines">90.0</td>
+<td class="l m b0 r0 l0 t0 lines">True</td>
 </tr>
 <tr>
-<td class="l m b0 r0 l0 t0 lines">2</td>
 <td class="l m b0 r0 l0 t0 lines">Carol</td>
 <td class="l m b0 r0 l0 t0 lines">27</td>
 <td class="l m b0 r0 l0 t0 lines">88.0</td>
+<td class="l m b0 r0 l0 t0 lines">True</td>
 </tr>
 <tr>
-<td class="l m b0 r0 l0 t0 lines">3</td>
 <td class="l m b0 r0 l0 t0 lines">Dave</td>
 <td class="l m b0 r0 l0 t0 lines">22</td>
 <td class="l m b0 r0 l0 t0 lines">76.5</td>
+<td class="l m b0 r0 l0 t0 lines">False</td>
 </tr>
-</table></div></figure><div class="para" id="subsec-Pandas-9">A great advantage of Pandas DataFrame is that it comes with numerous methods that you can call on a DataFrame to perform various tasks. I will present only a small sample of them and you can go to the <a class="external" href="https://pandas.pydata.org/" target="_blank">Pandas website</a><details class="ptx-footnote" aria-live="polite" id="subsec-Pandas-9-2"><summary class="ptx-footnote__number" title="Footnote 1.2.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="subsec-Pandas-9-2"><code class="code-inline tex2jax_ignore">pandas.pydata.org</code></div></details> to expand your knowledge.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Pandas-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="subsec-Pandas-10">
-<div class="para">One thing you can do is to examine data quickly by following commands:</div>
-<ol class="decimal" id="subsec-Pandas-10-1">
-<li id="subsec-Pandas-10-1-1">
-<div class="para" id="subsec-Pandas-10-1-1-1">df.head(n) : diplay n data rows at the top.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Pandas-10-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item 1"><a href="#subsec-Pandas-10-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
-</li>
-<li id="subsec-Pandas-10-1-2">
-<div class="para" id="subsec-Pandas-10-1-2-1">df.tail(m) : display m data rows from the bottom.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Pandas-10-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item 2"><a href="#subsec-Pandas-10-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
-</li>
-<li id="subsec-Pandas-10-1-3">
-<div class="para" id="subsec-Pandas-10-1-3-1">df.shape : display the dimensions of the DataFrame; note here you do not have () at the end.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Pandas-10-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item 3"><a href="#subsec-Pandas-10-1-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
-</li>
-<li id="subsec-Pandas-10-1-4">
-<div class="para" id="subsec-Pandas-10-1-4-1">df.columns : names of columns of the DataFrame as a list of strings.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Pandas-10-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item 4"><a href="#subsec-Pandas-10-1-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
-</li>
-<li id="subsec-Pandas-10-1-5">
-<div class="para" id="subsec-Pandas-10-1-5-1">df.info() : Summary of data types and memory usage.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Pandas-10-1-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item 5"><a href="#subsec-Pandas-10-1-5" title="Copy heading and permalink for Item 5" aria-label="Copy heading and permalink for Item 5">🔗</a></div>
-</li>
-<li id="subsec-Pandas-10-1-6">
-<div class="para" id="subsec-Pandas-10-1-6-1">df.describe() : Basic statistics for numeric columns.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Pandas-10-1-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item 6"><a href="#subsec-Pandas-10-1-6" title="Copy heading and permalink for Item 6" aria-label="Copy heading and permalink for Item 6">🔗</a></div>
-</li>
-</ol>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Pandas-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="subsec-Pandas-11">When I run df.describe() on the DataFrame df we set up above, it produces the descriptive statics of the numerical data, i.e., columns Age and Score.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Pandas-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<figure class="table table-like" id="subsec-Pandas-12"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.2.2<span class="period">.</span></span><span class="space"> </span>Output of df.describe()<div class="autopermalink" data-description="Table 1.2.2: Output of df.describe()"><a href="#subsec-Pandas-12" title="Copy heading and permalink for Table 1.2.2: Output of df.describe()" aria-label="Copy heading and permalink for Table 1.2.2: Output of df.describe()">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
-<td class="l m b0 r0 l0 t0 lines"></td>
-<td class="l m b0 r0 l0 t0 lines">Age</td>
-<td class="l m b0 r0 l0 t0 lines">Score</td>
+<td class="l m b0 r0 l0 t0 lines">Eve</td>
+<td class="l m b0 r0 l0 t0 lines">28</td>
+<td class="l m b0 r0 l0 t0 lines">NaN</td>
+<td class="l m b0 r0 l0 t0 lines">True</td>
+</tr>
+</table></div></figure><div class="para" id="subsec-Pandas-9">Inspect the data using common Pandas methods:<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Pandas-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="code-box"><pre class="program clipboardable line-numbers"><code class="language-py"># Inspect data
+print("First 3 rows:")
+print(df.head(3))
+print("\nLast 2 rows:")
+print(df.tail(2))
+print("\nShape:", df.shape)  # (5, 4)
+print("\nColumns:", df.columns.tolist())
+print("\nInfo:")
+print(df.info())
+print("\nDescriptive Statistics:")
+print(df.describe())
+</code></pre></div>
+<div class="para" id="subsec-Pandas-11">Output of <code class="code-inline tex2jax_ignore">df.describe()</code>:<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Pandas-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="table table-like" id="tab-students-describe"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.2.2<span class="period">.</span></span><span class="space"> </span>Descriptive Statistics from df.describe()<div class="autopermalink" data-description="Table 1.2.2: Descriptive Statistics from df.describe()"><a href="#tab-students-describe" title="Copy heading and permalink for Table 1.2.2: Descriptive Statistics from df.describe()" aria-label="Copy heading and permalink for Table 1.2.2: Descriptive Statistics from df.describe()">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l m b0 r0 l0 t0 lines"></th>
+<th scope="col" class="l m b0 r0 l0 t0 lines">Age</th>
+<th scope="col" class="l m b0 r0 l0 t0 lines">Score</th>
 </tr>
 <tr>
 <td class="l m b0 r0 l0 t0 lines">count</td>
-<td class="l m b0 r0 l0 t0 lines">4.000000</td>
+<td class="l m b0 r0 l0 t0 lines">5.000000</td>
 <td class="l m b0 r0 l0 t0 lines">4.000000</td>
 </tr>
 <tr>
 <td class="l m b0 r0 l0 t0 lines">mean</td>
-<td class="l m b0 r0 l0 t0 lines">26.000000</td>
+<td class="l m b0 r0 l0 t0 lines">26.400000</td>
 <td class="l m b0 r0 l0 t0 lines">85.000000</td>
 </tr>
 <tr>
 <td class="l m b0 r0 l0 t0 lines">std</td>
-<td class="l m b0 r0 l0 t0 lines">3.366502</td>
+<td class="l m b0 r0 l0 t0 lines">3.209361</td>
 <td class="l m b0 r0 l0 t0 lines">5.958188</td>
 </tr>
 <tr>
@@ -419,31 +499,182 @@ print(df)
 <td class="l m b0 r0 l0 t0 lines">30.000000</td>
 <td class="l m b0 r0 l0 t0 lines">90.000000</td>
 </tr>
-</table></div></figure><div class="para" id="subsec-Pandas-13">Perhaps the strongest case for using Pandas is its ability to manipulate and transform data very rapidly with simple commands which can be piped into each other. Let’s see some examples of this power of Pandas.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Pandas-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</table></div></figure><div class="para" id="subsec-Pandas-13">Clean and transform the data (e.g., handle missing values, filter, add columns, group, sort):<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Pandas-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-Pandas-14">You can select one column of interest. Or select multiple columns by passing a list of the names of those columns as a list. <div class="para" id="subsec-Pandas-14-1"><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Pandas-14-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div> <div class="para" id="subsec-Pandas-14-2">score = df[’Score’]<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Pandas-14-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="subsec-Pandas-14-3">age_score = df[[’Age’, ’Score’]]<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Pandas-14-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="code-box"><pre class="program clipboardable line-numbers"><code class="language-py"># Handle missing values
+print("Missing values:\n", df.isnull())
+df['Score'] = df['Score'].fillna(df['Score'].mean())  # Fill NaN with mean
+
+# Filter rows
+high_scorers = df[df['Score'] &gt; 85]
+print("\nHigh scorers:\n", high_scorers)
+
+# Add new column
+df['Grade'] = df['Score'].apply(lambda x: 'A' if x &gt;= 90 else 'B' if x &gt;= 80 else 'C')
+print("\nDataFrame with Grade:\n", df)
+
+# Group and aggregate
+grouped = df.groupby('Passed')['Score'].agg(['mean', 'count'])
+print("\nGrouped by Passed:\n", grouped)
+
+# Sort by Score
+df_sorted = df.sort_values(by='Score', ascending=False)
+print("\nSorted by Score:\n", df_sorted)
+
+# Chain operations
+result = df[df['Age'] &gt; 25][['Name', 'Score']].sort_values(by='Score')
+print("\nChained operations (Age &gt; 25, select columns, sort):\n", result)
+</code></pre></div>
+<div class="para" id="subsec-Pandas-15">Visualize the score distribution:<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Pandas-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Pandas-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<figure class="figure figure-like" id="fig-pandas-histogram"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/pandas-histogram.png" class="contained" alt="Histogram from Pandas DataFrame."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.2.3<span class="period">.</span></span><span class="space"> </span>Histogram of student scores using Pandas and Matplotlib.<div class="autopermalink" data-description="Figure 1.2.3"><a href="#fig-pandas-histogram" title="Copy heading and permalink for Figure 1.2.3" aria-label="Copy heading and permalink for Figure 1.2.3">🔗</a></div></figcaption></figure><div class="code-box"><pre class="program clipboardable line-numbers"><code class="language-py">import matplotlib.pyplot as plt
+import pandas as pd
+
+# Assuming df from previous code
+df['Score'].hist(bins=5, edgecolor='black', alpha=0.7)
+plt.xlabel('Score')
+plt.ylabel('Frequency')
+plt.title('Distribution of Student Scores')
+plt.grid(True, alpha=0.3)
+plt.savefig('pandas-histogram.png', dpi=300)
+plt.show()
+</code></pre></div>
+<div class="para" id="subsec-Pandas-18">For further learning, explore <a class="external" href="https://wesmckinney.com/book/" target="_blank">Python for Data Analysis</a><details class="ptx-footnote" aria-live="polite" id="subsec-Pandas-18-2"><summary class="ptx-footnote__number" title="Footnote 1.2.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="subsec-Pandas-18-2"><code class="code-inline tex2jax_ignore">wesmckinney.com</code></div></details> by Wes McKinney (free online) and <a class="external" href="https://www.kaggle.com/learn/pandas" target="_blank">Kaggle’s Pandas course</a><details class="ptx-footnote" aria-live="polite" id="subsec-Pandas-18-4"><summary class="ptx-footnote__number" title="Footnote 1.2.2"><sup> 2 </sup></summary><div class="ptx-footnote__contents" id="subsec-Pandas-18-4"><code class="code-inline tex2jax_ignore">kaggle.com</code></div></details>.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Pandas-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-Pandas-15">You can filter data based on boolean conditions on the variables. <div class="para" id="subsec-Pandas-15-1"><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Pandas-15-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div> <div class="para" id="subsec-Pandas-15-2">df1 = df[df[’Age’] &gt; 25]<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Pandas-15-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="subsec-Pandas-15-3">df2 = df[(df[’Age’] &gt; 25) &amp; (df[’Score’] &gt; 85)]<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Pandas-15-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> You can create columns for new variables, e.g. Passed, which has 0 or 1 entry based on the values in the Score column. <div class="para" id="subsec-Pandas-15-4">df[’Passed’] = df[’Score’] &gt;= 80<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Pandas-15-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> Of course sort data based on a particular row. <div class="para" id="subsec-Pandas-15-5">df.sort_values(by=’Score’, ascending=False)<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Pandas-15-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>&gt;<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Pandas-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Subsection 1.2.2: Pandas: Data Manipulation and Analysis"><a href="#subsec-Pandas" title="Copy heading and permalink for Subsection 1.2.2: Pandas: Data Manipulation and Analysis" aria-label="Copy heading and permalink for Subsection 1.2.2: Pandas: Data Manipulation and Analysis">🔗</a></div></section><section class="subsection" id="subsec-Visualization"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.2.3</span><span class="space"> </span><span class="title">Visualization with Matplotlib and Seaborn</span>
+</h3>
+<div class="para" id="subsec-Visualization-2">Visualization is a cornerstone of EDA, making patterns and relationships in data intuitive. Matplotlib provides customizable, low-level plotting, while Seaborn, built on Matplotlib, offers high-level statistical visualizations with attractive defaults.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Visualization-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-Pandas-16">Here I am trying to give you a sense of the power and flexibility of the Pandas library. A great book to learn this subject is through two free books. <div class="para" id="subsec-Pandas-16-1">Python for Data Analysis by Wes McKinney (the creator of Pandas) at <a class="external" href="https://wesmckinney.com/book/" target="_blank">the website</a><details class="ptx-footnote" aria-live="polite" id="subsec-Pandas-16-1-2"><summary class="ptx-footnote__number" title="Footnote 1.2.2"><sup> 2 </sup></summary><div class="ptx-footnote__contents" id="subsec-Pandas-16-1-2"><code class="code-inline tex2jax_ignore">wesmckinney.com/book/</code></div></details> and Learning Pandas by Michael Heydt at <a class="external" href="https://github.com/trenton3983/Learning_Pandas" target="_blank">the website</a><details class="ptx-footnote" aria-live="polite" id="subsec-Pandas-16-1-4"><summary class="ptx-footnote__number" title="Footnote 1.2.3"><sup> 3 </sup></summary><div class="ptx-footnote__contents" id="subsec-Pandas-16-1-4"><code class="code-inline tex2jax_ignore">github.com/trenton3983/Learning_Pandas</code></div></details> . Additionally, Kaggle offers a free, comprehensive introductory course on Pandas at <a class="external" href="https://www.kaggle.com/learn/pandas" target="_blank">this website</a><details class="ptx-footnote" aria-live="polite" id="subsec-Pandas-16-1-6"><summary class="ptx-footnote__number" title="Footnote 1.2.4"><sup> 4 </sup></summary><div class="ptx-footnote__contents" id="subsec-Pandas-16-1-6"><code class="code-inline tex2jax_ignore">www.kaggle.com/learn/pandas</code></div></details>.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Pandas-16-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para logical" id="subsec-Visualization-3">
+<div class="para"><em class="alert">Matplotlib Key Features:</em></div>
+<ul class="disc" id="subsec-Visualization-3-2">
+<li id="subsec-Visualization-3-2-1">
+<div class="para" id="p-derived-subsec-Visualization-3-2-1">Flexible plots: histograms, boxplots, scatter plots, line plots.</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-Visualization-3-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-Visualization-3-2-2">
+<div class="para" id="p-derived-subsec-Visualization-3-2-2">Customizable axes, labels, and styles.</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-Visualization-3-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-Visualization-3-2-3">
+<div class="para" id="p-derived-subsec-Visualization-3-2-3">Integration with Pandas for direct plotting.</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-Visualization-3-2-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Visualization-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Pandas-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para logical" id="subsec-Visualization-4">
+<div class="para"><em class="alert">Seaborn Advantages:</em></div>
+<ul class="disc" id="subsec-Visualization-4-2">
+<li id="subsec-Visualization-4-2-1">
+<div class="para" id="p-derived-subsec-Visualization-4-2-1">Statistical plots: histplot with KDE, boxplot, pairplot for correlations.</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-Visualization-4-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-Visualization-4-2-2">
+<div class="para" id="p-derived-subsec-Visualization-4-2-2">Attractive themes and color palettes.</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-Visualization-4-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-Visualization-4-2-3">
+<div class="para" id="p-derived-subsec-Visualization-4-2-3">Simplified syntax for complex visualizations.</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-Visualization-4-2-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Visualization-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-Pandas-17">Here is a list of useful functions in Pandas. <em class="alert">Grouping and Aggregation:</em>  grouped = df.groupby(’Passed’)[’Score’].mean(), which groups the data by variable ’Passed’ and computes the average score. <em class="alert">Handling Missing Data:</em> (1) is_null_mask = df.isnull() ceates a boolean mask of missing values in the data, (2) df.dropna(), which remove rows with missing values, (3) df.fillna(0), which replace missing values with 0 or a value of your choice. <em class="alert">Reading/Writing Files</em>: (1) df = pd.read_csv(’data.csv’)    for reading from a CSV file, (2) df.to_excel(’output.xlsx’) for writing the DataFrame to an Excel file, (3) df.to_json(’output.json’) for writing the DataFrame as a JSON file.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Pandas-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-Visualization-5">
+<em class="alert">Example: Visualizing Student Data</em> Using the student DataFrame, create a histogram and boxplot with Matplotlib, and a histplot with KDE and pairplot with Seaborn.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Visualization-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<section class="conclusion" id="subsec-Pandas-18"><div class="para" id="subsec-Pandas-18-1">
-<em class="alert">Conclusion:</em> Pandas simplifies the data journey: from raw files → clean tables → insightful summaries → model-ready datasets. You don’t need to memorize everything. Learn the core workflow: Load data, Inspect and clean, Transform and explore, Export results or feed into models. Once you’re comfortable with these steps, you’ll find Pandas becomes second nature.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Pandas-18-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></section><div class="autopermalink" data-description="Subsection 1.2.1: Pandas"><a href="#subsec-Pandas" title="Copy heading and permalink for Subsection 1.2.1: Pandas" aria-label="Copy heading and permalink for Subsection 1.2.1: Pandas">🔗</a></div></section><section class="conclusion" id="sec-useful-descriptive-statistics-tools-4"><div class="para" id="sec-useful-descriptive-statistics-tools-4-1">There are of course many other tools for data cleaning and transformation. For instance, TensorFlow has a very powerful data paipeline that address the transformations of data ad emphasizes consistency across the entire machine learning training and presentation cycle. But, that is a bit too much to master in the beginning. It is best to first start with Pandas or similar easy to use tool. The references given above have many notebook examples for you to work through and develop your own skills. For many years, R programming language, and maybe enven now, R is a go to language for data analysts. But, since we are emphasizing the tools more common in machine learning community, we will not have much to say about R.<div class="autopermalink" data-description="Paragraph"><a href="#sec-useful-descriptive-statistics-tools-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></section><div class="autopermalink" data-description="Section 1.2: Useful Descriptive Statistics Tools"><a href="#sec-useful-descriptive-statistics-tools" title="Copy heading and permalink for Section 1.2: Useful Descriptive Statistics Tools" aria-label="Copy heading and permalink for Section 1.2: Useful Descriptive Statistics Tools">🔗</a></div></section></div>
+<figure class="figure figure-like" id="fig-matplotlib-plots"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/matplotlib-plots.png" class="contained" alt="Matplotlib plots from Pandas."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.2.4<span class="period">.</span></span><span class="space"> </span>Matplotlib histogram and boxplot of student scores.<div class="autopermalink" data-description="Figure 1.2.4"><a href="#fig-matplotlib-plots" title="Copy heading and permalink for Figure 1.2.4" aria-label="Copy heading and permalink for Figure 1.2.4">🔗</a></div></figcaption></figure><div class="code-box"><pre class="program clipboardable line-numbers"><code class="language-py">import matplotlib.pyplot as plt
+import pandas as pd
+
+# Assuming df from previous code
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 4))
+df['Score'].hist(bins=5, ax=ax1, edgecolor='black', alpha=0.7)
+ax1.set_title('Histogram of Scores')
+ax1.set_xlabel('Score')
+ax1.set_ylabel('Frequency')
+ax1.grid(True, alpha=0.3)
+
+df.boxplot(column='Score', ax=ax2)
+ax2.set_title('Boxplot of Scores')
+ax2.set_ylabel('Score')
+ax2.grid(True, alpha=0.3)
+
+plt.tight_layout()
+plt.savefig('matplotlib-plots.png', dpi=300)
+plt.show()
+</code></pre></div>
+<figure class="figure figure-like" id="fig-seaborn-plots"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/seaborn-plots.png" class="contained" alt="Seaborn plots from Pandas."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.2.5<span class="period">.</span></span><span class="space"> </span>Seaborn histplot with KDE and pairplot of student data.<div class="autopermalink" data-description="Figure 1.2.5"><a href="#fig-seaborn-plots" title="Copy heading and permalink for Figure 1.2.5" aria-label="Copy heading and permalink for Figure 1.2.5">🔗</a></div></figcaption></figure><div class="code-box"><pre class="program clipboardable line-numbers"><code class="language-py"># --- NEW CODE FOR SEABORN PLOTS ---
+import seaborn as sns
+import pandas as pd
+
+# Assuming df from previous code
+sns.set_theme(style="whitegrid")
+fig, ax = plt.subplots(figsize=(8, 5))
+sns.histplot(df['Score'], kde=True, ax=ax)
+ax.set_title('Histogram with KDE of Scores')
+ax.set_xlabel('Score')
+ax.set_ylabel('Count')
+plt.savefig('seaborn-histplot.png', dpi=300)
+plt.show()
+
+# Pairplot for relationships
+sns.pairplot(df[['Age', 'Score']], diag_kind='kde')
+plt.savefig('seaborn-pairplot.png', dpi=300)
+plt.show()
+# --- END NEW CODE ---
+</code></pre></div>
+<div class="para" id="subsec-Visualization-10">
+<em class="alert">Real-World Example:</em> Load a larger dataset (e.g., from Kaggle) and visualize distributions and correlations.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Visualization-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="code-box"><pre class="program clipboardable line-numbers"><code class="language-py">import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Sample larger dataset (simulated for book)
+np.random.seed(42)
+n = 100
+data = pd.DataFrame({
+    'Age': np.random.normal(25, 5, n),
+    'Score': np.random.normal(85, 10, n),
+    'Hours_Studied': np.random.normal(20, 5, n)
+})
+data['Score'] = data['Score'].clip(0, 100)  # Ensure valid scores
+
+# Basic EDA
+print(data.describe())
+print("\nMissing values:\n", data.isnull().sum())
+
+# Correlation matrix
+print("\nCorrelation matrix:\n", data.corr())
+
+# Visualization
+plt.figure(figsize=(10, 4))
+plt.subplot(1, 2, 1)
+sns.histplot(data['Score'], kde=True)
+plt.title('Distribution of Scores')
+plt.subplot(1, 2, 2)
+sns.scatterplot(x='Hours_Studied', y='Score', data=data)
+plt.title('Score vs. Hours Studied')
+plt.tight_layout()
+plt.savefig('./images/essential-probability-and-statistics/eda-large-dataset.png', dpi=300)
+plt.show()
+
+# Pairplot
+sns.pairplot(data, diag_kind='kde')
+plt.savefig('./images/essential-probability-and-statistics/eda-pairplot.png', dpi=300)
+plt.show()
+</code></pre></div>
+<figure class="figure figure-like" id="fig-eda-large-dataset"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/eda-large-dataset.png" class="contained" alt="EDA visualizations for larger dataset."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.2.6<span class="period">.</span></span><span class="space"> </span>EDA on a larger dataset: histogram and scatter plot.<div class="autopermalink" data-description="Figure 1.2.6"><a href="#fig-eda-large-dataset" title="Copy heading and permalink for Figure 1.2.6" aria-label="Copy heading and permalink for Figure 1.2.6">🔗</a></div></figcaption></figure><figure class="figure figure-like" id="fig-eda-pairplot"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/eda-pairplot.png" class="contained" alt="Pairplot for larger dataset."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.2.7<span class="period">.</span></span><span class="space"> </span>Pairplot showing relationships in larger dataset.<div class="autopermalink" data-description="Figure 1.2.7"><a href="#fig-eda-pairplot" title="Copy heading and permalink for Figure 1.2.7" aria-label="Copy heading and permalink for Figure 1.2.7">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Subsection 1.2.3: Visualization with Matplotlib and Seaborn"><a href="#subsec-Visualization" title="Copy heading and permalink for Subsection 1.2.3: Visualization with Matplotlib and Seaborn" aria-label="Copy heading and permalink for Subsection 1.2.3: Visualization with Matplotlib and Seaborn">🔗</a></div></section><section class="conclusion" id="sec-useful-descriptive-statistics-tools-6"><div class="para" id="sec-useful-descriptive-statistics-tools-6-1">NumPy, Pandas, Matplotlib, and Seaborn form a powerful toolkit for EDA. Start with NumPy for numerical operations, use Pandas for data manipulation and cleaning, and leverage Matplotlib/Seaborn for insightful visualizations. Practice with real datasets (e.g., from Kaggle) in Jupyter notebooks to build skills. For advanced machine learning pipelines, you can explore TensorFlow’s Data API later, but mastering these foundational tools is key for beginners. Resources like <a class="external" href="https://wesmckinney.com/book/" target="_blank">Python for Data Analysis</a><details class="ptx-footnote" aria-live="polite" id="sec-useful-descriptive-statistics-tools-6-1-2"><summary class="ptx-footnote__number" title="Footnote 1.2.3"><sup> 3 </sup></summary><div class="ptx-footnote__contents" id="sec-useful-descriptive-statistics-tools-6-1-2"><code class="code-inline tex2jax_ignore">wesmckinney.com</code></div></details> and <a class="external" href="https://www.kaggle.com/learn/pandas" target="_blank">Kaggle’s Pandas course</a><details class="ptx-footnote" aria-live="polite" id="sec-useful-descriptive-statistics-tools-6-1-4"><summary class="ptx-footnote__number" title="Footnote 1.2.4"><sup> 4 </sup></summary><div class="ptx-footnote__contents" id="sec-useful-descriptive-statistics-tools-6-1-4"><code class="code-inline tex2jax_ignore">kaggle.com</code></div></details> offer hands-on learning.<div class="autopermalink" data-description="Paragraph"><a href="#sec-useful-descriptive-statistics-tools-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section><div class="autopermalink" data-description="Section 1.2: Useful Tools for Descriptive Statistics and Exploratory Data Analysis"><a href="#sec-useful-descriptive-statistics-tools" title="Copy heading and permalink for Section 1.2: Useful Tools for Descriptive Statistics and Exploratory Data Analysis" aria-label="Copy heading and permalink for Section 1.2: Useful Tools for Descriptive Statistics and Exploratory Data Analysis">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
-<a class="previous-button button" href="sec-Descriptive-Statistics.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-Numerical-and-Categorical-Data.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec-Descriptive-Statistics.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-data-types-for-machine-learning.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

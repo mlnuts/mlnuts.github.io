@@ -9,10 +9,11 @@
 
   <!-- include sections -->
   <xi:include href="ch-essential-prob-sections/sec-descriptive-statistics-rev-1.ptx" />
-  <xi:include href="ch-essential-prob-sections/sec-useful-descriptive-statistics-tools.ptx" />
-  <xi:include href="ch-essential-prob-sections/sec-categorical-and-numerical-data.ptx" />
+  <xi:include href="ch-essential-prob-sections/sec-useful-descriptive-statistics-tools-rev-1.ptx" />
+  <xi:include href="ch-essential-prob-sections/sec-categorical-and-numerical-data-rev-1.ptx" />
   
-  <xi:include href="ch-essential-prob-sections/sec-basic-probability.ptx" />
+  <xi:include href="ch-essential-prob-sections/sec-basic-probability-rev-1.ptx" />
+  
   <xi:include href="ch-essential-prob-sections/sec-joint-conditional-and-marginal.ptx" />
   <xi:include href="ch-essential-prob-sections/sec-discrete-probability-distributions.ptx" />
 
