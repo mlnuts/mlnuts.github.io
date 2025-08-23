@@ -199,10 +199,10 @@
           <cell>1</cell> <cell><m>70 \le x \lt 80</m></cell> <cell><m>\{70, 72, 75, 75\}</m></cell> <cell>4</cell> <cell>0.333</cell>
         </row>
         <row>
-          <cell>2</cell> <cell><m>80 \le x \lt 90</m></cell> <cell><m>\{80, 80, 85\}</m></cell> <cell>3</cell> <cell>0.333</cell>
+          <cell>2</cell> <cell><m>80 \le x \lt 90</m></cell> <cell><m>\{80, 82, 85\}</m></cell> <cell>3</cell> <cell>0.333</cell>
         </row>
         <row>
-          <cell>3</cell> <cell><m>90 \le x \lt 100</m></cell> <cell><m>\{90, 95\}</m></cell> <cell>2</cell> <cell>0.222</cell>
+          <cell>3</cell> <cell><m>90 \le x \lt 100</m></cell> <cell><m>\{93, 95\}</m></cell> <cell>2</cell> <cell>0.222</cell>
         </row>
         <row>
           <cell>4</cell> <cell><m>100 \le x \lt 110</m></cell> <cell><m>\{100\}</m></cell> <cell>1</cell> <cell>0.111</cell>
@@ -281,44 +281,226 @@ plt.savefig('boxplot.png')
 plt.show()
       </code>
     </program>
+    <p> 
+      <alert>Skewness</alert>: Skewness tells us about the shape of the distribution, specifically if it's "tilted" to one side. In a positively skewed distribution (right skew), the tail on the right side is longer, while in a negatively skewed distribution (left skew), the tail on the left side is longer.
+    </p>  
     <p>
-      <alert>Skewness</alert>: Skewness measures asymmetry. Positive skew (right tail longer) is common in incomes; negative skew (left tail longer) in exam scores. For incomes <m>\{20000, 30000, 35000, 40000, 1000000\}</m>, skewness is positive. See <xref ref="fig-skewness-comparison"/>.
-    </p>
-    <figure xml:id="fig-skewness-comparison">
-      <caption>Histograms comparing normal and right-skewed distributions.</caption>
-      <image source="./images/essential-probability-and-statistics/skewness-comparison.png">
-        <shortdescription>Normal vs. skewed distributions.</shortdescription>
-      </image>
-    </figure>
-    <program language="python" line-numbers="yes">
-      <title>Code for skewness comparison (new)</title>
+      Positive skew example: Imagine a dataset of household incomes: <m>{20000, 30000, 35000, 40000, 1000000}</m>. The income of 1 million is much higher than the others, causing the data to be right-skewed. Most people earn a lower income, but a few very high incomes stretch the right side of the distribution, creating a longer right tail.
+    </p>  
+    <p>
+      Negative skew example: Think of a set of exam scores <m>{50, 60, 70, 80, 90, 95}</m>. If most students score high but a few perform very poorly, the data is left-skewed. The low scores create a long tail on the left side of the distribution.
+    </p>  
+    <p>
+      See <xref ref="fig-skewness-comparison"/> for a visual representation.
+    </p>  
+    <figure xml:id="fig-skewness-comparison"> 
+      <caption>Histograms comparing a normal distribution and a right-skewed distribution.</caption> 
+      <image source="./images/essential-probability-and-statistics/skewness-comparison.png"> <shortdescription>Comparison of normal vs. skewed distributions.</shortdescription> </image>
+    </figure> 
+    <p> 
+      To help visualize the difference, here’s a Python code that generates two types of distributions: a normal (symmetrical) one and a right-skewed one. The plot will show how the shapes of these two distributions differ. 
+    </p> 
+    <program language="python" line-numbers="yes"> 
+      <title>Skewness Visualization</title> 
       <code>
-import matplotlib.pyplot as plt
-import numpy as np
-from scipy.stats import norm, skewnorm
+      import matplotlib.pyplot as plt 
+      import numpy as np 
+      from scipy.stats import norm, skewnorm
 
-np.random.seed(42)
-normal_data = np.random.normal(50, 10, 1000)
-skewed_data = np.random.exponential(20000, 1000)
+      np.random.seed(42)
+      normal_data = np.random.normal(50, 10, 1000) # Normal distribution
+      skewed_data = np.random.exponential(20000, 1000) # Right-skewed distribution
 
-fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 4))
-ax1.hist(normal_data, bins=30, edgecolor='black', alpha=0.7)
-ax1.set_title('Normal Distribution')
-ax1.set_xlabel('Value')
-ax1.set_ylabel('Frequency')
+      fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 4))
 
-ax2.hist(skewed_data, bins=30, edgecolor='black', alpha=0.7)
-ax2.set_title('Right-Skewed Distribution')
-ax2.set_xlabel('Value')
-ax2.set_ylabel('Frequency')
+      # normal distribution
 
-plt.tight_layout()
-plt.savefig('./images/essential-probability-and-statistics/skewness-comparison.png')
-plt.show()
+      ax1.hist(normal_data, bins=30, edgecolor='black', alpha=0.7)
+      ax1.set_title('Normal Distribution')
+      ax1.set_xlabel('Value')
+      ax1.set_ylabel('Frequency')
+
+      #Plot right-skewed distribution
+
+      ax2.hist(skewed_data, bins=30, edgecolor='black', alpha=0.7)
+      ax2.set_title('Right-Skewed Distribution')
+      ax2.set_xlabel('Value')
+      ax2.set_ylabel('Frequency')
+
+      plt.tight_layout()
+      plt.savefig('skewness-comparison.png')
+      plt.show()
 
       </code>
     </program>
   </subsection>
+
+<subsection xml:id="kurtosis" cols="1">
+  <title>Kurtosis: Checking Out the Tails</title>
+  <introduction>
+    <p>
+      After digging into mean, median, mode, and skewness, let’s talk <em>kurtosis</em>. This stat zooms in on the "tailedness" of our data—how often we see wild outliers compared to a normal distribution. It’s like checking the edges of our data’s shape to see if they’re loaded with extreme values or totally chill.    
+    </p>
+  </introduction>
+
+  <subsubsection xml:id="types-of-kurtosis">
+    <title>Types of Kurtosis</title>
+    <p>
+      Kurtosis comes in three flavors:
+    </p>
+    <ul>
+      <li><p><em>Mesokurtic</em>: Matches a normal distribution. Not too many outliers, not too few. It’s the just-right vibe.</p></li>
+      <li><p><em>Leptokurtic</em>: Sharp peak, heavy tails. Think lots of outliers, like stock prices during a market rollercoaster.</p></li>
+      <li><p><em>Platykurtic</em>: Flatter peak, light tails. Fewer outliers, like steady daily temps.</p></li>
+    </ul>
+  </subsubsection>
+
+  <subsubsection xml:id="kurtosis-formula">
+    <title>How’s It Calculated?</title>
+    <p>
+      Kurtosis measures how much data hangs out in the tails. The formula for <em>excess kurtosis</em> (comparing to a normal distribution) is:
+    </p>
+    <p>
+      <m>\text{Excess Kurtosis} = \frac{1}{N} \sum_{i=1}^{N} \left( \frac{x_i - \mu}{\sigma} \right)^4 - 3</m>
+    </p>
+    <p>
+      Here, <m>N</m> is the number of data points, <m>x_i</m> is each data point, <m>\mu</m> is the mean, and <m>\sigma</m> is the standard deviation. Don’t stress the math—Python will handle it in a bit!
+    </p>
+  </subsubsection>
+
+  <subsubsection xml:id="kurtosis-examples">
+    <title>Real-World Examples</title>
+    <p>
+      Let's connect kurtosis to mean, median, mode, and skewness:
+    </p>
+    <ul>
+      <li><p><em>Leptokurtic Example</em>: Take stock returns: <c>{5, 7, 8, 8, 10, 12, 12, 12, 12, 50}</c>. That 50 is a massive outlier, bulking up the tails (like skewness, but focused on extremes). This is leptokurtic—expect some crazy swings.</p></li>
+      <li><p><em>Platykurtic Example</em>: Now daily temperatures: <c>{30, 32, 33, 34, 35, 36, 38}</c>. No wild outliers, just values chilling around the mean and median. This is platykurtic—nice and calm.</p></li>
+    </ul>
+    <p>
+      While skewness shows if our data’s lopsided, kurtosis tells us if outliers are stealing the show.
+    </p>
+  </subsubsection>
+
+  <subsubsection xml:id="kurtosis-visual">
+    <title>Seeing Kurtosis in Action</title>
+    <p>
+      Picture kurtosis with histograms (like we used for mean and skewness):
+    </p>
+    <ul>
+      <li><p><em>Leptokurtic</em>: Sharp peak, chunky tails (lots of outliers).</p></li>
+      <li><p><em>Platykurtic</em>: Flatter top, skinny tails (few outliers).</p></li>
+      <li><p><em>Mesokurtic</em>: Classic bell curve, balanced tails.</p></li>
+    </ul>
+    <p>
+      Check out this chart to see the difference:
+    </p>
+    <figure xml:id="kurtosis-chart">
+      <caption>
+        Kurtosis Comparison: The top subplot shows the full distributions, with leptokurtic (sharp peak, heavy tails with more outliers, like stock returns), mesokurtic (normal distribution, balanced tails), and platykurtic (flat peak, light tails with fewer outliers, like temperatures). The bottom subplot zooms in on the right tail, showing how leptokurtic tails decay slower (higher density at large values) compared to mesokurtic and platykurtic tails, which drop off faster.
+      </caption>
+      <image source="./images/essential-probability-and-statistics/kurtosis.png" width="80%"/>
+    </figure>
+    <program language="python" line-numbers="yes">
+      <code>
+      import numpy as np
+      import matplotlib.pyplot as plt
+      from scipy.stats import kurtosis, t, norm, uniform
+
+      # Data for kurtosis calculation
+      stock_data = [5, 7, 8, 8, 10, 12, 12, 12, 12, 50]  # Leptokurtic
+      temp_data = [30, 32, 33, 34, 35, 36, 38]  # Platykurtic
+
+      # Calculate kurtosis
+      kurt_stock = kurtosis(stock_data, fisher=True)
+      kurt_temp = kurtosis(temp_data, fisher=True)
+      print(f"Stock Returns Kurtosis: {kurt_stock:.2f} (Leptokurtic)")
+      print(f"Temperature Kurtosis: {kurt_temp:.2f} (Platykurtic)")
+
+      # Generate data for plotting distributions
+      x = np.linspace(-10, 10, 200)  # Wider range to show tails
+
+      # Leptokurtic: Student's t-distribution (df=3 for heavy tails)
+      lepto = t.pdf(x, df=3) * 1.2  # Scale for visibility
+
+      # Mesokurtic: Normal distribution
+      meso = norm.pdf(x)
+
+      # Platykurtic: Uniform-like distribution (approximated)
+      platy = uniform.pdf(x, loc=-2, scale=4) * 0.8  # Flat, light tails
+
+      # Create figure with two subplots
+      fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(10, 8), sharex=False)
+
+      # Full distribution plot (top subplot)
+      ax1.plot(x, lepto, label='Leptokurtic (Heavy Tails)', color='#FF5733')
+      ax1.plot(x, meso, label='Mesokurtic (Normal)', color='#33FF57')
+      ax1.plot(x, platy, label='Platykurtic (Light Tails)', color='#3357FF')
+      ax1.set_title('Kurtosis Comparison: Full Distribution')
+      ax1.set_xlabel('Value')
+      ax1.set_ylabel('Density')
+      ax1.legend()
+      ax1.grid(True)
+
+      # Tail-focused plot (bottom subplot)
+      ax2.plot(x, lepto, label='Leptokurtic (Heavy Tails)', color='#FF5733')
+      ax2.plot(x, meso, label='Mesokurtic (Normal)', color='#33FF57')
+      ax2.plot(x, platy, label='Platykurtic (Light Tails)', color='#3357FF')
+      ax2.set_title('Kurtosis Comparison: Right Tail Focus')
+      ax2.set_xlabel('Value')
+      ax2.set_ylabel('Density')
+      ax2.set_xlim(3, 10)  # Focus on right tail
+      ax2.set_ylim(0, 0.05)  # Zoom in on low density
+      ax2.legend()
+      ax2.grid(True)
+
+      # Adjust layout and save
+      plt.tight_layout()
+      plt.savefig('kurtosis.png', dpi=300, bbox_inches='tight')  # Save both subplots
+      plt.show()
+      </code>
+    </program>
+
+  </subsubsection>
+
+  <subsubsection xml:id="kurtosis-python">
+    <title>Calculating Kurtosis with Python</title>
+    <p>
+      Since we’re all about descriptive stats, let’s compute kurtosis with Python (more tools coming up later). Here’s a script for our stock returns example:
+    </p>
+    <program language="python" line-numbers="yes">
+      <code>
+      from scipy.stats import kurtosis
+      import numpy as np
+
+      # Stock returns data (leptokurtic)
+      data = [5, 7, 8, 8, 10, 12, 12, 12, 12, 50]
+
+      # Calculate excess kurtosis
+      kurt = kurtosis(data, fisher=True)
+      print(f"Excess Kurtosis: {kurt:.2f}")
+
+      # Positive value means leptokurtic (heavy tails)!
+      </code>
+    </program>
+    <p>
+      Run this, and you’ll see a positive kurtosis, confirming big outliers in our stock returns. Try the temperature data <c>{30, 32, 33, 34, 35, 36, 38}</c> for a negative kurtosis and that platykurtic vibe.
+    </p>
+  </subsubsection>
+
+  <subsubsection xml:id="kurtosis-wrapup">
+    <title>Why Kurtosis Matters</title>
+    <p>
+      Kurtosis wraps up our descriptive stats crew—mean, median, mode, and skewness. It’s like a heads-up about outliers. High kurtosis (leptokurtic) yells “watch out for big swings!”—think risky stocks. Low kurtosis (platykurtic) says “smooth sailing”—like predictable weather. It’s another piece of your data’s story.
+    </p>
+  </subsubsection>
+</subsection>
+
+
+
+
+
+  <!-- 
   <subsection xml:id="subsec-Numerical-Summary">
     <title>Numerical Summary</title>
     <p>
@@ -367,4 +549,13 @@ print(f"Skewness: {skew:.2f}")
       </code>
     </program>
   </subsection>
+-->
+  <conclusion>
+    <title>Conclusion</title>
+    
+    
+    <p>
+      In summary, descriptive statistics provide essential tools for understanding and summarizing datasets, helping to reveal underlying patterns and trends. By examining measures of central tendency (mean, median, mode), we can identify the "typical" values of a dataset, while measures of dispersion (variance, standard deviation, range, and quartiles) show how spread out the data is. Visualizations like histograms, boxplots, and density plots enhance this understanding by allowing us to visually inspect the distribution and shape of the data. As we move forward, the next section will explore the tools available for calculating these descriptive statistics, giving us the means to automate and refine these analyses in practice.
+    </p>
+  </conclusion>
 </section>

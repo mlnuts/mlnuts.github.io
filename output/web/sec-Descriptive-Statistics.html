@@ -150,7 +150,17 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Descriptive-Statistics.html#subsec-Central-Tendency" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Measures of Central Tendency</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Descriptive-Statistics.html#subsec-Dispersion" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Measures of Dispersion</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Descriptive-Statistics.html#subsec-Distribution-Shape" class="internal"><span class="codenumber">1.1.3</span> <span class="title">Distribution Shape</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Descriptive-Statistics.html#subsec-Numerical-Summary" class="internal"><span class="codenumber">1.1.4</span> <span class="title">Numerical Summary</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-Descriptive-Statistics.html#kurtosis" class="internal"><span class="codenumber">1.1.4</span> <span class="title">Kurtosis: Checking Out the Tails</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Descriptive-Statistics.html#types-of-kurtosis" class="internal"><span class="codenumber">1.1.4.1</span> <span class="title">Types of Kurtosis</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Descriptive-Statistics.html#kurtosis-formula" class="internal"><span class="codenumber">1.1.4.2</span> <span class="title">How’s It Calculated?</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Descriptive-Statistics.html#kurtosis-examples" class="internal"><span class="codenumber">1.1.4.3</span> <span class="title">Real-World Examples</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Descriptive-Statistics.html#kurtosis-visual" class="internal"><span class="codenumber">1.1.4.4</span> <span class="title">Seeing Kurtosis in Action</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Descriptive-Statistics.html#kurtosis-python" class="internal"><span class="codenumber">1.1.4.5</span> <span class="title">Calculating Kurtosis with Python</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Descriptive-Statistics.html#kurtosis-wrapup" class="internal"><span class="codenumber">1.1.4.6</span> <span class="title">Why Kurtosis Matters</span></a></div></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -417,14 +427,14 @@ s \approx 5.61\text{.}
 <tr>
 <td class="l m b0 r0 l0 t0 lines">2</td>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(80 \le x \lt 90\)</span></td>
-<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\{80, 80, 85\}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\{80, 82, 85\}\)</span></td>
 <td class="l m b0 r0 l0 t0 lines">3</td>
 <td class="l m b0 r0 l0 t0 lines">0.333</td>
 </tr>
 <tr>
 <td class="l m b0 r0 l0 t0 lines">3</td>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(90 \le x \lt 100\)</span></td>
-<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\{90, 95\}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\{93, 95\}\)</span></td>
 <td class="l m b0 r0 l0 t0 lines">2</td>
 <td class="l m b0 r0 l0 t0 lines">0.222</td>
 </tr>
@@ -488,22 +498,35 @@ plt.savefig('boxplot.png')
 plt.show()
 </code></pre></div>
 <div class="para" id="subsec-Distribution-Shape-12">
-<em class="alert">Skewness</em>: Skewness measures asymmetry. Positive skew (right tail longer) is common in incomes; negative skew (left tail longer) in exam scores. For incomes <span class="process-math">\(\{20000, 30000, 35000, 40000, 1000000\}\text{,}\)</span> skewness is positive. See <a href="sec-Descriptive-Statistics.html#fig-skewness-comparison" class="xref" data-knowl="./knowl/xref/fig-skewness-comparison.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.1.6">Figure 1.1.6</a>.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Distribution-Shape-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<em class="alert">Skewness</em>: Skewness tells us about the shape of the distribution, specifically if it’s "tilted" to one side. In a positively skewed distribution (right skew), the tail on the right side is longer, while in a negatively skewed distribution (left skew), the tail on the left side is longer.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Distribution-Shape-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<figure class="figure figure-like" id="fig-skewness-comparison"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/skewness-comparison.png" class="contained" alt="Normal vs. skewed distributions."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.6<span class="period">.</span></span><span class="space"> </span>Histograms comparing normal and right-skewed distributions.<div class="autopermalink" data-description="Figure 1.1.6"><a href="#fig-skewness-comparison" title="Copy heading and permalink for Figure 1.1.6" aria-label="Copy heading and permalink for Figure 1.1.6">🔗</a></div></figcaption></figure><div class="code-box"><pre class="program clipboardable line-numbers"><code class="language-py">import matplotlib.pyplot as plt
-import numpy as np
+<div class="para" id="subsec-Distribution-Shape-13">Positive skew example: Imagine a dataset of household incomes: <span class="process-math">\({20000, 30000, 35000, 40000, 1000000}\text{.}\)</span> The income of 1 million is much higher than the others, causing the data to be right-skewed. Most people earn a lower income, but a few very high incomes stretch the right side of the distribution, creating a longer right tail.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Distribution-Shape-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Distribution-Shape-14">Negative skew example: Think of a set of exam scores <span class="process-math">\({50, 60, 70, 80, 90, 95}\text{.}\)</span> If most students score high but a few perform very poorly, the data is left-skewed. The low scores create a long tail on the left side of the distribution.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Distribution-Shape-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Distribution-Shape-15">See <a href="sec-Descriptive-Statistics.html#fig-skewness-comparison" class="xref" data-knowl="./knowl/xref/fig-skewness-comparison.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.1.6">Figure 1.1.6</a> for a visual representation.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Distribution-Shape-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-skewness-comparison"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/skewness-comparison.png" class="contained" alt="Comparison of normal vs. skewed distributions."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.6<span class="period">.</span></span><span class="space"> </span>Histograms comparing a normal distribution and a right-skewed distribution.<div class="autopermalink" data-description="Figure 1.1.6"><a href="#fig-skewness-comparison" title="Copy heading and permalink for Figure 1.1.6" aria-label="Copy heading and permalink for Figure 1.1.6">🔗</a></div></figcaption></figure><div class="para" id="subsec-Distribution-Shape-17">To help visualize the difference, here’s a Python code that generates two types of distributions: a normal (symmetrical) one and a right-skewed one. The plot will show how the shapes of these two distributions differ.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Distribution-Shape-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="code-box"><pre class="program clipboardable line-numbers"><code class="language-py">import matplotlib.pyplot as plt 
+import numpy as np 
 from scipy.stats import norm, skewnorm
 
 np.random.seed(42)
-normal_data = np.random.normal(50, 10, 1000)
-skewed_data = np.random.exponential(20000, 1000)
+normal_data = np.random.normal(50, 10, 1000) # Normal distribution
+skewed_data = np.random.exponential(20000, 1000) # Right-skewed distribution
 
 fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 4))
+
+# normal distribution
+
 ax1.hist(normal_data, bins=30, edgecolor='black', alpha=0.7)
 ax1.set_title('Normal Distribution')
 ax1.set_xlabel('Value')
 ax1.set_ylabel('Frequency')
+
+#Plot right-skewed distribution
 
 ax2.hist(skewed_data, bins=30, edgecolor='black', alpha=0.7)
 ax2.set_title('Right-Skewed Distribution')
@@ -511,51 +534,181 @@ ax2.set_xlabel('Value')
 ax2.set_ylabel('Frequency')
 
 plt.tight_layout()
-plt.savefig('./images/essential-probability-and-statistics/skewness-comparison.png')
+plt.savefig('skewness-comparison.png')
 plt.show()
 </code></pre></div>
-<div class="autopermalink" data-description="Subsection 1.1.3: Distribution Shape"><a href="#subsec-Distribution-Shape" title="Copy heading and permalink for Subsection 1.1.3: Distribution Shape" aria-label="Copy heading and permalink for Subsection 1.1.3: Distribution Shape">🔗</a></div></section><section class="subsection" id="subsec-Numerical-Summary"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.1.4</span><span class="space"> </span><span class="title">Numerical Summary</span>
+<div class="autopermalink" data-description="Subsection 1.1.3: Distribution Shape"><a href="#subsec-Distribution-Shape" title="Copy heading and permalink for Subsection 1.1.3: Distribution Shape" aria-label="Copy heading and permalink for Subsection 1.1.3: Distribution Shape">🔗</a></div></section><section class="subsection" id="kurtosis"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.1.4</span><span class="space"> </span><span class="title">Kurtosis: Checking Out the Tails</span>
 </h3>
-<div class="para" id="subsec-Numerical-Summary-2">Computing descriptive statistics numerically is efficient with Python. Below is a program to calculate mean, median, mode, variance, standard deviation, quartiles, and skewness for a dataset. This program will print out the following results <div class="tabular-box natural-width"><table class="tabular">
-<tr><td class="l m b0 r0 l0 t0 lines">Mean: 83.33</td></tr>
-<tr><td class="l m b0 r0 l0 t0 lines">Median: 80.00</td></tr>
-<tr><td class="l m b0 r0 l0 t0 lines">Mode: 75</td></tr>
-<tr><td class="l m b0 r0 l0 t0 lines">Population Variance: 88.89</td></tr>
-<tr><td class="l m b0 r0 l0 t0 lines">Population Std Dev: 9.43</td></tr>
-<tr><td class="l m b0 r0 l0 t0 lines">Sample Variance: 100.00</td></tr>
-<tr><td class="l m b0 r0 l0 t0 lines">Sample Std Dev: 10.00</td></tr>
-<tr><td class="l m b0 r0 l0 t0 lines">Q1: 75.00, Q3: 90.00</td></tr>
-<tr><td class="l m b0 r0 l0 t0 lines">Skewness: 0.39</td></tr>
-</table></div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Numerical-Summary-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<section class="introduction" id="kurtosis-2"><div class="para" id="kurtosis-2-1">After digging into mean, median, mode, and skewness, let’s talk <em class="emphasis">kurtosis</em>. This stat zooms in on the "tailedness" of our data—how often we see wild outliers compared to a normal distribution. It’s like checking the edges of our data’s shape to see if they’re loaded with extreme values or totally chill.<div class="autopermalink" data-description="Paragraph"><a href="#kurtosis-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section><section class="subsubsection" id="types-of-kurtosis"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">1.1.4.1</span><span class="space"> </span><span class="title">Types of Kurtosis</span>
+</h4>
+<div class="para" id="types-of-kurtosis-2">Kurtosis comes in three flavors:<div class="autopermalink" data-description="Paragraph"><a href="#types-of-kurtosis-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="code-box"><pre class="program clipboardable line-numbers"><code class="language-py">import numpy as np
-from scipy import stats
+<ul class="disc" id="types-of-kurtosis-3">
+<li id="types-of-kurtosis-3-1">
+<div class="para" id="types-of-kurtosis-3-1-1">
+<em class="emphasis">Mesokurtic</em>: Matches a normal distribution. Not too many outliers, not too few. It’s the just-right vibe.<div class="autopermalink" data-description="Paragraph"><a href="#types-of-kurtosis-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#types-of-kurtosis-3-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="types-of-kurtosis-3-2">
+<div class="para" id="types-of-kurtosis-3-2-1">
+<em class="emphasis">Leptokurtic</em>: Sharp peak, heavy tails. Think lots of outliers, like stock prices during a market rollercoaster.<div class="autopermalink" data-description="Paragraph"><a href="#types-of-kurtosis-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#types-of-kurtosis-3-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="types-of-kurtosis-3-3">
+<div class="para" id="types-of-kurtosis-3-3-1">
+<em class="emphasis">Platykurtic</em>: Flatter peak, light tails. Fewer outliers, like steady daily temps.<div class="autopermalink" data-description="Paragraph"><a href="#types-of-kurtosis-3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#types-of-kurtosis-3-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Subsubsection 1.1.4.1: Types of Kurtosis"><a href="#types-of-kurtosis" title="Copy heading and permalink for Subsubsection 1.1.4.1: Types of Kurtosis" aria-label="Copy heading and permalink for Subsubsection 1.1.4.1: Types of Kurtosis">🔗</a></div></section><section class="subsubsection" id="kurtosis-formula"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">1.1.4.2</span><span class="space"> </span><span class="title">How’s It Calculated?</span>
+</h4>
+<div class="para" id="kurtosis-formula-2">Kurtosis measures how much data hangs out in the tails. The formula for <em class="emphasis">excess kurtosis</em> (comparing to a normal distribution) is:<div class="autopermalink" data-description="Paragraph"><a href="#kurtosis-formula-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="kurtosis-formula-3">
+<span class="process-math">\(\text{Excess Kurtosis} = \frac{1}{N} \sum_{i=1}^{N} \left( \frac{x_i - \mu}{\sigma} \right)^4 - 3\)</span><div class="autopermalink" data-description="Paragraph"><a href="#kurtosis-formula-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="kurtosis-formula-4">Here, <span class="process-math">\(N\)</span> is the number of data points, <span class="process-math">\(x_i\)</span> is each data point, <span class="process-math">\(\mu\)</span> is the mean, and <span class="process-math">\(\sigma\)</span> is the standard deviation. Don’t stress the math—Python will handle it in a bit!<div class="autopermalink" data-description="Paragraph"><a href="#kurtosis-formula-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsubsection 1.1.4.2: How’s It Calculated?"><a href="#kurtosis-formula" title="Copy heading and permalink for Subsubsection 1.1.4.2: How’s It Calculated?" aria-label="Copy heading and permalink for Subsubsection 1.1.4.2: How’s It Calculated?">🔗</a></div></section><section class="subsubsection" id="kurtosis-examples"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">1.1.4.3</span><span class="space"> </span><span class="title">Real-World Examples</span>
+</h4>
+<div class="para" id="kurtosis-examples-2">Let’s connect kurtosis to mean, median, mode, and skewness:<div class="autopermalink" data-description="Paragraph"><a href="#kurtosis-examples-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ul class="disc" id="kurtosis-examples-3">
+<li id="kurtosis-examples-3-1">
+<div class="para" id="kurtosis-examples-3-1-1">
+<em class="emphasis">Leptokurtic Example</em>: Take stock returns: <code class="code-inline tex2jax_ignore">{5, 7, 8, 8, 10, 12, 12, 12, 12, 50}</code>. That 50 is a massive outlier, bulking up the tails (like skewness, but focused on extremes). This is leptokurtic—expect some crazy swings.<div class="autopermalink" data-description="Paragraph"><a href="#kurtosis-examples-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#kurtosis-examples-3-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="kurtosis-examples-3-2">
+<div class="para" id="kurtosis-examples-3-2-1">
+<em class="emphasis">Platykurtic Example</em>: Now daily temperatures: <code class="code-inline tex2jax_ignore">{30, 32, 33, 34, 35, 36, 38}</code>. No wild outliers, just values chilling around the mean and median. This is platykurtic—nice and calm.<div class="autopermalink" data-description="Paragraph"><a href="#kurtosis-examples-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#kurtosis-examples-3-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para" id="kurtosis-examples-4">While skewness shows if our data’s lopsided, kurtosis tells us if outliers are stealing the show.<div class="autopermalink" data-description="Paragraph"><a href="#kurtosis-examples-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsubsection 1.1.4.3: Real-World Examples"><a href="#kurtosis-examples" title="Copy heading and permalink for Subsubsection 1.1.4.3: Real-World Examples" aria-label="Copy heading and permalink for Subsubsection 1.1.4.3: Real-World Examples">🔗</a></div></section><section class="subsubsection" id="kurtosis-visual"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">1.1.4.4</span><span class="space"> </span><span class="title">Seeing Kurtosis in Action</span>
+</h4>
+<div class="para" id="kurtosis-visual-2">Picture kurtosis with histograms (like we used for mean and skewness):<div class="autopermalink" data-description="Paragraph"><a href="#kurtosis-visual-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ul class="disc" id="kurtosis-visual-3">
+<li id="kurtosis-visual-3-1">
+<div class="para" id="kurtosis-visual-3-1-1">
+<em class="emphasis">Leptokurtic</em>: Sharp peak, chunky tails (lots of outliers).<div class="autopermalink" data-description="Paragraph"><a href="#kurtosis-visual-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#kurtosis-visual-3-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="kurtosis-visual-3-2">
+<div class="para" id="kurtosis-visual-3-2-1">
+<em class="emphasis">Platykurtic</em>: Flatter top, skinny tails (few outliers).<div class="autopermalink" data-description="Paragraph"><a href="#kurtosis-visual-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#kurtosis-visual-3-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="kurtosis-visual-3-3">
+<div class="para" id="kurtosis-visual-3-3-1">
+<em class="emphasis">Mesokurtic</em>: Classic bell curve, balanced tails.<div class="autopermalink" data-description="Paragraph"><a href="#kurtosis-visual-3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#kurtosis-visual-3-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para" id="kurtosis-visual-4">Check out this chart to see the difference:<div class="autopermalink" data-description="Paragraph"><a href="#kurtosis-visual-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="kurtosis-chart"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/./images/essential-probability-and-statistics/kurtosis.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.7<span class="period">.</span></span><span class="space"> </span>Kurtosis Comparison: The top subplot shows the full distributions, with leptokurtic (sharp peak, heavy tails with more outliers, like stock returns), mesokurtic (normal distribution, balanced tails), and platykurtic (flat peak, light tails with fewer outliers, like temperatures). The bottom subplot zooms in on the right tail, showing how leptokurtic tails decay slower (higher density at large values) compared to mesokurtic and platykurtic tails, which drop off faster.<div class="autopermalink" data-description="Figure 1.1.7"><a href="#kurtosis-chart" title="Copy heading and permalink for Figure 1.1.7" aria-label="Copy heading and permalink for Figure 1.1.7">🔗</a></div></figcaption></figure><div class="code-box"><pre class="program clipboardable line-numbers"><code class="language-py">import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import kurtosis, t, norm, uniform
 
-data = [70, 75, 75, 80, 80, 85, 90, 95, 100]
+# Data for kurtosis calculation
+stock_data = [5, 7, 8, 8, 10, 12, 12, 12, 12, 50]  # Leptokurtic
+temp_data = [30, 32, 33, 34, 35, 36, 38]  # Platykurtic
 
-mean = np.mean(data)
-median = np.median(data)
-mode = stats.mode(data, keepdims=True)[0][0]
-pop_var = np.var(data)
-pop_std = np.std(data)
-sam_var = np.var(data, ddof=1)
-sam_std = np.std(data, ddof=1)
-q1, q3 = np.percentile(data, [25, 75])
-skew = stats.skew(data)
+# Calculate kurtosis
+kurt_stock = kurtosis(stock_data, fisher=True)
+kurt_temp = kurtosis(temp_data, fisher=True)
+print(f"Stock Returns Kurtosis: {kurt_stock:.2f} (Leptokurtic)")
+print(f"Temperature Kurtosis: {kurt_temp:.2f} (Platykurtic)")
 
-print(f"Mean: {mean:.2f}")
-print(f"Median: {median:.2f}")
-print(f"Mode: {mode}")
-print(f"Population Variance: {pop_var:.2f}")
-print(f"Population Std Dev: {pop_std:.2f}")
-print(f"Sample Variance: {sam_var:.2f}")
-print(f"Sample Std Dev: {sam_std:.2f}")
-print(f"Q1: {q1:.2f}, Q3: {q3:.2f}")
-print(f"Skewness: {skew:.2f}")
+# Generate data for plotting distributions
+x = np.linspace(-10, 10, 200)  # Wider range to show tails
+
+# Leptokurtic: Student's t-distribution (df=3 for heavy tails)
+lepto = t.pdf(x, df=3) * 1.2  # Scale for visibility
+
+# Mesokurtic: Normal distribution
+meso = norm.pdf(x)
+
+# Platykurtic: Uniform-like distribution (approximated)
+platy = uniform.pdf(x, loc=-2, scale=4) * 0.8  # Flat, light tails
+
+# Create figure with two subplots
+fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(10, 8), sharex=False)
+
+# Full distribution plot (top subplot)
+ax1.plot(x, lepto, label='Leptokurtic (Heavy Tails)', color='#FF5733')
+ax1.plot(x, meso, label='Mesokurtic (Normal)', color='#33FF57')
+ax1.plot(x, platy, label='Platykurtic (Light Tails)', color='#3357FF')
+ax1.set_title('Kurtosis Comparison: Full Distribution')
+ax1.set_xlabel('Value')
+ax1.set_ylabel('Density')
+ax1.legend()
+ax1.grid(True)
+
+# Tail-focused plot (bottom subplot)
+ax2.plot(x, lepto, label='Leptokurtic (Heavy Tails)', color='#FF5733')
+ax2.plot(x, meso, label='Mesokurtic (Normal)', color='#33FF57')
+ax2.plot(x, platy, label='Platykurtic (Light Tails)', color='#3357FF')
+ax2.set_title('Kurtosis Comparison: Right Tail Focus')
+ax2.set_xlabel('Value')
+ax2.set_ylabel('Density')
+ax2.set_xlim(3, 10)  # Focus on right tail
+ax2.set_ylim(0, 0.05)  # Zoom in on low density
+ax2.legend()
+ax2.grid(True)
+
+# Adjust layout and save
+plt.tight_layout()
+plt.savefig('kurtosis.png', dpi=300, bbox_inches='tight')  # Save both subplots
+plt.show()
 </code></pre></div>
-<div class="autopermalink" data-description="Subsection 1.1.4: Numerical Summary"><a href="#subsec-Numerical-Summary" title="Copy heading and permalink for Subsection 1.1.4: Numerical Summary" aria-label="Copy heading and permalink for Subsection 1.1.4: Numerical Summary">🔗</a></div></section><div class="autopermalink" data-description="Section 1.1: Descriptive Statistics"><a href="#sec-Descriptive-Statistics" title="Copy heading and permalink for Section 1.1: Descriptive Statistics" aria-label="Copy heading and permalink for Section 1.1: Descriptive Statistics">🔗</a></div></section></div>
+<div class="autopermalink" data-description="Subsubsection 1.1.4.4: Seeing Kurtosis in Action"><a href="#kurtosis-visual" title="Copy heading and permalink for Subsubsection 1.1.4.4: Seeing Kurtosis in Action" aria-label="Copy heading and permalink for Subsubsection 1.1.4.4: Seeing Kurtosis in Action">🔗</a></div></section><section class="subsubsection" id="kurtosis-python"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">1.1.4.5</span><span class="space"> </span><span class="title">Calculating Kurtosis with Python</span>
+</h4>
+<div class="para" id="kurtosis-python-2">Since we’re all about descriptive stats, let’s compute kurtosis with Python (more tools coming up later). Here’s a script for our stock returns example:<div class="autopermalink" data-description="Paragraph"><a href="#kurtosis-python-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="code-box"><pre class="program clipboardable line-numbers"><code class="language-py">from scipy.stats import kurtosis
+import numpy as np
+
+# Stock returns data (leptokurtic)
+data = [5, 7, 8, 8, 10, 12, 12, 12, 12, 50]
+
+# Calculate excess kurtosis
+kurt = kurtosis(data, fisher=True)
+print(f"Excess Kurtosis: {kurt:.2f}")
+
+# Positive value means leptokurtic (heavy tails)!
+</code></pre></div>
+<div class="para" id="kurtosis-python-4">Run this, and you’ll see a positive kurtosis, confirming big outliers in our stock returns. Try the temperature data <code class="code-inline tex2jax_ignore">{30, 32, 33, 34, 35, 36, 38}</code> for a negative kurtosis and that platykurtic vibe.<div class="autopermalink" data-description="Paragraph"><a href="#kurtosis-python-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsubsection 1.1.4.5: Calculating Kurtosis with Python"><a href="#kurtosis-python" title="Copy heading and permalink for Subsubsection 1.1.4.5: Calculating Kurtosis with Python" aria-label="Copy heading and permalink for Subsubsection 1.1.4.5: Calculating Kurtosis with Python">🔗</a></div></section><section class="subsubsection" id="kurtosis-wrapup"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">1.1.4.6</span><span class="space"> </span><span class="title">Why Kurtosis Matters</span>
+</h4>
+<div class="para" id="kurtosis-wrapup-2">Kurtosis wraps up our descriptive stats crew—mean, median, mode, and skewness. It’s like a heads-up about outliers. High kurtosis (leptokurtic) yells “watch out for big swings!”—think risky stocks. Low kurtosis (platykurtic) says “smooth sailing”—like predictable weather. It’s another piece of your data’s story.<div class="autopermalink" data-description="Paragraph"><a href="#kurtosis-wrapup-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsubsection 1.1.4.6: Why Kurtosis Matters"><a href="#kurtosis-wrapup" title="Copy heading and permalink for Subsubsection 1.1.4.6: Why Kurtosis Matters" aria-label="Copy heading and permalink for Subsubsection 1.1.4.6: Why Kurtosis Matters">🔗</a></div></section><div class="autopermalink" data-description="Subsection 1.1.4: Kurtosis: Checking Out the Tails"><a href="#kurtosis" title="Copy heading and permalink for Subsection 1.1.4: Kurtosis: Checking Out the Tails" aria-label="Copy heading and permalink for Subsection 1.1.4: Kurtosis: Checking Out the Tails">🔗</a></div></section><section class="conclusion" id="sec-Descriptive-Statistics-7"><h3 class="heading">Conclusion.<span></span>
+</h3>
+<div class="para" id="sec-Descriptive-Statistics-7-2">In summary, descriptive statistics provide essential tools for understanding and summarizing datasets, helping to reveal underlying patterns and trends. By examining measures of central tendency (mean, median, mode), we can identify the "typical" values of a dataset, while measures of dispersion (variance, standard deviation, range, and quartiles) show how spread out the data is. Visualizations like histograms, boxplots, and density plots enhance this understanding by allowing us to visually inspect the distribution and shape of the data. As we move forward, the next section will explore the tools available for calculating these descriptive statistics, giving us the means to automate and refine these analyses in practice.<div class="autopermalink" data-description="Paragraph"><a href="#sec-Descriptive-Statistics-7-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section><div class="autopermalink" data-description="Section 1.1: Descriptive Statistics"><a href="#sec-Descriptive-Statistics" title="Copy heading and permalink for Section 1.1: Descriptive Statistics" aria-label="Copy heading and permalink for Section 1.1: Descriptive Statistics">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="ch-Essential-Probability-and-Statistics.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-useful-descriptive-statistics-tools.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
