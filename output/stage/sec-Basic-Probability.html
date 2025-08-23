@@ -14,7 +14,7 @@
 <!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Basic Probability</title>
+<title>Basic Probability for Machine Learning</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
@@ -130,7 +130,7 @@ eBookConfig.enable_chatcodes =  false;
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-Numerical-and-Categorical-Data.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-Essential-Probability-and-Statistics.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-Joint-Conditional-and-Marginal-Probabilities.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-data-types-for-machine-learning.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-Essential-Probability-and-Statistics.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-Joint-Conditional-and-Marginal-Probabilities.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
@@ -144,37 +144,59 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ch-Essential-Probability-and-Statistics.html" class="internal"><span class="codenumber">1</span> <span class="title">Essential Probability and Statistics</span></a></div>
 <ul class="structural toc-item-list contains-active">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-Descriptive-Statistics.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Descriptive Statistics</span></a></div></li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-useful-descriptive-statistics-tools.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Useful Descriptive Statistics Tools</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-useful-descriptive-statistics-tools.html#subsec-Pandas" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Pandas</span></a></div></li></ul>
+<div class="toc-title-box"><a href="sec-Descriptive-Statistics.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Descriptive Statistics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Descriptive-Statistics.html#subsec-Central-Tendency" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Measures of Central Tendency</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Descriptive-Statistics.html#subsec-Dispersion" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Measures of Dispersion</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Descriptive-Statistics.html#subsec-Distribution-Shape" class="internal"><span class="codenumber">1.1.3</span> <span class="title">Distribution Shape</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Descriptive-Statistics.html#subsec-Numerical-Summary" class="internal"><span class="codenumber">1.1.4</span> <span class="title">Numerical Summary</span></a></div></li>
+</ul>
 </li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-Numerical-and-Categorical-Data.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Numerical and Categorical Data</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-useful-descriptive-statistics-tools.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Useful Tools for Descriptive Statistics and Exploratory Data Analysis</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-useful-descriptive-statistics-tools.html#subsec-NumPy" class="internal"><span class="codenumber">1.2.1</span> <span class="title">NumPy: Foundation for Numerical Operations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-useful-descriptive-statistics-tools.html#subsec-Pandas" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Pandas: Data Manipulation and Analysis</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-useful-descriptive-statistics-tools.html#subsec-Visualization" class="internal"><span class="codenumber">1.2.3</span> <span class="title">Visualization with Matplotlib and Seaborn</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-data-types-for-machine-learning.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Data Types for Machine Learning</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-types-for-machine-learning.html#subsec-structured-vs-unstructured" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Structured vs. Unstructured Data</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-types-for-machine-learning.html#subsec-sequence-vs-non-sequence" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Sequence vs. Non-Sequence Data</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-types-for-machine-learning.html#subsec-numerical-categorical-ordinal" class="internal"><span class="codenumber">1.3.3</span> <span class="title">Numerical, Categorical, and Ordinal Data</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-types-for-machine-learning.html#subsec-unstructured-text" class="internal"><span class="codenumber">1.3.4</span> <span class="title">Handling Unstructured Text Data</span></a></div></li>
+</ul>
+</li>
 <li class="toc-item toc-section contains-active">
-<div class="toc-title-box"><a href="sec-Basic-Probability.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Basic Probability</span></a></div>
+<div class="toc-title-box"><a href="sec-Basic-Probability.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Basic Probability for Machine Learning</span></a></div>
 <ul class="structural toc-item-list active">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Basic-Probability.html#subsec-Axiomatic-View-of-Probability" class="internal"><span class="codenumber">1.4.1</span> <span class="title">Axiomatic View of Probability</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Basic-Probability.html#subsec-three-types-of-probabilities" class="internal"><span class="codenumber">1.4.2</span> <span class="title">Three Types of Probabilities</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Basic-Probability.html#subsec-sum-product-rules" class="internal"><span class="codenumber">1.4.2</span> <span class="title">Sum and Product Rules for Probability</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Basic-Probability.html#subsec-conditional-probability-independence" class="internal"><span class="codenumber">1.4.3</span> <span class="title">Conditional Probability and Independence</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Basic-Probability.html#subsec-probability-distributions" class="internal"><span class="codenumber">1.4.4</span> <span class="title">Probability Distributions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Basic-Probability.html#subsec-three-types-of-probabilities" class="internal"><span class="codenumber">1.4.5</span> <span class="title">Three Types of Probabilities</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-Joint-Conditional-and-Marginal-Probabilities.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Joint, Conditional and Marginal Probabilities</span></a></div>
+<div class="toc-title-box"><a href="sec-Joint-Conditional-and-Marginal-Probabilities.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Joint, Marginal, and Conditional Probabilities</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Joint-Conditional-and-Marginal-Probabilities.html#subsec-Random-Variables" class="internal"><span class="codenumber">1.5.1</span> <span class="title">Random Variables, Probabilities, and Expections</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Joint-Conditional-and-Marginal-Probabilities.html#subsec-Random-Variables" class="internal"><span class="codenumber">1.5.1</span> <span class="title">Random Variables, Probabilities, and Expectations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Joint-Conditional-and-Marginal-Probabilities.html#subsec-Joint-Probability" class="internal"><span class="codenumber">1.5.2</span> <span class="title">Joint and Marginal Probabilities</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Joint-Conditional-and-Marginal-Probabilities.html#subsec-Covariance-and-Correlation" class="internal"><span class="codenumber">1.5.3</span> <span class="title">Covariance and Correlation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Joint-Conditional-and-Marginal-Probabilities.html#subsec-Conditional-Probability" class="internal"><span class="codenumber">1.5.4</span> <span class="title">Conditional Probability</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Joint-Conditional-and-Marginal-Probabilities.html#subsec-conditional-probability-from-joint-probability" class="internal"><span class="codenumber">1.5.5</span> <span class="title">Bayes’ Rule</span></a></div></li>
 <li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="sec-Joint-Conditional-and-Marginal-Probabilities.html#subsec-Joint-Probability" class="internal"><span class="codenumber">1.5.2</span> <span class="title">Joint ad Marginal Probabilities</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Joint-Conditional-and-Marginal-Probabilities.html#subsubsec-Covariance-and-Correlation" class="internal"><span class="codenumber">1.5.2.1</span> <span class="title">Covariance and Correlation</span></a></div></li></ul>
-</li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Joint-Conditional-and-Marginal-Probabilities.html#subsec-Conditional-Probability" class="internal"><span class="codenumber">1.5.3</span> <span class="title">Conditional Probability</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Joint-Conditional-and-Marginal-Probabilities.html#subsec-conditional-probability-from-joint-probability" class="internal"><span class="codenumber">1.5.4</span> <span class="title">Bayes’ Rule</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Joint-Conditional-and-Marginal-Probabilities.html#subsec-Independent-Variables" class="internal"><span class="codenumber">1.5.5</span> <span class="title">Independent Variables</span></a></div></li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="sec-Joint-Conditional-and-Marginal-Probabilities.html#subsec-Complications-For-Continuous-Variables" class="internal"><span class="codenumber">1.5.6</span> <span class="title">Complications-For-Continuous-Variables</span></a></div>
+<div class="toc-title-box"><a href="sec-Joint-Conditional-and-Marginal-Probabilities.html#subsec-Continuous-Random-Variables" class="internal"><span class="codenumber">1.5.6</span> <span class="title">Continuous Random Variables</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Joint-Conditional-and-Marginal-Probabilities.html#subsubsec-Probability-Density" class="internal"><span class="codenumber">1.5.6.1</span> <span class="title">Probability Density</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Joint-Conditional-and-Marginal-Probabilities.html#subsubsec-Cumulative-Distribution-Function" class="internal"><span class="codenumber">1.5.6.2</span> <span class="title">Cumulative Distribution Function (CDF)</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Joint-Conditional-and-Marginal-Probabilities.html#subsubsec-Cumulative-Distribution-Function" class="internal"><span class="codenumber">1.5.6.2</span> <span class="title">Cumulative Distribution Function</span></a></div></li>
 </ul>
 </li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Joint-Conditional-and-Marginal-Probabilities.html#subsec-Independent-Variables" class="internal"><span class="codenumber">1.5.7</span> <span class="title">Independent Random Variables</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Joint-Conditional-and-Marginal-Probabilities.html#subsec-Application-Medical-Diagnosis" class="internal"><span class="codenumber">1.5.8</span> <span class="title">Application: Medical Diagnosis</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -205,9 +227,24 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-LLN-and-CLT.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Law of Large Numbers and Central Limit Theorem</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LLN-and-CLT.html#subsec-Law-of-Large-Numbers" class="internal"><span class="codenumber">1.8.1</span> <span class="title">Law of Large Numbers (LLN)</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LLN-and-CLT.html#subsec-Law-of-Large-Numbers" class="internal"><span class="codenumber">1.8.1</span> <span class="title">Law of Large Numbers</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LLN-and-CLT.html#subsec-Central-Limit-Theorem" class="internal"><span class="codenumber">1.8.2</span> <span class="title">Central Limit Theorem</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LLN-and-CLT.html#subsec-Why-Large-n-Matters" class="internal"><span class="codenumber">1.8.3</span> <span class="title">Why LLN and CLT Matter?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LLN-and-CLT.html#subsec-LLN-vs-CLT" class="internal"><span class="codenumber">1.8.3</span> <span class="title">LLN vs. CLT</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LLN-and-CLT.html#subsec-Berry-Esseen" class="internal"><span class="codenumber">1.8.4</span> <span class="title">Berry-Esseen Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LLN-and-CLT.html#subsec-Why-Large-n-Matters" class="internal"><span class="codenumber">1.8.5</span> <span class="title">Why LLN and CLT Matter</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Inferential-Statistics.html" class="internal"><span class="codenumber">1.9</span> <span class="title">Inferential Statistics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Inferential-Statistics.html#subsec-Point-Estimation" class="internal"><span class="codenumber">1.9.1</span> <span class="title">Point Estimation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Inferential-Statistics.html#subsec-Sampling-Distributions" class="internal"><span class="codenumber">1.9.2</span> <span class="title">Sampling Distributions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Inferential-Statistics.html#subsec-Hypothesis-Testing" class="internal"><span class="codenumber">1.9.3</span> <span class="title">Hypothesis Testing</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Inferential-Statistics.html#subsec-Confidence-Intervals" class="internal"><span class="codenumber">1.9.4</span> <span class="title">Confidence Intervals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Inferential-Statistics.html#subsec-Types-of-Errors" class="internal"><span class="codenumber">1.9.5</span> <span class="title">Types of Errors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Inferential-Statistics.html#subsec-Power-Effect-Size" class="internal"><span class="codenumber">1.9.6</span> <span class="title">Statistical Power and Effect Size</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Inferential-Statistics.html#subsec-Multiple-Testing" class="internal"><span class="codenumber">1.9.7</span> <span class="title">Multiple Testing</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Inferential-Statistics.html#subsec-Other-Tests" class="internal"><span class="codenumber">1.9.8</span> <span class="title">Common Statistical Tests</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -215,339 +252,342 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-Basic-Probability"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.4</span><span class="space"> </span><span class="title">Basic Probability</span>
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.4</span><span class="space"> </span><span class="title">Basic Probability for Machine Learning</span>
 </h2>
-<section class="introduction" id="sec-Basic-Probability-2"><div class="para" id="sec-Basic-Probability-2-1">Probability is essential in machine learning to model randomness in data and outcomes. Probability tells us how likely an event is to happen. An <em class="alert">event</em> in the context of probability is a description of an outcome of an experiment and is usually written as a set. For instance, if you toss a coin, the outcome “Head”  is an event <span class="process-math">\(\{H\}\text{,}\)</span> “Tail” is an event <span class="process-math">\(\{T\}\text{,}\)</span> and “Either Head Or Tail” is the event <span class="process-math">\(\{H,\ T\}\text{.}\)</span> When you list multiple elements in an event, all it means that any of those outcomes will constitute this event having occurred.<div class="autopermalink" data-description="Paragraph"><a href="#sec-Basic-Probability-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<section class="introduction" id="sec-Basic-Probability-2"><div class="para" id="sec-Basic-Probability-2-1">Probability is the backbone of machine learning, helping us model uncertainty in data, predictions, and outcomes. In machine learning, probability underpins tasks like classification (e.g., predicting labels), evaluating model confidence, and handling noisy data. This section introduces probability concepts such as sample spaces, events, and axioms—and connects them to practical machine learning applications using Python. We will use the student dataset from <a href="sec-data-types-for-machine-learning.html" class="internal" title="Section 1.3: Data Types for Machine Learning">Section 1.3</a> to illustrate ideas.<div class="autopermalink" data-description="Paragraph"><a href="#sec-Basic-Probability-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-Basic-Probability-2-2">
-<em class="alert">Every trial of an experiment</em> produces a binary answer yes/no to the question whether a particular event is the outcome of this trial. For instance, for a roll of a six-sided die suppose you got 2. That would mean any of the following events occurred: <span class="process-math">\(\{2\}\text{,}\)</span> <span class="process-math">\(\{1,2\}\text{,}\)</span> <span class="process-math">\(\{2,3\}\text{,}\)</span> <span class="process-math">\(\{2,4\}\text{,}\)</span> <span class="process-math">\(\{2,5\}\text{,}\)</span> &gt;m&gt;\{2,6\}&gt;/m&gt;, <span class="process-math">\(\{1,2,3\}\text{,}\)</span> <span class="process-math">\(\{1,2,4\}\text{,}\)</span> etc.,i.e., all the events that contains <span class="process-math">\(2\)</span> in it<div class="autopermalink" data-description="Paragraph"><a href="#sec-Basic-Probability-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="sec-Basic-Probability-2-3">An advantage of using sets to represent events is that you can use union and intersections, to build more complex events. For instance event <span class="process-math">\(\{H,\ T\} = \{H\}\cup \{T\}\text{,}\)</span> which must always be true since it represents the event that in a toss, you got either <span class="process-math">\(H\)</span> or <span class="process-math">\(T\)</span> and those are the only two possibilities.<div class="autopermalink" data-description="Paragraph"><a href="#sec-Basic-Probability-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-Basic-Probability-2-2">An <em class="alert">event</em> is a specific outcome or set of outcomes from an experiment, represented as a set. For a coin toss, "heads" is <span class="process-math">\(\{H\}\text{,}\)</span> "tails" is <span class="process-math">\(\{T\}\text{,}\)</span> and "heads or tails" is <span class="process-math">\(\{H, T\}\text{.}\)</span> Each trial answers whether an event occurred (yes/no). For a die roll yielding 2, events like <span class="process-math">\(\{2\}\)</span> or <span class="process-math">\(\{1,2,3\}\)</span> occur if they include 2. Sets allow combining events via union (<span class="process-math">\(\cup\)</span>) or intersection (<span class="process-math">\(\cap\)</span>), such as <span class="process-math">\(\{H\} \cup \{T\} = \{H, T\}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-Basic-Probability-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div></section><section class="subsection" id="subsec-Axiomatic-View-of-Probability"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.4.1</span><span class="space"> </span><span class="title">Axiomatic View of Probability</span>
 </h3>
-<div class="para" id="subsec-Axiomatic-View-of-Probability-2">Andrey Kolmogorov laid the foundations of the subject of probability in 1933 with three fundamental axioms. Although these axioms are fundamental to understanding probability from basic mathematics, we will rarely work in the framework that we will study in this section. First we need definition of some terms in probability space.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Axiomatic-View-of-Probability-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-Axiomatic-View-of-Probability-2">In 1933, Andrey Kolmogorov formalized probability with three axioms, providing a mathematical framework. Think of these as rules that ensure probabilities make sense, like ensuring a weather forecast never predicts negative rain or more than 100% chance.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Axiomatic-View-of-Probability-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="subsec-Axiomatic-View-of-Probability-3">
-<em class="alert">Sample Space <span class="process-math">\(\Omega\text{:}\)</span></em> The<em class="alert">sample space</em> <span class="process-math">\(\Omega\)</span> is the set of all unique outcomes in the  experiment of interest. For instance, in the case of a single roll of a six-sided die, you can get only <span class="process-math">\(1, 2, 3, 4, 5, \text{or}, 6\text{.}\)</span> Therefore, set <span class="process-math">\(\Omega = \{1, 2, 3, 4, 5, 6 \}\text{.}\)</span> For a coin toss, <span class="process-math">\(\Omega = \{ H, T\}\text{,}\)</span> where <span class="process-math">\(H\)</span> is Heads and <span class="process-math">\(T\)</span> is Tails.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Axiomatic-View-of-Probability-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<em class="alert">Sample Space <span class="process-math">\(\Omega\)</span></em>: The set of all possible outcomes. For a six-sided die, <span class="process-math">\(\Omega = \{1, 2, 3, 4, 5, 6\}\text{.}\)</span> For a student passing an exam, <span class="process-math">\(\Omega = \{\text{Pass}, \text{Fail}\}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Axiomatic-View-of-Probability-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="subsec-Axiomatic-View-of-Probability-4">
-<em class="alert">Event Space <span class="process-math">\(F\text{:}\)</span></em> Event Space <span class="process-math">\(F\)</span> be the set of all subsets of <span class="process-math">\(\Omega\text{,}\)</span> including the empty set, <span class="process-math">\(\varnothing = \{\}\text{.}\)</span> Each event consists of none, one or any number of elementary outcomes listed in <span class="process-math">\(\Omega\)</span> and represents all outcomes that would constitute that event if any of those was the result of that trial. Thus, if an event in a six-sided die roll is <span class="process-math">\(E = \{3, 5\}\)</span> and if you roll the die and get a <span class="process-math">\(3\)</span> or <span class="process-math">\(4\text{,}\)</span> you will record that event <span class="process-math">\(E\)</span> occurred and if neither showed up, i.e., you got <span class="process-math">\(1, 2, 4, \text{or}\ 6\text{,}\)</span> then event <span class="process-math">\(E\)</span> dis not occur in that trial.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Axiomatic-View-of-Probability-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<em class="alert">Event Space <span class="process-math">\(F\)</span></em>: All possible subsets of <span class="process-math">\(\Omega\text{,}\)</span> including the empty set <span class="process-math">\(\varnothing\)</span> (impossible event) and <span class="process-math">\(\Omega\)</span> (event certain to happen). For a coin toss (<span class="process-math">\(\Omega = \{H, T\}\)</span>), <span class="process-math">\(F = \{\varnothing, \{H\}, \{T\}, \{H, T\}\}\text{.}\)</span> With <span class="process-math">\(N\)</span> outcomes, <span class="process-math">\(F\)</span> has <span class="process-math">\(2^N\)</span> events.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Axiomatic-View-of-Probability-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-Axiomatic-View-of-Probability-5">If <span class="process-math">\(\Omega\)</span> has <span class="process-math">\(N\)</span> elements, then, <span class="process-math">\(F\)</span> will have <span class="process-math">\(2^N\)</span> elements. In the case of the six-sided die, the number of elements in <span class="process-math">\(F\)</span> will be <span class="process-math">\(2^6 = 64\text{.}\)</span> That’s too large to list in example here.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Axiomatic-View-of-Probability-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-Axiomatic-View-of-Probability-5">
+<em class="alert">Probability Measure <span class="process-math">\(P\)</span></em>: Assigns a number <span class="process-math">\(P(E)\)</span> to each event <span class="process-math">\(E \in F\text{,}\)</span> representing its likelihood. For example, for a fair die, <span class="process-math">\(P(\{1\}) = 1/6\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Axiomatic-View-of-Probability-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="subsec-Axiomatic-View-of-Probability-6">
-<div class="para">Let’s look at another experiment: tossing a coin with two possible outcomes in any single toss. So, <span class="process-math">\(\Omega = \{ H, T\}\text{,}\)</span> where <span class="process-math">\(H\)</span> is head and <span class="process-math">\(T\)</span> is tail. The subsets will be</div>
-<div class="displaymath process-math">
-\begin{equation*}
-F = \{  \{\}\equiv\varnothing, \{H\}, \{T\}, \{H,T\}\equiv\Omega \}\text{.}
-\end{equation*}
-</div>
-<div class="para">
-<em class="alert">All events are sets of elementary outcomes in the experiment!</em> Thus, we can talk about union and intersection of events. For instance,</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\{H\} \cap  \{T\} = \varnothing,\ \  \{H\} \cup  \{T\} = \Omega.
-\end{equation*}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Axiomatic-View-of-Probability-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="subsec-Axiomatic-View-of-Probability-7">Notice that <span class="process-math">\(\varnothing\)</span> and <span class="process-math">\(\Omega\)</span> will always be in <span class="process-math">\(F\text{.}\)</span> The empty set is included for completeness in mathematical calculations and <span class="process-math">\(\Omega\)</span> here means either <span class="process-math">\(H\)</span> or <span class="process-math">\(T\)</span> event, <span class="process-math">\(\{H\}\)</span> means an event in which it’s a head and <span class="process-math">\(\{T\}\)</span> is an event of tail. Note: you can’t have an event in which a single toss will be head AND tail. That is why you don’t have that since <span class="process-math">\(H\)</span> and <span class="process-math">\(T\)</span> are unique exclusive outcomes.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Axiomatic-View-of-Probability-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="subsec-Axiomatic-View-of-Probability-8">
-<div class="para">
-<em class="alert">What about two tosses of the same coin?</em> Now, each element of the sample space will be outcomes of the two tosses. Writing the order one next to the other, we can list four possible outcomes:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\Omega = \{HH, HT, TH, TT \}
-\end{equation*}
-</div>
-<div class="para">This sample space has <span class="process-math">\(4\)</span> elements. Therefore, it will have <span class="process-math">\(2^4 = 16\)</span> subsets, each specifying an event.</div>
-<div class="displaymath process-math" id="subsec-Axiomatic-View-of-Probability-8-5">
-\begin{align*}
-F = \amp \{ \varnothing,\ \{HH\}, \{HT\}, \{TH\},  \{TT \},  \\
-\amp \{HH, HT \}, \{HH, TH \}, \{HH, TT \}, \{HT, TH \}, \{HT, TT \}, \{TH, TT \}, \\
-\amp \{HH, HT, TH \}, \{HH, HT, TT \}, \{HH, TH, TT \}, \{HT, TH, TT \}, \Omega \}.
-\end{align*}
-</div>
-<div class="para">To complete the picture, we also need a <em class="alert">Probability Measure <span class="process-math">\(P\text{:}\)</span></em> that assigns a real number to each event <span class="process-math">\(E\)</span> of the event space <span class="process-math">\(F\text{.}\)</span> Let us work out <span class="process-math">\(P\)</span> for the two toss of a single coin problem we have above.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Axiomatic-View-of-Probability-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="subsec-Axiomatic-View-of-Probability-9">
-<div class="para">If the coin was a fair coin, the four elementary outcomes in <span class="process-math">\(\Omega\)</span> will all be equally likely, givin probability of the elementary events.</div>
-<div class="displaymath process-math">
-\begin{equation*}
-P(\{HH\}) = P(\{HT\}) = P(\{TH\}) = P(\{TT \}) = \frac{1}{4}.
-\end{equation*}
-</div>
-<div class="para">Probabilities of other events in.<span class="process-math">\(F\)</span> are based on the third axiom given below since they are all (except for the <span class="process-math">\(\varnothing\)</span> event) just union of the elementary events. Thus,</div>
-<div class="displaymath process-math" id="subsec-Axiomatic-View-of-Probability-9-5">
-\begin{align*}
-\amp P(\{HH, HT \}) = P(\{HH\}) + P(\{HT\}) = \frac{1}{4} + \frac{1}{4} = \frac{1}{2}.\\
-\amp P(\{HH, HT, TH \} ) = \frac{3}{4}\\
-\amp P(\Omega) = P(\{HH, HT, TH, TT \}) = \frac{4}{4} = 1.
-\end{align*}
-</div>
-<div class="para">What about the probability of the empty event <span class="process-math">\(\varnothing \equiv \{\}\text{?}\)</span> This event is complement of event <span class="process-math">\(\Omega\text{,}\)</span> i., an event that says any of the possible outcomes of the experiment. So, the probability of the null event is zero.</div>
-<div class="displaymath process-math">
-\begin{equation*}
-P(\varnothing) = P(\{\}) = 0.
-\end{equation*}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Axiomatic-View-of-Probability-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="subsec-Axiomatic-View-of-Probability-10">
-<div class="para">The trio <span class="process-math">\((\Omega, F, P)\)</span> is called the <em class="alert">Probability Space</em>. The three axioms of the probability theory are:</div>
-<ol class="decimal ol-marker-1" id="subsec-Axiomatic-View-of-Probability-10-3">
-<li id="subsec-Axiomatic-View-of-Probability-10-3-1">
-<div class="para logical" id="subsec-Axiomatic-View-of-Probability-10-3-1-1">
-<div class="para">
-<em class="alert">First Axiom:</em> Non-negativity</div>
-<div class="displaymath process-math" id="eqn-first-axiom-non-negativity">
+<div class="para">The probability space is the triplet <span class="process-math">\((\Omega, F, P)\text{.}\)</span> Kolmogorov’s axioms are:</div>
+<ol class="decimal ol-marker-1" id="subsec-Axiomatic-View-of-Probability-6-2">
+<li id="subsec-Axiomatic-View-of-Probability-6-2-1">
+<div class="para" id="p-derived-subsec-Axiomatic-View-of-Probability-6-2-1">
+<em class="alert">Non-negativity</em>:<div class="displaymath process-math" id="eqn-first-axiom-non-negativity">
 \begin{equation}
-P(E) \in \R,\ \ P(E) \ge 0 \text{ for all events } E \in F. \tag{1.4.1}
+P(E) \ge 0\tag{1.4.1}
 \end{equation}
+</div>for all <span class="process-math">\(E \in F\text{.}\)</span>
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Axiomatic-View-of-Probability-10-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item 1"><a href="#subsec-Axiomatic-View-of-Probability-10-3-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+<div class="autopermalink" data-description="Item 1"><a href="#subsec-Axiomatic-View-of-Probability-6-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
 </li>
-<li id="subsec-Axiomatic-View-of-Probability-10-3-2">
-<div class="para logical" id="subsec-Axiomatic-View-of-Probability-10-3-2-1">
-<div class="para">
-<em class="alert">Second Axiom:</em> Normalization</div>
-<div class="displaymath process-math" id="eqn-second-axiom-normalization">
+<li id="subsec-Axiomatic-View-of-Probability-6-2-2">
+<div class="para" id="p-derived-subsec-Axiomatic-View-of-Probability-6-2-2">
+<em class="alert">Normalization</em>:<div class="displaymath process-math" id="eqn-second-axiom-normalization">
 \begin{equation}
-P(\Omega) = 1.\tag{1.4.2}
+P(\Omega) = 1\text{,}\tag{1.4.2}
 \end{equation}
+</div>ensuring total certainty for event <span class="process-math">\(\Omega\text{.}\)</span>
 </div>
-<div class="para">That is, in every trial, there is 100% certainty that one of the elementary events will be the outcome. Together with the first axiom, this implies that probability of any event has to be between <span class="process-math">\(0\)</span> and <span class="process-math">\(1\text{,}\)</span> inclusive.</div>
-<div class="displaymath process-math">
-\begin{equation*}
-P(E) \in [0,1]\, \text{ for all events } E \in F.
-\end{equation*}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Axiomatic-View-of-Probability-10-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item 2"><a href="#subsec-Axiomatic-View-of-Probability-10-3-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+<div class="autopermalink" data-description="Item 2"><a href="#subsec-Axiomatic-View-of-Probability-6-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
 </li>
-<li id="subsec-Axiomatic-View-of-Probability-10-3-3">
-<div class="para logical" id="subsec-Axiomatic-View-of-Probability-10-3-3-1">
-<div class="para">
-<em class="alert">Third Axiom:</em> Additivity of probabilities of disjoint, i.e., mutually exclusive events.</div>
-<div class="displaymath process-math" id="eqn-third-axiom-additivity">
+<li id="subsec-Axiomatic-View-of-Probability-6-2-3">
+<div class="para" id="p-derived-subsec-Axiomatic-View-of-Probability-6-2-3">
+<em class="alert">Additivity</em>: For disjoint events (<span class="process-math">\(E_1 \cap E_2 = \varnothing\)</span>),<div class="displaymath process-math" id="eqn-third-axiom-additivity">
 \begin{equation}
-P( E_1 \cup E_2 ) = P(E_1) + P(E_2) \text{ if } E_1 \cap E_2 = \varnothing. \tag{1.4.3}
+P(E_1 \cup E_2) = P(E_1) + P(E_2)\text{.}\tag{1.4.3}
 \end{equation}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Axiomatic-View-of-Probability-10-3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 3"><a href="#subsec-Axiomatic-View-of-Probability-10-3-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+<div class="autopermalink" data-description="Item 3"><a href="#subsec-Axiomatic-View-of-Probability-6-2-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Axiomatic-View-of-Probability-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Axiomatic-View-of-Probability-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="subsec-Axiomatic-View-of-Probability-11">
-<div class="para">From these axioms, we can show the following useful results.</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-venn-diagram-E1-E2.html" id="subsec-Axiomatic-View-of-Probability-11-1">
+<div class="para logical" id="subsec-Axiomatic-View-of-Probability-7">
+<div class="para">Derived results:</div>
+<div class="displaymath process-math" id="subsec-Axiomatic-View-of-Probability-7-1">
 \begin{align}
 \amp P(\varnothing) = 0. \tag{1.4.4}\\
-\amp P(E) + P(\text{not } E) = 1 \text{ for any event } E. \tag{1.4.5}\\
+\amp P(E^c) = 1 - P(E), \text{ where } E^c \text{ is the complement of } E. \tag{1.4.5}\\
 \amp P(E_1 \cup E_2) = P(E_1) + P(E_2) - P(E_1 \cap E_2). \tag{1.4.6}
 \end{align}
 </div>
-<div class="para">The last one can be easily seen by drawing a ven diagram with events <span class="process-math">\(E_1\)</span> and <span class="process-math">\(E_2\)</span> overlapping as shown in <a href="sec-Basic-Probability.html#fig-venn-diagram-E1-E2" class="xref" data-knowl="./knowl/xref/fig-venn-diagram-E1-E2.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.4.1">Figure 1.4.1</a>.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Axiomatic-View-of-Probability-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Axiomatic-View-of-Probability-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<figure class="figure figure-like" id="fig-venn-diagram-E1-E2"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/venn-diagram-E1-E2.png" class="contained" alt="Venn Diagram showing two events E1 and E2 that have an overlap shown by their intersection in the set notation."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.4.1<span class="period">.</span></span><span class="space"> </span>Venn Diagram showing two events <span class="process-math">\(E_1\)</span> and <span class="process-math">\(E_2\)</span> that have an overlap shown by <span class="process-math">\(E_1\cap E_2\text{,}\)</span> the intersection of them. When you combine the two events by their union, you need to exclude their intersection since they are counted twice, once in <span class="process-math">\(E_1\)</span> and second time in <span class="process-math">\(E_2\text{.}\)</span><div class="autopermalink" data-description="Figure 1.4.1"><a href="#fig-venn-diagram-E1-E2" title="Copy heading and permalink for Figure 1.4.1" aria-label="Copy heading and permalink for Figure 1.4.1">🔗</a></div></figcaption></figure><div class="para logical" id="subsec-Axiomatic-View-of-Probability-13">
-<div class="para">. A concrete example may help here. Suppose you have a six-sided die. Let <span class="process-math">\(E_1 = \{1, 3, 5\}\)</span> and <span class="process-math">\(E_2 = \{3,5,6\}\text{.}\)</span> The union of the two will be <span class="process-math">\(E_1 \cup E_2 = \{1,3,5,6\} \)</span> and the intersection will be <span class="process-math">\(E_1 \cap E_2 = \{3,5\}\text{.}\)</span> Note that the list of faces in <span class="process-math">\(E_1\)</span> is saying that the roll will be either <span class="process-math">\(1\text{,}\)</span> <span class="process-math">\(3\text{,}\)</span> or <span class="process-math">\(5\text{.}\)</span> Similarly for <span class="process-math">\(E_2\text{.}\)</span>  Then, we have</div>
-<div class="displaymath process-math" id="subsec-Axiomatic-View-of-Probability-13-10">
-\begin{align*}
-\amp P(E_1) = P('1') + P('3') + P('5'). \\
-\amp P(E_2) = P('3') + P('5') + P('6'). \\
-\amp P(E_1 \cap E_2) =P('3') + P('5') 
-\end{align*}
+<div class="para" id="subsec-Axiomatic-View-of-Probability-8">The union formula accounts for overlap, as shown in <a href="sec-Basic-Probability.html#fig-venn-diagram-E1-E2" class="xref" data-knowl="./knowl/xref/fig-venn-diagram-E1-E2.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.4.1">Figure 1.4.1</a>. For a die, if <span class="process-math">\(E_1 = \{1,3,5\}\)</span> (odd numbers), <span class="process-math">\(E_2 = \{3,5,6\}\text{,}\)</span> then <span class="process-math">\(P(E_1 \cup E_2) = P(\{1,3,5,6\}) = 4/6 = 2/3\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Axiomatic-View-of-Probability-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para">The probability of the union of the two sets is only</div>
-<div class="displaymath process-math">
-\begin{equation*}
-P(E_1 \cup E_2) = P('1') +  P('3') + P('5') + P('6').
-\end{equation*}
-</div>
-<div class="para">and the sum of the probabilities of the two events is</div>
-<div class="displaymath process-math">
-\begin{equation*}
-P(E_1) + P(E_2) =  P('1') +2\times P('3') + 2\times P('5') + P('6').
-\end{equation*}
-</div>
-<div class="para">Thus, we must subtract the probability of the intersection to remove the double counting.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Axiomatic-View-of-Probability-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Subsection 1.4.1: Axiomatic View of Probability"><a href="#subsec-Axiomatic-View-of-Probability" title="Copy heading and permalink for Subsection 1.4.1: Axiomatic View of Probability" aria-label="Copy heading and permalink for Subsection 1.4.1: Axiomatic View of Probability">🔗</a></div></section><section class="subsection" id="subsec-three-types-of-probabilities"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.4.2</span><span class="space"> </span><span class="title">Three Types of Probabilities</span>
+<figure class="figure figure-like" id="fig-venn-diagram-E1-E2"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/venn-diagram-E1-E2.png" class="contained" alt="Venn diagram of intersecting events."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.4.1<span class="period">.</span></span><span class="space"> </span>Venn diagram illustrating events <span class="process-math">\(E_1 = \{1,3,5\}\)</span> (odd numbers) and <span class="process-math">\(E_2 = \{3,5,6\}\)</span> for 1,000 simulated rolls of a fair six-sided die. The left region (181) counts rolls of 1 (in <span class="process-math">\(E_1\)</span> only), the right region (326) counts rolls of 6 (in <span class="process-math">\(E_2\)</span> only), and the overlap (155) counts rolls of 3 or 5 (in <span class="process-math">\(E_1 \cap E_2\)</span>). These counts estimate probabilities, with theoretical values <span class="process-math">\(P(E_1) = 3/6\text{,}\)</span> <span class="process-math">\(P(E_2) = 3/6\text{,}\)</span> <span class="process-math">\(P(E_1 \cap E_2) = 2/6\text{,}\)</span> and <span class="process-math">\(P(E_1 \cup E_2) = 4/6\text{.}\)</span> Deviations (e.g., 326 vs. expected 167 for <span class="process-math">\(E_2\)</span> only) reflect random variation. This visualization supports the union formula <span class="process-math">\(P(E_1 \cup E_2) = P(E_1) + P(E_2) - P(E_1 \cap E_2)\text{,}\)</span> used in machine learning for feature probability calculations.<div class="autopermalink" data-description="Figure 1.4.1"><a href="#fig-venn-diagram-E1-E2" title="Copy heading and permalink for Figure 1.4.1" aria-label="Copy heading and permalink for Figure 1.4.1">🔗</a></div></figcaption></figure><div class="code-box"><pre class="program clipboardable line-numbers"><code class="language-py"># --- DIE ROLL VENN DIAGRAM ---
+import numpy as np
+from matplotlib_venn import venn2
+import matplotlib.pyplot as plt
+
+np.random.seed(42)
+n_trials = 1000
+rolls = np.random.randint(1, 7, n_trials)
+
+# Events
+e1 = np.isin(rolls, [1, 3, 5])  # Odd numbers
+e2 = np.isin(rolls, [3, 5, 6])  # 3,5,6
+e1_only = np.sum(e1 \amp; ~e2)
+e2_only = np.sum(e2 \amp; ~e1)
+both = np.sum(e1 \amp; e2)
+
+# Venn diagram
+plt.figure(figsize=(6, 4))
+venn2(subsets=(e1_only, e2_only, both), set_labels=('E1 (Odd)', 'E2 (3,5,6)'))
+plt.title('Venn Diagram of Die Roll Events')
+plt.savefig('venn-diagram-E1-E2.png', dpi=300)
+plt.show()
+
+# Probabilities
+p_e1 = np.mean(e1)
+p_e2 = np.mean(e2)
+p_inter = np.mean(e1 \amp; e2)
+p_union = np.mean(e1 | e2)
+print(f"P(E1): {p_e1:.3f}, P(E2): {p_e2:.3f}, P(E1 ∩ E2): {p_inter:.3f}, P(E1 ∪ E2): {p_union:.3f}")
+# --- END CODE ---
+</code></pre></div>
+<div class="autopermalink" data-description="Subsection 1.4.1: Axiomatic View of Probability"><a href="#subsec-Axiomatic-View-of-Probability" title="Copy heading and permalink for Subsection 1.4.1: Axiomatic View of Probability" aria-label="Copy heading and permalink for Subsection 1.4.1: Axiomatic View of Probability">🔗</a></div></section><section class="subsection" id="subsec-sum-product-rules"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.4.2</span><span class="space"> </span><span class="title">Sum and Product Rules for Probability</span>
 </h3>
-<div class="para logical" id="subsec-three-types-of-probabilities-2">
-<div class="para">There are basically three ways of looking at probability:</div>
-<ol class="decimal" id="subsec-three-types-of-probabilities-2-1">
-<li id="subsec-three-types-of-probabilities-2-1-1">
-<div class="para" id="subsec-three-types-of-probabilities-2-1-1-1">
-<em class="alert">Theoretical or Classical Probability</em>. It is based on making use of symmetry and calculating the possible outcomes in an experiment. For instance, if you have a six-sided die, which is not loaded to prefer one outcome or another, the chance of any one face showing up will be <span class="process-math">\(1/6\text{.}\)</span> So, we can say that probability of any face as an outcome of a single roll is <span class="process-math">\(p = 1/6\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-three-types-of-probabilities-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-sum-product-rules-2">The sum and product rules are foundational for computing probabilities of combined events, essential for machine learning tasks like feature engineering and Bayesian inference.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-sum-product-rules-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 1"><a href="#subsec-three-types-of-probabilities-2-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
-</li>
-<li id="subsec-three-types-of-probabilities-2-1-2">
-<div class="para logical" id="subsec-three-types-of-probabilities-2-1-2-1">
+<div class="para logical" id="subsec-sum-product-rules-3">
 <div class="para">
-<em class="alert">Frequentist Probability</em>. It is an empirical definition of probability by observation of repeated trials of the same experiment. Thus, in the case of a six-sided die, you will roll the die and observe how many times face with <em class="alert">1 dot</em> showed up in how many rolls, each roll of the die being one trial of the experiment. Thus, if <span class="process-math">\(n_1\)</span> of <span class="process-math">\(N\)</span> trials had <em class="alert">1 dot</em> face up. Then, we conclude that the ratio <span class="process-math">\(n_1/N\)</span> is an approximation of the true probability <span class="process-math">\(p_1\)</span> of face 1 in any roll. We say that, in the limit of infinitely many trials, we would get the "true" probability.</div>
+<em class="alert">Sum Rule</em>: The probability of the union of two events <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> is given by:</div>
+<div class="displaymath process-math" id="eqn-sum-rule">
+\begin{equation}
+P(A \cup B) = P(A) + P(B) - P(A \cap B).\tag{1.4.7}
+\end{equation}
+</div>
+<div class="para">This accounts for overlapping events to avoid double-counting. In machine learning, the sum rule is used to compute marginal probabilities from joint distributions.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-sum-product-rules-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-sum-product-rules-4">
+<div class="para">
+<em class="alert">Product Rule</em>: The joint probability of two events <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> is:</div>
+<div class="displaymath process-math" id="eqn-product-rule">
+\begin{equation}
+P(A \cap B) = P(A|B)P(B),\tag{1.4.8}
+\end{equation}
+</div>
+<div class="para">where <span class="process-math">\(P(A|B)\)</span> is the conditional probability of <span class="process-math">\(A\)</span> given <span class="process-math">\(B\text{.}\)</span> This rule is key for factoring joint probabilities in models like Naive Bayes.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-sum-product-rules-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-sum-product-rules-5">Example: For a fair die, let <span class="process-math">\(A = \{1,2,3\}\)</span> (numbers ≤ 3) and <span class="process-math">\(B = \{3,4,5\}\text{.}\)</span> The sum rule gives <span class="process-math">\(P(A \cup B) = P(A) + P(B) - P(A \cap B) = 3/6 + 3/6 - 1/6 = 5/6\text{,}\)</span> as <span class="process-math">\(A \cap B = \{3\}\text{.}\)</span> For the product rule, consider the student dataset from <a href="sec-data-types-for-machine-learning.html" class="internal" title="Section 1.3: Data Types for Machine Learning">Section 1.3</a>: the probability of passing and studying &gt;20 hours is <span class="process-math">\(P(\text{Pass} \cap \text{High Study}) = P(\text{Pass} | \text{High Study})P(\text{High Study})\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-sum-product-rules-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="code-box"><pre class="program clipboardable line-numbers"><code class="language-py"># --- SUM AND PRODUCT RULES ---
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Student data
+np.random.seed(42)
+data = pd.DataFrame({
+    'Hours_Studied': np.random.normal(20, 5, 100).clip(0, 40),
+    'Passed': np.random.binomial(1, 0.7, 100)
+})
+data['High_Study'] = data['Hours_Studied'] &gt; 20
+
+# Compute probabilities
+p_pass = np.mean(data['Passed'])
+p_high_study = np.mean(data['High_Study'])
+p_pass_and_high = np.mean(data['Passed'] \amp; data['High_Study'])
+p_pass_or_high = p_pass + p_high_study - p_pass_and_high  # Sum rule
+p_pass_given_high = p_pass_and_high / p_high_study  # For product rule
+
+print(f"P(Pass): {p_pass:.3f}, P(High Study): {p_high_study:.3f}")
+print(f"P(Pass ∩ High Study): {p_pass_and_high:.3f}")
+print(f"P(Pass ∪ High Study): {p_pass_or_high:.3f}")
+print(f"Product Rule: P(Pass ∩ High Study) = P(Pass | High Study) * P(High Study) = {p_pass_given_high:.3f} * {p_high_study:.3f} = {p_pass_given_high * p_high_study:.3f}")
+
+# Heatmap of joint probabilities
+joint_table = pd.crosstab(data['Passed'], data['High_Study'], normalize='all')
+sns.heatmap(joint_table, annot=True, cmap='Blues', fmt='.3f')
+plt.xlabel('High Study Hours (&gt;20)')
+plt.ylabel('Passed')
+plt.title('Joint Probability of Pass and High Study Hours')
+plt.savefig('joint-probability-heatmap.png', dpi=300)
+plt.show()
+# --- END CODE ---
+</code></pre></div>
+<figure class="figure figure-like" id="fig-joint-probability-heatmap"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/joint-probability-heatmap.png" class="contained" alt="Heatmap of joint probabilities for pass and study hours."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.4.2<span class="period">.</span></span><span class="space"> </span>Heatmap displaying the joint probability distribution of passing an exam and studying more than 20 hours for 100 students, based on synthetic data (Hours_Studied: normal, mean 20, std 5; Passed: Bernoulli, p=0.7). Each cell shows the probability <span class="process-math">\(P(\text{Pass}, \text{High Study})\text{,}\)</span> with darker shades indicating higher probabilities. Marginal probabilities <span class="process-math">\(P(\text{Pass})\)</span> and <span class="process-math">\(P(\text{High Study})\)</span> are derived by summing rows or columns, illustrating the sum rule. The product rule is verified as <span class="process-math">\(P(\text{Pass} \cap \text{High Study}) = P(\text{Pass} | \text{High Study})P(\text{High Study})\text{.}\)</span> This visualization is relevant to machine learning for estimating joint feature probabilities in classification models.<div class="autopermalink" data-description="Figure 1.4.2"><a href="#fig-joint-probability-heatmap" title="Copy heading and permalink for Figure 1.4.2" aria-label="Copy heading and permalink for Figure 1.4.2">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Subsection 1.4.2: Sum and Product Rules for Probability"><a href="#subsec-sum-product-rules" title="Copy heading and permalink for Subsection 1.4.2: Sum and Product Rules for Probability" aria-label="Copy heading and permalink for Subsection 1.4.2: Sum and Product Rules for Probability">🔗</a></div></section><section class="subsection" id="subsec-conditional-probability-independence"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.4.3</span><span class="space"> </span><span class="title">Conditional Probability and Independence</span>
+</h3>
+<div class="para" id="subsec-conditional-probability-independence-2">
+<em class="alert">Conditional Probability</em>: The probability of an event <span class="process-math">\(A\)</span> given that <span class="process-math">\(B\)</span> has occurred, denoted <span class="process-math">\(P(A|B) = \frac{P(A \cap B)}{P(B)}\text{,}\)</span> where <span class="process-math">\(P(B) &gt; 0\text{.}\)</span> For example, the probability a student passes given they studied over 20 hours.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-conditional-probability-independence-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-conditional-probability-independence-3">
+<em class="alert">Independence</em>: Events <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are independent if <span class="process-math">\(P(A \cap B) = P(A)P(B)\text{,}\)</span> meaning one event doesn’t affect the other.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-conditional-probability-independence-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-conditional-probability-independence-4">Example: Using the student dataset from <a href="sec-data-types-for-machine-learning.html" class="internal" title="Section 1.3: Data Types for Machine Learning">Section 1.3</a>, estimate the probability of passing given high study hours.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-conditional-probability-independence-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="code-box"><pre class="program clipboardable line-numbers"><code class="language-py"># --- CONDITIONAL PROBABILITY ---
+import pandas as pd
+import numpy as np
+
+# Student data
+np.random.seed(42)
+data = pd.DataFrame({
+    'Hours_Studied': np.random.normal(20, 5, 100).clip(0, 40),
+    'Passed': np.random.binomial(1, 0.7, 100)
+})
+data['High_Study'] = data['Hours_Studied'] &gt; 20
+
+# Conditional probability
+p_pass = np.mean(data['Passed'])
+p_high_study = np.mean(data['High_Study'])
+p_pass_and_high = np.mean(data['Passed'] \amp; data['High_Study'])
+p_pass_given_high = p_pass_and_high / p_high_study
+print(f"P(Pass | High Study): {p_pass_given_high:.3f}")
+
+# Bar plot
+counts = data.groupby(['High_Study', 'Passed']).size().unstack()
+counts.plot(kind='bar', stacked=True)
+plt.xlabel('High Study Hours (&gt;20)')
+plt.ylabel('Count')
+plt.title('Pass/Fail by Study Hours')
+plt.legend(['Fail', 'Pass'])
+plt.savefig('./images/essential-probability-and-statistics/conditional-bar.png', dpi=300)
+plt.show()
+# --- END CODE ---
+</code></pre></div>
+<figure class="figure figure-like" id="fig-conditional-bar"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/conditional-bar.png" class="contained" alt="Bar plot of conditional probability."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.4.3<span class="period">.</span></span><span class="space"> </span>Stacked bar plot showing the distribution of pass/fail outcomes for 100 students, based on whether they studied more than 20 hours (High_Study = True) or not. The dataset is synthetic, with Hours_Studied drawn from a normal distribution (mean 20, std 5) and Passed from a Bernoulli distribution (p=0.7). The plot illustrates conditional probability <span class="process-math">\(P(\text{Pass} | \text{High Study})\text{,}\)</span> showing a higher proportion of passes among students with high study hours. This visualization is relevant to machine learning for feature analysis in classification tasks, such as predicting student success based on study habits.<div class="autopermalink" data-description="Figure 1.4.3"><a href="#fig-conditional-bar" title="Copy heading and permalink for Figure 1.4.3" aria-label="Copy heading and permalink for Figure 1.4.3">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Subsection 1.4.3: Conditional Probability and Independence"><a href="#subsec-conditional-probability-independence" title="Copy heading and permalink for Subsection 1.4.3: Conditional Probability and Independence" aria-label="Copy heading and permalink for Subsection 1.4.3: Conditional Probability and Independence">🔗</a></div></section><section class="subsection" id="subsec-probability-distributions"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.4.4</span><span class="space"> </span><span class="title">Probability Distributions</span>
+</h3>
+<div class="para" id="subsec-probability-distributions-2">Probability distributions describe how probabilities are distributed over outcomes. In machine learning, distributions model data or predictions.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-probability-distributions-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-probability-distributions-3">
+<em class="alert">Bernoulli Distribution</em>: Models a binary outcome (e.g., pass/fail) with probability <span class="process-math">\(p\text{.}\)</span> For passing an exam, <span class="process-math">\(P(\text{Pass}) = p\text{,}\)</span> <span class="process-math">\(P(\text{Fail}) = 1-p\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-probability-distributions-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-probability-distributions-4">
+<em class="alert">Binomial Distribution</em>: Counts successes in <span class="process-math">\(n\)</span> independent Bernoulli trials. For 10 students, the number who pass follows a binomial distribution.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-probability-distributions-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="code-box"><pre class="program clipboardable line-numbers"><code class="language-py"># --- BINOMIAL DISTRIBUTION ---
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import binom
+
+n, p = 10, 0.7  # 10 students, P(Pass) = 0.7
+k = np.arange(0, 11)
+pmf = binom.pmf(k, n, p)
+
+plt.bar(k, pmf)
+plt.xlabel('Number of Passes')
+plt.ylabel('Probability')
+plt.title('Binomial Distribution (n=10, p=0.7)')
+plt.grid(True, alpha=0.3)
+plt.savefig('./images/essential-probability-and-statistics/binomial-dist.png', dpi=300)
+plt.show()
+# --- END CODE ---
+</code></pre></div>
+<figure class="figure figure-like" id="fig-binomial-dist"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/binomial-dist.png" class="contained" alt="Bar plot of binomial distribution."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.4.4<span class="period">.</span></span><span class="space"> </span>Bar plot of the binomial probability mass function (PMF) for the number of students passing an exam out of 10, with a pass probability <span class="process-math">\(p=0.7\text{.}\)</span> Each bar represents the probability of <span class="process-math">\(k\)</span> students passing, calculated as <span class="process-math">\(P(k) = \binom{n}{k} p^k (1-p)^{n-k}\text{.}\)</span> The peak around 7 passes reflects the high likelihood of most students passing given <span class="process-math">\(p=0.7\text{.}\)</span> This distribution is critical in machine learning for modeling binary outcomes, such as predicting the number of successful predictions in a classification task.<div class="autopermalink" data-description="Figure 1.4.4"><a href="#fig-binomial-dist" title="Copy heading and permalink for Figure 1.4.4" aria-label="Copy heading and permalink for Figure 1.4.4">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Subsection 1.4.4: Probability Distributions"><a href="#subsec-probability-distributions" title="Copy heading and permalink for Subsection 1.4.4: Probability Distributions" aria-label="Copy heading and permalink for Subsection 1.4.4: Probability Distributions">🔗</a></div></section><section class="subsection" id="subsec-three-types-of-probabilities"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.4.5</span><span class="space"> </span><span class="title">Three Types of Probabilities</span>
+</h3>
+<div class="para" id="subsec-three-types-of-probabilities-2">Probability can be approached theoretically, empirically (frequentist), or subjectively (Bayesian).<div class="autopermalink" data-description="Paragraph"><a href="#subsec-three-types-of-probabilities-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ol class="decimal" id="subsec-three-types-of-probabilities-3">
+<li id="subsec-three-types-of-probabilities-3-1">
+<div class="para" id="subsec-three-types-of-probabilities-3-1-1">
+<em class="alert">Theoretical Probability</em>: Uses symmetry. For a fair die, <span class="process-math">\(P(\{1\}) = 1/6\text{.}\)</span> For even numbers, <span class="process-math">\(P(\{2,4,6\}) = 3/6 = 0.5\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-three-types-of-probabilities-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#subsec-three-types-of-probabilities-3-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="subsec-three-types-of-probabilities-3-2">
+<div class="para logical" id="subsec-three-types-of-probabilities-3-2-1">
+<div class="para">
+<em class="alert">Frequentist Probability</em>: Estimates probability from trial frequencies:</div>
 <div class="displaymath process-math" id="eqn-frequentist-probability-definition">
 \begin{equation}
-p_1 = \lim_{N\rightarrow \infty}\, \frac{n_1}{N}.\tag{1.4.7}
+p = \lim_{N \to \infty} \frac{n}{N}\text{.}\tag{1.4.9}
 \end{equation}
 </div>
-<div class="para">We do not assume that probabilities of every face of the die is same, as we did in using the symmetry argument in the theoretical probability; we rely of the repeated trials to show us any differences among the faces.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-three-types-of-probabilities-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-three-types-of-probabilities-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 2"><a href="#subsec-three-types-of-probabilities-2-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+<div class="code-box"><pre class="program clipboardable line-numbers"><code class="language-py"># --- FREQUENTIST SIMULATION ---
+import numpy as np
+import matplotlib.pyplot as plt
+
+np.random.seed(42)
+n_trials = 1000
+fair_rolls = np.random.randint(1, 7, n_trials)
+biased_rolls = np.random.choice([1, 2, 3, 4, 5, 6], n_trials, 
+                                p=[0.2, 0.2, 0.2, 0.2, 0.1, 0.1])
+
+# Cumulative probabilities
+cum_fair = np.cumsum(fair_rolls == 1) / np.arange(1, n_trials + 1)
+cum_biased = np.cumsum(biased_rolls == 1) / np.arange(1, n_trials + 1)
+
+plt.plot(cum_fair, label='Fair Die (P=1/6)')
+plt.plot(cum_biased, label='Biased Die (P=0.2)')
+plt.axhline(1/6, color='red', linestyle='--', label='Theoretical P=1/6')
+plt.xlabel('Trials')
+plt.ylabel('Estimated P(1)')
+plt.title('Frequentist Estimates: Fair vs. Biased Die')
+plt.legend()
+plt.grid(True, alpha=0.3)
+plt.savefig('frequentist-convergence.png', dpi=300)
+plt.show()
+# --- END CODE ---
+</code></pre></div>
+<figure class="figure figure-like" id="fig-frequentist-convergence"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/frequentist-convergence.png" class="contained" alt="Convergence plot for frequentist estimates."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.4.5<span class="period">.</span></span><span class="space"> </span>Plot showing the convergence of frequentist probability estimates for rolling a 1 on a fair die (<span class="process-math">\(P(1)=1/6 \approx 0.167\)</span>) and a biased die (<span class="process-math">\(P(1)=0.2\)</span>) over 1,000 trials. The fair die’s estimate (blue) fluctuates but approaches 1/6 (red dashed line), while the biased die’s estimate (orange) converges to 0.2, reflecting the higher probability of rolling a 1. This visualization demonstrates how empirical frequencies approximate true probabilities in large samples, a technique used in machine learning to estimate probabilities from training data.<div class="autopermalink" data-description="Figure 1.4.5"><a href="#fig-frequentist-convergence" title="Copy heading and permalink for Figure 1.4.5" aria-label="Copy heading and permalink for Figure 1.4.5">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Item 2"><a href="#subsec-three-types-of-probabilities-3-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
 </li>
-<li id="subsec-three-types-of-probabilities-2-1-3">
-<div class="para" id="subsec-three-types-of-probabilities-2-1-3-1">
-<em class="alert">Bayesian Probability</em>. This is also an empirical definition of probability. But, rather than give you one number for probability of an event, Bayesian gives you a probability distribution of the values of probability of the event. From that, you can work out the mean value, which you can use as one value for the probability of the event.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-three-types-of-probabilities-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<li id="subsec-three-types-of-probabilities-3-3">
+<div class="para" id="subsec-three-types-of-probabilities-3-3-1">
+<em class="alert">Bayesian Probability</em>: Updates prior beliefs with data using Bayes’ theorem: <span class="process-math">\(P(\theta|D) = \frac{P(D|\theta)P(\theta)}{P(D)}\text{.}\)</span> For die face 1, use a Beta prior, updated to Beta(<span class="process-math">\(\alpha + n_1, \beta + (N - n_1)\)</span>).<div class="autopermalink" data-description="Paragraph"><a href="#subsec-three-types-of-probabilities-3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-three-types-of-probabilities-2-1-3-2">It is based on incorporating belief about the probability of an outcome BEFORE we even conduct the experiment and then updated this so-called prior assumption or bias with what we observe in the experiment. The updated belief is the posterior, and improved value of the probability.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-three-types-of-probabilities-2-1-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-three-types-of-probabilities-3-3-2">Example: Estimate <span class="process-math">\(P(\text{Pass})\)</span> for students using the dataset, starting with a Beta(1,1) prior.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-three-types-of-probabilities-3-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-three-types-of-probabilities-2-1-3-3">Clearly, as we repeat the experiment infinitely many times, the effect of our initial belief would disappear and the answer will match the results of the frequentists’ experiments. However, since we can never do infinite number of trials, the Bayesian gives an edge in cases where we have some information about the outcome even before we start the trials.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-three-types-of-probabilities-2-1-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="subsec-three-types-of-probabilities-2-1-3-4">
-<em class="alert">Example:</em> This example is a little bit ahead of my presentation here as it requres a little bit of math to properly express how th Bayesian probability works. If you feel up to it, you can ahead and read on, but it’s okay to skip it for now.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-three-types-of-probabilities-2-1-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="subsec-three-types-of-probabilities-2-1-3-5">
-<div class="para">In the case of a six-sided die, suppose we want to estimate the probability <span class="process-math">\(p_1\)</span> for one-dot face up as we illustrated in the frequentist case above. First, we would need to choose a prior belief, i.e., a probability distribution for <span class="process-math">\(p_1\text{,}\)</span> i.e., how likely is any value of <span class="process-math">\(p_1\)</span> between its range of values, which will be from <span class="process-math">\(0\)</span> to <span class="process-math">\(1\text{,}\)</span> inclusive, <span class="process-math">\(0\le p_1 \le 1\text{.}\)</span> Since, we do not know which value is right, we might decide that it could be 1/2 times it will be face up and 1/2 of the time it will be not face up (I know a fair die will be 1/6 times face up, but I want to show you how even a very off prior will eventually converge to the proper value). In such cases and our trial each time being either face up true or false ( which is a case of Bernoulli trials ), it is traditional to choose a beta distribution, which has two parameters <span class="process-math">\(\alpha\)</span> and <span class="process-math">\(\beta\text{,}\)</span> with <span class="process-math">\(\alpha=1\)</span>  and <span class="process-math">\(\beta = 1\text{.}\)</span> Using symbol <span class="process-math">\(x\)</span> for <span class="process-math">\(p_1\)</span> and <span class="process-math">\(P(x)\text{,}\)</span> probability density of <span class="process-math">\(p_1\text{,}\)</span> we will write this as follows where <span class="process-math">\(0 \le x \le 1\text{.}\)</span>
-</div>
-<div class="displaymath process-math" id="eqn-beta-distribution-prior">
-\begin{equation}
-\text{P(x)} dx = \frac{1}{B(\alpha, \beta)}\, x^{\alpha - 1} (1-x)^{\beta - 1},\tag{1.4.8}
-\end{equation}
-</div>
-<div class="para">where <span class="process-math">\(B(\alpha, \beta)\)</span> is beta function. The mean value of beta distribution is an important result and can be easily found.</div>
-<div class="displaymath process-math" id="eqn-mean-of-beta-distribution">
-\begin{equation}
-\langle x \rangle = \int_0^1\, x P(x) dx = \frac{\alpha}{\alpha + \beta}.\tag{1.4.9}
-\end{equation}
-</div>
-<div class="para">Here, I have introduced physicists’ notation for the mean of a quantity, <span class="process-math">\(\langle \cdots \rangle\text{.}\)</span> Thus, by choosing <span class="process-math">\(B(1,1)\)</span> as the prior distribution, we are assuming that somehow we suspect that <span class="process-math">\(p_1\)</span> is close to <span class="process-math">\(1/2\text{.}\)</span>
-</div>
-<div class="displaymath process-math" id="eqn-mean-beta-distribution">
-\begin{equation}
-\langle p_1 \rangle = \frac{\alpha}{\alpha + \beta} = \frac{1}{1+1} = \frac{1}{2} = 0.5.\tag{1.4.10}
-\end{equation}
-</div>
-<div class="para">So, we are basically, starting way off in our belief.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-three-types-of-probabilities-2-1-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="subsec-three-types-of-probabilities-2-1-3-6">
-<div class="para">Just a side math info: Beta function is usually written in terms of factorial or Gamma function.</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-beta-distribution-prior.html">
-\begin{equation*}
-B(\alpha, \beta) = \frac{\Gamma(\alpha) \Gamma(\beta)}{\Gamma(\alpha + \beta)},
-\end{equation*}
-</div>
-<div class="para">where, for integer arguments <span class="process-math">\(n\text{,}\)</span>
-</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-beta-distribution-prior.html">
-\begin{equation*}
-\Gamma(n) = (n-1)! = [ m! = (m)(m-1) \cdots 1 = m \times (m-1)!\ \text{with}\ 0! = 1.]
-\end{equation*}
-</div>
-<div class="para">and in general,</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-beta-distribution-prior.html">
-\begin{equation*}
-\Gamma(\alpha) = \int_0^\infty\, e^{-t}\,t^{\alpha -1}\, dt.
-\end{equation*}
-</div>
-<div class="para">To hide all the mathematical details in our work below, we will, as is normally done, just express the probability <span class="process-math">\(P(p_1)\)</span> by a simpler notation and represent Eq. <a href="sec-Basic-Probability.html#eqn-beta-distribution-prior" class="xref" data-knowl="./knowl/xref/eqn-beta-distribution-prior.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.4.8">(1.4.8)</a>
-</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-beta-distribution-prior.html" id="eqn-probability-distribution-simple-notation">
-\begin{equation}
-P_1 \sim B(\alpha, \beta) = B(1,1),\tag{1.4.11}
-\end{equation}
-</div>
-<div class="para">where instead of lower case variable name <span class="process-math">\(p_1\text{,}\)</span> we use the notation of upper case <span class="process-math">\(P_1\text{.}\)</span>
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-three-types-of-probabilities-2-1-3-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="subsec-three-types-of-probabilities-2-1-3-7">
-<div class="para">Let’s get back to our rolling experiment and see how our belief of the true value of <span class="process-math">\(p_1\)</span> evolves with each roll’s result. Suppose we roll the die and observe that the up face is not one, then without showing you the calculations here, which will be done later in the chapter, we use Bayes rule, to be discussed later, to show that the probability distribution now shifts to <span class="process-math">\(B(1,2)\text{.}\)</span>
-</div>
-<div class="displaymath process-math">
-\begin{equation*}
-P_1 \sim B(1,1) \rightarrow \text{[Toss, No one]} \rightarrow \sim B(1,2) \Rightarrow \langle p_1 \rangle = \frac{1}{1+2} = \frac{1}{3}.
-\end{equation*}
-</div>
-<div class="para">How did we go from distribution <span class="process-math">\(B(1,1)\)</span> to <span class="process-math">\(B(1,2)\text{?}\)</span> I used Bayesian theorem. We will not show the calculation here but differ to a later section.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-three-types-of-probabilities-2-1-3-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="subsec-three-types-of-probabilities-2-1-3-8">
-<div class="para">Toss second time, let’s say the result is a one. Then our belief will be update with this new data to <span class="process-math">\(B(2,2)\text{.}\)</span>
-</div>
-<div class="displaymath process-math">
-\begin{equation*}
-P_1 \sim B(1,2) \rightarrow \text{[Toss, Yes one]} \rightarrow \sim B(2,2) \Rightarrow \langle p_1 \rangle = \frac{2}{4} = 0.5.
-\end{equation*}
-</div>
-<div class="para">Toss again, say no one.</div>
-<div class="displaymath process-math">
-\begin{equation*}
-P_1 \sim B(2,2) \rightarrow \text{[Toss, No one]} \rightarrow \sim B(2,3) \Rightarrow \langle p_1 \rangle = \frac{2}{2+3} = \frac{2}{5}.
-\end{equation*}
-</div>
-<div class="para">We keep updating the probability distribution of <span class="process-math">\(p_1\text{.}\)</span> At any point, we can take the expectation value of the the variable <span class="process-math">\(p_1\)</span> in the current distribution to give us the "best current value" for <span class="process-math">\(p_1\text{.}\)</span> Thus, after three trials above, we will say that <span class="process-math">\(p_1 = 0.4\text{.}\)</span>
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-three-types-of-probabilities-2-1-3-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="subsec-three-types-of-probabilities-2-1-3-9">
-<div class="para">Suppose you continued rolling and you had the following next 7 trials:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\text{1, not 1, not 1, not 1, not 1, 1, not 1}.
-\end{equation*}
-</div>
-<div class="para">After these 10 trials in total, the distribution will be</div>
-<div class="displaymath process-math">
-\begin{equation*}
-P_1 \sim B(4, 8) \Rightarrow \langle p_1 \rangle = \frac{4}{12} = \frac{1}{3}.
-\end{equation*}
-</div>
-<div class="para">This is still far away from <span class="process-math">\(1/6\)</span> that you would expect from a fair die, but you don’t know if the die was fair. So, empirical results are all you have to go by.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-three-types-of-probabilities-2-1-3-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="subsec-three-types-of-probabilities-2-1-3-10">
-<div class="para">For the same rolling results, frequentists’ probability will give us the following estimate:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-p_1(\text{frequentist}) = \frac{n_1}{N} = \frac{3}{10} = 0.3.
-\end{equation*}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-three-types-of-probabilities-2-1-3-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="subsec-three-types-of-probabilities-2-1-3-11">
-<div class="para">They look similar. But, had you expected the die was fair, you would start with a better prior, with say <span class="process-math">\(B(1,5)\text{.}\)</span> Then the 10 trials would update to</div>
-<div class="displaymath process-math">
-\begin{equation*}
-P_1 \sim B(4, 12) \Rightarrow \langle p_1\rangle = \frac{4}{4+12} = \frac{1}{4} = 0.25.
-\end{equation*}
-</div>
-<div class="para">It would have revealed if the die was not a fair die. It’s either not a fair die or we have rolled it too few times.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-three-types-of-probabilities-2-1-3-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item 3"><a href="#subsec-three-types-of-probabilities-2-1-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+<div class="code-box"><pre class="program clipboardable line-numbers"><code class="language-py"># --- BAYESIAN UPDATE ---
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import beta
+import pandas as pd
+
+# Student data
+np.random.seed(42)
+data = pd.DataFrame({
+    'Passed': np.random.binomial(1, 0.7, 10)
+})
+
+# Prior: Beta(1,1)
+a, b = 1, 1
+n, n1 = len(data), data['Passed'].sum()
+a_post, b_post = a + n1, b + n - n1
+
+# Plot prior and posterior
+x = np.linspace(0, 1, 1000)
+plt.plot(x, beta.pdf(x, a, b), label='Prior Beta(1,1)', color='blue')
+plt.plot(x, beta.pdf(x, a + 1, b + 1), label='After 1 Pass', color='orange')
+plt.plot(x, beta.pdf(x, a_post, b_post), label=f'Posterior Beta({a_post},{b_post})', color='green')
+plt.axvline(n1/n, color='red', linestyle='--', label='Frequentist Est.')
+plt.xlabel('P(Pass)')
+plt.ylabel('Density')
+plt.title('Bayesian Update for P(Pass)')
+plt.legend()
+plt.grid(True, alpha=0.3)
+plt.savefig('./images/essential-probability-and-statistics/bayesian-update.png', dpi=300)
+plt.show()
+# --- END CODE ---
+</code></pre></div>
+<figure class="figure figure-like" id="fig-bayesian-update"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/bayesian-update.png" class="contained" alt="Bayesian update plot."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.4.6<span class="period">.</span></span><span class="space"> </span>Plot showing the Bayesian update of the probability of a student passing an exam, starting with a uniform Beta(1,1) prior (blue). After observing one pass (orange) and 10 trials with 3 passes (green, posterior Beta(4,8)), the distribution shifts, with the posterior mean at 4/12 ≈ 0.333. The frequentist estimate (red dashed line, 3/10 = 0.3) is shown for comparison. This visualization illustrates how Bayesian methods incorporate prior beliefs and data to refine probability estimates, a technique used in machine learning for probabilistic models and uncertainty quantification.<div class="autopermalink" data-description="Figure 1.4.6"><a href="#fig-bayesian-update" title="Copy heading and permalink for Figure 1.4.6" aria-label="Copy heading and permalink for Figure 1.4.6">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Item 3"><a href="#subsec-three-types-of-probabilities-3-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-three-types-of-probabilities-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Subsection 1.4.2: Three Types of Probabilities"><a href="#subsec-three-types-of-probabilities" title="Copy heading and permalink for Subsection 1.4.2: Three Types of Probabilities" aria-label="Copy heading and permalink for Subsection 1.4.2: Three Types of Probabilities">🔗</a></div></section><div class="autopermalink" data-description="Section 1.4: Basic Probability"><a href="#sec-Basic-Probability" title="Copy heading and permalink for Section 1.4: Basic Probability" aria-label="Copy heading and permalink for Section 1.4: Basic Probability">🔗</a></div></section></div>
+<div class="autopermalink" data-description="Subsection 1.4.5: Three Types of Probabilities"><a href="#subsec-three-types-of-probabilities" title="Copy heading and permalink for Subsection 1.4.5: Three Types of Probabilities" aria-label="Copy heading and permalink for Subsection 1.4.5: Three Types of Probabilities">🔗</a></div></section><section class="conclusion" id="sec-Basic-Probability-8"><div class="para" id="sec-Basic-Probability-8-1">Probability provides the foundation for modeling uncertainty in machine learning. Axioms define the rules, while theoretical, frequentist, and Bayesian approaches offer different perspectives. Conditional probability and distributions like binomial are key for models like Naive Bayes. Practice with datasets from <a href="sec-data-types-for-machine-learning.html" class="internal" title="Section 1.3: Data Types for Machine Learning">Section 1.3</a> and libraries from <a href="sec-useful-descriptive-statistics-tools.html" class="internal" title="Section 1.2: Useful Tools for Descriptive Statistics and Exploratory Data Analysis">Section 1.2</a> to apply these concepts. Explore <a class="external" href="https://www.probabilitycourse.com/" target="_blank">Probability Course</a><details class="ptx-footnote" aria-live="polite" id="sec-Basic-Probability-8-1-4"><summary class="ptx-footnote__number" title="Footnote 1.4.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="sec-Basic-Probability-8-1-4"><code class="code-inline tex2jax_ignore">probabilitycourse.com</code></div></details> for further learning.<div class="autopermalink" data-description="Paragraph"><a href="#sec-Basic-Probability-8-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section><div class="autopermalink" data-description="Section 1.4: Basic Probability for Machine Learning"><a href="#sec-Basic-Probability" title="Copy heading and permalink for Section 1.4: Basic Probability for Machine Learning" aria-label="Copy heading and permalink for Section 1.4: Basic Probability for Machine Learning">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
-<a class="previous-button button" href="sec-Numerical-and-Categorical-Data.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-Joint-Conditional-and-Marginal-Probabilities.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec-data-types-for-machine-learning.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-Joint-Conditional-and-Marginal-Probabilities.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
