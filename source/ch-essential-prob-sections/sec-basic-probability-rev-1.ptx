@@ -21,7 +21,7 @@
             <alert>Event Space <m>F</m></alert>: All possible subsets of <m>\Omega</m>, including the empty set <m>\varnothing</m> (impossible event) and <m>\Omega</m> (event certain to happen). For a coin toss (<m>\Omega = \{H, T\}</m>), <m>F = \{\varnothing, \{H\}, \{T\}, \{H, T\}\}</m>. With <m>N</m> outcomes, <m>F</m> has <m>2^N</m> events.
         </p>
         <p>
-            <alert>Probability Measure <m>P</m></alert>: Assigns a number <m>P(E)</m> to each event <m>E \in F</m>, representing its likelihood. For example, for a fair die, <m>P(\{1\}) = 1/6</m>.
+            <alert>Probability Measure <m>P</m></alert>: Assigns a number <m>P(E)</m> to each event <m>E \in F</m>, representing its likelihood. For example, for a fair die, <m>P(\{1\}) = 1/6</m>. You only need <m>P</m> for elementary events, which are the elements of <m>\Omega</m>, each taken as one event since you can use the Aditivity law below to get probability of any event in the entire event space <m>F</m>.
         </p>
         <p>
             The probability space is the triplet <m>(\Omega, F, P)</m>. Kolmogorov’s axioms are:
@@ -86,124 +86,152 @@
     </subsection>
 
     <subsection xml:id="subsec-sum-product-rules">
-        <title>Sum and Product Rules for Probability</title>
-        <p>
-            The sum and product rules are foundational for computing probabilities of combined events, essential for machine learning tasks like feature engineering and Bayesian inference.
-        </p>
-        <p>
-            <alert>Sum Rule</alert>: The probability of the union of two events <m>A</m> and <m>B</m> is given by:
-            <men xml:id="eqn-sum-rule">P(A \cup B) = P(A) + P(B) - P(A \cap B).</men>
-            This accounts for overlapping events to avoid double-counting. In machine learning, the sum rule is used to compute marginal probabilities from joint distributions.
-        </p>
-        <p>
-            <alert>Product Rule</alert>: The joint probability of two events <m>A</m> and <m>B</m> is:
-            <men xml:id="eqn-product-rule">P(A \cap B) = P(A|B)P(B),</men>
-            where <m>P(A|B)</m> is the conditional probability of <m>A</m> given <m>B</m>. This rule is key for factoring joint probabilities in models like Naive Bayes.
-        </p>
-        <p>
-            Example: For a fair die, let <m>A = \{1,2,3\}</m> (numbers ≤ 3) and <m>B = \{3,4,5\}</m>. The sum rule gives <m>P(A \cup B) = P(A) + P(B) - P(A \cap B) = 3/6 + 3/6 - 1/6 = 5/6</m>, as <m>A \cap B = \{3\}</m>. For the product rule, consider the student dataset from <xref ref="sec-data-types-for-machine-learning"/>: the probability of passing and studying >20 hours is <m>P(\text{Pass} \cap \text{High Study}) = P(\text{Pass} | \text{High Study})P(\text{High Study})</m>.
-        </p>
-        <program language="python" line-numbers="yes">
-            <title>Sum and product rules with student data</title>
-            <code>
-            # --- SUM AND PRODUCT RULES ---
-            import pandas as pd
-            import numpy as np
-            import seaborn as sns
-            import matplotlib.pyplot as plt
+    <title>Sum and Product Rules for Probability</title>
+    <p>
+        The sum and product rules are two cornerstones of probability theory. They allow us to compute probabilities of unions and intersections of events, which are essential in many machine learning applications, from estimating marginal distributions to building classifiers.
+    </p>
 
-            # Student data
-            np.random.seed(42)
-            data = pd.DataFrame({
-                'Hours_Studied': np.random.normal(20, 5, 100).clip(0, 40),
-                'Passed': np.random.binomial(1, 0.7, 100)
-            })
-            data['High_Study'] = data['Hours_Studied'] > 20
+    <p>
+        <alert>Sum Rule</alert>: The probability of the union of two events <m>A</m> and <m>B</m> is given by:
+        <men xml:id="eqn-sum-rule">P(A \cup B) = P(A) + P(B) - P(A \cap B).</men>
+        The subtraction of <m>P(A \cap B)</m> avoids double-counting the overlap between the two events. This can be clearly understood using a Venn diagram.
+    </p>
 
-            # Compute probabilities
-            p_pass = np.mean(data['Passed'])
-            p_high_study = np.mean(data['High_Study'])
-            p_pass_and_high = np.mean(data['Passed'] \amp; data['High_Study'])
-            p_pass_or_high = p_pass + p_high_study - p_pass_and_high  # Sum rule
-            p_pass_given_high = p_pass_and_high / p_high_study  # For product rule
+    <figure xml:id="fig-venn-sum-rule">
+        <caption>Illustration of the sum rule. The probability of <m>A \cup B</m> is the sum of the shaded areas of <m>A</m> and <m>B</m>, minus the overlapping region <m>A \cap B</m> that would otherwise be counted twice.</caption>
+        <image source="./images/essential-probability-and-statistics/sum-rule-venn.png">
+        <shortdescription>Venn diagram showing the sum rule for two overlapping events.</shortdescription>
+        </image>
+    </figure>
 
-            print(f"P(Pass): {p_pass:.3f}, P(High Study): {p_high_study:.3f}")
-            print(f"P(Pass ∩ High Study): {p_pass_and_high:.3f}")
-            print(f"P(Pass ∪ High Study): {p_pass_or_high:.3f}")
-            print(f"Product Rule: P(Pass ∩ High Study) = P(Pass | High Study) * P(High Study) = {p_pass_given_high:.3f} * {p_high_study:.3f} = {p_pass_given_high * p_high_study:.3f}")
+    <p>
+        <alert>Product Rule</alert>: The joint probability of two events <m>A</m> and <m>B</m> is:
+        <men xml:id="eqn-product-rule">P(A \cap B) = P(A|B)P(B),</men>
+        where <m>P(A|B)</m> is the conditional probability of <m>A</m> given <m>B</m>. This factorization is the basis for probabilistic models such as Naive Bayes.
+    </p>
 
-            # Heatmap of joint probabilities
-            joint_table = pd.crosstab(data['Passed'], data['High_Study'], normalize='all')
-            sns.heatmap(joint_table, annot=True, cmap='Blues', fmt='.3f')
-            plt.xlabel('High Study Hours (>20)')
-            plt.ylabel('Passed')
-            plt.title('Joint Probability of Pass and High Study Hours')
-            plt.savefig('joint-probability-heatmap.png', dpi=300)
-            plt.show()
-            # --- END CODE ---
-            </code>
-        </program>
-        <figure xml:id="fig-joint-probability-heatmap">
-            <caption>Heatmap displaying the joint probability distribution of passing an exam and studying more than 20 hours for 100 students, based on synthetic data (Hours_Studied: normal, mean 20, std 5; Passed: Bernoulli, p=0.7). Each cell shows the probability <m>P(\text{Pass}, \text{High Study})</m>, with darker shades indicating higher probabilities. Marginal probabilities <m>P(\text{Pass})</m> and <m>P(\text{High Study})</m> are derived by summing rows or columns, illustrating the sum rule. The product rule is verified as <m>P(\text{Pass} \cap \text{High Study}) = P(\text{Pass} | \text{High Study})P(\text{High Study})</m>. This visualization is relevant to machine learning for estimating joint feature probabilities in classification models.</caption>
-            <image source="./images/essential-probability-and-statistics/joint-probability-heatmap.png">
-                <shortdescription>Heatmap of joint probabilities for pass and study hours.</shortdescription>
-            </image>
-        </figure>
+    <p>
+        Example (Student Study Data): Suppose we record whether students studied more than 20 hours (<m>High Study</m>) and whether they passed an exam (<m>Pass</m>). Using the dataset below, we can estimate probabilities empirically:
+        <ul>
+        <li><m>P(\text{Pass})</m>: overall fraction of students who passed,</li>
+        <li><m>P(\text{High Study})</m>: fraction who studied more than 20 hours,</li>
+        <li><m>P(\text{Pass} \cap \text{High Study})</m>: fraction who both passed and studied more than 20 hours.</li>
+        </ul>
+        The sum rule gives <m>P(\text{Pass} \cup \text{High Study}) = P(\text{Pass}) + P(\text{High Study}) - P(\text{Pass} \cap \text{High Study})</m>.  
+        The product rule verifies that <m>P(\text{Pass} \cap \text{High Study}) = P(\text{Pass}|\text{High Study})P(\text{High Study})</m>.
+    </p>
+
+    <program language="python" line-numbers="yes">
+        <title>Sum and product rules with student data</title>
+        <code>
+        import pandas as pd
+        import numpy as np
+        import matplotlib.pyplot as plt
+        import seaborn as sns
+
+        np.random.seed(42)
+        data = pd.DataFrame({
+            "Hours_Studied": np.random.normal(20, 5, 200).clip(0, 40),
+            "Passed": np.random.binomial(1, 0.7, 200)
+        })
+        data["High_Study"] = data["Hours_Studied"] > 20
+
+        # Probabilities
+        p_pass = data["Passed"].mean()
+        p_high = data["High_Study"].mean()
+        p_both = ((data["Passed"] == 1) \amp; (data["High_Study"] == True)).mean()
+        p_union = p_pass + p_high - p_both
+        p_conditional = p_both / p_high
+
+        print(f"P(Pass) = {p_pass:.3f}")
+        print(f"P(High Study) = {p_high:.3f}")
+        print(f"P(Pass ∩ High Study) = {p_both:.3f}")
+        print(f"P(Pass ∪ High Study) = {p_union:.3f}")
+        print(f"P(Pass|High Study) * P(High Study) = {p_conditional:.3f} * {p_high:.3f} = {p_conditional * p_high:.3f}")
+
+        # Visualize joint distribution
+        joint_table = pd.crosstab(data["Passed"], data["High_Study"], normalize="all")
+        sns.heatmap(joint_table, annot=True, cmap="Blues", fmt=".3f")
+        plt.xlabel("High Study Hours (>20)")
+        plt.ylabel("Pass (0=No, 1=Yes)")
+        plt.title("Joint Probability of Pass and High Study Hours")
+        plt.savefig("joint-probability-heatmap.png", dpi=300)
+        plt.show()
+        </code>
+    </program>
+
+    <figure xml:id="fig-joint-probability-heatmap">
+        <caption>Joint probability table of passing and high study hours. Each cell represents <m>P(\text{Pass}, \text{High Study})</m>. Row and column sums recover marginals (<m>P(\text{Pass})</m> and <m>P(\text{High Study})</m>), illustrating the sum rule. The product rule is verified by comparing the joint probability with <m>P(\text{Pass}|\text{High Study})P(\text{High Study})</m>.</caption>
+        <image source="./images/essential-probability-and-statistics/joint-probability-heatmap.png">
+        <shortdescription>Heatmap of joint probabilities for pass and study hours.</shortdescription>
+        </image>
+    </figure>
     </subsection>
+
 
 
     <subsection xml:id="subsec-conditional-probability-independence">
         <title>Conditional Probability and Independence</title>
-        <p>
-            <alert>Conditional Probability</alert>: The probability of an event <m>A</m> given that <m>B</m> has occurred, denoted <m>P(A|B) = \frac{P(A \cap B)}{P(B)}</m>, where <m>P(B) > 0</m>. For example, the probability a student passes given they studied over 20 hours.
-        </p>
-        <p>
-            <alert>Independence</alert>: Events <m>A</m> and <m>B</m> are independent if <m>P(A \cap B) = P(A)P(B)</m>, meaning one event doesn’t affect the other.
-        </p>
-        <p>
-            Example: Using the student dataset from <xref ref="sec-data-types-for-machine-learning"/>, estimate the probability of passing given high study hours.
-        </p>
-        <program language="python" line-numbers="yes">
-            <title>Conditional probability with student data</title>
-            <code>
-            # --- CONDITIONAL PROBABILITY ---
-            import pandas as pd
-            import numpy as np
 
-            # Student data
-            np.random.seed(42)
-            data = pd.DataFrame({
-                'Hours_Studied': np.random.normal(20, 5, 100).clip(0, 40),
-                'Passed': np.random.binomial(1, 0.7, 100)
-            })
-            data['High_Study'] = data['Hours_Studied'] > 20
+        <p>
+            <alert>Conditional Probability</alert>: The probability of an event <m>A</m> given that event <m>B</m> has occurred is written as
+            <men xml:id="eqn-conditional-prob-defn">
+            P(A \mid B) = \frac{P(A \cap B)}{P(B)}, \text{ provided that } P(B) \gt; 0
+            </men>.  
+            Intuitively, this represents <em>updating our belief about <m>A</m></em> once we know that <m>B</m> is true.  
+            For instance, the probability that a student passes an exam may be different depending on whether we already know they studied more than 20 hours.
+        </p>
+        <example><title>Probability of King if the Card is known to be Spade</title>
+            <p>
+                Imagine we have a standard deck of 52 playing cards.  
+                Event <m>A</m> = "the card is a King".  
+                Event <m>B</m> = "the card is a Spade".  
+            </p>
+            <p>
+                The unconditional probability of drawing a King is <m>P(A) = 4/52 = 1/13</m>.  
+                But suppose we are told that the card drawn is a Spade. Now, the sample space is only 13 Spade cards.  
+                Out of these, exactly one is a King (the King of Spades).  
+            </p>
+            <p>
+                Thus the conditional probability is
+                <m>P(A \mid B) = \tfrac{1}{13}</m>, which differs from <m>P(A)</m>.  
+                This illustrates how new information (that the card is a Spade) changes the probability of <m>A</m>.
+            </p>
+        </example>
 
-            # Conditional probability
-            p_pass = np.mean(data['Passed'])
-            p_high_study = np.mean(data['High_Study'])
-            p_pass_and_high = np.mean(data['Passed'] \amp; data['High_Study'])
-            p_pass_given_high = p_pass_and_high / p_high_study
-            print(f"P(Pass | High Study): {p_pass_given_high:.3f}")
+        <p>
+            <alert>Independence</alert>: Two events <m>A</m> and <m>B</m> are independent if the occurrence of one does not affect the probability of the other.  
+            Formally, the eventa <m>A</m> and <m>B</m> are independent if
+            <men xml:id="eqn-independent-events-def">
+                P(A \cap B) = P(A)P(B).\quad \Leftrightarrow\quad  A \text{ and } B \text{ independent}.
+            </men>. 
+            Equivalently, 
+            <men xml:id="eqn-independent-events-def-2">
+                P(A \mid B) = P(A)\text{ when } P(B) &gt; 0.\quad \Leftrightarrow\quad  A \text{ and } B \text{ independent}.
+            </men>
+            Independence means that knowing whether <m>B</m> occurred does not provide any new information about <m>A</m>.
+        </p>
 
-            # Bar plot
-            counts = data.groupby(['High_Study', 'Passed']).size().unstack()
-            counts.plot(kind='bar', stacked=True)
-            plt.xlabel('High Study Hours (>20)')
-            plt.ylabel('Count')
-            plt.title('Pass/Fail by Study Hours')
-            plt.legend(['Fail', 'Pass'])
-            plt.savefig('./images/essential-probability-and-statistics/conditional-bar.png', dpi=300)
-            plt.show()
-            # --- END CODE ---
-            </code>
-        </program>
-        <figure xml:id="fig-conditional-bar">
-            <caption>Stacked bar plot showing the distribution of pass/fail outcomes for 100 students, based on whether they studied more than 20 hours (High_Study = True) or not. The dataset is synthetic, with Hours_Studied drawn from a normal distribution (mean 20, std 5) and Passed from a Bernoulli distribution (p=0.7). The plot illustrates conditional probability <m>P(\text{Pass} | \text{High Study})</m>, showing a higher proportion of passes among students with high study hours. This visualization is relevant to machine learning for feature analysis in classification tasks, such as predicting student success based on study habits.</caption>
-            <image source="./images/essential-probability-and-statistics/conditional-bar.png">
-                <shortdescription>Bar plot of conditional probability.</shortdescription>
-            </image>
-        </figure>
+        <example><title>Tosses of a fair coin are independent</title>
+            <p>
+                Suppose we toss a fair coin twice. Let event <m>A</m> be "the first toss is Heads" and event <m>B</m> be "the second toss is Heads."  
+                The sample space is <m>\{HH, HT, TH, TT\}</m>.
+            </p>
+
+            <p>
+                We have <m>P(A) = 1/2</m>, <m>P(B) = 1/2</m>, and <m>P(A \cap B) = 1/4</m>.  
+                Therefore, <m>P(A \cap B) = P(A)P(B)</m>, which means the events are independent.  
+            </p>
+
+            <p>
+                Now let event <m>C</m> be "at least one toss is Heads."  
+                Then <m>P(C) = 3/4</m>, <m>P(A \cap C) = 1/2</m>, and <m>P(A \mid C) = (1/2) / (3/4) = 2/3</m>.  
+                But <m>P(A) = 1/2</m>, so <m>P(A \mid C) \neq P(A)</m>.  
+                Thus, <m>A</m> and <m>C</m> are not independent.
+            </p>
+        </example>
     </subsection>
+    
     <subsection xml:id="subsec-probability-distributions">
         <title>Probability Distributions</title>
         <p>

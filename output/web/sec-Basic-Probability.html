@@ -269,7 +269,7 @@ eBookConfig.enable_chatcodes =  false;
 <em class="alert">Event Space <span class="process-math">\(F\)</span></em>: All possible subsets of <span class="process-math">\(\Omega\text{,}\)</span> including the empty set <span class="process-math">\(\varnothing\)</span> (impossible event) and <span class="process-math">\(\Omega\)</span> (event certain to happen). For a coin toss (<span class="process-math">\(\Omega = \{H, T\}\)</span>), <span class="process-math">\(F = \{\varnothing, \{H\}, \{T\}, \{H, T\}\}\text{.}\)</span> With <span class="process-math">\(N\)</span> outcomes, <span class="process-math">\(F\)</span> has <span class="process-math">\(2^N\)</span> events.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Axiomatic-View-of-Probability-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="subsec-Axiomatic-View-of-Probability-5">
-<em class="alert">Probability Measure <span class="process-math">\(P\)</span></em>: Assigns a number <span class="process-math">\(P(E)\)</span> to each event <span class="process-math">\(E \in F\text{,}\)</span> representing its likelihood. For example, for a fair die, <span class="process-math">\(P(\{1\}) = 1/6\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Axiomatic-View-of-Probability-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<em class="alert">Probability Measure <span class="process-math">\(P\)</span></em>: Assigns a number <span class="process-math">\(P(E)\)</span> to each event <span class="process-math">\(E \in F\text{,}\)</span> representing its likelihood. For example, for a fair die, <span class="process-math">\(P(\{1\}) = 1/6\text{.}\)</span> You only need <span class="process-math">\(P\)</span> for elementary events, which are the elements of <span class="process-math">\(\Omega\text{,}\)</span> each taken as one event since you can use the Aditivity law below to get probability of any event in the entire event space <span class="process-math">\(F\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Axiomatic-View-of-Probability-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="subsec-Axiomatic-View-of-Probability-6">
 <div class="para">The probability space is the triplet <span class="process-math">\((\Omega, F, P)\text{.}\)</span> Kolmogorov’s axioms are:</div>
@@ -355,7 +355,7 @@ print(f"P(E1): {p_e1:.3f}, P(E2): {p_e2:.3f}, P(E1 ∩ E2): {p_inter:.3f}, P(E1 
 <div class="autopermalink" data-description="Subsection 1.4.1: Axiomatic View of Probability"><a href="#subsec-Axiomatic-View-of-Probability" title="Copy heading and permalink for Subsection 1.4.1: Axiomatic View of Probability" aria-label="Copy heading and permalink for Subsection 1.4.1: Axiomatic View of Probability">🔗</a></div></section><section class="subsection" id="subsec-sum-product-rules"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.4.2</span><span class="space"> </span><span class="title">Sum and Product Rules for Probability</span>
 </h3>
-<div class="para" id="subsec-sum-product-rules-2">The sum and product rules are foundational for computing probabilities of combined events, essential for machine learning tasks like feature engineering and Bayesian inference.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-sum-product-rules-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-sum-product-rules-2">The sum and product rules are two cornerstones of probability theory. They allow us to compute probabilities of unions and intersections of events, which are essential in many machine learning applications, from estimating marginal distributions to building classifiers.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-sum-product-rules-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="subsec-sum-product-rules-3">
 <div class="para">
@@ -365,10 +365,11 @@ print(f"P(E1): {p_e1:.3f}, P(E2): {p_e2:.3f}, P(E1 ∩ E2): {p_inter:.3f}, P(E1 
 P(A \cup B) = P(A) + P(B) - P(A \cap B).\tag{1.4.7}
 \end{equation}
 </div>
-<div class="para">This accounts for overlapping events to avoid double-counting. In machine learning, the sum rule is used to compute marginal probabilities from joint distributions.</div>
+<div class="para">The subtraction of <span class="process-math">\(P(A \cap B)\)</span> avoids double-counting the overlap between the two events. This can be clearly understood using a Venn diagram.</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec-sum-product-rules-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="subsec-sum-product-rules-4">
+<figure class="figure figure-like" id="fig-venn-sum-rule"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/sum-rule-venn.png" class="contained" alt="Venn diagram showing the sum rule for two overlapping events."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.4.2<span class="period">.</span></span><span class="space"> </span>Illustration of the sum rule. The probability of <span class="process-math">\(A \cup B\)</span> is the sum of the shaded areas of <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{,}\)</span> minus the overlapping region <span class="process-math">\(A \cap B\)</span> that would otherwise be counted twice.<div class="autopermalink" data-description="Figure 1.4.2"><a href="#fig-venn-sum-rule" title="Copy heading and permalink for Figure 1.4.2" aria-label="Copy heading and permalink for Figure 1.4.2">🔗</a></div></figcaption></figure><div class="para logical" id="subsec-sum-product-rules-5">
 <div class="para">
 <em class="alert">Product Rule</em>: The joint probability of two events <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> is:</div>
 <div class="displaymath process-math" id="eqn-product-rule">
@@ -376,91 +377,116 @@ P(A \cup B) = P(A) + P(B) - P(A \cap B).\tag{1.4.7}
 P(A \cap B) = P(A|B)P(B),\tag{1.4.8}
 \end{equation}
 </div>
-<div class="para">where <span class="process-math">\(P(A|B)\)</span> is the conditional probability of <span class="process-math">\(A\)</span> given <span class="process-math">\(B\text{.}\)</span> This rule is key for factoring joint probabilities in models like Naive Bayes.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-sum-product-rules-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">where <span class="process-math">\(P(A|B)\)</span> is the conditional probability of <span class="process-math">\(A\)</span> given <span class="process-math">\(B\text{.}\)</span> This factorization is the basis for probabilistic models such as Naive Bayes.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-sum-product-rules-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-sum-product-rules-5">Example: For a fair die, let <span class="process-math">\(A = \{1,2,3\}\)</span> (numbers ≤ 3) and <span class="process-math">\(B = \{3,4,5\}\text{.}\)</span> The sum rule gives <span class="process-math">\(P(A \cup B) = P(A) + P(B) - P(A \cap B) = 3/6 + 3/6 - 1/6 = 5/6\text{,}\)</span> as <span class="process-math">\(A \cap B = \{3\}\text{.}\)</span> For the product rule, consider the student dataset from <a href="sec-data-types-for-machine-learning.html" class="internal" title="Section 1.3: Data Types for Machine Learning">Section 1.3</a>: the probability of passing and studying &gt;20 hours is <span class="process-math">\(P(\text{Pass} \cap \text{High Study}) = P(\text{Pass} | \text{High Study})P(\text{High Study})\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-sum-product-rules-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para logical" id="subsec-sum-product-rules-6">
+<div class="para">Example (Student Study Data): Suppose we record whether students studied more than 20 hours (<span class="process-math">\(High Study\)</span>) and whether they passed an exam (<span class="process-math">\(Pass\)</span>). Using the dataset below, we can estimate probabilities empirically:</div>
+<ul class="disc" id="subsec-sum-product-rules-6-3">
+<li id="subsec-sum-product-rules-6-3-1">
+<div class="para" id="p-derived-subsec-sum-product-rules-6-3-1">
+<span class="process-math">\(P(\text{Pass})\text{:}\)</span> overall fraction of students who passed,</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-sum-product-rules-6-3-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-sum-product-rules-6-3-2">
+<div class="para" id="p-derived-subsec-sum-product-rules-6-3-2">
+<span class="process-math">\(P(\text{High Study})\text{:}\)</span> fraction who studied more than 20 hours,</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-sum-product-rules-6-3-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-sum-product-rules-6-3-3">
+<div class="para" id="p-derived-subsec-sum-product-rules-6-3-3">
+<span class="process-math">\(P(\text{Pass} \cap \text{High Study})\text{:}\)</span> fraction who both passed and studied more than 20 hours.</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-sum-product-rules-6-3-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">The sum rule gives <span class="process-math">\(P(\text{Pass} \cup \text{High Study}) = P(\text{Pass}) + P(\text{High Study}) - P(\text{Pass} \cap \text{High Study})\text{.}\)</span> The product rule verifies that <span class="process-math">\(P(\text{Pass} \cap \text{High Study}) = P(\text{Pass}|\text{High Study})P(\text{High Study})\text{.}\)</span>
 </div>
-<div class="code-box"><pre class="program clipboardable line-numbers"><code class="language-py"># --- SUM AND PRODUCT RULES ---
-import pandas as pd
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-sum-product-rules-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="code-box"><pre class="program clipboardable line-numbers"><code class="language-py">import pandas as pd
 import numpy as np
-import seaborn as sns
 import matplotlib.pyplot as plt
+import seaborn as sns
 
-# Student data
 np.random.seed(42)
 data = pd.DataFrame({
-    'Hours_Studied': np.random.normal(20, 5, 100).clip(0, 40),
-    'Passed': np.random.binomial(1, 0.7, 100)
+    "Hours_Studied": np.random.normal(20, 5, 200).clip(0, 40),
+    "Passed": np.random.binomial(1, 0.7, 200)
 })
-data['High_Study'] = data['Hours_Studied'] &gt; 20
+data["High_Study"] = data["Hours_Studied"] &gt; 20
 
-# Compute probabilities
-p_pass = np.mean(data['Passed'])
-p_high_study = np.mean(data['High_Study'])
-p_pass_and_high = np.mean(data['Passed'] \amp; data['High_Study'])
-p_pass_or_high = p_pass + p_high_study - p_pass_and_high  # Sum rule
-p_pass_given_high = p_pass_and_high / p_high_study  # For product rule
+# Probabilities
+p_pass = data["Passed"].mean()
+p_high = data["High_Study"].mean()
+p_both = ((data["Passed"] == 1) \amp; (data["High_Study"] == True)).mean()
+p_union = p_pass + p_high - p_both
+p_conditional = p_both / p_high
 
-print(f"P(Pass): {p_pass:.3f}, P(High Study): {p_high_study:.3f}")
-print(f"P(Pass ∩ High Study): {p_pass_and_high:.3f}")
-print(f"P(Pass ∪ High Study): {p_pass_or_high:.3f}")
-print(f"Product Rule: P(Pass ∩ High Study) = P(Pass | High Study) * P(High Study) = {p_pass_given_high:.3f} * {p_high_study:.3f} = {p_pass_given_high * p_high_study:.3f}")
+print(f"P(Pass) = {p_pass:.3f}")
+print(f"P(High Study) = {p_high:.3f}")
+print(f"P(Pass ∩ High Study) = {p_both:.3f}")
+print(f"P(Pass ∪ High Study) = {p_union:.3f}")
+print(f"P(Pass|High Study) * P(High Study) = {p_conditional:.3f} * {p_high:.3f} = {p_conditional * p_high:.3f}")
 
-# Heatmap of joint probabilities
-joint_table = pd.crosstab(data['Passed'], data['High_Study'], normalize='all')
-sns.heatmap(joint_table, annot=True, cmap='Blues', fmt='.3f')
-plt.xlabel('High Study Hours (&gt;20)')
-plt.ylabel('Passed')
-plt.title('Joint Probability of Pass and High Study Hours')
-plt.savefig('joint-probability-heatmap.png', dpi=300)
+# Visualize joint distribution
+joint_table = pd.crosstab(data["Passed"], data["High_Study"], normalize="all")
+sns.heatmap(joint_table, annot=True, cmap="Blues", fmt=".3f")
+plt.xlabel("High Study Hours (&gt;20)")
+plt.ylabel("Pass (0=No, 1=Yes)")
+plt.title("Joint Probability of Pass and High Study Hours")
+plt.savefig("joint-probability-heatmap.png", dpi=300)
 plt.show()
-# --- END CODE ---
 </code></pre></div>
 <figure class="figure figure-like" id="fig-joint-probability-heatmap"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/joint-probability-heatmap.png" class="contained" alt="Heatmap of joint probabilities for pass and study hours."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.4.2<span class="period">.</span></span><span class="space"> </span>Heatmap displaying the joint probability distribution of passing an exam and studying more than 20 hours for 100 students, based on synthetic data (Hours_Studied: normal, mean 20, std 5; Passed: Bernoulli, p=0.7). Each cell shows the probability <span class="process-math">\(P(\text{Pass}, \text{High Study})\text{,}\)</span> with darker shades indicating higher probabilities. Marginal probabilities <span class="process-math">\(P(\text{Pass})\)</span> and <span class="process-math">\(P(\text{High Study})\)</span> are derived by summing rows or columns, illustrating the sum rule. The product rule is verified as <span class="process-math">\(P(\text{Pass} \cap \text{High Study}) = P(\text{Pass} | \text{High Study})P(\text{High Study})\text{.}\)</span> This visualization is relevant to machine learning for estimating joint feature probabilities in classification models.<div class="autopermalink" data-description="Figure 1.4.2"><a href="#fig-joint-probability-heatmap" title="Copy heading and permalink for Figure 1.4.2" aria-label="Copy heading and permalink for Figure 1.4.2">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Subsection 1.4.2: Sum and Product Rules for Probability"><a href="#subsec-sum-product-rules" title="Copy heading and permalink for Subsection 1.4.2: Sum and Product Rules for Probability" aria-label="Copy heading and permalink for Subsection 1.4.2: Sum and Product Rules for Probability">🔗</a></div></section><section class="subsection" id="subsec-conditional-probability-independence"><h3 class="heading hide-type">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.4.3<span class="period">.</span></span><span class="space"> </span>Joint probability table of passing and high study hours. Each cell represents <span class="process-math">\(P(\text{Pass}, \text{High Study})\text{.}\)</span> Row and column sums recover marginals (<span class="process-math">\(P(\text{Pass})\)</span> and <span class="process-math">\(P(\text{High Study})\)</span>), illustrating the sum rule. The product rule is verified by comparing the joint probability with <span class="process-math">\(P(\text{Pass}|\text{High Study})P(\text{High Study})\text{.}\)</span><div class="autopermalink" data-description="Figure 1.4.3"><a href="#fig-joint-probability-heatmap" title="Copy heading and permalink for Figure 1.4.3" aria-label="Copy heading and permalink for Figure 1.4.3">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Subsection 1.4.2: Sum and Product Rules for Probability"><a href="#subsec-sum-product-rules" title="Copy heading and permalink for Subsection 1.4.2: Sum and Product Rules for Probability" aria-label="Copy heading and permalink for Subsection 1.4.2: Sum and Product Rules for Probability">🔗</a></div></section><section class="subsection" id="subsec-conditional-probability-independence"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.4.3</span><span class="space"> </span><span class="title">Conditional Probability and Independence</span>
 </h3>
-<div class="para" id="subsec-conditional-probability-independence-2">
-<em class="alert">Conditional Probability</em>: The probability of an event <span class="process-math">\(A\)</span> given that <span class="process-math">\(B\)</span> has occurred, denoted <span class="process-math">\(P(A|B) = \frac{P(A \cap B)}{P(B)}\text{,}\)</span> where <span class="process-math">\(P(B) &gt; 0\text{.}\)</span> For example, the probability a student passes given they studied over 20 hours.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-conditional-probability-independence-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para logical" id="subsec-conditional-probability-independence-2">
+<div class="para">
+<em class="alert">Conditional Probability</em>: The probability of an event <span class="process-math">\(A\)</span> given that event <span class="process-math">\(B\)</span> has occurred is written as</div>
+<div class="displaymath process-math" id="eqn-conditional-prob-defn">
+\begin{equation}
+P(A \mid B) = \frac{P(A \cap B)}{P(B)}, \text{ provided that } P(B) \gt; 0\text{.}\tag{1.4.9}
+\end{equation}
 </div>
-<div class="para" id="subsec-conditional-probability-independence-3">
-<em class="alert">Independence</em>: Events <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are independent if <span class="process-math">\(P(A \cap B) = P(A)P(B)\text{,}\)</span> meaning one event doesn’t affect the other.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-conditional-probability-independence-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">Intuitively, this represents <em class="emphasis">updating our belief about <span class="process-math">\(A\)</span></em> once we know that <span class="process-math">\(B\)</span> is true. For instance, the probability that a student passes an exam may be different depending on whether we already know they studied more than 20 hours.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-conditional-probability-independence-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-conditional-probability-independence-4">Example: Using the student dataset from <a href="sec-data-types-for-machine-learning.html" class="internal" title="Section 1.3: Data Types for Machine Learning">Section 1.3</a>, estimate the probability of passing given high study hours.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-conditional-probability-independence-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<details id="subsec-conditional-probability-independence-3" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.4</span><span class="period">.</span><span class="space"> </span><span class="title">Probability of King if the Card is known to be Spade.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="subsec-conditional-probability-independence-3-2">Imagine we have a standard deck of 52 playing cards. Event <span class="process-math">\(A\)</span> = "the card is a King". Event <span class="process-math">\(B\)</span> = "the card is a Spade".<div class="autopermalink" data-description="Paragraph"><a href="#subsec-conditional-probability-independence-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="code-box"><pre class="program clipboardable line-numbers"><code class="language-py"># --- CONDITIONAL PROBABILITY ---
-import pandas as pd
-import numpy as np
-
-# Student data
-np.random.seed(42)
-data = pd.DataFrame({
-    'Hours_Studied': np.random.normal(20, 5, 100).clip(0, 40),
-    'Passed': np.random.binomial(1, 0.7, 100)
-})
-data['High_Study'] = data['Hours_Studied'] &gt; 20
-
-# Conditional probability
-p_pass = np.mean(data['Passed'])
-p_high_study = np.mean(data['High_Study'])
-p_pass_and_high = np.mean(data['Passed'] \amp; data['High_Study'])
-p_pass_given_high = p_pass_and_high / p_high_study
-print(f"P(Pass | High Study): {p_pass_given_high:.3f}")
-
-# Bar plot
-counts = data.groupby(['High_Study', 'Passed']).size().unstack()
-counts.plot(kind='bar', stacked=True)
-plt.xlabel('High Study Hours (&gt;20)')
-plt.ylabel('Count')
-plt.title('Pass/Fail by Study Hours')
-plt.legend(['Fail', 'Pass'])
-plt.savefig('./images/essential-probability-and-statistics/conditional-bar.png', dpi=300)
-plt.show()
-# --- END CODE ---
-</code></pre></div>
-<figure class="figure figure-like" id="fig-conditional-bar"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/conditional-bar.png" class="contained" alt="Bar plot of conditional probability."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.4.3<span class="period">.</span></span><span class="space"> </span>Stacked bar plot showing the distribution of pass/fail outcomes for 100 students, based on whether they studied more than 20 hours (High_Study = True) or not. The dataset is synthetic, with Hours_Studied drawn from a normal distribution (mean 20, std 5) and Passed from a Bernoulli distribution (p=0.7). The plot illustrates conditional probability <span class="process-math">\(P(\text{Pass} | \text{High Study})\text{,}\)</span> showing a higher proportion of passes among students with high study hours. This visualization is relevant to machine learning for feature analysis in classification tasks, such as predicting student success based on study habits.<div class="autopermalink" data-description="Figure 1.4.3"><a href="#fig-conditional-bar" title="Copy heading and permalink for Figure 1.4.3" aria-label="Copy heading and permalink for Figure 1.4.3">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Subsection 1.4.3: Conditional Probability and Independence"><a href="#subsec-conditional-probability-independence" title="Copy heading and permalink for Subsection 1.4.3: Conditional Probability and Independence" aria-label="Copy heading and permalink for Subsection 1.4.3: Conditional Probability and Independence">🔗</a></div></section><section class="subsection" id="subsec-probability-distributions"><h3 class="heading hide-type">
+<div class="para" id="subsec-conditional-probability-independence-3-3">The unconditional probability of drawing a King is <span class="process-math">\(P(A) = 4/52 = 1/13\text{.}\)</span> But suppose we are told that the card drawn is a Spade. Now, the sample space is only 13 Spade cards. Out of these, exactly one is a King (the King of Spades).<div class="autopermalink" data-description="Paragraph"><a href="#subsec-conditional-probability-independence-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-conditional-probability-independence-3-4">Thus the conditional probability is <span class="process-math">\(P(A \mid B) = \tfrac{1}{13}\text{,}\)</span> which differs from <span class="process-math">\(P(A)\text{.}\)</span> This illustrates how new information (that the card is a Spade) changes the probability of <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-conditional-probability-independence-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 1.4.4: Probability of King if the Card is known to be Spade"><a href="#subsec-conditional-probability-independence-3" title="Copy heading and permalink for Example 1.4.4: Probability of King if the Card is known to be Spade" aria-label="Copy heading and permalink for Example 1.4.4: Probability of King if the Card is known to be Spade">🔗</a></div></article></details><div class="para logical" id="subsec-conditional-probability-independence-4">
+<div class="para">
+<em class="alert">Independence</em>: Two events <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are independent if the occurrence of one does not affect the probability of the other. Formally, the eventa <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are independent if</div>
+<div class="displaymath process-math" id="eqn-independent-events-def">
+\begin{equation}
+P(A \cap B) = P(A)P(B).\quad \Leftrightarrow\quad  A \text{ and } B \text{ independent}.\text{.}\tag{1.4.10}
+\end{equation}
+</div>
+<div class="para">Equivalently,</div>
+<div class="displaymath process-math" id="eqn-independent-events-def-2">
+\begin{equation}
+P(A \mid B) = P(A)\text{ when } P(B) &gt; 0.\quad \Leftrightarrow\quad  A \text{ and } B \text{ independent}.\tag{1.4.11}
+\end{equation}
+</div>
+<div class="para">Independence means that knowing whether <span class="process-math">\(B\)</span> occurred does not provide any new information about <span class="process-math">\(A\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-conditional-probability-independence-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="subsec-conditional-probability-independence-5" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.5</span><span class="period">.</span><span class="space"> </span><span class="title">Tosses of a fair coin are independent.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="subsec-conditional-probability-independence-5-2">Suppose we toss a fair coin twice. Let event <span class="process-math">\(A\)</span> be "the first toss is Heads" and event <span class="process-math">\(B\)</span> be "the second toss is Heads." The sample space is <span class="process-math">\(\{HH, HT, TH, TT\}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-conditional-probability-independence-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-conditional-probability-independence-5-3">We have <span class="process-math">\(P(A) = 1/2\text{,}\)</span> <span class="process-math">\(P(B) = 1/2\text{,}\)</span> and <span class="process-math">\(P(A \cap B) = 1/4\text{.}\)</span> Therefore, <span class="process-math">\(P(A \cap B) = P(A)P(B)\text{,}\)</span> which means the events are independent.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-conditional-probability-independence-5-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-conditional-probability-independence-5-4">Now let event <span class="process-math">\(C\)</span> be "at least one toss is Heads." Then <span class="process-math">\(P(C) = 3/4\text{,}\)</span> <span class="process-math">\(P(A \cap C) = 1/2\text{,}\)</span> and <span class="process-math">\(P(A \mid C) = (1/2) / (3/4) = 2/3\text{.}\)</span> But <span class="process-math">\(P(A) = 1/2\text{,}\)</span> so <span class="process-math">\(P(A \mid C) \neq P(A)\text{.}\)</span> Thus, <span class="process-math">\(A\)</span> and <span class="process-math">\(C\)</span> are not independent.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-conditional-probability-independence-5-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 1.4.5: Tosses of a fair coin are independent"><a href="#subsec-conditional-probability-independence-5" title="Copy heading and permalink for Example 1.4.5: Tosses of a fair coin are independent" aria-label="Copy heading and permalink for Example 1.4.5: Tosses of a fair coin are independent">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 1.4.3: Conditional Probability and Independence"><a href="#subsec-conditional-probability-independence" title="Copy heading and permalink for Subsection 1.4.3: Conditional Probability and Independence" aria-label="Copy heading and permalink for Subsection 1.4.3: Conditional Probability and Independence">🔗</a></div></section><section class="subsection" id="subsec-probability-distributions"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.4.4</span><span class="space"> </span><span class="title">Probability Distributions</span>
 </h3>
 <div class="para" id="subsec-probability-distributions-2">Probability distributions describe how probabilities are distributed over outcomes. In machine learning, distributions model data or predictions.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-probability-distributions-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -490,7 +516,7 @@ plt.show()
 # --- END CODE ---
 </code></pre></div>
 <figure class="figure figure-like" id="fig-binomial-dist"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/binomial-dist.png" class="contained" alt="Bar plot of binomial distribution."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.4.4<span class="period">.</span></span><span class="space"> </span>Bar plot of the binomial probability mass function (PMF) for the number of students passing an exam out of 10, with a pass probability <span class="process-math">\(p=0.7\text{.}\)</span> Each bar represents the probability of <span class="process-math">\(k\)</span> students passing, calculated as <span class="process-math">\(P(k) = \binom{n}{k} p^k (1-p)^{n-k}\text{.}\)</span> The peak around 7 passes reflects the high likelihood of most students passing given <span class="process-math">\(p=0.7\text{.}\)</span> This distribution is critical in machine learning for modeling binary outcomes, such as predicting the number of successful predictions in a classification task.<div class="autopermalink" data-description="Figure 1.4.4"><a href="#fig-binomial-dist" title="Copy heading and permalink for Figure 1.4.4" aria-label="Copy heading and permalink for Figure 1.4.4">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Subsection 1.4.4: Probability Distributions"><a href="#subsec-probability-distributions" title="Copy heading and permalink for Subsection 1.4.4: Probability Distributions" aria-label="Copy heading and permalink for Subsection 1.4.4: Probability Distributions">🔗</a></div></section><section class="subsection" id="subsec-three-types-of-probabilities"><h3 class="heading hide-type">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.4.6<span class="period">.</span></span><span class="space"> </span>Bar plot of the binomial probability mass function (PMF) for the number of students passing an exam out of 10, with a pass probability <span class="process-math">\(p=0.7\text{.}\)</span> Each bar represents the probability of <span class="process-math">\(k\)</span> students passing, calculated as <span class="process-math">\(P(k) = \binom{n}{k} p^k (1-p)^{n-k}\text{.}\)</span> The peak around 7 passes reflects the high likelihood of most students passing given <span class="process-math">\(p=0.7\text{.}\)</span> This distribution is critical in machine learning for modeling binary outcomes, such as predicting the number of successful predictions in a classification task.<div class="autopermalink" data-description="Figure 1.4.6"><a href="#fig-binomial-dist" title="Copy heading and permalink for Figure 1.4.6" aria-label="Copy heading and permalink for Figure 1.4.6">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Subsection 1.4.4: Probability Distributions"><a href="#subsec-probability-distributions" title="Copy heading and permalink for Subsection 1.4.4: Probability Distributions" aria-label="Copy heading and permalink for Subsection 1.4.4: Probability Distributions">🔗</a></div></section><section class="subsection" id="subsec-three-types-of-probabilities"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.4.5</span><span class="space"> </span><span class="title">Three Types of Probabilities</span>
 </h3>
 <div class="para" id="subsec-three-types-of-probabilities-2">Probability can be approached theoretically, empirically (frequentist), or subjectively (Bayesian).<div class="autopermalink" data-description="Paragraph"><a href="#subsec-three-types-of-probabilities-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -508,7 +534,7 @@ plt.show()
 <em class="alert">Frequentist Probability</em>: Estimates probability from trial frequencies:</div>
 <div class="displaymath process-math" id="eqn-frequentist-probability-definition">
 \begin{equation}
-p = \lim_{N \to \infty} \frac{n}{N}\text{.}\tag{1.4.9}
+p = \lim_{N \to \infty} \frac{n}{N}\text{.}\tag{1.4.12}
 \end{equation}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec-three-types-of-probabilities-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -540,7 +566,7 @@ plt.show()
 # --- END CODE ---
 </code></pre></div>
 <figure class="figure figure-like" id="fig-frequentist-convergence"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/frequentist-convergence.png" class="contained" alt="Convergence plot for frequentist estimates."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.4.5<span class="period">.</span></span><span class="space"> </span>Plot showing the convergence of frequentist probability estimates for rolling a 1 on a fair die (<span class="process-math">\(P(1)=1/6 \approx 0.167\)</span>) and a biased die (<span class="process-math">\(P(1)=0.2\)</span>) over 1,000 trials. The fair die’s estimate (blue) fluctuates but approaches 1/6 (red dashed line), while the biased die’s estimate (orange) converges to 0.2, reflecting the higher probability of rolling a 1. This visualization demonstrates how empirical frequencies approximate true probabilities in large samples, a technique used in machine learning to estimate probabilities from training data.<div class="autopermalink" data-description="Figure 1.4.5"><a href="#fig-frequentist-convergence" title="Copy heading and permalink for Figure 1.4.5" aria-label="Copy heading and permalink for Figure 1.4.5">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Item 2"><a href="#subsec-three-types-of-probabilities-3-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.4.7<span class="period">.</span></span><span class="space"> </span>Plot showing the convergence of frequentist probability estimates for rolling a 1 on a fair die (<span class="process-math">\(P(1)=1/6 \approx 0.167\)</span>) and a biased die (<span class="process-math">\(P(1)=0.2\)</span>) over 1,000 trials. The fair die’s estimate (blue) fluctuates but approaches 1/6 (red dashed line), while the biased die’s estimate (orange) converges to 0.2, reflecting the higher probability of rolling a 1. This visualization demonstrates how empirical frequencies approximate true probabilities in large samples, a technique used in machine learning to estimate probabilities from training data.<div class="autopermalink" data-description="Figure 1.4.7"><a href="#fig-frequentist-convergence" title="Copy heading and permalink for Figure 1.4.7" aria-label="Copy heading and permalink for Figure 1.4.7">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Item 2"><a href="#subsec-three-types-of-probabilities-3-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
 </li>
 <li id="subsec-three-types-of-probabilities-3-3">
 <div class="para" id="subsec-three-types-of-probabilities-3-3-1">
@@ -581,7 +607,7 @@ plt.show()
 # --- END CODE ---
 </code></pre></div>
 <figure class="figure figure-like" id="fig-bayesian-update"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/bayesian-update.png" class="contained" alt="Bayesian update plot."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.4.6<span class="period">.</span></span><span class="space"> </span>Plot showing the Bayesian update of the probability of a student passing an exam, starting with a uniform Beta(1,1) prior (blue). After observing one pass (orange) and 10 trials with 3 passes (green, posterior Beta(4,8)), the distribution shifts, with the posterior mean at 4/12 ≈ 0.333. The frequentist estimate (red dashed line, 3/10 = 0.3) is shown for comparison. This visualization illustrates how Bayesian methods incorporate prior beliefs and data to refine probability estimates, a technique used in machine learning for probabilistic models and uncertainty quantification.<div class="autopermalink" data-description="Figure 1.4.6"><a href="#fig-bayesian-update" title="Copy heading and permalink for Figure 1.4.6" aria-label="Copy heading and permalink for Figure 1.4.6">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Item 3"><a href="#subsec-three-types-of-probabilities-3-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.4.8<span class="period">.</span></span><span class="space"> </span>Plot showing the Bayesian update of the probability of a student passing an exam, starting with a uniform Beta(1,1) prior (blue). After observing one pass (orange) and 10 trials with 3 passes (green, posterior Beta(4,8)), the distribution shifts, with the posterior mean at 4/12 ≈ 0.333. The frequentist estimate (red dashed line, 3/10 = 0.3) is shown for comparison. This visualization illustrates how Bayesian methods incorporate prior beliefs and data to refine probability estimates, a technique used in machine learning for probabilistic models and uncertainty quantification.<div class="autopermalink" data-description="Figure 1.4.8"><a href="#fig-bayesian-update" title="Copy heading and permalink for Figure 1.4.8" aria-label="Copy heading and permalink for Figure 1.4.8">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Item 3"><a href="#subsec-three-types-of-probabilities-3-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
 </li>
 </ol>
 <div class="autopermalink" data-description="Subsection 1.4.5: Three Types of Probabilities"><a href="#subsec-three-types-of-probabilities" title="Copy heading and permalink for Subsection 1.4.5: Three Types of Probabilities" aria-label="Copy heading and permalink for Subsection 1.4.5: Three Types of Probabilities">🔗</a></div></section><section class="conclusion" id="sec-Basic-Probability-8"><div class="para" id="sec-Basic-Probability-8-1">Probability provides the foundation for modeling uncertainty in machine learning. Axioms define the rules, while theoretical, frequentist, and Bayesian approaches offer different perspectives. Conditional probability and distributions like binomial are key for models like Naive Bayes. Practice with datasets from <a href="sec-data-types-for-machine-learning.html" class="internal" title="Section 1.3: Data Types for Machine Learning">Section 1.3</a> and libraries from <a href="sec-useful-descriptive-statistics-tools.html" class="internal" title="Section 1.2: Useful Tools for Descriptive Statistics and Exploratory Data Analysis">Section 1.2</a> to apply these concepts. Explore <a class="external" href="https://www.probabilitycourse.com/" target="_blank">Probability Course</a><details class="ptx-footnote" aria-live="polite" id="sec-Basic-Probability-8-1-4"><summary class="ptx-footnote__number" title="Footnote 1.4.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="sec-Basic-Probability-8-1-4"><code class="code-inline tex2jax_ignore">probabilitycourse.com</code></div></details> for further learning.<div class="autopermalink" data-description="Paragraph"><a href="#sec-Basic-Probability-8-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>

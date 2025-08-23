@@ -27,7 +27,7 @@
           </me>
         </p>
         <p>
-          The mean is sensitive to outliers. For income data <m>\{20000, 30000, 35000, 40000, 1000000\}</m>, the mean is <m>225000</m>, skewed by the outlier, while the median better represents the typical value.
+          However, mean of a dataset can be misleading if you have a few ouliers since mean is very senisitve to outliers. For instance, say you have a dataset of income, which is <m>\{20000</m>, <m>30000</m>, <m>35000</m>, <m>40000</m>, <m>1000000\}</m>. Clearly, most of the income is in the <m>30\text{K}</m> area, but the mean of this dataset is <m>225000</m>, skewed by the outlier. In this case, the median would better represents the typical value in the dataset.
         </p>
       </li>
       <li>
