@@ -32,10 +32,10 @@
       </li>
       <li>
         <p>
-          <alert>Median</alert>: The median is the middle value in a sorted dataset, where 50% of the data lies below and above. For odd <m>N</m>, it’s the middle value; for even <m>N</m>, it’s the average of the two middle values.
+          <alert>Median</alert>: The median is the middle value in a sorted dataset, where <m>50\%</m> of the data lies below and above. For odd <m>N</m>, it's the middle value; for even <m>N</m>, it's the average of the two middle values.
         </p>
         <p>
-          Example: For <m>\{85, 90, 95\}</m> (sorted), median = 90. For <m>\{85, 90, 91, 95\}</m>, median = (90 + 91)/2 = 90.5. For incomes <m>\{20000, 30000, 35000, 40000, 1000000\}</m>, median = 35000, robust to the outlier.
+          Example: For <m>\{85, 90, 95\}</m> (sorted), median = <m>90</m>. For <m>\{85, 90, 91, 95\}</m>, median <m> = (90 + 91)/2 = 90.5</m>. For incomes <m>\{20000</m>, <m>30000</m>, <m>35000</m>, <m>40000</m>, <m>1000000\}</m>, median = <m>35000</m>, robust to the outlier.
         </p>
       </li>
       <li>
@@ -43,12 +43,12 @@
           <alert>Mode</alert>: The mode is the most frequent value. A dataset may have no mode, one mode (unimodal), or multiple modes (bimodal or multimodal).
         </p>
         <p>
-          Example: <m>\{85, 90, 90, 95, 100\}</m> has mode 90. <m>\{85, 90, 90, 95, 95\}</m> is bimodal (90, 95). <m>\{85, 90, 95\}</m> has no mode.
+          Example: <m>\{85, 90, 90, 95, 100\}</m> has mode 90. <m>\{85, 90, 90, 95, 95\}</m> is bimodal <m>(90, 95)</m>. <m>\{85, 90, 95\}</m> has no mode.
         </p>
       </li>
     </ol>
     <p>
-      <alert>Comparison</alert>: Consider incomes <m>\{20000, 30000, 35000, 40000, 1000000\}</m>. Mean = 225000, median = 35000, mode = none. The median best reflects the typical income due to the outlier. See <xref ref="fig-central-tendency"/> for a visual comparison.
+      <alert>Comparison</alert>: Consider incomes <m>\{20000</m>, <m>30000</m>, <m>35000</m>, <m>40000</m>, <m>1000000\}</m>. Mean = <m>225000</m>, median = <m>35000</m>, mode = none. The median best reflects the typical income due to the outlier. See <xref ref="fig-central-tendency"/> for a visual comparison.
     </p>
     <figure xml:id="fig-central-tendency">
       <caption>Density plot of incomes with mean, median, and no mode.</caption>
@@ -56,32 +56,35 @@
         <shortdescription>Density plot showing central tendency measures.</shortdescription>
       </image>
     </figure>
+    <!--
     <program language="python" line-numbers="yes">
       <title>Code for density plot of central tendency measures (new)</title>
       <code>
-import numpy as np
-import matplotlib.pyplot as plt
-from scipy.stats import gaussian_kde
+      import numpy as np
+      import matplotlib.pyplot as plt
+      from scipy.stats import gaussian_kde
 
-data = [20000, 30000, 35000, 40000, 1000000]
-kde = gaussian_kde(data, bw_method=0.5)
-x = np.linspace(0, 1100000, 1000)
-y = kde(x)
+      data = [20000, 30000, 35000, 40000, 1000000]
+      kde = gaussian_kde(data, bw_method=0.5)
+      x = np.linspace(0, 1100000, 1000)
+      y = kde(x)
 
-plt.figure(figsize=(8, 5))
-plt.plot(x, y, label='Density')
-plt.axvline(np.mean(data), color='red', linestyle='--', label=f'Mean = {np.mean(data):.0f}')
-plt.axvline(np.median(data), color='green', linestyle='-', label=f'Median = {np.median(data):.0f}')
-plt.xlabel('Income')
-plt.ylabel('Density')
-plt.title('Central Tendency Measures for Income Data')
-plt.legend()
-plt.grid(True, alpha=0.3)
-plt.savefig('central-tendency.png')
-plt.show()
+      plt.figure(figsize=(8, 5))
+      plt.plot(x, y, label='Density')
+      plt.axvline(np.mean(data), color='red', linestyle='-.-', label=f'Mean = {np.mean(data):.0f}')
+      plt.axvline(np.median(data), color='green', linestyle='-', label=f'Median = {np.median(data):.0f}')
+      plt.xlabel('Income')
+      plt.ylabel('Density')
+      plt.title('Central Tendency Measures for Income Data')
+      plt.legend()
+      plt.grid(True, alpha=0.3)
+      plt.savefig('central-tendency.png')
+      plt.show()
 
       </code>
     </program>
+
+  -->
   </subsection>
   <subsection xml:id="subsec-Dispersion">
     <title>Measures of Dispersion</title>
@@ -96,23 +99,36 @@ plt.show()
         <p>
           For a population:
           <men xml:id="eqn-pop-variance-of-N-data-points">
-            \sigma^2 = \frac{1}{N} \sum_{i=1}^{N} (x_i - \mu)^2
+            \sigma^2 = \frac{1}{N} \sum_{i=1}^{N} (x_i - \mu)^2,
           </men>
-          For a sample (unbiased estimate):
+          where <m>\mu</m> is the population (true) mean. The data collected from a polulation is called sample. From the sample we can only calculate as estimate of the corresponding population quantities. We define estimate of sample variance by keeping the same divisor <m>N</m> as in the true variance definitionor, define with a divisor <m>N-1</m>, which is called an unbiased estimate of variance.
           <men xml:id="eqn-sample-variance-of-N-data-points">
             s^2 = \frac{1}{N-1} \sum_{i=1}^{N} (x_i - \bar{x})^2
           </men>
           where <m>\bar{x}</m> is the sample mean.
+          <me>
+            \bar{x} = \frac{1}{N} \sum_{i=1}^{N}\, x_i. 
+          </me>
+          
         </p>
         <p>
           Example: For grades <m>\{85, 90, 90, 95, 100\}</m>, <m>\bar{x} = 92</m>. Population variance:
+          <md>
+            <mrow>\sigma^2 \amp= \frac{(85-92)^2 + (90-92)^2 + (90-92)^2 + (95-92)^2 + (100-92)^2}{5} </mrow>
+            <mrow> \amp = \frac{126}{5} = 25.2. </mrow>
+          </md>
+          This will give the <term>standard deviation</term>, <m>\sigma</m>:
           <me>
-            \sigma^2 = \frac{(85-92)^2 + (90-92)^2 + (90-92)^2 + (95-92)^2 + (100-92)^2}{5} = \frac{126}{5} = 25.2
+            \sigma = \sqrt{\sigma^2} = \sqrt{25.2} \approx 5.0        
           </me>
-          <m>\sigma \approx 5.02</m>. Sample variance: <m>s^2 = 126/4 = 31.5</m>, <m>s \approx 5.61</m>.
+          
+          Sample variance, on the other hand, will be: 
+          <me>s^2 = 126/4 = 31.5</me>, 
+          and sample standard deviation
+          <me>s \approx 5.61</me>.
         </p>
         <p>
-          Low variance (e.g., <m>\sigma = 0.04</m>) vs. high variance (e.g., <m>\sigma = 4.00</m>) shows tighter vs. wider spread as illustrated in <xref ref="fig-variance-comparison"/>.
+          <xref ref="fig-variance-comparison"/> illustrated the tighter vs. wider spread for a low variance (e.g., <m>\sigma = 0.04</m>) vs. high variance (e.g., <m>\sigma = 4.00</m>).
         </p>
         <figure xml:id="fig-variance-comparison">
           <caption>Comparing low and high variance datasets.</caption>
@@ -120,41 +136,47 @@ plt.show()
             <shortdescription>Comparison of low and high variance data.</shortdescription>
           </image>
         </figure>
+        <!--
         <program language="python" line-numbers="yes">
           <title>Code for variance comparison histograms (new)</title>
           <code>
+          import matplotlib.pyplot as plt
+          import numpy as np
+          from scipy.stats import norm
 
-import matplotlib.pyplot as plt
-import numpy as np
-from scipy.stats import norm
+          x = np.linspace(-10, 10, 1000)
+          low_sig, high_sig = 0.2, 2.0
 
-x = np.linspace(-10, 10, 1000)
-low_sig, high_sig = 0.2, 2.0
+          low_var = norm.pdf(x, loc=0, scale=low_sig)  
+          high_var = norm.pdf(x, loc=0, scale=high_sig)
 
-low_var = norm.pdf(x, loc=0, scale=low_sig)  
-high_var = norm.pdf(x, loc=0, scale=high_sig)
+          fig, ax = plt.subplots(1, 1, figsize=(10, 4))
+          ax.plot(x, low_var, 'ob', markersize = 2, label=f"low variance, var = {low_sig**2:.2f}")
+          ax.plot(x, high_var, 'xr', markersize = 2, label=f"high variance, var = {high_sig**2:.2f}")
 
-fig, ax = plt.subplots(1, 1, figsize=(10, 4))
-ax.plot(x, low_var, 'ob', markersize = 2, label=f"low variance, var = {low_sig**2:.2f}")
-ax.plot(x, high_var, 'xr', markersize = 2, label=f"high variance, var = {high_sig**2:.2f}")
+          ax.set_title(f'Variance Comparison')
+          ax.set_xlabel('Grade')
+          ax.set_ylabel('Scaled Frequency')
 
-ax.set_title(f'Variance Comparison')
-ax.set_xlabel('Grade')
-ax.set_ylabel('Scaled Frequency')
-
-plt.tight_layout()
-plt.legend()
-plt.show()
+          plt.tight_layout()
+          plt.legend()
+          plt.show()
 
           </code>
         </program>
+      -->
       </li>
       <li>
         <p>
           <alert>Range and Quartiles</alert>: Range = max - min. Quartiles divide sorted data into four parts: Q1 (25th percentile), Q2 (median, 50th), Q3 (75th). Use linear interpolation: position = <m>(N-1) \cdot p</m>, where <m>p = 0.25, 0.5, 0.75</m>.
         </p>
         <p>
-          Example: For grades <m>\{70, 75, 80, 85, 90, 95, 100\}</m>, <m>N=7</m>. Median (Q2) = 85. Q1 = 75, Q3 = 95. Range = 100 - 70 = 30. IQR = Q3 - Q1 = 20. Outliers: below Q1 - 1.5*IQR = 45 or above Q3 + 1.5*IQR = 125. These grades have no outliers.
+          Example: For grades <m>\{70, 75, 80, 85, 90, 95, 100\}</m>, <m>N=7</m>. Median <m>(\text{Q2}) = 85</m>. <m>\text{Q1} = 75</m>, <m>\text{Q3} = 95</m>. Range <m>= 100 - 70 = 30</m>. <m>\text{IQR} = \text{Q3} - \text{Q1} = 20</m>. Outliers: 
+          <me>
+            \text{Below: }\ \text{Q1} - 1.5\times\text{IQR} = 45; \quad \text{  Above:}\ \text{Q3} + 1.5 \times \text{IQR} = 125.
+          </me>
+          
+          These grades have no outliers.
         </p>
       </li>
     </ol>
@@ -162,10 +184,10 @@ plt.show()
   <subsection xml:id="subsec-Distribution-Shape">
     <title>Distribution Shape</title>
     <p>
-      <alert>Histogram</alert>: Histograms show frequency distributions by grouping data into bins.
+      <alert>Histogram</alert>: Histograms show frequency distributions by grouping data into bins of equal size from min to a bin that includes the max data. So, if you have data from <m>x_\text{min}</m> to <m>x_\text{max}</m> with a bin size <m>b</m>. Then, bins will have <m>x_\text{min} \le x \lt x_\text{min} + b</m>, <m>x_\text{min} + b \le x \lt x_\text{min} + 2b</m>, <m>\cdots</m>, till you have exhausted all data. The last bin may extend beyond the data as in the example below.
     </p>
     <p>
-      Example: For grades <m>\{70, 75, 75, 80, 80, 85, 90, 95, 100\}</m>, with bin size 10 from 70 to 110, see <xref ref="tab-Histogram-Table"/>.
+      Example: For grades <m>\{70, 72, 75, 75, 80,</m> <m>80, 85, 90, 95, 100\}</m>, with bin size <m>10</m> from <m>70</m> to <m>110</m>, see <xref ref="tab-Histogram-Table"/>.
     </p>
     <table xml:id="tab-Histogram-Table">
       <title>Histogram of Grades</title>
@@ -174,7 +196,7 @@ plt.show()
           <cell>Bin</cell> <cell>Range</cell> <cell>Data</cell> <cell>Count</cell> <cell>Frequency</cell>
         </row>
         <row>
-          <cell>1</cell> <cell><m>70 \le x \lt 80</m></cell> <cell><m>\{70, 75, 75\}</m></cell> <cell>3</cell> <cell>0.333</cell>
+          <cell>1</cell> <cell><m>70 \le x \lt 80</m></cell> <cell><m>\{70, 72, 75, 75\}</m></cell> <cell>4</cell> <cell>0.333</cell>
         </row>
         <row>
           <cell>2</cell> <cell><m>80 \le x \lt 90</m></cell> <cell><m>\{80, 80, 85\}</m></cell> <cell>3</cell> <cell>0.333</cell>
@@ -188,7 +210,7 @@ plt.show()
       </tabular>
     </table>
     <p>
-      See <xref ref="fig-descriptive-statistics-histogram"/> for a histogram with mean and median.
+      Many computer libraries have histogram plotting routines. For instance <xref ref="fig-descriptive-statistics-histogram"/> was generated from the Python program listed after it. The histogram has been decorated with the mean and median of the data also.
     </p>
     <figure xml:id="fig-descriptive-statistics-histogram">
       <caption>Histogram of grades with mean and median.</caption>
@@ -197,36 +219,37 @@ plt.show()
       </image>
     </figure>
     <program language="python" line-numbers="yes">
-      <title>Updated histogram with mean and median</title>
+      <title>Example Histogram</title>
       <code>
-import matplotlib.pyplot as plt
-import numpy as np
+      import matplotlib.pyplot as plt
+      import numpy as np
 
-data = [70, 75, 75, 80, 80, 85, 90, 95, 100]
-bin_size = 10
-bins = np.arange(70, 110, bin_size)
-
-plt.figure(figsize=(8, 5))
-plt.hist(data, bins=bins, edgecolor='black', alpha=0.7)
-mean = np.mean(data)
-median = np.median(data)
-plt.axvline(mean, color='red', linestyle='--', label=f'Mean = {mean:.1f}')
-plt.axvline(median, color='green', linestyle='-', label=f'Median = {median:.1f}')
-plt.xlabel('Grade')
-plt.ylabel('Frequency')
-plt.title('Histogram of Student Grades')
-plt.xticks(bins)
-plt.grid(axis='y', alpha=0.3)
-plt.legend()
-plt.savefig('./images/essential-probability-and-statistics/histogram.png')
-plt.show()
+      data = [70, 72, 75, 75, 80, 82, 85, 93, 95, 100]
+      bins = [70, 80, 90, 100, 110]
+      freq_arr, bins_arr = np.histogram(data, bins) # returns frequency
+      width = bins_arr[1:] - bins_arr[:-1]
+      plt.figure(figsize=(8, 5))
+      plt.hist(data, bins=bins, edgecolor='black', alpha=0.7)
+      # this is just plt.bar(bins_arr[:-1], freq_arr, width)
+      mean = np.mean(data)
+      median = np.median(data)
+      plt.axvline(mean, color='red', linestyle='--', label=f'Mean = {mean:.1f}')
+      plt.axvline(median, color='green', linestyle='-', label=f'Median = {median:.1f}')
+      plt.xlabel('Grade')
+      plt.ylabel('Frequency')
+      plt.title('Histogram of Student Grades')
+      plt.xticks(bins)
+      plt.grid(axis='y', alpha=0.3)
+      plt.legend()
+      plt.savefig('histogram.png')
+      plt.show()
       </code>
     </program>
     <p>
-      <alert>Boxplot</alert>: Boxplots show min, Q1, median, Q3, max (whiskers), and outliers (points beyond Q1 - 1.5*IQR or Q3 + 1.5*IQR).
+      <alert>Boxplot</alert>: Boxplots show min, Q1, median, Q3, max (whiskers), and outliers (points beyond Q1 <m>- 1.5\times </m>IQR or Q3 <m>+ 1.5\times</m>IQR).
     </p>
     <p>
-      Example: For grades with an outlier <m>\{70, 75, 80, 85, 90, 95, 100, 150\}</m>, Q1 = 77.5, Q2 = 87.5, Q3 = 97.5, IQR = 20. Outliers: &#x2264;150 is above Q3 + 1.5*IQR = 127.5. See <xref ref="fig-descriptive-statistics-boxplots"/>.
+      Example: For grades with an outlier <m>\{70, 75, 80, 85, 90, 95, 100, 150\}</m>, <m>\text{Q1} = 77.5</m>, <m>\text{Q2} = 87.5</m>, <m>\text{Q3} = 97.5</m>, <m>\text{IQR} = 20</m>. Outliers: &#x2264;<m>150</m> is above <m>\text{Q3} + 1.5*\text{IQR} = 127.5</m>. See <xref ref="fig-descriptive-statistics-boxplots"/>.
     </p>
     <figure xml:id="fig-descriptive-statistics-boxplots">
       <caption>Boxplot of grades with annotated quartiles and outlier.</caption>

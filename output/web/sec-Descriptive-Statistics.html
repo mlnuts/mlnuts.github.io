@@ -283,15 +283,15 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec-Central-Tendency-3-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-Central-Tendency-3-1-3">The mean is sensitive to outliers. For income data <span class="process-math">\(\{20000, 30000, 35000, 40000, 1000000\}\text{,}\)</span> the mean is <span class="process-math">\(225000\text{,}\)</span> skewed by the outlier, while the median better represents the typical value.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Central-Tendency-3-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-Central-Tendency-3-1-3">However, mean of a dataset can be misleading if you have a few ouliers since mean is very senisitve to outliers. For instance, say you have a dataset of income, which is <span class="process-math">\(\{20000\text{,}\)</span> <span class="process-math">\(30000\text{,}\)</span> <span class="process-math">\(35000\text{,}\)</span> <span class="process-math">\(40000\text{,}\)</span> <span class="process-math">\(1000000\}\text{.}\)</span> Clearly, most of the income is in the <span class="process-math">\(30\text{K}\)</span> area, but the mean of this dataset is <span class="process-math">\(225000\text{,}\)</span> skewed by the outlier. In this case, the median would better represents the typical value in the dataset.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Central-Tendency-3-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Item 1"><a href="#subsec-Central-Tendency-3-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
 </li>
 <li id="subsec-Central-Tendency-3-2">
 <div class="para" id="subsec-Central-Tendency-3-2-1">
-<em class="alert">Median</em>: The median is the middle value in a sorted dataset, where 50% of the data lies below and above. For odd <span class="process-math">\(N\text{,}\)</span> it’s the middle value; for even <span class="process-math">\(N\text{,}\)</span> it’s the average of the two middle values.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Central-Tendency-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<em class="alert">Median</em>: The median is the middle value in a sorted dataset, where <span class="process-math">\(50\%\)</span> of the data lies below and above. For odd <span class="process-math">\(N\text{,}\)</span> it’s the middle value; for even <span class="process-math">\(N\text{,}\)</span> it’s the average of the two middle values.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Central-Tendency-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-Central-Tendency-3-2-2">Example: For <span class="process-math">\(\{85, 90, 95\}\)</span> (sorted), median = 90. For <span class="process-math">\(\{85, 90, 91, 95\}\text{,}\)</span> median = (90 + 91)/2 = 90.5. For incomes <span class="process-math">\(\{20000, 30000, 35000, 40000, 1000000\}\text{,}\)</span> median = 35000, robust to the outlier.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Central-Tendency-3-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-Central-Tendency-3-2-2">Example: For <span class="process-math">\(\{85, 90, 95\}\)</span> (sorted), median = <span class="process-math">\(90\text{.}\)</span> For <span class="process-math">\(\{85, 90, 91, 95\}\text{,}\)</span> median <span class="process-math">\(= (90 + 91)/2 = 90.5\text{.}\)</span> For incomes <span class="process-math">\(\{20000\text{,}\)</span> <span class="process-math">\(30000\text{,}\)</span> <span class="process-math">\(35000\text{,}\)</span> <span class="process-math">\(40000\text{,}\)</span> <span class="process-math">\(1000000\}\text{,}\)</span> median = <span class="process-math">\(35000\text{,}\)</span> robust to the outlier.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Central-Tendency-3-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Item 2"><a href="#subsec-Central-Tendency-3-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
 </li>
@@ -299,37 +299,16 @@ eBookConfig.enable_chatcodes =  false;
 <div class="para" id="subsec-Central-Tendency-3-3-1">
 <em class="alert">Mode</em>: The mode is the most frequent value. A dataset may have no mode, one mode (unimodal), or multiple modes (bimodal or multimodal).<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Central-Tendency-3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-Central-Tendency-3-3-2">Example: <span class="process-math">\(\{85, 90, 90, 95, 100\}\)</span> has mode 90. <span class="process-math">\(\{85, 90, 90, 95, 95\}\)</span> is bimodal (90, 95). <span class="process-math">\(\{85, 90, 95\}\)</span> has no mode.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Central-Tendency-3-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-Central-Tendency-3-3-2">Example: <span class="process-math">\(\{85, 90, 90, 95, 100\}\)</span> has mode 90. <span class="process-math">\(\{85, 90, 90, 95, 95\}\)</span> is bimodal <span class="process-math">\((90, 95)\text{.}\)</span> <span class="process-math">\(\{85, 90, 95\}\)</span> has no mode.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Central-Tendency-3-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Item 3"><a href="#subsec-Central-Tendency-3-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
 </li>
 </ol>
 <div class="para" id="subsec-Central-Tendency-4">
-<em class="alert">Comparison</em>: Consider incomes <span class="process-math">\(\{20000, 30000, 35000, 40000, 1000000\}\text{.}\)</span> Mean = 225000, median = 35000, mode = none. The median best reflects the typical income due to the outlier. See <a href="sec-Descriptive-Statistics.html#fig-central-tendency" class="xref" data-knowl="./knowl/xref/fig-central-tendency.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.1.1">Figure 1.1.1</a> for a visual comparison.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Central-Tendency-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<em class="alert">Comparison</em>: Consider incomes <span class="process-math">\(\{20000\text{,}\)</span> <span class="process-math">\(30000\text{,}\)</span> <span class="process-math">\(35000\text{,}\)</span> <span class="process-math">\(40000\text{,}\)</span> <span class="process-math">\(1000000\}\text{.}\)</span> Mean = <span class="process-math">\(225000\text{,}\)</span> median = <span class="process-math">\(35000\text{,}\)</span> mode = none. The median best reflects the typical income due to the outlier. See <a href="sec-Descriptive-Statistics.html#fig-central-tendency" class="xref" data-knowl="./knowl/xref/fig-central-tendency.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.1.1">Figure 1.1.1</a> for a visual comparison.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Central-Tendency-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="fig-central-tendency"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/central-tendency.png" class="contained" alt="Density plot showing central tendency measures."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.1<span class="period">.</span></span><span class="space"> </span>Density plot of incomes with mean, median, and no mode.<div class="autopermalink" data-description="Figure 1.1.1"><a href="#fig-central-tendency" title="Copy heading and permalink for Figure 1.1.1" aria-label="Copy heading and permalink for Figure 1.1.1">🔗</a></div></figcaption></figure><div class="code-box"><pre class="program clipboardable line-numbers"><code class="language-py">import numpy as np
-import matplotlib.pyplot as plt
-from scipy.stats import gaussian_kde
-
-data = [20000, 30000, 35000, 40000, 1000000]
-kde = gaussian_kde(data, bw_method=0.5)
-x = np.linspace(0, 1100000, 1000)
-y = kde(x)
-
-plt.figure(figsize=(8, 5))
-plt.plot(x, y, label='Density')
-plt.axvline(np.mean(data), color='red', linestyle='--', label=f'Mean = {np.mean(data):.0f}')
-plt.axvline(np.median(data), color='green', linestyle='-', label=f'Median = {np.median(data):.0f}')
-plt.xlabel('Income')
-plt.ylabel('Density')
-plt.title('Central Tendency Measures for Income Data')
-plt.legend()
-plt.grid(True, alpha=0.3)
-plt.savefig('central-tendency.png')
-plt.show()
-</code></pre></div>
-<div class="autopermalink" data-description="Subsection 1.1.1: Measures of Central Tendency"><a href="#subsec-Central-Tendency" title="Copy heading and permalink for Subsection 1.1.1: Measures of Central Tendency" aria-label="Copy heading and permalink for Subsection 1.1.1: Measures of Central Tendency">🔗</a></div></section><section class="subsection" id="subsec-Dispersion"><h3 class="heading hide-type">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.1<span class="period">.</span></span><span class="space"> </span>Density plot of incomes with mean, median, and no mode.<div class="autopermalink" data-description="Figure 1.1.1"><a href="#fig-central-tendency" title="Copy heading and permalink for Figure 1.1.1" aria-label="Copy heading and permalink for Figure 1.1.1">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Subsection 1.1.1: Measures of Central Tendency"><a href="#subsec-Central-Tendency" title="Copy heading and permalink for Subsection 1.1.1: Measures of Central Tendency" aria-label="Copy heading and permalink for Subsection 1.1.1: Measures of Central Tendency">🔗</a></div></section><section class="subsection" id="subsec-Dispersion"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.1.2</span><span class="space"> </span><span class="title">Measures of Dispersion</span>
 </h3>
 <div class="para" id="subsec-Dispersion-2">Dispersion measures how spread out data is around the central tendency.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Dispersion-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -343,62 +322,71 @@ plt.show()
 <div class="para">For a population:</div>
 <div class="displaymath process-math" id="eqn-pop-variance-of-N-data-points">
 \begin{equation}
-\sigma^2 = \frac{1}{N} \sum_{i=1}^{N} (x_i - \mu)^2\tag{1.1.2}
+\sigma^2 = \frac{1}{N} \sum_{i=1}^{N} (x_i - \mu)^2,\tag{1.1.2}
 \end{equation}
 </div>
-<div class="para">For a sample (unbiased estimate):</div>
+<div class="para">where <span class="process-math">\(\mu\)</span> is the population (true) mean. The data collected from a polulation is called sample. From the sample we can only calculate as estimate of the corresponding population quantities. We define estimate of sample variance by keeping the same divisor <span class="process-math">\(N\)</span> as in the true variance definitionor, define with a divisor <span class="process-math">\(N-1\text{,}\)</span> which is called an unbiased estimate of variance.</div>
 <div class="displaymath process-math" id="eqn-sample-variance-of-N-data-points">
 \begin{equation}
 s^2 = \frac{1}{N-1} \sum_{i=1}^{N} (x_i - \bar{x})^2\tag{1.1.3}
 \end{equation}
 </div>
 <div class="para">where <span class="process-math">\(\bar{x}\)</span> is the sample mean.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\bar{x} = \frac{1}{N} \sum_{i=1}^{N}\, x_i. 
+\end{equation*}
+</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec-Dispersion-3-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="subsec-Dispersion-3-1-3">
 <div class="para">Example: For grades <span class="process-math">\(\{85, 90, 90, 95, 100\}\text{,}\)</span> <span class="process-math">\(\bar{x} = 92\text{.}\)</span> Population variance:</div>
+<div class="displaymath process-math" id="subsec-Dispersion-3-1-3-3">
+\begin{align*}
+\sigma^2 \amp= \frac{(85-92)^2 + (90-92)^2 + (90-92)^2 + (95-92)^2 + (100-92)^2}{5} \\
+\amp = \frac{126}{5} = 25.2. 
+\end{align*}
+</div>
+<div class="para">This will give the <dfn class="terminology">standard deviation</dfn>, <span class="process-math">\(\sigma\text{:}\)</span>
+</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\sigma^2 = \frac{(85-92)^2 + (90-92)^2 + (90-92)^2 + (95-92)^2 + (100-92)^2}{5} = \frac{126}{5} = 25.2
+\sigma = \sqrt{\sigma^2} = \sqrt{25.2} \approx 5.0        
 \end{equation*}
 </div>
-<div class="para">
-<span class="process-math">\(\sigma \approx 5.02\text{.}\)</span> Sample variance: <span class="process-math">\(s^2 = 126/4 = 31.5\text{,}\)</span> <span class="process-math">\(s \approx 5.61\text{.}\)</span>
+<div class="para">Sample variance, on the other hand, will be:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+s^2 = 126/4 = 31.5\text{,}
+\end{equation*}
+</div>
+<div class="para">and sample standard deviation</div>
+<div class="displaymath process-math">
+\begin{equation*}
+s \approx 5.61\text{.}
+\end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec-Dispersion-3-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-Dispersion-3-1-4">Low variance (e.g., <span class="process-math">\(\sigma = 0.04\)</span>) vs. high variance (e.g., <span class="process-math">\(\sigma = 4.00\)</span>) shows tighter vs. wider spread as illustrated in <a href="sec-Descriptive-Statistics.html#fig-variance-comparison" class="xref" data-knowl="./knowl/xref/fig-variance-comparison.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.1.2">Figure 1.1.2</a>.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Dispersion-3-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-Dispersion-3-1-4">
+<a href="sec-Descriptive-Statistics.html#fig-variance-comparison" class="xref" data-knowl="./knowl/xref/fig-variance-comparison.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.1.2">Figure 1.1.2</a> illustrated the tighter vs. wider spread for a low variance (e.g., <span class="process-math">\(\sigma = 0.04\)</span>) vs. high variance (e.g., <span class="process-math">\(\sigma = 4.00\)</span>).<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Dispersion-3-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="fig-variance-comparison"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/variance-comparison.png" class="contained" alt="Comparison of low and high variance data."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.2<span class="period">.</span></span><span class="space"> </span>Comparing low and high variance datasets.<div class="autopermalink" data-description="Figure 1.1.2"><a href="#fig-variance-comparison" title="Copy heading and permalink for Figure 1.1.2" aria-label="Copy heading and permalink for Figure 1.1.2">🔗</a></div></figcaption></figure><div class="code-box"><pre class="program clipboardable line-numbers"><code class="language-py">import matplotlib.pyplot as plt
-import numpy as np
-from scipy.stats import norm
-
-x = np.linspace(-10, 10, 1000)
-low_sig, high_sig = 0.2, 2.0
-
-low_var = norm.pdf(x, loc=0, scale=low_sig)  
-high_var = norm.pdf(x, loc=0, scale=high_sig)
-
-fig, ax = plt.subplots(1, 1, figsize=(10, 4))
-ax.plot(x, low_var, 'ob', markersize = 2, label=f"low variance, var = {low_sig**2:.2f}")
-ax.plot(x, high_var, 'xr', markersize = 2, label=f"high variance, var = {high_sig**2:.2f}")
-
-ax.set_title(f'Variance Comparison')
-ax.set_xlabel('Grade')
-ax.set_ylabel('Scaled Frequency')
-
-plt.tight_layout()
-plt.legend()
-plt.show()
-</code></pre></div>
-<div class="autopermalink" data-description="Item 1"><a href="#subsec-Dispersion-3-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.2<span class="period">.</span></span><span class="space"> </span>Comparing low and high variance datasets.<div class="autopermalink" data-description="Figure 1.1.2"><a href="#fig-variance-comparison" title="Copy heading and permalink for Figure 1.1.2" aria-label="Copy heading and permalink for Figure 1.1.2">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Item 1"><a href="#subsec-Dispersion-3-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
 </li>
 <li id="subsec-Dispersion-3-2">
 <div class="para" id="subsec-Dispersion-3-2-1">
 <em class="alert">Range and Quartiles</em>: Range = max - min. Quartiles divide sorted data into four parts: Q1 (25th percentile), Q2 (median, 50th), Q3 (75th). Use linear interpolation: position = <span class="process-math">\((N-1) \cdot p\text{,}\)</span> where <span class="process-math">\(p = 0.25, 0.5, 0.75\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Dispersion-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-Dispersion-3-2-2">Example: For grades <span class="process-math">\(\{70, 75, 80, 85, 90, 95, 100\}\text{,}\)</span> <span class="process-math">\(N=7\text{.}\)</span> Median (Q2) = 85. Q1 = 75, Q3 = 95. Range = 100 - 70 = 30. IQR = Q3 - Q1 = 20. Outliers: below Q1 - 1.5*IQR = 45 or above Q3 + 1.5*IQR = 125. These grades have no outliers.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Dispersion-3-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para logical" id="subsec-Dispersion-3-2-2">
+<div class="para">Example: For grades <span class="process-math">\(\{70, 75, 80, 85, 90, 95, 100\}\text{,}\)</span> <span class="process-math">\(N=7\text{.}\)</span> Median <span class="process-math">\((\text{Q2}) = 85\text{.}\)</span> <span class="process-math">\(\text{Q1} = 75\text{,}\)</span> <span class="process-math">\(\text{Q3} = 95\text{.}\)</span> Range <span class="process-math">\(= 100 - 70 = 30\text{.}\)</span> <span class="process-math">\(\text{IQR} = \text{Q3} - \text{Q1} = 20\text{.}\)</span> Outliers:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\text{Below: }\ \text{Q1} - 1.5\times\text{IQR} = 45; \quad \text{  Above:}\ \text{Q3} + 1.5 \times \text{IQR} = 125.
+\end{equation*}
+</div>
+<div class="para">These grades have no outliers.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Dispersion-3-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Item 2"><a href="#subsec-Dispersion-3-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
 </li>
@@ -407,9 +395,9 @@ plt.show()
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.1.3</span><span class="space"> </span><span class="title">Distribution Shape</span>
 </h3>
 <div class="para" id="subsec-Distribution-Shape-2">
-<em class="alert">Histogram</em>: Histograms show frequency distributions by grouping data into bins.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Distribution-Shape-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<em class="alert">Histogram</em>: Histograms show frequency distributions by grouping data into bins of equal size from min to a bin that includes the max data. So, if you have data from <span class="process-math">\(x_\text{min}\)</span> to <span class="process-math">\(x_\text{max}\)</span> with a bin size <span class="process-math">\(b\text{.}\)</span> Then, bins will have <span class="process-math">\(x_\text{min} \le x \lt x_\text{min} + b\text{,}\)</span> <span class="process-math">\(x_\text{min} + b \le x \lt x_\text{min} + 2b\text{,}\)</span> <span class="process-math">\(\cdots\text{,}\)</span> till you have exhausted all data. The last bin may extend beyond the data as in the example below.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Distribution-Shape-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-Distribution-Shape-3">Example: For grades <span class="process-math">\(\{70, 75, 75, 80, 80, 85, 90, 95, 100\}\text{,}\)</span> with bin size 10 from 70 to 110, see <a href="sec-Descriptive-Statistics.html#tab-Histogram-Table" class="xref" data-knowl="./knowl/xref/tab-Histogram-Table.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 1.1.3: Histogram of Grades">Table 1.1.3</a>.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Distribution-Shape-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-Distribution-Shape-3">Example: For grades <span class="process-math">\(\{70, 72, 75, 75, 80,\)</span> <span class="process-math">\(80, 85, 90, 95, 100\}\text{,}\)</span> with bin size <span class="process-math">\(10\)</span> from <span class="process-math">\(70\)</span> to <span class="process-math">\(110\text{,}\)</span> see <a href="sec-Descriptive-Statistics.html#tab-Histogram-Table" class="xref" data-knowl="./knowl/xref/tab-Histogram-Table.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 1.1.3: Histogram of Grades">Table 1.1.3</a>.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Distribution-Shape-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="table table-like" id="tab-Histogram-Table"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.1.3<span class="period">.</span></span><span class="space"> </span>Histogram of Grades<div class="autopermalink" data-description="Table 1.1.3: Histogram of Grades"><a href="#tab-Histogram-Table" title="Copy heading and permalink for Table 1.1.3: Histogram of Grades" aria-label="Copy heading and permalink for Table 1.1.3: Histogram of Grades">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr class="header-horizontal">
@@ -422,8 +410,8 @@ plt.show()
 <tr>
 <td class="l m b0 r0 l0 t0 lines">1</td>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(70 \le x \lt 80\)</span></td>
-<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\{70, 75, 75\}\)</span></td>
-<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\{70, 72, 75, 75\}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">4</td>
 <td class="l m b0 r0 l0 t0 lines">0.333</td>
 </tr>
 <tr>
@@ -447,18 +435,19 @@ plt.show()
 <td class="l m b0 r0 l0 t0 lines">1</td>
 <td class="l m b0 r0 l0 t0 lines">0.111</td>
 </tr>
-</table></div></figure><div class="para" id="subsec-Distribution-Shape-5">See <a href="sec-Descriptive-Statistics.html#fig-descriptive-statistics-histogram" class="xref" data-knowl="./knowl/xref/fig-descriptive-statistics-histogram.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.1.4">Figure 1.1.4</a> for a histogram with mean and median.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Distribution-Shape-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</table></div></figure><div class="para" id="subsec-Distribution-Shape-5">Many computer libraries have histogram plotting routines. For instance <a href="sec-Descriptive-Statistics.html#fig-descriptive-statistics-histogram" class="xref" data-knowl="./knowl/xref/fig-descriptive-statistics-histogram.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.1.4">Figure 1.1.4</a> was generated from the Python program listed after it. The histogram has been decorated with the mean and median of the data also.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Distribution-Shape-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="fig-descriptive-statistics-histogram"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/histogram.png" class="contained" alt="Histogram with mean and median lines."></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.4<span class="period">.</span></span><span class="space"> </span>Histogram of grades with mean and median.<div class="autopermalink" data-description="Figure 1.1.4"><a href="#fig-descriptive-statistics-histogram" title="Copy heading and permalink for Figure 1.1.4" aria-label="Copy heading and permalink for Figure 1.1.4">🔗</a></div></figcaption></figure><div class="code-box"><pre class="program clipboardable line-numbers"><code class="language-py">import matplotlib.pyplot as plt
 import numpy as np
 
-data = [70, 75, 75, 80, 80, 85, 90, 95, 100]
-bin_size = 10
-bins = np.arange(70, 110, bin_size)
-
+data = [70, 72, 75, 75, 80, 82, 85, 93, 95, 100]
+bins = [70, 80, 90, 100, 110]
+freq_arr, bins_arr = np.histogram(data, bins) # returns frequency
+width = bins_arr[1:] - bins_arr[:-1]
 plt.figure(figsize=(8, 5))
 plt.hist(data, bins=bins, edgecolor='black', alpha=0.7)
+# this is just plt.bar(bins_arr[:-1], freq_arr, width)
 mean = np.mean(data)
 median = np.median(data)
 plt.axvline(mean, color='red', linestyle='--', label=f'Mean = {mean:.1f}')
@@ -469,13 +458,13 @@ plt.title('Histogram of Student Grades')
 plt.xticks(bins)
 plt.grid(axis='y', alpha=0.3)
 plt.legend()
-plt.savefig('./images/essential-probability-and-statistics/histogram.png')
+plt.savefig('histogram.png')
 plt.show()
 </code></pre></div>
 <div class="para" id="subsec-Distribution-Shape-8">
-<em class="alert">Boxplot</em>: Boxplots show min, Q1, median, Q3, max (whiskers), and outliers (points beyond Q1 - 1.5*IQR or Q3 + 1.5*IQR).<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Distribution-Shape-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<em class="alert">Boxplot</em>: Boxplots show min, Q1, median, Q3, max (whiskers), and outliers (points beyond Q1 <span class="process-math">\(- 1.5\times \)</span>IQR or Q3 <span class="process-math">\(+ 1.5\times\)</span>IQR).<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Distribution-Shape-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-Distribution-Shape-9">Example: For grades with an outlier <span class="process-math">\(\{70, 75, 80, 85, 90, 95, 100, 150\}\text{,}\)</span> Q1 = 77.5, Q2 = 87.5, Q3 = 97.5, IQR = 20. Outliers: ≤150 is above Q3 + 1.5*IQR = 127.5. See <a href="sec-Descriptive-Statistics.html#fig-descriptive-statistics-boxplots" class="xref" data-knowl="./knowl/xref/fig-descriptive-statistics-boxplots.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.1.5">Figure 1.1.5</a>.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Distribution-Shape-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-Distribution-Shape-9">Example: For grades with an outlier <span class="process-math">\(\{70, 75, 80, 85, 90, 95, 100, 150\}\text{,}\)</span> <span class="process-math">\(\text{Q1} = 77.5\text{,}\)</span> <span class="process-math">\(\text{Q2} = 87.5\text{,}\)</span> <span class="process-math">\(\text{Q3} = 97.5\text{,}\)</span> <span class="process-math">\(\text{IQR} = 20\text{.}\)</span> Outliers: ≤<span class="process-math">\(150\)</span> is above <span class="process-math">\(\text{Q3} + 1.5*\text{IQR} = 127.5\text{.}\)</span> See <a href="sec-Descriptive-Statistics.html#fig-descriptive-statistics-boxplots" class="xref" data-knowl="./knowl/xref/fig-descriptive-statistics-boxplots.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.1.5">Figure 1.1.5</a>.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Distribution-Shape-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="fig-descriptive-statistics-boxplots"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/boxplot.png" class="contained" alt="Boxplot with one outlier."></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.5<span class="period">.</span></span><span class="space"> </span>Boxplot of grades with annotated quartiles and outlier.<div class="autopermalink" data-description="Figure 1.1.5"><a href="#fig-descriptive-statistics-boxplots" title="Copy heading and permalink for Figure 1.1.5" aria-label="Copy heading and permalink for Figure 1.1.5">🔗</a></div></figcaption></figure><div class="code-box"><pre class="program clipboardable line-numbers"><code class="language-py">import matplotlib.pyplot as plt
