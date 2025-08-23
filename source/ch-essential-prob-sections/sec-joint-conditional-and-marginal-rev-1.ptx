@@ -1,0 +1,666 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sec-Joint-Conditional-and-Marginal-Probabilities">
+    <title>Joint, Marginal, and Conditional Probabilities</title>
+    <introduction>
+        <p>
+            This section explores probability concepts for multiple random variables, essential for modeling relationships in data. We cover joint and marginal probabilities, covariance and correlation, conditional probability, Bayes’ rule, and independence, with a focus on rigorous mathematical formulations and practical applications. Random variables are denoted by capital letters (e.g., <m>X</m>), with specific values in lowercase, sometimes with indices (e.g., <m>x_i</m>). Examples use a patient dataset to illustrate concepts, and Python visualizations reinforce intuition.
+        </p>
+    </introduction>
+
+    <!--  Random Variables -->
+    <subsection xml:id="subsec-Random-Variables">
+        <title>Random Variables, Probabilities, and Expectations</title>
+        <p>
+            A <alert>random variable</alert> is a quantity whose value is determined by a random experiment, unknown until observed. We denote random variables by capital letters (e.g., <m>X</m>) and their values by lowercase with or without indices (e.g., <m>x,\ x_i</m>).
+        </p>
+        <p>
+            Random variables are:
+            <ul>
+                <li><alert>Discrete</alert>: Takes values in a countable set (e.g., die outcomes <m>\{1, 2, \dots, 6\}</m>).</li>
+                <li><alert>Continuous</alert>: Takes values in a real interval (e.g., patient temperature).</li>
+            </ul>
+        </p>
+        <p>
+            For a discrete random variable <m>X</m> with values <m>x_i</m> (<m>i=1,\dots,N</m>), the <alert>probability mass function (PMF)</alert> is:
+            <men xml:id="eqn-pmf">
+                P(X=x_i) = p_i, \quad i=1,\dots,N, \quad \sum_{i=1}^N p_i = 1.
+            </men>
+        </p>
+        <p>
+            The <alert>expectation</alert> of a function <m>f(X)</m> is:
+            <men xml:id="eqn-expectation">
+                \mathbb{E}[f(X)] = \sum_{i=1}^N f(x_i) p_i.
+            </men>
+            The mean is:
+            <men xml:id="eqn-mean">
+                \mathbb{E}[X] = \sum_{i=1}^N x_i p_i.
+            </men>
+        </p>
+        <p>
+            The <alert>variance</alert> measures spread:
+            <men xml:id="eqn-variance">
+                \mathrm{Var}(X) = \mathbb{E}[(X - \mathbb{E}[X])^2] = \mathbb{E}[X^2] - (\mathbb{E}[X])^2.
+            </men>
+            The standard deviation is <m>\sigma_X = \sqrt{\mathrm{Var}(X)}</m>.
+        </p>
+        <example>
+            <title>Die roll expectation and variance</title>
+            <p>
+                For a fair six-sided die, <m>P(X=k) = \frac{1}{6}</m> for <m>k=1,\dots,6</m>. The mean is:
+                <me>
+                    \mathbb{E}[X] = \sum_{k=1}^6 k \cdot \frac{1}{6} = \frac{1+2+3+4+5+6}{6} = 3.5.
+                </me>
+                The second moment is:
+                <me>
+                    \mathbb{E}[X^2] = \sum_{k=1}^6 k^2 \cdot \frac{1}{6} = \frac{1^2 + 2^2 + \dots + 6^2}{6} = \frac{91}{6} \approx 15.1667.
+                </me>
+                The variance is:
+                <me>
+                    \mathrm{Var}(X) = \mathbb{E}[X^2] - (\mathbb{E}[X])^2 = \frac{91}{6} - (3.5)^2 = \frac{35}{12} \approx 2.9167.
+                </me>
+            </p>
+        </example>
+        <figure xml:id="fig-die-pmf">
+            <caption>Probability mass function (PMF) of a fair six-sided die, showing equal probabilities (<m>P(X=k) = \frac{1}{6}</m>) for outcomes <m>k=1,\dots,6</m>. This bar chart visualizes the discrete distribution, useful for understanding expected values in games of chance.</caption>
+            <image source="./images/essential-probability-and-statistics/die_pmf.png">
+                <shortdescription>Bar chart of die PMF.</shortdescription>
+            </image>
+        </figure>
+        <program language="python" line-numbers="yes">
+            <title>PMF of a fair die</title>
+            <code>
+            # === CODE: PMF of a fair die ===
+            import matplotlib.pyplot as plt
+
+            x = [1, 2, 3, 4, 5, 6]
+            p = [1/6] * 6
+            plt.figure()
+            plt.bar(x, p)
+            plt.xlabel("Die Outcome")
+            plt.ylabel("Probability")
+            plt.title("PMF of a Fair Die")
+            plt.grid(True, alpha=0.3)
+            plt.tight_layout()
+            plt.savefig("die_pmf.png", dpi=300)
+            plt.show()
+            </code>
+        </program>
+    </subsection>
+
+    <!--  Joint and Marginal Probabilities  -->
+    <subsection xml:id="subsec-Joint-Probability">
+        <title>Joint and Marginal Probabilities</title>
+        <p>
+            For two discrete random variables <m>X</m> and <m>Y</m>, the <alert>joint probability</alert> assigns probabilities to pairs <m>(x_i, y_j)</m>:
+            <men xml:id="eqn-joint">
+                P(X=x_i, Y=y_j) = p_{ij}, \quad \sum_i \sum_j p_{ij} = 1.
+            </men>
+        </p>
+        <p>
+            The <alert>marginal probability</alert> of <m>X</m> is obtained by summing over all values of <m>Y</m>:
+            <men xml:id="eqn-marginal">
+                P(X=x_i) = \sum_j P(X=x_i, Y=y_j) = \sum_j p_{ij}.
+            </men>
+            Similarly, <m>P(Y=y_j) = \sum_i p_{ij}</m>.
+        </p>
+        <example>
+            <title>Patient disease and test results</title>
+            <p>
+                Consider a dataset of 1,000 patients, with <m>X</m> indicating disease status (<m>D</m>: disease, <m>N</m>: no disease) and <m>Y</m> indicating test result (<m>+</m>: positive, <m>-</m>: negative). The joint counts are given in <xref ref="tab-patient-data-for-jt-and-conditional-probs"/>. Joint probabilities are:
+                <me>
+                    P(D, +) = \frac{150}{1000} = 0.150, \quad P(D, -) = \frac{50}{1000} = 0.050,
+                </me>
+                <me>
+                    P(N, +) = \frac{300}{1000} = 0.300, \quad P(N, -) = \frac{500}{1000} = 0.500.
+                </me>
+                Marginals are:
+                <me>
+                    P(D) = P(D, +) + P(D, -) = 0.150 + 0.050 = 0.200, \quad P(N) = 0.800,
+                </me>
+                <me>
+                    P(+) = P(D, +) + P(N, +) = 0.150 + 0.300 = 0.450, \quad P(-) = 0.550.
+                </me>
+            </p>
+        </example>
+        <figure xml:id="fig-joint-heatmap">
+            <caption>Heatmap of joint probabilities for disease status (<m>X \in \{D, N\}</m>) and test result (<m>Y \in \{+, -\}</m>) from 1,000 patients (<xref ref="tab-patient-data-for-jt-and-conditional-probs"/>). Darker shades indicate higher probabilities. Marginal probabilities (<m>P(X)</m>, <m>P(Y)</m>) are shown in the margins, illustrating the summation process <m>P(X=x_i) = \sum_j P(X=x_i, Y=y_j)</m>.</caption>
+            <image source="./images/essential-probability-and-statistics/joint_heatmap.png">
+                <shortdescription>Heatmap of joint probabilities with marginals.</shortdescription>
+            </image>
+        </figure>
+        <program language="python" line-numbers="yes">
+            <title>Joint probability heatmap</title>
+            <code>
+            import numpy as np
+            import matplotlib.pyplot as plt
+            import seaborn as sns
+
+            # Joint probabilities from patient table
+            joint = np.array([[0.15, 0.05], [0.30, 0.50]])  # Rows: X=D, X=N; Cols: Y=+, Y=-
+            marginal_x = np.sum(joint, axis=1)  # P(D), P(N)
+            marginal_y = np.sum(joint, axis=0)  # P(+), P(-)
+
+            # Heatmap with marginals
+            fig, ax = plt.subplots()
+            sns.heatmap(joint, annot=True, fmt=".3f", cmap="Blues", cbar=False,
+                        xticklabels=["$Y=+$", "$Y=-$"], yticklabels=["$X=D$", "$X=N$"],
+                        annot_kws={"size": 16}, ax=ax)
+            for i, m in enumerate(marginal_x):
+                ax.text(2.1, i + 0.5, f"{m:.3f}", va="center")
+            for j, m in enumerate(marginal_y):
+                ax.text(j + 0.33, 2.2, f"{m:.3f}", ha="center")
+            ax.text(2.2, 2.2, "1.000", va="center", ha="center")
+            plt.title("Joint Probability Heatmap with Marginals")
+            plt.tight_layout()
+            plt.savefig("joint_heatmap.png", dpi=300)
+            plt.show()
+            </code>
+        </program>
+    </subsection>
+
+    <!--   Covariance and Correlation   -->
+    <subsection xml:id="subsec-Covariance-and-Correlation">
+        <title>Covariance and Correlation</title>
+        <p>
+            The <alert>covariance</alert> between random variables <m>X</m> and <m>Y</m> measures their joint variability:
+            <men xml:id="eqn-covariance">
+                \mathrm{Cov}(X,Y) = \mathbb{E}[(X - \mathbb{E}[X])(Y - \mathbb{E}[Y])] = \mathbb{E}[XY] - \mathbb{E}[X]\mathbb{E}[Y].
+            </men>
+        </p>
+        <p>
+            The <alert>correlation</alert> normalizes covariance:
+            <men xml:id="eqn-correlation">
+                \mathrm{Corr}(X,Y) = \frac{\mathrm{Cov}(X,Y)}{\sigma_X \sigma_Y}, \quad \mathrm{Corr}(X,Y) \in [-1, 1],
+            </men>
+            where <m>\sigma_X = \sqrt{\mathrm{Var}(X)}</m>, <m>\sigma_Y = \sqrt{\mathrm{Var}(Y)}</m>. Positive correlation means <m>X</m> and <m>Y</m> tend to increase together; negative means they move oppositely. Correlation does not imply causation.
+        </p>
+        <example>
+            <title>Patient symptom severity and test score</title>
+            <p>
+                For 1,000 patients, let <m>X</m> be symptom severity (normal, mean 5 for disease, 3 for no disease, std 1.5) and <m>Y</m> be test score (normal, mean 80 for disease, 60 for no disease, std 10). The code below computes covariance and correlation, showing a positive relationship.
+            </p>
+        </example>
+        <figure xml:id="fig-correlation-scatter">
+            <caption>Scatter plot of symptom severity vs. test score for 1,000 patients, with regression lines for disease (D) and no disease (N) groups. The computed correlation coefficient is shown, indicating a positive relationship between features, relevant for medical diagnostics.</caption>
+            <image source="./images/essential-probability-and-statistics/correlation_examples.png">
+                <shortdescription>Scatter plot with regression lines for correlation.</shortdescription>
+            </image>
+        </figure>
+        <program language="python" line-numbers="yes">
+            <title>Correlation scatter plot</title>
+            <code>
+            # === Scatter plot with correlation and regression lines ===
+            import numpy as np
+            import pandas as pd
+            import matplotlib.pyplot as plt
+
+
+            np.random.seed(42)
+
+            # Synthetic patient data
+            counts = {"D+": 150, "D-": 50, "N+": 300, "N-": 500}
+            data = []
+            for status, _, count in [("D", 1, 200), ("N", 0, 800)]:
+                severity = np.random.normal(5 if status == "D" else 3, 1.5, count)
+                score = np.random.normal(80 if status == "D" else 60, 10, count)
+                data.extend([[s, t, 1 if status == "D" else 0] for s, t in zip(severity, score)])
+            data = pd.DataFrame(data, columns=["Severity", "Score", "Disease"])
+
+            # Compute correlation
+            corr = data[["Severity", "Score"]].corr().iloc[0, 1]
+
+            # Plot with regression lines
+            plt.figure(figsize=(8, 6))
+            for d, color, label in [(1, "red", "Disease"), (0, "blue", "No Disease")]:
+                subset = data[data["Disease"] == d]
+                plt.scatter(subset["Severity"], subset["Score"], c=color, alpha=0.5, label=label)
+                z = np.polyfit(subset["Severity"], subset["Score"], 1)
+                p = np.poly1d(z)
+                plt.plot(subset["Severity"], p(subset["Severity"]), color=color, linestyle="--")
+            plt.xlabel("Symptom Severity")
+            plt.ylabel("Test Score")
+            plt.title(f"Correlation: {corr:.3f}")
+            plt.legend()
+            plt.grid(True, alpha=0.3)
+            plt.tight_layout()
+            plt.savefig("correlation_examples.png", dpi=300)
+            plt.show()
+            </code>
+        </program>
+    </subsection>
+
+    <!--   Conditional Probability   -->
+    <subsection xml:id="subsec-Conditional-Probability">
+        <title>Conditional Probability</title>
+        <p>
+            The <alert>conditional probability</alert> of <m>X=x_i</m> given <m>Y=y_j</m> is:
+            <men xml:id="eqn-conditional-definition">
+                P(X=x_i \mid Y=y_j) = \frac{P(X=x_i, Y=y_j)}{P(Y=y_j)}, \quad P(Y=y_j) > 0.
+            </men>
+            By the product rule:
+            <men xml:id="eqn-product-rule-in-joint-prob-section">
+                P(X=x_i, Y=y_j) = P(X=x_i \mid Y=y_j) P(Y=y_j).
+            </men>
+        </p>
+        <p>
+            Conditional probabilities form a distribution over <m>X</m> for fixed <m>Y=y_j</m>, summing to 1: <m>\sum_i P(X=x_i \mid Y=y_j) = 1</m>.
+        </p>
+        <example>
+            <title>Patient disease and test results</title>
+            <p>
+                Using the patient dataset (<xref ref="tab-patient-data-for-jt-and-conditional-probs"/>), compute all conditional probabilities:
+                <table xml:id="tab-patient-data-for-jt-and-conditional-probs">
+                    <title>Patient counts (disease vs. test)</title>
+                    <tabular>
+                        <row><cell></cell><cell><m>+</m></cell><cell><m>-</m></cell><cell>Marginal</cell></row>
+                        <row><cell><m>D</m></cell><cell>150</cell><cell>50</cell><cell><m>n_D=200</m></cell></row>
+                        <row><cell><m>N</m></cell><cell>300</cell><cell>500</cell><cell><m>n_N=800</m></cell></row>
+                        <row><cell>Marginal</cell><cell><m>n_+=450</m></cell><cell><m>n_-=550</m></cell><cell><m>n_T=1000</m></cell></row>
+                    </tabular>
+                </table>
+                Joint probabilities:
+                <me>
+                    P(D, +) = 0.150, \quad P(D, -) = 0.050, \quad P(N, +) = 0.300, \quad P(N, -) = 0.500.
+                </me>
+                Marginals: <m>P(D) = 0.200</m>, <m>P(N) = 0.800</m>, <m>P(+) = 0.450</m>, <m>P(-) = 0.550</m>.
+                Conditional probabilities:
+                <md>
+                    <mrow> P(D \mid +) = \frac{0.150}{0.450} \approx 0.3333, \quad P(N \mid +) = \frac{0.300}{0.450} \approx 0.6667, </mrow>
+                    <mrow> P(D \mid -) = \frac{0.050}{0.550} \approx 0.0909, \quad P(N \mid -) = \frac{0.500}{0.550} \approx 0.9091, </mrow>
+                    <mrow> P(+ \mid D) = \frac{0.150}{0.200} = 0.750, \quad P(- \mid D) = \frac{0.050}{0.200} = 0.250, </mrow>
+                    <mrow> P(+ \mid N) = \frac{0.300}{0.800} = 0.375, \quad P(- \mid N) = \frac{0.500}{0.800} = 0.625. </mrow>
+                </md>
+            </p>
+        </example>
+        <figure xml:id="fig-patient-bar-conditional">
+            <caption>Grouped bar chart of conditional probabilities for disease status (<m>X \in \{D, N\}</m>) given test result (<m>Y \in \{+, -\}</m>) and test result given disease status, based on <xref ref="tab-patient-data-for-jt-and-conditional-probs"/>. Each group shows a probability distribution (summing to 1), illustrating how conditional probabilities slice the joint distribution.</caption>
+            <image source="./images/essential-probability-and-statistics/patient_conditional_bars.png">
+                <shortdescription>Grouped bar chart of conditional probabilities.</shortdescription>
+            </image>
+        </figure>
+        <program language="python" line-numbers="yes">
+            <title>Conditional probability bar chart</title>
+            <code>
+            # === Grouped bar chart for all conditional probabilities ===
+            import matplotlib.pyplot as plt
+            import numpy as np
+
+            # Joint counts and probabilities
+            counts = {"D+": 150, "D-": 50, "N+": 300, "N-": 500}
+            total = 1000
+            P_D_plus = counts["D+"]/total
+            P_D_minus = counts["D-"]/total
+            P_N_plus = counts["N+"]/total
+            P_N_minus = counts["N-"]/total
+            P_plus = P_D_plus + P_N_plus
+            P_minus = P_D_minus + P_N_minus
+            P_D = P_D_plus + P_D_minus
+            P_N = P_N_plus + P_N_minus
+
+            # Conditional probabilities
+            probs = {
+                "P(D|+)": P_D_plus / P_plus, "P(N|+)": P_N_plus / P_plus,
+                "P(D|-)": P_D_minus / P_minus, "P(N|-)": P_N_minus / P_minus,
+                "P(+|D)": P_D_plus / P_D, "P(-|D)": P_D_minus / P_D,
+                "P(+|N)": P_N_plus / P_N, "P(-|N)": P_N_minus / P_N
+            }
+
+            # Grouped bar plot
+            labels = ["Given $Y=+$", "Given $Y=-$", "Given $X=D$", "Given $X=N$"]
+            values = [[probs["P(D|+)"], probs["P(N|+)"]], [probs["P(D|-)"], probs["P(N|-)"]],
+                      [probs["P(+|D)"], probs["P(-|D)"]], [probs["P(+|N)"], probs["P(-|N)"]]]
+            x = np.arange(len(labels))
+            width = 0.2
+            fig, ax = plt.subplots(figsize=(10, 6))
+            ax.bar(x - width/2, [v[0] for v in values], width, label="First Outcome", color="blue")
+            ax.bar(x + width/2, [v[1] for v in values], width, label="Second Outcome", color="red")
+            ax.set_xticks(x)
+            ax.set_xticklabels(labels)
+            ax.set_ylabel("Conditional Probability")
+            ax.set_title("Conditional Probabilities from Patient Table")
+            ax.legend(["$P(D|·)$, $P(+|·)$", "$P(N|·)$, $P(-|·)$"])
+            ax.set_ylim(0, 1)
+            ax.grid(True, alpha=0.3)
+            plt.tight_layout()
+            plt.savefig("patient_conditional_bars.png", dpi=300)
+            plt.show()
+            </code>
+        </program>
+    </subsection>
+
+    <!--   Bayes' Rule   -->
+    <subsection xml:id="subsec-conditional-probability-from-joint-probability">
+        <title>Bayes’ Rule</title>
+        <p>
+            Bayes’ theorem updates probabilities based on new evidence, derived from the product rule:
+            <men xml:id="eqn-bayes-general">
+                P(X=x_i \mid Y=y_j) = \frac{P(Y=y_j \mid X=x_i) P(X=x_i)}{P(Y=y_j)},
+            </men>
+            where the denominator is the marginal probability:
+            <men xml:id="eqn-bayes-denominator">
+                P(Y=y_j) = \sum_k P(Y=y_j \mid X=x_k) P(X=x_k).
+            </men>
+        </p>
+        <example>
+            <title>Breast cancer screening</title>
+            <p>
+                For a population with breast cancer prevalence <m>P(C) = 0.01</m>, a mammogram has:
+                <ul>
+                    <li><alert>Sensitivity</alert>: <m>P(+ \mid C) = 0.80</m>.</li>
+                    <li><alert>Specificity</alert>: <m>P(- \mid N) = 0.95</m>, so <m>P(+ \mid N) = 1 - 0.95 = 0.05</m>.</li>
+                </ul>
+                Compute <m>P(C \mid +)</m>. First, the marginal probability:
+                <me>
+                    P(+) = P(+ \mid C)P(C) + P(+ \mid N)P(N) = 0.80 \cdot 0.01 + 0.05 \cdot 0.99 = 0.008 + 0.0495 = 0.0575.
+                </me>
+                Then:
+                <men xml:id="eqn-bayes-numeric">
+                    P(C \mid +) = \frac{P(+ \mid C)P(C)}{P(+)} = \frac{0.008}{0.0575} \approx 0.1391.
+                </men>
+                Thus, a positive test increases the probability of cancer from 1% to 13.91%.
+            </p>
+        </example>
+        <figure xml:id="fig-bayes-tree">
+            <caption>Tree diagram for breast cancer screening, showing prior probabilities (<m>P(C)</m>, <m>P(N)</m>), likelihoods (<m>P(+ \mid C)</m>, etc.), and joint probabilities leading to <m>P(C \mid +)</m>. This visualizes Bayes’ rule for medical diagnostics.</caption>
+            <image source="./images/essential-probability-and-statistics/bayes_tree.png">
+                <shortdescription>Tree diagram for Bayes’ rule in screening.</shortdescription>
+            </image>
+        </figure>
+        <program language="python" line-numbers="yes">
+            <title>Bayes’ rule tree diagram</title>
+            <code>
+            # === NEW CODE: Tree diagram using graphviz ===
+            from graphviz import Digraph
+
+            dot = Digraph(comment="Bayes Tree")
+            dot.attr(rankdir="LR")
+            dot.node("A", "Population\nP(C)=0.01\nP(N)=0.99", shape="box")
+            dot.node("B", "Cancer\nP(C)=0.01", shape="box")
+            dot.node("C", "No Cancer\nP(N)=0.99", shape="box")
+            dot.node("D", "Positive\nP(+|C)=0.80", shape="box")
+            dot.node("E", "Negative\nP(-|C)=0.20", shape="box")
+            dot.node("F", "Positive\nP(+|N)=0.05", shape="box")
+            dot.node("G", "Negative\nP(-|N)=0.95", shape="box")
+            dot.edges(["AB", "AC", "BD", "BE", "CF", "CG"])
+            dot.edge("B", "D", label="P(+|C)=0.80\nP(+,C)=0.008")
+            dot.edge("B", "E", label="P(-|C)=0.20\nP(-,C)=0.002")
+            dot.edge("C", "F", label="P(+|N)=0.05\nP(+,N)=0.0495")
+            dot.edge("C", "G", label="P(-|N)=0.95\nP(-,N)=0.9405")
+            dot.render("bayes_tree", format="png", cleanup=True)
+            </code>
+        </program>
+    </subsection>
+
+    <!--   Continuous Random Variables   -->
+    <subsection xml:id="subsec-Continuous-Random-Variables">
+        <title>Continuous Random Variables</title>
+        <introduction>
+            <p>
+                For continuous random variables, probabilities are defined via density functions, extending discrete concepts to uncountable outcome spaces.
+            </p>
+        </introduction>
+        <subsubsection xml:id="subsubsec-Probability-Density">
+            <title>Probability Density</title>
+            <p>
+                A continuous random variable <m>X</m> has a <alert>probability density function (PDF)</alert> <m>f_X(x)</m> such that the probability over an interval <m>[a, b]</m> is:
+                <men xml:id="eqn-density-interval">
+                    P(a \leq X \leq b) = \int_a^b f_X(x) \, dx.
+                </men>
+                The density normalizes:
+                <men xml:id="eqn-density-normalize">
+                    \int_{-\infty}^{\infty} f_X(x) \, dx = 1.
+                </men>
+                Expectation and variance are:
+                <men xml:id="eqn-continuous-expectation">
+                    \mathbb{E}[X] = \int_{-\infty}^{\infty} x f_X(x) \, dx, \quad \mathrm{Var}(X) = \int_{-\infty}^{\infty} (x - \mathbb{E}[X])^2 f_X(x) \, dx.
+                </men>
+            </p>
+            <p>
+                For two continuous variables <m>X</m>, <m>Y</m>, the <alert>joint density</alert> <m>f_{X,Y}(x, y)</m> gives:
+                <men xml:id="eqn-joint-density">
+                    P(a \leq X \leq b, c \leq Y \leq d) = \int_c^d \int_a^b f_{X,Y}(x, y) \, dx \, dy.
+                </men>
+                The marginal density of <m>X</m> is:
+                <men xml:id="eqn-marginal-density">
+                    f_X(x) = \int_{-\infty}^{\infty} f_{X,Y}(x, y) \, dy.
+                </men>
+            </p>
+            <example>
+                <title>Bivariate normal distribution</title>
+                <p>
+                    A bivariate normal distribution for <m>X</m>, <m>Y</m> with means <m>\mu_X = \mu_Y = 0</m>, variances <m>\sigma_X^2 = \sigma_Y^2 = 1</m>, and correlation <m>\rho = 0.5</m> has joint density:
+                    <men xml:id="eqn-bivariate-normal">
+                        f_{X,Y}(x, y) = \frac{1}{2\pi \sqrt{1 - \rho^2}} \exp\left(-\frac{x^2 - 2\rho xy + y^2}{2(1 - \rho^2)}\right).
+                    </men>
+                    The marginal density of <m>X</m> is the standard normal: <m>f_X(x) = \frac{1}{\sqrt{2\pi}} e^{-x^2/2}</m>.
+                </p>
+            </example>
+            <figure xml:id="fig-bivariate-normal">
+                <caption>Contour plot of the joint density of a bivariate normal distribution (<m>\mu_X = \mu_Y = 0</m>, <m>\sigma_X = \sigma_Y = 1</m>, <m>\rho = 0.5</m>). Marginal densities of <m>X</m> is shown on the right, illustrating marginalization by integrating over <m>Y</m>.</caption>
+                <image source="./images/essential-probability-and-statistics/bivariate_normal.png">
+                    <shortdescription>Contour plot of bivariate normal joint density.</shortdescription>
+                </image>
+            </figure>
+            <program language="python" line-numbers="yes">
+                <title>Bivariate normal joint density</title>
+                <code>
+                # === Bivariate normal contour plot ===
+                import numpy as np
+                import matplotlib.pyplot as plt
+                from scipy.stats import multivariate_normal
+
+                # Bivariate normal parameters
+                mu = [0, 0]
+                cov = [[1, 0.5], [0.5, 1]]  # Correlation rho = 0.5
+                rv = multivariate_normal(mean=mu, cov=cov)
+                x = np.linspace(-3, 3, 100)
+                y = np.linspace(-3, 3, 100)
+                X, Y = np.meshgrid(x, y)
+                pos = np.dstack((X, Y))
+                Z = rv.pdf(pos)
+
+                # Marginal density for X
+                marginal_x = np.exp(-x**2 / 2) / np.sqrt(2 * np.pi)
+
+                # Plot
+                fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))
+                ax1.contour(X, Y, Z, cmap="Blues")
+                ax1.set_xlabel("X")
+                ax1.set_ylabel("Y")
+                ax1.set_title("Bivariate Normal Joint Density (ρ=0.5)")
+                ax1.grid(True, alpha=0.3)
+                ax2.plot(x, marginal_x)
+                ax2.set_xlabel("X")
+                ax2.set_ylabel("Density")
+                ax2.set_title("Marginal Density of X")
+                ax2.grid(True, alpha=0.3)
+                plt.tight_layout()
+                plt.savefig("bivariate_normal.png", dpi=300)
+                plt.show()
+                </code>
+            </program>
+        </subsubsection>
+        <subsubsection xml:id="subsubsec-Cumulative-Distribution-Function">
+            <title>Cumulative Distribution Function</title>
+            <p>
+                The <alert>cumulative distribution function (CDF)</alert> of a continuous random variable <m>X</m> is:
+                <men xml:id="eqn-cdf">
+                    F_X(x) = P(X \leq x) = \int_{-\infty}^x f_X(t) \, dt.
+                </men>
+                The density is the derivative: <m>f_X(x) = \frac{d F_X}{dx}</m>, where differentiable.
+            </p>
+            <p>
+                For a standard normal distribution (<m>\mu = 0</m>, <m>\sigma = 1</m>):
+                <men xml:id="eqn-normal-pdf">
+                    f_X(x) = \frac{1}{\sqrt{2\pi}} \exp\left(-\frac{x^2}{2}\right).
+                </men>
+                Its CDF is <m>F_X(x) = \Phi(x)</m>, the standard normal CDF.
+            </p>
+            <figure xml:id="fig-normal-pdf-cdf">
+                <caption>PDF and CDF of a standard normal distribution (<m>\mu=0</m>, <m>\sigma=1</m>). The left panel shows the bell-shaped density, and the right panel shows the cumulative probability, illustrating <m>F_X(x) = \int_{-\infty}^x f_X(t) \, dt</m>.</caption>
+                <image source="./images/essential-probability-and-statistics/normal_pdf_cdf.png">
+                    <shortdescription>Two-panel plot of standard normal PDF and CDF.</shortdescription>
+                </image>
+            </figure>
+            <program language="python" line-numbers="yes">
+                <title>Standard normal PDF and CDF</title>
+                <code>
+            # === Standard normal PDF and CDF ===
+            import numpy as np
+            import matplotlib.pyplot as plt
+            from scipy.stats import norm
+
+            mu, sigma = 0.0, 1.0
+            dist = norm(loc=mu, scale=sigma)
+            x = np.linspace(mu - 4*sigma, mu + 4*sigma, 1000)
+            pdf_values = dist.pdf(x)
+            cdf_values = dist.cdf(x)
+
+            fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 5))
+            ax1.plot(x, pdf_values, label="PDF")
+            ax1.fill_between(x, pdf_values, alpha=0.2)
+            ax1.set_xlabel("x")
+            ax1.set_ylabel("Density")
+            ax1.set_title("Standard Normal PDF")
+            ax1.grid(True, alpha=0.3)
+            ax1.legend()
+            ax2.plot(x, cdf_values, label="CDF")
+            ax2.set_xlabel("x")
+            ax2.set_ylabel("Cumulative Probability")
+            ax2.set_title("Standard Normal CDF")
+            ax2.grid(True, alpha=0.3)
+            ax2.legend()
+            plt.tight_layout()
+            plt.savefig("normal_pdf_cdf.png", dpi=300)
+            plt.show()
+            </code>
+        </program>
+        </subsubsection>
+    </subsection>
+
+    <!--   Independence   -->
+    <subsection xml:id="subsec-Independent-Variables">
+        <title>Independent Random Variables</title>
+        <p>
+            Random variables <m>X</m> and <m>Y</m> are <alert>independent</alert> if their joint distribution factorizes:
+            <men xml:id="eqn-independent-variables">
+                P(X=x_i, Y=y_j) = P(X=x_i) P(Y=y_j), \quad \text{for all } i, j.
+            </men>
+            For continuous variables:
+            <men xml:id="eqn-independent-density">
+                f_{X,Y}(x, y) = f_X(x) f_Y(y).
+            </men>
+            Equivalently, <m>P(X=x_i \mid Y=y_j) = P(X=x_i)</m> or <m>f_{X|Y}(x \mid y) = f_X(x)</m>.
+        </p>
+        <p>
+            Independence implies <m>\mathrm{Cov}(X,Y) = 0</m>, but zero covariance does not imply independence, except for jointly normal variables.
+        </p>
+        <example>
+            <title>Independent vs. dependent variables</title>
+            <p>
+                Consider the patient dataset with <m>X</m> (disease status) and <m>Y</m> (test result), which are dependent (see <xref ref="tab-patient-data-for-jt-and-conditional-probs"/>). Compare with <m>Z</m>, a patient’s age group (young/old), assumed independent of <m>X</m>. The plot below shows joint probabilities for dependent and independent cases.
+            </p>
+        </example>
+        <figure xml:id="fig-independence-heatmap">
+            <caption>Heatmaps comparing joint probabilities for dependent (<m>X</m>: disease, <m>Y</m>: test) and independent (<m>X</m>: disease, <m>Z</m>: age) variables. The left heatmap shows non-factorized probabilities, indicating dependence; the right shows factorized probabilities, confirming independence.</caption>
+            <image source="./images/essential-probability-and-statistics/independence_heatmap.png">
+                <shortdescription>Heatmaps comparing dependent and independent joint probabilities.</shortdescription>
+            </image>
+        </figure>
+        <program language="python" line-numbers="yes">
+            <title>Independence heatmap comparison</title>
+            <code>
+            # === Heatmap for independent vs. dependent variables ===
+            import numpy as np
+            import matplotlib.pyplot as plt
+            import seaborn as sns
+
+            # Dependent: X (disease), Y (test)
+            joint_xy = np.array([[0.15, 0.05], [0.30, 0.50]])
+            # Independent: X (disease), Z (age: young/old, P(young)=0.4, P(old)=0.6)
+            P_X = np.array([0.2, 0.8])  # P(D), P(N)
+            P_Z = np.array([0.4, 0.6])  # P(Young), P(Old)
+            joint_xz = np.outer(P_X, P_Z)
+
+            # Plot
+            fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))
+            sns.heatmap(joint_xy, annot=True, fmt=".3f", cmap="Blues", cbar=False,
+                        xticklabels=["Y=+", "Y=-"], yticklabels=["X=D", "X=N"], ax=ax1)
+            ax1.set_title("Dependent: P(X,Y)")
+            sns.heatmap(joint_xz, annot=True, fmt=".3f", cmap="Blues", cbar=False,
+                        xticklabels=["Z=Young", "Z=Old"], yticklabels=["X=D", "X=N"], ax=ax2)
+            ax2.set_title("Independent: P(X)P(Z)")
+            plt.tight_layout()
+            plt.savefig("independence_heatmap.png", dpi=300)
+            plt.show()
+            </code>
+        </program>
+    </subsection>
+
+    <!--   Application   -->
+    <subsection xml:id="subsec-Application-Medical-Diagnosis">
+        <title>Application: Medical Diagnosis</title>
+        <p>
+            Joint and conditional probabilities are critical in medical diagnosis. Using the patient dataset, we estimate the probability of disease given symptoms and test results, combining multiple evidence sources.
+        </p>
+        <example>
+            <title>Diagnosing disease with test and severity</title>
+            <p>
+                Augment the patient dataset with symptom severity (<m>S</m>, normal, mean 5 for D, 3 for N, std 1.5). For a patient with a positive test (<m>Y=+</m>) and high severity (<m>S \geq 4</m>), compute <m>P(D \mid +, S \geq 4)</m> using conditional probabilities.
+            </p>
+        </example>
+        <figure xml:id="fig-diagnosis-conditional">
+            <caption>Bar chart of conditional probabilities <m>P(D \mid Y, S)</m> for combinations of test result (<m>Y</m>) and symptom severity (<m>S \geq 4</m> or <m>S \lt 4</m>). This illustrates how multiple features refine disease probability estimates in medical diagnostics.</caption>
+            <image source="./images/essential-probability-and-statistics/diagnosis_conditional.png">
+                <shortdescription>Bar chart of conditional probabilities for diagnosis.</shortdescription>
+            </image>
+        </figure>
+        <program language="python" line-numbers="yes">
+            <title>Conditional probability for diagnosis</title>
+            <code>
+            import numpy as np
+            import pandas as pd
+            import matplotlib.pyplot as plt
+
+            np.random.seed(42)
+
+            # Synthetic patient data
+            counts = {"D+": 150, "D-": 50, "N+": 300, "N-": 500}
+            data = []
+            for status, test, count in [("D", 1, 150), ("D", 0, 50), ("N", 1, 300), ("N", 0, 500)]:
+                severity = np.random.normal(5 if status == "D" else 3, 1.5, count)
+                data.extend([[1 if status == "D" else 0, test, s] for s in severity])
+            data = pd.DataFrame(data, columns=["Disease", "Test", "Severity"])
+            data["High_Severity"] = data["Severity"] >= 4
+
+            # Compute conditional probabilities
+            probs = []
+            for test, hs in [(1, True), (1, False), (0, True), (0, False)]:
+                subset = data[(data["Test"] == test) \amp; (data["High_Severity"] == hs)]
+                if len(subset) > 0:
+                    p_d = np.mean(subset["Disease"])
+                    probs.append(p_d)
+                else:
+                    probs.append(0)
+
+            # Plot
+            labels = ["Y=+, S≥4", "Y=+, S&lt;4", "Y=-, S&#8805;4", "Y=-, S&lt;4"]
+            plt.figure(figsize=(8, 6))
+            plt.bar(labels, probs, color="blue")
+            plt.ylabel("P(D | Y, S)")
+            plt.title("Conditional Probability of Disease")
+            plt.ylim(0, 1)
+            plt.grid(True, alpha=0.3)
+            plt.tight_layout()
+            plt.savefig("diagnosis_conditional.png", dpi=300)
+            plt.show()
+            </code>
+        </program>
+    </subsection>
+
+    <conclusion>
+        <p>
+            Joint, marginal, and conditional probabilities form the foundation for modeling relationships between random variables. Joint probabilities capture co-occurrence, marginals summarize individual variables, and conditionals refine probabilities based on evidence. Bayes’ rule updates beliefs, while independence simplifies joint distributions. Visualizations like heatmaps, scatter plots, and tree diagrams clarify these concepts. Apply these tools in fields like medical diagnostics, as shown, or explore further with resources like <url href="https://www.probabilitycourse.com/" visual="probabilitycourse.com">Probability Course</url>.
+        </p>
+    </conclusion>
+</section>

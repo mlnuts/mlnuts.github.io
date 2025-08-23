@@ -14,7 +14,9 @@
   
   <xi:include href="ch-essential-prob-sections/sec-basic-probability-rev-1.ptx" />
   
-  <xi:include href="ch-essential-prob-sections/sec-joint-conditional-and-marginal.ptx" />
+  <xi:include href="ch-essential-prob-sections/sec-joint-conditional-and-marginal-rev-1.ptx" />
+  
+  
   <xi:include href="ch-essential-prob-sections/sec-discrete-probability-distributions.ptx" />
 
   <xi:include href="ch-essential-prob-sections/sec-continuous-probability-distributions.ptx" />
