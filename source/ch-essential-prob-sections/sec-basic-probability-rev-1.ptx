@@ -3,7 +3,7 @@
     <title>Basic Probability for Machine Learning</title>
     <introduction>
         <p>
-            Probability is the backbone of machine learning, helping us model uncertainty in data, predictions, and outcomes. Imagine probability as a weather forecast for events: it tells us how likely something is to happen, like a student passing an exam or an email being spam. In machine learning, probability underpins tasks like classification (e.g., predicting labels), evaluating model confidence, and handling noisy data. This section introduces probability concepts—sample spaces, events, and axioms—and connects them to practical machine learning applications using Python. We’ll use the student dataset from <xref ref="sec-data-types-for-machine-learning"/> to illustrate ideas.
+            Probability is the backbone of machine learning, helping us model uncertainty in data, predictions, and outcomes. In machine learning, probability underpins tasks like classification (e.g., predicting labels), evaluating model confidence, and handling noisy data. This section introduces probability concepts such as sample spaces, events, and axioms—and connects them to practical machine learning applications using Python. We will use the student dataset from <xref ref="sec-data-types-for-machine-learning"/> to illustrate ideas.
         </p>
         <p>
             An <alert>event</alert> is a specific outcome or set of outcomes from an experiment, represented as a set. For a coin toss, "heads" is <m>\{H\}</m>, "tails" is <m>\{T\}</m>, and "heads or tails" is <m>\{H, T\}</m>. Each trial answers whether an event occurred (yes/no). For a die roll yielding 2, events like <m>\{2\}</m> or <m>\{1,2,3\}</m> occur if they include 2. Sets allow combining events via union (<m>\cup</m>) or intersection (<m>\cap</m>), such as <m>\{H\} \cup \{T\} = \{H, T\}</m>.
@@ -12,22 +12,22 @@
     <subsection xml:id="subsec-Axiomatic-View-of-Probability">
         <title>Axiomatic View of Probability</title>
         <p>
-            In 1933, Andrey Kolmogorov formalized probability with three axioms, providing a mathematical framework. Think of these as rules for a game ensuring probabilities make sense, like ensuring a weather forecast never predicts negative rain or more than 100% chance.
+            In 1933, Andrey Kolmogorov formalized probability with three axioms, providing a mathematical framework. Think of these as rules that ensure probabilities make sense, like ensuring a weather forecast never predicts negative rain or more than 100% chance.
         </p>
         <p>
             <alert>Sample Space <m>\Omega</m></alert>: The set of all possible outcomes. For a six-sided die, <m>\Omega = \{1, 2, 3, 4, 5, 6\}</m>. For a student passing an exam, <m>\Omega = \{\text{Pass}, \text{Fail}\}</m>.
         </p>
         <p>
-            <alert>Event Space <m>F</m></alert>: All possible subsets of <m>\Omega</m>, including the empty set <m>\varnothing</m> (impossible event) and <m>\Omega</m> (certain event). For a coin toss (<m>\Omega = \{H, T\}</m>), <m>F = \{\varnothing, \{H\}, \{T\}, \{H, T\}\}</m>. With <m>N</m> outcomes, <m>F</m> has <m>2^N</m> events.
+            <alert>Event Space <m>F</m></alert>: All possible subsets of <m>\Omega</m>, including the empty set <m>\varnothing</m> (impossible event) and <m>\Omega</m> (event certain to happen). For a coin toss (<m>\Omega = \{H, T\}</m>), <m>F = \{\varnothing, \{H\}, \{T\}, \{H, T\}\}</m>. With <m>N</m> outcomes, <m>F</m> has <m>2^N</m> events.
         </p>
         <p>
-            <alert>Probability Measure <m>P</m></alert>: Assigns a number <m>P(E)</m> to each event <m>E \in F</m>, representing its likelihood. For a fair die, <m>P(\{1\}) = 1/6</m>.
+            <alert>Probability Measure <m>P</m></alert>: Assigns a number <m>P(E)</m> to each event <m>E \in F</m>, representing its likelihood. For example, for a fair die, <m>P(\{1\}) = 1/6</m>.
         </p>
         <p>
-            The probability space is <m>(\Omega, F, P)</m>. Kolmogorov’s axioms are:
+            The probability space is the triplet <m>(\Omega, F, P)</m>. Kolmogorov’s axioms are:
             <ol marker="1">
                 <li><alert>Non-negativity</alert>: <men xml:id="eqn-first-axiom-non-negativity">P(E) \ge 0</men> for all <m>E \in F</m>.</li>
-                <li><alert>Normalization</alert>: <men xml:id="eqn-second-axiom-normalization">P(\Omega) = 1</men>, ensuring total certainty.</li>
+                <li><alert>Normalization</alert>: <men xml:id="eqn-second-axiom-normalization">P(\Omega) = 1</men>, ensuring total certainty for event <m>\Omega</m>.</li>
                 <li><alert>Additivity</alert>: For disjoint events (<m>E_1 \cap E_2 = \varnothing</m>), <men xml:id="eqn-third-axiom-additivity">P(E_1 \cup E_2) = P(E_1) + P(E_2)</men>.</li>
             </ol>
         </p>
@@ -84,6 +84,74 @@
             </code>
         </program>
     </subsection>
+
+    <subsection xml:id="subsec-sum-product-rules">
+        <title>Sum and Product Rules for Probability</title>
+        <p>
+            The sum and product rules are foundational for computing probabilities of combined events, essential for machine learning tasks like feature engineering and Bayesian inference.
+        </p>
+        <p>
+            <alert>Sum Rule</alert>: The probability of the union of two events <m>A</m> and <m>B</m> is given by:
+            <men xml:id="eqn-sum-rule">P(A \cup B) = P(A) + P(B) - P(A \cap B).</men>
+            This accounts for overlapping events to avoid double-counting. In machine learning, the sum rule is used to compute marginal probabilities from joint distributions.
+        </p>
+        <p>
+            <alert>Product Rule</alert>: The joint probability of two events <m>A</m> and <m>B</m> is:
+            <men xml:id="eqn-product-rule">P(A \cap B) = P(A|B)P(B),</men>
+            where <m>P(A|B)</m> is the conditional probability of <m>A</m> given <m>B</m>. This rule is key for factoring joint probabilities in models like Naive Bayes.
+        </p>
+        <p>
+            Example: For a fair die, let <m>A = \{1,2,3\}</m> (numbers ≤ 3) and <m>B = \{3,4,5\}</m>. The sum rule gives <m>P(A \cup B) = P(A) + P(B) - P(A \cap B) = 3/6 + 3/6 - 1/6 = 5/6</m>, as <m>A \cap B = \{3\}</m>. For the product rule, consider the student dataset from <xref ref="sec-data-types-for-machine-learning"/>: the probability of passing and studying >20 hours is <m>P(\text{Pass} \cap \text{High Study}) = P(\text{Pass} | \text{High Study})P(\text{High Study})</m>.
+        </p>
+        <program language="python" line-numbers="yes">
+            <title>Sum and product rules with student data</title>
+            <code>
+            # --- SUM AND PRODUCT RULES ---
+            import pandas as pd
+            import numpy as np
+            import seaborn as sns
+            import matplotlib.pyplot as plt
+
+            # Student data
+            np.random.seed(42)
+            data = pd.DataFrame({
+                'Hours_Studied': np.random.normal(20, 5, 100).clip(0, 40),
+                'Passed': np.random.binomial(1, 0.7, 100)
+            })
+            data['High_Study'] = data['Hours_Studied'] > 20
+
+            # Compute probabilities
+            p_pass = np.mean(data['Passed'])
+            p_high_study = np.mean(data['High_Study'])
+            p_pass_and_high = np.mean(data['Passed'] \amp; data['High_Study'])
+            p_pass_or_high = p_pass + p_high_study - p_pass_and_high  # Sum rule
+            p_pass_given_high = p_pass_and_high / p_high_study  # For product rule
+
+            print(f"P(Pass): {p_pass:.3f}, P(High Study): {p_high_study:.3f}")
+            print(f"P(Pass ∩ High Study): {p_pass_and_high:.3f}")
+            print(f"P(Pass ∪ High Study): {p_pass_or_high:.3f}")
+            print(f"Product Rule: P(Pass ∩ High Study) = P(Pass | High Study) * P(High Study) = {p_pass_given_high:.3f} * {p_high_study:.3f} = {p_pass_given_high * p_high_study:.3f}")
+
+            # Heatmap of joint probabilities
+            joint_table = pd.crosstab(data['Passed'], data['High_Study'], normalize='all')
+            sns.heatmap(joint_table, annot=True, cmap='Blues', fmt='.3f')
+            plt.xlabel('High Study Hours (>20)')
+            plt.ylabel('Passed')
+            plt.title('Joint Probability of Pass and High Study Hours')
+            plt.savefig('joint-probability-heatmap.png', dpi=300)
+            plt.show()
+            # --- END CODE ---
+            </code>
+        </program>
+        <figure xml:id="fig-joint-probability-heatmap">
+            <caption>Heatmap displaying the joint probability distribution of passing an exam and studying more than 20 hours for 100 students, based on synthetic data (Hours_Studied: normal, mean 20, std 5; Passed: Bernoulli, p=0.7). Each cell shows the probability <m>P(\text{Pass}, \text{High Study})</m>, with darker shades indicating higher probabilities. Marginal probabilities <m>P(\text{Pass})</m> and <m>P(\text{High Study})</m> are derived by summing rows or columns, illustrating the sum rule. The product rule is verified as <m>P(\text{Pass} \cap \text{High Study}) = P(\text{Pass} | \text{High Study})P(\text{High Study})</m>. This visualization is relevant to machine learning for estimating joint feature probabilities in classification models.</caption>
+            <image source="./images/essential-probability-and-statistics/joint-probability-heatmap.png">
+                <shortdescription>Heatmap of joint probabilities for pass and study hours.</shortdescription>
+            </image>
+        </figure>
+    </subsection>
+
+
     <subsection xml:id="subsec-conditional-probability-independence">
         <title>Conditional Probability and Independence</title>
         <p>
@@ -98,35 +166,35 @@
         <program language="python" line-numbers="yes">
             <title>Conditional probability with student data</title>
             <code>
-# --- CONDITIONAL PROBABILITY ---
-import pandas as pd
-import numpy as np
+            # --- CONDITIONAL PROBABILITY ---
+            import pandas as pd
+            import numpy as np
 
-# Student data
-np.random.seed(42)
-data = pd.DataFrame({
-    'Hours_Studied': np.random.normal(20, 5, 100).clip(0, 40),
-    'Passed': np.random.binomial(1, 0.7, 100)
-})
-data['High_Study'] = data['Hours_Studied'] > 20
+            # Student data
+            np.random.seed(42)
+            data = pd.DataFrame({
+                'Hours_Studied': np.random.normal(20, 5, 100).clip(0, 40),
+                'Passed': np.random.binomial(1, 0.7, 100)
+            })
+            data['High_Study'] = data['Hours_Studied'] > 20
 
-# Conditional probability
-p_pass = np.mean(data['Passed'])
-p_high_study = np.mean(data['High_Study'])
-p_pass_and_high = np.mean(data['Passed'] \amp; data['High_Study'])
-p_pass_given_high = p_pass_and_high / p_high_study
-print(f"P(Pass | High Study): {p_pass_given_high:.3f}")
+            # Conditional probability
+            p_pass = np.mean(data['Passed'])
+            p_high_study = np.mean(data['High_Study'])
+            p_pass_and_high = np.mean(data['Passed'] \amp; data['High_Study'])
+            p_pass_given_high = p_pass_and_high / p_high_study
+            print(f"P(Pass | High Study): {p_pass_given_high:.3f}")
 
-# Bar plot
-counts = data.groupby(['High_Study', 'Passed']).size().unstack()
-counts.plot(kind='bar', stacked=True)
-plt.xlabel('High Study Hours (>20)')
-plt.ylabel('Count')
-plt.title('Pass/Fail by Study Hours')
-plt.legend(['Fail', 'Pass'])
-plt.savefig('./images/essential-probability-and-statistics/conditional-bar.png', dpi=300)
-plt.show()
-# --- END CODE ---
+            # Bar plot
+            counts = data.groupby(['High_Study', 'Passed']).size().unstack()
+            counts.plot(kind='bar', stacked=True)
+            plt.xlabel('High Study Hours (>20)')
+            plt.ylabel('Count')
+            plt.title('Pass/Fail by Study Hours')
+            plt.legend(['Fail', 'Pass'])
+            plt.savefig('./images/essential-probability-and-statistics/conditional-bar.png', dpi=300)
+            plt.show()
+            # --- END CODE ---
             </code>
         </program>
         <figure xml:id="fig-conditional-bar">
@@ -282,60 +350,7 @@ plt.show()
             </li>
         </ol>
     </subsection>
-    <subsection xml:id="subsec-ml-application">
-        <title>Probability in Machine Learning: Naive Bayes</title>
-        <p>
-            Probability is central to machine learning models like Naive Bayes, which uses conditional probabilities to classify data (e.g., spam detection).
-        </p>
-        <program language="python" line-numbers="yes">
-            <title>Naive Bayes for pass/fail classification</title>
-            <code>
-            # --- NAIVE BAYES ---
-            import pandas as pd
-            from sklearn.naive_bayes import GaussianNB
-            from sklearn.preprocessing import StandardScaler
-            import numpy as np
 
-            np.random.seed(42)
-            data = pd.DataFrame({
-                'Hours_Studied': np.random.normal(20, 5, 100).clip(0, 40),
-                'Score': np.random.normal(85, 10, 100).clip(0, 100),
-                'Passed': np.random.binomial(1, 0.7, 100)
-            })
-
-            # Preprocess
-            scaler = StandardScaler()
-            X = scaler.fit_transform(data[['Hours_Studied', 'Score']])
-            y = data['Passed']
-
-            # Train Naive Bayes
-            model = GaussianNB()
-            model.fit(X, y)
-
-            # Predict probability
-            new_student = scaler.transform([[25, 90]])
-            prob = model.predict_proba(new_student)
-            print(f"P(Fail), P(Pass) for new student: {prob[0]}")
-
-            # Plot decision boundary (simplified)
-            plt.scatter(X[:, 0], X[:, 1], c=y, cmap='bwr', alpha=0.6)
-            plt.xlabel('Scaled Hours Studied')
-            plt.ylabel('Scaled Score')
-            plt.title('Naive Bayes Classification')
-            plt.savefig('naive-bayes.png', dpi=300)
-            plt.show()
-            # --- END CODE ---
-            </code>
-        </program>
-        <figure xml:id="fig-naive-bayes">
-            
-            <caption>Scatter plot visualizing a Gaussian Naive Bayes classifier’s pass/fail predictions for 100 students, using scaled Hours_Studied (normal, mean 20, std 5) and Score (normal, mean 85, std 10) as features. Blue points represent failures, and red points represent passes, with outcomes drawn from a Bernoulli distribution (p=0.7). The plot shows how Naive Bayes uses conditional probabilities to separate classes, a common approach in machine learning for tasks like spam detection or student performance prediction.</caption>
-            
-            <image source="./images/essential-probability-and-statistics/naive-bayes.png">
-                <shortdescription>Scatter plot of Naive Bayes classification.</shortdescription>
-            </image>
-        </figure>
-    </subsection>
     <conclusion>
         <p>
             Probability provides the foundation for modeling uncertainty in machine learning. Axioms define the rules, while theoretical, frequentist, and Bayesian approaches offer different perspectives. Conditional probability and distributions like binomial are key for models like Naive Bayes. Practice with datasets from <xref ref="sec-data-types-for-machine-learning"/> and libraries from <xref ref="sec-useful-descriptive-statistics-tools"/> to apply these concepts. Explore <url href="https://www.probabilitycourse.com/" visual="probabilitycourse.com">Probability Course</url> for further learning.
