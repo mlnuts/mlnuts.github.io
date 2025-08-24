@@ -3,16 +3,16 @@
     <title>Basic Probability for Machine Learning</title>
     <introduction>
         <p>
-            Probability is the backbone of machine learning, helping us model uncertainty in data, predictions, and outcomes. In machine learning, probability underpins tasks like classification (e.g., predicting labels), evaluating model confidence, and handling noisy data. This section introduces probability concepts such as sample spaces, events, and axioms—and connects them to practical machine learning applications using Python. We will use the student dataset from <xref ref="sec-data-types-for-machine-learning"/> to illustrate ideas.
+            Probability is the backbone of machine learning, helping us model uncertainty in data, predictions, and outcomes. In machine learning, probability underpins tasks like classification (e.g., predicting labels), evaluating model confidence, and handling noisy data. This section introduces probability concepts such as sample spaces, events, and axioms—and connects them to practical machine learning applications using Python. 
         </p>
         <p>
-            An <alert>event</alert> is a specific outcome or set of outcomes from an experiment, represented as a set. For a coin toss, "heads" is <m>\{H\}</m>, "tails" is <m>\{T\}</m>, and "heads or tails" is <m>\{H, T\}</m>. Each trial answers whether an event occurred (yes/no). For a die roll yielding 2, events like <m>\{2\}</m> or <m>\{1,2,3\}</m> occur if they include 2. Sets allow combining events via union (<m>\cup</m>) or intersection (<m>\cap</m>), such as <m>\{H\} \cup \{T\} = \{H, T\}</m>.
+            An <alert>event</alert> is a specific outcome or set of outcomes from an experiment, represented as a set. For a coin toss, "heads" is <m>\{H\}</m>, "tails" is <m>\{T\}</m>, and "heads or tails" is <m>\{H, T\}</m>. Each trial answers whether an event occurred (yes/no). For a die roll yielding <m>2</m>, events like <m>\{2\}</m> or <m>\{1,2,3\}</m> occur if they include <m>2</m>. Sets allow combining events via union (<m>\cup</m>) or intersection (<m>\cap</m>), such as <m>\{H\} \cup \{T\} = \{H, T\}</m>.
         </p>
     </introduction>
     <subsection xml:id="subsec-Axiomatic-View-of-Probability">
         <title>Axiomatic View of Probability</title>
         <p>
-            In 1933, Andrey Kolmogorov formalized probability with three axioms, providing a mathematical framework. Think of these as rules that ensure probabilities make sense, like ensuring a weather forecast never predicts negative rain or more than 100% chance.
+            In 1933, Andrey Kolmogorov formalized probability with three axioms, providing a mathematical framework. Think of these as rules that ensure probabilities make sense, like ensuring a weather forecast never predicts negative rain or more than <m>100\%</m> chance.
         </p>
         <p>
             <alert>Sample Space <m>\Omega</m></alert>: The set of all possible outcomes. For a six-sided die, <m>\Omega = \{1, 2, 3, 4, 5, 6\}</m>. For a student passing an exam, <m>\Omega = \{\text{Pass}, \text{Fail}\}</m>.
@@ -21,14 +21,39 @@
             <alert>Event Space <m>F</m></alert>: All possible subsets of <m>\Omega</m>, including the empty set <m>\varnothing</m> (impossible event) and <m>\Omega</m> (event certain to happen). For a coin toss (<m>\Omega = \{H, T\}</m>), <m>F = \{\varnothing, \{H\}, \{T\}, \{H, T\}\}</m>. With <m>N</m> outcomes, <m>F</m> has <m>2^N</m> events.
         </p>
         <p>
+            With every event <m>E</m> we can identify its complementary event or complement <m>E^c</m>. The complementary event <m>E^c</m> includes all other possibilities that excluded the event <m>E</m>. Thus, in a six-sided die, say <m>E = \{ 1, 3, 4 \}</m>. Its complement will be the event <m>E^c = \{ 2, 5, 6\}</m>. Clearly, their intersection will be the null event.
+            <me>
+                E \cap E^c = \varnothing.
+            </me>
+            
+        </p>
+        <p>
             <alert>Probability Measure <m>P</m></alert>: Assigns a number <m>P(E)</m> to each event <m>E \in F</m>, representing its likelihood. For example, for a fair die, <m>P(\{1\}) = 1/6</m>. You only need <m>P</m> for elementary events, which are the elements of <m>\Omega</m>, each taken as one event since you can use the Aditivity law below to get probability of any event in the entire event space <m>F</m>.
         </p>
         <p>
             The probability space is the triplet <m>(\Omega, F, P)</m>. Kolmogorov’s axioms are:
             <ol marker="1">
-                <li><alert>Non-negativity</alert>: <men xml:id="eqn-first-axiom-non-negativity">P(E) \ge 0</men> for all <m>E \in F</m>.</li>
-                <li><alert>Normalization</alert>: <men xml:id="eqn-second-axiom-normalization">P(\Omega) = 1</men>, ensuring total certainty for event <m>\Omega</m>.</li>
-                <li><alert>Additivity</alert>: For disjoint events (<m>E_1 \cap E_2 = \varnothing</m>), <men xml:id="eqn-third-axiom-additivity">P(E_1 \cup E_2) = P(E_1) + P(E_2)</men>.</li>
+                <li><alert>Non-negativity</alert>: Although, negative probabilities may be taunting science fiction scenarios, they do not make sense in the probailities we deal with everyday. We require that
+                    <men xml:id="eqn-first-axiom-non-negativity">
+                        P(E) \ge 0 \text{ for all } E \in F.
+                    </men>
+                </li>
+                <li><alert>Normalization</alert>: Since the event <m>\Omega</m> has all possible elementary events, except the null event, every possible event is inculded in <m>\Omega</m>. Therefor, <m>\Omega</m> is called event of <m>100\%</m> certainty. Thus,
+                    <men xml:id="eqn-second-axiom-normalization">
+                        P(\Omega) = 1</men>, 
+                    ensures total certainty for event <m>\Omega</m>. This is why although frequencies are proportional to probabilities, we need to divide them by total number of trials to convert them into normalized probabilities. 
+                </li>
+                <li><alert>Additivity</alert>: If two events that are disjoint, i.e., there is no situation in which both events can occur together, i.e, <m>E_1 \cap E_2 = \varnothing</m>), the probability of either of them occuring, i.e., their union, must be sum of the probabilities of the events occuring separately.  
+                <men xml:id="eqn-third-axiom-additivity">
+                    P(E_1 \cup E_2) = P(E_1) + P(E_2),\quad \text{ if } E_1 \cap E_2 = \varnothing.
+                </men>.
+                Of course, if there was an overlap, between the two events, then, we would need to subtrat the overlap part since that would have been counted twice, once in <m>E_1</m> and another time in <m>E_2</m>.
+                <men xml:id="eqn-sum-rule-as-fundamental">
+                    P(E_1 \cup E_2) = P(E_1) + P(E_2) - P(E_1 \cap E_2).
+                </men>
+                
+                
+                </li>
             </ol>
         </p>
         <p>
@@ -40,10 +65,25 @@
             </mdn>
         </p>
         <p>
-            The union formula accounts for overlap, as shown in <xref ref="fig-venn-diagram-E1-E2"/>. For a die, if <m>E_1 = \{1,3,5\}</m> (odd numbers), <m>E_2 = \{3,5,6\}</m>, then <m>P(E_1 \cup E_2) = P(\{1,3,5,6\}) = 4/6 = 2/3</m>.
+            
+            <xref ref="fig-venn-diagram-E1-E2"/> illustrated the union formula in which two events <m>E_1 = \{1,3,5\}</m> (odd numbers), <m>E_2 = \{3,5,6\}</m> have an overlap. Theoretically,
+            <me>
+                P(E_1 \cup E_2) = P(\{1,3,5,6\}) = 4/6 = 2/3.
+            </me>
+            Let's see how it plays out in the <m>1000</m> rolls simulation shown in <xref ref="fig-venn-diagram-E1-E2"/>. The left region <m>(181)</m> counts rolls of <m>1</m> (in <m>E_1</m> only), the right region <m>(155)</m> counts rolls of <m>6</m> (in <m>E_2</m> only), the overlap <m>(326)</m> counts rolls of <m>3 \text{ or } 5</m> (in <m>E_1 \cap E_2</m>), and a total of <m>622</m> counts for <m>1\text{ or } 3 \text{ or } 5 \text{ or } 6</m>. From these counts we estimate probabilities. The counts <m>f_{E_1} = 181+326 = 507</m>, <m>f(E_2) = 155+326 = 481</m>, <m>f_{E_1 \cap E_2} = 326</m> and <m>f_{E_1 \cup E_2} = 622</m> in total rolls <m>N = 1000</m>.  From these counts we get
+            <md>
+                <mrow>\amp \hat{P}(E_1) = \frac{507}{1000} = 0.507 </mrow>
+                <mrow>\amp \hat{P}(E_2) = \frac{481}{1000} = 0.481 </mrow>
+                <mrow>\amp \hat{P}(E_1 \cap E_2) = \frac{326}{1000} = 0.326 </mrow>
+                <mrow>\amp \hat{P}(E_1 \cup E_2) = \frac{622}{1000} = 0.622 </mrow>
+            </md>
+            Now let's check
+            <me>
+                \hat{P}(E_1) + \hat{P}(E_2) - \hat{P}(E_1 \cap E_2)= 0.507 + 0.481 - 0.326 = 0.662 =  \hat{P}(E_1 \cup E_2).
+            </me>
         </p>
         <figure xml:id="fig-venn-diagram-E1-E2">
-            <caption>Venn diagram illustrating events <m>E_1 = \{1,3,5\}</m> (odd numbers) and <m>E_2 = \{3,5,6\}</m> for 1,000 simulated rolls of a fair six-sided die. The left region (181) counts rolls of 1 (in <m>E_1</m> only), the right region (326) counts rolls of 6 (in <m>E_2</m> only), and the overlap (155) counts rolls of 3 or 5 (in <m>E_1 \cap E_2</m>). These counts estimate probabilities, with theoretical values <m>P(E_1) = 3/6</m>, <m>P(E_2) = 3/6</m>, <m>P(E_1 \cap E_2) = 2/6</m>, and <m>P(E_1 \cup E_2) = 4/6</m>. Deviations (e.g., 326 vs. expected 167 for <m>E_2</m> only) reflect random variation. This visualization supports the union formula <m>P(E_1 \cup E_2) = P(E_1) + P(E_2) - P(E_1 \cap E_2)</m>, used in machine learning for feature probability calculations.</caption>
+            <caption>Venn diagram illustrating events <m>E_1 = \{1,3,5\}</m> (odd numbers) and <m>E_2 = \{3,5,6\}</m> for 1,000 simulated rolls of a fair six-sided die. The code of the simulation is given below. </caption>
             <image source="./images/essential-probability-and-statistics/venn-diagram-E1-E2.png">
                 <shortdescription>Venn diagram of intersecting events.</shortdescription>
             </image>
@@ -110,62 +150,6 @@
         where <m>P(A|B)</m> is the conditional probability of <m>A</m> given <m>B</m>. This factorization is the basis for probabilistic models such as Naive Bayes.
     </p>
 
-    <p>
-        Example (Student Study Data): Suppose we record whether students studied more than 20 hours (<m>High Study</m>) and whether they passed an exam (<m>Pass</m>). Using the dataset below, we can estimate probabilities empirically:
-        <ul>
-        <li><m>P(\text{Pass})</m>: overall fraction of students who passed,</li>
-        <li><m>P(\text{High Study})</m>: fraction who studied more than 20 hours,</li>
-        <li><m>P(\text{Pass} \cap \text{High Study})</m>: fraction who both passed and studied more than 20 hours.</li>
-        </ul>
-        The sum rule gives <m>P(\text{Pass} \cup \text{High Study}) = P(\text{Pass}) + P(\text{High Study}) - P(\text{Pass} \cap \text{High Study})</m>.  
-        The product rule verifies that <m>P(\text{Pass} \cap \text{High Study}) = P(\text{Pass}|\text{High Study})P(\text{High Study})</m>.
-    </p>
-
-    <program language="python" line-numbers="yes">
-        <title>Sum and product rules with student data</title>
-        <code>
-        import pandas as pd
-        import numpy as np
-        import matplotlib.pyplot as plt
-        import seaborn as sns
-
-        np.random.seed(42)
-        data = pd.DataFrame({
-            "Hours_Studied": np.random.normal(20, 5, 200).clip(0, 40),
-            "Passed": np.random.binomial(1, 0.7, 200)
-        })
-        data["High_Study"] = data["Hours_Studied"] > 20
-
-        # Probabilities
-        p_pass = data["Passed"].mean()
-        p_high = data["High_Study"].mean()
-        p_both = ((data["Passed"] == 1) \amp; (data["High_Study"] == True)).mean()
-        p_union = p_pass + p_high - p_both
-        p_conditional = p_both / p_high
-
-        print(f"P(Pass) = {p_pass:.3f}")
-        print(f"P(High Study) = {p_high:.3f}")
-        print(f"P(Pass ∩ High Study) = {p_both:.3f}")
-        print(f"P(Pass ∪ High Study) = {p_union:.3f}")
-        print(f"P(Pass|High Study) * P(High Study) = {p_conditional:.3f} * {p_high:.3f} = {p_conditional * p_high:.3f}")
-
-        # Visualize joint distribution
-        joint_table = pd.crosstab(data["Passed"], data["High_Study"], normalize="all")
-        sns.heatmap(joint_table, annot=True, cmap="Blues", fmt=".3f")
-        plt.xlabel("High Study Hours (>20)")
-        plt.ylabel("Pass (0=No, 1=Yes)")
-        plt.title("Joint Probability of Pass and High Study Hours")
-        plt.savefig("joint-probability-heatmap.png", dpi=300)
-        plt.show()
-        </code>
-    </program>
-
-    <figure xml:id="fig-joint-probability-heatmap">
-        <caption>Joint probability table of passing and high study hours. Each cell represents <m>P(\text{Pass}, \text{High Study})</m>. Row and column sums recover marginals (<m>P(\text{Pass})</m> and <m>P(\text{High Study})</m>), illustrating the sum rule. The product rule is verified by comparing the joint probability with <m>P(\text{Pass}|\text{High Study})P(\text{High Study})</m>.</caption>
-        <image source="./images/essential-probability-and-statistics/joint-probability-heatmap.png">
-        <shortdescription>Heatmap of joint probabilities for pass and study hours.</shortdescription>
-        </image>
-    </figure>
     </subsection>
 
 
@@ -230,6 +214,124 @@
                 Thus, <m>A</m> and <m>C</m> are not independent.
             </p>
         </example>
+
+
+
+    <p>
+        <alert> Example (Student Study Data):</alert> 
+    </p>  
+    <p>  
+        Suppose we record whether students studied more than 20 hours (High Study) and whether they passed an exam (Pass). Using the dataset below, we will estimate probabilities empirically:
+        <ul>
+            <li>
+                <p>
+                    <m>P(\text{Pass})</m>: overall fraction of students who passed,
+                </p>
+            </li>    
+            <li>
+                <p>
+                    <m>P(\text{High Study})</m>: fraction who studied more than 20 hours,
+                </p>
+                
+            </li>
+            <li>
+                <p>
+                    <m>P(\text{Pass} \cap \text{High Study})</m>: fraction who both passed and studied more than 20 hours.
+                </p>
+            </li>
+            <li>
+                <p>
+                    <m>P(\text{Pass} \mid \text{High Study})</m>: Just look at the students who studied more than 20 hours (High Study), what fraction Passed the exam (Pass).
+                </p>
+            </li>
+        </ul>
+        The sum rule gives <m>P(\text{Pass} \cup \text{High Study}) = P(\text{Pass}) + P(\text{High Study}) - P(\text{Pass} \cap \text{High Study})</m>.  
+        The product rule verifies that <m>P(\text{Pass} \cap \text{High Study}) = P(\text{Pass}|\text{High Study})P(\text{High Study})</m>.
+    </p>
+
+    <program language="python" line-numbers="yes">
+        <title>Sum and product rules with student data</title>
+        <code>
+        import pandas as pd
+        import numpy as np
+        import matplotlib.pyplot as plt
+        import seaborn as sns
+
+        np.random.seed(42)
+        data = pd.DataFrame({
+            "Hours_Studied": np.random.normal(20, 5, 200).clip(0, 40),
+            "Passed": np.random.binomial(1, 0.7, 200)
+        })
+        data["High_Study"] = data["Hours_Studied"] > 20
+
+        # Probabilities
+        p_pass = data["Passed"].mean()
+        p_high = data["High_Study"].mean()
+        p_both = ((data["Passed"] == 1) \amp; (data["High_Study"] == True)).mean()
+        p_union = p_pass + p_high - p_both
+        p_conditional = p_both / p_high
+
+        print(f"P(Pass) = {p_pass:.3f}")
+        print(f"P(High Study) = {p_high:.3f}")
+        print(f"P(Pass ∩ High Study) = {p_both:.3f}")
+        print(f"P(Pass ∪ High Study) = {p_union:.3f}")
+        print(f"P(Pass|High Study) * P(High Study) = {p_conditional:.3f} * {p_high:.3f} = {p_conditional * p_high:.3f}")
+
+        # Visualize joint distribution
+        joint_table = pd.crosstab(data["Passed"], data["High_Study"], normalize="all")
+        sns.heatmap(joint_table, annot=True, cmap="Blues", fmt=".3f")
+        plt.xlabel("High Study Hours (>20)")
+        plt.ylabel("Pass (0=No, 1=Yes)")
+        plt.title("Joint Probability of Pass and High Study Hours")
+        plt.savefig("joint-probability-heatmap.png", dpi=300)
+        plt.show()
+        </code>
+    </program>
+
+    <figure xml:id="fig-joint-probability-heatmap">
+        <caption>Joint probability table of passing and high study hours. Each cell represents <m>P(\text{Pass}, \text{High Study})</m>. Row and column sums recover marginals (<m>P(\text{Pass})</m> and <m>P(\text{High Study})</m>), illustrating the sum rule. The product rule is verified by comparing the joint probability with <m>P(\text{Pass}|\text{High Study})P(\text{High Study})</m>.</caption>
+        <image source="./images/essential-probability-and-statistics/joint-probability-heatmap.png">
+        <shortdescription>Heatmap of joint probabilities for pass and study hours.</shortdescription>
+        </image>
+    </figure>
+    <p>
+        Let's see how we can read the heatmap in <xref ref="fig-joint-probability-heatmap"/>. I will read by the rows first. Let us do notation 
+        <md>
+            <mrow> \amp x_1 = \text{Not Studied }\gt 20\text{ hr}, x_2 = \text{Studied }\gt 20\text{ hr}</mrow>
+            <mrow> \amp y_1 = \text{Passed }, y_2 = \text{Not Passed }</mrow>
+        </md>
+        Then the joint probabilities in the heatmap are:
+        <md>
+            <mrow> \amp P(x_1, y_2) = 0.120,\qquad P(x_2, y_2) = 0.130</mrow>
+            <mrow> \amp P(x_1, y_1) = 0.420,\qquad P(x_2, y_1) = 0.330</mrow>
+        </md>
+        First we will check that the total probaility is actually <m>1</m>.
+        <me>
+            0.120 + 0.130 + 0.420 + 0.330 = 1.000.
+        </me>
+        Great! Now, let us the probability of Passing the exam, whether you studied or not. This is asking for probability of <m>y_1</m> regardless of the <m>X</m> values; So, we need to sum ovr the <m>X</m> values.
+        <me>
+            P(\text{Pass}) = P(y1) = P(x_1, y_1) + P(x_2, y_1) = 0.420 + 0.330 = 0.750.
+        </me>
+        That's pretty high chance of passing. The chance of not passing will just be it's complement.
+        <me>
+            P(y_2) = 1 - P(y_1) = 1 - 0.750 = 0.250.
+        </me>
+        Now, what is the chance that a random student has actullay studied hard regardless of whatever happened in the test. That will be <m>P(x_2)</m>, which we can get from the joint probabilities by summing over the <m>Y</m> values while keeping the <m>X</m> values to <m>x_2</m>.
+        <me>
+            P(x_2) = P(x_2, y_1) + P(x_2, y_2) = 0.330 + 0.130 = 0.460.
+        </me>
+        That would mean the probability of a random student having not studied excessively is
+        <me>
+            P(x_1) = 1 - P(x_2) = 1 - 0.460 = 0.540.
+        </me>
+        Now, how about the conditional probabilities? From this heatmap, it is easy to get conditional probabilities. For instance, suppose we want to know <q>Had you studied more than 20 hrs <m>x_2</m>, wat would be your change of passing <m>(y_1)</m></q>
+        <me>
+            P(y_1 \mid x_2) = \frac{ P(x_2, y_1) }{ P(x_2)} = \frac{0.330}{0.460} = 0.717. 
+        </me>
+        Wow, this data produced by simulation showing us that had you studied excessively, your chance of passing the exam actually went down from <m>0.750</m> to <m>0.717</m>. Wild! Okay, now your turn of computing sme other conditional probabilities.
+    </p>
+
     </subsection>
     
     <subsection xml:id="subsec-probability-distributions">
@@ -326,62 +428,107 @@ plt.show()
             </li>
             <li>
                 <p>
-                    <alert>Bayesian Probability</alert>: Updates prior beliefs with data using Bayes’ theorem: <m>P(\theta|D) = \frac{P(D|\theta)P(\theta)}{P(D)}</m>. For die face 1, use a Beta prior, updated to Beta(<m>\alpha + n_1, \beta + (N - n_1)</m>).
+                    <alert>Bayesian Probability</alert>. This is also an empirical definition of probability. But, rather than give you one number for probability of an event, Bayesian gives you a probability distribution of the values of probability of the event. From that, you can work out the mean value, which you can use as one value for the probability of the event. 
+                </p> 
+                <p> 
+                    It is based on incorporating belief about the probability of an outcome BEFORE we even conduct the experiment and then updated this so-called prior assumption or bias with what we observe in the experiment. The updated belief is the posterior, and improved value of the probability. 
+                </p>  
+                <p> 
+                    Clearly, as we repeat the experiment infinitely many times, the effect of our initial belief would disappear and the answer will match the results of the frequentists' experiments. However, since we can never do infinite number of trials, the Bayesian gives an edge in cases where we have some information about the outcome even before we start the trials.
                 </p>
                 <p>
-                    Example: Estimate <m>P(\text{Pass})</m> for students using the dataset, starting with a Beta(1,1) prior.
+                    <alert>Example:</alert> This example is a little bit ahead of my presentation here as it requres a little bit of math to properly express how th Bayesian probability works. If you feel up to it, you can ahead and read on, but it's okay to skip it for now.
+                </p> 
+                <p>  
+                    In the case of a six-sided die, suppose we want to estimate the probability <m>p_1</m> for one-dot face up as we illustrated in the frequentist case above. First, we would need to choose a prior belief, i.e., a probability distribution for <m>p_1</m>, i.e., how likely is any value of <m>p_1</m> between its range of values, which will be from <m>0</m> to <m>1</m>, inclusive, <m>0\le p_1 \le 1</m>. Since, we do not know which value is right, we might decide that it could be 1/2 times it will be face up and 1/2 of the time it will be not face up (I know a fair die will be 1/6 times face up, but I want to show you how even a very off prior will eventually converge to the proper value). In such cases and our trial each time being either face up true or false ( which is a case of Bernoulli trials ), it is traditional to choose a beta distribution, which has two parameters <m>\alpha</m> and <m>\beta</m>, with <m>\alpha=1</m>  and <m>\beta = 1</m>. Using symbol <m>x</m> for <m>p_1</m> and <m>P(x)</m>, probability density of <m>p_1</m>, we will write this as follows where <m>0 \le x \le 1</m>.
+                    <men xml:id="eqn-beta-distribution-prior">
+                        \text{P(x)} dx = \frac{1}{B(\alpha, \beta)}\, x^{\alpha - 1} (1-x)^{\beta - 1},
+                    </men>
+                    where <m>B(\alpha, \beta)</m> is beta function. The mean value of beta distribution is an important result and can be easily found.
+                    <men xml:id="eqn-mean-of-beta-distribution">
+                        \langle x \rangle = \int_0^1\, x P(x) dx = \frac{\alpha}{\alpha + \beta}.
+                    </men>
+                    Here, I have introduced physicists' notation for the mean of a quantity, <m>\langle \cdots \rangle</m>. 
+                    Thus, by choosing <m>B(1,1)</m> as the prior distribution, we are assuming that somehow we suspect that <m>p_1</m> is close to <m>1/2</m>. 
+                    <men xml:id="eqn-mean-beta-distribution">
+                        \langle p_1 \rangle = \frac{\alpha}{\alpha + \beta} = \frac{1}{1+1} = \frac{1}{2} = 0.5.
+                    </men>
+                    So, we are basically, starting way off in our belief.
                 </p>
-                <program language="python" line-numbers="yes">
-                    <title>Bayesian update for student pass probability</title>
-                    <code>
-                    # --- BAYESIAN UPDATE ---
-                    import numpy as np
-                    import matplotlib.pyplot as plt
-                    from scipy.stats import beta
-                    import pandas as pd
-
-                    # Student data
-                    np.random.seed(42)
-                    data = pd.DataFrame({
-                        'Passed': np.random.binomial(1, 0.7, 10)
-                    })
-
-                    # Prior: Beta(1,1)
-                    a, b = 1, 1
-                    n, n1 = len(data), data['Passed'].sum()
-                    a_post, b_post = a + n1, b + n - n1
-
-                    # Plot prior and posterior
-                    x = np.linspace(0, 1, 1000)
-                    plt.plot(x, beta.pdf(x, a, b), label='Prior Beta(1,1)', color='blue')
-                    plt.plot(x, beta.pdf(x, a + 1, b + 1), label='After 1 Pass', color='orange')
-                    plt.plot(x, beta.pdf(x, a_post, b_post), label=f'Posterior Beta({a_post},{b_post})', color='green')
-                    plt.axvline(n1/n, color='red', linestyle='--', label='Frequentist Est.')
-                    plt.xlabel('P(Pass)')
-                    plt.ylabel('Density')
-                    plt.title('Bayesian Update for P(Pass)')
-                    plt.legend()
-                    plt.grid(True, alpha=0.3)
-                    plt.savefig('./images/essential-probability-and-statistics/bayesian-update.png', dpi=300)
-                    plt.show()
-                    # --- END CODE ---
-                    </code>
-                </program>
-                <figure xml:id="fig-bayesian-update">
-
-                    <caption>Plot showing the Bayesian update of the probability of a student passing an exam, starting with a uniform Beta(1,1) prior (blue). After observing one pass (orange) and 10 trials with 3 passes (green, posterior Beta(4,8)), the distribution shifts, with the posterior mean at 4/12 ≈ 0.333. The frequentist estimate (red dashed line, 3/10 = 0.3) is shown for comparison. This visualization illustrates how Bayesian methods incorporate prior beliefs and data to refine probability estimates, a technique used in machine learning for probabilistic models and uncertainty quantification.</caption>
+                <p>
                     
-                    <image source="./images/essential-probability-and-statistics/bayesian-update.png">
-                        <shortdescription>Bayesian update plot.</shortdescription>
-                    </image>
-                </figure>
+                    Just a side math info: Beta function is usually written in terms of factorial or Gamma function.
+                    <me>
+                        B(\alpha, \beta) = \frac{\Gamma(\alpha) \Gamma(\beta)}{\Gamma(\alpha + \beta)},
+                    </me>
+                    where, for integer arguments <m>n</m>,
+                    <me>
+                        \Gamma(n) = (n-1)! = [ m! = (m)(m-1) \cdots 1 = m \times (m-1)!\ \text{with}\ 0! = 1.]
+                    </me>
+                    and in general,
+                    <me>
+                        \Gamma(\alpha) = \int_0^\infty\, e^{-t}\,t^{\alpha -1}\, dt.
+                    </me>
+                    To hide all the mathematical details in our work below, we will, as is normally done, just express the probability <m>P(p_1)</m> by a simpler notation and represent Eq. <xref ref="eqn-beta-distribution-prior" />
+                    <men xml:id="eqn-probability-distribution-simple-notation">
+                        P_1 \sim B(\alpha, \beta) = B(1,1),
+                    </men>
+                    where instead of lower case variable name <m>p_1</m>, we use the notation of upper case <m>P_1</m>.
+                </p> 
+                <p> 
+                    Let's get back to our rolling experiment and see how our belief of the true value of <m>p_1</m> evolves with each roll's result.     
+                    Suppose we roll the die and observe that the up face is not one, then without showing you the calculations here, which will be done later in the chapter, we use Bayes rule, to be discussed later, to show that the probability distribution now shifts to <m>B(1,2)</m>.
+                    <me>
+                        P_1 \sim B(1,1) \rightarrow \text{[Toss, No one]} \rightarrow \sim B(1,2) \Rightarrow \langle p_1 \rangle = \frac{1}{1+2} = \frac{1}{3}.
+                    </me>
+                    How did we go from distribution <m>B(1,1)</m> to <m>B(1,2)</m>? I used Bayesian theorem. We will not show the calculation here but differ to a later section.
+                </p>  
+                <p>  
+                    Toss second time, let's say the result is a one. Then our belief will be update with this new data to <m>B(2,2)</m>.
+                    <me>
+                        P_1 \sim B(1,2) \rightarrow \text{[Toss, Yes one]} \rightarrow \sim B(2,2) \Rightarrow \langle p_1 \rangle = \frac{2}{4} = 0.5.
+                    </me>
+                    Toss again, say no one.
+                    <me>
+                        P_1 \sim B(2,2) \rightarrow \text{[Toss, No one]} \rightarrow \sim B(2,3) \Rightarrow \langle p_1 \rangle = \frac{2}{2+3} = \frac{2}{5}.
+                    </me>                   
+                    We keep updating the probability distribution of <m>p_1</m>. At any point, we can take the expectation value of the the variable <m>p_1</m> in the current distribution to give us the "best current value" for <m>p_1</m>. Thus, after three trials above, we will say that <m>p_1 = 0.4</m>.
+                </p>  
+                <p>  
+                    Suppose you continued rolling and you had the following next 7 trials:
+                    <me>
+                        \text{1, not 1, not 1, not 1, not 1, 1, not 1}.
+                    </me>
+                    After these 10 trials in total, the distribution will be
+                    <me>
+                        P_1 \sim B(4, 8) \Rightarrow \langle p_1 \rangle = \frac{4}{12} = \frac{1}{3}.
+                    </me>
+                    This is still far away from <m>1/6</m> that you would expect from a fair die, but you don't know if the die was fair. So, empirical results are all you have to go by.
+                </p>  
+                <p>  
+                    For the same rolling results, frequentists' probability will give us the following estimate:
+                    <me>
+                        p_1(\text{frequentist}) = \frac{n_1}{N} = \frac{3}{10} = 0.3.
+                    </me>
+                    
+                </p>
+                <p> 
+                    They look similar. But, had you expected the die was fair, you would start with a better prior, with say <m>B(1,5)</m>. Then the 10 trials would update to
+                    <me>
+                        P_1 \sim B(4, 12) \Rightarrow \langle p_1\rangle = \frac{4}{4+12} = \frac{1}{4} = 0.25.
+                    </me>
+                    It would have revealed if the die was not a fair die. It's either not a fair die or we have rolled it too few times.
+                </p>  
+
             </li>
         </ol>
     </subsection>
 
     <conclusion>
+        <title>Conclusion</title>
         <p>
-            Probability provides the foundation for modeling uncertainty in machine learning. Axioms define the rules, while theoretical, frequentist, and Bayesian approaches offer different perspectives. Conditional probability and distributions like binomial are key for models like Naive Bayes. Practice with datasets from <xref ref="sec-data-types-for-machine-learning"/> and libraries from <xref ref="sec-useful-descriptive-statistics-tools"/> to apply these concepts. Explore <url href="https://www.probabilitycourse.com/" visual="probabilitycourse.com">Probability Course</url> for further learning.
+            
+            Probability provides the foundation for modeling uncertainty in machine learning. Axioms define the rules, while theoretical, frequentist, and Bayesian approaches offer different perspectives. Conditional probability and distributions are used in machine learning models to make predictions. 
         </p>
     </conclusion>
 </section>

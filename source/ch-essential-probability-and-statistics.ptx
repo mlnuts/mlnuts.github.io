@@ -9,8 +9,8 @@
 
   <!-- include sections -->
   <xi:include href="ch-essential-prob-sections/sec-descriptive-statistics-rev-1.ptx" />
-  <xi:include href="ch-essential-prob-sections/sec-useful-descriptive-statistics-tools-rev-1.ptx" />
-  <xi:include href="ch-essential-prob-sections/sec-categorical-and-numerical-data-rev-1.ptx" />
+  <xi:include href="ch-essential-prob-sections/sec-computation-and-visualization-tools-rev-1.ptx" />
+  <xi:include href="ch-essential-prob-sections/sec-categorical-and-numerical-data-rev-3.ptx" />
   
   <xi:include href="ch-essential-prob-sections/sec-basic-probability-rev-1.ptx" />
   

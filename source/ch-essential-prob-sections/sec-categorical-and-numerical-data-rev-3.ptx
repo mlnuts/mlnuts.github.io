@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sec-Numerical-and-Categorical-Data" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Numerical and Categorical Data</title>
+  <introduction>
+    <p>
+      When analyzing data, it is essential to understand the type of data you are working with and how to safely convert it into a numerical representation for processing by machine learning models. There are three fundamental types:
+      <ol>
+        <li><p><term>Categorical Data</term>: Data that represents discrete groups or labels with no inherent order.</p></li>
+        <li><p><term>Ordinal Data</term>: A type of categorical data with a defined, meaningful order.</p></li>
+        <li><p><term>Numerical Data</term>: Data that represents quantities and can be measured and compared numerically.</p></li>
+      </ol>
+    </p>
+  </introduction>
+
+  <!-- ======================== -->
+  <subsection xml:id="subsec-Categorical-Data">
+    <title>Categorical Data and One-Hot Encoding</title>
+    <p>
+      <term>Categorical Data</term> represents discrete groups or labels with no inherent order between the values. 
+      For example, a variable named "Color" can take values from {"red", "blue", "green"}. Another variable may be "Animal" with values from {"cat", "dog", "parrot"}. 
+      In Python's Pandas library, you can store this as an <c>object</c> type or, for efficiency and clarity, convert it to a <c>category</c> type.
+    </p>
+
+    <program language="python" line-numbers="yes">
+      <code>
+      import pandas as pd
+      colors = pd.Series(["red", "blue", "red", "green"], dtype="category")
+      print(colors)
+      </code>
+    </program>
+
+    <pre>
+    0      red
+    1     blue
+    2      red
+    3    green
+    dtype: category
+    Categories (3, object): ['blue', 'green', 'red']
+    </pre>
+
+    <p>
+      Many machine learning algorithms require a numerical representation of these values. 
+      A common method for this is <term>one-hot encoding</term>.
+    </p>
+
+    <p>
+      Suppose we have 3 unique colors. We represent each value with a 3-dimensional vector with a "1" in one position and "0" in the others:
+      <me>
+        "red" = [1, 0, 0], "blue" = [0, 1, 0], "green" = [0, 0, 1].
+      </me>
+    </p>
+
+    <table xml:id="tab-one-hot-encoding-color">
+      <title>Example of One-Hot Encoding</title>
+      <tabular>
+        <row>
+          <cell></cell>
+          <cell>Sample 1</cell>
+          <cell>Sample 2</cell>
+          <cell>Sample 3</cell>
+          <cell>Sample 4</cell>
+        </row>
+        <row>
+          <cell header="yes">Original Data</cell>
+          <cell>red</cell>
+          <cell>blue</cell>
+          <cell>red</cell>
+          <cell>green</cell>
+        </row>
+        <row>
+          <cell header="yes">Color_red</cell>
+          <cell>1</cell>
+          <cell>0</cell>
+          <cell>1</cell>
+          <cell>0</cell>
+        </row>
+        <row>
+          <cell header="yes">Color_blue</cell>
+          <cell>0</cell>
+          <cell>1</cell>
+          <cell>0</cell>
+          <cell>0</cell>
+        </row>
+        <row>
+          <cell header="yes">Color_green</cell>
+          <cell>0</cell>
+          <cell>0</cell>
+          <cell>0</cell>
+          <cell>1</cell>
+        </row>
+      </tabular>
+    </table>
+
+    <p>
+      The main limitation of one-hot encoding is that the number of dimensions equals the number of categories. If there are thousands of unique categories (like words in a language), this becomes inefficient. In such cases, <term>embeddings</term> are preferred.
+    </p>
+
+
+  </subsection>
+
+  <!-- ======================== -->
+  <subsection xml:id="subsec-Ordinal-Data">
+    <title>Ordinal Data and Safe Encoding</title>
+    <p>
+      <term>Ordinal Data</term> is a type of categorical data with a defined order. 
+      For example, a variable for clothing size may have the order small &lt; medium &lt; large, or a satisfaction rating may be low &lt; medium &lt; high. 
+      The order matters, but the numeric difference between categories is not meaningful.
+    </p>
+
+    <program language="python" line-numbers="yes">
+      <code>
+      sizes = pd.Series(["medium", "small", "large", "small"], 
+          dtype=pd.CategoricalDtype(categories=["small", "medium", "large"], ordered=True))
+      print(sizes)
+      </code>
+    </program>
+
+    <pre>
+    0    medium
+    1     small
+    2     large
+    3     small
+    dtype: category
+    Categories (3, object): ['small' &lt; 'medium' &lt; 'large']
+    </pre>
+
+    <p>
+      If you map ordinal values to integers naively, you risk misleading the model. 
+      For instance, "High School" → 1, "Bachelor's" → 2, "Master's" → 3, "PhD" → 4 implies equal numeric gaps, which isn’t true in reality.
+    </p>
+
+    <p>
+      Safer strategies:
+    </p>
+    <ul>
+      <li><p><b>Integer Encoding</b>: Map to integers, but use with models (like decision trees) that care about order, not differences.</p></li>
+      <li><p><b>Binning</b>: Collapse many levels into broader, meaningful groups.</p></li>
+      <li><p><b>Embeddings</b>: In deep learning, treat them like tokens and let the model learn relationships.</p></li>
+      <li><p><b>Avoid One-Hot</b>: It removes ordering information completely.</p></li>
+    </ul>
+
+
+  </subsection>
+
+  <!-- ======================== -->
+  <subsection xml:id="subsec-Numerical-Data">
+    <title>Numerical Data: Discrete vs Continuous</title>
+    <p>
+      <term>Numerical Data</term> represents measurable quantities. These can be:
+    </p>
+    <ul>
+      <li><p><term>Discrete</term>: Countable items (e.g., number of rooms in a house: 3, 4, 5).</p></li>
+      <li><p><term>Continuous</term>: Measurable values with potentially infinite precision (e.g., height, weight, price).</p></li>
+    </ul>
+
+
+  </subsection>
+
+  <!-- ======================== -->
+  <subsection xml:id="subsec-data-type-summary">
+    <title>Data Type Summary</title>
+    <p>This table summarizes the properties and common encoding methods for categorical, ordinal, and numerical data.</p>
+
+    <table xml:id="table-data-type-comparison">
+      <title>Comparison of Data Types</title>
+      <tabular>
+        <row>
+          <cell header="yes">Type</cell>
+          <cell halign="center">Meaningful Order</cell>
+          <cell halign="center">Meaningful Interval</cell>
+          <cell halign="center">Encoding Method</cell>
+          <cell halign="center">Examples</cell>
+        </row>
+        <row>
+          <cell header="yes">Categorical</cell>
+          <cell>No</cell>
+          <cell>No</cell>
+          <cell>One-Hot Encoding</cell>
+          <cell>Colors, Animals, Cities</cell>
+        </row>
+        <row>
+          <cell header="yes">Ordinal</cell>
+          <cell>Yes</cell>
+          <cell>No</cell>
+          <cell>Integer Encoding, Binning</cell>
+          <cell>Ratings, Clothing Sizes</cell>
+        </row>
+        <row>
+          <cell header="yes">Numerical</cell>
+          <cell>Yes</cell>
+          <cell>Yes</cell>
+          <cell>Scaling / Normalization</cell>
+          <cell>Height, Weight, Price</cell>
+        </row>
+      </tabular>
+    </table>
+  </subsection>
+</section>
