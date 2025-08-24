@@ -80,7 +80,7 @@
                 </md>
                 These probabilities are joint probabilities over the joint space of <m>X</m> and <m>Y</m>. We often write joint probability by just listing the variable names or even a symbol for variable values, e.g., <m>x</m>, without specifying <m>x_1, x_2, \text{etc}</m>
                 <me>
-                    \text{Joint Probability } \equiv P(X,Y) \equiv p(x,y).
+                    \text{Joint Probability } \equiv P(X,Y) \equiv p(x,y) \equiv P(x,y).
                 </me>
                 
             </p>

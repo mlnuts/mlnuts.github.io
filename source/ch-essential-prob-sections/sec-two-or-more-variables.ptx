@@ -1,131 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<section xml:id="sec-Joint-Conditional-and-Marginal-Probabilities">
-    <title>Random Variables and Probabilities</title>
+<section xml:id="sec-Two-or-More-Random-Variables">
+    <title>Two or More Random Variables</title>
     <introduction>
-        <p>
-            In this section we will present foundations of the calculational tools necessary for analytical work. First we will define random variables and then follow up with probability distributions of a single and then two random variables. The generalization of more than two random variables will be left for future sections.
-        </p>
+    <p>
+        Suppose we have two or more random variables that characterize our data. For example, we may be interested in studying heights and weights and weights of all children in age <m>1</m> to <m>18</m>. Our probabilities of interest will look like
+        <me>
+            P( 2\,\text{ft} \le \text{Height} \le 4\,\text{ft}\quad \textrm{AND}\quad  20\,\text{kg} \le \text{Weight} \le 50\,\text{kg} ).
+        </me>
+        This kind of probability is called a <term>joint probability</term>. You migh think of the expressions on either side of <m>\textrm{AND}</m> as events <m>A</m> and <m>B</m> and replace <m>\textrm{AND}</m> by the set symbol <m>\cap</m>, and write it more abstractly as 
+        <me>
+            P( A \cap B).
+        </me>
+        Or, more generally, you might think of this as a statement about random variables <m>X</m> and <m>Y</m> and write it as
+        <me>
+            P(X,Y).
+        </me>
+        Sometimes, a more verbose notation is used:
+        <me>
+            P_{X,Y}(x,y).
+        </me>
+        
+    </p>  
+    <p>  
+        We may also be interested in just to probability of some range of Height itself, regardless of the weights.
+        <me>
+            P( 2\,\text{ft} \le \text{Height} \le 4\,\text{ft} ) \equiv P(A) \equiv P(X) \equiv P_X(x).
+        </me> 
+        Since we have collected data on two variables, but we are looking at only one of the variables, we say that we have <alert>margined out</alert> the weight variable. This type of probability is called <term>marginal probability</term>, here of Height. 
+    </p>
+    <p>
+        We may instead be interested in a more complicated type of probaility: what if we look at children of Weight between <m>20\text{ kg}</m> and <m>50\text{ kg}</m>, what will be the probability of a Height range?
+        <me>
+            \text{ Given } \left( 20\,\text{kg} \le \text{Weight} \le 50\,\text{kg}\right),\ P( 2\,\text{ft} \le \text{Height} \le 4\,\text{ft} ) = ?
+        </me>
+        We write these using a different symbol to indicate the constraining part of this sentence, i.e, the given part.
+        <me>
+            P( \left( 2\,\text{ft} \le \text{Height} \le 4\,\text{ft}\right) \mid  \left( 20\,\text{kg} \le \text{Weight} \le 40 \right) ) \equiv P (X \mid Y)\equiv P_{X\mid Y}(x).
+        </me>
+        Or, we may be interested in a question that is other way around, 
+        <me>
+            P( \left( 20\,\text{kg} \le \text{Weight} \le 40 \right) \mid  \left( 2\,\text{ft} \le \text{Height} \le 4\,\text{ft}\right)  ) \equiv P (Y \mid X) \equiv P_{Y\mid X}(y).
+        </me>
+        The answers to the two questions will be different since you would be selcting different distibutions based on the given condition; <m>P_{X\mid Y}(x)</m> is probability in the <m>X</m>-space and <m>P_{Y\mid X}(y)</m> is probability in the <m>Y</m>-space.  
+        These types of probability are called <term>Conditional Probability</term>. Conditional probability plays an important role in Machine Learning Algorithms.
+    </p>
+    <p>
+        Below, we will look at these probabilities in more detail.
+    </p>
+
+         
     </introduction>
 
-    <!--  Random Variables -->
-    <subsection xml:id="subsec-Random-Variables">
-        <title>Random Variables, Probabilities, and Expectations</title>
-        <p>
-            We will think of variables as something the is observed or measured by experiments. The outcome in any experiment is a real value of the variable. A variable whose value is uncertain or unpredictable or varies from trial to trial, even though measurement conditions haven't changed, is called a <term>random variable</term>.
-        </p>
-        <p>
-            We tend to use <alert>capital letter for the name</alert> of the variable and small letters for its values. Thus, for a variable <m>X</m>, the values will be denoted by <m>x_1, x_2, \cdots,</m> etc., or a generic value by just <m>x</m>. Sometimes we will use superscripts to denote values, <m>x^{(1)},x^{(2)}, \cdots </m>.
-        </p>
-        <p>
-            An <alert>event</alert> will now refer to the outcome that in a particular trial, variable <m>X</m> has some value or a set of the possible values. Thus, <m>X=\{x_1\}</m> would be an event and so would be <m>X=\{x_1, x_2\}</m>,  etc. In case of continuous values for <m>X</m>, and event may even be written as <m>x_1 \lt X \le x_2</m>, etc.
-        </p>
-        <p>
-            A random variable can either <term>continuous variable</term> or a <term>discrete variable</term>. A continuous random variable takes values either in a finite segment of the real line or on an entire real line. For example, the price of a house (say, denoted by <m>X</m>) in the US dollars could be between <m>10^4</m> and <m>10^8</m>. We can say <m>X \in [10^4, 10^8]</m>.
-        </p>
-        <p>
-            A <term>discrete random variable</term> takes values in a countable set e.g., die outcomes <m>\in \{1, 2, \dots, 6\}</m>, colors <m> \in \{ \text{red}, \text{blue}, \text{green}, \text{magenta} \}</m>. When a discrete random variable has abstract symbols or wrods as values, we seek numerical embeddings of them using real-valued vectors so that they can be fed into machine learning algorithms for processing.
-        </p>
-    </subsection>
-
-
-    <subsection xml:id="subsec-Probability-Mass-Function">
-        <title>Probability Mass Function</title>
-        
-        <p>
-            For a discrete random variable <m>X</m> with values <m>x_i</m> (<m>i=1,\dots,N</m>), the <alert>probability mass function (PMF)</alert> assigns appropriate probabilities to events of all the unique values that the random variable can take. Thus, PMF of our example variable <m>X</m> will give all the <m>p_i</m> values in:
-            <men xml:id="eqn-pmf">
-                P(X=x_i) = p_i, \quad i=1,\dots,N, \quad \sum_{i=1}^N p_i = 1,
-            </men>
-            where the last condition is important since it makes sure that probability values are properly normalized and all the unique events are included.
-
-        </p>
-        <p>
-            The <alert>expectation</alert> value of a function <m>f(X)</m>, which is also simply called expectation of <m>f</m>, is the weighted value of the function according to the probailities of each value of <m>X</m>.
-            <men xml:id="eqn-expectation">
-                \mathbb{E}[f(X)] = \sum_{i=1}^N f(x_i) p_i.
-            </men>
-            The mean is just when the function is the variable itself.
-            <men xml:id="eqn-mean">
-                \mathbb{E}[X] = \sum_{i=1}^N x_i p_i.
-            </men>
-            In Physics, the expectation is commonly written as <m>\langle f(X) \rangle</m>, but in probability and statistics, the notation is <m>\mathbb{E}[f(X)]</m>, with <m>f(X)</m> in the bracket.
-        </p>
-
- 
-
-
-        <p>
-            The <alert>variance</alert> measures spread of distribution about the mean value. It is defined by
-            <men xml:id="eqn-variance">
-                \mathrm{Var}(X) = \mathbb{E}[(X - \mathbb{E}[X])^2] = \mathbb{E}[X^2] - (\mathbb{E}[X])^2.
-            </men>
-            Here, the second equality is easy to see by an explicit work, noting that <m>\mathbb{E}[X]</m> is just a number. Let's denote it by letter <m>\mu</m>.
-            <md>
-                <mrow> \mathbb{E}[(X - \mathbb{E}[X])^2]\amp = \sum_{i=1}^N (x_i - \mu)^2 p_i </mrow>
-                <mrow> \amp = \sum_{i=1}^N \,x_i^2 p_i + 2\mu \sum_{i=1}^N \,x_i^2 p_i  - \mu^2 \sum_{i=1}^N \, p_i </mrow>
-                <mrow> \amp = \mathbb{E}[X^2] - 2\mu \times \mu  +\mu^2 \times 1 </mrow>
-                <mrow> \amp =  \mathbb{E}[X^2] - \mu^2 = \mathbb{E}[X^2] - (\mathbb{E}[X])^2.\quad \blacksquare</mrow>
-            </md>
-        </p>
-        <p>  
-            The standard deviation is just square root of variance.
-            <me>
-                \sigma_X = \sqrt{\mathrm{Var}(X)}
-
-            </me>.
-        </p>
-        <example>
-            <title>Die roll expectation and variance</title>
-            <p>
-                For a fair six-sided die, <m>P(X=k) = \frac{1}{6}</m> for <m>k=1,\dots,6</m>. The mean is:
-                <me>
-                    \mathbb{E}[X] = \sum_{k=1}^6 k \cdot \frac{1}{6} = \frac{1+2+3+4+5+6}{6} = 3.5.
-                </me>
-                The second moment is:
-                <me>
-                    \mathbb{E}[X^2] = \sum_{k=1}^6 k^2 \cdot \frac{1}{6} = \frac{1^2 + 2^2 + \dots + 6^2}{6} = \frac{91}{6} \approx 15.1667.
-                </me>
-                The variance is:
-                <me>
-                    \mathrm{Var}(X) = \mathbb{E}[X^2] - (\mathbb{E}[X])^2 = \frac{91}{6} - (3.5)^2 = \frac{35}{12} \approx 2.9167.
-                </me>
-            </p>
-        </example>
-        <figure xml:id="fig-die-pmf">
-            <caption>Probability mass function (PMF) of a fair six-sided die, showing equal probabilities (<m>P(X=k) = \frac{1}{6}</m>) for outcomes <m>k=1,\dots,6</m>. This bar chart visualizes the discrete distribution, useful for understanding expected values in games of chance.</caption>
-            <image source="./images/essential-probability-and-statistics/die_pmf.png">
-                <shortdescription>Bar chart of die PMF.</shortdescription>
-            </image>
-        </figure>
-        <program language="python" line-numbers="yes">
-            <title>PMF of a fair die</title>
-            <code>
-            # === CODE: PMF of a fair die ===
-            import matplotlib.pyplot as plt
-
-            x = [1, 2, 3, 4, 5, 6]
-            p = [1/6] * 6
-            plt.figure()
-            plt.bar(x, p)
-            plt.xlabel("Die Outcome")
-            plt.ylabel("Probability")
-            plt.title("PMF of a Fair Die")
-            plt.grid(True, alpha=0.3)
-            plt.tight_layout()
-            plt.savefig("die_pmf.png", dpi=300)
-            plt.show()
-            </code>
-        </program>
-    </subsection>
-
-
-
            <!-- I AM HERE -->
-
+    <subsection xml:id="subsec-Joint-Probability">
+        <title>Joint Probability</title>
+        
+    </subsection>
+    <subsection xml:id="subsec-Marginal-Probability">
+        <title>Marginal Probability</title>
+        
+    </subsection>
 
            
     <!--  Joint and Marginal Probabilities  -->
-    <subsection xml:id="subsec-Joint-Probability">
+    <subsection xml:id="subsec-Joint-and-Marginal-Probability">
         <title>Joint and Marginal Probabilities</title>
         <p>
             For two discrete random variables <m>X</m> and <m>Y</m>, the <alert>joint probability</alert> assigns probabilities to pairs <m>(x_i, y_j)</m>:
@@ -700,4 +638,5 @@
             Joint, marginal, and conditional probabilities form the foundation for modeling relationships between random variables. Joint probabilities capture co-occurrence, marginals summarize individual variables, and conditionals refine probabilities based on evidence. Bayes’ rule updates beliefs, while independence simplifies joint distributions. Visualizations like heatmaps, scatter plots, and tree diagrams clarify these concepts. Apply these tools in fields like medical diagnostics, as shown, or explore further with resources like <url href="https://www.probabilitycourse.com/" visual="probabilitycourse.com">Probability Course</url>.
         </p>
     </conclusion>
+
 </section>
