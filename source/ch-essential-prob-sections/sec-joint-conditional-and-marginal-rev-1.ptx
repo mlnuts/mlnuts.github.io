@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="sec-Joint-Conditional-and-Marginal-Probabilities">
-    <title>Joint, Marginal, and Conditional Probabilities</title>
+    <title>Random Variables and Probabilities</title>
     <introduction>
         <p>
-            This section explores probability concepts for multiple random variables, essential for modeling relationships in data. We cover joint and marginal probabilities, covariance and correlation, conditional probability, Bayes’ rule, and independence, with a focus on rigorous mathematical formulations and practical applications. Random variables are denoted by capital letters (e.g., <m>X</m>), with specific values in lowercase, sometimes with indices (e.g., <m>x_i</m>). Examples use a patient dataset to illustrate concepts, and Python visualizations reinforce intuition.
+            In this section we will present foundations of the calculational tools necessary for analytical work. First we will define random variables and then follow up with probability distributions of a single and then two random variables. The generalization of more than two random variables will be left for future sections.
         </p>
     </introduction>
 
@@ -11,37 +11,68 @@
     <subsection xml:id="subsec-Random-Variables">
         <title>Random Variables, Probabilities, and Expectations</title>
         <p>
-            A <alert>random variable</alert> is a quantity whose value is determined by a random experiment, unknown until observed. We denote random variables by capital letters (e.g., <m>X</m>) and their values by lowercase with or without indices (e.g., <m>x,\ x_i</m>).
+            We will think of variables as something the is observed or measured by experiments. The outcome in any experiment is a real value of the variable. A variable whose value is uncertain or unpredictable or varies from trial to trial, even though measurement conditions haven't changed, is called a <term>random variable</term>.
         </p>
         <p>
-            Random variables are:
-            <ul>
-                <li><alert>Discrete</alert>: Takes values in a countable set (e.g., die outcomes <m>\{1, 2, \dots, 6\}</m>).</li>
-                <li><alert>Continuous</alert>: Takes values in a real interval (e.g., patient temperature).</li>
-            </ul>
+            We tend to use <alert>capital letter for the name</alert> of the variable and small letters for its values. Thus, for a variable <m>X</m>, the values will be denoted by <m>x_1, x_2, \cdots,</m> etc., or a generic value by just <m>x</m>. Sometimes we will use superscripts to denote values, <m>x^{(1)},x^{(2)}, \cdots </m>.
         </p>
         <p>
-            For a discrete random variable <m>X</m> with values <m>x_i</m> (<m>i=1,\dots,N</m>), the <alert>probability mass function (PMF)</alert> is:
+            An <alert>event</alert> will now refer to the outcome that in a particular trial, variable <m>X</m> has some value or a set of the possible values. Thus, <m>X=\{x_1\}</m> would be an event and so would be <m>X=\{x_1, x_2\}</m>,  etc. In case of continuous values for <m>X</m>, and event may even be written as <m>x_1 \lt X \le x_2</m>, etc.
+        </p>
+        <p>
+            A random variable can either <term>continuous variable</term> or a <term>discrete variable</term>. A continuous random variable takes values either in a finite segment of the real line or on an entire real line. For example, the price of a house (say, denoted by <m>X</m>) in the US dollars could be between <m>10^4</m> and <m>10^8</m>. We can say <m>X \in [10^4, 10^8]</m>.
+        </p>
+        <p>
+            A <term>discrete random variable</term> takes values in a countable set e.g., die outcomes <m>\in \{1, 2, \dots, 6\}</m>, colors <m> \in \{ \text{red}, \text{blue}, \text{green}, \text{magenta} \}</m>. When a discrete random variable has abstract symbols or wrods as values, we seek numerical embeddings of them using real-valued vectors so that they can be fed into machine learning algorithms for processing.
+        </p>
+    </subsection>
+
+
+    <subsection xml:id="subsec-Probability-Mass-Function">
+        <title>Probability Mass Function</title>
+        
+        <p>
+            For a discrete random variable <m>X</m> with values <m>x_i</m> (<m>i=1,\dots,N</m>), the <alert>probability mass function (PMF)</alert> assigns appropriate probabilities to events of all the unique values that the random variable can take. Thus, PMF of our example variable <m>X</m> will give all the <m>p_i</m> values in:
             <men xml:id="eqn-pmf">
-                P(X=x_i) = p_i, \quad i=1,\dots,N, \quad \sum_{i=1}^N p_i = 1.
+                P(X=x_i) = p_i, \quad i=1,\dots,N, \quad \sum_{i=1}^N p_i = 1,
             </men>
+            where the last condition is important since it makes sure that probability values are properly normalized and all the unique events are included.
+
         </p>
         <p>
-            The <alert>expectation</alert> of a function <m>f(X)</m> is:
+            The <alert>expectation</alert> value of a function <m>f(X)</m>, which is also simply called expectation of <m>f</m>, is the weighted value of the function according to the probailities of each value of <m>X</m>.
             <men xml:id="eqn-expectation">
                 \mathbb{E}[f(X)] = \sum_{i=1}^N f(x_i) p_i.
             </men>
-            The mean is:
+            The mean is just when the function is the variable itself.
             <men xml:id="eqn-mean">
                 \mathbb{E}[X] = \sum_{i=1}^N x_i p_i.
             </men>
+            In Physics, the expectation is commonly written as <m>\langle f(X) \rangle</m>, but in probability and statistics, the notation is <m>\mathbb{E}[f(X)]</m>, with <m>f(X)</m> in the bracket.
         </p>
+
+ 
+
+
         <p>
-            The <alert>variance</alert> measures spread:
+            The <alert>variance</alert> measures spread of distribution about the mean value. It is defined by
             <men xml:id="eqn-variance">
                 \mathrm{Var}(X) = \mathbb{E}[(X - \mathbb{E}[X])^2] = \mathbb{E}[X^2] - (\mathbb{E}[X])^2.
             </men>
-            The standard deviation is <m>\sigma_X = \sqrt{\mathrm{Var}(X)}</m>.
+            Here, the second equality is easy to see by an explicit work, noting that <m>\mathbb{E}[X]</m> is just a number. Let's denote it by letter <m>\mu</m>.
+            <md>
+                <mrow> \mathbb{E}[(X - \mathbb{E}[X])^2]\amp = \sum_{i=1}^N (x_i - \mu)^2 p_i </mrow>
+                <mrow> \amp = \sum_{i=1}^N \,x_i^2 p_i + 2\mu \sum_{i=1}^N \,x_i^2 p_i  - \mu^2 \sum_{i=1}^N \, p_i </mrow>
+                <mrow> \amp = \mathbb{E}[X^2] - 2\mu \times \mu  +\mu^2 \times 1 </mrow>
+                <mrow> \amp =  \mathbb{E}[X^2] - \mu^2 = \mathbb{E}[X^2] - (\mathbb{E}[X])^2.\quad \blacksquare</mrow>
+            </md>
+        </p>
+        <p>  
+            The standard deviation is just square root of variance.
+            <me>
+                \sigma_X = \sqrt{\mathrm{Var}(X)}
+
+            </me>.
         </p>
         <example>
             <title>Die roll expectation and variance</title>
@@ -87,6 +118,12 @@
         </program>
     </subsection>
 
+
+
+           <!-- I AM HERE -->
+
+
+           
     <!--  Joint and Marginal Probabilities  -->
     <subsection xml:id="subsec-Joint-Probability">
         <title>Joint and Marginal Probabilities</title>
@@ -332,7 +369,7 @@
     <subsection xml:id="subsec-conditional-probability-from-joint-probability">
         <title>Bayes’ Rule</title>
         <p>
-            Bayes’ theorem updates probabilities based on new evidence, derived from the product rule:
+            Bayes's theorem updates probabilities based on new evidence, derived from the product rule:
             <men xml:id="eqn-bayes-general">
                 P(X=x_i \mid Y=y_j) = \frac{P(Y=y_j \mid X=x_i) P(X=x_i)}{P(Y=y_j)},
             </men>
