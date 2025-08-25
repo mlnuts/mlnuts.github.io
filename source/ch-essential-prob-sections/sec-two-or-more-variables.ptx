@@ -7,7 +7,7 @@
         <me>
             P( 2\,\text{ft} \le \text{Height} \le 4\,\text{ft}\quad \textrm{AND}\quad  20\,\text{kg} \le \text{Weight} \le 50\,\text{kg} ).
         </me>
-        This kind of probability is called a <term>joint probability</term>. You migh think of the expressions on either side of <m>\textrm{AND}</m> as events <m>A</m> and <m>B</m> and replace <m>\textrm{AND}</m> by the set symbol <m>\cap</m>, and write it more abstractly as 
+        This kind of probability is called a <term>joint probability</term> - it is probability of two events together. You might think of the expressions on either side of <m>\textrm{AND}</m> as events <m>A</m> and <m>B</m> and replace <m>\textrm{AND}</m> by the set symbol <m>\cap</m>, and write it more abstractly as 
         <me>
             P( A \cap B).
         </me>
@@ -51,58 +51,157 @@
          
     </introduction>
 
-           <!-- I AM HERE -->
+
     <subsection xml:id="subsec-Joint-Probability">
         <title>Joint Probability</title>
+        <p>
+            Now, let's dig in a little deeper into joint probability and work out an example.
+        </p> 
+        <p>  
+            Suppose we have two discrete random variables <m>X</m> and <m>Y</m>. Suppose the unique values that <m>A</m> can take are <m>a_1, a_2, \cdots, a_m</m> and <m>B</m> can take are <m>b_1, b_2, \cdots, b_n</m>. Then, the pair <m>(A, B)</m> can take <m>m\times n </m> value pairs <m>(a_i, b_j)</m> with <m>1 \le i \le m</m> and <m>1 \le j \le n</m>. Joint porbability  <m>P(A,B)</m>, i.e., the Joint PMF, assigns probabilities to every unique pairs <m>(a_i, b_j)</m> so that they are normalized to sum to <m>1</m>.
+            <men xml:id="eqn-discrete-joint-probability">
+                P(A=a_i, B=b_j) = p_{ij}, \quad \sum_i \sum_j p_{ij} = 1.
+            </men>
+            If you are dealing with continuous variables <m>X</m> and <m>Y</m>, then we can only talk about probabilities in ranges since both <m>X</m> and <m>Y</m> take values on the real line <m>\mathbb{R}</m>. Here, the space of all possibilities will be the <m>xy</m>-plane, which is <m>\mathbb{R}^2</m>. Thus joint probability in an infinitesimal rectangle will be
+            <men xml:id="eqn-continuous-joint-probability">
+                P(x \le X \le x+dx, y \le Y \le y+dy) = \rho(x,y)\,dxdy,
+            </men> 
+            where the Joint PDF <m>\rho(x,y)</m> wil be normalized by the following integral:
+            <me>
+                 \int_{-\infty}^\infty \int_{-\infty}^\infty\,\rho(x,y)\,dxdy= 1.
+            </me>
+            In a weird way the Joint PMF <m>p_{ij}</m> of the discrete case corresponds to a  the Joint PDF except that you need to take integral of the later in place of sum for the PMF.
+            <men xml:id="eqn-Joint-PMF-Joint-PDF-correspondence">
+                \text{Discrete : PMF, Sum} \longleftrightarrow \text{Continuous : PDF, Integral}.
+            </men>
+            <example xml:id="ex-Patient-disease-and-test-results">
+                <title>Patient disease and test results</title>
+                <p>
+                    Consider a dataset of 1,000 patients, with two discrete random variables <m>X</m> indicating disease status and <m>Y</m> indicating test result on a partcular test for the said disease. For each patient, the disease status variable <m>X</m> has on of the two values:
+                    <me>
+                        X = \begin{cases}
+                            \textrm{D} \amp \text{if the patient has disease}\\
+                            \textrm{N} \amp \text{if the patient has no disease}
+                        \end{cases}
+                    </me>
+                    Similarly, the test result variable <m>Y</m> for each patient has one of the two values
+                    <me>
+                        Y = \begin{cases}
+                            + \amp \text{if the test was positive}\\
+                            - \amp \text{if the test was negative}
+                        \end{cases}
+                    </me>
+                    Suppose, in <m>1000</m> people in the dataset you found <m>150</m> people had tested positive and also had the disease. This will be the joint probability
+                    <me>
+                        p_{D+} = \frac{150}{1000} = 0.150.
+                    </me>
+                    Suppose, you found that <m>50</m> patients who had the disease but somehow tested negative. That would be
+                    <me>
+                        p_{D-} = \frac{50}{1000} = 0.050
+                    </me>
+                    Now, it turned out that <m>300</m> people who didn't have the disease but their tests came out positive.
+                    <me>
+                        p_{N+} = \frac{300}{1000} = 0.300.
+                    </me> 
+                    Finally, <m>500</m> people that didn't have the disease were also found to be negative on the test.
+                    <me>
+                        p_{N-} = \frac{500}{1000} = 0.500.
+                    </me>
+                    These joint probabilities are usually organized in a table form as shown in <xref ref="tab-Patient-Disease-and-Test-Results"/>
         
-    </subsection>
-    <subsection xml:id="subsec-Marginal-Probability">
-        <title>Marginal Probability</title>
-        
+                </p>
+                <table xml:id="tab-Patient-Disease-and-Test-Results">
+                    <title>Disease and Test Results</title>
+                    <tabular>
+                        <row bottom="major">
+                            <cell></cell><cell></cell><cell></cell>
+                        </row>
+                        <row bottom="minor">
+                            <cell right="minor"></cell><cell right="minor">Test: <m>+</m></cell><cell>Test: <m>-</m></cell>
+                        </row>
+                        <row>
+                            <cell right="minor">Disease (D)</cell><cell right="minor"><m>p_{D+} = 0.150</m></cell><cell> <m>p_{D-} = 0.050</m></cell>
+                        
+                        </row>
+                        <row bottom="major">
+                            <cell right="minor">No Disease (N)</cell><cell right="minor"><m>p_{N+}=0.300</m></cell><cell> <m>p_{N-}=0.500</m></cell>
+                        </row>
+                    </tabular>
+                </table>                
+
+            </example>
+                    
+        </p>
+       
     </subsection>
 
-           
-    <!--  Joint and Marginal Probabilities  -->
-    <subsection xml:id="subsec-Joint-and-Marginal-Probability">
-        <title>Joint and Marginal Probabilities</title>
+
+    <subsection xml:id="subsec-Marginal-Probability">
+        <title>Marginal Probability</title>
         <p>
-            For two discrete random variables <m>X</m> and <m>Y</m>, the <alert>joint probability</alert> assigns probabilities to pairs <m>(x_i, y_j)</m>:
-            <men xml:id="eqn-joint">
-                P(X=x_i, Y=y_j) = p_{ij}, \quad \sum_i \sum_j p_{ij} = 1.
-            </men>
+            <term>Marginal probability</term> is an unconditional probability of a single event. for instance marginal probability of event <m>A</m> is the same old regular probability of <m>A</m>, viz. <m>P(A)</m> we are aware of. In the context of joint probabilities, we use the phrase marginal probability. Outside of this context, it is just probability. 
         </p>
         <p>
-            The <alert>marginal probability</alert> of <m>X</m> is obtained by summing over all values of <m>Y</m>:
-            <men xml:id="eqn-marginal">
-                P(X=x_i) = \sum_j P(X=x_i, Y=y_j) = \sum_j p_{ij}.
-            </men>
-            Similarly, <m>P(Y=y_j) = \sum_i p_{ij}</m>.
+            So, what is it's relation to the joint probability? To present the answer, let's look at joint probability in the context of two discrete random variables <m>X</m> and <m>Y</m>, which take values in finite sets <m>\{x_1, x_2, \cdots x_m \}</m>  and <m>\{y_1, y_2, \cdots y_n \}</m>, respectively. Let <m>P(X,Y)</m> be their joint probability, meaning collections of <m>P(X=x_i,\,Y=y_j)</m> pairs. Marginalized probabilities will be probabilities of events like <m>P(X=x_1)</m>, <m>P(X=x_2)</m>, etc. without any consideration of the variable <m>Y</m>. Or, alternatively, <m>P(Y=y_1)</m>, <m>P(Y=y_2)</m>, etc. without any consideration of the variable <m>X</m>.
         </p>
+        <p>
+            We can get <m>P(X=x_1)</m> from <m>P(X=x_1, Y=\text{any }y_j</m>. That means, we need to sum over all the values of <m>Y</m> in <m>P(X=x_1, Y=y)</m>. Rather than clutter the formula  we are going to use the following notation in equations.
+            <me>
+                P(x_i, y_j) \equiv P(X=x_i,\, Y=y_j)
+            </me>
+            Therefore, marginal probability <m>P(x_1) \equiv P(X=x_1)</m>:
+            <men xml:id="eqn-Marginal-Prob-From-Joint-Prob">
+                P(x_1) = P(x_1, y_1) + P(x_1, y_2) + \cdots + P(x_1, y_n).
+            </men>
+            For arbitrary <m>x_i</m>:
+            <me>
+                P(x_i) = P(x_i, y_1) + P(x_i, y_2) + \cdots + P(x_i, y_n).
+            </me>
+            Of course, we can write this in a compact notation and drop the subscripts.
+            <me>
+                P(x) = \sum_y\, P(x,y).
+            </me>
+            If <m>X</m> and <m>Y</m> were continuois variables, we will work with the PDF and replace sum by an integral, in this case integral over <m>y</m>.
+            <men xml:id="eqn-marginal-continuous-from-joint-PDF">
+                \rho(x) = \int_{-\infty}^{\infty}\, \rho(x,y)\, dy.
+            </men>
+            Note that we are using same symbol <m>\rho</m> for TWO DIFFERENT PDFs. To remove the confusion, subscripts are used to remind the random variable names.
+            <me>
+                \rho_X(x) = \int_{-\infty}^{\infty}\, \rho_{XY}(x,y)\, dy.
+            </me>
+            
+            
+            
+            
+            
+        </p>
+
         <example>
-            <title>Patient disease and test results</title>
+            <title>Marginal Probabilites from Joint Probability Table</title>
             <p>
-                Consider a dataset of 1,000 patients, with <m>X</m> indicating disease status (<m>D</m>: disease, <m>N</m>: no disease) and <m>Y</m> indicating test result (<m>+</m>: positive, <m>-</m>: negative). The joint counts are given in <xref ref="tab-patient-data-for-jt-and-conditional-probs"/>. Joint probabilities are:
-                <me>
-                    P(D, +) = \frac{150}{1000} = 0.150, \quad P(D, -) = \frac{50}{1000} = 0.050,
-                </me>
-                <me>
-                    P(N, +) = \frac{300}{1000} = 0.300, \quad P(N, -) = \frac{500}{1000} = 0.500.
-                </me>
-                Marginals are:
-                <me>
-                    P(D) = P(D, +) + P(D, -) = 0.150 + 0.050 = 0.200, \quad P(N) = 0.800,
-                </me>
-                <me>
-                    P(+) = P(D, +) + P(N, +) = 0.150 + 0.300 = 0.450, \quad P(-) = 0.550.
-                </me>
+                Let's work out Marginal probabilities <m>P(D)</m>, <m>P(N)</m>, <m>P(+)</m>, anbd <m>P(-)</m> from the joint probabilites given in <xref ref="tab-Patient-Disease-and-Test-Results"/>.
+                <md>
+                    <mrow> \amp P(D) = P(D, +) + P(D, -) = 0.150 + 0.050 = 0.200 </mrow>
+                    <mrow> \amp P(N) = P(N, +) + P(N, -) = 0.300 + 0.500 = 0.800</mrow>
+                </md>
+                These make up the PMF of the random variable <q>Disease Status</q>, regardless of what ever happened in the tests. The PMF of the <q>Test Result</q> variable regarless of the <q>Disease Status</q> are
+                <md>
+                    <mrow> \amp P(+) = P(D, +) + P(N, +) = 0.150 + 0.300 = 0.450 </mrow>
+                    <mrow> \amp P(-) = P(D, -) + P(N, -) = 0.050 + 0.500 = 0.550</mrow>                    
+                </md>
+                
             </p>
-        </example>
+
+            <p>
+                Often, we display joint and marginal probabilities in a heatmap as shown in <xref ref="fig-joint-heatmap"/> with the marginals shown in the margins outside the Table.
+            </p>
         <figure xml:id="fig-joint-heatmap">
-            <caption>Heatmap of joint probabilities for disease status (<m>X \in \{D, N\}</m>) and test result (<m>Y \in \{+, -\}</m>) from 1,000 patients (<xref ref="tab-patient-data-for-jt-and-conditional-probs"/>). Darker shades indicate higher probabilities. Marginal probabilities (<m>P(X)</m>, <m>P(Y)</m>) are shown in the margins, illustrating the summation process <m>P(X=x_i) = \sum_j P(X=x_i, Y=y_j)</m>.</caption>
+            <caption>Heatmap of joint probabilities for disease status (<m>X \in \{D, N\}</m>) and test result (<m>Y \in \{+, -\}</m>) from <m>1,000</m> patients (<xref ref="tab-patient-data-for-jt-and-conditional-probs"/>). Darker shades indicate higher probabilities. Marginal probabilities (<m>P(X)</m>, <m>P(Y)</m>) are shown in the margins.</caption>
             <image source="./images/essential-probability-and-statistics/joint_heatmap.png">
                 <shortdescription>Heatmap of joint probabilities with marginals.</shortdescription>
             </image>
         </figure>
+        The following program was used to create the heatmap.
         <program language="python" line-numbers="yes">
             <title>Joint probability heatmap</title>
             <code>
@@ -131,82 +230,32 @@
             plt.show()
             </code>
         </program>
-    </subsection>
 
-    <!--   Covariance and Correlation   -->
-    <subsection xml:id="subsec-Covariance-and-Correlation">
-        <title>Covariance and Correlation</title>
-        <p>
-            The <alert>covariance</alert> between random variables <m>X</m> and <m>Y</m> measures their joint variability:
-            <men xml:id="eqn-covariance">
-                \mathrm{Cov}(X,Y) = \mathbb{E}[(X - \mathbb{E}[X])(Y - \mathbb{E}[Y])] = \mathbb{E}[XY] - \mathbb{E}[X]\mathbb{E}[Y].
-            </men>
-        </p>
-        <p>
-            The <alert>correlation</alert> normalizes covariance:
-            <men xml:id="eqn-correlation">
-                \mathrm{Corr}(X,Y) = \frac{\mathrm{Cov}(X,Y)}{\sigma_X \sigma_Y}, \quad \mathrm{Corr}(X,Y) \in [-1, 1],
-            </men>
-            where <m>\sigma_X = \sqrt{\mathrm{Var}(X)}</m>, <m>\sigma_Y = \sqrt{\mathrm{Var}(Y)}</m>. Positive correlation means <m>X</m> and <m>Y</m> tend to increase together; negative means they move oppositely. Correlation does not imply causation.
-        </p>
-        <example>
-            <title>Patient symptom severity and test score</title>
-            <p>
-                For 1,000 patients, let <m>X</m> be symptom severity (normal, mean 5 for disease, 3 for no disease, std 1.5) and <m>Y</m> be test score (normal, mean 80 for disease, 60 for no disease, std 10). The code below computes covariance and correlation, showing a positive relationship.
-            </p>
         </example>
-        <figure xml:id="fig-correlation-scatter">
-            <caption>Scatter plot of symptom severity vs. test score for 1,000 patients, with regression lines for disease (D) and no disease (N) groups. The computed correlation coefficient is shown, indicating a positive relationship between features, relevant for medical diagnostics.</caption>
-            <image source="./images/essential-probability-and-statistics/correlation_examples.png">
-                <shortdescription>Scatter plot with regression lines for correlation.</shortdescription>
-            </image>
-        </figure>
-        <program language="python" line-numbers="yes">
-            <title>Correlation scatter plot</title>
-            <code>
-            # === Scatter plot with correlation and regression lines ===
-            import numpy as np
-            import pandas as pd
-            import matplotlib.pyplot as plt
 
-
-            np.random.seed(42)
-
-            # Synthetic patient data
-            counts = {"D+": 150, "D-": 50, "N+": 300, "N-": 500}
-            data = []
-            for status, _, count in [("D", 1, 200), ("N", 0, 800)]:
-                severity = np.random.normal(5 if status == "D" else 3, 1.5, count)
-                score = np.random.normal(80 if status == "D" else 60, 10, count)
-                data.extend([[s, t, 1 if status == "D" else 0] for s, t in zip(severity, score)])
-            data = pd.DataFrame(data, columns=["Severity", "Score", "Disease"])
-
-            # Compute correlation
-            corr = data[["Severity", "Score"]].corr().iloc[0, 1]
-
-            # Plot with regression lines
-            plt.figure(figsize=(8, 6))
-            for d, color, label in [(1, "red", "Disease"), (0, "blue", "No Disease")]:
-                subset = data[data["Disease"] == d]
-                plt.scatter(subset["Severity"], subset["Score"], c=color, alpha=0.5, label=label)
-                z = np.polyfit(subset["Severity"], subset["Score"], 1)
-                p = np.poly1d(z)
-                plt.plot(subset["Severity"], p(subset["Severity"]), color=color, linestyle="--")
-            plt.xlabel("Symptom Severity")
-            plt.ylabel("Test Score")
-            plt.title(f"Correlation: {corr:.3f}")
-            plt.legend()
-            plt.grid(True, alpha=0.3)
-            plt.tight_layout()
-            plt.savefig("correlation_examples.png", dpi=300)
-            plt.show()
-            </code>
-        </program>
     </subsection>
+
+
+           <!-- I AM HERE -->
+
+
 
     <!--   Conditional Probability   -->
     <subsection xml:id="subsec-Conditional-Probability">
         <title>Conditional Probability</title>
+
+        <p>
+            <term>Conditional probability</term> is probability of one event <m>A</m> given the knowledge that another event <m>B</m> has occured. That is, you are allowed to look into the world in which <m>B</m> should occur and then in that world, ask what fraction of that world is where <m>A</m> would also occur, i.e., the event <m>A\cap B</m>. Thus, conditional probability, denoted by <m>P(A \mid B)</m>  will be the ratio of <m>P(A\cap B)</m> to <m>P(B)</m>. 
+            <men xml:id="eqn-conditonal-probability-conceptual-def">
+                P(A | B) = \frac{P(A\cap B)}{ P(B)},\quad P(B) \ne 0.
+            </men>
+            Of course, <m>P(B) \ne 0</m> from the setup itself, since we are assuming <m>B</m> has occured, i.e., its unconditional probability must have been zero.
+        </p>
+        <p>
+            So, how is it related to joint and marginal probabilities? Let's look at our ongoing example of two discrete random variables <m>X \in \{x_1, x_2, \cdots, x_m \}</m> and <m>Y \in \{y_1, y_2, \cdots, y_n \}</m> with joint probabilities <m>P(X=x_i, Y=y_j) \equiv P(x_i, y_j) \equiv p_{ij}</m> and marginal probabilities <m>P(X=x_i) \equiv p_i</m> and <m>P(Y=y_j) \equiv q_i</m>, where I used <m>q</m> in <m>Y</m> so that we don't confused by 
+        </p>
+
+
         <p>
             The <alert>conditional probability</alert> of <m>X=x_i</m> given <m>Y=y_j</m> is:
             <men xml:id="eqn-conditional-definition">
@@ -365,6 +414,79 @@
             </code>
         </program>
     </subsection>
+
+    <!--   Covariance and Correlation   -->
+    <subsection xml:id="subsec-Covariance-and-Correlation">
+        <title>Covariance and Correlation</title>
+        <p>
+            The <alert>covariance</alert> between random variables <m>X</m> and <m>Y</m> measures their joint variability:
+            <men xml:id="eqn-covariance">
+                \mathrm{Cov}(X,Y) = \mathbb{E}[(X - \mathbb{E}[X])(Y - \mathbb{E}[Y])] = \mathbb{E}[XY] - \mathbb{E}[X]\mathbb{E}[Y].
+            </men>
+        </p>
+        <p>
+            The <alert>correlation</alert> normalizes covariance:
+            <men xml:id="eqn-correlation">
+                \mathrm{Corr}(X,Y) = \frac{\mathrm{Cov}(X,Y)}{\sigma_X \sigma_Y}, \quad \mathrm{Corr}(X,Y) \in [-1, 1],
+            </men>
+            where <m>\sigma_X = \sqrt{\mathrm{Var}(X)}</m>, <m>\sigma_Y = \sqrt{\mathrm{Var}(Y)}</m>. Positive correlation means <m>X</m> and <m>Y</m> tend to increase together; negative means they move oppositely. Correlation does not imply causation.
+        </p>
+        <example>
+            <title>Patient symptom severity and test score</title>
+            <p>
+                For 1,000 patients, let <m>X</m> be symptom severity (normal, mean 5 for disease, 3 for no disease, std 1.5) and <m>Y</m> be test score (normal, mean 80 for disease, 60 for no disease, std 10). The code below computes covariance and correlation, showing a positive relationship.
+            </p>
+        </example>
+        <figure xml:id="fig-correlation-scatter">
+            <caption>Scatter plot of symptom severity vs. test score for 1,000 patients, with regression lines for disease (D) and no disease (N) groups. The computed correlation coefficient is shown, indicating a positive relationship between features, relevant for medical diagnostics.</caption>
+            <image source="./images/essential-probability-and-statistics/correlation_examples.png">
+                <shortdescription>Scatter plot with regression lines for correlation.</shortdescription>
+            </image>
+        </figure>
+        <program language="python" line-numbers="yes">
+            <title>Correlation scatter plot</title>
+            <code>
+            # === Scatter plot with correlation and regression lines ===
+            import numpy as np
+            import pandas as pd
+            import matplotlib.pyplot as plt
+
+
+            np.random.seed(42)
+
+            # Synthetic patient data
+            counts = {"D+": 150, "D-": 50, "N+": 300, "N-": 500}
+            data = []
+            for status, _, count in [("D", 1, 200), ("N", 0, 800)]:
+                severity = np.random.normal(5 if status == "D" else 3, 1.5, count)
+                score = np.random.normal(80 if status == "D" else 60, 10, count)
+                data.extend([[s, t, 1 if status == "D" else 0] for s, t in zip(severity, score)])
+            data = pd.DataFrame(data, columns=["Severity", "Score", "Disease"])
+
+            # Compute correlation
+            corr = data[["Severity", "Score"]].corr().iloc[0, 1]
+
+            # Plot with regression lines
+            plt.figure(figsize=(8, 6))
+            for d, color, label in [(1, "red", "Disease"), (0, "blue", "No Disease")]:
+                subset = data[data["Disease"] == d]
+                plt.scatter(subset["Severity"], subset["Score"], c=color, alpha=0.5, label=label)
+                z = np.polyfit(subset["Severity"], subset["Score"], 1)
+                p = np.poly1d(z)
+                plt.plot(subset["Severity"], p(subset["Severity"]), color=color, linestyle="--")
+            plt.xlabel("Symptom Severity")
+            plt.ylabel("Test Score")
+            plt.title(f"Correlation: {corr:.3f}")
+            plt.legend()
+            plt.grid(True, alpha=0.3)
+            plt.tight_layout()
+            plt.savefig("correlation_examples.png", dpi=300)
+            plt.show()
+            </code>
+        </program>
+    </subsection>
+
+
 
     <!--   Continuous Random Variables   -->
     <subsection xml:id="subsec-Continuous-Random-Variables">
