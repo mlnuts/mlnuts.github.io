@@ -542,27 +542,45 @@ P(A | B) = \frac{P(A\cap B)}{ P(B)},\quad P(B) \ne 0.\tag{1.6.6}
 </div>
 <div class="para">Of course, <span class="process-math">\(P(B) \ne 0\)</span> from the setup itself, since we are assuming <span class="process-math">\(B\)</span> has occured, i.e., its unconditional probability must have been zero.</div>
 </div>
-<div class="para" id="subsec-Conditional-Probability-3">So, how is it related to joint and marginal probabilities? Let’s look at our ongoing example of two discrete random variables <span class="process-math">\(X \in \{x_1, x_2, \cdots, x_m \}\)</span> and <span class="process-math">\(Y \in \{y_1, y_2, \cdots, y_n \}\)</span> with joint probabilities <span class="process-math">\(P(X=x_i, Y=y_j) \equiv P(x_i, y_j) \equiv p_{ij}\)</span> and marginal probabilities <span class="process-math">\(P(X=x_i) \equiv p_i\)</span> and <span class="process-math">\(P(Y=y_j) \equiv q_i\text{,}\)</span> where I used <span class="process-math">\(q\)</span> in <span class="process-math">\(Y\)</span> so that we don’t confused by</div>
-<div class="para logical" id="subsec-Conditional-Probability-4">
-<div class="para">The <em class="alert">conditional probability</em> of <span class="process-math">\(X=x_i\)</span> given <span class="process-math">\(Y=y_j\)</span> is:</div>
+<div class="para logical" id="subsec-Conditional-Probability-3">
+<div class="para">So, how is it related to joint and marginal probabilities? Let’s look at our ongoing example of two discrete random variables <span class="process-math">\(X \in \{x_1, x_2, \cdots, x_m \}\)</span> and <span class="process-math">\(Y \in \{y_1, y_2, \cdots, y_n \}\)</span> with joint probabilities <span class="process-math">\(P(X=x_i, Y=y_j) \equiv P(x_i, y_j) \equiv p_{ij}\)</span> and marginal probabilities <span class="process-math">\(P(X=x_i) \equiv p_i\)</span> and <span class="process-math">\(P(Y=y_j) \equiv q_i\text{,}\)</span> where I used <span class="process-math">\(q\)</span> in <span class="process-math">\(Y\)</span> so that we don’t confused by <span class="process-math">\(p_1\)</span> for <span class="process-math">\(X=x_1\)</span> and another <span class="process-math">\(p_1\)</span> from <span class="process-math">\(Y=y_1\)</span> in the same context. The <em class="alert">conditional probability</em> of event <span class="process-math">\(X=x_i\)</span> for <span class="process-math">\(A\)</span> given event <span class="process-math">\(Y=y_j\)</span> for <span class="process-math">\(B\)</span> will be, using the simplified notation of dropping <span class="process-math">\(X=\)</span> and <span class="process-math">\(Y=\text{,}\)</span>
+</div>
 <div class="displaymath process-math" id="eqn-conditional-definition">
 \begin{equation}
-P(X=x_i \mid Y=y_j) = \frac{P(X=x_i, Y=y_j)}{P(Y=y_j)}, \quad P(Y=y_j) &gt; 0.\tag{1.6.7}
+P(x_i \mid y_j) = \frac{P(x_i, y_j)}{P(y_j)}, \quad P(y_j) \gt 0.\tag{1.6.7}
 \end{equation}
 </div>
-<div class="para">By the product rule:</div>
-<div class="displaymath process-math" id="eqn-product-rule-in-joint-prob-section">
+<div class="para">Now, notice that <span class="process-math">\(P(x_i \mid y_j)\)</span> is a distribution in a world where <span class="process-math">\(Y\)</span> has a particula value and we are uncertain about <span class="process-math">\(X\text{,}\)</span> which could be in any of its <span class="process-math">\(m\)</span> values, and we are asking what will be the probability that the value will be <span class="process-math">\(x_i\text{.}\)</span> We can denote the PMF resulting from the <span class="process-math">\(m\)</span> values of <span class="process-math">\(X\)</span> when <span class="process-math">\(Y\)</span> is kept at <span class="process-math">\(y_j\)</span> as <span class="process-math">\(P(X,y_j)\text{.}\)</span>
+</div>
+</div>
+<div class="para logical" id="subsec-Conditional-Probability-4">
+<div class="para">Thus, we will have <span class="process-math">\(n\)</span> DIFFERENT CONDITIONAL PROBABILITY MASS FUNCTIONS in <span class="process-math">\(X\)</span> space, one for each value of <span class="process-math">\(Y\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P(X, y_1),\ P(X, y_2),\ P(X, y_3),\cdots, P(X, y_n).
+\end{equation*}
+</div>
+<div class="para">That is the complication that conditional probability brings and also richness of the questions you can ask of the data!</div>
+</div>
+<div class="para logical" id="subsec-Conditional-Probability-5">
+<div class="para">Now, let’s look at Conditonal PMF <span class="process-math">\(P(X,y_1)\text{.}\)</span> It is a bonafide probability mass function with values:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P(x_1, y_1),\ P(x_2, y_1),\ P(x_3, y_1),\cdots, P(x_m, y_1).
+\end{equation*}
+</div>
+<div class="para">They must add to <span class="process-math">\(1\text{.}\)</span>
+</div>
+<div class="displaymath process-math" id="eqn-normalization-codnitional-PMF">
 \begin{equation}
-P(X=x_i, Y=y_j) = P(X=x_i \mid Y=y_j) P(Y=y_j).\tag{1.6.8}
+P(x_1, y_1) + P(x_2, y_1) + P(x_3, y_1) + \cdots + P(x_m, y_1) = 1.\tag{1.6.8}
 \end{equation}
 </div>
-</div>
-<div class="para" id="subsec-Conditional-Probability-5">Conditional probabilities form a distribution over <span class="process-math">\(X\)</span> for fixed <span class="process-math">\(Y=y_j\text{,}\)</span> summing to 1: <span class="process-math">\(\sum_i P(X=x_i \mid Y=y_j) = 1\text{.}\)</span>
 </div>
 <article class="example example-like" id="subsec-Conditional-Probability-6"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.6.5</span><span class="period">.</span><span class="space"> </span><span class="title">Patient disease and test results.</span>
-</h4> <div class="para logical" id="subsec-Conditional-Probability-6-2">
-<div class="para">Using the patient dataset (<a href="sec-Two-or-More-Random-Variables.html#tab-patient-data-for-jt-and-conditional-probs" class="xref" data-knowl="./knowl/xref/tab-patient-data-for-jt-and-conditional-probs.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 1.6.6: Patient counts (disease vs. test)">Table 1.6.6</a>), compute all conditional probabilities: <figure class="table table-like" id="tab-patient-data-for-jt-and-conditional-probs"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.6.6<span class="period">.</span></span><span class="space"> </span>Patient counts (disease vs. test)</figcaption><div class="tabular-box natural-width"><table class="tabular">
+</h4> <div class="para" id="subsec-Conditional-Probability-6-2">Using the patient dataset (<a href="sec-Two-or-More-Random-Variables.html#tab-patient-data-for-jt-and-conditional-probs" class="xref" data-knowl="./knowl/xref/tab-patient-data-for-jt-and-conditional-probs.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 1.6.6: Patient counts (disease vs. test)">Table 1.6.6</a>), compute all conditional probabilities:</div> <figure class="table table-like" id="tab-patient-data-for-jt-and-conditional-probs"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.6.6<span class="period">.</span></span><span class="space"> </span>Patient counts (disease vs. test)</figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines"></td>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(+\)</span></td>
@@ -587,22 +605,44 @@ P(X=x_i, Y=y_j) = P(X=x_i \mid Y=y_j) P(Y=y_j).\tag{1.6.8}
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(n_-=550\)</span></td>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(n_T=1000\)</span></td>
 </tr>
-</table></div></figure> Joint probabilities:</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/tab-patient-data-for-jt-and-conditional-probs.html">
+</table></div></figure> <div class="para logical" id="subsec-Conditional-Probability-6-4">
+<div class="para">Joint probabilities:</div>
+<div class="displaymath process-math">
 \begin{equation*}
 P(D, +) = 0.150, \quad P(D, -) = 0.050, \quad P(N, +) = 0.300, \quad P(N, -) = 0.500.
 \end{equation*}
 </div>
-<div class="para">Marginals: <span class="process-math">\(P(D) = 0.200\text{,}\)</span> <span class="process-math">\(P(N) = 0.800\text{,}\)</span> <span class="process-math">\(P(+) = 0.450\text{,}\)</span> <span class="process-math">\(P(-) = 0.550\text{.}\)</span> Conditional probabilities:</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/tab-patient-data-for-jt-and-conditional-probs.html" id="subsec-Conditional-Probability-6-2-8">
+</div> <div class="para" id="subsec-Conditional-Probability-6-5">Marginals: <span class="process-math">\(P(D) = 0.200\text{,}\)</span> <span class="process-math">\(P(N) = 0.800\text{,}\)</span> <span class="process-math">\(P(+) = 0.450\text{,}\)</span> <span class="process-math">\(P(-) = 0.550\text{.}\)</span>
+</div> <div class="para" id="subsec-Conditional-Probability-6-6">Conditional probabilities: Let us do one of the conditional probabilities in detail and just write the answers for the rest:</div> <div class="para logical" id="subsec-Conditional-Probability-6-7">
+<div class="para">Suppose we want to know that if test came out positive, what is the proability that the individual has disease? Since, we have the full joint probability table, we can answer this question by computing <span class="process-math">\(P( D \mid +)\text{.}\)</span>
+</div>
+<div class="displaymath process-math" id="subsec-Conditional-Probability-6-7-2">
+\begin{align*}
+P( D \mid +) \amp  = \frac{P(D,\ +) }{P(+)}\\
+\amp =  \frac{0.150}{0.450} \approx 0.3333
+\end{align*}
+</div>
+<div class="para">That is, based on the table, it is only <span class="process-math">\(33.3\%\)</span> chance that the individual has disease. If we use <span class="process-math">\(X\)</span> for the Disease/No Disease variable, We will have the PDF <span class="process-math">\(P(X \mid +)\)</span> by completing the calculation on <span class="process-math">\(P( N \mid + )\text{,}\)</span> by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P( N \mid +) = \frac{P(N,\ +) }{P(+)} = \frac{0.300}{0.450} \approx 0.6667.
+\end{equation*}
+</div>
+<div class="para">OR, simply by using the normalization condition on the PDF.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P( N \mid +)  = 1  - P( D \mid -) 1 - 0.3333 = 0.667. 
+\end{equation*}
+</div>
+<div class="para">Now, you should compute the PDF’s <span class="process-math">\(P(X \mid -)\text{,}\)</span> <span class="process-math">\(P(Y \mid D)\text{,}\)</span> and P(Y \mid N), where <span class="process-math">\(Y\)</span> is the variable for Test and check your answer for the following table.</div>
+<div class="displaymath process-math" id="subsec-Conditional-Probability-6-7-12">
 \begin{gather*}
-P(D \mid +) = \frac{0.150}{0.450} \approx 0.3333, \quad P(N \mid +) = \frac{0.300}{0.450} \approx 0.6667, \\
-P(D \mid -) = \frac{0.050}{0.550} \approx 0.0909, \quad P(N \mid -) = \frac{0.500}{0.550} \approx 0.9091, \\
-P(+ \mid D) = \frac{0.150}{0.200} = 0.750, \quad P(- \mid D) = \frac{0.050}{0.200} = 0.250, \\
-P(+ \mid N) = \frac{0.300}{0.800} = 0.375, \quad P(- \mid N) = \frac{0.500}{0.800} = 0.625. 
+P(D \mid -) \approx 0.0909, \quad P(N \mid -)  \approx 0.9091, \\
+P(+ \mid D) = 0.750, \quad P(- \mid D) = 0.250, \\
+P(+ \mid N) = 0.375, \quad P(- \mid N)  = 0.625. 
 \end{gather*}
 </div>
-</div></article><figure class="figure figure-like" id="fig-patient-bar-conditional"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/patient_conditional_bars.png" class="contained" alt="Grouped bar chart of conditional probabilities."></div>
+</div> <div class="para" id="subsec-Conditional-Probability-6-8">For two variables, each with two possible values, i.e., <span class="process-math">\(m=2\)</span> and <span class="process-math">\(n=2\)</span> there are <span class="process-math">\(m + n = 4\)</span> possible conditionaal PMFs, same as the number of marginal PMFs, but only one joint PMF.</div></article><figure class="figure figure-like" id="fig-patient-bar-conditional"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/patient_conditional_bars.png" class="contained" alt="Grouped bar chart of conditional probabilities."></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.6.7<span class="period">.</span></span><span class="space"> </span>Grouped bar chart of conditional probabilities for disease status (<span class="process-math">\(X \in \{D, N\}\)</span>) given test result (<span class="process-math">\(Y \in \{+, -\}\)</span>) and test result given disease status, based on <a href="sec-Two-or-More-Random-Variables.html#tab-patient-data-for-jt-and-conditional-probs" class="xref" data-knowl="./knowl/xref/tab-patient-data-for-jt-and-conditional-probs.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 1.6.6: Patient counts (disease vs. test)">Table 1.6.6</a>. Each group shows a probability distribution (summing to 1), illustrating how conditional probabilities slice the joint distribution.</figcaption></figure><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-py">Conditional probability bar chart
 
 # === Grouped bar chart for all conditional probabilities ===
