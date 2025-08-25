@@ -1,5 +1,0 @@
-/workspaces/mlnuts.github.io/source/main.ptx:36:0:ERROR:RELAXNGV:RELAXNG_ERR_ELEMNAME: Expecting element biography, got colophon
-/workspaces/mlnuts.github.io/source/main.ptx:4:0:ERROR:RELAXNGV:RELAXNG_ERR_NOTELEM: Expecting an element got text
-/workspaces/mlnuts.github.io/source/main.ptx:6:0:ERROR:RELAXNGV:RELAXNG_ERR_ELEMWRONG: Did not expect element introduction there
-/workspaces/mlnuts.github.io/source/main.ptx:6:0:ERROR:RELAXNGV:RELAXNG_ERR_ELEMNAME: Expecting element sidebyside, got introduction
-/workspaces/mlnuts.github.io/source/main.ptx:6:0:ERROR:RELAXNGV:RELAXNG_ERR_ELEMNAME: Expecting element proof, got introduction

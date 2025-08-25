@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ML Notes</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="ML Notes">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.css" integrity="sha512-cbQXwDFK7lj2Fqfkuxbo5iD1dSbLlJGXGpfTDqbggqjHJeyzx88I3rfwjS38WJag/ihH7lzuGlGHpDBymLirZQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.css" integrity="sha512-nXlJLUeqPMp1Q3+Bd8Qds8tXeRVQscMscwysJm821C++9w6WtsFbJjPenZ8cQVMXyqSAismveQJc0C1splFDCA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/colors_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
+<style>
+#subsec-Central-Tendency-3 { counter-set: subsec-Central-Tendency-3 0; }
+#subsec-Central-Tendency-3 > li::marker { content: ""counter(subsec-Central-Tendency-3,decimal)"."; }
+#subsec-Central-Tendency-3 > li { counter-increment: subsec-Central-Tendency-3; }
+#subsec-Dispersion-3 { counter-set: subsec-Dispersion-3 0; }
+#subsec-Dispersion-3 > li::marker { content: ""counter(subsec-Dispersion-3,decimal)"."; }
+#subsec-Dispersion-3 > li { counter-increment: subsec-Dispersion-3; }
+#subsec-Pandas-2-1-1 { counter-set: subsec-Pandas-2-1-1 0; }
+#subsec-Pandas-2-1-1 > li::marker { content: ""counter(subsec-Pandas-2-1-1,decimal)"."; }
+#subsec-Pandas-2-1-1 > li { counter-increment: subsec-Pandas-2-1-1; }
+#subsec-Pandas-4-2 { counter-set: subsec-Pandas-4-2 0; }
+#subsec-Pandas-4-2 > li::marker { content: ""counter(subsec-Pandas-4-2,decimal)"."; }
+#subsec-Pandas-4-2 > li { counter-increment: subsec-Pandas-4-2; }
+#sec-Numerical-and-Categorical-Data-2-1-1 { counter-set: sec-Numerical-and-Categorical-Data-2-1-1 0; }
+#sec-Numerical-and-Categorical-Data-2-1-1 > li::marker { content: ""counter(sec-Numerical-and-Categorical-Data-2-1-1,decimal)"."; }
+#sec-Numerical-and-Categorical-Data-2-1-1 > li { counter-increment: sec-Numerical-and-Categorical-Data-2-1-1; }
+#subsec-Axiomatic-View-of-Probability-7-2 { counter-set: subsec-Axiomatic-View-of-Probability-7-2 0; }
+#subsec-Axiomatic-View-of-Probability-7-2 > li::marker { content: ""counter(subsec-Axiomatic-View-of-Probability-7-2,decimal)""; }
+#subsec-Axiomatic-View-of-Probability-7-2 > li { counter-increment: subsec-Axiomatic-View-of-Probability-7-2; }
+#subsec-three-types-of-probabilities-3 { counter-set: subsec-three-types-of-probabilities-3 0; }
+#subsec-three-types-of-probabilities-3 > li::marker { content: ""counter(subsec-three-types-of-probabilities-3,decimal)"."; }
+#subsec-three-types-of-probabilities-3 > li { counter-increment: subsec-three-types-of-probabilities-3; }
+#subsub-Poisson-Process-3-5 { counter-set: subsub-Poisson-Process-3-5 0; }
+#subsub-Poisson-Process-3-5 > li::marker { content: ""counter(subsub-Poisson-Process-3-5,decimal)"."; }
+#subsub-Poisson-Process-3-5 > li { counter-increment: subsub-Poisson-Process-3-5; }
+#subsub-Poisson-Process-4-2 { counter-set: subsub-Poisson-Process-4-2 0; }
+#subsub-Poisson-Process-4-2 > li::marker { content: ""counter(subsub-Poisson-Process-4-2,decimal)"."; }
+#subsub-Poisson-Process-4-2 > li { counter-increment: subsub-Poisson-Process-4-2; }
+#subsec-Hypothesis-Testing-4 { counter-set: subsec-Hypothesis-Testing-4 0; }
+#subsec-Hypothesis-Testing-4 > li::marker { content: ""counter(subsec-Hypothesis-Testing-4,decimal)"."; }
+#subsec-Hypothesis-Testing-4 > li { counter-increment: subsec-Hypothesis-Testing-4; }
+</style>
+</head>
+<body id="ML-Notes" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="my-ML-Notes.html"><span class="title">ML Notes:</span> <span class="subtitle">Theoretical and Practical ML Concepts</span></a></h1>
+<p class="byline"></p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><span class="previous-button button disabled"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></span><span class="up-button button disabled"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></span><a class="next-button button" href="frontmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-Essential-Probability-and-Statistics.html" class="internal"><span class="codenumber">1</span> <span class="title">Essential Probability and Statistics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Descriptive-Statistics.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Descriptive Statistics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Descriptive-Statistics.html#subsec-Central-Tendency" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Measures of Central Tendency</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Descriptive-Statistics.html#subsec-Dispersion" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Measures of Dispersion</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Descriptive-Statistics.html#subsec-Distribution-Shape" class="internal"><span class="codenumber">1.1.3</span> <span class="title">Distribution Shape</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-Descriptive-Statistics.html#kurtosis" class="internal"><span class="codenumber">1.1.4</span> <span class="title">Kurtosis: Checking Out the Tails</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Descriptive-Statistics.html#types-of-kurtosis" class="internal"><span class="codenumber">1.1.4.1</span> <span class="title">Types of Kurtosis</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Descriptive-Statistics.html#kurtosis-formula" class="internal"><span class="codenumber">1.1.4.2</span> <span class="title">How’s It Calculated?</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Descriptive-Statistics.html#kurtosis-examples" class="internal"><span class="codenumber">1.1.4.3</span> <span class="title">Real-World Examples</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Descriptive-Statistics.html#kurtosis-visual" class="internal"><span class="codenumber">1.1.4.4</span> <span class="title">Seeing Kurtosis in Action</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Descriptive-Statistics.html#kurtosis-python" class="internal"><span class="codenumber">1.1.4.5</span> <span class="title">Calculating Kurtosis with Python</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Descriptive-Statistics.html#kurtosis-wrapup" class="internal"><span class="codenumber">1.1.4.6</span> <span class="title">Why Kurtosis Matters</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-useful-descriptive-statistics-tools.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Computation and Visualization Tools</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-useful-descriptive-statistics-tools.html#sec-useful-descriptive-statistics-tools-3" class="internal"><span class="codenumber">1.2.1</span> <span class="title">The Power of NumPy and SciPy</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-useful-descriptive-statistics-tools.html#subsec-Pandas" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Pandas: Data Manipulation and Analysis</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-useful-descriptive-statistics-tools.html#subsec-Visualization" class="internal"><span class="codenumber">1.2.3</span> <span class="title">Visualization with Matplotlib and Seaborn</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Numerical-and-Categorical-Data.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Numerical and Categorical Data</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Numerical-and-Categorical-Data.html#subsec-Categorical-Data" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Categorical Data and One-Hot Encoding</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Numerical-and-Categorical-Data.html#subsec-Ordinal-Data" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Ordinal Data and Safe Encoding</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Numerical-and-Categorical-Data.html#subsec-Numerical-Data" class="internal"><span class="codenumber">1.3.3</span> <span class="title">Numerical Data: Discrete vs Continuous</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Numerical-and-Categorical-Data.html#subsec-data-type-summary" class="internal"><span class="codenumber">1.3.4</span> <span class="title">Data Type Summary</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Basic-Probability.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Basic Probability for Machine Learning</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Basic-Probability.html#subsec-Axiomatic-View-of-Probability" class="internal"><span class="codenumber">1.4.1</span> <span class="title">Axiomatic View of Probability</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Basic-Probability.html#subsec-sum-product-rules" class="internal"><span class="codenumber">1.4.2</span> <span class="title">Sum and Product Rules for Probability</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Basic-Probability.html#subsec-conditional-probability-independence" class="internal"><span class="codenumber">1.4.3</span> <span class="title">Conditional Probability and Independence</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Basic-Probability.html#subsec-probability-distributions" class="internal"><span class="codenumber">1.4.4</span> <span class="title">Probability Distributions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Basic-Probability.html#subsec-three-types-of-probabilities" class="internal"><span class="codenumber">1.4.5</span> <span class="title">Three Types of Probabilities</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Random-Variables-and-Probabilities.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Random Variables and Probabilities</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Random-Variables-and-Probabilities.html#subsec-Random-Variables" class="internal"><span class="codenumber">1.5.1</span> <span class="title">Random Variables, Probabilities, and Expectations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Random-Variables-and-Probabilities.html#subsec-Probability-Mass-Function" class="internal"><span class="codenumber">1.5.2</span> <span class="title">Probability Mass Function</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Random-Variables-and-Probabilities.html#subsec-Expectation-Values" class="internal"><span class="codenumber">1.5.3</span> <span class="title">Expectation Values</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Random-Variables-and-Probabilities.html#subsec-Probability-Distribution-of-Continuous-Variable" class="internal"><span class="codenumber">1.5.4</span> <span class="title">Probability Density of Continuous Variables</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Random-Variables-and-Probabilities.html#subsec-Cumulative-Distribution-Function" class="internal"><span class="codenumber">1.5.5</span> <span class="title">Cumulative Distribution Function (CDF)</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Two-or-More-Random-Variables.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Two or More Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Two-or-More-Random-Variables.html#subsec-Joint-Probability" class="internal"><span class="codenumber">1.6.1</span> <span class="title">Joint Probability</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Two-or-More-Random-Variables.html#subsec-Marginal-Probability" class="internal"><span class="codenumber">1.6.2</span> <span class="title">Marginal Probability</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Two-or-More-Random-Variables.html#subsec-Conditional-Probability" class="internal"><span class="codenumber">1.6.3</span> <span class="title">Conditional Probability</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Two-or-More-Random-Variables.html#subsec-conditional-probability-from-joint-probability" class="internal"><span class="codenumber">1.6.4</span> <span class="title">Bayes’ Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Two-or-More-Random-Variables.html#subsec-Covariance-and-Correlation" class="internal"><span class="codenumber">1.6.5</span> <span class="title">Covariance and Correlation</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-Two-or-More-Random-Variables.html#subsec-Continuous-Random-Variables" class="internal"><span class="codenumber">1.6.6</span> <span class="title">Continuous Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Two-or-More-Random-Variables.html#subsubsec-Probability-Density" class="internal"><span class="codenumber">1.6.6.1</span> <span class="title">Probability Density</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Two-or-More-Random-Variables.html#subsubsec-Cumulative-Distribution-Function" class="internal"><span class="codenumber">1.6.6.2</span> <span class="title">Cumulative Distribution Function</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Two-or-More-Random-Variables.html#subsec-Independent-Variables" class="internal"><span class="codenumber">1.6.7</span> <span class="title">Independent Random Variables</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Two-or-More-Random-Variables.html#subsec-Application-Medical-Diagnosis" class="internal"><span class="codenumber">1.6.8</span> <span class="title">Application: Medical Diagnosis</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Example-Discrete-Probability-Distributions.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Example Discrete Probability Distributions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Example-Discrete-Probability-Distributions.html#subsec-Bernoulli-Distribution" class="internal"><span class="codenumber">1.7.1</span> <span class="title">Bernoulli Distribution</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Example-Discrete-Probability-Distributions.html#subsec-Binomial-Distribution" class="internal"><span class="codenumber">1.7.2</span> <span class="title">Binomial Distribution</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-Example-Discrete-Probability-Distributions.html#subsec-Poisson-Distribution" class="internal"><span class="codenumber">1.7.3</span> <span class="title">Poisson Distribution</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Example-Discrete-Probability-Distributions.html#subsub-Poisson-Process" class="internal"><span class="codenumber">1.7.3.1</span> <span class="title">Poisson Process</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Example-Continuous-Probability-Distributions.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Example Continuous Probability Distributions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-Example-Continuous-Probability-Distributions.html#subsec-Uniform-Distribution" class="internal"><span class="codenumber">1.8.1</span> <span class="title">Uniform Distribution</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Example-Continuous-Probability-Distributions.html#subsubsec-Inverse-Uniform-CDF" class="internal"><span class="codenumber">1.8.1.1</span> <span class="title">Inverse Uniform CDF</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-Example-Continuous-Probability-Distributions.html#subsec-Normal-Distribution" class="internal"><span class="codenumber">1.8.2</span> <span class="title">Normal (Gaussian) Distribution</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Example-Continuous-Probability-Distributions.html#subsubsec-Inverse-CDF-and-Sampling" class="internal"><span class="codenumber">1.8.2.1</span> <span class="title">Inverse CDF and Sampling</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Example-Continuous-Probability-Distributions.html#subsec-Exponential-Distribution" class="internal"><span class="codenumber">1.8.3</span> <span class="title">Exponential Distribution</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-LLN-and-CLT.html" class="internal"><span class="codenumber">1.9</span> <span class="title">Law of Large Numbers and Central Limit Theorem</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LLN-and-CLT.html#subsec-Law-of-Large-Numbers" class="internal"><span class="codenumber">1.9.1</span> <span class="title">Law of Large Numbers</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LLN-and-CLT.html#subsec-Central-Limit-Theorem" class="internal"><span class="codenumber">1.9.2</span> <span class="title">Central Limit Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LLN-and-CLT.html#subsec-LLN-vs-CLT" class="internal"><span class="codenumber">1.9.3</span> <span class="title">LLN vs. CLT</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LLN-and-CLT.html#subsec-Berry-Esseen" class="internal"><span class="codenumber">1.9.4</span> <span class="title">Berry-Esseen Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LLN-and-CLT.html#subsec-Why-Large-n-Matters" class="internal"><span class="codenumber">1.9.5</span> <span class="title">Why LLN and CLT Matter</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Inferential-Statistics.html" class="internal"><span class="codenumber">1.10</span> <span class="title">Inferential Statistics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Inferential-Statistics.html#subsec-Point-Estimation" class="internal"><span class="codenumber">1.10.1</span> <span class="title">Point Estimation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Inferential-Statistics.html#subsec-Sampling-Distributions" class="internal"><span class="codenumber">1.10.2</span> <span class="title">Sampling Distributions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Inferential-Statistics.html#subsec-Hypothesis-Testing" class="internal"><span class="codenumber">1.10.3</span> <span class="title">Hypothesis Testing</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Inferential-Statistics.html#subsec-Confidence-Intervals" class="internal"><span class="codenumber">1.10.4</span> <span class="title">Confidence Intervals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Inferential-Statistics.html#subsec-Types-of-Errors" class="internal"><span class="codenumber">1.10.5</span> <span class="title">Types of Errors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Inferential-Statistics.html#subsec-Power-Effect-Size" class="internal"><span class="codenumber">1.10.6</span> <span class="title">Statistical Power and Effect Size</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Inferential-Statistics.html#subsec-Multiple-Testing" class="internal"><span class="codenumber">1.10.7</span> <span class="title">Multiple Testing</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Inferential-Statistics.html#subsec-Other-Tests" class="internal"><span class="codenumber">1.10.8</span> <span class="title">Common Statistical Tests</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="book" id="my-ML-Notes"><nav class="summary-links"><ul>
+<li><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></li>
+<li><a href="ch-Essential-Probability-and-Statistics.html" class="internal"><span class="codenumber">1</span> <span class="title">Essential Probability and Statistics</span></a></li>
+<li><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></li>
+</ul></nav></section></div>
+<div class="ptx-content-footer">
+<span class="previous-button button disabled"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></span><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="frontmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>
