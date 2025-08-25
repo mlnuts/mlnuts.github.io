@@ -503,7 +503,7 @@ P(x) = \sum_y\, P(x,y).
 \end{align*}
 </div>
 </div> <div class="para" id="subsec-Marginal-Probability-5-3">Often, we display joint and marginal probabilities in a heatmap as shown in <a href="sec-Two-or-More-Random-Variables.html#fig-joint-heatmap" class="xref" data-knowl="./knowl/xref/fig-joint-heatmap.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.6.4">Figure 1.6.4</a> with the marginals shown in the margins outside the Table.</div> <figure class="figure figure-like" id="fig-joint-heatmap"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/joint_heatmap.png" class="contained" alt="Heatmap of joint probabilities with marginals."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.6.4<span class="period">.</span></span><span class="space"> </span>Heatmap of joint probabilities for disease status (<span class="process-math">\(X \in \{D, N\}\)</span>) and test result (<span class="process-math">\(Y \in \{+, -\}\)</span>) from <span class="process-math">\(1,000\)</span> patients (<a href="sec-Two-or-More-Random-Variables.html#tab-patient-data-for-jt-and-conditional-probs" class="xref" data-knowl="./knowl/xref/tab-patient-data-for-jt-and-conditional-probs.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 1.6.6: Patient counts (disease vs. test)">Table 1.6.6</a>). Darker shades indicate higher probabilities. Marginal probabilities (<span class="process-math">\(P(X)\text{,}\)</span> <span class="process-math">\(P(Y)\)</span>) are shown in the margins.</figcaption></figure> The following program was used to create the heatmap. <div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-py">Joint probability heatmap
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.6.4<span class="period">.</span></span><span class="space"> </span>Heatmap of joint probabilities for disease status (<span class="process-math">\(X \in \{D, N\}\)</span>) and test result (<span class="process-math">\(Y \in \{+, -\}\)</span>) from <span class="process-math">\(1,000\)</span> patients (<a href="sec-Two-or-More-Random-Variables.html#tab-patient-data-for-jt-and-conditional-probs" class="xref" data-knowl="./knowl/xref/tab-patient-data-for-jt-and-conditional-probs.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 1.6.6: Patient Counts (Disease vs. Test)">Table 1.6.6</a>). Darker shades indicate higher probabilities. Marginal probabilities (<span class="process-math">\(P(X)\text{,}\)</span> <span class="process-math">\(P(Y)\)</span>) are shown in the margins.</figcaption></figure> The following program was used to create the heatmap. <div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-py">Joint probability heatmap
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -578,9 +578,9 @@ P(x_1, y_1) + P(x_2, y_1) + P(x_3, y_1) + \cdots + P(x_m, y_1) = 1.\tag{1.6.8}
 \end{equation}
 </div>
 </div>
-<article class="example example-like" id="subsec-Conditional-Probability-6"><h4 class="heading">
+<article class="example example-like" id="exp-Patient-disease-and-test-results-conditional-probabilities"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.6.5</span><span class="period">.</span><span class="space"> </span><span class="title">Patient disease and test results.</span>
-</h4> <div class="para" id="subsec-Conditional-Probability-6-2">Using the patient dataset (<a href="sec-Two-or-More-Random-Variables.html#tab-patient-data-for-jt-and-conditional-probs" class="xref" data-knowl="./knowl/xref/tab-patient-data-for-jt-and-conditional-probs.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 1.6.6: Patient counts (disease vs. test)">Table 1.6.6</a>), compute all conditional probabilities:</div> <figure class="table table-like" id="tab-patient-data-for-jt-and-conditional-probs"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.6.6<span class="period">.</span></span><span class="space"> </span>Patient counts (disease vs. test)</figcaption><div class="tabular-box natural-width"><table class="tabular">
+</h4> <div class="para" id="exp-Patient-disease-and-test-results-conditional-probabilities-2">Using the patient dataset (<a href="sec-Two-or-More-Random-Variables.html#tab-patient-data-for-jt-and-conditional-probs" class="xref" data-knowl="./knowl/xref/tab-patient-data-for-jt-and-conditional-probs.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 1.6.6: Patient Counts (Disease vs. Test)">Table 1.6.6</a>), compute all conditional probabilities:</div> <figure class="table table-like" id="tab-patient-data-for-jt-and-conditional-probs"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.6.6<span class="period">.</span></span><span class="space"> </span>Patient Counts (Disease vs. Test)</figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines"></td>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(+\)</span></td>
@@ -605,18 +605,18 @@ P(x_1, y_1) + P(x_2, y_1) + P(x_3, y_1) + \cdots + P(x_m, y_1) = 1.\tag{1.6.8}
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(n_-=550\)</span></td>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(n_T=1000\)</span></td>
 </tr>
-</table></div></figure> <div class="para logical" id="subsec-Conditional-Probability-6-4">
+</table></div></figure> <div class="para logical" id="exp-Patient-disease-and-test-results-conditional-probabilities-4">
 <div class="para">Joint probabilities:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 P(D, +) = 0.150, \quad P(D, -) = 0.050, \quad P(N, +) = 0.300, \quad P(N, -) = 0.500.
 \end{equation*}
 </div>
-</div> <div class="para" id="subsec-Conditional-Probability-6-5">Marginals: <span class="process-math">\(P(D) = 0.200\text{,}\)</span> <span class="process-math">\(P(N) = 0.800\text{,}\)</span> <span class="process-math">\(P(+) = 0.450\text{,}\)</span> <span class="process-math">\(P(-) = 0.550\text{.}\)</span>
-</div> <div class="para" id="subsec-Conditional-Probability-6-6">Conditional probabilities: Let us do one of the conditional probabilities in detail and just write the answers for the rest:</div> <div class="para logical" id="subsec-Conditional-Probability-6-7">
+</div> <div class="para" id="exp-Patient-disease-and-test-results-conditional-probabilities-5">Marginals: <span class="process-math">\(P(D) = 0.200\text{,}\)</span> <span class="process-math">\(P(N) = 0.800\text{,}\)</span> <span class="process-math">\(P(+) = 0.450\text{,}\)</span> <span class="process-math">\(P(-) = 0.550\text{.}\)</span>
+</div> <div class="para" id="exp-Patient-disease-and-test-results-conditional-probabilities-6">Conditional probabilities: Let us do one of the conditional probabilities in detail and just write the answers for the rest:</div> <div class="para logical" id="exp-Patient-disease-and-test-results-conditional-probabilities-7">
 <div class="para">Suppose we want to know that if test came out positive, what is the proability that the individual has disease? Since, we have the full joint probability table, we can answer this question by computing <span class="process-math">\(P( D \mid +)\text{.}\)</span>
 </div>
-<div class="displaymath process-math" id="subsec-Conditional-Probability-6-7-2">
+<div class="displaymath process-math" id="exp-Patient-disease-and-test-results-conditional-probabilities-7-2">
 \begin{align*}
 P( D \mid +) \amp  = \frac{P(D,\ +) }{P(+)}\\
 \amp =  \frac{0.150}{0.450} \approx 0.3333
@@ -635,17 +635,15 @@ P( N \mid +)  = 1  - P( D \mid -) 1 - 0.3333 = 0.667.
 \end{equation*}
 </div>
 <div class="para">Now, you should compute the PDF’s <span class="process-math">\(P(X \mid -)\text{,}\)</span> <span class="process-math">\(P(Y \mid D)\text{,}\)</span> and P(Y \mid N), where <span class="process-math">\(Y\)</span> is the variable for Test and check your answer for the following table.</div>
-<div class="displaymath process-math" id="subsec-Conditional-Probability-6-7-12">
+<div class="displaymath process-math" id="exp-Patient-disease-and-test-results-conditional-probabilities-7-12">
 \begin{gather*}
 P(D \mid -) \approx 0.0909, \quad P(N \mid -)  \approx 0.9091, \\
 P(+ \mid D) = 0.750, \quad P(- \mid D) = 0.250, \\
 P(+ \mid N) = 0.375, \quad P(- \mid N)  = 0.625. 
 \end{gather*}
 </div>
-</div> <div class="para" id="subsec-Conditional-Probability-6-8">For two variables, each with two possible values, i.e., <span class="process-math">\(m=2\)</span> and <span class="process-math">\(n=2\)</span> there are <span class="process-math">\(m + n = 4\)</span> possible conditionaal PMFs, same as the number of marginal PMFs, but only one joint PMF.</div></article><figure class="figure figure-like" id="fig-patient-bar-conditional"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/patient_conditional_bars.png" class="contained" alt="Grouped bar chart of conditional probabilities."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.6.7<span class="period">.</span></span><span class="space"> </span>Grouped bar chart of conditional probabilities for disease status (<span class="process-math">\(X \in \{D, N\}\)</span>) given test result (<span class="process-math">\(Y \in \{+, -\}\)</span>) and test result given disease status, based on <a href="sec-Two-or-More-Random-Variables.html#tab-patient-data-for-jt-and-conditional-probs" class="xref" data-knowl="./knowl/xref/tab-patient-data-for-jt-and-conditional-probs.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 1.6.6: Patient counts (disease vs. test)">Table 1.6.6</a>. Each group shows a probability distribution (summing to 1), illustrating how conditional probabilities slice the joint distribution.</figcaption></figure><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-py">Conditional probability bar chart
-
-# === Grouped bar chart for all conditional probabilities ===
+</div> <div class="para" id="exp-Patient-disease-and-test-results-conditional-probabilities-8">For two variables, each with two possible values, i.e., <span class="process-math">\(m=2\)</span> and <span class="process-math">\(n=2\)</span> there are <span class="process-math">\(m + n = 4\)</span> possible conditional PMFs, same as the number of marginal PMFs, but only one joint PMF.</div> <div class="para" id="exp-Patient-disease-and-test-results-conditional-probabilities-9">Another useful way to display the information in a conditional probability is to plot the PMFs in a bar chart as shown in <a href="sec-Two-or-More-Random-Variables.html#fig-patient-bar-conditional" class="xref" data-knowl="./knowl/xref/fig-patient-bar-conditional.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.6.7">Figure 1.6.7</a>, where each PMF is called a group.</div> <figure class="figure figure-like" id="fig-patient-bar-conditional"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/patient_conditional_bars.png" class="contained" alt="Grouped bar chart of conditional probabilities."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.6.7<span class="period">.</span></span><span class="space"> </span>Grouped bar chart of conditional probabilities for disease status (<span class="process-math">\(X \in \{D, N\}\)</span>) given test result (<span class="process-math">\(Y \in \{+, -\}\)</span>) and test result given disease status. Each group shows a probability distribution (summing to 1), illustrating how conditional probabilities slice the joint distribution.</figcaption></figure> <div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-py"># === Grouped bar chart for all conditional probabilities ===
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -672,7 +670,7 @@ probs = {
 # Grouped bar plot
 labels = ["Given $Y=+$", "Given $Y=-$", "Given $X=D$", "Given $X=N$"]
 values = [[probs["P(D|+)"], probs["P(N|+)"]], [probs["P(D|-)"], probs["P(N|-)"]],
-          [probs["P(+|D)"], probs["P(-|D)"]], [probs["P(+|N)"], probs["P(-|N)"]]]
+        [probs["P(+|D)"], probs["P(-|D)"]], [probs["P(+|N)"], probs["P(-|N)"]]]
 x = np.arange(len(labels))
 width = 0.2
 fig, ax = plt.subplots(figsize=(10, 6))
@@ -688,7 +686,7 @@ ax.grid(True, alpha=0.3)
 plt.tight_layout()
 plt.savefig("patient_conditional_bars.png", dpi=300)
 plt.show()
-</code></pre></div></section><section class="subsection" id="subsec-conditional-probability-from-joint-probability"><h3 class="heading hide-type">
+</code></pre></div></article></section><section class="subsection" id="subsec-conditional-probability-from-joint-probability"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.6.4</span><span class="space"> </span><span class="title">Bayes’ Rule</span>
 </h3>
 <div class="para logical" id="subsec-conditional-probability-from-joint-probability-2">
@@ -973,7 +971,7 @@ f_{X,Y}(x, y) = f_X(x) f_Y(y).\tag{1.6.23}
 <div class="para" id="subsec-Independent-Variables-3">Independence implies <span class="process-math">\(\mathrm{Cov}(X,Y) = 0\text{,}\)</span> but zero covariance does not imply independence, except for jointly normal variables.</div>
 <article class="example example-like" id="subsec-Independent-Variables-4"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.6.15</span><span class="period">.</span><span class="space"> </span><span class="title">Independent vs. dependent variables.</span>
-</h4> <div class="para" id="subsec-Independent-Variables-4-2">Consider the patient dataset with <span class="process-math">\(X\)</span> (disease status) and <span class="process-math">\(Y\)</span> (test result), which are dependent (see <a href="sec-Two-or-More-Random-Variables.html#tab-patient-data-for-jt-and-conditional-probs" class="xref" data-knowl="./knowl/xref/tab-patient-data-for-jt-and-conditional-probs.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 1.6.6: Patient counts (disease vs. test)">Table 1.6.6</a>). Compare with <span class="process-math">\(Z\text{,}\)</span> a patient’s age group (young/old), assumed independent of <span class="process-math">\(X\text{.}\)</span> The plot below shows joint probabilities for dependent and independent cases.</div></article><figure class="figure figure-like" id="fig-independence-heatmap"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/independence_heatmap.png" class="contained" alt="Heatmaps comparing dependent and independent joint probabilities."></div>
+</h4> <div class="para" id="subsec-Independent-Variables-4-2">Consider the patient dataset with <span class="process-math">\(X\)</span> (disease status) and <span class="process-math">\(Y\)</span> (test result), which are dependent (see <a href="sec-Two-or-More-Random-Variables.html#tab-patient-data-for-jt-and-conditional-probs" class="xref" data-knowl="./knowl/xref/tab-patient-data-for-jt-and-conditional-probs.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 1.6.6: Patient Counts (Disease vs. Test)">Table 1.6.6</a>). Compare with <span class="process-math">\(Z\text{,}\)</span> a patient’s age group (young/old), assumed independent of <span class="process-math">\(X\text{.}\)</span> The plot below shows joint probabilities for dependent and independent cases.</div></article><figure class="figure figure-like" id="fig-independence-heatmap"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/independence_heatmap.png" class="contained" alt="Heatmaps comparing dependent and independent joint probabilities."></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.6.16<span class="period">.</span></span><span class="space"> </span>Heatmaps comparing joint probabilities for dependent (<span class="process-math">\(X\text{:}\)</span> disease, <span class="process-math">\(Y\text{:}\)</span> test) and independent (<span class="process-math">\(X\text{:}\)</span> disease, <span class="process-math">\(Z\text{:}\)</span> age) variables. The left heatmap shows non-factorized probabilities, indicating dependence; the right shows factorized probabilities, confirming independence.</figcaption></figure><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-py">Independence heatmap comparison
 
 # === Heatmap for independent vs. dependent variables ===
