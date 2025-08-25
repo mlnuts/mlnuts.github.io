@@ -689,74 +689,132 @@ plt.show()
 </code></pre></div></article></section><section class="subsection" id="subsec-conditional-probability-from-joint-probability"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.6.4</span><span class="space"> </span><span class="title">Bayes’ Rule</span>
 </h3>
-<div class="para logical" id="subsec-conditional-probability-from-joint-probability-2">
-<div class="para">Bayes’s theorem updates probabilities based on new evidence, derived from the product rule:</div>
-<div class="displaymath process-math" id="eqn-bayes-general">
+<div class="para" id="subsec-conditional-probability-from-joint-probability-2">Bayes’s rule (also called Bayes’s theorem) is a fundamental principle in probability theory. It describes how to update the probability of a hypothesis, which is expressed as a conditional probability when new evidence is observed. This looks and feels like too abstract. So, to get a better feel for it, let’s look at the mechanism of this process.</div>
+<div class="para logical" id="subsec-conditional-probability-from-joint-probability-3">
+<div class="para">From the conditional probability definition and/or product rule of probabilities, we have the following relations between the Joint, Marginal, and Condtional probabilites concerning two events <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{:}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-product-rule-joint-marginal-conditional-1.html ./knowl/xref/eqn-product-rule-joint-marginal-conditional-2.html" id="eqn-product-rule-joint-marginal-conditional-1">
 \begin{equation}
-P(X=x_i \mid Y=y_j) = \frac{P(Y=y_j \mid X=x_i) P(X=x_i)}{P(Y=y_j)},\tag{1.6.9}
+P(A, B) = P(A \mid B) P(B).\tag{1.6.9}
 \end{equation}
 </div>
-<div class="para">where the denominator is the marginal probability:</div>
-<div class="displaymath process-math" id="eqn-bayes-denominator">
+<div class="para">Switching <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> is equally valid, giving us</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-product-rule-joint-marginal-conditional-1.html ./knowl/xref/eqn-product-rule-joint-marginal-conditional-2.html" id="eqn-product-rule-joint-marginal-conditional-2">
 \begin{equation}
-P(Y=y_j) = \sum_k P(Y=y_j \mid X=x_k) P(X=x_k).\tag{1.6.10}
+P(B, A) = P(B \mid A) P(A).\tag{1.6.10}
 \end{equation}
 </div>
-</div>
-<article class="example example-like" id="subsec-conditional-probability-from-joint-probability-3"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.6.8</span><span class="period">.</span><span class="space"> </span><span class="title">Breast cancer screening.</span>
-</h4> <div class="para logical" id="subsec-conditional-probability-from-joint-probability-3-2">
-<div class="para">For a population with breast cancer prevalence <span class="process-math">\(P(C) = 0.01\text{,}\)</span> a mammogram has:</div>
-<ul class="disc" id="subsec-conditional-probability-from-joint-probability-3-2-2">
-<li id="subsec-conditional-probability-from-joint-probability-3-2-2-1"><div class="para" id="p-derived-subsec-conditional-probability-from-joint-probability-3-2-2-1">
-<em class="alert">Sensitivity</em>: <span class="process-math">\(P(+ \mid C) = 0.80\text{.}\)</span>
-</div></li>
-<li id="subsec-conditional-probability-from-joint-probability-3-2-2-2"><div class="para" id="p-derived-subsec-conditional-probability-from-joint-probability-3-2-2-2">
-<em class="alert">Specificity</em>: <span class="process-math">\(P(- \mid N) = 0.95\text{,}\)</span> so <span class="process-math">\(P(+ \mid N) = 1 - 0.95 = 0.05\text{.}\)</span>
-</div></li>
-</ul>
-<div class="para">Compute <span class="process-math">\(P(C \mid +)\text{.}\)</span> First, the marginal probability:</div>
-<div class="displaymath process-math">
+<div class="para">But, the order of listing of events in a joint probability is immaterial since the list is just another way of indicating intersection of the events,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-product-rule-joint-marginal-conditional-1.html ./knowl/xref/eqn-product-rule-joint-marginal-conditional-2.html">
 \begin{equation*}
-P(+) = P(+ \mid C)P(C) + P(+ \mid N)P(N) = 0.80 \cdot 0.01 + 0.05 \cdot 0.99 = 0.008 + 0.0495 = 0.0575.
+(A, B) \equiv A \cap B \equiv (B, A).
 \end{equation*}
 </div>
-<div class="para">Then:</div>
-<div class="displaymath process-math" id="eqn-bayes-numeric">
+<div class="para">Therefore, equating the right sides of Eqs. <a href="sec-Two-or-More-Random-Variables.html#eqn-product-rule-joint-marginal-conditional-1" class="xref" data-knowl="./knowl/xref/eqn-product-rule-joint-marginal-conditional-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.6.9">(1.6.9)</a> and <a href="sec-Two-or-More-Random-Variables.html#eqn-product-rule-joint-marginal-conditional-2" class="xref" data-knowl="./knowl/xref/eqn-product-rule-joint-marginal-conditional-2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.6.10">(1.6.10)</a> gives</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-product-rule-joint-marginal-conditional-1.html ./knowl/xref/eqn-product-rule-joint-marginal-conditional-2.html" id="eqn-Bayes-Rule-1">
 \begin{equation}
-P(C \mid +) = \frac{P(+ \mid C)P(C)}{P(+)} = \frac{0.008}{0.0575} \approx 0.1391.\tag{1.6.11}
+P(A \mid B) P(B) = P(B \mid A) P(A).\tag{1.6.11}
 \end{equation}
 </div>
-<div class="para">Thus, a positive test increases the probability of cancer from 1% to 13.91%.</div>
-</div></article><figure class="figure figure-like" id="fig-bayes-tree"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/bayes_tree.png" class="contained" alt="Tree diagram for Bayes’ rule in screening."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.6.9<span class="period">.</span></span><span class="space"> </span>Tree diagram for breast cancer screening, showing prior probabilities (<span class="process-math">\(P(C)\text{,}\)</span> <span class="process-math">\(P(N)\)</span>), likelihoods (<span class="process-math">\(P(+ \mid C)\text{,}\)</span> etc.), and joint probabilities leading to <span class="process-math">\(P(C \mid +)\text{.}\)</span> This visualizes Bayes’ rule for medical diagnostics.</figcaption></figure><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-py">Bayes’ rule tree diagram
-
-# === NEW CODE: Tree diagram using graphviz ===
-from graphviz import Digraph
-
-dot = Digraph(comment="Bayes Tree")
-dot.attr(rankdir="LR")
-dot.node("A", "Population\nP(C)=0.01\nP(N)=0.99", shape="box")
-dot.node("B", "Cancer\nP(C)=0.01", shape="box")
-dot.node("C", "No Cancer\nP(N)=0.99", shape="box")
-dot.node("D", "Positive\nP(+|C)=0.80", shape="box")
-dot.node("E", "Negative\nP(-|C)=0.20", shape="box")
-dot.node("F", "Positive\nP(+|N)=0.05", shape="box")
-dot.node("G", "Negative\nP(-|N)=0.95", shape="box")
-dot.edges(["AB", "AC", "BD", "BE", "CF", "CG"])
-dot.edge("B", "D", label="P(+|C)=0.80\nP(+,C)=0.008")
-dot.edge("B", "E", label="P(-|C)=0.20\nP(-,C)=0.002")
-dot.edge("C", "F", label="P(+|N)=0.05\nP(+,N)=0.0495")
-dot.edge("C", "G", label="P(-|N)=0.95\nP(-,N)=0.9405")
-dot.render("bayes_tree", format="png", cleanup=True)
-</code></pre></div></section><section class="subsection" id="subsec-Covariance-and-Correlation"><h3 class="heading hide-type">
+<div class="para">Suppose we observe <span class="process-math">\(B\text{,}\)</span> then we would conclude that <span class="process-math">\(P(B)\ne 0\text{.}\)</span> Then, we can predict probability of event <span class="process-math">\(A\)</span> using the conditional probability.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-product-rule-joint-marginal-conditional-1.html ./knowl/xref/eqn-product-rule-joint-marginal-conditional-2.html" id="eqn-Bayes-Rule-2">
+\begin{equation}
+P(A \mid B)= \frac{P(B \mid A) P(A)}{P(B)},\quad P(B) \ne 0.\tag{1.6.12}
+\end{equation}
+</div>
+<div class="para">This is <dfn class="terminology">Bayes’s Rule</dfn>. We are using the information that <span class="process-math">\(B\)</span> has occured to make prediction on another event <span class="process-math">\(A\text{.}\)</span> Of course, we also need <span class="process-math">\(P(B \mid A)\)</span> and <span class="process-math">\(P(A)\text{.}\)</span>
+</div>
+</div>
+<div class="para logical" id="subsec-conditional-probability-from-joint-probability-4">
+<div class="para">Let us now look at Bayes’s rule in the context of two discrete random variables, <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\text{,}\)</span> which take values <span class="process-math">\(\{ x_1, x_2, \cdots, x_m \}\)</span> and <span class="process-math">\(\{ y_1, y_2, \cdots, y_n \}\text{,}\)</span> respectively, as we have presented above in earlier subsections. For concreteness, let us focus on particular events</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \{X = x_i\},\ B = \{Y=y_j\}.
+\end{equation*}
+</div>
+<div class="para">Then, Bayes’s rule will be</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P(X = x_i \mid Y=y_j)= \frac{P(Y=y_j \mid X = x_i) P(X = x_i)}{P(Y=y_j)},\quad P(Y=y_j) \ne 0.
+\end{equation*}
+</div>
+<div class="para">Now, let us write these in our short notation by dropping <span class="process-math">\(X=\)</span> and <span class="process-math">\(Y=\text{,}\)</span> just remembering this detail in out mind only.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P(x_i \mid y_j)= \frac{P(y_j \mid x_i) P(x_i)}{P(y_j)},\quad P(y_j) \ne 0.
+\end{equation*}
+</div>
+<div class="para">Now, recall that marginal probabilities can be obtaine by margining out other variables. Say, we want the denominator part on the right side, <span class="process-math">\(P(y_j)\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P(y_j) = \sum_{k=1}^m\,P(x_k, y_j) = \sum_{k=1}^m\,P(y_j \mid x_k)P(x_k).
+\end{equation*}
+</div>
+<div class="para">That is the denominator is just a normalizing factor of the the numerator! If you didn’t have this factor, the PMF on the left side, <span class="process-math">\(P(X \mid y_j)\)</span> will not be normalized to <span class="process-math">\(1\text{.}\)</span> In this equation, I introduced another index <span class="process-math">\(k\text{,}\)</span> which is a dummy index for summation, so that we do not get confused by particular events connected with our original event <span class="process-math">\(A=(X=x_i)\text{.}\)</span> Using this normalization, we get a form of Bayes’s Rule that can be interpreted as it being an update rule on probabilities based on evidence.</div>
+<div class="displaymath process-math" id="eqn-Bayes-Rule-denominator-normalizing">
+\begin{equation}
+P(x_i \mid y_j)= \frac{P(y_j \mid x_i) P(x_i)}{\sum_{k=1}^m\,P(y_j\mid x_k)P(x_k)}.\tag{1.6.13}
+\end{equation}
+</div>
+<div class="para">In this form, everything on the right side is either probability of <span class="process-math">\(X=x_i\)</span> or is conditioned on the prossibility of <span class="process-math">\(X=x_k\)</span> for all <span class="process-math">\(x_k\text{.}\)</span> That is =, on the right side we have some prior knowledge about <span class="process-math">\(X\)</span> and on the right side we have an updated predictions on <span class="process-math">\(X\text{.}\)</span> It’s important to remember that all of these occur event by event although sometimes you will see Bayes’s rule written in a grand notation using the random variables themselves.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P(X \mid Y)= \frac{P(Y \mid X) P(X)}{\sum_{X'}P( Y \mid X')P(X')}.
+\end{equation*}
+</div>
+</div>
+<article class="example example-like" id="subsec-conditional-probability-from-joint-probability-5"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.6.8</span><span class="period">.</span><span class="space"> </span><span class="title">Use of Bayes’s Rule in Medical Diagnosis.</span>
+</h4> <div class="para" id="subsec-conditional-probability-from-joint-probability-5-2">Suppose, in a population of women in the age group 30 to 40, <span class="process-math">\(1\%\)</span>  develop breast cancer. It’s also known that mammogram test identifies <span class="process-math">\(80\%\)</span> of cancers accurately and misses <span class="process-math">\(20\%\)</span> of them. This means that if a woman has breast cancer, the test will be positive only <span class="process-math">\(80%\)</span> of the time. Furthermore, the test also give negative values <span class="process-math">\(95\%\)</span> of the time correctly, i.e., if a woman doesn’t have cancer, the test would came out negative <span class="process-math">\(95%\)</span> of the times.</div> <div class="para" id="subsec-conditional-probability-from-joint-probability-5-3">Now, a new woman in that age group comes in the lab and unfortunately, she tests positive. So, what would you say about here chances of actually having the cancer? Will it be <span class="process-math">\(80\%\)</span> or something else?</div> <div class="para logical" id="subsec-conditional-probability-from-joint-probability-5-4">
+<div class="para">Let us denote <span class="process-math">\(C\)</span> for cancer <span class="process-math">\(N\)</span> for no cancer, <span class="process-math">\(+\)</span> for mamomgram being positive and <span class="process-math">\(-\)</span> if negative. What we want is</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-Bayes-Rule-example-breast-cancer-main-equation.html ./knowl/xref/eqn-Bayes-Rule-example-breast-cancer-main-equation.html">
+\begin{equation*}
+P(C \mid +).
+\end{equation*}
+</div>
+<div class="para">Let’s write the Bayes’s rule to identify what we need to get this.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-Bayes-Rule-example-breast-cancer-main-equation.html ./knowl/xref/eqn-Bayes-Rule-example-breast-cancer-main-equation.html" id="eqn-Bayes-Rule-example-breast-cancer-main-equation">
+\begin{equation}
+P(C \mid +) = \frac{ P(+ \mid C) P(C)  }{  P(+ \mid C) P(C) + P(+ \mid N) P(N)  }.\tag{1.6.14}
+\end{equation}
+</div>
+<div class="para">From the description, we know quite a bit. For instante, probability of cancer in that population is <span class="process-math">\(1\%\text{.}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-Bayes-Rule-example-breast-cancer-main-equation.html ./knowl/xref/eqn-Bayes-Rule-example-breast-cancer-main-equation.html">
+\begin{equation*}
+P(C) = 0.01\ \Rightarrow P(N) = 1 - P(C) = 1- 0.01 = 0.99.
+\end{equation*}
+</div>
+<div class="para">We are also told that if someone had Cancer, test will be positive <span class="process-math">\(80\%\)</span> of the time. This is a conditional probability data on condition <span class="process-math">\(C\text{.}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-Bayes-Rule-example-breast-cancer-main-equation.html ./knowl/xref/eqn-Bayes-Rule-example-breast-cancer-main-equation.html">
+\begin{equation*}
+P(+ \mid C) = 0.80\ \Rightarrow P(- \mid C) = 1 - P(+ \mid C) = 1- 0.80 = 0.20.
+\end{equation*}
+</div>
+<div class="para">Now, only thing left in Eq. <a href="sec-Two-or-More-Random-Variables.html#eqn-Bayes-Rule-example-breast-cancer-main-equation" class="xref" data-knowl="./knowl/xref/eqn-Bayes-Rule-example-breast-cancer-main-equation.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.6.14">(1.6.14)</a> is <span class="process-math">\(P(+ \mid N)\text{.}\)</span> But we are also told that if someone did not have cancer, the test will show negative <span class="process-math">\(95\%\)</span> of the time.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-Bayes-Rule-example-breast-cancer-main-equation.html ./knowl/xref/eqn-Bayes-Rule-example-breast-cancer-main-equation.html">
+\begin{equation*}
+P(- \mid N ) = 0.95\ \Rightarrow  P(+ \mid N ) = 1 - P(- \mid N ) = 1 -  0.95 = 0.05.
+\end{equation*}
+</div>
+<div class="para">Hence, using Eq. <a href="sec-Two-or-More-Random-Variables.html#eqn-Bayes-Rule-example-breast-cancer-main-equation" class="xref" data-knowl="./knowl/xref/eqn-Bayes-Rule-example-breast-cancer-main-equation.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.6.14">(1.6.14)</a> we will answer</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-Bayes-Rule-example-breast-cancer-main-equation.html ./knowl/xref/eqn-Bayes-Rule-example-breast-cancer-main-equation.html">
+\begin{equation*}
+P(C \mid +) = \frac{0.8\times 0.01}{0.8\times 0.01 + 0.05\times 0.99} = 0.139.
+\end{equation*}
+</div>
+<div class="para">That is the probability of the individual will be <span class="process-math">\(13.9\%\text{.}\)</span>
+</div>
+</div></article></section><section class="subsection" id="subsec-Covariance-and-Correlation"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.6.5</span><span class="space"> </span><span class="title">Covariance and Correlation</span>
 </h3>
 <div class="para logical" id="subsec-Covariance-and-Correlation-2">
 <div class="para">The <em class="alert">covariance</em> between random variables <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> measures their joint variability:</div>
 <div class="displaymath process-math" id="eqn-covariance">
 \begin{equation}
-\mathrm{Cov}(X,Y) = \mathbb{E}[(X - \mathbb{E}[X])(Y - \mathbb{E}[Y])] = \mathbb{E}[XY] - \mathbb{E}[X]\mathbb{E}[Y].\tag{1.6.12}
+\mathrm{Cov}(X,Y) = \mathbb{E}[(X - \mathbb{E}[X])(Y - \mathbb{E}[Y])] = \mathbb{E}[XY] - \mathbb{E}[X]\mathbb{E}[Y].\tag{1.6.15}
 \end{equation}
 </div>
 </div>
@@ -764,15 +822,15 @@ dot.render("bayes_tree", format="png", cleanup=True)
 <div class="para">The <em class="alert">correlation</em> normalizes covariance:</div>
 <div class="displaymath process-math" id="eqn-correlation">
 \begin{equation}
-\mathrm{Corr}(X,Y) = \frac{\mathrm{Cov}(X,Y)}{\sigma_X \sigma_Y}, \quad \mathrm{Corr}(X,Y) \in [-1, 1],\tag{1.6.13}
+\mathrm{Corr}(X,Y) = \frac{\mathrm{Cov}(X,Y)}{\sigma_X \sigma_Y}, \quad \mathrm{Corr}(X,Y) \in [-1, 1],\tag{1.6.16}
 \end{equation}
 </div>
 <div class="para">where <span class="process-math">\(\sigma_X = \sqrt{\mathrm{Var}(X)}\text{,}\)</span> <span class="process-math">\(\sigma_Y = \sqrt{\mathrm{Var}(Y)}\text{.}\)</span> Positive correlation means <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> tend to increase together; negative means they move oppositely. Correlation does not imply causation.</div>
 </div>
 <article class="example example-like" id="subsec-Covariance-and-Correlation-4"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.6.10</span><span class="period">.</span><span class="space"> </span><span class="title">Patient symptom severity and test score.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.6.9</span><span class="period">.</span><span class="space"> </span><span class="title">Patient symptom severity and test score.</span>
 </h4> <div class="para" id="subsec-Covariance-and-Correlation-4-2">For 1,000 patients, let <span class="process-math">\(X\)</span> be symptom severity (normal, mean 5 for disease, 3 for no disease, std 1.5) and <span class="process-math">\(Y\)</span> be test score (normal, mean 80 for disease, 60 for no disease, std 10). The code below computes covariance and correlation, showing a positive relationship.</div></article><figure class="figure figure-like" id="fig-correlation-scatter"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/correlation_examples.png" class="contained" alt="Scatter plot with regression lines for correlation."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.6.11<span class="period">.</span></span><span class="space"> </span>Scatter plot of symptom severity vs. test score for 1,000 patients, with regression lines for disease (D) and no disease (N) groups. The computed correlation coefficient is shown, indicating a positive relationship between features, relevant for medical diagnostics.</figcaption></figure><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-py">Correlation scatter plot
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.6.10<span class="period">.</span></span><span class="space"> </span>Scatter plot of symptom severity vs. test score for 1,000 patients, with regression lines for disease (D) and no disease (N) groups. The computed correlation coefficient is shown, indicating a positive relationship between features, relevant for medical diagnostics.</figcaption></figure><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-py">Correlation scatter plot
 
 # === Scatter plot with correlation and regression lines ===
 import numpy as np
@@ -820,19 +878,19 @@ plt.show()
 <div class="para">A continuous random variable <span class="process-math">\(X\)</span> has a <em class="alert">probability density function (PDF)</em> <span class="process-math">\(f_X(x)\)</span> such that the probability over an interval <span class="process-math">\([a, b]\)</span> is:</div>
 <div class="displaymath process-math" id="eqn-density-interval">
 \begin{equation}
-P(a \leq X \leq b) = \int_a^b f_X(x) \, dx.\tag{1.6.14}
+P(a \leq X \leq b) = \int_a^b f_X(x) \, dx.\tag{1.6.17}
 \end{equation}
 </div>
 <div class="para">The density normalizes:</div>
 <div class="displaymath process-math" id="eqn-density-normalize">
 \begin{equation}
-\int_{-\infty}^{\infty} f_X(x) \, dx = 1.\tag{1.6.15}
+\int_{-\infty}^{\infty} f_X(x) \, dx = 1.\tag{1.6.18}
 \end{equation}
 </div>
 <div class="para">Expectation and variance are:</div>
 <div class="displaymath process-math" id="eqn-continuous-expectation">
 \begin{equation}
-\mathbb{E}[X] = \int_{-\infty}^{\infty} x f_X(x) \, dx, \quad \mathrm{Var}(X) = \int_{-\infty}^{\infty} (x - \mathbb{E}[X])^2 f_X(x) \, dx.\tag{1.6.16}
+\mathbb{E}[X] = \int_{-\infty}^{\infty} x f_X(x) \, dx, \quad \mathrm{Var}(X) = \int_{-\infty}^{\infty} (x - \mathbb{E}[X])^2 f_X(x) \, dx.\tag{1.6.19}
 \end{equation}
 </div>
 </div>
@@ -840,29 +898,29 @@ P(a \leq X \leq b) = \int_a^b f_X(x) \, dx.\tag{1.6.14}
 <div class="para">For two continuous variables <span class="process-math">\(X\text{,}\)</span> <span class="process-math">\(Y\text{,}\)</span> the <em class="alert">joint density</em> <span class="process-math">\(f_{X,Y}(x, y)\)</span> gives:</div>
 <div class="displaymath process-math" id="eqn-joint-density">
 \begin{equation}
-P(a \leq X \leq b, c \leq Y \leq d) = \int_c^d \int_a^b f_{X,Y}(x, y) \, dx \, dy.\tag{1.6.17}
+P(a \leq X \leq b, c \leq Y \leq d) = \int_c^d \int_a^b f_{X,Y}(x, y) \, dx \, dy.\tag{1.6.20}
 \end{equation}
 </div>
 <div class="para">The marginal density of <span class="process-math">\(X\)</span> is:</div>
 <div class="displaymath process-math" id="eqn-marginal-density">
 \begin{equation}
-f_X(x) = \int_{-\infty}^{\infty} f_{X,Y}(x, y) \, dy.\tag{1.6.18}
+f_X(x) = \int_{-\infty}^{\infty} f_{X,Y}(x, y) \, dy.\tag{1.6.21}
 \end{equation}
 </div>
 </div>
 <article class="example example-like" id="subsubsec-Probability-Density-4"><h5 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.6.12</span><span class="period">.</span><span class="space"> </span><span class="title">Bivariate normal distribution.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.6.11</span><span class="period">.</span><span class="space"> </span><span class="title">Bivariate normal distribution.</span>
 </h5> <div class="para logical" id="subsubsec-Probability-Density-4-2">
 <div class="para">A bivariate normal distribution for <span class="process-math">\(X\text{,}\)</span> <span class="process-math">\(Y\)</span> with means <span class="process-math">\(\mu_X = \mu_Y = 0\text{,}\)</span> variances <span class="process-math">\(\sigma_X^2 = \sigma_Y^2 = 1\text{,}\)</span> and correlation <span class="process-math">\(\rho = 0.5\)</span> has joint density:</div>
 <div class="displaymath process-math" id="eqn-bivariate-normal">
 \begin{equation}
-f_{X,Y}(x, y) = \frac{1}{2\pi \sqrt{1 - \rho^2}} \exp\left(-\frac{x^2 - 2\rho xy + y^2}{2(1 - \rho^2)}\right).\tag{1.6.19}
+f_{X,Y}(x, y) = \frac{1}{2\pi \sqrt{1 - \rho^2}} \exp\left(-\frac{x^2 - 2\rho xy + y^2}{2(1 - \rho^2)}\right).\tag{1.6.22}
 \end{equation}
 </div>
 <div class="para">The marginal density of <span class="process-math">\(X\)</span> is the standard normal: <span class="process-math">\(f_X(x) = \frac{1}{\sqrt{2\pi}} e^{-x^2/2}\text{.}\)</span>
 </div>
 </div></article><figure class="figure figure-like" id="fig-bivariate-normal"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/bivariate_normal.png" class="contained" alt="Contour plot of bivariate normal joint density."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.6.13<span class="period">.</span></span><span class="space"> </span>Contour plot of the joint density of a bivariate normal distribution (<span class="process-math">\(\mu_X = \mu_Y = 0\text{,}\)</span> <span class="process-math">\(\sigma_X = \sigma_Y = 1\text{,}\)</span> <span class="process-math">\(\rho = 0.5\)</span>). Marginal densities of <span class="process-math">\(X\)</span> is shown on the right, illustrating marginalization by integrating over <span class="process-math">\(Y\text{.}\)</span></figcaption></figure><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-py">Bivariate normal joint density
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.6.12<span class="period">.</span></span><span class="space"> </span>Contour plot of the joint density of a bivariate normal distribution (<span class="process-math">\(\mu_X = \mu_Y = 0\text{,}\)</span> <span class="process-math">\(\sigma_X = \sigma_Y = 1\text{,}\)</span> <span class="process-math">\(\rho = 0.5\)</span>). Marginal densities of <span class="process-math">\(X\)</span> is shown on the right, illustrating marginalization by integrating over <span class="process-math">\(Y\text{.}\)</span></figcaption></figure><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-py">Bivariate normal joint density
 
 # === Bivariate normal contour plot ===
 import numpy as np
@@ -904,7 +962,7 @@ plt.show()
 <div class="para">The <em class="alert">cumulative distribution function (CDF)</em> of a continuous random variable <span class="process-math">\(X\)</span> is:</div>
 <div class="displaymath process-math" id="eqn-cdf">
 \begin{equation}
-F_X(x) = P(X \leq x) = \int_{-\infty}^x f_X(t) \, dt.\tag{1.6.20}
+F_X(x) = P(X \leq x) = \int_{-\infty}^x f_X(t) \, dt.\tag{1.6.23}
 \end{equation}
 </div>
 <div class="para">The density is the derivative: <span class="process-math">\(f_X(x) = \frac{d F_X}{dx}\text{,}\)</span> where differentiable.</div>
@@ -913,13 +971,13 @@ F_X(x) = P(X \leq x) = \int_{-\infty}^x f_X(t) \, dt.\tag{1.6.20}
 <div class="para">For a standard normal distribution (<span class="process-math">\(\mu = 0\text{,}\)</span> <span class="process-math">\(\sigma = 1\)</span>):</div>
 <div class="displaymath process-math" id="eqn-normal-pdf">
 \begin{equation}
-f_X(x) = \frac{1}{\sqrt{2\pi}} \exp\left(-\frac{x^2}{2}\right).\tag{1.6.21}
+f_X(x) = \frac{1}{\sqrt{2\pi}} \exp\left(-\frac{x^2}{2}\right).\tag{1.6.24}
 \end{equation}
 </div>
 <div class="para">Its CDF is <span class="process-math">\(F_X(x) = \Phi(x)\text{,}\)</span> the standard normal CDF.</div>
 </div>
 <figure class="figure figure-like" id="fig-normal-pdf-cdf"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/normal_pdf_cdf.png" class="contained" alt="Two-panel plot of standard normal PDF and CDF."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.6.14<span class="period">.</span></span><span class="space"> </span>PDF and CDF of a standard normal distribution (<span class="process-math">\(\mu=0\text{,}\)</span> <span class="process-math">\(\sigma=1\)</span>). The left panel shows the bell-shaped density, and the right panel shows the cumulative probability, illustrating <span class="process-math">\(F_X(x) = \int_{-\infty}^x f_X(t) \, dt\text{.}\)</span></figcaption></figure><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-py">    Standard normal PDF and CDF
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.6.13<span class="period">.</span></span><span class="space"> </span>PDF and CDF of a standard normal distribution (<span class="process-math">\(\mu=0\text{,}\)</span> <span class="process-math">\(\sigma=1\)</span>). The left panel shows the bell-shaped density, and the right panel shows the cumulative probability, illustrating <span class="process-math">\(F_X(x) = \int_{-\infty}^x f_X(t) \, dt\text{.}\)</span></figcaption></figure><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-py">    Standard normal PDF and CDF
     
 # === Standard normal PDF and CDF ===
 import numpy as np
@@ -956,13 +1014,13 @@ plt.show()
 <div class="para">Random variables <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> are <em class="alert">independent</em> if their joint distribution factorizes:</div>
 <div class="displaymath process-math" id="eqn-independent-variables">
 \begin{equation}
-P(X=x_i, Y=y_j) = P(X=x_i) P(Y=y_j), \quad \text{for all } i, j.\tag{1.6.22}
+P(X=x_i, Y=y_j) = P(X=x_i) P(Y=y_j), \quad \text{for all } i, j.\tag{1.6.25}
 \end{equation}
 </div>
 <div class="para">For continuous variables:</div>
 <div class="displaymath process-math" id="eqn-independent-density">
 \begin{equation}
-f_{X,Y}(x, y) = f_X(x) f_Y(y).\tag{1.6.23}
+f_{X,Y}(x, y) = f_X(x) f_Y(y).\tag{1.6.26}
 \end{equation}
 </div>
 <div class="para">Equivalently, <span class="process-math">\(P(X=x_i \mid Y=y_j) = P(X=x_i)\)</span> or <span class="process-math">\(f_{X|Y}(x \mid y) = f_X(x)\text{.}\)</span>
@@ -970,9 +1028,9 @@ f_{X,Y}(x, y) = f_X(x) f_Y(y).\tag{1.6.23}
 </div>
 <div class="para" id="subsec-Independent-Variables-3">Independence implies <span class="process-math">\(\mathrm{Cov}(X,Y) = 0\text{,}\)</span> but zero covariance does not imply independence, except for jointly normal variables.</div>
 <article class="example example-like" id="subsec-Independent-Variables-4"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.6.15</span><span class="period">.</span><span class="space"> </span><span class="title">Independent vs. dependent variables.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.6.14</span><span class="period">.</span><span class="space"> </span><span class="title">Independent vs. dependent variables.</span>
 </h4> <div class="para" id="subsec-Independent-Variables-4-2">Consider the patient dataset with <span class="process-math">\(X\)</span> (disease status) and <span class="process-math">\(Y\)</span> (test result), which are dependent (see <a href="sec-Two-or-More-Random-Variables.html#tab-patient-data-for-jt-and-conditional-probs" class="xref" data-knowl="./knowl/xref/tab-patient-data-for-jt-and-conditional-probs.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 1.6.6: Patient Counts (Disease vs. Test)">Table 1.6.6</a>). Compare with <span class="process-math">\(Z\text{,}\)</span> a patient’s age group (young/old), assumed independent of <span class="process-math">\(X\text{.}\)</span> The plot below shows joint probabilities for dependent and independent cases.</div></article><figure class="figure figure-like" id="fig-independence-heatmap"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/independence_heatmap.png" class="contained" alt="Heatmaps comparing dependent and independent joint probabilities."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.6.16<span class="period">.</span></span><span class="space"> </span>Heatmaps comparing joint probabilities for dependent (<span class="process-math">\(X\text{:}\)</span> disease, <span class="process-math">\(Y\text{:}\)</span> test) and independent (<span class="process-math">\(X\text{:}\)</span> disease, <span class="process-math">\(Z\text{:}\)</span> age) variables. The left heatmap shows non-factorized probabilities, indicating dependence; the right shows factorized probabilities, confirming independence.</figcaption></figure><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-py">Independence heatmap comparison
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.6.15<span class="period">.</span></span><span class="space"> </span>Heatmaps comparing joint probabilities for dependent (<span class="process-math">\(X\text{:}\)</span> disease, <span class="process-math">\(Y\text{:}\)</span> test) and independent (<span class="process-math">\(X\text{:}\)</span> disease, <span class="process-math">\(Z\text{:}\)</span> age) variables. The left heatmap shows non-factorized probabilities, indicating dependence; the right shows factorized probabilities, confirming independence.</figcaption></figure><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-py">Independence heatmap comparison
 
 # === Heatmap for independent vs. dependent variables ===
 import numpy as np
@@ -1002,9 +1060,9 @@ plt.show()
 </h3>
 <div class="para" id="subsec-Application-Medical-Diagnosis-2">Joint and conditional probabilities are critical in medical diagnosis. Using the patient dataset, we estimate the probability of disease given symptoms and test results, combining multiple evidence sources.</div>
 <article class="example example-like" id="subsec-Application-Medical-Diagnosis-3"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.6.17</span><span class="period">.</span><span class="space"> </span><span class="title">Diagnosing disease with test and severity.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.6.16</span><span class="period">.</span><span class="space"> </span><span class="title">Diagnosing disease with test and severity.</span>
 </h4> <div class="para" id="subsec-Application-Medical-Diagnosis-3-2">Augment the patient dataset with symptom severity (<span class="process-math">\(S\text{,}\)</span> normal, mean 5 for D, 3 for N, std 1.5). For a patient with a positive test (<span class="process-math">\(Y=+\)</span>) and high severity (<span class="process-math">\(S \geq 4\)</span>), compute <span class="process-math">\(P(D \mid +, S \geq 4)\)</span> using conditional probabilities.</div></article><figure class="figure figure-like" id="fig-diagnosis-conditional"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/diagnosis_conditional.png" class="contained" alt="Bar chart of conditional probabilities for diagnosis."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.6.18<span class="period">.</span></span><span class="space"> </span>Bar chart of conditional probabilities <span class="process-math">\(P(D \mid Y, S)\)</span> for combinations of test result (<span class="process-math">\(Y\)</span>) and symptom severity (<span class="process-math">\(S \geq 4\)</span> or <span class="process-math">\(S \lt 4\)</span>). This illustrates how multiple features refine disease probability estimates in medical diagnostics.</figcaption></figure><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-py">Conditional probability for diagnosis
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.6.17<span class="period">.</span></span><span class="space"> </span>Bar chart of conditional probabilities <span class="process-math">\(P(D \mid Y, S)\)</span> for combinations of test result (<span class="process-math">\(Y\)</span>) and symptom severity (<span class="process-math">\(S \geq 4\)</span> or <span class="process-math">\(S \lt 4\)</span>). This illustrates how multiple features refine disease probability estimates in medical diagnostics.</figcaption></figure><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-py">Conditional probability for diagnosis
 
 import numpy as np
 import pandas as pd
