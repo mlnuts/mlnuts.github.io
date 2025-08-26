@@ -277,7 +277,13 @@ eBookConfig.enable_chatcodes =  false;
 P( x \le X \le x + dx ) = \rho(x)\,dx.
 \end{equation*}
 </div>
-<div class="para">To faciliate analytical work, we introduce a cumulative distribution function (<em class="alert">CDF</em>), denoted by <span class="process-math">\(F\text{,}\)</span> that gives probability of the event that <span class="process-math">\(X \le x\)</span> for some particular <span class="process-math">\(x\text{.}\)</span>
+<div class="para">Note that the PDF must be a positive semi-definite for probability to be positive semidefinite and sum (integral here) of the probabilities must add to <span class="process-math">\(1\)</span> over the entire real line.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\rho(x) \ge 0,\quad \int_{-\infty}^{+\infty}\,\rho(x)\,dx = 1.
+\end{equation*}
+</div>
+<div class="para">To faciliate analytical work, we introduce a cumulative distribution function (<dfn class="terminology">CDF</dfn>), denoted by <span class="process-math">\(F\text{,}\)</span> that gives probability of the event that <span class="process-math">\(X \le x\)</span> for some particular <span class="process-math">\(x\text{.}\)</span>
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -288,6 +294,24 @@ F(x) = P( X \le x) = \int_{-\infty}^x\, \rho(x')\,dx'.
 <div class="displaymath process-math">
 \begin{equation*}
 F (+\infty)  = \int_{-\infty}^\infty\, \rho(x)\,dx = 1.
+\end{equation*}
+</div>
+<div class="para">From the definition of <span class="process-math">\(F(x)\)</span> and the Fundamental Theorem of Calculus, we have the following relation also.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\rho(x) = \frac{dF}{dx}
+\end{equation*}
+</div>
+<div class="para">Although, we have not attached the random variable to the symbols <span class="process-math">\(P\text{,}\)</span> <span class="process-math">\(\rho\text{,}\)</span> <span class="process-math">\(F\text{,}\)</span> and <span class="process-math">\(F^{-1}\text{,}\)</span> you will find the following notations in other places.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P_X(x),\ \rho_X(x),\ \F_X(x).
+\end{equation*}
+</div>
+<div class="para">If your distribution is over a conditonal random variable, say the variable <span class="process-math">\(X\text{,}\)</span> conditioned over some specific value of another random variable <span class="process-math">\(Y=y_j\text{,}\)</span> then notation may be</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P_{X\mid Y}(x),\ \rho_{X\mid Y}(x),\ \F_{X\mid Y}(x).
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec-Continuous-Probability-Distributions-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -316,17 +340,53 @@ F (+\infty)  = \int_{-\infty}^\infty\, \rho(x)\,dx = 1.
 </ul>
 <div class="para">There are, of course, other distributions such as beta and gamma distributions that are also in common use. By presenting just these three here, I hope to give the reader enough feel for what to look for when studying other distributions.</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec-Continuous-Probability-Distributions-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-Continuous-Probability-Distributions-2-3">
+<em class="alert">Inverse CDF:</em><div class="autopermalink" data-description="Paragraph"><a href="#sec-Continuous-Probability-Distributions-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-Continuous-Probability-Distributions-2-4">Another function of interest when studying continuous random variables is the <dfn class="terminology">inverse cumulative distribution function</dfn>. It maps a probability <span class="process-math">\(p \in [0,1]\)</span> to the value <span class="process-math">\(x \in \mathbb{R}\text{,}\)</span> the real line.<div class="autopermalink" data-description="Paragraph"><a href="#sec-Continuous-Probability-Distributions-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-Continuous-Probability-Distributions-2-5">
+<div class="para">We will denote the inverse CDF by <span class="process-math">\(F^{-1}\)</span> since we are denoting CDF by <span class="process-math">\(F\)</span> except for the standard Normal distribution, <span class="process-math">\(\mathcal{N}(0,1)\text{.}\)</span> For<span class="process-math">\(\mathcal{N}(0,1)\text{,}\)</span> the CDF is tranditionally  denoted by the Greek letter phi <span class="process-math">\((\Phi)\)</span> and inverse by <span class="process-math">\(\Phi^{-1}\text{.}\)</span> The symbol <span class="process-math">\(F^{-1}\)</span> (or <span class="process-math">\(\Phi^{-1}\)</span>) does not mean <span class="process-math">\(1/F\)</span> (or <span class="process-math">\(1/\Phi\)</span>); it’s just a symbol for inverse operation of CDF.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F^{-1}\left( F(x) \right) = x.
+\end{equation*}
+</div>
+<div class="para">Note that inverse of a CDF is a function of probability since it maps a probability to the value of random variable on the real line. As a result, it is often used for generating samples according to a distribution of interest for particular application. Say we want <span class="process-math">\(m\)</span> samples of a random variable <span class="process-math">\(X\)</span> that is distributed according  a Gaussian distribution, <span class="process-math">\(\mathbb{N}\)</span>(\mu,\sigma^2), i.e.,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+X \sim \mathbb{N}(\mu,\sigma^2).
+\end{equation*}
+</div>
+<div class="para">Then, we just find the inverse CDF over <span class="process-math">\(m\)</span> values of probability distributed uniformly and randomly in the range <span class="process-math">\([0,1]\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+p_\text{to_sample} = \{ p_1, p_2, \cdots, p_m  \}. 
+\end{equation*}
+</div>
+<div class="para">Then, we get the corresponding <span class="process-math">\(x\)</span> by using the inverse CDF of the distribution,</div>
+<div class="displaymath process-math" id="sec-Continuous-Probability-Distributions-2-5-20">
+\begin{align*}
+x_1 \amp F^{-1}_X(p_1), \\
+x_2 \amp F^{-1}_X(p_2) \\
+\amp \cdots \\
+x_m \amp F^{-1}_X(p_m) 
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-Continuous-Probability-Distributions-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div></section><section class="subsection" id="subsec-Uniform-Distribution"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.8.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Uniform Distribution</span>
 </h3>
 <section class="introduction" id="subsec-Uniform-Distribution-2"><div class="para logical" id="subsec-Uniform-Distribution-2-1">
-<div class="para">When a random variable <span class="process-math">\(X\)</span> is equally likely to take any value between two real numbers <span class="process-math">\(a\)</span> and <span class="process-math">\(b\text{,}\)</span> we say that the distribution is uniform between these values. The distribution is usually designated by <span class="process-math">\(U(a,b)\)</span> with <span class="process-math">\(a \lt b\text{,}\)</span> and say that</div>
+<div class="para">When a random variable <span class="process-math">\(X\)</span> is equally likely to take any value between two real numbers <span class="process-math">\(a\)</span> and <span class="process-math">\(b\text{,}\)</span> we say that the distribution is uniform between these values. The distribution is usually designated by <span class="process-math">\(U(a,b)\)</span> with <span class="process-math">\(a \lt b\text{,}\)</span> andwe  say that</div>
 <div class="displaymath process-math">
 \begin{equation*}
 X \sim U(a,b),
 \end{equation*}
 </div>
-<div class="para">which means that</div>
+<div class="para">which is read as <span class="process-math">\(X\)</span> “is distributed as” <span class="process-math">\(U(a,b)\text{.}\)</span> Since <span class="process-math">\(U(a,b)\)</span> is uniform between <span class="process-math">\(a\)</span> and <span class="process-math">\(b\text{,}\)</span> it’s probability interpretation will be</div>
 <div class="displaymath process-math" id="eqn-uniform-distribution">
 \begin{equation}
 P(x \le X \le x + dx) \equiv \rho(x)\, dx = \begin{cases}
@@ -335,30 +395,31 @@ P(x \le X \le x + dx) \equiv \rho(x)\, dx = \begin{cases}
 \end{cases}\tag{1.8.1}
 \end{equation}
 </div>
-<div class="para">where the part without the <span class="process-math">\(dx\)</span> is the PDF of the distribution, which we denote by the Greek letter rho, <span class="process-math">\(\rho\text{.}\)</span>
+<div class="para">where the part without the <span class="process-math">\(dx\)</span> is the PDF of the distribution, rho, <span class="process-math">\(\rho\text{.}\)</span>
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec-Uniform-Distribution-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="subsec-Uniform-Distribution-2-2">
-<div class="para">The mean value of the distribution will clearly be half way between <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> as can easily be computed by performing the simple integral.</div>
+<div class="para">The mean value of the uniform distribution will clearly be half way between <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> as can easily be verified by performing the simple integral for the expecation value of <span class="process-math">\(X\text{.}\)</span>
+</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\langle X \rangle = \int_{a}^{b}\, x\, \rho(x)\, dx = \frac{1}{b-a}\,\int_a^b x dx = \frac{1}{b-a}\left( b^2 - a^2\right) = \frac{b + a}{2}.
+\mathbb{E}[X]  = \int_{a}^{b}\, x\, \rho(x)\, dx = \frac{1}{b-a}\,\int_a^b x dx = \frac{1}{b-a}\left( b^2 - a^2\right) = \frac{b + a}{2}.
 \end{equation*}
 </div>
 <div class="para">The variance, which is square of the standard deviation <span class="process-math">\(\sigma\text{,}\)</span> is similarly calculated to yield</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\text{Var}(X) = \langle X^2 \rangle - \langle X \rangle^2 = \frac{(b-a)^2}{12},
+\textrm{Var}(X) = \mathbb{E}[X^2]  - \left(\mathbb{E}[X]\right)^2 = \frac{(b-a)^2}{12},
 \end{equation*}
 </div>
 <div class="para">where</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\langle X^2 \rangle = \int_a^b x^2\,\rho(x)\, dx = \frac{1}{3}\left(b^2 + ba + a^2 \right).
+\mathbb{E}[X^2]  = \int_a^b x^2\,\rho(x)\, dx = \frac{1}{3}\left(b^2 + ba + a^2 \right).
 \end{equation*}
 </div>
-<div class="para">Thus, standard deviation of <span class="process-math">\(U(a,b)\)</span> is:</div>
+<div class="para">Thus, standard deviation <span class="process-math">\(\sigma\)</span> is just the square root of the variance, as usual.</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \sigma = \frac{|b-a|}{2\sqrt{3}}.
@@ -373,7 +434,7 @@ P(x \le X \le x + dx) \equiv \rho(x)\, dx = \begin{cases}
 F(x) = \int_{-\infty}^x\, \rho(x')\,dx' \equiv \text{ Probability that } X \lt x,\tag{1.8.2}
 \end{equation}
 </div>
-<div class="para">where I used <span class="process-math">\(x'\)</span> for the dummy variable since <span class="process-math">\(x\)</span> now is a particular value. This will be a step function since the formula resulting from the integration depends on where the point <span class="process-math">\(x\)</span> happens to lie.</div>
+<div class="para">where I have used <span class="process-math">\(x'\)</span> for the dummy variable since <span class="process-math">\(x\)</span> now is a particular value. This will be a step function since the formula resulting from the integration depends on where the point <span class="process-math">\(x\)</span> happens to lie.</div>
 <div class="displaymath process-math" id="eqn-uniform-cumulative-distribution">
 \begin{equation}
 F(x) = \begin{cases}
@@ -383,58 +444,49 @@ F(x) = \begin{cases}
 \end{cases}\tag{1.8.3}
 \end{equation}
 </div>
-<div class="para">The last line says that probability that <span class="process-math">\(X\)</span> has any value less than any value in <span class="process-math">\((b,\infty)\)</span> is 1.0 since obviously the entire range <span class="process-math">\([a,b]\)</span> is included in this case. The second line says that the probability increases linearly between <span class="process-math">\(a\)</span> and <span class="process-math">\(b\text{.}\)</span>
-</div>
+<div class="para">The last line says that probability that <span class="process-math">\(X\)</span> to have less than any value in <span class="process-math">\((b,\infty)\)</span> is 1.0 since obviously the entire non-zero value range, viz., <span class="process-math">\([a,b]\text{,}\)</span> is included in this case. The second line says that the probability increases linearly between <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> since the PDF is constant in this range.</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec-Uniform-Distribution-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="subsec-Uniform-Distribution-2-4">
 <a href="sec-Continuous-Probability-Distributions.html#fig-uniform-pdf-cdf" class="xref" data-knowl="./knowl/xref/fig-uniform-pdf-cdf.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.8.1">Figure 1.8.1</a> shows plots of PDF and CDF of uniform distribution <span class="process-math">\(U(0,10)\text{.}\)</span> You can see that as we scan through the interval of the uniform PDF, the probability accumulates in the CDF and eventually, CDF becomes <span class="process-math">\(1\text{,}\)</span> which represents probability of any of the values in the interval.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Uniform-Distribution-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<figure class="figure figure-like" id="fig-uniform-pdf-cdf"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/uniform.png" class="contained" alt="PDF and CDF of Uniform distribution \(U(0,10)\text{.}\) Note the value of PDF is uniformly \(0.1\) while that of CDF increases linear in the interval."></div>
+<figure class="figure figure-like" id="fig-uniform-pdf-cdf"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/uniform.png" class="contained" alt="PDF and CDF of Uniform distribution U(0,10). Note the value of PDF is uniformly 0.1 while that of CDF increases linear in the interval."></div>
 <figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.8.1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>PDF and CDF of Uniform distribution <span class="process-math">\(U(0,10)\text{.}\)</span> Note the value of PDF is uniformly <span class="process-math">\(0.1\)</span> while that of CDF increases linear in the interval.<div class="autopermalink" data-description="Figure 1.8.1"><a href="#fig-uniform-pdf-cdf" title="Copy heading and permalink for Figure 1.8.1" aria-label="Copy heading and permalink for Figure 1.8.1">🔗</a></div></figcaption></figure><div class="para" id="subsec-Uniform-Distribution-2-6">To generate these plots import: from scipy.stats import uniform and then use the methods uniform.pdf() and uniform.cdf().<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Uniform-Distribution-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div></section><section class="subsubsection" id="subsubsec-Inverse-Uniform-CDF"><h4 class="heading hide-type">
 <span class="type">Subsubsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.8.1.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Inverse Uniform CDF</span>
 </h4>
-<div class="para" id="subsubsec-Inverse-Uniform-CDF-2">Inverse of a CDF is used for sampling from a distribution. Although, we will see below that inverse CDF of the uniform distribution is trivial, the inverse CDF is highly useful when you need to generate samples from some other distributions such as Normal, Exponential, Gamma, etx.<div class="autopermalink" data-description="Paragraph"><a href="#subsubsec-Inverse-Uniform-CDF-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="subsubsec-Inverse-Uniform-CDF-3">
-<div class="para">The inverse of CDF <span class="process-math">\(F(x)\)</span> is written as <span class="process-math">\(F^{-1}(x)\)</span> - it’s not a negative one power of <span class="process-math">\(F\text{;}\)</span> that is just the name of the inverse function. As the name implies when you successively apply <span class="process-math">\(F\)</span> an <span class="process-math">\(F^{-1}\)</span> to some number <span class="process-math">\(x\text{,}\)</span> you would get that number back.</div>
+<div class="para logical" id="subsubsec-Inverse-Uniform-CDF-2">
+<div class="para">Since the CDF of uniform random variable is linear in the range of interest, the inverse is also linear and turns out to be trivial. Recall the CDF of <span class="process-math">\(U(a,b)\)</span> in the range <span class="process-math">\([a,b]\)</span> is</div>
 <div class="displaymath process-math">
 \begin{equation*}
-x = F^{-1}\left(\ F (x) \ \right).
+F(x) = -\frac{a}{b-a} + \frac{x}{b-a}\quad a\le x \le b,
 \end{equation*}
 </div>
-<div class="para">So, what does it look like for the uniform distribution <span class="process-math">\(U(a,b\text{?}\)</span> The CDF in the range <span class="process-math">\([a,b]\)</span> is</div>
+<div class="para">which is linear in its argument <span class="process-math">\(x\text{.}\)</span> The inverse will be</div>
 <div class="displaymath process-math">
 \begin{equation*}
-F(x) = \frac{x - a}{b - a}\quad a\le x \le b.
+F^{-1}(p) = a + (b-a) p,
 \end{equation*}
 </div>
-<div class="para">The inverse will be</div>
-<div class="displaymath process-math">
-\begin{equation*}
-F^{-1}(u) = a + (b-a) u.
-\end{equation*}
-</div>
-<div class="para">Let’s check if that’s true.</div>
+<div class="para">which is also linear in its argument <span class="process-math">\(p\text{.}\)</span> Let’s check if that’s true.</div>
 <div class="displaymath process-math">
 \begin{equation*}
 F^{-1}(\ F(x)\ ) = a + (b-a) F(x) = a + (b-a) \frac{x - a}{b - a} = x.
 \end{equation*}
 </div>
-<div class="para">So, if you wanted to generate samples in the range <span class="process-math">\(a \le x \le b\)</span> that act like they are sampled from the uniform distribution <span class="process-math">\(U(a,b)\text{,}\)</span> you would first generate pseudo-random numbers in unit interval <span class="process-math">\([0,1]\)</span> using algorithms lke Mersenne Twister. Suppose, you have <span class="process-math">\(100\)</span> such sample <span class="process-math">\(u_1, u_2, \cdots, u_{100}\text{.}\)</span> Then, you will plug them in the inverse CDF <span class="process-math">\(F^{-1}\)</span> to generate samples <span class="process-math">\(x_1, x_2, \cdots, x_{100}\)</span> from <span class="process-math">\(U(a,b)\text{.}\)</span>
+<div class="para">So, if you wanted to generate samples in the range <span class="process-math">\(a \le x \le b\)</span> that act like they are sampled from the uniform distribution <span class="process-math">\(U(a,b)\text{,}\)</span> you would first generate pseudo-random numbers in unit interval <span class="process-math">\([0,1]\)</span> using algorithms lke Mersenne Twister. Suppose, you have <span class="process-math">\(100\)</span> such sample <span class="process-math">\(p_1, p_2, \cdots, p_{100}\text{.}\)</span> Then, you will plug them in the inverse CDF <span class="process-math">\(F^{-1}\)</span> to generate samples <span class="process-math">\(x_1, x_2, \cdots, x_{100}\)</span> from <span class="process-math">\(U(a,b)\text{.}\)</span>
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
-x_i = F^{-1}(u_i) = a + (b-a) u_i.
+x_i = F^{-1}(p_i) = a + (b-a) p_i.
 \end{equation*}
 </div>
-<div class="para">This is trivial here since we have an analytic expression for the inverse CDF. In other districutions, such as the Gaussian, i.e., Normal distribution, the inverse can only be computed numerically. The stats packages usually have functions that do it for you. For instance, ppf() method in Python/scipy.stats is used for that purpose. In case of uniform distribution, the command is <div class="code-box"><pre class="program clipboardable"><code class="language-py">from scipy.stats import uniform
+<div class="para">This is trivial here since we have an analytic expression for the inverse CDF. In other distributions, such as the Gaussian/Normal distribution, the inverse can be computed only numerically. The stats packages usually have functions that do it for you. For instance, ppf() method in Python/scipy.stats is used for that purpose. In case of uniform distribution, the command is</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsubsec-Inverse-Uniform-CDF-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="code-box"><pre class="program clipboardable line-numbers"><code class="language-py">from scipy.stats import uniform
 samples = uniform.ppf(u, loc=a, scale=b-a).
 </code></pre></div>
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsubsec-Inverse-Uniform-CDF-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
 <div class="autopermalink" data-description="Subsubsection 1.8.1.1: Inverse Uniform CDF"><a href="#subsubsec-Inverse-Uniform-CDF" title="Copy heading and permalink for Subsubsection 1.8.1.1: Inverse Uniform CDF" aria-label="Copy heading and permalink for Subsubsection 1.8.1.1: Inverse Uniform CDF">🔗</a></div></section><div class="autopermalink" data-description="Subsection 1.8.1: Uniform Distribution"><a href="#subsec-Uniform-Distribution" title="Copy heading and permalink for Subsection 1.8.1: Uniform Distribution" aria-label="Copy heading and permalink for Subsection 1.8.1: Uniform Distribution">🔗</a></div></section><section class="subsection" id="subsec-Normal-Distribution"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.8.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Normal (Gaussian) Distribution</span>
 </h3>
@@ -485,44 +537,43 @@ P(x \le X \le x + dx) = \rho(x)\, dx.
 P(X \in [-1, 3]) = \int_{-1}^3\, \rho(x) dx = \int_{-1}^3\, \frac{1}{\sqrt{2\pi \sigma^2}}\,\exp\left( - \frac{(x-\mu)^2}{2\sigma^2} \right)\, dx.
 \end{equation*}
 </div>
-<div class="para">The CDF <span class="process-math">\(F(x)\)</span> is just such an integral for the probability of <span class="process-math">\(X in (-\infty, x]\text{.}\)</span>
+<div class="para">The CDF <span class="process-math">\(F(x)\)</span> is just such an integral for the probability of <span class="process-math">\(X \in (-\infty, x]\text{.}\)</span>
 </div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-Gaussian-PDF.html" id="eqn-Gaussian-CDF">
 \begin{equation}
 F(x) = \int_{-\infty}^x\, \frac{1}{\sqrt{2\pi \sigma^2}}\,\exp\left( - \frac{(x'-\mu)^2}{2\sigma^2} \right)\, dx'.\tag{1.8.5}
 \end{equation}
 </div>
-<div class="para">If <span class="process-math">\(x=\infty\text{,}\)</span> then entire real line is included. That would make</div>
+<div class="para">The integral is unwieldy and only done numerically except when <span class="process-math">\(x=\infty\text{.}\)</span> If <span class="process-math">\(x=\infty\text{,}\)</span> then entire real line is included. That would make</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-Gaussian-PDF.html">
 \begin{equation*}
 F(\infty) = \int_{-\infty}^\infty\, \frac{1}{\sqrt{2\pi \sigma^2}}\,\exp\left( - \frac{(x-\mu)^2}{2\sigma^2} \right)\, dx = 1.
 \end{equation*}
 </div>
-<div class="para">The integral is unwieldy and only done numerically. The Fundamental Theorem of Calculus gives us an analytic expression of the derivative of CDF, which is used in formal analytical work.</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-Gaussian-PDF.html" id="eqn-Derivative-of-CDF">
-\begin{equation}
-\frac{dF}{dx} = \rho(x) = \frac{1}{\sqrt{2\pi \sigma^2}}\,\exp\left( - \frac{(x-\mu)^2}{2\sigma^2} \right).\tag{1.8.6}
-\end{equation}
+<div class="para">While the CDF of a general Gaussian is denoted by <span class="process-math">\(F(x)\text{,}\)</span> the CDF of Standard Normal, i.e., <span class="process-math">\(\mathcal{N}(0,1)\)</span> is given it’s own symbol, <span class="process-math">\(\Phi(x)\)</span> and it’s inverse by <span class="process-math">\(\Phi^{-1}(p)\text{.}\)</span>
 </div>
-<div class="para">This is, of course, a general result and applies to all PDF/CDF and forms a powerful tool of formal work. We are not going to do much in that direction.</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec-Normal-Distribution-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="subsec-Normal-Distribution-2-5">
-<a href="sec-Continuous-Probability-Distributions.html#fig-gaussian-pdf-cdf" class="xref" data-knowl="./knowl/xref/fig-gaussian-pdf-cdf.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.8.2">Figure 1.8.2</a> shows plots of PDF and CDF of Gaussian distribution <span class="process-math">\(\mathcal{N}(0,1)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Normal-Distribution-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<a href="sec-Continuous-Probability-Distributions.html#fig-gaussian-pdf-cdf" class="xref" data-knowl="./knowl/xref/fig-gaussian-pdf-cdf.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.8.2">Figure 1.8.2</a> shows plots of PDF and CDF of Gaussian distribution <span class="process-math">\(\mathcal{N}(0,1)\text{.}\)</span> Note the bell-shape of the PDF and the soft step of the CDF which goes from <span class="process-math">\(0\)</span> to <span class="process-math">\(1\)</span> monotonically. To generate these plots import: from scipy.stats import uniform and then use the methods norm.pdf() and norm.cdf().<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Normal-Distribution-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<figure class="figure figure-like" id="fig-gaussian-pdf-cdf"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/gaussian.png" class="contained" alt="PDF and CDF of Gaussian distribution \(\mathcal{N}(0,1)\text{.}\) Note the bell-shape of the PDF and the soft step of the CDF which goes from \(0\) to \(1\text{.}\)"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.8.2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>PDF and CDF of Gaussian distribution <span class="process-math">\(\mathcal{N}(0,1)\text{.}\)</span> Note the bell-shape of the PDF and the soft step of the CDF which goes from <span class="process-math">\(0\)</span> to <span class="process-math">\(1\text{.}\)</span><div class="autopermalink" data-description="Figure 1.8.2"><a href="#fig-gaussian-pdf-cdf" title="Copy heading and permalink for Figure 1.8.2" aria-label="Copy heading and permalink for Figure 1.8.2">🔗</a></div></figcaption></figure><div class="para" id="subsec-Normal-Distribution-2-7">To generate these plots import: from scipy.stats import uniform and then use the methods uniform.pdf() and uniform.cdf().<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Normal-Distribution-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="subsec-Normal-Distribution-2-8">
+<figure class="figure figure-like" id="fig-gaussian-pdf-cdf"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/gaussian.png" class="contained" alt="PDF and CDF of Gaussian distribution N(0,1). Note the bell-shape of the PDF and the soft step of the CDF which goes from 0 to 1."></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.8.2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>PDF and CDF of Gaussian distribution <span class="process-math">\(\mathcal{N}(0,1)\text{.}\)</span><div class="autopermalink" data-description="Figure 1.8.2"><a href="#fig-gaussian-pdf-cdf" title="Copy heading and permalink for Figure 1.8.2" aria-label="Copy heading and permalink for Figure 1.8.2">🔗</a></div></figcaption></figure><div class="para logical" id="subsec-Normal-Distribution-2-7">
 <div class="para">The <em class="alert">mean</em> and <em class="alert">variance</em> of a Gaussian is in the definition itself and can be readily checked if you know how do Gaussian integrals.</div>
-<div class="displaymath process-math" id="subsec-Normal-Distribution-2-8-3">
+<div class="displaymath process-math" id="subsec-Normal-Distribution-2-7-3">
 \begin{align*}
-\amp \text{Mean}(X) = \langle X \rangle = \int_{-\infty}^\infty\, x\, \rho(x)\, dx = \frac{1}{\sqrt{2\pi \sigma^2}}\, \int_{-\infty}^\infty\, x\, \exp\left( - \frac{(x-\mu)^2}{2\sigma^2} \right) dx = \mu. \\
-\amp \text{Var}(X) = \langle X^2 \rangle  - \langle X \rangle^2 = \sigma^2.
+\amp \mathbb{E}[X]  = \int_{-\infty}^\infty\, x\, \rho(x)\, dx = \frac{1}{\sqrt{2\pi \sigma^2}}\, \int_{-\infty}^\infty\, x\, \exp\left( - \frac{(x-\mu)^2}{2\sigma^2} \right) dx = \mu. \\
+\amp \textrm{Var}(X) = \mathbb{E}[X]^2   - \left( \mathbb{E}[X]\right)^2 = \sigma^2.
 \end{align*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Normal-Distribution-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="remark remark-like" id="subsec-Normal-Distribution-2-8"><h4 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.8.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Doing Gaussian Integrals.</span>
+</h4>
+<div class="para logical" id="subsec-Normal-Distribution-2-8-2">
 <div class="para">Here are couple of tricks of doing Gaussian integrals.</div>
-<div class="displaymath process-math" id="subsec-Normal-Distribution-2-8-4">
+<div class="displaymath process-math" id="subsec-Normal-Distribution-2-8-2-1">
 \begin{align*}
 \amp \int_{-\infty}^\infty \exp\left( -kx^2\right)\, dx = \sqrt{ \frac{\pi}{k} }\\
 \amp\int_{-\infty}^\infty x^{2n+1}\,\exp\left( - kx^2 \right)\, dx = 0,\ \text{for } n = 0, 1,2, \cdots\\
@@ -531,50 +582,55 @@ F(\infty) = \int_{-\infty}^\infty\, \frac{1}{\sqrt{2\pi \sigma^2}}\,\exp\left( -
 \amp\qquad =  \left( -\frac{d}{dk}\right)^n\,\sqrt{ \frac{\pi}{k} }  = \frac{\sqrt{\pi}}{4^n}\,\frac{(2n)!}{n!}\frac{1}{k^{n + \frac{1}{2}}}. 
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Normal-Distribution-2-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></section><section class="subsubsection" id="subsubsec-Inverse-CDF-and-Sampling"><h4 class="heading hide-type">
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Normal-Distribution-2-8-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 1.8.3: Doing Gaussian Integrals"><a href="#subsec-Normal-Distribution-2-8" title="Copy heading and permalink for Remark 1.8.3: Doing Gaussian Integrals" aria-label="Copy heading and permalink for Remark 1.8.3: Doing Gaussian Integrals">🔗</a></div></article></section><section class="subsubsection" id="subsubsec-Inverse-CDF-and-Sampling"><h4 class="heading hide-type">
 <span class="type">Subsubsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.8.2.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Inverse CDF and Sampling</span>
 </h4>
 <div class="para logical" id="subsubsec-Inverse-CDF-and-Sampling-2">
-<div class="para">As we defined for the uniform distribution above, inverse of the Cumulative Distribution Function (CDF) <span class="process-math">\(F\)</span> is another function, denoted by <span class="process-math">\(F^{-1}\)</span> (NotE: it’s not <span class="process-math">\(1/F\text{.}\)</span> The negative power in the symbol is just a symbol.) The functions <span class="process-math">\(F\)</span> and <span class="process-math">\(F^{-1}\)</span> are inverses so that when you act by them, one does the effect of the other.</div>
+<div class="para">As we defined for the uniform distribution above, inverse of the Cumulative Distribution Function (CDF) <span class="process-math">\(F\)</span> is another function, denoted by <span class="process-math">\(F^{-1}\text{.}\)</span> The functions <span class="process-math">\(F\)</span> and <span class="process-math">\(F^{-1}\)</span> are inverses so that when you act by them, one does the effect of the other.</div>
 <div class="displaymath process-math">
 \begin{equation*}
 F^{-1}\left(  F(x) \right) = x.
 \end{equation*}
 </div>
-<div class="para">But unlike the case was with the uniform distribution, here we only know <span class="process-math">\(F(x)\)</span> in the integral form. However, you can find <span class="process-math">\(F^{-1}\)</span> of Gaussian distribution numerically. It is already programmed in stats packages. For instance, we can compute the percent point function (PPF), which is the numerical inverse CDF by scipy.stats.norm.ppf() function by passing the appropriate parameters.</div>
+<div class="para">But unlike the case was with the uniform distribution, here we only know <span class="process-math">\(F(x)\)</span> in the integral form. However, you can find <span class="process-math">\(F^{-1}\)</span> of Gaussian distribution numerically. It is already programmed in stats packages. For instance, we can compute the percent point function (PPF), which is the numerical inverse CDF by scipy.stats.norm.ppf() function by passing the appropriate value of probability as its argument.</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#subsubsec-Inverse-CDF-and-Sampling-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsubsec-Inverse-CDF-and-Sampling-3">The CDF function <span class="process-math">\(F(x)\)</span> is a mapping from <span class="process-math">\(\R\)</span> to <span class="process-math">\([0,1]\text{.}\)</span> The inverse <span class="process-math">\(F^{-1}\)</span> will map <span class="process-math">\([0,1]\)</span> to <span class="process-math">\(\R\text{.}\)</span> To sample randomly from Gaussian distribution means producing random values of <span class="process-math">\(x \in \R\text{.}\)</span> That means if we obtain random values <span class="process-math">\(u \in [0,1]\)</span> and feed that into <span class="process-math">\(F^{-1}\text{,}\)</span> the result will be random values of <span class="process-math">\(x\)</span> sampled according to the distribution of the <span class="process-math">\(F\text{,}\)</span> which is Gaussian in the present case. Obtaining random values <span class="process-math">\(u \in [0,1]\)</span> can be done by just sampling from the uniform distribution <span class="process-math">\(U(0,1)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsubsec-Inverse-CDF-and-Sampling-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsubsec-Inverse-CDF-and-Sampling-3">The CDF function <span class="process-math">\(F(x)\)</span> is a mapping from <span class="process-math">\(x\in \R\)</span> to <span class="process-math">\(p\in [0,1]\text{.}\)</span> The inverse <span class="process-math">\(F^{-1}\)</span> will map <span class="process-math">\(p\in [0,1]\)</span> to <span class="process-math">\(x\in \R\text{.}\)</span> To sample randomly from a Gaussian distribution means producing random values of <span class="process-math">\(x \in \R\)</span> that are distributed according to that Gaussian. That means if we obtain random values <span class="process-math">\(p \in [0,1]\)</span> and feed that into <span class="process-math">\(F^{-1}\text{,}\)</span> the result will be random values of <span class="process-math">\(x\)</span> sampled according to the distribution of the <span class="process-math">\(F\text{,}\)</span> which is the particular Gaussian in the present case.<div class="autopermalink" data-description="Paragraph"><a href="#subsubsec-Inverse-CDF-and-Sampling-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="subsubsec-Inverse-CDF-and-Sampling-4">
-<div class="para">Thus the steps of sampling from a distribution <span class="process-math">\(F\)</span> is:</div>
-<ul class="disc" id="subsubsec-Inverse-CDF-and-Sampling-4-2">
-<li id="subsubsec-Inverse-CDF-and-Sampling-4-2-1">
-<div class="para" id="subsubsec-Inverse-CDF-and-Sampling-4-2-1-1">Generate uniform random numbers <span class="process-math">\(u_1, u_2, \cdots, u_N\, \sim \, U(0,1)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsubsec-Inverse-CDF-and-Sampling-4-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">Obtaining random values <span class="process-math">\(p \in [0,1]\)</span> to feed into the ppf() function can be done by just sampling from the uniform distribution <span class="process-math">\(U(0,1)\)</span> or just obtained from properly normlaized Mersene Twister algorithm. Thus the steps of sampling from a distribution <span class="process-math">\(F\)</span> is:</div>
+<ul class="disc" id="subsubsec-Inverse-CDF-and-Sampling-4-4">
+<li id="subsubsec-Inverse-CDF-and-Sampling-4-4-1">
+<div class="para" id="subsubsec-Inverse-CDF-and-Sampling-4-4-1-1">Generate uniform random numbers <span class="process-math">\(p_1, p_2, \cdots, p_N\, \sim \, U(0,1)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsubsec-Inverse-CDF-and-Sampling-4-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item"><a href="#subsubsec-Inverse-CDF-and-Sampling-4-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+<div class="autopermalink" data-description="Item"><a href="#subsubsec-Inverse-CDF-and-Sampling-4-4-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
-<li id="subsubsec-Inverse-CDF-and-Sampling-4-2-2">
-<div class="para" id="subsubsec-Inverse-CDF-and-Sampling-4-2-2-1">Apply <span class="process-math">\(x_i = \mu + \sigma \times F^{-1}(u_i)\text{,}\)</span> if using inverse of standard normal. If using scipy.stats pacakge, the code for <span class="process-math">\(F^{-1}\)</span> will be scipy.stats.norm.ppf(<span class="process-math">\(u_i\text{,}\)</span> loc = <span class="process-math">\(0\text{,}\)</span> scale = <span class="process-math">\(1\)</span>). In scipy.stats, you can include the actual loc and scale in the argument itself as shown in the program listing below.<div class="autopermalink" data-description="Paragraph"><a href="#subsubsec-Inverse-CDF-and-Sampling-4-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<li id="subsubsec-Inverse-CDF-and-Sampling-4-4-2">
+<div class="para" id="subsubsec-Inverse-CDF-and-Sampling-4-4-2-1">Apply <span class="process-math">\(x_i = \mu + \sigma \times F^{-1}(p_i)\text{,}\)</span> if using inverse of standard normal. If using scipy.stats pacakge, the code for <span class="process-math">\(F^{-1}\)</span> will be:<div class="autopermalink" data-description="Paragraph"><a href="#subsubsec-Inverse-CDF-and-Sampling-4-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item"><a href="#subsubsec-Inverse-CDF-and-Sampling-4-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+<div class="para" id="subsubsec-Inverse-CDF-and-Sampling-4-4-2-2">scipy.stats.norm.ppf(<span class="process-math">\(p_i\text{,}\)</span> loc = <span class="process-math">\(0\text{,}\)</span> scale = <span class="process-math">\(1\)</span>).<div class="autopermalink" data-description="Paragraph"><a href="#subsubsec-Inverse-CDF-and-Sampling-4-4-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsubsec-Inverse-CDF-and-Sampling-4-4-2-3">In scipy.stats, you can include the actual loc and scale in the argument itself as shown in the program listing below.<div class="autopermalink" data-description="Paragraph"><a href="#subsubsec-Inverse-CDF-and-Sampling-4-4-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#subsubsec-Inverse-CDF-and-Sampling-4-4-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
-<li id="subsubsec-Inverse-CDF-and-Sampling-4-2-3">
-<div class="para" id="subsubsec-Inverse-CDF-and-Sampling-4-2-3-1">Use <span class="process-math">\(x_i\)</span> as your Gaussian samples.<div class="autopermalink" data-description="Paragraph"><a href="#subsubsec-Inverse-CDF-and-Sampling-4-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<li id="subsubsec-Inverse-CDF-and-Sampling-4-4-3">
+<div class="para" id="subsubsec-Inverse-CDF-and-Sampling-4-4-3-1">Use <span class="process-math">\(x_i\)</span> as your Gaussian samples.<div class="autopermalink" data-description="Paragraph"><a href="#subsubsec-Inverse-CDF-and-Sampling-4-4-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item"><a href="#subsubsec-Inverse-CDF-and-Sampling-4-2-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+<div class="autopermalink" data-description="Item"><a href="#subsubsec-Inverse-CDF-and-Sampling-4-4-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
 </ul>
-<div class="para">Let us look at an example of <em class="alert">drawing from a Gaussian distribution</em> and how the samples match up with the theoretical distribution. This is shown in <a href="sec-Continuous-Probability-Distributions.html#fig-gaussian-sampling" class="xref" data-knowl="./knowl/xref/fig-gaussian-sampling.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.8.3">Figure 1.8.3</a>.  It was produced by the code below. Clearly, the histogram based on the samples is very representative of the theoretical curve.</div>
+<div class="para">Let us look at an example of <em class="alert">drawing from a Gaussian distribution</em> and how the samples match up with the theoretical distribution. This is shown in <a href="sec-Continuous-Probability-Distributions.html#fig-gaussian-sampling" class="xref" data-knowl="./knowl/xref/fig-gaussian-sampling.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.8.4">Figure 1.8.4</a>.  It was produced by the code below. Clearly, the histogram based on the samples is very representative of the theoretical curve.</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#subsubsec-Inverse-CDF-and-Sampling-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="code-box"><pre class="program clipboardable"><code class="language-py">import numpy as np
+<div class="code-box"><pre class="program clipboardable line-numbers"><code class="language-py">import numpy as np
 import matplotlib.pyplot as plt
 from scipy.stats import norm
 
 # Parameters
-mu, sigma = 0, 1
+mu, sigma = 0, 1 # Gaussian if your choice
 n_samples = 1000
 
 # Step 1: uniform samples
@@ -596,8 +652,8 @@ plt.title("Sampling from Normal(0,1) using Inverse CDF")
 plt.legend()
 plt.show()
 </code></pre></div>
-<figure class="figure figure-like" id="fig-gaussian-sampling"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/gaussian-sampling.png" class="contained" alt="Samples from a Gaussian distribution \(\mathcal{N}(0,1)\) and the theoretical curve. The histogram is based on 1000 sample points."></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.8.3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Samples from a Gaussian distribution <span class="process-math">\(\mathcal{N}(0,1)\)</span> and the theoretical curve. The histogram is based on 1000 sample points.<div class="autopermalink" data-description="Figure 1.8.3"><a href="#fig-gaussian-sampling" title="Copy heading and permalink for Figure 1.8.3" aria-label="Copy heading and permalink for Figure 1.8.3">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Subsubsection 1.8.2.1: Inverse CDF and Sampling"><a href="#subsubsec-Inverse-CDF-and-Sampling" title="Copy heading and permalink for Subsubsection 1.8.2.1: Inverse CDF and Sampling" aria-label="Copy heading and permalink for Subsubsection 1.8.2.1: Inverse CDF and Sampling">🔗</a></div></section><div class="autopermalink" data-description="Subsection 1.8.2: Normal (Gaussian) Distribution"><a href="#subsec-Normal-Distribution" title="Copy heading and permalink for Subsection 1.8.2: Normal (Gaussian) Distribution" aria-label="Copy heading and permalink for Subsection 1.8.2: Normal (Gaussian) Distribution">🔗</a></div></section><section class="subsection" id="subsec-Exponential-Distribution"><h3 class="heading hide-type">
+<figure class="figure figure-like" id="fig-gaussian-sampling"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/gaussian-sampling.png" class="contained" alt="Samples from a Gaussian distribution N(0,1)  and the theoretical curve. The histogram is based on 1000 sample points."></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.8.4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Samples from a Gaussian distribution <span class="process-math">\(\mathcal{N}(0,1)\)</span> and the theoretical curve. The histogram is based on 1000 sample points.<div class="autopermalink" data-description="Figure 1.8.4"><a href="#fig-gaussian-sampling" title="Copy heading and permalink for Figure 1.8.4" aria-label="Copy heading and permalink for Figure 1.8.4">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Subsubsection 1.8.2.1: Inverse CDF and Sampling"><a href="#subsubsec-Inverse-CDF-and-Sampling" title="Copy heading and permalink for Subsubsection 1.8.2.1: Inverse CDF and Sampling" aria-label="Copy heading and permalink for Subsubsection 1.8.2.1: Inverse CDF and Sampling">🔗</a></div></section><div class="autopermalink" data-description="Subsection 1.8.2: Normal (Gaussian) Distribution"><a href="#subsec-Normal-Distribution" title="Copy heading and permalink for Subsection 1.8.2: Normal (Gaussian) Distribution" aria-label="Copy heading and permalink for Subsection 1.8.2: Normal (Gaussian) Distribution">🔗</a></div></section><section class="subsection" id="subsec-Exponential-Distribution"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.8.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exponential Distribution</span>
 </h3>
 <div class="para" id="subsec-Exponential-Distribution-2">Exponential distribution is commonly used to model the time between successive events in a Poisson process, where events occur independently and at a constant average rate. The distribution is defined for non-negative values (<span class="process-math">\(X \ge 0\)</span>) and is characterized by a single parameter, <span class="process-math">\(\lambda\)</span>(lambda), which is the rate parameter, as described in the section on the Poisson distribution.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Exponential-Distribution-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -606,7 +662,7 @@ plt.show()
 <div class="para">The PDF of Exponential distribution is given by</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-PDF-Exponential.html ./knowl/xref/fig-exponential-pdf-cdf.html" id="eqn-PDF-Exponential">
 \begin{equation}
-\rho(x) = \lambda\,e^{-\lambda\,x}.\tag{1.8.7}
+\rho(x) = \lambda\,e^{-\lambda\,x}.\tag{1.8.6}
 \end{equation}
 </div>
 <div class="para">As usual, it has the following probability interpretation.</div>
@@ -615,7 +671,7 @@ plt.show()
 P(x \le X \le x+dx) = \rho(x)\, dx = \lambda\,e^{-\lambda\,x}\,dx.
 \end{equation*}
 </div>
-<div class="para">You can verify that the PDF in Eq. <a href="sec-Continuous-Probability-Distributions.html#eqn-PDF-Exponential" class="xref" data-knowl="./knowl/xref/eqn-PDF-Exponential.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.8.7">(1.8.7)</a> is properly normalized to give probability over the entire range f values, i.e, <span class="process-math">\(0 \le X \lt \infty\)</span> is <span class="process-math">\(1\text{.}\)</span>
+<div class="para">You can verify that the PDF in Eq. <a href="sec-Continuous-Probability-Distributions.html#eqn-PDF-Exponential" class="xref" data-knowl="./knowl/xref/eqn-PDF-Exponential.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.8.6">(1.8.6)</a> is properly normalized to give probability over the entire range f values, i.e, <span class="process-math">\(0 \le X \lt \infty\)</span> is <span class="process-math">\(1\text{.}\)</span>
 </div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-PDF-Exponential.html ./knowl/xref/fig-exponential-pdf-cdf.html">
 \begin{equation*}
@@ -625,20 +681,20 @@ P(x \le X \le x+dx) = \rho(x)\, dx = \lambda\,e^{-\lambda\,x}\,dx.
 <div class="para">The Cumulative Distribution Function, (CDF), is the probability for <span class="process-math">\((0 \le X \le x\text{.}\)</span> Therefore,</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-PDF-Exponential.html ./knowl/xref/fig-exponential-pdf-cdf.html" id="eqn-CDF-Exponential-Distribution">
 \begin{equation}
-F(x) = \int_{0}^x\, \lambda\, e^{-\lambda\,x'}\, dx' =  1 - e^{-\lambda x}. \tag{1.8.8}
+F(x) = \int_{0}^x\, \lambda\, e^{-\lambda\,x'}\, dx' =  1 - e^{-\lambda x}. \tag{1.8.7}
 \end{equation}
 </div>
 <div class="para">
-<a href="sec-Continuous-Probability-Distributions.html#fig-exponential-pdf-cdf" class="xref" data-knowl="./knowl/xref/fig-exponential-pdf-cdf.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.8.4">Figure 1.8.4</a> shows the PDF and CDF of the exponential distribution for <span class="process-math">\(\lambda = 1\text{.}\)</span>
+<a href="sec-Continuous-Probability-Distributions.html#fig-exponential-pdf-cdf" class="xref" data-knowl="./knowl/xref/fig-exponential-pdf-cdf.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.8.5">Figure 1.8.5</a> shows the PDF and CDF of the exponential distribution for <span class="process-math">\(\lambda = 1\text{.}\)</span>
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec-Exponential-Distribution-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<figure class="figure figure-like" id="fig-exponential-pdf-cdf"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/exponential.png" class="contained" alt="PDF and CDF of Exponential distribution \(\mathcal{E}(1.0)\text{.}\) Note the exponential decaying property of the PDF and the corresponding rise of the CDF which goes from \(0\) to \(1\text{.}\)"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.8.4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>PDF and CDF of Exponential distribution <span class="process-math">\(\mathcal{E}(1.0)\text{.}\)</span> Note the exponential decaying property of the PDF and the corresponding rise of the CDF which goes from <span class="process-math">\(0\)</span> to <span class="process-math">\(1\text{.}\)</span><div class="autopermalink" data-description="Figure 1.8.4"><a href="#fig-exponential-pdf-cdf" title="Copy heading and permalink for Figure 1.8.4" aria-label="Copy heading and permalink for Figure 1.8.4">🔗</a></div></figcaption></figure><div class="para logical" id="subsec-Exponential-Distribution-5">
+<figure class="figure figure-like" id="fig-exponential-pdf-cdf"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/exponential.png" class="contained" alt="PDF and CDF of Exponential distribution E(1.0). Note the exponential decaying property of the PDF and the corresponding rise of the CDF which goes from 0 to 1."></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.8.5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>PDF and CDF of Exponential distribution <span class="process-math">\(\mathcal{E}(1.0)\text{.}\)</span> Note the exponential decaying property of the PDF and the corresponding rise of the CDF which goes from <span class="process-math">\(0\)</span> to <span class="process-math">\(1\text{.}\)</span><div class="autopermalink" data-description="Figure 1.8.5"><a href="#fig-exponential-pdf-cdf" title="Copy heading and permalink for Figure 1.8.5" aria-label="Copy heading and permalink for Figure 1.8.5">🔗</a></div></figcaption></figure><div class="para logical" id="subsec-Exponential-Distribution-5">
 <div class="para">The complement of the CDF, i.e., the probability that <span class="process-math">\(X \gt x\)</span> is called <em class="alert">survival function</em> (SF).</div>
 <div class="displaymath process-math" id="eqn-survival-function-Exponential">
 \begin{equation}
-\text{SF}(x) \equiv P(X \gt x) = 1 - F(x) = 1 - \left( 1 - e^{-\lambda x} \right)   =    e^{-\lambda x}.        \tag{1.8.9}
+\text{SF}(x) \equiv P(X \gt x) = 1 - F(x) = 1 - \left( 1 - e^{-\lambda x} \right)   =    e^{-\lambda x}.        \tag{1.8.8}
 \end{equation}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec-Exponential-Distribution-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -647,7 +703,7 @@ F(x) = \int_{0}^x\, \lambda\, e^{-\lambda\,x'}\, dx' =  1 - e^{-\lambda x}. \tag
 <div class="para">From the survival function, it is possible to prove and important property of exponential distribution: that it is <em class="alert">meomryless</em>, meaning that the probability of an event occurring in the next time interval does not depend on how much time has already elapsed. In formulas, this will be a condition on the conditional probability.</div>
 <div class="displaymath process-math" id="eqn-Memoryless-Exponential">
 \begin{equation}
-P(X \gt t + s | X \gt s) = P(X \gt t).\tag{1.8.10}
+P(X \gt t + s | X \gt s) = P(X \gt t).\tag{1.8.9}
 \end{equation}
 </div>
 <div class="para">That is, whether you wait upto <span class="process-math">\(X=s\)</span> and then look at the next <span class="process-math">\(t\)</span> units of time ot you don’t wait and look at the next <span class="process-math">\(t\)</span> interval of time, the two will give the same probability - same probability for <span class="process-math">\(t\)</span> intervals of time will be independent of the starting instant.</div>
@@ -655,7 +711,7 @@ P(X \gt t + s | X \gt s) = P(X \gt t).\tag{1.8.10}
 </div>
 <div class="para logical" id="subsec-Exponential-Distribution-7">
 <div class="para">
-<em class="alert">Proof of Memoryless Property</em>: Let’s write the left side of Eq. <a href="sec-Continuous-Probability-Distributions.html#eqn-Memoryless-Exponential" class="xref" data-knowl="./knowl/xref/eqn-Memoryless-Exponential.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.8.10">(1.8.10)</a> in terms of joint and prior, based on the definition of conditional probabilities given in an earlier section.</div>
+<em class="alert">Proof of Memoryless Property</em>: Let’s write the left side of Eq. <a href="sec-Continuous-Probability-Distributions.html#eqn-Memoryless-Exponential" class="xref" data-knowl="./knowl/xref/eqn-Memoryless-Exponential.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.8.9">(1.8.9)</a> in terms of joint and prior, based on the definition of conditional probabilities given in an earlier section.</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-Memoryless-Exponential.html ./knowl/xref/eqn-survival-function-Exponential.html">
 \begin{equation*}
 P(X \gt t + s | X \gt s) = \frac{P( (X \gt t + s) \text{ AND } (X \gt s) )}{ P(X \gt s) }.
@@ -674,7 +730,7 @@ P( (X \gt t + s) \text{ AND } (X \gt s) ) = P(X \gt t + s).
 P(X \gt t + s | X \gt s) = \frac{P(X \gt t + s) }{ P(X \gt s) }.
 \end{equation*}
 </div>
-<div class="para">Now, we use the survival function given in Eq. <a href="sec-Continuous-Probability-Distributions.html#eqn-survival-function-Exponential" class="xref" data-knowl="./knowl/xref/eqn-survival-function-Exponential.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.8.9">(1.8.9)</a> to write the right hand side quantities and then simplify.</div>
+<div class="para">Now, we use the survival function given in Eq. <a href="sec-Continuous-Probability-Distributions.html#eqn-survival-function-Exponential" class="xref" data-knowl="./knowl/xref/eqn-survival-function-Exponential.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.8.8">(1.8.8)</a> to write the right hand side quantities and then simplify.</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-Memoryless-Exponential.html ./knowl/xref/eqn-survival-function-Exponential.html">
 \begin{equation*}
 P(X \gt t + s | X \gt s) = \frac{\exp(-\lambda(t + s))}{\exp(-\lambda s)} = e^{-\lambda t} = P(X \gt t).\quad \blacksquare
@@ -687,20 +743,20 @@ P(X \gt t + s | X \gt s) = \frac{\exp(-\lambda(t + s))}{\exp(-\lambda s)} = e^{-
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
-\text{Mean}(X) \equiv \langle X \rangle = \int_0^\infty\, x\,\lambda\,e^{-\lambda x}\,dx = \frac{1}{\lambda}.
+\text{Mean}(X) \equiv \mathbb{E} X  = \int_0^\infty\, x\,\lambda\,e^{-\lambda x}\,dx = \frac{1}{\lambda}.
 \end{equation*}
 </div>
 <div class="para">The variance will be</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\text{Var}(X) = \langle X^2 \rangle - \langle X \rangle^2 = \frac{1}{\lambda^2},
+\textrm{Var}(X) = \mathbb{E} X^2  - \mathbb{E} X ^2 = \frac{1}{\lambda^2},
 \end{equation*}
 </div>
 <div class="para">from which we get the standard deviation <span class="process-math">\(\sigma\text{.}\)</span>
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
-\sigma = \sqrt{ \text{Var}(X) } = \frac{1}{\lambda}.
+\sigma = \sqrt{ \textrm{Var}(X) } = \frac{1}{\lambda}.
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec-Exponential-Distribution-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
