@@ -282,7 +282,7 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 <div class="displaymath process-math" id="eqn-chi-square-variable-defn">
 \begin{equation}
-X = Z_1^2 + Z_2^2 +\cdots + Z_n^2 \equiv \sum{i=1}^n Z_i^2,\tag{1.10.1}
+X = Z_1^2 + Z_2^2 +\cdots + Z_n^2 \equiv \sum_{i=1}^n Z_i^2,\tag{1.10.1}
 \end{equation}
 </div>
 <div class="para">where the PDF’s of all the <span class="process-math">\(Z_i\)</span> variables are identical</div>
@@ -303,10 +303,81 @@ X = Z_1^2 + Z_2^2 +\cdots + Z_n^2 \equiv \sum{i=1}^n Z_i^2,\tag{1.10.1}
 X \sim \chi^2_n(x)\text{ or } \chi^2(x; n).\tag{1.10.3}
 \end{equation}
 </div>
-<div class="para">Here <span class="process-math">\(n\)</span> is said to be the degree of freedom of the <span class="process-math">\(\chi^2\)</span> distribution.</div>
+<div class="para">Here <span class="process-math">\(n\)</span> is said to be the degree of freedom of the <span class="process-math">\(\chi^2\)</span> distribution. We now derive this result from first principles.</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec-Chi-Sqaure-Distribition-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Subsection 1.10.1: Chi Sqaure Distribition"><a href="#subsec-Chi-Sqaure-Distribition" title="Copy heading and permalink for Subsection 1.10.1: Chi Sqaure Distribition" aria-label="Copy heading and permalink for Subsection 1.10.1: Chi Sqaure Distribition">🔗</a></div></section><section class="subsection" id="subsec-t-ditribution"><h3 class="heading hide-type">
+<article class="proof" id="subsec-Chi-Sqaure-Distribition-4"><h4 class="heading"><span class="title">Derivation.</span></h4>
+<div class="para" id="subsec-Chi-Sqaure-Distribition-4-2">First, notice that the <span class="process-math">\(n\)</span> variables can be thought as Cartesian axes in an <span class="process-math">\(n\)</span>-dimensional real space <span class="process-math">\(\mathbb{R}^n\text{.}\)</span> With this perspective, <span class="process-math">\(X\)</span> is just the square of the spherical radial coordinate in that space. We will exploit this view point below fully.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Chi-Sqaure-Distribition-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Chi-Sqaure-Distribition-4-3">
+<div class="para">The probability of an event for which the value of <span class="process-math">\(X\)</span> variable is between <span class="process-math">\(x\)</span> and <span class="process-math">\(x+dx\)</span> will be</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-chi-square-variable-defn.html ./knowl/xref/eqn-chi-sq-prob-from-z-set-up.html" id="eqn-chi-sq-prob-in-shell">
+\begin{equation}
+P( x \le X \le x + dx ) = \rho_X(x)\, dx.\tag{1.10.4}
+\end{equation}
+</div>
+<div class="para">We can find the probability of this event from the joint probability of all the <span class="process-math">\(Z_i\text{'s}\)</span> also as long as we restricted the <span class="process-math">\(Z_i\)</span> values to satisfy Eq. <a href="sec-t-and-chi-square.html#eqn-chi-square-variable-defn" class="xref" data-knowl="./knowl/xref/eqn-chi-square-variable-defn.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.10.1">(1.10.1)</a>.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-chi-square-variable-defn.html ./knowl/xref/eqn-chi-sq-prob-from-z-set-up.html" id="eqn-chi-sq-prob-from-z-set-up">
+\begin{equation}
+P( x \le X \le x + dx ) = \left[\rho(z_1, z_2, \cdots, z_n)\, dz_1dz_2...dz_n \right]_{x = \sum_i z_i^2}.\tag{1.10.5}
+\end{equation}
+</div>
+<div class="para">Now, since the <span class="process-math">\(Z_i\text{'s}\)</span>  are independent variables, joint probability factorizes.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-chi-square-variable-defn.html ./knowl/xref/eqn-chi-sq-prob-from-z-set-up.html">
+\begin{equation*}
+\rho(z_1, z_2, \cdots, z_n) = \rho(z_1)\rho(z_2)...\rho(z_n),
+\end{equation*}
+</div>
+<div class="para">where the PDF’s are just standard normal PDF for each. For instance,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-chi-square-variable-defn.html ./knowl/xref/eqn-chi-sq-prob-from-z-set-up.html">
+\begin{equation*}
+\rho(z_1) = \frac{1}{\sqrt{2\pi}}\,e^{-z_1^2/2}.
+\end{equation*}
+</div>
+<div class="para">Therefore</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-chi-square-variable-defn.html ./knowl/xref/eqn-chi-sq-prob-from-z-set-up.html">
+\begin{equation*}
+\rho(z_1, z_2, \cdots, z_n) = \frac{}{(2\pi)^{n/2}}\,\exp\left( -\frac{z_1^2 + z_2^2 + \cdots + z_n^2}{2} \right) = \frac{1}{(2\pi)^{n/2}}\,e^{-x/2}.
+\end{equation*}
+</div>
+<div class="para">Putting this back in Eq. <a href="sec-t-and-chi-square.html#eqn-chi-sq-prob-from-z-set-up" class="xref" data-knowl="./knowl/xref/eqn-chi-sq-prob-from-z-set-up.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.10.5">(1.10.5)</a> gives</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-chi-square-variable-defn.html ./knowl/xref/eqn-chi-sq-prob-from-z-set-up.html" id="eqn-chi-sq-prob-from-z-set-up-2">
+\begin{equation}
+P( x \le X \le x + dx ) = \frac{1}{(2\pi)^{n/2}}\,e^{-x/2}\ \left[dz_1dz_2...dz_n \right]_{x = \sum_i z_i^2}.\tag{1.10.6}
+\end{equation}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Chi-Sqaure-Distribition-4-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;grid-template-columns:50% 50%;column-gap:0%;">
+<div class="sbspanel sbspanel--top top" style=""><div class="para logical" id="subsec-Chi-Sqaure-Distribition-4-4-1">
+<div class="para">The quantity in the square bracket restricted to the spherical shell is just the volume of this <span class="process-math">\(n\)</span>-dimensional spherical shell of radius <span class="process-math">\(r = \sqrt{x}\)</span> and theickness <span class="process-math">\(dr = d\sqrt{x}\)</span> since <span class="process-math">\(x\)</span> is the square of the radius as shown in the figure to the right.</div>
+<div class="displaymath process-math" id="subsec-Chi-Sqaure-Distribition-4-4-1-5">
+\begin{align*}
+dV \amp= \frac{2 \pi^{n/2}\,r^{n-1} }{\Gamma(n/2)} dr \\
+\amp =  \frac{2 \pi^{n/2}\,x^{(n-1)/2} }{\Gamma(n/2)} \frac{dx}{2\sqrt{x}}, 
+\end{align*}
+</div>
+<div class="para">where <span class="process-math">\(\Gamma(.)\)</span> is the Gamma/factorial function.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Chi-Sqaure-Distribition-4-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div>
+<div class="sbspanel sbspanel--top top" style=""><img src="external/./images/essential-probability-and-statistics/chi-distribution-derivation.png" class="contained" alt="The spherical shell in the Z-space."></div>
+</div></div>
+<div class="para logical" id="subsec-Chi-Sqaure-Distribition-4-5">
+<div class="para">Substituting the volume of the shell in Eq. <a href="sec-t-and-chi-square.html#eqn-chi-sq-prob-from-z-set-up-2" class="xref" data-knowl="./knowl/xref/eqn-chi-sq-prob-from-z-set-up-2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.10.6">(1.10.6)</a> we get</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-chi-sq-prob-from-z-set-up-2.html ./knowl/xref/eqn-chi-sq-prob-in-shell.html">
+\begin{equation*}
+P( x \le X \le x + dx ) = \frac{1}{2^{n/2}\Gamma(n/2)}\,x^{\frac{n}{2}-1}\,e^{-x/2}\, dx.
+\end{equation*}
+</div>
+<div class="para">Comparing this with what we expected in <a href="sec-t-and-chi-square.html#eqn-chi-sq-prob-in-shell" class="xref" data-knowl="./knowl/xref/eqn-chi-sq-prob-in-shell.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.10.4">(1.10.4)</a>, we find the PDF of the <span class="process-math">\(\chi^2\)</span> variable <span class="process-math">\(X\)</span> to be</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-chi-sq-prob-from-z-set-up-2.html ./knowl/xref/eqn-chi-sq-prob-in-shell.html" id="eqn-chisquare-PDF-derived">
+\begin{equation}
+\rho_X(x; n) = \frac{1}{2^{n/2}\Gamma(n/2)}\,x^{\frac{n}{2}-1}\,e^{-x/2}.\tag{1.10.7}
+\end{equation}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Chi-Sqaure-Distribition-4-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1.10.1.1: Derivation"><a href="#subsec-Chi-Sqaure-Distribition-4" title="Copy heading and permalink for Proof 1.10.1.1: Derivation" aria-label="Copy heading and permalink for Proof 1.10.1.1: Derivation">🔗</a></div></article><div class="autopermalink" data-description="Subsection 1.10.1: Chi Sqaure Distribition"><a href="#subsec-Chi-Sqaure-Distribition" title="Copy heading and permalink for Subsection 1.10.1: Chi Sqaure Distribition" aria-label="Copy heading and permalink for Subsection 1.10.1: Chi Sqaure Distribition">🔗</a></div></section><section class="subsection" id="subsec-t-ditribution"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.10.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">t-ditribution</span>
 </h3>
 <div class="para" id="subsec-t-ditribution-2"><div class="autopermalink" data-description="Paragraph"><a href="#subsec-t-ditribution-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
