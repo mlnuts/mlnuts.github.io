@@ -879,8 +879,8 @@ var ptx_lunr_docs = [
   "url": "sec-t-and-chi-square.html",
   "type": "Section",
   "number": "1.10",
-  "title": "t and Chi Square Distributions",
-  "body": " t and Chi Square Distributions       t-ditribution      Chi Sqaure Distribition     "
+  "title": "Chi Square and Student t Distributions",
+  "body": " Chi Square and Student t Distributions   Chi square ( ) and Student distibutions are essential for statistical inference, i.e., interpreting and making sense of the data. Previously we have talked about Confidence Interval based on Central Limit Theorem where we need to deal with the data-provided estimates of the mean and the standard deviation. Chi square and t distributions augment that work and show us how to implement the inference more soundly.    Chi Sqaure Distribition  Suppose we have identical amd independent standard normal random variables. Chi square tells us about the probability distribution of the sum of the squares of these variables.  To write the PDF of the sum of the squares variable, let us introduce this variable as and the independent standard normal variables as . where the PDF's of all the variables are identical Then, by appropriately changing variables, we can show that the PDF of is given by We state this result more compactly as Here is said to be the degree of freedom of the distribution.    t-ditribution     "
 },
 {
   "id": "sec-Inferential-Statistics",

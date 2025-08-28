@@ -14,7 +14,7 @@
 <!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>t and Chi Square Distributions</title>
+<title>Chi Square and Student t Distributions</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
@@ -251,10 +251,10 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 <li class="toc-item toc-section contains-active">
-<div class="toc-title-box"><a href="sec-t-and-chi-square.html" class="internal"><span class="codenumber">1.10</span> <span class="title">t and Chi Square Distributions</span></a></div>
+<div class="toc-title-box"><a href="sec-t-and-chi-square.html" class="internal"><span class="codenumber">1.10</span> <span class="title">Chi Square and Student t Distributions</span></a></div>
 <ul class="structural toc-item-list active">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-t-and-chi-square.html#subsec-t-ditribution" class="internal"><span class="codenumber">1.10.1</span> <span class="title">t-ditribution</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-t-and-chi-square.html#subsec-Chi-Sqaure-Distribition" class="internal"><span class="codenumber">1.10.2</span> <span class="title">Chi Sqaure Distribition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-t-and-chi-square.html#subsec-Chi-Sqaure-Distribition" class="internal"><span class="codenumber">1.10.1</span> <span class="title">Chi Sqaure Distribition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-t-and-chi-square.html#subsec-t-ditribution" class="internal"><span class="codenumber">1.10.2</span> <span class="title">t-ditribution</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -269,17 +269,48 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-t-and-chi-square"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.10</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">t and Chi Square Distributions</span>
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.10</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Chi Square and Student t Distributions</span>
 </h2>
-<section class="introduction" id="sec-t-and-chi-square-2"><div class="para" id="sec-t-and-chi-square-2-1"><div class="autopermalink" data-description="Paragraph"><a href="#sec-t-and-chi-square-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div></section><section class="subsection" id="subsec-t-ditribution"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.10.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">t-ditribution</span>
+<section class="introduction" id="sec-t-and-chi-square-2"><div class="para" id="sec-t-and-chi-square-2-1">Chi square (<span class="process-math">\(\chi^2\)</span>) and Student <span class="process-math">\(t\)</span> distibutions are essential for statistical inference, i.e., interpreting and making sense of the data. Previously we have talked about Confidence Interval based on Central Limit Theorem where we need to deal with the data-provided estimates of the mean and the standard deviation. Chi square and t distributions augment that work and show us how to implement the inference more soundly.<div class="autopermalink" data-description="Paragraph"><a href="#sec-t-and-chi-square-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section><section class="subsection" id="subsec-Chi-Sqaure-Distribition"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.10.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Chi Sqaure Distribition</span>
+</h3>
+<div class="para" id="subsec-Chi-Sqaure-Distribition-2">Suppose we have <span class="process-math">\(n\)</span> identical amd independent standard normal random variables. Chi square tells us about the probability distribution of the sum of the squares of these <span class="process-math">\(n\)</span> variables.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Chi-Sqaure-Distribition-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Chi-Sqaure-Distribition-3">
+<div class="para">To write the PDF of the sum of the squares variable, let us introduce this variable as <span class="process-math">\(X\)</span> and the independent standard normal variables as <span class="process-math">\(Z_1, Z_2, \cdots, Z_n\text{.}\)</span>
+</div>
+<div class="displaymath process-math" id="eqn-chi-square-variable-defn">
+\begin{equation}
+X = Z_1^2 + Z_2^2 +\cdots + Z_n^2 \equiv \sum{i=1}^n Z_i^2,\tag{1.10.1}
+\end{equation}
+</div>
+<div class="para">where the PDF’s of all the <span class="process-math">\(Z_i\)</span> variables are identical</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\rho_{Z_i}(z_i) = \frac{1}{\sqrt{2\pi}}\, e^{-z_i^2/2},\quad (-\infty\lt z_i \lt \infty)
+\end{equation*}
+</div>
+<div class="para">Then, by appropriately changing variables, we can show that the PDF of <span class="process-math">\(X\)</span> is given by</div>
+<div class="displaymath process-math" id="eqn-chi-square-PDF">
+\begin{equation}
+\rho_X(x) = \frac{1}{2^{n/2}\;\Gamma(n/2) }\, x^{n/2-1}\,e^{-x/2},\quad (0\lt x \lt \infty,\ n \gt 0).\tag{1.10.2}
+\end{equation}
+</div>
+<div class="para">We state this result more compactly as</div>
+<div class="displaymath process-math" id="eqn-chi-square-simple-notation">
+\begin{equation}
+X \sim \chi^2_n(x)\text{ or } \chi^2(x; n).\tag{1.10.3}
+\end{equation}
+</div>
+<div class="para">Here <span class="process-math">\(n\)</span> is said to be the degree of freedom of the <span class="process-math">\(\chi^2\)</span> distribution.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Chi-Sqaure-Distribition-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 1.10.1: Chi Sqaure Distribition"><a href="#subsec-Chi-Sqaure-Distribition" title="Copy heading and permalink for Subsection 1.10.1: Chi Sqaure Distribition" aria-label="Copy heading and permalink for Subsection 1.10.1: Chi Sqaure Distribition">🔗</a></div></section><section class="subsection" id="subsec-t-ditribution"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.10.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">t-ditribution</span>
 </h3>
 <div class="para" id="subsec-t-ditribution-2"><div class="autopermalink" data-description="Paragraph"><a href="#subsec-t-ditribution-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
-<div class="autopermalink" data-description="Subsection 1.10.1: t-ditribution"><a href="#subsec-t-ditribution" title="Copy heading and permalink for Subsection 1.10.1: t-ditribution" aria-label="Copy heading and permalink for Subsection 1.10.1: t-ditribution">🔗</a></div></section><section class="subsection" id="subsec-Chi-Sqaure-Distribition"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.10.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Chi Sqaure Distribition</span>
-</h3>
-<div class="para" id="subsec-Chi-Sqaure-Distribition-2"><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Chi-Sqaure-Distribition-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
-<div class="autopermalink" data-description="Subsection 1.10.2: Chi Sqaure Distribition"><a href="#subsec-Chi-Sqaure-Distribition" title="Copy heading and permalink for Subsection 1.10.2: Chi Sqaure Distribition" aria-label="Copy heading and permalink for Subsection 1.10.2: Chi Sqaure Distribition">🔗</a></div></section><div class="autopermalink" data-description="Section 1.10: t and Chi Square Distributions"><a href="#sec-t-and-chi-square" title="Copy heading and permalink for Section 1.10: t and Chi Square Distributions" aria-label="Copy heading and permalink for Section 1.10: t and Chi Square Distributions">🔗</a></div></section></div>
+<div class="autopermalink" data-description="Subsection 1.10.2: t-ditribution"><a href="#subsec-t-ditribution" title="Copy heading and permalink for Subsection 1.10.2: t-ditribution" aria-label="Copy heading and permalink for Subsection 1.10.2: t-ditribution">🔗</a></div></section><div class="autopermalink" data-description="Section 1.10: Chi Square and Student t Distributions"><a href="#sec-t-and-chi-square" title="Copy heading and permalink for Section 1.10: Chi Square and Student t Distributions" aria-label="Copy heading and permalink for Section 1.10: Chi Square and Student t Distributions">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sec-LLN-and-CLT.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-Inferential-Statistics.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
