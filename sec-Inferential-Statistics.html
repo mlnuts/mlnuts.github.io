@@ -130,7 +130,7 @@ eBookConfig.enable_chatcodes =  false;
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-LLN-and-CLT.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-Essential-Probability-and-Statistics.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-t-and-chi-square.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-Essential-Probability-and-Statistics.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
@@ -237,6 +237,7 @@ eBookConfig.enable_chatcodes =  false;
 <ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Continuous-Probability-Distributions.html#subsubsec-Inverse-CDF-and-Sampling" class="internal"><span class="codenumber">1.8.2.1</span> <span class="title">Inverse CDF of Gaussian and Sampling</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Continuous-Probability-Distributions.html#subsec-Exponential-Distribution" class="internal"><span class="codenumber">1.8.3</span> <span class="title">Exponential Distribution</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Continuous-Probability-Distributions.html#subsec-Gamma-Distribution" class="internal"><span class="codenumber">1.8.4</span> <span class="title">Gamma Distribution</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -249,18 +250,102 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LLN-and-CLT.html#subsec-Why-Large-n-Matters" class="internal"><span class="codenumber">1.9.5</span> <span class="title">Why LLN and CLT Matter?</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-Inferential-Statistics.html" class="internal"><span class="codenumber">1.10</span> <span class="title">Inferential Statistics</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-t-and-chi-square.html" class="internal"><span class="codenumber">1.10</span> <span class="title">t and Chi Square Distributions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-t-and-chi-square.html#subsec-t-ditribution" class="internal"><span class="codenumber">1.10.1</span> <span class="title">t-ditribution</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-t-and-chi-square.html#subsec-Chi-Sqaure-Distribition" class="internal"><span class="codenumber">1.10.2</span> <span class="title">Chi Sqaure Distribition</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="sec-Inferential-Statistics.html" class="internal"><span class="codenumber">1.11</span> <span class="title">Inferential Statistics</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Inferential-Statistics.html#subsec-Point-Estimation" class="internal"><span class="codenumber">1.11.1</span> <span class="title">Point Estimation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Inferential-Statistics.html#subsec-Confidence-Intervals" class="internal"><span class="codenumber">1.11.2</span> <span class="title">Confidence Intervals</span></a></div></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-Inferential-Statistics"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.10</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Inferential Statistics</span>
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.11</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Inferential Statistics</span>
 </h2>
-<div class="para" id="sec-Inferential-Statistics-2"><div class="autopermalink" data-description="Paragraph"><a href="#sec-Inferential-Statistics-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
-<div class="autopermalink" data-description="Section 1.10: Inferential Statistics"><a href="#sec-Inferential-Statistics" title="Copy heading and permalink for Section 1.10: Inferential Statistics" aria-label="Copy heading and permalink for Section 1.10: Inferential Statistics">🔗</a></div></section></div>
+<section class="introduction" id="sec-Inferential-Statistics-2"><div class="para" id="sec-Inferential-Statistics-2-1">Inferential statistics is the branch of statistics that enables us to draw conclusions about a population based on data from a sample. Unlike descriptive statistics, which summarize observed data, inferential statistics use probability theory to make generalizations about the population from which the sample is drawn.<div class="autopermalink" data-description="Paragraph"><a href="#sec-Inferential-Statistics-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-Inferential-Statistics-2-2">
+<div class="para">The core concepts of inferential statistics include:</div>
+<ul class="disc" id="sec-Inferential-Statistics-2-2-1">
+<li id="sec-Inferential-Statistics-2-2-1-1">
+<div class="para" id="sec-Inferential-Statistics-2-2-1-1-1">
+<dfn class="terminology">Population</dfn>: The entire group of interest.<div class="autopermalink" data-description="Paragraph"><a href="#sec-Inferential-Statistics-2-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-Inferential-Statistics-2-2-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-Inferential-Statistics-2-2-1-2">
+<div class="para" id="sec-Inferential-Statistics-2-2-1-2-1">
+<dfn class="terminology">Sample</dfn>: A subset of the population that is observed.<div class="autopermalink" data-description="Paragraph"><a href="#sec-Inferential-Statistics-2-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-Inferential-Statistics-2-2-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-Inferential-Statistics-2-2-1-3">
+<div class="para" id="sec-Inferential-Statistics-2-2-1-3-1">
+<dfn class="terminology">Parameter</dfn>: A numerical characteristic of the population (e.g., population mean <span class="process-math">\(\mu\text{,}\)</span> variance <span class="process-math">\(\sigma^2\)</span>).<div class="autopermalink" data-description="Paragraph"><a href="#sec-Inferential-Statistics-2-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-Inferential-Statistics-2-2-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-Inferential-Statistics-2-2-1-4">
+<div class="para" id="sec-Inferential-Statistics-2-2-1-4-1">
+<dfn class="terminology">Statistic</dfn>: A statistic is a random variable such as sample mean, whose numerical value can be calculated from a sample of the population. The average and standard deviation of the statistic are used to draw conclusions about the population.<div class="autopermalink" data-description="Paragraph"><a href="#sec-Inferential-Statistics-2-2-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-Inferential-Statistics-2-2-1-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-Inferential-Statistics-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-Inferential-Statistics-2-3">So, you will have to pay attention to the same name used in two context, e.g., population (“true”) mean <span class="process-math">\(\mu\text{,}\)</span> which would be a single number, usually unknown or even unkowable, versus sample mean, <span class="process-math">\(\overline{X_N}\text{,}\)</span> which is an average over <span class="process-math">\(N\)</span> data points of the sample and varies from sample to sample. If outcome of each trial is either <span class="process-math">\(0\)</span> or <span class="process-math">\(1\text{,}\)</span> then the sample mean would be equal to the proportion <span class="process-math">\(\overline{P_N}\)</span> of <span class="process-math">\(1\)</span>’s in the sample. The proportion of <span class="process-math">\(1\)</span>’s is the “frequentsts’” probability <span class="process-math">\(p\)</span> of finding <span class="process-math">\(1\)</span> in any trial. Whether we estimate <span class="process-math">\(\overline{X_N}\)</span> or <span class="process-math">\(\overline{P_N}\text{,}\)</span> the analytic procedure is same.<div class="autopermalink" data-description="Paragraph"><a href="#sec-Inferential-Statistics-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section><section class="subsection" id="subsec-Point-Estimation"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.11.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Point Estimation</span>
+</h3>
+<div class="para" id="subsec-Point-Estimation-2">
+<dfn class="terminology">Point estimation</dfn> involves using a sample statistic to estimate a population parameter. For example, the sample mean <span class="process-math">\(\overline{X_N}\)</span> is used to estimate the population mean <span class="process-math">\(\mu\text{,}\)</span> and the sample proportion <span class="process-math">\(\overline{P_N}\)</span> estimates the population proportion <span class="process-math">\(p\text{.}\)</span> A good point estimator should be unbiased (its expected value equals the true parameter) and have low variance (it is precise).<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Point-Estimation-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Point-Estimation-3">For instance, if we measure the heights of 50 randomly selected adults and find a sample mean of <span class="process-math">\(\overline{X_{50}} = 170 \, \text{cm}\text{,}\)</span> we use <span class="process-math">\(170 \, \text{cm}\)</span> as a point estimate for the population mean height <span class="process-math">\(\mu\text{.}\)</span> However, <em class="emphasis">point estimates do not convey uncertainty,</em> which is why confidence intervals are often used to provide a range of plausible values, which we turn next.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Point-Estimation-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 1.11.1: Point Estimation"><a href="#subsec-Point-Estimation" title="Copy heading and permalink for Subsection 1.11.1: Point Estimation" aria-label="Copy heading and permalink for Subsection 1.11.1: Point Estimation">🔗</a></div></section><section class="subsection" id="subsec-Confidence-Intervals"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.11.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Confidence Intervals</span>
+</h3>
+<div class="para logical" id="subsec-Confidence-Intervals-2">
+<div class="para">Suppose we want to estimate the mean height <span class="process-math">\(h\)</span> of all adult men. Clearly, we would not have the time or resources to measure heights of all men and then find their mean. Instead, we may randomly select <span class="process-math">\(1000\)</span> men and measure their heights. From this sample we can compute the value of the sample mean of the data we collected.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\overline{h_{N}} = \frac{h_1 + h_2 + ...+ h_{1000}}{1000}.
+\end{equation*}
+</div>
+<div class="para">This is not telling us if our answer is anywhere close to the true <span class="process-math">\(h\text{.}\)</span> The theory based on the Central Limit Theorem can be used to provide probability that if <span class="process-math">\(N\)</span> is large enough, we can be certain to a point that the true <span class="process-math">\(h\)</span> will be within a confidence interval around the sample mean.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\text{Confidence Interval: } h_\text{lower} \lt \overline{h_{N}} \lt h_\text{upper},
+\end{equation*}
+</div>
+<div class="para">where the lower and upper values of th confidence interval are computed from the data in the sample. The larger the <span class="process-math">\(N\text{,}\)</span> the tighter will be the interval. Another way of writing this is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\overline{h_{N}} \pm \text{margin of error},
+\end{equation*}
+</div>
+<div class="para">with</div>
+<div class="displaymath process-math" id="subsec-Confidence-Intervals-2-10">
+\begin{align*}
+h_\text{lower} \amp = \overline{h_{N}} - \text{margin of error}, \\
+h_\text{upper} \amp = \overline{h_{N}} + \text{margin of error} 
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Confidence-Intervals-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 1.11.2: Confidence Intervals"><a href="#subsec-Confidence-Intervals" title="Copy heading and permalink for Subsection 1.11.2: Confidence Intervals" aria-label="Copy heading and permalink for Subsection 1.11.2: Confidence Intervals">🔗</a></div></section><div class="autopermalink" data-description="Section 1.11: Inferential Statistics"><a href="#sec-Inferential-Statistics" title="Copy heading and permalink for Section 1.11: Inferential Statistics" aria-label="Copy heading and permalink for Section 1.11: Inferential Statistics">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
-<a class="previous-button button" href="sec-LLN-and-CLT.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec-t-and-chi-square.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

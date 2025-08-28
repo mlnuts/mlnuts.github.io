@@ -237,6 +237,7 @@ eBookConfig.enable_chatcodes =  false;
 <ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Continuous-Probability-Distributions.html#subsubsec-Inverse-CDF-and-Sampling" class="internal"><span class="codenumber">1.8.2.1</span> <span class="title">Inverse CDF of Gaussian and Sampling</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Continuous-Probability-Distributions.html#subsec-Exponential-Distribution" class="internal"><span class="codenumber">1.8.3</span> <span class="title">Exponential Distribution</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Continuous-Probability-Distributions.html#subsec-Gamma-Distribution" class="internal"><span class="codenumber">1.8.4</span> <span class="title">Gamma Distribution</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -249,7 +250,20 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LLN-and-CLT.html#subsec-Why-Large-n-Matters" class="internal"><span class="codenumber">1.9.5</span> <span class="title">Why LLN and CLT Matter?</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-Inferential-Statistics.html" class="internal"><span class="codenumber">1.10</span> <span class="title">Inferential Statistics</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-t-and-chi-square.html" class="internal"><span class="codenumber">1.10</span> <span class="title">t and Chi Square Distributions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-t-and-chi-square.html#subsec-t-ditribution" class="internal"><span class="codenumber">1.10.1</span> <span class="title">t-ditribution</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-t-and-chi-square.html#subsec-Chi-Sqaure-Distribition" class="internal"><span class="codenumber">1.10.2</span> <span class="title">Chi Sqaure Distribition</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Inferential-Statistics.html" class="internal"><span class="codenumber">1.11</span> <span class="title">Inferential Statistics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Inferential-Statistics.html#subsec-Point-Estimation" class="internal"><span class="codenumber">1.11.1</span> <span class="title">Point Estimation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Inferential-Statistics.html#subsec-Confidence-Intervals" class="internal"><span class="codenumber">1.11.2</span> <span class="title">Confidence Intervals</span></a></div></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
@@ -647,10 +661,8 @@ plt.show()
 <figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.8.4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Samples from a Gaussian distribution <span class="process-math">\(\mathcal{N}(0,1)\)</span> and the theoretical curve. The histogram is based on 1000 sample points.<div class="autopermalink" data-description="Figure 1.8.4"><a href="#fig-gaussian-sampling" title="Copy heading and permalink for Figure 1.8.4" aria-label="Copy heading and permalink for Figure 1.8.4">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Subsubsection 1.8.2.1: Inverse CDF of Gaussian and Sampling"><a href="#subsubsec-Inverse-CDF-and-Sampling" title="Copy heading and permalink for Subsubsection 1.8.2.1: Inverse CDF of Gaussian and Sampling" aria-label="Copy heading and permalink for Subsubsection 1.8.2.1: Inverse CDF of Gaussian and Sampling">🔗</a></div></section><div class="autopermalink" data-description="Subsection 1.8.2: Normal (Gaussian) Distribution"><a href="#subsec-Normal-Distribution" title="Copy heading and permalink for Subsection 1.8.2: Normal (Gaussian) Distribution" aria-label="Copy heading and permalink for Subsection 1.8.2: Normal (Gaussian) Distribution">🔗</a></div></section><section class="subsection" id="subsec-Exponential-Distribution"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.8.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exponential Distribution</span>
 </h3>
-<div class="para" id="subsec-Exponential-Distribution-2">Exponential distribution is commonly used to model the time between successive events in a Poisson process, where events occur independently and at a constant average rate. The distribution is defined for non-negative values (<span class="process-math">\(X \ge 0\)</span>) and is characterized by a single parameter, <span class="process-math">\(\lambda\)</span> (lambda), which is the rate parameter, as described in the section on the Poisson distribution.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Exponential-Distribution-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="subsec-Exponential-Distribution-3">
-<div class="para">The PDF of Exponential distribution is given by</div>
+<div class="para logical" id="subsec-Exponential-Distribution-2">
+<div class="para">Exponential distribution is commonly used to model the time till first success in a Possion process. Recall that in a Poisson process events occur independently and at a constant average rate, usually denoted by letter <span class="process-math">\(\lambda\text{.}\)</span> The exponential random variable can take any value on zero and positive real line, <span class="process-math">\(X \in [0, \infty)\)</span> with the PDF given by</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-PDF-Exponential.html ./knowl/xref/fig-exponential-pdf-cdf.html" id="eqn-PDF-Exponential">
 \begin{equation}
 \rho(x) = \lambda\,e^{-\lambda\,x}.\tag{1.8.6}
@@ -678,19 +690,19 @@ F(x) = \int_{0}^x\, \lambda\, e^{-\lambda\,x'}\, dx' =  1 - e^{-\lambda x}. \tag
 <div class="para">
 <a href="sec-Continuous-Probability-Distributions.html#fig-exponential-pdf-cdf" class="xref" data-knowl="./knowl/xref/fig-exponential-pdf-cdf.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.8.5">Figure 1.8.5</a> shows the PDF and CDF of the exponential distribution for <span class="process-math">\(\lambda = 1\text{.}\)</span>
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Exponential-Distribution-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Exponential-Distribution-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="fig-exponential-pdf-cdf"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/exponential.png" class="contained" alt="PDF and CDF of Exponential distribution E(1.0). Note the exponential decaying property of the PDF and the corresponding rise of the CDF which goes from 0 to 1."></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.8.5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>PDF and CDF of Exponential distribution <span class="process-math">\(\mathcal{E}(1.0)\text{.}\)</span> Note the exponential decaying property of the PDF and the corresponding rise of the CDF which goes from <span class="process-math">\(0\)</span> to <span class="process-math">\(1\text{.}\)</span><div class="autopermalink" data-description="Figure 1.8.5"><a href="#fig-exponential-pdf-cdf" title="Copy heading and permalink for Figure 1.8.5" aria-label="Copy heading and permalink for Figure 1.8.5">🔗</a></div></figcaption></figure><div class="para logical" id="subsec-Exponential-Distribution-5">
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.8.5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>PDF and CDF of Exponential distribution <span class="process-math">\(\mathcal{E}(1.0)\text{.}\)</span> Note the exponential decaying property of the PDF and the corresponding rise of the CDF which goes from <span class="process-math">\(0\)</span> to <span class="process-math">\(1\text{.}\)</span><div class="autopermalink" data-description="Figure 1.8.5"><a href="#fig-exponential-pdf-cdf" title="Copy heading and permalink for Figure 1.8.5" aria-label="Copy heading and permalink for Figure 1.8.5">🔗</a></div></figcaption></figure><div class="para logical" id="subsec-Exponential-Distribution-4">
 <div class="para">The complement of the CDF, i.e., the probability that <span class="process-math">\(X \gt x\)</span> is called <em class="alert">survival function</em> (SF).</div>
 <div class="displaymath process-math" id="eqn-survival-function-Exponential">
 \begin{equation}
 \textrm{SF}(x) \equiv P(X \gt x) = 1 - F(x) = 1 - \left( 1 - e^{-\lambda x} \right)   =    e^{-\lambda x}.        \tag{1.8.8}
 \end{equation}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Exponential-Distribution-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Exponential-Distribution-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="subsec-Exponential-Distribution-6">
+<div class="para logical" id="subsec-Exponential-Distribution-5">
 <div class="para">From the survival function, it is possible to prove an important property of exponential distribution: that it is <em class="alert">memoryless</em>, meaning that the probability of an event occurring in the next time interval does not depend on how much time has already elapsed. In formulas, this will be a condition on the conditional probability.</div>
 <div class="displaymath process-math" id="eqn-Memoryless-Exponential">
 \begin{equation}
@@ -698,10 +710,10 @@ P(X \gt (t + s) \mid X \gt s) = P(X \gt t).\tag{1.8.9}
 \end{equation}
 </div>
 <div class="para">That is, whether “you wait upto <span class="process-math">\(X=s\)</span> and then look at the next <span class="process-math">\(t\)</span> units of time” or “you don’t wait and look at the next <span class="process-math">\(t\)</span> interval of time”, the two events will give the same probability. That is, the probability for <span class="process-math">\(t\)</span> intervals of time will be independent of the starting instant.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Exponential-Distribution-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Exponential-Distribution-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<article class="proof" id="subsec-Exponential-Distribution-7"><h4 class="heading"><span class="title">Proof of Memoryless Property.</span></h4>
-<div class="para logical" id="subsec-Exponential-Distribution-7-2">
+<article class="proof" id="subsec-Exponential-Distribution-6"><h4 class="heading"><span class="title">Proof of Memoryless Property.</span></h4>
+<div class="para logical" id="subsec-Exponential-Distribution-6-2">
 <div class="para">Let’s write the left side of Eq. <a href="sec-Continuous-Probability-Distributions.html#eqn-Memoryless-Exponential" class="xref" data-knowl="./knowl/xref/eqn-Memoryless-Exponential.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.8.9">(1.8.9)</a> in terms of joint and prior, based on the definition of conditional probabilities given in an earlier section.</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-Memoryless-Exponential.html ./knowl/xref/eqn-survival-function-Exponential.html">
 \begin{equation*}
@@ -727,9 +739,9 @@ P(X \gt t + s \mid X \gt s) = \frac{P(X \gt t + s) }{ P(X \gt s) }.
 P(X \gt t + s \mid X \gt s) = \frac{\exp(-\lambda(t + s))}{\exp(-\lambda s)} = e^{-\lambda t} = P(X \gt t).\quad \blacksquare
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Exponential-Distribution-7-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Exponential-Distribution-6-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 1.8.3.1: Proof of Memoryless Property"><a href="#subsec-Exponential-Distribution-7" title="Copy heading and permalink for Proof 1.8.3.1: Proof of Memoryless Property" aria-label="Copy heading and permalink for Proof 1.8.3.1: Proof of Memoryless Property">🔗</a></div></article><div class="para logical" id="subsec-Exponential-Distribution-8">
+<div class="autopermalink" data-description="Proof 1.8.3.1: Proof of Memoryless Property"><a href="#subsec-Exponential-Distribution-6" title="Copy heading and permalink for Proof 1.8.3.1: Proof of Memoryless Property" aria-label="Copy heading and permalink for Proof 1.8.3.1: Proof of Memoryless Property">🔗</a></div></article><div class="para logical" id="subsec-Exponential-Distribution-7">
 <div class="para">Finally, let’s go over the mean and variance of exponential distribution. <em class="alert">Mean</em> as usual is the expectation value of the random variable <span class="process-math">\(X\text{.}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -749,35 +761,230 @@ P(X \gt t + s \mid X \gt s) = \frac{\exp(-\lambda(t + s))}{\exp(-\lambda s)} = e
 \sigma = \sqrt{ \textrm{Var}(X) } = \frac{1}{\lambda}.
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Exponential-Distribution-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Exponential-Distribution-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="subsec-Exponential-Distribution-9">
+<div class="para logical" id="subsec-Exponential-Distribution-8">
 <div class="para">
 <em class="alert">Real-World Examples</em>:</div>
 <dl class="description-list">
-<dt id="subsec-Exponential-Distribution-9-2-1">Radioactive Decay:<div class="autopermalink" data-description="Item: Radioactive Decay:"><a href="#subsec-Exponential-Distribution-9-2-1" title="Copy heading and permalink for Item: Radioactive Decay:" aria-label="Copy heading and permalink for Item: Radioactive Decay:">🔗</a></div>
+<dt id="subsec-Exponential-Distribution-8-2-1">Radioactive Decay:<div class="autopermalink" data-description="Item: Radioactive Decay:"><a href="#subsec-Exponential-Distribution-8-2-1" title="Copy heading and permalink for Item: Radioactive Decay:" aria-label="Copy heading and permalink for Item: Radioactive Decay:">🔗</a></div>
 </dt>
-<dd><div class="para" id="subsec-Exponential-Distribution-9-2-1-2">Time until the next decay event for a particle with decay rate <span class="process-math">\(\lambda\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Exponential-Distribution-9-2-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<dd><div class="para" id="subsec-Exponential-Distribution-8-2-1-2">Time until the next decay event for a particle with decay rate <span class="process-math">\(\lambda\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Exponential-Distribution-8-2-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div></dd>
-<dt id="subsec-Exponential-Distribution-9-2-2">Queueing Systems:<div class="autopermalink" data-description="Item: Queueing Systems:"><a href="#subsec-Exponential-Distribution-9-2-2" title="Copy heading and permalink for Item: Queueing Systems:" aria-label="Copy heading and permalink for Item: Queueing Systems:">🔗</a></div>
+<dt id="subsec-Exponential-Distribution-8-2-2">Queueing Systems:<div class="autopermalink" data-description="Item: Queueing Systems:"><a href="#subsec-Exponential-Distribution-8-2-2" title="Copy heading and permalink for Item: Queueing Systems:" aria-label="Copy heading and permalink for Item: Queueing Systems:">🔗</a></div>
 </dt>
-<dd><div class="para" id="subsec-Exponential-Distribution-9-2-2-2">Time until the next customer arrives at a store, assuming arrivals follow a Poisson process with rate <span class="process-math">\(\lambda = 2\)</span> customers per hour. Mean waiting time = <span class="process-math">\(0.5\)</span> hours.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Exponential-Distribution-9-2-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<dd><div class="para" id="subsec-Exponential-Distribution-8-2-2-2">Time until the next customer arrives at a store, assuming arrivals follow a Poisson process with rate <span class="process-math">\(\lambda = 2\)</span> customers per hour. Mean waiting time = <span class="process-math">\(0.5\)</span> hours.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Exponential-Distribution-8-2-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div></dd>
-<dt id="subsec-Exponential-Distribution-9-2-3">Reliability:<div class="autopermalink" data-description="Item: Reliability:"><a href="#subsec-Exponential-Distribution-9-2-3" title="Copy heading and permalink for Item: Reliability:" aria-label="Copy heading and permalink for Item: Reliability:">🔗</a></div>
+<dt id="subsec-Exponential-Distribution-8-2-3">Reliability:<div class="autopermalink" data-description="Item: Reliability:"><a href="#subsec-Exponential-Distribution-8-2-3" title="Copy heading and permalink for Item: Reliability:" aria-label="Copy heading and permalink for Item: Reliability:">🔗</a></div>
 </dt>
-<dd><div class="para logical" id="subsec-Exponential-Distribution-9-2-3-2">
+<dd><div class="para logical" id="subsec-Exponential-Distribution-8-2-3-2">
 <div class="para">Lifetime of a lightbulb that fails at a constant rate <span class="process-math">\(λ=0.001\)</span> failures per hour. The probability it lasts more than <span class="process-math">\(1000\)</span> hours is</div>
 <div class="displaymath process-math">
 \begin{equation*}
 1 - F(1000; 0.001) = e^{-0.001 \times 1000} = e^{-1} \approx 0.3679\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Exponential-Distribution-9-2-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Exponential-Distribution-8-2-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div></dd>
 </dl>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Exponential-Distribution-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Exponential-Distribution-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Subsection 1.8.3: Exponential Distribution"><a href="#subsec-Exponential-Distribution" title="Copy heading and permalink for Subsection 1.8.3: Exponential Distribution" aria-label="Copy heading and permalink for Subsection 1.8.3: Exponential Distribution">🔗</a></div></section><div class="autopermalink" data-description="Section 1.8: Continuous Probability Distributions"><a href="#sec-Continuous-Probability-Distributions" title="Copy heading and permalink for Section 1.8: Continuous Probability Distributions" aria-label="Copy heading and permalink for Section 1.8: Continuous Probability Distributions">🔗</a></div></section></div>
+<div class="autopermalink" data-description="Subsection 1.8.3: Exponential Distribution"><a href="#subsec-Exponential-Distribution" title="Copy heading and permalink for Subsection 1.8.3: Exponential Distribution" aria-label="Copy heading and permalink for Subsection 1.8.3: Exponential Distribution">🔗</a></div></section><section class="subsection" id="subsec-Gamma-Distribution"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.8.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Gamma Distribution</span>
+</h3>
+<div class="para logical" id="subsec-Gamma-Distribution-2">
+<div class="para">The exponential distribution gave us distribution of interval till first success in a Poisson process with an average rate of event occuring is given by a parameter <span class="process-math">\(\lambda\text{.}\)</span> What will be the distribution of intervals till the <span class="process-math">\(k^\text{th}\)</span> success? Let us call this event by name <span class="process-math">\(T\)</span> and use letter <span class="process-math">\(t\)</span> for its values. Then the PDF of the disrtribution of <span class="process-math">\(T\)</span> is given by a Gamma distribution given by</div>
+<div class="displaymath process-math" id="eqn-Gamma-PDF">
+\begin{equation}
+\rho_k(t) = \frac{\lambda^{k}\, t^{k-1}\, e^{-\lambda x}}{(k-1)!},\quad k \ge 1,\tag{1.8.10}
+\end{equation}
+</div>
+<div class="para">where I have chosen to include the information that it is the <span class="process-math">\(k^\text{th}\)</span> we are looking at. Often, in place of rate parameter <span class="process-math">\(\lambda\text{,}\)</span> we use it’s inverse, called <dfn class="terminology">shape parameter</dfn>:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\theta = \frac{1}{\lambda}.
+\end{equation*}
+</div>
+<div class="para">Let’s see how we can derive the expression for the PDF.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Gamma-Distribution-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="proof" id="subsec-Gamma-Distribution-3"><h4 class="heading"><span class="title">Derivation.</span></h4>
+<div class="para logical" id="subsec-Gamma-Distribution-3-2">
+<div class="para">It turns out that it is far easier to just derive the CDF of this distribution <span class="process-math">\(F_k(t)\)</span> which will give the probability of <span class="process-math">\(k^{\text{th}}\)</span> event occuring in less time than <span class="process-math">\(t\text{.}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-CDF-Gamma-distribution-using-complement-event.html">
+\begin{equation*}
+F_k(t) = P( T \le t ).
+\end{equation*}
+</div>
+<div class="para">But, this probability os complement of event that <span class="process-math">\((T \gt t)\text{,}\)</span> i.e., in which less than <span class="process-math">\(k\)</span> events occur in the interval <span class="process-math">\([0,t]\text{.}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-CDF-Gamma-distribution-using-complement-event.html">
+\begin{equation*}
+P( T \gt t ) = P(\text{less than } k \text{ events occur during} [0,t]).
+\end{equation*}
+</div>
+<div class="para">That is,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-CDF-Gamma-distribution-using-complement-event.html" id="eqn-CDF-Gamma-distribution-using-complement-event">
+\begin{equation}
+F_k(t) = 1 - P(\text{less than } k \text{ events occur during} [0,t]).\tag{1.8.11}
+\end{equation}
+</div>
+<div class="para">Now, less than <span class="process-math">\(k\)</span> means, we could have <span class="process-math">\(0, 1, 2, \cdots (k-1)\)</span> events during <span class="process-math">\([0,t]\text{,}\)</span> which is easy to work out by using Poisson’s distribution of counting events. Thus,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-CDF-Gamma-distribution-using-complement-event.html">
+\begin{equation*}
+P( T \gt t ) = \sum_{j = 0}^{k-1}\,\frac{ (\lambda t)^{j} }{j!}\,e^{-\lambda t}.
+\end{equation*}
+</div>
+<div class="para">Use this in Eq. <a href="sec-Continuous-Probability-Distributions.html#eqn-CDF-Gamma-distribution-using-complement-event" class="xref" data-knowl="./knowl/xref/eqn-CDF-Gamma-distribution-using-complement-event.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.8.11">(1.8.11)</a> and take derivative to get the PDF.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-CDF-Gamma-distribution-using-complement-event.html" id="subsec-Gamma-Distribution-3-2-15">
+\begin{align*}
+\rho_k(x) \amp = \frac{dF_k}{dx}  = -\sum_{j=0}^{k-1}\, \frac{j \lambda^j t^{j-1} e^{-\lambda t}}{j!} + \sum_{j=0}^{k-1}\, \frac{ \lambda^{j+1} t^{j} e^{-\lambda t}}{j!}  \\
+\amp = -\lambda e^{-\lambda x}\sum_{j=1}^{k-1}\, \frac{ (\lambda t)^{j-1} e^{-\lambda t}}{(j-1)!} + -\lambda e^{-\lambda x} \sum_{j=0}^{k-1}\, \frac{ (\lambda t)^{j} e^{-\lambda t}}{j!} 
+\end{align*}
+</div>
+<div class="para">Now, we change the summation dummy index in the first sum. Let <span class="process-math">\(i = j - 1\text{,}\)</span> then <span class="process-math">\(i\)</span> goes from <span class="process-math">\(0\)</span> and <span class="process-math">\(k-2\text{.}\)</span> Then, this sum cancels out all the terms of the second term except the last one.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-CDF-Gamma-distribution-using-complement-event.html" id="subsec-Gamma-Distribution-3-2-20">
+\begin{align*}
+\rho_k(x)  \amp = -\lambda e^{-\lambda x}\sum_{i=0}^{k-2}\, \frac{ (\lambda t)^{i} e^{-\lambda t}}{(i)!} + -\lambda e^{-\lambda x} \sum_{j=0}^{k-1}\, \frac{ (\lambda t)^{j} e^{-\lambda t}}{j!} \\
+\amp = \frac{\lambda^{k} t^{k-1} e^{-\lambda t} }{(k-1)!}. 
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Gamma-Distribution-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1.8.4.1: Derivation"><a href="#subsec-Gamma-Distribution-3" title="Copy heading and permalink for Proof 1.8.4.1: Derivation" aria-label="Copy heading and permalink for Proof 1.8.4.1: Derivation">🔗</a></div></article><div class="para" id="subsec-Gamma-Distribution-4">To get an intuitive feel for the Gamma distribution function, let us plot the PDF for different value of the average parameter <span class="process-math">\(\lambda\)</span> as shown in <a href="sec-Continuous-Probability-Distributions.html#fig-Gamma-PDF-various-lambdas" class="xref" data-knowl="./knowl/xref/fig-Gamma-PDF-various-lambdas.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.8.6">Figure 1.8.6</a>. Since <span class="process-math">\(\lambda\)</span> is average waiting time before the <span class="process-math">\(k^\text{th}\)</span> event, we expect that with larger <span class="process-math">\(\lambda\text{,}\)</span> the peak will shift to the right as is clearly evident in the figure.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Gamma-Distribution-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-Gamma-PDF-various-lambdas"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/gamma-lambda.png" class="contained" alt="Gamma distribution with k=2 for various values of the average rate parameter."></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.8.6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Gamma distribution with <span class="process-math">\(k=2\)</span> for various values of the average rate parameter <span class="process-math">\(\lambda\text{.}\)</span><div class="autopermalink" data-description="Figure 1.8.6"><a href="#fig-Gamma-PDF-various-lambdas" title="Copy heading and permalink for Figure 1.8.6" aria-label="Copy heading and permalink for Figure 1.8.6">🔗</a></div></figcaption></figure><div class="para" id="subsec-Gamma-Distribution-6">Now, let’s plot for various values of <span class="process-math">\(k\text{,}\)</span> i.e., for the same average rate parameter, what happens if we decide to wait for first occurence, or second occurence or 4th occurence of the event. This is shown in <a href="sec-Continuous-Probability-Distributions.html#fig-Gamma-PDF-various-k-s" class="xref" data-knowl="./knowl/xref/fig-Gamma-PDF-various-k-s.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.8.7">Figure 1.8.7</a>. Clearly, the PDFs for higher and higher occurence<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Gamma-Distribution-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-Gamma-PDF-various-k-s"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/gamma.png" class="contained" alt="Gamma distribution with rate parameter fixed and for various values of k."></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.8.7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Gamma distribution with <span class="process-math">\(\lambda=2\)</span> for various values of <span class="process-math">\(k\text{.}\)</span><div class="autopermalink" data-description="Figure 1.8.7"><a href="#fig-Gamma-PDF-various-k-s" title="Copy heading and permalink for Figure 1.8.7" aria-label="Copy heading and permalink for Figure 1.8.7">🔗</a></div></figcaption></figure><article class="remark remark-like" id="subsec-Gamma-Distribution-8"><h4 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.8.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Why is it called Gamma Distribution?</span>
+</h4>
+<div class="para logical" id="subsec-Gamma-Distribution-8-2">
+<div class="para">The name has to do with the factorial in the denominator of the PDF. I will now show you  how. In mathematics, there is a special function called, the <dfn class="terminology">Gamma function</dfn>, which is defined by the following integral.</div>
+<div class="displaymath process-math" id="eqn-gamma-function">
+\begin{equation}
+\Gamma(k) = \int_0^{\infty}\, x^{k-1}\,e^{-x}\, dx.\tag{1.8.12}
+\end{equation}
+</div>
+<div class="para">By doing this integral once using integration by parts, you can show that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Gamma(k) = (k-1)\, \Gamma(k-1).
+\end{equation*}
+</div>
+<div class="para">If we know <span class="process-math">\(\Gamma(1)\)</span> we will know all the rest.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Gamma(1) = \int_0^{\infty}\,e^{-x}\, dx = 1.
+\end{equation*}
+</div>
+<div class="para">Hence,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Gamma(k) = (k-1).(k-2).(k-3)\cdots 3.2.1 = (k-1)!\, k\ge 1.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Gamma-Distribution-8-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Gamma-Distribution-8-3">
+<div class="para">Now, we write the Gamma distribution function as,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\rho_k(t) = \frac{1}{\Gamma(k)}\,\frac{1}{\lambda}\, (\lambda t)^{k-1}\,e^{-\lambda t}.
+\end{equation*}
+</div>
+<div class="para">Now, let’s show that this is properly normalized. Since <span class="process-math">\(t \in [0,\infty)\text{,}\)</span> we have the following integral.</div>
+<div class="displaymath process-math" id="subsec-Gamma-Distribution-8-3-3">
+\begin{align*}
+\int_0^{\infty}\rho_k(t) dt \amp = \frac{1}{\Gamma(k)} \int_0^{\infty}\,\frac{1}{\lambda}(\lambda t)^{k-1}\,e^{-\lambda t}\, dt \\
+\amp =  \frac{1}{\Gamma(k)}  \int_0^{\infty}\,x^{k-1}\,e^{-x}\, dx\quad (\text{with } x = \lambda t) \\
+\amp = \frac{1}{\Gamma(k)} \times \Gamma(k) = 1.  
+\end{align*}
+</div>
+<div class="para">Now, you see how Gamma function came out naturally in working with the Gamma distribution function. You might say, it’s the normalization constant that you need for making the probability come out right.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Gamma-Distribution-8-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 1.8.8: Why is it called Gamma Distribution?"><a href="#subsec-Gamma-Distribution-8" title="Copy heading and permalink for Remark 1.8.8: Why is it called Gamma Distribution?" aria-label="Copy heading and permalink for Remark 1.8.8: Why is it called Gamma Distribution?">🔗</a></div></article><div class="para logical" id="subsec-Gamma-Distribution-9">
+<div class="para">By doing the same type of integral as illustrated in showing the normalization calculation above, you can immediately prove that mean and variance of Gamma distribution are as follows.</div>
+<div class="displaymath process-math" id="subsec-Gamma-Distribution-9-1">
+\begin{align*}
+\amp \mathbb{E}[T] = \int_0^\infty\, t\; \rho_k(t) dt = \frac{k}{\lambda}. \\
+\amp \textrm{Var}(T) =  \mathbb{E}[T^2] -\left( \mathbb{E}[T]\right)^2 = \int_0^\infty\, t^2\; \rho_k(t) dt  - \left(\frac{k}{\lambda} \right)^2= \frac{k}{\lambda^2}.
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Gamma-Distribution-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Gamma-Distribution-10">
+<div class="para">
+<em class="alert">CDF of Gamma Distribution</em> can be written only as an integral and evaluated numerically for each <span class="process-math">\(t\text{.}\)</span> The integral part is called incomplete gamma and denoted by lower case gamma <span class="process-math">\(\gamma\text{.}\)</span>
+</div>
+<div class="displaymath process-math" id="eqn-Gamma-CDF">
+\begin{equation}
+F_k(t) = \int_0^t\,\rho_k(u)\, du = \frac{1}{\Gamma(k)}\, \gamma(k,\lambda t),\tag{1.8.13}
+\end{equation}
+</div>
+<div class="para">where</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\gamma(k,\lambda t) = \int_0^{\lambda t}\,u^{k-1}\,e^{-u}\, du.
+\end{equation*}
+</div>
+<div class="para">In Python’s scipy.special library, there is function <span class="process-math">\(\textrm{gammainc}\)</span> that actually calculates <span class="process-math">\(\gamma(k,u)/\Gamma(k)\text{,}\)</span> i.e, the CDF directly.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Gamma-Distribution-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="exp-Waiting-Time-for-the-Third-Help-Desk-Call"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.8.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Waiting Time for the Third Help Desk Call.</span>
+</h4>
+<div class="para logical" id="exp-Waiting-Time-for-the-Third-Help-Desk-Call-2">
+<div class="para">Suppose that calls arrive at a help desk according to a Poisson process with rate <span class="process-math">\(\lambda = 4\)</span> calls per hour. In this example we will compute answers to:</div>
+<ol class="lower-alpha ol-marker-2" id="exp-Waiting-Time-for-the-Third-Help-Desk-Call-2-2">
+<li id="exp-Waiting-Time-for-the-Third-Help-Desk-Call-2-2-1">
+<div class="para" id="exp-Waiting-Time-for-the-Third-Help-Desk-Call-2-2-1-1">Probability that all three calls arrive within 30 minutes.<div class="autopermalink" data-description="Paragraph"><a href="#exp-Waiting-Time-for-the-Third-Help-Desk-Call-2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item a"><a href="#exp-Waiting-Time-for-the-Third-Help-Desk-Call-2-2-1" title="Copy heading and permalink for Item a" aria-label="Copy heading and permalink for Item a">🔗</a></div>
+</li>
+<li id="exp-Waiting-Time-for-the-Third-Help-Desk-Call-2-2-2">
+<div class="para" id="exp-Waiting-Time-for-the-Third-Help-Desk-Call-2-2-2-1">Probability that it takes more than one hour to receive three calls.<div class="autopermalink" data-description="Paragraph"><a href="#exp-Waiting-Time-for-the-Third-Help-Desk-Call-2-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item b"><a href="#exp-Waiting-Time-for-the-Third-Help-Desk-Call-2-2-2" title="Copy heading and permalink for Item b" aria-label="Copy heading and permalink for Item b">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#exp-Waiting-Time-for-the-Third-Help-Desk-Call-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="exp-Waiting-Time-for-the-Third-Help-Desk-Call-3">
+<div class="para">Let <span class="process-math">\(T\)</span> be the random variable for the time for the <span class="process-math">\(3^\text{rd}\)</span> call arrival. Then, from the discussion in this section, we conclude that <span class="process-math">\(T\)</span> will follow the following Gamma distribution.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+T \sim \textrm{Gamma}\left(k=3, \lambda=4\,\text{hr}^{-1} \right).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#exp-Waiting-Time-for-the-Third-Help-Desk-Call-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="exp-Waiting-Time-for-the-Third-Help-Desk-Call-4">
+<div class="para">(a)  The probability that all 3 calls arrive within <span class="process-math">\(t = 30\,\text{min} = 0.5\,\text{hr}\)</span> means we are just directly looking for the CDF for this value of <span class="process-math">\(t\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F_{k=3}(0.5) =  \frac{1}{\Gamma(3)}\,\gamma(k=3, \lambda t = 2).
+\end{equation*}
+</div>
+<div class="para">We look this us in Python by <span class="process-math">\(\textrm{scipy.special.gammainc}(3,2) \text{,}\)</span> which is <span class="process-math">\(\approx 0.323\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#exp-Waiting-Time-for-the-Third-Help-Desk-Call-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="exp-Waiting-Time-for-the-Third-Help-Desk-Call-5">
+<div class="para">(b) Probability that it takes more than one hour to receive three calls means the third call must be so that <span class="process-math">\(T \gt 1\text{ hr}\text{.}\)</span> This is complement of the CDF.</div>
+<div class="displaymath process-math" id="exp-Waiting-Time-for-the-Third-Help-Desk-Call-5-2">
+\begin{align*}
+P( T \gt 1\text{ hr} ) \amp = 1 - F_{k=3}(t=1.0)\\
+\amp  = \frac{1}{\Gamma(3)}\,\gamma(k=3, \lambda t = 4) \approx 1- 0.762 = 0.238.
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#exp-Waiting-Time-for-the-Third-Help-Desk-Call-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 1.8.9: Waiting Time for the Third Help Desk Call"><a href="#exp-Waiting-Time-for-the-Third-Help-Desk-Call" title="Copy heading and permalink for Example 1.8.9: Waiting Time for the Third Help Desk Call" aria-label="Copy heading and permalink for Example 1.8.9: Waiting Time for the Third Help Desk Call">🔗</a></div></article><div class="autopermalink" data-description="Subsection 1.8.4: Gamma Distribution"><a href="#subsec-Gamma-Distribution" title="Copy heading and permalink for Subsection 1.8.4: Gamma Distribution" aria-label="Copy heading and permalink for Subsection 1.8.4: Gamma Distribution">🔗</a></div></section><div class="autopermalink" data-description="Section 1.8: Continuous Probability Distributions"><a href="#sec-Continuous-Probability-Distributions" title="Copy heading and permalink for Section 1.8: Continuous Probability Distributions" aria-label="Copy heading and permalink for Section 1.8: Continuous Probability Distributions">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sec-Example-Discrete-Probability-Distributions.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-LLN-and-CLT.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
