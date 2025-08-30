@@ -6,20 +6,13 @@
 <!--*                                          *-->
 <!--********************************************-->
 <html lang="en-US" dir="ltr">
-<!--******************************************-->
-<!--*  Authored with PreTeXt                 *-->
-<!--*  pretextbook.org                       *-->
-<!--*  Theme: default-modern                 *-->
-<!--*  Palette:                              *-->
-<!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Two or More Random Variables</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
-<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="ML Notes">
 <script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
@@ -75,51 +68,68 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="book">
-<meta property="book:title" content="ML Notes">
-<meta property="book:author" content="Samuel Ling">
-<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
-<!--** Runestone components to run locally in reader's browser **-->
-<!--** No external communication:                              **-->
-<!--**     log level is 0, Runestone Services are disabled     **-->
-<script type="text/javascript">
-eBookConfig = {};
-eBookConfig.useRunestoneServices = false;
-eBookConfig.host = 'http://127.0.0.1:8000';
-eBookConfig.course = 'PTX_Course_Title_Here';
-eBookConfig.basecourse = 'PTX_Base_Course';
-eBookConfig.isLoggedIn = false;
-eBookConfig.email = '';
-eBookConfig.isInstructor = false;
-eBookConfig.logLevel = 0;
-eBookConfig.username = '';
-eBookConfig.readings = null;
-eBookConfig.activities = null;
-eBookConfig.downloadsEnabled = false;
-eBookConfig.allow_pairs = false;
-eBookConfig.enableScratchAC = false;
-eBookConfig.build_info = "";
-eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.9.8';
-eBookConfig.jobehost = '';
-eBookConfig.proxyuri_runs = '';
-eBookConfig.proxyuri_files = '';
-eBookConfig.enable_chatcodes =  false;
-</script>
-<!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.b215b0da62d655bd.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.28cc3c4821792be5.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8141ae22fd347e48.css">
-<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script>
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.css" integrity="sha512-cbQXwDFK7lj2Fqfkuxbo5iD1dSbLlJGXGpfTDqbggqjHJeyzx88I3rfwjS38WJag/ihH7lzuGlGHpDBymLirZQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.css" integrity="sha512-nXlJLUeqPMp1Q3+Bd8Qds8tXeRVQscMscwysJm821C++9w6WtsFbJjPenZ8cQVMXyqSAismveQJc0C1splFDCA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/colors_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
+<style>
+#subsec-Central-Tendency-3 { counter-set: subsec-Central-Tendency-3 0; }
+#subsec-Central-Tendency-3 > li::marker { content: ""counter(subsec-Central-Tendency-3,decimal)"."; }
+#subsec-Central-Tendency-3 > li { counter-increment: subsec-Central-Tendency-3; }
+#subsec-Dispersion-3 { counter-set: subsec-Dispersion-3 0; }
+#subsec-Dispersion-3 > li::marker { content: ""counter(subsec-Dispersion-3,decimal)"."; }
+#subsec-Dispersion-3 > li { counter-increment: subsec-Dispersion-3; }
+#subsec-Pandas-2-1-1 { counter-set: subsec-Pandas-2-1-1 0; }
+#subsec-Pandas-2-1-1 > li::marker { content: ""counter(subsec-Pandas-2-1-1,decimal)"."; }
+#subsec-Pandas-2-1-1 > li { counter-increment: subsec-Pandas-2-1-1; }
+#subsec-Pandas-4-2 { counter-set: subsec-Pandas-4-2 0; }
+#subsec-Pandas-4-2 > li::marker { content: ""counter(subsec-Pandas-4-2,decimal)"."; }
+#subsec-Pandas-4-2 > li { counter-increment: subsec-Pandas-4-2; }
+#sec-Numerical-and-Categorical-Data-2-1-1 { counter-set: sec-Numerical-and-Categorical-Data-2-1-1 0; }
+#sec-Numerical-and-Categorical-Data-2-1-1 > li::marker { content: ""counter(sec-Numerical-and-Categorical-Data-2-1-1,decimal)"."; }
+#sec-Numerical-and-Categorical-Data-2-1-1 > li { counter-increment: sec-Numerical-and-Categorical-Data-2-1-1; }
+#subsec-Axiomatic-View-of-Probability-7-2 { counter-set: subsec-Axiomatic-View-of-Probability-7-2 0; }
+#subsec-Axiomatic-View-of-Probability-7-2 > li::marker { content: ""counter(subsec-Axiomatic-View-of-Probability-7-2,decimal)""; }
+#subsec-Axiomatic-View-of-Probability-7-2 > li { counter-increment: subsec-Axiomatic-View-of-Probability-7-2; }
+#subsec-three-types-of-probabilities-3 { counter-set: subsec-three-types-of-probabilities-3 0; }
+#subsec-three-types-of-probabilities-3 > li::marker { content: ""counter(subsec-three-types-of-probabilities-3,decimal)"."; }
+#subsec-three-types-of-probabilities-3 > li { counter-increment: subsec-three-types-of-probabilities-3; }
+#subsub-Poisson-Process-3-5 { counter-set: subsub-Poisson-Process-3-5 0; }
+#subsub-Poisson-Process-3-5 > li::marker { content: ""counter(subsub-Poisson-Process-3-5,decimal)"."; }
+#subsub-Poisson-Process-3-5 > li { counter-increment: subsub-Poisson-Process-3-5; }
+#subsub-Poisson-Process-4-2 { counter-set: subsub-Poisson-Process-4-2 0; }
+#subsub-Poisson-Process-4-2 > li::marker { content: ""counter(subsub-Poisson-Process-4-2,decimal)"."; }
+#subsub-Poisson-Process-4-2 > li { counter-increment: subsub-Poisson-Process-4-2; }
+#exp-Waiting-Time-for-the-Third-Help-Desk-Call-2-2 { counter-set: exp-Waiting-Time-for-the-Third-Help-Desk-Call-2-2 0; }
+#exp-Waiting-Time-for-the-Third-Help-Desk-Call-2-2 > li::marker { content: ""counter(exp-Waiting-Time-for-the-Third-Help-Desk-Call-2-2,lower-alpha)""; }
+#exp-Waiting-Time-for-the-Third-Help-Desk-Call-2-2 > li { counter-increment: exp-Waiting-Time-for-the-Third-Help-Desk-Call-2-2; }
+</style>
 </head>
 <body id="ML-Notes" class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
-<h1 class="heading"><a href="my-ML-Notes.html"><span class="title">ML Notes</span> <span class="subtitle">Theoretical and Practical ML Concepts</span></a></h1>
-<p class="byline">Samuel Ling</p>
-</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
-<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="my-ML-Notes.html"><span class="title">ML Notes:</span> <span class="subtitle">Theoretical and Practical ML Concepts</span></a></h1>
+<p class="byline"></p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
 <div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
 <div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
 <div class="search-results-controls">
@@ -130,8 +140,7 @@ eBookConfig.enable_chatcodes =  false;
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-Random-Variables-and-Probabilities.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-Essential-Probability-and-Statistics.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-Example-Discrete-Probability-Distributions.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
-</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-Random-Variables-and-Probabilities.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-Essential-Probability-and-Statistics.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-Example-Discrete-Probability-Distributions.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -139,7 +148,7 @@ eBookConfig.enable_chatcodes =  false;
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
 <li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
 <li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ch-Essential-Probability-and-Statistics.html" class="internal"><span class="codenumber">1</span> <span class="title">Essential Probability and Statistics</span></a></div>
@@ -200,9 +209,9 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Random-Variables-and-Probabilities.html#subsec-Cumulative-Distribution-Function" class="internal"><span class="codenumber">1.5.5</span> <span class="title">Cumulative Distribution Function (CDF)</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section contains-active">
+<li class="toc-item toc-section active">
 <div class="toc-title-box"><a href="sec-Two-or-More-Random-Variables.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Two or More Random Variables</span></a></div>
-<ul class="structural toc-item-list active">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Two-or-More-Random-Variables.html#subsec-Joint-Probability" class="internal"><span class="codenumber">1.6.1</span> <span class="title">Joint Probability</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Two-or-More-Random-Variables.html#subsec-Marginal-Probability" class="internal"><span class="codenumber">1.6.2</span> <span class="title">Marginal Probability</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Two-or-More-Random-Variables.html#subsec-Conditional-Probability" class="internal"><span class="codenumber">1.6.3</span> <span class="title">Conditional Probability</span></a></div></li>
@@ -269,7 +278,7 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-Two-or-More-Random-Variables"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.6</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Two or More Random Variables</span>
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.6</span><span class="space"> </span><span class="title">Two or More Random Variables</span>
 </h2>
 <section class="introduction" id="sec-Two-or-More-Random-Variables-2"><div class="para logical" id="sec-Two-or-More-Random-Variables-2-1">
 <div class="para">Suppose we have two or more random variables that characterize our data. For example, we may be interested in studying heights and weights and weights of all children in age <span class="process-math">\(1\)</span> to <span class="process-math">\(18\text{.}\)</span> Our probabilities of interest will look like</div>
@@ -296,9 +305,7 @@ P(X,Y).
 P_{X,Y}(x,y).
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-Two-or-More-Random-Variables-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="sec-Two-or-More-Random-Variables-2-2">
+</div> <div class="para logical" id="sec-Two-or-More-Random-Variables-2-2">
 <div class="para">We may also be interested in just to probability of some range of Height itself, regardless of the weights.</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -306,9 +313,7 @@ P( 2\,\text{ft} \le \text{Height} \le 4\,\text{ft} ) \equiv P(A) \equiv P(X) \eq
 \end{equation*}
 </div>
 <div class="para">Since we have collected data on two variables, but we are looking at only one of the variables, we say that we have <em class="alert">margined out</em> the weight variable. This type of probability is called <dfn class="terminology">marginal probability</dfn>, here of Height.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-Two-or-More-Random-Variables-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="sec-Two-or-More-Random-Variables-2-3">
+</div> <div class="para logical" id="sec-Two-or-More-Random-Variables-2-3">
 <div class="para">We may instead be interested in a more complicated type of probaility: what if we look at children of Weight between <span class="process-math">\(20\text{ kg}\)</span> and <span class="process-math">\(50\text{ kg}\text{,}\)</span> what will be the probability of a Height range?</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -328,14 +333,10 @@ P( \left( 20\,\text{kg} \le \text{Weight} \le 40 \right) \mid  \left( 2\,\text{f
 \end{equation*}
 </div>
 <div class="para">The answers to the two questions will be different since you would be selcting different distibutions based on the given condition; <span class="process-math">\(P_{X\mid Y}(x)\)</span> is probability in the <span class="process-math">\(X\)</span>-space and <span class="process-math">\(P_{Y\mid X}(y)\)</span> is probability in the <span class="process-math">\(Y\)</span>-space. These types of probability are called <dfn class="terminology">Conditional Probability</dfn>. Conditional probability plays an important role in Machine Learning Algorithms.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-Two-or-More-Random-Variables-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="sec-Two-or-More-Random-Variables-2-4">Below, we will look at these probabilities in more detail.<div class="autopermalink" data-description="Paragraph"><a href="#sec-Two-or-More-Random-Variables-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></section><section class="subsection" id="subsec-Joint-Probability"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.6.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Joint Probability</span>
+</div> <div class="para" id="sec-Two-or-More-Random-Variables-2-4">Below, we will look at these probabilities in more detail.</div></section><section class="subsection" id="subsec-Joint-Probability"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.6.1</span><span class="space"> </span><span class="title">Joint Probability</span>
 </h3>
-<div class="para" id="subsec-Joint-Probability-2">Now, let’s dig in a little deeper into joint probability and work out an example.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Joint-Probability-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
+<div class="para" id="subsec-Joint-Probability-2">Now, let’s dig in a little deeper into joint probability and work out an example.</div>
 <div class="para logical" id="subsec-Joint-Probability-3">
 <div class="para">Suppose we have two discrete random variables <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\text{.}\)</span> Suppose the unique values that <span class="process-math">\(A\)</span> can take are <span class="process-math">\(a_1, a_2, \cdots, a_m\)</span> and <span class="process-math">\(B\)</span> can take are <span class="process-math">\(b_1, b_2, \cdots, b_n\text{.}\)</span> Then, the pair <span class="process-math">\((A, B)\)</span> can take <span class="process-math">\(m\times n \)</span> value pairs <span class="process-math">\((a_i, b_j)\)</span> with <span class="process-math">\(1 \le i \le m\)</span> and <span class="process-math">\(1 \le j \le n\text{.}\)</span> Joint porbability  <span class="process-math">\(P(A,B)\text{,}\)</span> i.e., the Joint PMF, assigns probabilities to every unique pairs <span class="process-math">\((a_i, b_j)\)</span> so that they are normalized to sum to <span class="process-math">\(1\text{.}\)</span>
 </div>
@@ -363,9 +364,8 @@ P(x \le X \le x+dx, y \le Y \le y+dy) = \rho(x,y)\,dxdy,\tag{1.6.2}
 \end{equation}
 </div>
 <div class="para"><article class="example example-like" id="ex-Patient-disease-and-test-results"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.6.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Patient disease and test results.</span>
-</h4>
-<div class="para logical" id="ex-Patient-disease-and-test-results-2">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.6.1</span><span class="period">.</span><span class="space"> </span><span class="title">Patient disease and test results.</span>
+</h4> <div class="para logical" id="ex-Patient-disease-and-test-results-2">
 <div class="para">Consider a dataset of 1,000 patients, with two discrete random variables <span class="process-math">\(X\)</span> indicating disease status and <span class="process-math">\(Y\)</span> indicating test result on a partcular test for the said disease. For each patient, the disease status variable <span class="process-math">\(X\)</span> has on of the two values:</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/tab-Patient-Disease-and-Test-Results.html">
 \begin{equation*}
@@ -410,9 +410,7 @@ p_{N-} = \frac{500}{1000} = 0.500.
 </div>
 <div class="para">These joint probabilities are usually organized in a table form as shown in <a href="sec-Two-or-More-Random-Variables.html#tab-Patient-Disease-and-Test-Results" class="xref" data-knowl="./knowl/xref/tab-Patient-Disease-and-Test-Results.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 1.6.2: Disease and Test Results">Table 1.6.2</a>
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ex-Patient-disease-and-test-results-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<figure class="table table-like" id="tab-Patient-Disease-and-Test-Results"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.6.2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Disease and Test Results<div class="autopermalink" data-description="Table 1.6.2: Disease and Test Results"><a href="#tab-Patient-Disease-and-Test-Results" title="Copy heading and permalink for Table 1.6.2: Disease and Test Results" aria-label="Copy heading and permalink for Table 1.6.2: Disease and Test Results">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+</div> <figure class="table table-like" id="tab-Patient-Disease-and-Test-Results"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.6.2<span class="period">.</span></span><span class="space"> </span>Disease and Test Results</figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b3 r0 l0 t0 lines"></td>
 <td class="l m b3 r0 l0 t0 lines"></td>
@@ -435,16 +433,13 @@ p_{N-} = \frac{500}{1000} = 0.500.
 <td class="l m b3 r1 l0 t0 lines"><span class="process-math">\(p_{N+}=0.300\)</span></td>
 <td class="l m b3 r0 l0 t0 lines"><span class="process-math">\(p_{N-}=0.500\)</span></td>
 </tr>
-</table></div></figure><div class="autopermalink" data-description="Example 1.6.1: Patient disease and test results"><a href="#ex-Patient-disease-and-test-results" title="Copy heading and permalink for Example 1.6.1: Patient disease and test results" aria-label="Copy heading and permalink for Example 1.6.1: Patient disease and test results">🔗</a></div></article></div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Joint-Probability-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Subsection 1.6.1: Joint Probability"><a href="#subsec-Joint-Probability" title="Copy heading and permalink for Subsection 1.6.1: Joint Probability" aria-label="Copy heading and permalink for Subsection 1.6.1: Joint Probability">🔗</a></div></section><section class="subsection" id="subsec-Marginal-Probability"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.6.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Marginal Probability</span>
+</table></div></figure></article></div>
+</div></section><section class="subsection" id="subsec-Marginal-Probability"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.6.2</span><span class="space"> </span><span class="title">Marginal Probability</span>
 </h3>
 <div class="para" id="subsec-Marginal-Probability-2">
-<dfn class="terminology">Marginal probability</dfn> is an unconditional probability of a single event. for instance marginal probability of event <span class="process-math">\(A\)</span> is the same old regular probability of <span class="process-math">\(A\text{,}\)</span> viz. <span class="process-math">\(P(A)\)</span> we are aware of. In the context of joint probabilities, we use the phrase marginal probability. Outside of this context, it is just probability.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Marginal-Probability-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="subsec-Marginal-Probability-3">So, what is it’s relation to the joint probability? To present the answer, let’s look at joint probability in the context of two discrete random variables <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\text{,}\)</span> which take values in finite sets <span class="process-math">\(\{x_1, x_2, \cdots x_m \}\)</span>  and <span class="process-math">\(\{y_1, y_2, \cdots y_n \}\text{,}\)</span> respectively. Let <span class="process-math">\(P(X,Y)\)</span> be their joint probability, meaning collections of <span class="process-math">\(P(X=x_i,\,Y=y_j)\)</span> pairs. Marginalized probabilities will be probabilities of events like <span class="process-math">\(P(X=x_1)\text{,}\)</span> <span class="process-math">\(P(X=x_2)\text{,}\)</span> etc. without any consideration of the variable <span class="process-math">\(Y\text{.}\)</span> Or, alternatively, <span class="process-math">\(P(Y=y_1)\text{,}\)</span> <span class="process-math">\(P(Y=y_2)\text{,}\)</span> etc. without any consideration of the variable <span class="process-math">\(X\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Marginal-Probability-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<dfn class="terminology">Marginal probability</dfn> is an unconditional probability of a single event. for instance marginal probability of event <span class="process-math">\(A\)</span> is the same old regular probability of <span class="process-math">\(A\text{,}\)</span> viz. <span class="process-math">\(P(A)\)</span> we are aware of. In the context of joint probabilities, we use the phrase marginal probability. Outside of this context, it is just probability.</div>
+<div class="para" id="subsec-Marginal-Probability-3">So, what is it’s relation to the joint probability? To present the answer, let’s look at joint probability in the context of two discrete random variables <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\text{,}\)</span> which take values in finite sets <span class="process-math">\(\{x_1, x_2, \cdots x_m \}\)</span>  and <span class="process-math">\(\{y_1, y_2, \cdots y_n \}\text{,}\)</span> respectively. Let <span class="process-math">\(P(X,Y)\)</span> be their joint probability, meaning collections of <span class="process-math">\(P(X=x_i,\,Y=y_j)\)</span> pairs. Marginalized probabilities will be probabilities of events like <span class="process-math">\(P(X=x_1)\text{,}\)</span> <span class="process-math">\(P(X=x_2)\text{,}\)</span> etc. without any consideration of the variable <span class="process-math">\(Y\text{.}\)</span> Or, alternatively, <span class="process-math">\(P(Y=y_1)\text{,}\)</span> <span class="process-math">\(P(Y=y_2)\text{,}\)</span> etc. without any consideration of the variable <span class="process-math">\(X\text{.}\)</span>
 </div>
 <div class="para logical" id="subsec-Marginal-Probability-4">
 <div class="para">We can get <span class="process-math">\(P(X=x_1)\)</span> from <span class="process-math">\(P(X=x_1, Y=\text{any }y_j\text{.}\)</span> That means, we need to sum over all the values of <span class="process-math">\(Y\)</span> in <span class="process-math">\(P(X=x_1, Y=y)\text{.}\)</span> Rather than clutter the formula  we are going to use the following notation in equations.</div>
@@ -486,12 +481,10 @@ P(x) = \sum_y\, P(x,y).
 \rho_X(x) = \int_{-\infty}^{\infty}\, \rho_{XY}(x,y)\, dy.
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Marginal-Probability-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="example example-like" id="subsec-Marginal-Probability-5"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.6.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Marginal Probabilites from Joint Probability Table.</span>
-</h4>
-<div class="para logical" id="subsec-Marginal-Probability-5-2">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.6.3</span><span class="period">.</span><span class="space"> </span><span class="title">Marginal Probabilites from Joint Probability Table.</span>
+</h4> <div class="para logical" id="subsec-Marginal-Probability-5-2">
 <div class="para">Let’s work out Marginal probabilities <span class="process-math">\(P(D)\text{,}\)</span> <span class="process-math">\(P(N)\text{,}\)</span> <span class="process-math">\(P(+)\text{,}\)</span> anbd <span class="process-math">\(P(-)\)</span> from the joint probabilites given in <a href="sec-Two-or-More-Random-Variables.html#tab-Patient-Disease-and-Test-Results" class="xref" data-knowl="./knowl/xref/tab-Patient-Disease-and-Test-Results.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 1.6.2: Disease and Test Results">Table 1.6.2</a>.</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/tab-Patient-Disease-and-Test-Results.html" id="subsec-Marginal-Probability-5-2-6">
 \begin{align*}
@@ -506,12 +499,10 @@ P(x) = \sum_y\, P(x,y).
 \amp P(-) = P(D, -) + P(N, -) = 0.050 + 0.500 = 0.550
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Marginal-Probability-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="subsec-Marginal-Probability-5-3">Often, we display joint and marginal probabilities in a heatmap as shown in <a href="sec-Two-or-More-Random-Variables.html#fig-joint-heatmap" class="xref" data-knowl="./knowl/xref/fig-joint-heatmap.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.6.4">Figure 1.6.4</a> with the marginals shown in the margins outside the Table.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Marginal-Probability-5-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<figure class="figure figure-like" id="fig-joint-heatmap"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/joint_heatmap.png" class="contained" alt="Heatmap of joint probabilities with marginals."></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.6.4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Heatmap of joint probabilities for disease status (<span class="process-math">\(X \in \{D, N\}\)</span>) and test result (<span class="process-math">\(Y \in \{+, -\}\)</span>) from <span class="process-math">\(1,000\)</span> patients (<a href="sec-Two-or-More-Random-Variables.html#tab-patient-data-for-jt-and-conditional-probs" class="xref" data-knowl="./knowl/xref/tab-patient-data-for-jt-and-conditional-probs.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 1.6.6: Patient Counts (Disease vs. Test)">Table 1.6.6</a>). Darker shades indicate higher probabilities. Marginal probabilities (<span class="process-math">\(P(X)\text{,}\)</span> <span class="process-math">\(P(Y)\)</span>) are shown in the margins.<div class="autopermalink" data-description="Figure 1.6.4"><a href="#fig-joint-heatmap" title="Copy heading and permalink for Figure 1.6.4" aria-label="Copy heading and permalink for Figure 1.6.4">🔗</a></div></figcaption></figure><div class="code-box"><pre class="program clipboardable line-numbers"><code class="language-py">import numpy as np
+</div> <div class="para" id="subsec-Marginal-Probability-5-3">Often, we display joint and marginal probabilities in a heatmap as shown in <a href="sec-Two-or-More-Random-Variables.html#fig-joint-heatmap" class="xref" data-knowl="./knowl/xref/fig-joint-heatmap.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.6.4">Figure 1.6.4</a> with the marginals shown in the margins outside the Table.</div> <figure class="figure figure-like" id="fig-joint-heatmap"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/joint_heatmap.png" class="contained" alt="Heatmap of joint probabilities with marginals."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.6.4<span class="period">.</span></span><span class="space"> </span>Heatmap of joint probabilities for disease status (<span class="process-math">\(X \in \{D, N\}\)</span>) and test result (<span class="process-math">\(Y \in \{+, -\}\)</span>) from <span class="process-math">\(1,000\)</span> patients (<a href="sec-Two-or-More-Random-Variables.html#tab-patient-data-for-jt-and-conditional-probs" class="xref" data-knowl="./knowl/xref/tab-patient-data-for-jt-and-conditional-probs.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 1.6.6: Patient Counts (Disease vs. Test)">Table 1.6.6</a>). Darker shades indicate higher probabilities. Marginal probabilities (<span class="process-math">\(P(X)\text{,}\)</span> <span class="process-math">\(P(Y)\)</span>) are shown in the margins.</figcaption></figure> The following program was used to create the heatmap. <div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-py">Joint probability heatmap
+
+import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
@@ -534,9 +525,8 @@ plt.title("Joint Probability Heatmap with Marginals")
 plt.tight_layout()
 plt.savefig("joint_heatmap.png", dpi=300)
 plt.show()
-</code></pre></div>
-<div class="autopermalink" data-description="Example 1.6.3: Marginal Probabilites from Joint Probability Table"><a href="#subsec-Marginal-Probability-5" title="Copy heading and permalink for Example 1.6.3: Marginal Probabilites from Joint Probability Table" aria-label="Copy heading and permalink for Example 1.6.3: Marginal Probabilites from Joint Probability Table">🔗</a></div></article><div class="autopermalink" data-description="Subsection 1.6.2: Marginal Probability"><a href="#subsec-Marginal-Probability" title="Copy heading and permalink for Subsection 1.6.2: Marginal Probability" aria-label="Copy heading and permalink for Subsection 1.6.2: Marginal Probability">🔗</a></div></section><section class="subsection" id="subsec-Conditional-Probability"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.6.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Conditional Probability</span>
+</code></pre></div></article></section><section class="subsection" id="subsec-Conditional-Probability"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.6.3</span><span class="space"> </span><span class="title">Conditional Probability</span>
 </h3>
 <div class="para logical" id="subsec-Conditional-Probability-2">
 <div class="para">
@@ -548,7 +538,6 @@ P(A | B) = \frac{P(A\cap B)}{ P(B)},\quad P(B) \ne 0.\tag{1.6.6}
 \end{equation}
 </div>
 <div class="para">Of course, <span class="process-math">\(P(B) \ne 0\)</span> from the setup itself, since we are assuming <span class="process-math">\(B\)</span> has occured, i.e., its unconditional probability must have been zero.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Conditional-Probability-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="subsec-Conditional-Probability-3">
 <div class="para">So, how is it related to joint and marginal probabilities? Let’s look at our ongoing example of two discrete random variables <span class="process-math">\(X \in \{x_1, x_2, \cdots, x_m \}\)</span> and <span class="process-math">\(Y \in \{y_1, y_2, \cdots, y_n \}\)</span> with joint probabilities <span class="process-math">\(P(X=x_i, Y=y_j) \equiv P(x_i, y_j) \equiv p_{ij}\)</span> and marginal probabilities <span class="process-math">\(P(X=x_i) \equiv p_i\)</span> and <span class="process-math">\(P(Y=y_j) \equiv q_i\text{,}\)</span> where I used <span class="process-math">\(q\)</span> in <span class="process-math">\(Y\)</span> so that we don’t confused by <span class="process-math">\(p_1\)</span> for <span class="process-math">\(X=x_1\)</span> and another <span class="process-math">\(p_1\)</span> from <span class="process-math">\(Y=y_1\)</span> in the same context. The <em class="alert">conditional probability</em> of event <span class="process-math">\(X=x_i\)</span> for <span class="process-math">\(A\)</span> given event <span class="process-math">\(Y=y_j\)</span> for <span class="process-math">\(B\)</span> will be, using the simplified notation of dropping <span class="process-math">\(X=\)</span> and <span class="process-math">\(Y=\text{,}\)</span>
@@ -560,7 +549,6 @@ P(x_i \mid y_j) = \frac{P(x_i, y_j)}{P(y_j)}, \quad P(y_j) \gt 0.\tag{1.6.7}
 </div>
 <div class="para">Now, notice that <span class="process-math">\(P(x_i \mid y_j)\)</span> is a distribution in a world where <span class="process-math">\(Y\)</span> has a particula value and we are uncertain about <span class="process-math">\(X\text{,}\)</span> which could be in any of its <span class="process-math">\(m\)</span> values, and we are asking what will be the probability that the value will be <span class="process-math">\(x_i\text{.}\)</span> We can denote the PMF resulting from the <span class="process-math">\(m\)</span> values of <span class="process-math">\(X\)</span> when <span class="process-math">\(Y\)</span> is kept at <span class="process-math">\(y_j\)</span> as <span class="process-math">\(P(X,y_j)\text{.}\)</span>
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Conditional-Probability-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="subsec-Conditional-Probability-4">
 <div class="para">Thus, we will have <span class="process-math">\(n\)</span> DIFFERENT CONDITIONAL PROBABILITY MASS FUNCTIONS in <span class="process-math">\(X\)</span> space, one for each value of <span class="process-math">\(Y\text{:}\)</span>
@@ -571,7 +559,6 @@ P(X, y_1),\ P(X, y_2),\ P(X, y_3),\cdots, P(X, y_n).
 \end{equation*}
 </div>
 <div class="para">That is the complication that conditional probability brings and also richness of the questions you can ask of the data!</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Conditional-Probability-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="subsec-Conditional-Probability-5">
 <div class="para">Now, let’s look at Conditonal PMF <span class="process-math">\(P(X,y_1)\text{.}\)</span> It is a bonafide probability mass function with values:</div>
@@ -587,14 +574,10 @@ P(x_1, y_1),\ P(x_2, y_1),\ P(x_3, y_1),\cdots, P(x_m, y_1).
 P(x_1, y_1) + P(x_2, y_1) + P(x_3, y_1) + \cdots + P(x_m, y_1) = 1.\tag{1.6.8}
 \end{equation}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Conditional-Probability-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="example example-like" id="exp-Patient-disease-and-test-results-conditional-probabilities"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.6.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Patient disease and test results.</span>
-</h4>
-<div class="para" id="exp-Patient-disease-and-test-results-conditional-probabilities-2">Using the patient dataset (<a href="sec-Two-or-More-Random-Variables.html#tab-patient-data-for-jt-and-conditional-probs" class="xref" data-knowl="./knowl/xref/tab-patient-data-for-jt-and-conditional-probs.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 1.6.6: Patient Counts (Disease vs. Test)">Table 1.6.6</a>), compute all conditional probabilities:<div class="autopermalink" data-description="Paragraph"><a href="#exp-Patient-disease-and-test-results-conditional-probabilities-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<figure class="table table-like" id="tab-patient-data-for-jt-and-conditional-probs"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.6.6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Patient Counts (Disease vs. Test)<div class="autopermalink" data-description="Table 1.6.6: Patient Counts (Disease vs. Test)"><a href="#tab-patient-data-for-jt-and-conditional-probs" title="Copy heading and permalink for Table 1.6.6: Patient Counts (Disease vs. Test)" aria-label="Copy heading and permalink for Table 1.6.6: Patient Counts (Disease vs. Test)">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.6.5</span><span class="period">.</span><span class="space"> </span><span class="title">Patient disease and test results.</span>
+</h4> <div class="para" id="exp-Patient-disease-and-test-results-conditional-probabilities-2">Using the patient dataset (<a href="sec-Two-or-More-Random-Variables.html#tab-patient-data-for-jt-and-conditional-probs" class="xref" data-knowl="./knowl/xref/tab-patient-data-for-jt-and-conditional-probs.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 1.6.6: Patient Counts (Disease vs. Test)">Table 1.6.6</a>), compute all conditional probabilities:</div> <figure class="table table-like" id="tab-patient-data-for-jt-and-conditional-probs"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.6.6<span class="period">.</span></span><span class="space"> </span>Patient Counts (Disease vs. Test)</figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines"></td>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(+\)</span></td>
@@ -619,20 +602,15 @@ P(x_1, y_1) + P(x_2, y_1) + P(x_3, y_1) + \cdots + P(x_m, y_1) = 1.\tag{1.6.8}
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(n_-=550\)</span></td>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(n_T=1000\)</span></td>
 </tr>
-</table></div></figure><div class="para logical" id="exp-Patient-disease-and-test-results-conditional-probabilities-4">
+</table></div></figure> <div class="para logical" id="exp-Patient-disease-and-test-results-conditional-probabilities-4">
 <div class="para">Joint probabilities:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 P(D, +) = 0.150, \quad P(D, -) = 0.050, \quad P(N, +) = 0.300, \quad P(N, -) = 0.500.
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#exp-Patient-disease-and-test-results-conditional-probabilities-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="exp-Patient-disease-and-test-results-conditional-probabilities-5">Marginals: <span class="process-math">\(P(D) = 0.200\text{,}\)</span> <span class="process-math">\(P(N) = 0.800\text{,}\)</span> <span class="process-math">\(P(+) = 0.450\text{,}\)</span> <span class="process-math">\(P(-) = 0.550\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exp-Patient-disease-and-test-results-conditional-probabilities-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="exp-Patient-disease-and-test-results-conditional-probabilities-6">Conditional probabilities: Let us do one of the conditional probabilities in detail and just write the answers for the rest:<div class="autopermalink" data-description="Paragraph"><a href="#exp-Patient-disease-and-test-results-conditional-probabilities-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="exp-Patient-disease-and-test-results-conditional-probabilities-7">
+</div> <div class="para" id="exp-Patient-disease-and-test-results-conditional-probabilities-5">Marginals: <span class="process-math">\(P(D) = 0.200\text{,}\)</span> <span class="process-math">\(P(N) = 0.800\text{,}\)</span> <span class="process-math">\(P(+) = 0.450\text{,}\)</span> <span class="process-math">\(P(-) = 0.550\text{.}\)</span>
+</div> <div class="para" id="exp-Patient-disease-and-test-results-conditional-probabilities-6">Conditional probabilities: Let us do one of the conditional probabilities in detail and just write the answers for the rest:</div> <div class="para logical" id="exp-Patient-disease-and-test-results-conditional-probabilities-7">
 <div class="para">Suppose we want to know that if test came out positive, what is the proability that the individual has disease? Since, we have the full joint probability table, we can answer this question by computing <span class="process-math">\(P( D \mid +)\text{.}\)</span>
 </div>
 <div class="displaymath process-math" id="exp-Patient-disease-and-test-results-conditional-probabilities-7-2">
@@ -661,14 +639,8 @@ P(+ \mid D) = 0.750, \quad P(- \mid D) = 0.250, \\
 P(+ \mid N) = 0.375, \quad P(- \mid N)  = 0.625. 
 \end{gather*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#exp-Patient-disease-and-test-results-conditional-probabilities-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="exp-Patient-disease-and-test-results-conditional-probabilities-8">For two variables, each with two possible values, i.e., <span class="process-math">\(m=2\)</span> and <span class="process-math">\(n=2\)</span> there are <span class="process-math">\(m + n = 4\)</span> possible conditional PMFs, same as the number of marginal PMFs, but only one joint PMF.<div class="autopermalink" data-description="Paragraph"><a href="#exp-Patient-disease-and-test-results-conditional-probabilities-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="exp-Patient-disease-and-test-results-conditional-probabilities-9">Another useful way to display the information in a conditional probability is to plot the PMFs in a bar chart as shown in <a href="sec-Two-or-More-Random-Variables.html#fig-patient-bar-conditional" class="xref" data-knowl="./knowl/xref/fig-patient-bar-conditional.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.6.7">Figure 1.6.7</a>, where each PMF is called a group.<div class="autopermalink" data-description="Paragraph"><a href="#exp-Patient-disease-and-test-results-conditional-probabilities-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<figure class="figure figure-like" id="fig-patient-bar-conditional"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/patient_conditional_bars.png" class="contained" alt="Grouped bar chart of conditional probabilities."></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.6.7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Grouped bar chart of conditional probabilities for disease status (<span class="process-math">\(X \in \{D, N\}\)</span>) given test result (<span class="process-math">\(Y \in \{+, -\}\)</span>) and test result given disease status. Each group shows a probability distribution (summing to 1), illustrating how conditional probabilities slice the joint distribution.<div class="autopermalink" data-description="Figure 1.6.7"><a href="#fig-patient-bar-conditional" title="Copy heading and permalink for Figure 1.6.7" aria-label="Copy heading and permalink for Figure 1.6.7">🔗</a></div></figcaption></figure><div class="code-box"><pre class="program clipboardable line-numbers"><code class="language-py"># === Grouped bar chart for all conditional probabilities ===
+</div> <div class="para" id="exp-Patient-disease-and-test-results-conditional-probabilities-8">For two variables, each with two possible values, i.e., <span class="process-math">\(m=2\)</span> and <span class="process-math">\(n=2\)</span> there are <span class="process-math">\(m + n = 4\)</span> possible conditional PMFs, same as the number of marginal PMFs, but only one joint PMF.</div> <div class="para" id="exp-Patient-disease-and-test-results-conditional-probabilities-9">Another useful way to display the information in a conditional probability is to plot the PMFs in a bar chart as shown in <a href="sec-Two-or-More-Random-Variables.html#fig-patient-bar-conditional" class="xref" data-knowl="./knowl/xref/fig-patient-bar-conditional.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.6.7">Figure 1.6.7</a>, where each PMF is called a group.</div> <figure class="figure figure-like" id="fig-patient-bar-conditional"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/patient_conditional_bars.png" class="contained" alt="Grouped bar chart of conditional probabilities."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.6.7<span class="period">.</span></span><span class="space"> </span>Grouped bar chart of conditional probabilities for disease status (<span class="process-math">\(X \in \{D, N\}\)</span>) given test result (<span class="process-math">\(Y \in \{+, -\}\)</span>) and test result given disease status. Each group shows a probability distribution (summing to 1), illustrating how conditional probabilities slice the joint distribution.</figcaption></figure> <div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-py"># === Grouped bar chart for all conditional probabilities ===
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -711,12 +683,10 @@ ax.grid(True, alpha=0.3)
 plt.tight_layout()
 plt.savefig("patient_conditional_bars.png", dpi=300)
 plt.show()
-</code></pre></div>
-<div class="autopermalink" data-description="Example 1.6.5: Patient disease and test results"><a href="#exp-Patient-disease-and-test-results-conditional-probabilities" title="Copy heading and permalink for Example 1.6.5: Patient disease and test results" aria-label="Copy heading and permalink for Example 1.6.5: Patient disease and test results">🔗</a></div></article><div class="autopermalink" data-description="Subsection 1.6.3: Conditional Probability"><a href="#subsec-Conditional-Probability" title="Copy heading and permalink for Subsection 1.6.3: Conditional Probability" aria-label="Copy heading and permalink for Subsection 1.6.3: Conditional Probability">🔗</a></div></section><section class="subsection" id="subsec-conditional-probability-from-joint-probability"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.6.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Bayes’ Rule</span>
+</code></pre></div></article></section><section class="subsection" id="subsec-conditional-probability-from-joint-probability"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.6.4</span><span class="space"> </span><span class="title">Bayes’ Rule</span>
 </h3>
-<div class="para" id="subsec-conditional-probability-from-joint-probability-2">Bayes’s rule (also called Bayes’s theorem) is a fundamental principle in probability theory. It describes how to update the probability of a hypothesis, which is expressed as a conditional probability when new evidence is observed. This looks and feels like too abstract. So, to get a better feel for it, let’s look at the mechanism of this process.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-conditional-probability-from-joint-probability-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
+<div class="para" id="subsec-conditional-probability-from-joint-probability-2">Bayes’s rule (also called Bayes’s theorem) is a fundamental principle in probability theory. It describes how to update the probability of a hypothesis, which is expressed as a conditional probability when new evidence is observed. This looks and feels like too abstract. So, to get a better feel for it, let’s look at the mechanism of this process.</div>
 <div class="para logical" id="subsec-conditional-probability-from-joint-probability-3">
 <div class="para">From the conditional probability definition and/or product rule of probabilities, we have the following relations between the Joint, Marginal, and Condtional probabilites concerning two events <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{:}\)</span>
 </div>
@@ -751,7 +721,6 @@ P(A \mid B)= \frac{P(B \mid A) P(A)}{P(B)},\quad P(B) \ne 0.\tag{1.6.12}
 </div>
 <div class="para">This is <dfn class="terminology">Bayes’s Rule</dfn>. We are using the information that <span class="process-math">\(B\)</span> has occured to make prediction on another event <span class="process-math">\(A\text{.}\)</span> Of course, we also need <span class="process-math">\(P(B \mid A)\)</span> and <span class="process-math">\(P(A)\text{.}\)</span>
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-conditional-probability-from-joint-probability-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="subsec-conditional-probability-from-joint-probability-4">
 <div class="para">Let us now look at Bayes’s rule in the context of two discrete random variables, <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\text{,}\)</span> which take values <span class="process-math">\(\{ x_1, x_2, \cdots, x_m \}\)</span> and <span class="process-math">\(\{ y_1, y_2, \cdots, y_n \}\text{,}\)</span> respectively, as we have presented above in earlier subsections. For concreteness, let us focus on particular events</div>
@@ -791,16 +760,10 @@ P(x_i \mid y_j)= \frac{P(y_j \mid x_i) P(x_i)}{\sum_{k=1}^m\,P(y_j\mid x_k)P(x_k
 P(X \mid Y)= \frac{P(Y \mid X) P(X)}{\sum_{X'}P( Y \mid X')P(X')}.
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-conditional-probability-from-joint-probability-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="example example-like" id="subsec-conditional-probability-from-joint-probability-5"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.6.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Use of Bayes’s Rule in Medical Diagnosis.</span>
-</h4>
-<div class="para" id="subsec-conditional-probability-from-joint-probability-5-2">Suppose, in a population of women in the age group 30 to 40, <span class="process-math">\(1\%\)</span>  develop breast cancer. It’s also known that mammogram test identifies <span class="process-math">\(80\%\)</span> of cancers accurately and misses <span class="process-math">\(20\%\)</span> of them. This means that if a woman has breast cancer, the test will be positive only <span class="process-math">\(80%\)</span> of the time. Furthermore, the test also give negative values <span class="process-math">\(95\%\)</span> of the time correctly, i.e., if a woman doesn’t have cancer, the test would came out negative <span class="process-math">\(95%\)</span> of the times.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-conditional-probability-from-joint-probability-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="subsec-conditional-probability-from-joint-probability-5-3">Now, a new woman in that age group comes in the lab and unfortunately, she tests positive. So, what would you say about here chances of actually having the cancer? Will it be <span class="process-math">\(80\%\)</span> or something else?<div class="autopermalink" data-description="Paragraph"><a href="#subsec-conditional-probability-from-joint-probability-5-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="subsec-conditional-probability-from-joint-probability-5-4">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.6.8</span><span class="period">.</span><span class="space"> </span><span class="title">Use of Bayes’s Rule in Medical Diagnosis.</span>
+</h4> <div class="para" id="subsec-conditional-probability-from-joint-probability-5-2">Suppose, in a population of women in the age group 30 to 40, <span class="process-math">\(1\%\)</span>  develop breast cancer. It’s also known that mammogram test identifies <span class="process-math">\(80\%\)</span> of cancers accurately and misses <span class="process-math">\(20\%\)</span> of them. This means that if a woman has breast cancer, the test will be positive only <span class="process-math">\(80%\)</span> of the time. Furthermore, the test also give negative values <span class="process-math">\(95\%\)</span> of the time correctly, i.e., if a woman doesn’t have cancer, the test would came out negative <span class="process-math">\(95%\)</span> of the times.</div> <div class="para" id="subsec-conditional-probability-from-joint-probability-5-3">Now, a new woman in that age group comes in the lab and unfortunately, she tests positive. So, what would you say about here chances of actually having the cancer? Will it be <span class="process-math">\(80\%\)</span> or something else?</div> <div class="para logical" id="subsec-conditional-probability-from-joint-probability-5-4">
 <div class="para">Let us denote <span class="process-math">\(C\)</span> for cancer <span class="process-math">\(N\)</span> for no cancer, <span class="process-math">\(+\)</span> for mamomgram being positive and <span class="process-math">\(-\)</span> if negative. What we want is</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-Bayes-Rule-example-breast-cancer-main-equation.html ./knowl/xref/eqn-Bayes-Rule-example-breast-cancer-main-equation.html">
 \begin{equation*}
@@ -841,10 +804,8 @@ P(C \mid +) = \frac{0.8\times 0.01}{0.8\times 0.01 + 0.05\times 0.99} = 0.139.
 </div>
 <div class="para">That is the probability of the individual having cancer will be <span class="process-math">\(13.9\%\text{.}\)</span>
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-conditional-probability-from-joint-probability-5-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Example 1.6.8: Use of Bayes’s Rule in Medical Diagnosis"><a href="#subsec-conditional-probability-from-joint-probability-5" title="Copy heading and permalink for Example 1.6.8: Use of Bayes’s Rule in Medical Diagnosis" aria-label="Copy heading and permalink for Example 1.6.8: Use of Bayes’s Rule in Medical Diagnosis">🔗</a></div></article><div class="autopermalink" data-description="Subsection 1.6.4: Bayes’ Rule"><a href="#subsec-conditional-probability-from-joint-probability" title="Copy heading and permalink for Subsection 1.6.4: Bayes’ Rule" aria-label="Copy heading and permalink for Subsection 1.6.4: Bayes’ Rule">🔗</a></div></section><section class="subsection" id="subsec-Independent-Variables"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.6.5</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Independent Random Variables</span>
+</div></article></section><section class="subsection" id="subsec-Independent-Variables"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.6.5</span><span class="space"> </span><span class="title">Independent Random Variables</span>
 </h3>
 <div class="para logical" id="subsec-Independent-Variables-2">
 <div class="para">Two random variables are said to be independent if their joint probability factorizes in the product of their marginal probabilities.</div>
@@ -872,7 +833,6 @@ P(X|Y) = P(X)\ \ \text{(Independent variables)}
 \end{equation*}
 </div>
 <div class="para">That is knowing something about <span class="process-math">\(Y\)</span> does not tell you anything about probability of <span class="process-math">\(X\text{.}\)</span> That is, conditioning on <span class="process-math">\(Y\)</span> is useless when <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> are independent.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Independent-Variables-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="subsec-Independent-Variables-3">
 <div class="para">For continuous variables, the equivalent statement is about the joint PDF factorizing into component marginal PDFs.</div>
@@ -881,7 +841,6 @@ P(X|Y) = P(X)\ \ \text{(Independent variables)}
 \rho_{X,Y}(x, y) = \rho_X(x) \rho_Y(y).\tag{1.6.16}
 \end{equation}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Independent-Variables-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="subsec-Independent-Variables-4">
 <div class="para">Independence also implies  that their covariance is zero:</div>
@@ -896,13 +855,10 @@ P(X|Y) = P(X)\ \ \text{(Independent variables)}
 \mathrm{Cov}(X,Y) = 0  \not \implies \text{Independent }X,Y.
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Independent-Variables-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Subsection 1.6.5: Independent Random Variables"><a href="#subsec-Independent-Variables" title="Copy heading and permalink for Subsection 1.6.5: Independent Random Variables" aria-label="Copy heading and permalink for Subsection 1.6.5: Independent Random Variables">🔗</a></div></section><section class="subsection" id="subsec-Covariance-and-Correlation"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.6.6</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Covariance and Correlation</span>
+</div></section><section class="subsection" id="subsec-Covariance-and-Correlation"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.6.6</span><span class="space"> </span><span class="title">Covariance and Correlation</span>
 </h3>
-<div class="para" id="subsec-Covariance-and-Correlation-2">A very common aspect of dealing with more than one random variable, say <span class="process-math">\(X\)</span> (e.g., height of a man) and <span class="process-math">\(Y\)</span> (e.g., the weight of the man) is to find out to what extent they tend to vary together. <em class="alert">Covariance</em> is a measure of their varying together either in the same direction or in the opposite direction. The normalized version of covariance so that result lies between <span class="process-math">\(-1\)</span> and <span class="process-math">\(+1\)</span> is called <em class="alert">correlation</em>.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Covariance-and-Correlation-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
+<div class="para" id="subsec-Covariance-and-Correlation-2">A very common aspect of dealing with more than one random variable, say <span class="process-math">\(X\)</span> (e.g., height of a man) and <span class="process-math">\(Y\)</span> (e.g., the weight of the man) is to find out to what extent they tend to vary together. <em class="alert">Covariance</em> is a measure of their varying together either in the same direction or in the opposite direction. The normalized version of covariance so that result lies between <span class="process-math">\(-1\)</span> and <span class="process-math">\(+1\)</span> is called <em class="alert">correlation</em>.</div>
 <div class="para logical" id="subsec-Covariance-and-Correlation-3">
 <div class="para">Let <span class="process-math">\(P(X,Y)\)</span> denote the joint probability of <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\text{.}\)</span> Then, covariance is the following expectation value computed in this probability distribution.</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-Covariance.html ./knowl/xref/fig-pos-neg-no-correlation-examples.html" id="eqn-Covariance">
@@ -951,20 +907,16 @@ P(X|Y) = P(X)\ \ \text{(Independent variables)}
 \end{align*}
 </div>
 <div class="para">The positive correlation (or covariance) means <span class="process-math">\(X\)</span> vary in the same direction, i.e., increasing <span class="process-math">\(X\)</span> and increasing <span class="process-math">\(Y\)</span> occur together. The opposite is the case for negative correlation (or covariance). See <a href="sec-Two-or-More-Random-Variables.html#fig-pos-neg-no-correlation-examples" class="xref" data-knowl="./knowl/xref/fig-pos-neg-no-correlation-examples.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.6.9">Figure 1.6.9</a>.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Covariance-and-Correlation-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="fig-pos-neg-no-correlation-examples"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/correlation_examples.png" class="contained" alt="Positive correlation shows upward trend, nagative shows downward trend and no correlation shows no discenable trend."></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.6.9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Positive correlation shows upward trend, nagative shows downward trend and no correlation shows no discenable trend.<div class="autopermalink" data-description="Figure 1.6.9"><a href="#fig-pos-neg-no-correlation-examples" title="Copy heading and permalink for Figure 1.6.9" aria-label="Copy heading and permalink for Figure 1.6.9">🔗</a></div></figcaption></figure><div class="para" id="subsec-Covariance-and-Correlation-5">
-<em class="alert">Beware, Correlation is not the same thing as Causation!</em> Just because two things move together doesn’t mean one causes the other. For example, suppose you find that ice cream sales and shark attacks may rise together (both happen in hot weather when people flock to the beaches), but it would be ludicurous to suggest that it means ice cream sales cause the shark attack or vice versa! Machine learning models may find patterns, but not always causal ones.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Covariance-and-Correlation-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Subsection 1.6.6: Covariance and Correlation"><a href="#subsec-Covariance-and-Correlation" title="Copy heading and permalink for Subsection 1.6.6: Covariance and Correlation" aria-label="Copy heading and permalink for Subsection 1.6.6: Covariance and Correlation">🔗</a></div></section><section class="conclusion" id="sec-Two-or-More-Random-Variables-9"><div class="para" id="sec-Two-or-More-Random-Variables-9-1">Joint, marginal, and conditional probabilities form the foundation for modeling relationships between random variables. Joint probabilities capture co-occurrence, marginals summarize individual variables, and conditionals refine probabilities based on evidence. Bayes’ rule updates beliefs, while independence simplifies joint distributions. Visualizations like heatmaps, scatter plots, and tree diagrams clarify these concepts. Apply these tools in fields like medical diagnostics, as shown, or explore further with resources like <a class="external" href="https://www.probabilitycourse.com/" target="_blank">Probability Course</a>.<div class="autopermalink" data-description="Paragraph"><a href="#sec-Two-or-More-Random-Variables-9-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></section><div class="autopermalink" data-description="Section 1.6: Two or More Random Variables"><a href="#sec-Two-or-More-Random-Variables" title="Copy heading and permalink for Section 1.6: Two or More Random Variables" aria-label="Copy heading and permalink for Section 1.6: Two or More Random Variables">🔗</a></div></section></div>
-<div id="ptx-content-footer" class="ptx-content-footer">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.6.9<span class="period">.</span></span><span class="space"> </span>Positive correlation shows upward trend, nagative shows downward trend and no correlation shows no discenable trend.</figcaption></figure><div class="para" id="subsec-Covariance-and-Correlation-5">
+<em class="alert">Beware, Correlation is not the same thing as Causation!</em> Just because two things move together doesn’t mean one causes the other. For example, suppose you find that ice cream sales and shark attacks may rise together (both happen in hot weather when people flock to the beaches), but it would be ludicurous to suggest that it means ice cream sales cause the shark attack or vice versa! Machine learning models may find patterns, but not always causal ones.</div></section><section class="conclusion" id="sec-Two-or-More-Random-Variables-9"><div class="para" id="sec-Two-or-More-Random-Variables-9-1">Joint, marginal, and conditional probabilities form the foundation for modeling relationships between random variables. Joint probabilities capture co-occurrence, marginals summarize individual variables, and conditionals refine probabilities based on evidence. Bayes’ rule updates beliefs, while independence simplifies joint distributions. Visualizations like heatmaps, scatter plots, and tree diagrams clarify these concepts. Apply these tools in fields like medical diagnostics, as shown, or explore further with resources like <a class="external" href="https://www.probabilitycourse.com/" target="_blank">Probability Course</a><details class="ptx-footnote" aria-live="polite" id="sec-Two-or-More-Random-Variables-9-1-2"><summary class="ptx-footnote__number" title="Footnote 1.6.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="sec-Two-or-More-Random-Variables-9-1-2"><code class="code-inline tex2jax_ignore">probabilitycourse.com</code></div></details>.</div></section></section></div>
+<div class="ptx-content-footer">
 <a class="previous-button button" href="sec-Random-Variables-and-Probabilities.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-Example-Discrete-Probability-Distributions.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
-<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
 </div>
 </body>
 </html>
