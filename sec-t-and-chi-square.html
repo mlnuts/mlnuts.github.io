@@ -377,10 +377,70 @@ P( x \le X \le x + dx ) = \frac{1}{2^{n/2}\Gamma(n/2)}\,x^{\frac{n}{2}-1}\,e^{-x
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec-Chi-Sqaure-Distribition-4-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 1.10.1.1: Derivation"><a href="#subsec-Chi-Sqaure-Distribition-4" title="Copy heading and permalink for Proof 1.10.1.1: Derivation" aria-label="Copy heading and permalink for Proof 1.10.1.1: Derivation">🔗</a></div></article><div class="autopermalink" data-description="Subsection 1.10.1: Chi Sqaure Distribition"><a href="#subsec-Chi-Sqaure-Distribition" title="Copy heading and permalink for Subsection 1.10.1: Chi Sqaure Distribition" aria-label="Copy heading and permalink for Subsection 1.10.1: Chi Sqaure Distribition">🔗</a></div></section><section class="subsection" id="subsec-t-ditribution"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Proof 1.10.1.1: Derivation"><a href="#subsec-Chi-Sqaure-Distribition-4" title="Copy heading and permalink for Proof 1.10.1.1: Derivation" aria-label="Copy heading and permalink for Proof 1.10.1.1: Derivation">🔗</a></div></article><div class="para logical" id="subsec-Chi-Sqaure-Distribition-5">
+<div class="para">The mean and variance is not that challenging a calulation either if you are not afraid of these integrals. first thing I will do to the PDF is to rewrite in variable <span class="process-math">\(y=x/2\text{.}\)</span> You can show that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-chi2-PDF.html">
+\begin{equation*}
+\rho_X(x; n) = \frac{1}{Gamma(n/2)}\,y^{\frac{n}{2}-1}\,e^{-y},\quad x = 2y,\ 0 \le y \lt \infty,
+\end{equation*}
+</div>
+<div class="para">Now, it is much easier to see the Gamma functions in the integrals when you compute expectation values of powers of <span class="process-math">\(X\text{.}\)</span>  Thus, mean will be</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-chi2-PDF.html" id="subsec-Chi-Sqaure-Distribition-5-4">
+\begin{align*}
+\mu \amp = \mathbb{E}[X]  = \frac{1}{\Gamma(n/2)} \int_{0}^\infty 2y \,y^{\frac{n}{2}-1}\,e^{-y}\, dy, \text{used }x=2y. \\
+\amp= \frac{1}{\Gamma(n/2)} 2\times \Gamma(n/2 + 1) = n. 
+\end{align*}
+</div>
+<div class="para">The last step follows from the recursion relation of Gamma functions.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-chi2-PDF.html">
+\begin{equation*}
+\Gamma(a + 1) = a \Gamma(a),\, x\gt 0.
+\end{equation*}
+</div>
+<div class="para">Similarly, we get the following expectation value of the square of random variable.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-chi2-PDF.html" id="subsec-Chi-Sqaure-Distribition-5-6">
+\begin{align*}
+\mathbb{E}[X^2] \amp = \frac{1}{\Gamma(n/2)} \int_{0}^\infty 4\,x^2 \,y^{\frac{n}{2}-1}\,e^{-y}\, dy. \\
+\amp= \frac{1}{\Gamma(n/2)} 4\times \Gamma(n/2 + 2) = 2 n\left(\frac{n}{2} + 1\right). 
+\end{align*}
+</div>
+<div class="para">The variance will be</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-chi2-PDF.html">
+\begin{equation*}
+\textrm{Var}(X) = \mathbb{E}[X^2] - \left( \mathbb{E}[X] \right)^2 = 2n \left(\frac{n}{2} + 1\right) - n^2 = 2n.
+\end{equation*}
+</div>
+<div class="para">
+<a href="sec-t-and-chi-square.html#fig-chi2-PDF" class="xref" data-knowl="./knowl/xref/fig-chi2-PDF.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.10.1">Figure 1.10.1</a> shows plots of the PDF <span class="process-math">\(\chi^2_n(x)\)</span> for various values of <span class="process-math">\(n\text{.}\)</span> If the plots remind you of Gamma distribution, then you are on the right track, since Chi Square distribution is just a Gamma distribution of <span class="process-math">\(Y\)</span> with <span class="process-math">\(Y=2X\)</span> substitution, i.e., of a scaled chi-squared variable, as we have seen above in our calculations.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Chi-Sqaure-Distribition-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-chi2-PDF"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/chi2.png" class="contained" alt="Chi Square PDF for various values of the degree of freedom parameter n."></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.10.1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Chi Square PDF for various values of the degree of freedom parameter <span class="process-math">\(n\text{.}\)</span> With larger <span class="process-math">\(n\)</span> the peak shifts to right as expected from the mean being just <span class="process-math">\(n\text{.}\)</span><div class="autopermalink" data-description="Figure 1.10.1"><a href="#fig-chi2-PDF" title="Copy heading and permalink for Figure 1.10.1" aria-label="Copy heading and permalink for Figure 1.10.1">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Subsection 1.10.1: Chi Sqaure Distribition"><a href="#subsec-Chi-Sqaure-Distribition" title="Copy heading and permalink for Subsection 1.10.1: Chi Sqaure Distribition" aria-label="Copy heading and permalink for Subsection 1.10.1: Chi Sqaure Distribition">🔗</a></div></section><section class="subsection" id="subsec-t-ditribution"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.10.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">t-ditribution</span>
 </h3>
-<div class="para" id="subsec-t-ditribution-2"><div class="autopermalink" data-description="Paragraph"><a href="#subsec-t-ditribution-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="para" id="subsec-t-ditribution-2">The Student t-distribution is a probability distribution used in statistics to model data when sample sizes are small or population variance is unknown as we will see when we study Inferential Statistics. Here we study the math and characteristics of the distribution itself. “Student” is the pseudonym of William Sealy Gosset who published it in 1908.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-t-ditribution-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-t-ditribution-3">
+<div class="para">The <span class="process-math">\(t\)</span>-random variable is constructed from two other random variables, <span class="process-math">\(Z\)</span> and <span class="process-math">\(Y\text{,}\)</span> with</div>
+<div class="displaymath process-math">
+\begin{equation*}
+Z \sim \mathcal{N}(0,1),\quad Y\sim \chi^2_n.
+\end{equation*}
+</div>
+<div class="para">Then, we define the <span class="process-math">\(t\)</span>-random variable by</div>
+<div class="displaymath process-math" id="eqn-t-random-variable-defn">
+\begin{equation}
+T = \frac{Z}{\sqrt{Y/n}}.\tag{1.10.8}
+\end{equation}
+</div>
+<div class="para">You can see that the square root in the denominator is trying to modify the scale of <span class="process-math">\(Z\)</span> by sampled standard deviation. We will discuss these ideas in a later section. Here we ask, what is the PDF of <span class="process-math">\(T\)</span> given the PDF’s of <span class="process-math">\(Z\)</span> and <span class="process-math">\(Y\text{.}\)</span>  The ansewer turns out to be the <span class="process-math">\(t\)</span>-distribution.</div>
+<div class="displaymath process-math" id="eqn-t-distribution">
+\begin{equation}
+\rho_T(t; n) = \frac{ \Gamma \left( \frac{n+1}{2} \right) }{ \sqrt{n\pi} \Gamma(n/2)} \left( \frac{t^2}{n} + 1 \right)^{-\frac{n+1}{2}}.\tag{1.10.9}
+\end{equation}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-t-ditribution-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div class="autopermalink" data-description="Subsection 1.10.2: t-ditribution"><a href="#subsec-t-ditribution" title="Copy heading and permalink for Subsection 1.10.2: t-ditribution" aria-label="Copy heading and permalink for Subsection 1.10.2: t-ditribution">🔗</a></div></section><div class="autopermalink" data-description="Section 1.10: Chi Square and Student t Distributions"><a href="#sec-t-and-chi-square" title="Copy heading and permalink for Section 1.10: Chi Square and Student t Distributions" aria-label="Copy heading and permalink for Section 1.10: Chi Square and Student t Distributions">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sec-LLN-and-CLT.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-Inferential-Statistics.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
