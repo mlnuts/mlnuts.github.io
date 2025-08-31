@@ -280,7 +280,7 @@ window.MathJax = {
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-Inferential-Statistics"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">1.11</span><span class="space"> </span><span class="title">Inferential Statistics</span>
 </h2>
-<section class="introduction" id="sec-Inferential-Statistics-2"><div class="para" id="sec-Inferential-Statistics-2-1">Inferential statistics is the branch of statistics that enables us to draw conclusions about a population based on data from a sample. Unlike descriptive statistics, which summarize observed data, inferential statistics use probability theory to make generalizations about the population from which the sample is drawn.</div> <div class="para logical" id="sec-Inferential-Statistics-2-2">
+<section class="introduction" id="sec-Inferential-Statistics-2"><div class="para" id="sec-Inferential-Statistics-2-1">Inferential statistics is the branch of statistics that enables us to draw conclusions about a population based on data from a sample taken from the population. Unlike descriptive statistics, which summarize observed data, inferential statistics use probability theory to make generalizations about the population from which the sample is drawn.</div> <div class="para logical" id="sec-Inferential-Statistics-2-2">
 <div class="para">The core concepts of inferential statistics include:</div>
 <ul class="disc" id="sec-Inferential-Statistics-2-2-1">
 <li id="sec-Inferential-Statistics-2-2-1-1"><div class="para" id="sec-Inferential-Statistics-2-2-1-1-1">
@@ -290,40 +290,133 @@ window.MathJax = {
 <li id="sec-Inferential-Statistics-2-2-1-3"><div class="para" id="sec-Inferential-Statistics-2-2-1-3-1">
 <dfn class="terminology">Parameter</dfn>: A numerical characteristic of the population (e.g., population mean <span class="process-math">\(\mu\text{,}\)</span> variance <span class="process-math">\(\sigma^2\)</span>).</div></li>
 <li id="sec-Inferential-Statistics-2-2-1-4"><div class="para" id="sec-Inferential-Statistics-2-2-1-4-1">
-<dfn class="terminology">Statistic</dfn>: A statistic is a random variable such as sample mean, whose numerical value can be calculated from a sample of the population. The average and standard deviation of the statistic are used to draw conclusions about the population.</div></li>
+<dfn class="terminology">Statistic</dfn>: A statistic is a random variable such as sample mean, whose numerical value can be calculated from a sample. The average and standard deviation of the statistic are then used to draw conclusions about the population.</div></li>
 </ul>
-</div> <div class="para" id="sec-Inferential-Statistics-2-3">So, you will have to pay attention to the same name used in two context, e.g., population (“true”) mean <span class="process-math">\(\mu\text{,}\)</span> which would be a single number, usually unknown or even unkowable, versus sample mean, <span class="process-math">\(\overline{X}\text{,}\)</span> which is an average over <span class="process-math">\(N\)</span> data points of the sample and varies from sample to sample. If outcome of each trial is either <span class="process-math">\(0\)</span> or <span class="process-math">\(1\text{,}\)</span> then the sample mean would be equal to the proportion <span class="process-math">\(\overline{P_N}\)</span> of <span class="process-math">\(1\)</span>’s in the sample. The proportion of <span class="process-math">\(1\)</span>’s is the “frequentsts’” probability <span class="process-math">\(p\)</span> of finding <span class="process-math">\(1\)</span> in any trial. Whether we estimate <span class="process-math">\(\overline{X}\)</span> or <span class="process-math">\(\overline{P_N}\text{,}\)</span> the analytic procedure is same.</div></section><section class="subsection" id="subsec-Point-Estimation"><h3 class="heading hide-type">
+</div> </section><section class="subsection" id="subsec-Point-Estimation"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.11.1</span><span class="space"> </span><span class="title">Point Estimation</span>
 </h3>
 <div class="para" id="subsec-Point-Estimation-2">
-<dfn class="terminology">Point estimation</dfn> involves using a sample statistic to estimate a population parameter. For example, the sample mean <span class="process-math">\(\overline{X}\)</span> is used to estimate the population mean <span class="process-math">\(\mu\text{,}\)</span> and the sample proportion <span class="process-math">\(\overline{P_N}\)</span> estimates the population proportion <span class="process-math">\(p\text{.}\)</span> A good point estimator should be unbiased (its expected value equals the true parameter) and have low variance (it is precise).</div>
-<div class="para" id="subsec-Point-Estimation-3">For instance, if we measure the heights of 50 randomly selected adults and find a sample mean of <span class="process-math">\(\overline{X_{50}} = 170 \, \text{cm}\text{,}\)</span> we use <span class="process-math">\(170 \, \text{cm}\)</span> as a point estimate for the population mean height <span class="process-math">\(\mu\text{.}\)</span> However, <em class="emphasis">point estimates do not convey uncertainty,</em> which is why confidence intervals are often used to provide a range of plausible values, which we turn next.</div></section><section class="subsection" id="subsec-Confidence-Intervals"><h3 class="heading hide-type">
+<dfn class="terminology">Point estimation</dfn> involves using a sample statistic to estimate a population parameter. For example, the sample mean <span class="process-math">\(\overline{X}\)</span> is used to estimate the population mean <span class="process-math">\(\mu\text{,}\)</span> and the sample proportion <span class="process-math">\(\overline{P}\)</span> estimates the population proportion <span class="process-math">\(p\text{.}\)</span>
+</div>
+<div class="para" id="subsec-Point-Estimation-3">For instance, if we measure the heights of 50 randomly selected adults and find a sample mean of <span class="process-math">\(\overline{X} = 170 \, \text{cm}\text{,}\)</span> we can use <span class="process-math">\(170 \, \text{cm}\)</span> as a point estimate for the population mean height <span class="process-math">\(\mu\text{,}\)</span> which we usually do not know. So, estimate <span class="process-math">\(\overline{X}\)</span> may be a little bit off or a lot off from the true value of <span class="process-math">\(\mu\text{.}\)</span> <em class="emphasis">Point estimates do not convey uncertainty about how far actual <span class="process-math">\(\mu\)</span> be off from <span class="process-math">\(\overline{X}\)</span></em>. For that we turn to proabbility theory and tie statistics to probability. First we look at a concept called the Confidence Interval (CI).</div></section><section class="subsection" id="subsec-Confidence-Intervals"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.11.2</span><span class="space"> </span><span class="title">Confidence Intervals TODO</span>
 </h3>
 <div class="para logical" id="subsec-Confidence-Intervals-2">
-<div class="para">Suppose we want to estimate the mean height <span class="process-math">\(h\)</span> of all adult men. Clearly, we would not have the time or resources to measure heights of all men and then find their mean. Instead, we may randomly select <span class="process-math">\(1000\)</span> men and measure their heights. From this sample we can compute the value of the sample mean of the data we collected.</div>
+<div class="para">Let us contiue with the example of height <span class="process-math">\(H\)</span> of an adult male in a population. From sample of <span class="process-math">\(n\)</span> men, we compute the sample mean <span class="process-math">\(\bar{h}\text{,}\)</span> which gives us an estimate of the estimate of the true mean height <span class="process-math">\(\mu\text{.}\)</span> Confidence interval is an interval around the sample mean, <span class="process-math">\([h_\text{low},\ h_\text{high}]\text{,}\)</span> which is expected to contain the unknown true value <span class="process-math">\(\mu\)</span> at a certain level of confidence, i.e., with certain probability, say <span class="process-math">\(95\%\text{.}\)</span>
+</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\overline{h} = \frac{h_1 + h_2 + ...+ h_{1000}}{1000}.
+P(\mu \in [h_\text{low}, h_\text{high}]) \gt 0.95.
 \end{equation*}
 </div>
-<div class="para">This is not telling us if our answer is anywhere close to the true <span class="process-math">\(h\text{.}\)</span> The theory based on the Central Limit Theorem can be used to provide probability that if <span class="process-math">\(N\)</span> is large enough, we can be certain to a point that the true <span class="process-math">\(h\)</span> will be within a confidence interval around the sample mean.</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\text{Confidence Interval: } h_\text{lower} \lt \overline{h} \lt h_\text{upper},
-\end{equation*}
+<div class="para">So, how do we find <span class="process-math">\(h_\text{low}\)</span> and <span class="process-math">\(h_\text{high}\)</span> from the sample data of heights of <span class="process-math">\(n\)</span> randomly selected men from the population?</div>
 </div>
-<div class="para">where the lower and upper values of th confidence interval are computed from the data in the sample. The larger the <span class="process-math">\(N\text{,}\)</span> the tighter will be the interval. Another way of writing this is</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\overline{h} \pm \text{margin of error},
-\end{equation*}
-</div>
-<div class="para">with</div>
-<div class="displaymath process-math" id="subsec-Confidence-Intervals-2-10">
+<div class="para logical" id="subsec-Confidence-Intervals-3">
+<div class="para">Suppose number of data points <span class="process-math">\(n\)</span> is large enough that we can use Central Limit Theorem (CLT). Let us denote the random variables corresponding to the individual identical and independent (i.i.d) height measurements by <span class="process-math">\(H_1, H_2, \cdots, H_n\)</span> with</div>
+<div class="displaymath process-math" id="subsec-Confidence-Intervals-3-3">
 \begin{align*}
-h_\text{lower} \amp = \overline{h} - \text{margin of error}, \\
-h_\text{upper} \amp = \overline{h} + \text{margin of error} 
+\amp \mathbb{E}[H_i] = \mu,\\
+\amp \textrm{Var}(H_i) = \mathbb{E}[H_i^2] - \mu^2 = \sigma^2, 
+\end{align*}
+</div>
+<div class="para">where <span class="process-math">\(\mu\)</span> and <span class="process-math">\(\sigma\)</span> are not known, but they are finite. We define the sample mean random variable by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\overline{H} = \frac{1}{n}\sum_{i=1}^n\, H_i.
+\end{equation*}
+</div>
+<div class="para">Then, from CLT, we can claim that the following variable has a standard normal distribution.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+Z = \left( \frac{\overline{H} - \mu}{ \sigma/\sqrt{n} } \right) \sim \mathcal{N}(0,1).
+\end{equation*}
+</div>
+<div class="para">Although, we do not know values of <span class="process-math">\(\mu\)</span> and <span class="process-math">\(\sigma\text{,}\)</span> the fact that <span class="process-math">\(Z \sim \mathcal{N}(0,1)\)</span> can be used to find a formula for the confidence interval.</div>
+</div>
+<div class="para logical" id="subsec-Confidence-Intervals-4">
+<div class="para">Let’s say that we wish to determine the confidence interval with <span class="process-math">\(95%\)</span> confidence. With this set, we know we want to find out <span class="process-math">\(h_\text{low}\)</span> and <span class="process-math">\(h_\text{high}\)</span> in</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P(\mu \in [h_\text{low}, h_\text{high}]) \gt 0.95.
+\end{equation*}
+</div>
+<div class="para">There is <span class="process-math">\(5\%\)</span> chance that <span class="process-math">\(\mu\)</span> could be outside of this interal. Due to symmetry of the  normal distribution, we assume that half could be above the high limit and the other half below the lower limit. Now, we look at the <span class="process-math">\(Z\)</span> variable and from its’s inverse CDF find the <span class="process-math">\(z\)</span> values corresponding to probabilities <span class="process-math">\(p_\text{high} = 0.95 + 0.05/2 = 0.975 \)</span> and <span class="process-math">\(p_\text{low} = 0.95 - 0.05/2 = 0.025 \text{.}\)</span> By running the following commands, we can easily get the values</div>
+</div>
+<div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-py">from scipy.stats import norm
+print(norm.ppf(0.975))
+</code></pre></div>
+<div class="para logical" id="subsec-Confidence-Intervals-6">
+<div class="para">We get the following values.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-confidence-interval.html">
+\begin{equation*}
+z_{0.02} \approx -1.96,\quad z_{0.975} \approx 1.96 = - z_{0.025}.
+\end{equation*}
+</div>
+<div class="para">Due to the symmetry, we will write the two values using the positive value of <span class="process-math">\(z_{0.975}\)</span> as is the customery. The upper and lower values of <span class="process-math">\(Z\)</span> are illustrated in <a href="sec-Inferential-Statistics.html#fig-confidence-interval" class="xref" data-knowl="./knowl/xref/fig-confidence-interval.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.11.1">Figure 1.11.1</a>.</div>
+</div>
+<figure class="figure figure-like" id="fig-confidence-interval"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/confidence-interval.png" class="contained" alt="Calculation for the upper and lower values of Z."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.11.1<span class="period">.</span></span><span class="space"> </span>Calculation for the upper and lower values of <span class="process-math">\(Z\text{.}\)</span> The shaded areas on the two sides each have <span class="process-math">\(2.5\%\)</span> area under the Gaussian curve.</figcaption></figure><div class="para logical" id="subsec-Confidence-Intervals-8">
+<div class="para">Therefore, we will get the <span class="process-math">\(95\%\)</span> of the probabilities of <span class="process-math">\(Z\)</span> within these two values of <span class="process-math">\(Z\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P(- z_{0.975} \le Z \le z_{0.975}) = 0.95.
+\end{equation*}
+</div>
+<div class="para">Now, we replace <span class="process-math">\(Z\)</span> from its definition in terms of <span class="process-math">\(\overline{H}\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P( - z_{0.975} \le \left( \frac{\overline{H} - \mu}{ \sigma/\sqrt{n} } \right) \le z_{0.975}) = 0.95.
+\end{equation*}
+</div>
+<div class="para">Multiplying the quantities within the <span class="process-math">\(P\)</span> by <span class="process-math">\(\sigma/\sqrt{n}\)</span> astill keeps the statement true. Hence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P(- z_{0.975} \frac{\sigma}{\sqrt{n}} \le \left( \overline{H} - \mu \right) \le z_{0.975}  \frac{\sigma}{\sqrt{n}}) = 0.95.
+\end{equation*}
+</div>
+<div class="para">By multiplying the argument by <span class="process-math">\(-1\)</span> changes the middle part to <span class="process-math">\(\mu - H\)</span> and flips the inequalities.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P( - z_{0.975}  \frac{\sigma}{\sqrt{n}}\le \left( \mu - \overline{H} \right) \le 
+z_{0.975} \frac{\sigma}{\sqrt{n}}
+) = 0.95.
+\end{equation*}
+</div>
+<div class="para">Now, by adding <span class="process-math">\(\overline{H}\)</span> to each term, we arrive at the final result we seek.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P( \overline{H} - z_{0.975}  \frac{\sigma}{\sqrt{n}} \le \left( \mu  \right) \le 
+\overline{H} + z_{0.975} \frac{\sigma}{\sqrt{n}}
+) = 0.95.
+\end{equation*}
+</div>
+<div class="para">Therefore, the low and high limits on the confidence interval are</div>
+<div class="displaymath process-math" id="subsec-Confidence-Intervals-8-16">
+\begin{align*}
+\amp h_\text{low}  = \overline{H} - z_{0.975} \frac{\sigma}{\sqrt{n}} \\
+\amp h_\text{high}  = \overline{H} + z_{0.975}\frac{\sigma}{\sqrt{n}} 
+\end{align*}
+</div>
+<div class="para">From the data <span class="process-math">\(\{ h_1, h_2, \cdots, h_n \}\text{,}\)</span> we can get only get and estimate of <span class="process-math">\(\overline{H}\)</span> by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\overline{H} = \frac{ h_1 + h_2 + \cdots + h_n  }{n}.
+\end{equation*}
+</div>
+<div class="para">But, we do not know <span class="process-math">\(\sigma\text{,}\)</span> which is a population property. Often we estimate population variance <span class="process-math">\(\sigma^2\)</span>  by the sample variance.</div>
+<div class="displaymath process-math" id="eqn-unbiased-sample-variance">
+\begin{equation}
+S^2 = \frac{1}{n-1}\left(  \sum_i{=1}^n H_i^2 - n\,\overline{H}^2 \right)\tag{1.11.1}
+\end{equation}
+</div>
+<div class="para">This way, we get the confidence interval from everything we can calculate from the data itself. Let’s decorate the symbols with a hat symbol to indicate we have replaced <span class="process-math">\(\sigma\)</span> by it’s estimate <span class="process-math">\(S\text{.}\)</span>
+</div>
+<div class="displaymath process-math" id="subsec-Confidence-Intervals-8-25">
+\begin{align*}
+\amp \hat{h}_\text{low}  = \overline{H} - z_{0.975} \frac{S}{\sqrt{n}} \\
+\amp \hat{h}_\text{high}  = \overline{H} + z_{0.975} \frac{S}{\sqrt{n}} 
 \end{align*}
 </div>
 </div></section></section></div>
