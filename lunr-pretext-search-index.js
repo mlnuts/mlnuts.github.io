@@ -928,40 +928,94 @@ var ptx_lunr_docs = [
   "body": " Student PDF for various values of the degree of freedom (df) parameter .   Student t PDF for various values of the degree of freedom parameter n.   "
 },
 {
-  "id": "sec-Inferential-Statistics",
+  "id": "sec-Point-Estimates-and-Confidence-Intervals",
   "level": "1",
-  "url": "sec-Inferential-Statistics.html",
+  "url": "sec-Point-Estimates-and-Confidence-Intervals.html",
   "type": "Section",
   "number": "1.11",
-  "title": "Inferential Statistics",
-  "body": " Inferential Statistics   Inferential statistics is the branch of statistics that enables us to draw conclusions about a population based on data from a sample taken from the population. Unlike descriptive statistics, which summarize observed data, inferential statistics use probability theory to make generalizations about the population from which the sample is drawn.  The core concepts of inferential statistics include:  Population : The entire group of interest.  Sample : A subset of the population that is observed.   Parameter : A numerical characteristic of the population (e.g., population mean , variance ).     Statistic : A statistic is a random variable such as sample mean, whose numerical value can be calculated from a sample. The average and standard deviation of the statistic are then used to draw conclusions about the population.        Point Estimation   Point estimation involves using a sample statistic to estimate a population parameter. For example, the sample mean is used to estimate the population mean , and the sample proportion estimates the population proportion .  For instance, if we measure the heights of 50 randomly selected adults and find a sample mean of , we can use as a point estimate for the population mean height , which we usually do not know. So, estimate may be a little bit off or a lot off from the true value of . Point estimates do not convey uncertainty about how far actual be off from . For that we turn to proabbility theory and tie statistics to probability. First we look at a concept called the Confidence Interval (CI).    Confidence Intervals TODO  Let us contiue with the example of height of an adult male in a population. From sample of men, we compute the sample mean , which gives us an estimate of the estimate of the true mean height . Confidence interval is an interval around the sample mean, , which is expected to contain the unknown true value at a certain level of confidence, i.e., with certain probability, say . So, how do we find and from the sample data of heights of randomly selected men from the population?   Suppose number of data points is large enough that we can use Central Limit Theorem (CLT). Let us denote the random variables corresponding to the individual identical and independent (i.i.d) height measurements by with where and are not known, but they are finite. We define the sample mean random variable by Then, from CLT, we can claim that the following variable has a standard normal distribution. Although, we do not know values of and , the fact that can be used to find a formula for the confidence interval.  Let's say that we wish to determine the confidence interval with confidence. With this set, we know we want to find out and in There is chance that could be outside of this interal. Due to symmetry of the normal distribution, we assume that half could be above the high limit and the other half below the lower limit. Now, we look at the variable and from its's inverse CDF find the values corresponding to probabilities and . By running the following commands, we can easily get the values   from scipy.stats import norm print(norm.ppf(0.975))   We get the following values. Due to the symmetry, we will write the two values using the positive value of as is the customery. The upper and lower values of are illustrated in .   Calculation for the upper and lower values of . The shaded areas on the two sides each have area under the Gaussian curve.   Calculation for the upper and lower values of Z.    Therefore, we will get the of the probabilities of within these two values of  Now, we replace from its definition in terms of . Multiplying the quantities within the by astill keeps the statement true. Hence By multiplying the argument by changes the middle part to and flips the inequalities. Now, by adding to each term, we arrive at the final result we seek. Therefore, the low and high limits on the confidence interval are From the data , we can get only get and estimate of by But, we do not know , which is a population property. Often we estimate population variance by the sample variance. This way, we get the confidence interval from everything we can calculate from the data itself. Let's decorate the symbols with a hat symbol to indicate we have replaced by it's estimate .    "
+  "title": "Point Estimates and Confidence Intervals",
+  "body": " Point Estimates and Confidence Intervals   Statistics is a useful tool when you are dealing with groups or systems that are too vast to examine every item\/individual. In these cases we can collect data on a random subset and use statisical methods to draw and support conclusions that can be reasonably drawn from the data.  One type of question that shows up in the inference are:    Parameter Estimation to answer the question: \"What is the value of the parameter, e.g., mean or standard deviation ? You can estimate not only the means and variances but other parameters as well. Statistical methods also address the question of how good are our estimates - how far off the actual value may be from the estimate and how confident are we in such claims.     Hypothesis Testing to answer questions such as : \"Is the value of the parameter exactly such an such?\" For example, \"Is the average height of an adult human being exactly 5 feet and 4 inches?\" and \"Is average height of Indians larger than the average height of Chinese?\" You can set up hypothesis testing not just of parameters but of pretty much anything, including ML models - \"does this model perform better than the other?\"\".       Parameter Estimation       Basic Setup  Let's recall the basic notation here again. Suppose we have a popolation from which we have collected samples. Each sampling process itself is a random variable. For instance, if you toss a coin 3 times, you might get HTT; now, your repeat might give you THT, etc. So, the very first toss is giving you H and T in a random way. That is how we can say that if I conduct tosses, each of those tosses will itself be a random variable.  So, suppose, we have performed  random experiments, each represented by its own random variable. Let's denote them as before by We define a sample mean, which is just an average of the 's: and a sample variance In sample variance, we devide by and not because the definition of sample mean has used up one of the degrees of freedom and we are left with one less. This also makes an unbiased estimator of population variance as we will see below.  The population mean and population variance are of course, unknown. We will see below how to use the sample mean and sample variance to get an estimate of these population quantities.  Note that both and are random variables. So, they have their own probability distributions: where the subscript denotes the random variable and the the small letter inside the braces denotes the value of the variable for the PDF. If we have a discrete variable, we use PMF in place of PDF. Sometimes, we also deal with the random variable , the sample standard deviation,   If the variables 's take only values or , i.e., each experiment is an identical Bernoulli trial, then the sample mean is the proportion of 's in the sample. where is the probability of success (i.e., ) in each Bernoulli trial. That is, in this case, sample mean is an estimator of proportion of 's in the population.  Now, we will discuss couple of different ways to estimate population parameters based on the data.    Maximum Likelihood Estimate  Let's start with an example of estimating the probability of getting a Heads ( ) in a toss of a given coin. We toss it times and note the outcomes, . That's our data with . Each time we toss, we are doing a Bernoulli trial for which we have PMF:   Now, imagine repeating your datapoint experiment many times. Each time you will most likely get different data, Say, the data above was , but it may be some other sequence of , say, the seocnd time, etc. Presumably, you are actually conducting experiment in an -dimensional space of and each collection of data is just one point in this joint space .  The true data points in this -dimensional space maybe concentrated in some region more so than in some other areas; in general, we just do not know. The maximum likelihood estimate is based on assuming that the data you actually got has the highest probability in this -dimensional space , i.e., you are most liley to sample the areas where the actual data points are most concentrated in the space.  Since we are dealing with discrete variables, here we work with PMF. Let represent the joint PMF of . Since, are independent random variables, the joint PMF will factorize. It is convenient to introduce a product symbol, and write the earlier equation as We know expression of the PMF of the individual trials as given in Eq. since we are doing Bernoulli trials here. If we were doing some other experiements, we would have a different expression for them with their own parameters. Thus, This gives us an expression of the joint probability in terms of the data, i.e., and the unknown parameter . In this context we treat as a function of the parameter and call it likelihood function , denoted by  Thus, we have the following function that we need to maximize with respect to the paremeter to obtain the maximum likelihood estimate of . In this instance, taking derivative with respect to is not that hard, but in general, we maximize the log of . Since log is a monotonic function, the maximum of a log of a function will occur at the same place as the function itself. The log likelihood, denoted by  Taking derivative with respect to and setting , we can solve for . Noting that here, we get This is just the average of the collected data on heads and tails, with heads being and tails being .  What if was not Bernoulli?  We just have to proceed a little differently after Eq. . In that equation, parameters, usually denoted by , of interest will appear in the probability distributions of the individual trials, same for every one of them. Then, the likelihood function will just be The loglikelihood In general, setting the derivative of to zero and solving for the MLE estimate can only be done numercally.    Each Trial of unknown and   We have   In this case, suppose we want an MLE of and . The log likelihood function will be (replacing by the actual parameters here in Eq. .) Now, to find and you will solve the following equations. Show that you get the following answers.    Estimators   From the formulas for MLE etimates of of a Bernoulli and and of a Gaussian , we can write random variables whose expectation values estimate these quantities. We call these random variables estimators . We will denote them with capital letters as we have done for other random variables.  Thus the MLE estimator of of a Bernoulli variable will be Similarly, the MLE estimators of and for a Gaussian\/Normal variable will be If expectation values of these estimators in their corresponding probability distributions yield the appropriate true values, for the Bernoulli case, and and for the Normal case, we say that the estimator is an unbiased estimartor .    Bernoulli estimator is unbiased.  To prove that is unbiased, we calculate it\/s expectation value in the Bernoulli PMF. We know that for expectation value of each is same: Therefore, Hence is an unbiased estimator of .    Gaussian estimator is unbiased.  Here, we know that for each . Hence, just like the Bernoulli , the expectation value of is also unbiased.   Gaussian estimator is not unbiased.  Now, we come to an estimator which is not unbiased. Let's see. Since each , the variance of each , When we expand the parenthesis in Eq. , we will find that we also need: Here is how I got this result. Another term that will show up in our calculation is I leave this part to you to complete. Now, we look at the expectation of the estimator . Hence is not an unbiased estimator of of a Normal variable.   From the result above, it is immediately obvious that had we divided by in the definition of rather than by , the modified will be an unbiased estimator of . You can verify that expectation value of this estimator will be . Interestingly, although is an unbiased estimator of , its square root is not an unbiased estimator of .  A less algebraic way of proving the unbiasedness of is to recall the chi square disrtribution variable. A Gaussian variable with mean and variance and sample variance defined by defined by Then, the following is true The expectation value of the variable is the degree of freedom of the . Therefore which is Hence       Confidence Interval TODO   From the point estimation section above, we learned how to use maximum likelihood procedure on the sampled data for computing parameters that model distribution of a random variable in nature. For instance, we saw that sample mean gives an unbiased estimate of the probability of success ( 's) in a system. But, how can we sure how close is the true value to the estimated value? This is where the idea of confidence interval comes in.    A confidence interval for a parameter is an interval of values, which contains the true unknown (maybe, even unknowable) value of with at a particular level of confidence. The confidence level is usually written as a percentage using a complementary quantity as where is a fraction. The fractional quantity is called confidence coefficient . Thus, if we want confidence level, we would have Clearly, greater the confidence level, greater should be our confidence that the unknown parameter is contained somewhere inside the confidence interval.  Thus, we define confidence interval by requiring that the following probability statement be true. We will see examples of how we can compute and from the data collected and some assumptions about the distribution from which data may have arisen.      Z Intervals      t-Intervals      "
 },
 {
-  "id": "sec-Inferential-Statistics-2-2",
+  "id": "sec-Point-Estimates-and-Confidence-Intervals-2-2",
   "level": "2",
-  "url": "sec-Inferential-Statistics.html#sec-Inferential-Statistics-2-2",
+  "url": "sec-Point-Estimates-and-Confidence-Intervals.html#sec-Point-Estimates-and-Confidence-Intervals-2-2",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
-  "body": "Population Sample Parameter Statistic "
+  "body": "Parameter Estimation Hypothesis Testing "
 },
 {
-  "id": "subsec-Point-Estimation-2",
+  "id": "subsubsec-Maximum-Likelihood-Estimate-5",
   "level": "2",
-  "url": "sec-Inferential-Statistics.html#subsec-Point-Estimation-2",
+  "url": "sec-Point-Estimates-and-Confidence-Intervals.html#subsubsec-Maximum-Likelihood-Estimate-5",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
-  "body": "Point estimation "
+  "body": "likelihood function "
 },
 {
-  "id": "fig-confidence-interval",
+  "id": "subsubsec-Maximum-Likelihood-Estimate-6",
   "level": "2",
-  "url": "sec-Inferential-Statistics.html#fig-confidence-interval",
-  "type": "Figure",
+  "url": "sec-Point-Estimates-and-Confidence-Intervals.html#subsubsec-Maximum-Likelihood-Estimate-6",
+  "type": "Remark",
   "number": "1.11.1",
+  "title": "What if <span class=\"process-math\">\\(X\\)<\/span> was not Bernoulli?",
+  "body": "What if was not Bernoulli?  We just have to proceed a little differently after Eq. . In that equation, parameters, usually denoted by , of interest will appear in the probability distributions of the individual trials, same for every one of them. Then, the likelihood function will just be The loglikelihood In general, setting the derivative of to zero and solving for the MLE estimate can only be done numercally.  "
+},
+{
+  "id": "subsubsec-Maximum-Likelihood-Estimate-7",
+  "level": "2",
+  "url": "sec-Point-Estimates-and-Confidence-Intervals.html#subsubsec-Maximum-Likelihood-Estimate-7",
+  "type": "Example",
+  "number": "1.11.2",
+  "title": "Each Trial <span class=\"process-math\">\\(X \\sim \\mathcal{N}(\\mu, \\sigma^2)\\)<\/span> of unknown <span class=\"process-math\">\\(\\mu\\)<\/span> and <span class=\"process-math\">\\(\\sigma^2\\)<\/span>.",
+  "body": " Each Trial of unknown and   We have   In this case, suppose we want an MLE of and . The log likelihood function will be (replacing by the actual parameters here in Eq. .) Now, to find and you will solve the following equations. Show that you get the following answers.   "
+},
+{
+  "id": "def-estimators",
+  "level": "2",
+  "url": "sec-Point-Estimates-and-Confidence-Intervals.html#def-estimators",
+  "type": "Definition",
+  "number": "1.11.3",
+  "title": "Estimators.",
+  "body": "Estimators   From the formulas for MLE etimates of of a Bernoulli and and of a Gaussian , we can write random variables whose expectation values estimate these quantities. We call these random variables estimators . We will denote them with capital letters as we have done for other random variables.  Thus the MLE estimator of of a Bernoulli variable will be Similarly, the MLE estimators of and for a Gaussian\/Normal variable will be If expectation values of these estimators in their corresponding probability distributions yield the appropriate true values, for the Bernoulli case, and and for the Normal case, we say that the estimator is an unbiased estimartor .   "
+},
+{
+  "id": "subsubsec-Maximum-Likelihood-Estimate-9",
+  "level": "2",
+  "url": "sec-Point-Estimates-and-Confidence-Intervals.html#subsubsec-Maximum-Likelihood-Estimate-9",
+  "type": "Proof",
+  "number": "1.11.1.2.1",
+  "title": "Bernoulli <span class=\"process-math\">\\(\\Pi_\\text{MLE}\\)<\/span> estimator is unbiased..",
+  "body": "Bernoulli estimator is unbiased.  To prove that is unbiased, we calculate it\/s expectation value in the Bernoulli PMF. We know that for expectation value of each is same: Therefore, Hence is an unbiased estimator of .   "
+},
+{
+  "id": "subsubsec-Maximum-Likelihood-Estimate-10",
+  "level": "2",
+  "url": "sec-Point-Estimates-and-Confidence-Intervals.html#subsubsec-Maximum-Likelihood-Estimate-10",
+  "type": "Proof",
+  "number": "1.11.1.2.2",
+  "title": "Gaussian <span class=\"process-math\">\\(M_\\text{MLE}\\)<\/span> estimator is unbiased..",
+  "body": "Gaussian estimator is unbiased.  Here, we know that for each . Hence, just like the Bernoulli , the expectation value of is also unbiased.  "
+},
+{
+  "id": "subsubsec-Maximum-Likelihood-Estimate-11",
+  "level": "2",
+  "url": "sec-Point-Estimates-and-Confidence-Intervals.html#subsubsec-Maximum-Likelihood-Estimate-11",
+  "type": "Proof",
+  "number": "1.11.1.2.3",
+  "title": "Gaussian <span class=\"process-math\">\\(\\Sigma_\\text{MLE}^2\\)<\/span> estimator is not unbiased..",
+  "body": "Gaussian estimator is not unbiased.  Now, we come to an estimator which is not unbiased. Let's see. Since each , the variance of each , When we expand the parenthesis in Eq. , we will find that we also need: Here is how I got this result. Another term that will show up in our calculation is I leave this part to you to complete. Now, we look at the expectation of the estimator . Hence is not an unbiased estimator of of a Normal variable.   From the result above, it is immediately obvious that had we divided by in the definition of rather than by , the modified will be an unbiased estimator of . You can verify that expectation value of this estimator will be . Interestingly, although is an unbiased estimator of , its square root is not an unbiased estimator of .  A less algebraic way of proving the unbiasedness of is to recall the chi square disrtribution variable. A Gaussian variable with mean and variance and sample variance defined by defined by Then, the following is true The expectation value of the variable is the degree of freedom of the . Therefore which is Hence   "
+},
+{
+  "id": "def-confidence-interval",
+  "level": "2",
+  "url": "sec-Point-Estimates-and-Confidence-Intervals.html#def-confidence-interval",
+  "type": "Definition",
+  "number": "1.11.4",
   "title": "",
-  "body": " Calculation for the upper and lower values of . The shaded areas on the two sides each have area under the Gaussian curve.   Calculation for the upper and lower values of Z.   "
+  "body": "  A confidence interval for a parameter is an interval of values, which contains the true unknown (maybe, even unknowable) value of with at a particular level of confidence. The confidence level is usually written as a percentage using a complementary quantity as where is a fraction. The fractional quantity is called confidence coefficient . Thus, if we want confidence level, we would have Clearly, greater the confidence level, greater should be our confidence that the unknown parameter is contained somewhere inside the confidence interval.  Thus, we define confidence interval by requiring that the following probability statement be true. We will see examples of how we can compute and from the data collected and some assumptions about the distribution from which data may have arisen.   "
 },
 {
   "id": "backmatter-2",
