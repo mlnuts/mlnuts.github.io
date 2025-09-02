@@ -282,8 +282,8 @@ window.MathJax = {
 <li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="sec-Point-Estimates-and-Confidence-Intervals.html#subsec-Confidence-Interval" class="internal"><span class="codenumber">1.11.2</span> <span class="title">Confidence Interval  TODO</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Point-Estimates-and-Confidence-Intervals.html#subsubsec-Z-Intervals" class="internal"><span class="codenumber">1.11.2.1</span> <span class="title">Z Intervals</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Point-Estimates-and-Confidence-Intervals.html#subsubsec-t-Intervals" class="internal"><span class="codenumber">1.11.2.2</span> <span class="title">t-Intervals</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Point-Estimates-and-Confidence-Intervals.html#subsubsec-Z-Intervals" class="internal"><span class="codenumber">1.11.2.1</span> <span class="title">The Z Intervals</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Point-Estimates-and-Confidence-Intervals.html#subsubsec-t-Intervals" class="internal"><span class="codenumber">1.11.2.2</span> <span class="title">The t-Intervals</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -295,13 +295,13 @@ window.MathJax = {
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-Point-Estimates-and-Confidence-Intervals"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">1.11</span><span class="space"> </span><span class="title">Point Estimates and Confidence Intervals</span>
 </h2>
-<section class="introduction" id="sec-Point-Estimates-and-Confidence-Intervals-2"><div class="para" id="sec-Point-Estimates-and-Confidence-Intervals-2-1">Statistics is a useful tool when you are dealing with groups or systems that are too vast to examine every item/individual. In these cases we can collect data on a random subset and use statisical methods to draw and support conclusions that can be reasonably drawn from the data.</div> <div class="para logical" id="sec-Point-Estimates-and-Confidence-Intervals-2-2">
+<section class="introduction" id="sec-Point-Estimates-and-Confidence-Intervals-2"><div class="para" id="sec-Point-Estimates-and-Confidence-Intervals-2-1">Statistics is a useful tool when you are dealing with uncertainty in systems that are too vast to examine every item. In these cases we can collect data on a random subset and use statisical methods to draw and support conclusions that can be reasonably drawn from the data.</div> <div class="para logical" id="sec-Point-Estimates-and-Confidence-Intervals-2-2">
 <div class="para">One type of question that shows up in the inference are:</div>
 <ol class="decimal" id="sec-Point-Estimates-and-Confidence-Intervals-2-2-1">
 <li id="sec-Point-Estimates-and-Confidence-Intervals-2-2-1-1"><div class="para" id="sec-Point-Estimates-and-Confidence-Intervals-2-2-1-1-1">
 <dfn class="terminology">Parameter Estimation</dfn> to answer the question: "What is the value of the parameter, e.g., mean <span class="process-math">\(\mu\)</span> or standard deviation <span class="process-math">\(\sigma\text{?}\)</span> You can estimate not only the means and variances but other parameters as well. Statistical methods also address the question of how good are our estimates - how far off the actual value may be from the estimate and how confident are we in such claims.</div></li>
 <li id="sec-Point-Estimates-and-Confidence-Intervals-2-2-1-2"><div class="para" id="sec-Point-Estimates-and-Confidence-Intervals-2-2-1-2-1">
-<dfn class="terminology">Hypothesis Testing</dfn> to answer questions such as : "Is the value of the parameter exactly such an such?" For example, "Is the average height of an adult human being exactly 5 feet and 4 inches?" and "Is average height of Indians larger than the average height of Chinese?" You can set up hypothesis testing not just of parameters but of pretty much anything, including ML models - "does this model perform better than the other?"".</div></li>
+<dfn class="terminology">Hypothesis Testing</dfn> to answer questions such as : "Is the value of the parameter exactly such an such?" For example, "Is the average height of an adult human being exactly 5 feet and 4 inches?" and "Is average height of Indians greater than the average height of Chinese?" You can set up hypothesis testing not just of parameters but of pretty much anything, including ML models - "does this model perform better than the other?"".</div></li>
 </ol>
 </div></section><section class="subsection" id="subsec-Parameter-Estimation"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.11.1</span><span class="space"> </span><span class="title">Parameter Estimation</span>
@@ -614,13 +614,13 @@ Y \equiv \frac{(n-1) S^2 }{\sigma^2} \sim \chi_{n-1}^2.
 \text{Confidence Level } = (1-\alpha)100\%,
 \end{equation*}
 </div>
-<div class="para">where <span class="process-math">\(\alpha\)</span> is a fraction. The fractional quantity <span class="process-math">\((1-\alpha)\)</span> is called <dfn class="terminology">confidence coefficient</dfn>. Thus, if we want <span class="process-math">\(90\%\)</span> confidence level, we would have</div>
+<div class="para">where <span class="process-math">\(\alpha\)</span> is a fraction. The fractional quantity <span class="process-math">\((1-\alpha)\)</span> is called <dfn class="terminology">confidence coefficient</dfn>. For instance,, if we want <span class="process-math">\(95\%\)</span> confidence level, we would have</div>
 <div class="displaymath process-math">
 \begin{equation*}
-90\%\,\text{Confidence Level} \iff \alpha = 0.10.
+95\%\,\text{Confidence Level} \iff \alpha = 1- 0.95 = 0.05.
 \end{equation*}
 </div>
-<div class="para">Clearly, greater the confidence level, greater should be our confidence that the unknown parameter is contained somewhere inside the confidence interval.</div>
+<div class="para">Clearly, greater the confidence level (or, equivalently, smaller <span class="process-math">\(\alpha\)</span>), greater should be our confidence that the unknown parameter is contained somewhere inside the confidence interval.</div>
 </div> <div class="para logical" id="def-confidence-interval-1-2">
 <div class="para">Thus, we define confidence interval <span class="process-math">\((\theta_\text{low}, \theta_\text{high})\)</span> by requiring that the following probability statement be true.</div>
 <div class="displaymath process-math">
@@ -630,12 +630,202 @@ P(\theta_\text{low} \lt \theta \lt  \theta_\text{high}) = (1-\alpha).
 </div>
 <div class="para">We will see examples of how we can compute <span class="process-math">\(\theta_\text{low}\)</span> and <span class="process-math">\(\theta_\text{high}\)</span> from the data collected and some assumptions about the distribution from which data may have arisen.</div>
 </div></article></section><section class="subsubsection" id="subsubsec-Z-Intervals"><h4 class="heading hide-type">
-<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">1.11.2.1</span><span class="space"> </span><span class="title">Z Intervals</span>
+<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">1.11.2.1</span><span class="space"> </span><span class="title">The Z Intervals</span>
 </h4>
-<div class="para" id="subsubsec-Z-Intervals-2"></div></section><section class="subsubsection" id="subsubsec-t-Intervals"><h4 class="heading hide-type">
-<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">1.11.2.2</span><span class="space"> </span><span class="title">t-Intervals</span>
+<div class="para" id="subsubsec-Z-Intervals-2">The confidence interval, called the <dfn class="terminology">Z interval</dfn>, is a confidence interval of the population mean <span class="process-math">\(\mu\)</span> when we are provided with the exact value of the population variance <span class="process-math">\(\sigma^2\text{.}\)</span> At this point, let’s not worry about how we somehow know the population variance but not the population mean. We are assuming this so that we can apply the Central Limit Theorem (CLT) to this problem.  Out aim is to lay out the theoretical steps in an understandable way so when we remove the assumption about the sample variance, it will not be too high a barrier. The procedure is best illustrated by a numerical example.</div>
+<div class="para logical" id="subsubsec-Z-Intervals-3">
+<div class="para">Supose our project is to study height of male adults in a populatoin in which the height varies with a known variance of <span class="process-math">\(\sigma^2 = 25\,\text{cm}^2\text{.}\)</span> We wish to find the confidence interval of the mean height <span class="process-math">\(\mu\)</span> at the confidence level of <span class="process-math">\(95\%\text{,}\)</span> i.e.,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\alpha = 1 - 0.95 = 0.05.
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="subsubsec-Z-Intervals-4">
+<div class="para">We collect data by measuring the heights of <span class="process-math">\(50\)</span> randomly selected adults. From which, we can of course find the sample mean. Say, we found the result <span class="process-math">\(170 \, \text{cm}\text{.}\)</span> As before, we use capital letters for the random variable and small letters for their values.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\bar{h} \equiv \overline{H} = \frac{1}{n}\sum_{i=1}^nh_i = 170\, \text{cm}. 
+\end{equation*}
+</div>
+<div class="para">So, we have <span class="process-math">\(\bar{h} = 170\, \text{cm}\)</span> from sample and <span class="process-math">\(\sigma = 5\,\text{cm}\)</span> from the population. So, how do we get a confidence interval for <span class="process-math">\(\mu\text{?}\)</span>
+</div>
+</div>
+<div class="para logical" id="subsubsec-Z-Intervals-5">
+<div class="para">Recall that according to CLT, if a variable <span class="process-math">\(H\)</span> has population mean <span class="process-math">\(\mu\text{,}\)</span> population variance <span class="process-math">\(\sigma^2\text{,}\)</span> and <span class="process-math">\(n\)</span> points of data, <span class="process-math">\(H_1, H_2, \cdots, H_n\text{,}\)</span> are collected then, for large enough <span class="process-math">\(n\text{,}\)</span> the following variable has a standard normal distribution.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-confidence-interval.html" id="eqn-Z-variable-from-h-bar-mu-sigma">
+\begin{equation}
+Z \equiv \frac{\overline{H} - \mu}{ \sigma/\sqrt{n}} \sim \mathcal{N}(0,1),\tag{1.11.19}
+\end{equation}
+</div>
+<div class="para">where <span class="process-math">\(\overline{H}\)</span> is the sample mean. Supposing that <span class="process-math">\(n=50\)</span> is large enough to apply CLT to our height problem, we can this <span class="process-math">\(Z\)</span> variabale to connect to the probability statement about the confidence interval to find the low and high values of the heights.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-confidence-interval.html" id="eqn-probability-low-high-heights">
+\begin{equation}
+P\left( z_\text{low} \lt Z \lt z_\text{high} \right) = 1-\alpha = 0.95.\tag{1.11.20}
+\end{equation}
+</div>
+<div class="para">What are these <span class="process-math">\(z_\text{low}\)</span> and <span class="process-math">\(z_\text{high}\text{?}\)</span> To find these values, we look at the PDF and CDF of a standard Normal disribution as shown in <a href="sec-Point-Estimates-and-Confidence-Intervals.html#fig-confidence-interval" class="xref" data-knowl="./knowl/xref/fig-confidence-interval.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.11.5">Figure 1.11.5</a>. The CDF shows that to include the middle <span class="process-math">\((1-\alpha)\)</span> of the probability, we need the following values of <span class="process-math">\(Z\text{:}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-confidence-interval.html">
+\begin{equation*}
+z_\text{low} = - z_{\alpha/2}, \quad z_\text{high} = z_{\alpha/2}.
+\end{equation*}
+</div>
+<div class="para">The value of <span class="process-math">\(z_{\alpha/2}\)</span> corresponds to the probability value</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-confidence-interval.html">
+\begin{equation*}
+p_{\alpha/2} = 1-\frac{\alpha}{2} = 1 - \frac{0.05}{2} = 0.975.
+\end{equation*}
+</div>
+<div class="para">Therefore, we solve the following equation to get <span class="process-math">\(z_{high}\text{.}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-confidence-interval.html" id="eqn-z-alpha-over-2">
+\begin{equation}
+\Phi(z_\text{high}) = p_{\alpha/2}.\tag{1.11.21}
+\end{equation}
+</div>
+<div class="para">Inverting this equation gives</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-confidence-interval.html" id="eqn-inverse-CDF-for-z-alpha-over-2">
+\begin{equation}
+z_\text{high} \equiv z_{\alpha/2}  = \Phi^{-1}( p_{\alpha/2} ) = \Phi^{-1}( 0.975 ) \approx 1.96.\tag{1.11.22}
+\end{equation}
+</div>
+<div class="para">This solved our immediate problem of <span class="process-math">\(z_\text{low}\)</span> and <span class="process-math">\(z_\text{high}\text{.}\)</span>
+</div>
+</div>
+<figure class="figure figure-like" id="fig-confidence-interval"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/confidence-interval.png" class="contained" alt="Calculation for the upper and lower values of Z."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.11.5<span class="period">.</span></span><span class="space"> </span>Calculation for the upper and lower values of <span class="process-math">\(Z\text{.}\)</span> The shaded areas on the two sides each have <span class="process-math">\(\alpha/2\text{,}\)</span> here, <span class="process-math">\(2.5\%\)</span> area under the Gaussian curve. The confidence interval is to include the middle <span class="process-math">\(1-\alpha\text{,}\)</span> here <span class="process-math">\(95\%\)</span> of the area.</figcaption></figure><div class="para logical" id="subsubsec-Z-Intervals-7">
+<div class="para">Having found that <span class="process-math">\(z_\text{low}\)</span> and <span class="process-math">\(z_\text{high}\)</span> are just <span class="process-math">\(-z_{\alpha/2}\)</span> and <span class="process-math">\(z_{\alpha/2}\text{,}\)</span> let us rewrite Eq.<a href="sec-Point-Estimates-and-Confidence-Intervals.html#eqn-probability-low-high-heights" class="xref" data-knowl="./knowl/xref/eqn-probability-low-high-heights.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.11.20">(1.11.20)</a> as follows. or equivalently,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-probability-low-high-heights.html" id="eqn-probability-low-high-heights-2">
+\begin{equation}
+P\left( -z_{\alpha/2} \lt \frac{\overline{H} - \mu}{ \sigma/\sqrt{n}} \lt z_{\alpha/2} \right) = 1-\alpha,\tag{1.11.23}
+\end{equation}
+</div>
+<div class="para">The event of this probability can be rewritten to see the confidential interval of the population mean <span class="process-math">\(\mu\)</span> that is contained in the statement. Follow the following sequence of steps:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-probability-low-high-heights.html" id="subsubsec-Z-Intervals-7-8">
+\begin{align*}
+\amp P\left( -z_{\alpha/2} \lt \frac{\overline{H} - \mu}{ \sigma/\sqrt{n}} \lt z_{\alpha/2} \right) = 1-\alpha\\
+\amp P\left( -z_{\alpha/2} \frac{\sigma}{\sqrt{n}} \lt  \overline{H} - \mu  \lt z_{\alpha/2} \frac{\sigma}{\sqrt{n}} \right) = 1-\alpha \\
+\amp P\left( +z_{\alpha/2} \frac{\sigma}{\sqrt{n}} \gt \mu -  \overline{H} \gt - z_{\alpha/2} \frac{\sigma}{\sqrt{n}} \right) = 1-\alpha\\
+\amp P\left( \overline{H} + z_{\alpha/2} \frac{\sigma}{\sqrt{n}} \gt \mu   \gt \overline{H}- z_{\alpha/2} \frac{\sigma}{\sqrt{n}} \right) = 1-\alpha\\
+\amp P\left(\overline{H}- z_{\alpha/2} \frac{\sigma}{\sqrt{n}} \lt \mu \lt \overline{H} + z_{\alpha/2} \frac{\sigma}{\sqrt{n}}   \right) = 1-\alpha
+\end{align*}
+</div>
+<div class="para">From the statement of the event we can immediately read the low and high limit on the population mean <span class="process-math">\(\mu\)</span> at the confidence level <span class="process-math">\((1-\alpha)100\%\text{.}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-probability-low-high-heights.html" id="eqn-Z-confidence-interval">
+\begin{equation}
+\left( \overline{H}- z_{\alpha/2} \frac{\sigma}{\sqrt{n}},\ \overline{H} +  z_{\alpha/2} \frac{\sigma}{\sqrt{n}} \right)\tag{1.11.24}
+\end{equation}
+</div>
+<div class="para">In the present example, we will have the following numerical values.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-probability-low-high-heights.html" id="subsubsec-Z-Intervals-7-12">
+\begin{align*}
+\amp \overline{H} = 170\,\text{cm}\\
+\amp z_{\alpha/2} \frac{\sigma}{\sqrt{n}} = 1.96\times \frac{5\,\text{cm}}{\sqrt{50}} = 1.39\,\text{ cm}\\
+\amp \overline{H}- z_{\alpha/2} \frac{\sigma}{\sqrt{n}} = 170\,\text{cm} - 1.39\,\text{cm} = 168.61\,\text{cm}\\
+\amp \overline{H} +  z_{\alpha/2} \frac{\sigma}{\sqrt{n}} = 170\,\text{cm} + 1.39\,\text{cm} = 171.39\,\text{cm}
+\end{align*}
+</div>
+<div class="para">Hence, the <span class="process-math">\(95\%\)</span> confidence interval for heights of adult males in the population is <span class="process-math">\((168.61\,\text{cm},\ 171.39\,\text{cm})\text{.}\)</span> This interval is called <dfn class="terminology">Z interval</dfn> because we use the Standard Normal distribution. It is applicable when we use a <em class="alert">known population variance</em>. As has already been pointed out that this is not the case in real settings. The variance must also be estimated from the collected data. We turn to remedy this problem in the next section.</div>
+</div>
+<div class="para logical" id="subsubsec-Z-Intervals-8">
+<div class="para">
+<em class="alert">Correct and Wrong Interpretations of Confidence Intervals:</em> How should you interpret the following probability statement?</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P\left(\overline{H}- z_{\alpha/2} \frac{\sigma}{\sqrt{n}} \lt \mu \lt \overline{H} + z_{\alpha/2} \frac{\sigma}{\sqrt{n}}   \right) = 1-\alpha
+\end{equation*}
+</div>
+<div class="para">To simplify notation in our discussion, let’s rewrite this equation with <span class="process-math">\(L\)</span> for the lower end and <span class="process-math">\(U\)</span> for the upper end of the Z-interval.</div>
+<div class="displaymath process-math" id="eqn-L-mu-U">
+\begin{equation}
+P\left(L  \lt \mu \lt U  \right) = 1-\alpha,\tag{1.11.25}
+\end{equation}
+</div>
+<div class="para">with</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L = \overline{H}- z_{\alpha/2} \frac{\sigma}{\sqrt{n}},\quad U = \overline{H}+ z_{\alpha/2} \frac{\sigma}{\sqrt{n}}.
+\end{equation*}
+</div>
+<div class="para">Notice that <span class="process-math">\(\overline{H}\)</span> depends on the data <span class="process-math">\(\{ h_1, h_2, \cdots, h_{50}\}\)</span> we had collected by measuring the heights of <span class="process-math">\(50\)</span> adult males chisen randomly from the population. Therefore, <span class="process-math">\(L\)</span> and <span class="process-math">\(U\)</span> depend on the data as well. It’s highly likely that if we repeat this experiment of randomly selecting <span class="process-math">\(50\)</span> adult males and measuring their heights, you will get a different result. Hence, <span class="process-math">\(L\)</span> and <span class="process-math">\(U\)</span> are also random variables.</div>
+</div>
+<div class="para" id="subsubsec-Z-Intervals-9">But population mean <span class="process-math">\(\mu\)</span> is one definitely number, which would the average of ALL males in the population. Although <span class="process-math">\(\mu\)</span> is not known but there is no uncertainty in what it is supposed to be. Therefore, we cannot say probability of <span class="process-math">\(\mu\)</span> to be in this interval is such and such - you can only assign probability to uncertain events and value of <span class="process-math">\(\mu\)</span> is not uncertain.</div>
+<div class="para" id="subsubsec-Z-Intervals-10">Here, the uncertainty is in the confidence interval since both <span class="process-math">\(L\)</span> and <span class="process-math">\(U\)</span> are uncertain, depending on the data instances. As you repeat collection of data, you will get different <span class="process-math">\((L,U)\)</span> from each data instance. Some of those ranges will include <span class="process-math">\(\mu\)</span> some will not. The way to interpret Eq. <a href="sec-Point-Estimates-and-Confidence-Intervals.html#eqn-L-mu-U" class="xref" data-knowl="./knowl/xref/eqn-L-mu-U.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.11.25">(1.11.25)</a> is that among numerous repeats of data, <span class="process-math">\((-1\alpha)100%\)</span> of the time the <span class="process-math">\((L,U)\)</span> range will include <span class="process-math">\(\mu\text{.}\)</span> Whether a particular interval will include the <span class="process-math">\(\mu\)</span> is either a yes or no answer, not a probability answer. You might ask about the probability of the event that any one of the confidence interval includes <span class="process-math">\(\mu\)</span> in it - the answer to that probability will be <span class="process-math">\((1-\alpha)100%\text{.}\)</span>
+</div></section><section class="subsubsection" id="subsubsec-t-Intervals"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">1.11.2.2</span><span class="space"> </span><span class="title">The t-Intervals</span>
 </h4>
-<div class="para" id="subsubsec-t-Intervals-2"></div></section></section></section></div>
+<div class="para logical" id="subsubsec-t-Intervals-2">
+<div class="para">Let’s study the same problem of determining the mean height of a population of male adults in a population. We had collected <span class="process-math">\(50\)</span> heights, <span class="process-math">\(\{h_1, h_2, \cdots, h_{50} \}\)</span> and computed their sample mean to be <span class="process-math">\(\overline{h} = 170 \, \text{cm}\text{.}\)</span> We know nothing about either population mean <span class="process-math">\(\mu\)</span> or population variance <span class="process-math">\(\sigma^2\text{.}\)</span> But, in addition to <span class="process-math">\(\overline{h}\text{,}\)</span> we can compute sample variance from the <span class="process-math">\(h_i\)</span>’s, e.g., the unbiased sample mean.</div>
+<div class="displaymath process-math" id="eqn-sample-mean">
+\begin{equation}
+S^2 = \frac{1}{n-1} \sum_{i=1}^n\left( H_i  -  \overline{H} \right),\tag{1.11.26}
+\end{equation}
+</div>
+<div class="para">where I have written everything in terms of the randdom variables for each sampling step, viz., <span class="process-math">\(\left(H_1, H_2, \cdots, H_{n}\right)\)</span> with <span class="process-math">\(n=50\)</span> here, and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\overline{H} = \frac{1}{n}\sum_{i=1}^{n} H_i.
+\end{equation*}
+</div>
+<div class="para">Suppose, we found that the value of <span class="process-math">\(S^2\)</span> from our data, now denoted by the lower case letter, since we are talking about a value of <span class="process-math">\(S^2\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+s^2 = 49\, \text{cm}^2
+\end{equation*}
+</div>
+<div class="para">How would we now use <span class="process-math">\(\overline{h}\)</span> and <span class="process-math">\(s^2\)</span> to find confidence interval at confidence level <span class="process-math">\((1-\alpha)100%\text{?}\)</span>
+</div>
+</div>
+<div class="para logical" id="subsubsec-t-Intervals-3">
+<div class="para">This is where the theory of Student <span class="process-math">\(t\)</span> distribution comes handy since the following variable <span class="process-math">\(T\)</span> obes a  <span class="process-math">\(t\)</span> distribution of degrees of freedom equal to <span class="process-math">\((n-1)\text{.}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-Z-variable-from-h-bar-mu-sigma.html ./knowl/xref/fig-t-confidence-interval.html ./knowl/xref/fig-confidence-interval.html">
+\begin{equation*}
+T = \frac{ \overline{H}- \mu }{ S/\sqrt{n} } \sim t_{n-1}.
+\end{equation*}
+</div>
+<div class="para">The parallels of <span class="process-math">\(T\)</span> here and <span class="process-math">\(Z\)</span> in Eq. <a href="sec-Point-Estimates-and-Confidence-Intervals.html#eqn-Z-variable-from-h-bar-mu-sigma" class="xref" data-knowl="./knowl/xref/eqn-Z-variable-from-h-bar-mu-sigma.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.11.19">(1.11.19)</a> is obvious with only changes being</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-Z-variable-from-h-bar-mu-sigma.html ./knowl/xref/fig-t-confidence-interval.html ./knowl/xref/fig-confidence-interval.html">
+\begin{equation*}
+\sigma, Z \sim \mathcal{N}(0,1) \longrightarrow S, T\sim t_{n-1}. 
+\end{equation*}
+</div>
+<div class="para">
+<a href="sec-Point-Estimates-and-Confidence-Intervals.html#fig-t-confidence-interval" class="xref" data-knowl="./knowl/xref/fig-t-confidence-interval.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.11.6">Figure 1.11.6</a> shows parallels to <a href="sec-Point-Estimates-and-Confidence-Intervals.html#fig-confidence-interval" class="xref" data-knowl="./knowl/xref/fig-confidence-interval.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.11.5">Figure 1.11.5</a> and illustrates that all we need to do is to use <span class="process-math">\(t\)</span> distribution of <span class="process-math">\((n-1) = 50-1 = 49\)</span> degrees of freedom here. The value of <span class="process-math">\(T\)</span> separating the included exluded excluded probabilities is very close to the corresponding <span class="process-math">\(Z\)</span> values since we have a fairly high degree of freedom.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-Z-variable-from-h-bar-mu-sigma.html ./knowl/xref/fig-t-confidence-interval.html ./knowl/xref/fig-confidence-interval.html">
+\begin{equation*}
+t_{n-1, \alpha/2} = t_{50-1, 0.025} \approx 2.01 \text{ compare to } z_{0.025} \approx 1.96. 
+\end{equation*}
+</div>
+<div class="para">The difference is atrtributable to the flat tail aspect of the <span class="process-math">\(t\)</span> distribution compared to the standard normal distribution.</div>
+</div>
+<figure class="figure figure-like" id="fig-t-confidence-interval"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/t-confidence-interval.png" class="contained" alt="Calculation for the upper and lower values of T."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.11.6<span class="period">.</span></span><span class="space"> </span>Calculation for the upper and lower values of <span class="process-math">\(T\text{.}\)</span> The shaded areas on the two sides each have <span class="process-math">\(\alpha/2\text{,}\)</span> here, <span class="process-math">\(2.5\%\)</span> area under the Gaussian curve. The confidence interval is to include the middle <span class="process-math">\(1-\alpha\text{,}\)</span> here <span class="process-math">\(95\%\)</span> of the area.</figcaption></figure><div class="para logical" id="subsubsec-t-Intervals-5">
+<div class="para">Therefore, the <span class="process-math">\(t\)</span> confidence interval at confidence interval <span class="process-math">\((1-\alpha)100%\)</span> is</div>
+<div class="displaymath process-math" id="eqn-t-confidence-interval">
+\begin{equation}
+\left(\overline{H}- t_{n-1, \alpha/2} \frac{s}{\sqrt{n}},\  \overline{H} + t_{n-1, \alpha/2} \frac{s}{\sqrt{n}}   \right) \tag{1.11.27}
+\end{equation}
+</div>
+<div class="para">Numerically, in our example, we will get</div>
+<div class="displaymath process-math" id="subsubsec-t-Intervals-5-4">
+\begin{align*}
+\amp \overline{H} = 170\,\text{cm}\\
+\amp t_{n-1, \alpha/2} \frac{s}{\sqrt{n}} = 2.01\times \frac{7\,\text{cm}}{\sqrt{50}} = 1.99\,\text{ cm}\\
+\amp \overline{H}- z_{\alpha/2} \frac{\sigma}{\sqrt{n}} = 170\,\text{cm} - 1.99\,\text{cm} = 168.01\,\text{cm}\\
+\amp \overline{H} +  z_{\alpha/2} \frac{\sigma}{\sqrt{n}} = 170\,\text{cm} + 1.99\,\text{cm} = 171.99\,\text{cm}
+\end{align*}
+</div>
+<div class="para">That is the <span class="process-math">\(t\)</span> distribution will be</div>
+<div class="displaymath process-math">
+\begin{equation*}
+t\text{-Confidence Interval at } 95\% = \left( 168.01\,\text{cm},\ 171.99\,\text{cm} \right).
+\end{equation*}
+</div>
+</div></section></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec-t-and-chi-square.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
