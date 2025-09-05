@@ -124,6 +124,9 @@ window.MathJax = {
 #sec-Point-Estimates-and-Confidence-Intervals-2-2-1 { counter-set: sec-Point-Estimates-and-Confidence-Intervals-2-2-1 0; }
 #sec-Point-Estimates-and-Confidence-Intervals-2-2-1 > li::marker { content: ""counter(sec-Point-Estimates-and-Confidence-Intervals-2-2-1,decimal)"."; }
 #sec-Point-Estimates-and-Confidence-Intervals-2-2-1 > li { counter-increment: sec-Point-Estimates-and-Confidence-Intervals-2-2-1; }
+#subsubsec-Z-Intervals-6-2-1 { counter-set: subsubsec-Z-Intervals-6-2-1 0; }
+#subsubsec-Z-Intervals-6-2-1 > li::marker { content: ""counter(subsubsec-Z-Intervals-6-2-1,decimal)"."; }
+#subsubsec-Z-Intervals-6-2-1 > li { counter-increment: subsubsec-Z-Intervals-6-2-1; }
 </style>
 </head>
 <body id="ML-Notes" class="pretext book ignore-math">
@@ -143,7 +146,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-Point-Estimates-and-Confidence-Intervals.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="my-ML-Notes.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="backmatter-2.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-Hypothesis-Tests.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="my-ML-Notes.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="backmatter-2.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -280,21 +283,31 @@ window.MathJax = {
 </ul>
 </li>
 <li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="sec-Point-Estimates-and-Confidence-Intervals.html#subsec-Confidence-Interval" class="internal"><span class="codenumber">1.11.2</span> <span class="title">Confidence Interval  TODO</span></a></div>
+<div class="toc-title-box"><a href="sec-Point-Estimates-and-Confidence-Intervals.html#subsec-Confidence-Interval" class="internal"><span class="codenumber">1.11.2</span> <span class="title">Confidence Interval</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Point-Estimates-and-Confidence-Intervals.html#subsubsec-Z-Intervals" class="internal"><span class="codenumber">1.11.2.1</span> <span class="title">The Z Intervals</span></a></div></li>
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Point-Estimates-and-Confidence-Intervals.html#subsubsec-t-Intervals" class="internal"><span class="codenumber">1.11.2.2</span> <span class="title">The t-Intervals</span></a></div></li>
 </ul>
 </li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-Point-Estimates-and-Confidence-Intervals.html#subsec-Difference-Between-Two-Means" class="internal"><span class="codenumber">1.11.3</span> <span class="title">Difference Between Two Means</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Point-Estimates-and-Confidence-Intervals.html#subsubsec-Equal-Variance-Populations" class="internal"><span class="codenumber">1.11.3.1</span> <span class="title">Equal Variance Populations: Pooled t-test</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Point-Estimates-and-Confidence-Intervals.html#subsec-Welch-t-test" class="internal"><span class="codenumber">1.11.3.2</span> <span class="title">Welch t test</span></a></div></li>
 </ul>
 </li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Point-Estimates-and-Confidence-Intervals.html#subsec-Estimating-Variance" class="internal"><span class="codenumber">1.11.4</span> <span class="title">Confidence Interval of Variance</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Point-Estimates-and-Confidence-Intervals.html#subsec-Difference-in-Variance-of-Two-Normal-Distributions" class="internal"><span class="codenumber">1.11.5</span> <span class="title">Comparing Variances of Two Normal Distributions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-Hypothesis-Tests.html" class="internal"><span class="codenumber">1.12</span> <span class="title">Hypothesis Tests</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter active"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="backmatter" id="backmatter"><nav class="summary-links"><ul><li><a href="backmatter-2.html" class="internal"><span class="title">Colophon</span></a></li></ul></nav></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="sec-Point-Estimates-and-Confidence-Intervals.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter-2.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec-Hypothesis-Tests.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter-2.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

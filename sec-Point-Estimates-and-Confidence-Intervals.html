@@ -124,6 +124,9 @@ window.MathJax = {
 #sec-Point-Estimates-and-Confidence-Intervals-2-2-1 { counter-set: sec-Point-Estimates-and-Confidence-Intervals-2-2-1 0; }
 #sec-Point-Estimates-and-Confidence-Intervals-2-2-1 > li::marker { content: ""counter(sec-Point-Estimates-and-Confidence-Intervals-2-2-1,decimal)"."; }
 #sec-Point-Estimates-and-Confidence-Intervals-2-2-1 > li { counter-increment: sec-Point-Estimates-and-Confidence-Intervals-2-2-1; }
+#subsubsec-Z-Intervals-6-2-1 { counter-set: subsubsec-Z-Intervals-6-2-1 0; }
+#subsubsec-Z-Intervals-6-2-1 > li::marker { content: ""counter(subsubsec-Z-Intervals-6-2-1,decimal)"."; }
+#subsubsec-Z-Intervals-6-2-1 > li { counter-increment: subsubsec-Z-Intervals-6-2-1; }
 </style>
 </head>
 <body id="ML-Notes" class="pretext book ignore-math">
@@ -143,7 +146,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-t-and-chi-square.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-Essential-Probability-and-Statistics.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-t-and-chi-square.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-Essential-Probability-and-Statistics.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-Hypothesis-Tests.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -280,14 +283,24 @@ window.MathJax = {
 </ul>
 </li>
 <li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="sec-Point-Estimates-and-Confidence-Intervals.html#subsec-Confidence-Interval" class="internal"><span class="codenumber">1.11.2</span> <span class="title">Confidence Interval  TODO</span></a></div>
+<div class="toc-title-box"><a href="sec-Point-Estimates-and-Confidence-Intervals.html#subsec-Confidence-Interval" class="internal"><span class="codenumber">1.11.2</span> <span class="title">Confidence Interval</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Point-Estimates-and-Confidence-Intervals.html#subsubsec-Z-Intervals" class="internal"><span class="codenumber">1.11.2.1</span> <span class="title">The Z Intervals</span></a></div></li>
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Point-Estimates-and-Confidence-Intervals.html#subsubsec-t-Intervals" class="internal"><span class="codenumber">1.11.2.2</span> <span class="title">The t-Intervals</span></a></div></li>
 </ul>
 </li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-Point-Estimates-and-Confidence-Intervals.html#subsec-Difference-Between-Two-Means" class="internal"><span class="codenumber">1.11.3</span> <span class="title">Difference Between Two Means</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Point-Estimates-and-Confidence-Intervals.html#subsubsec-Equal-Variance-Populations" class="internal"><span class="codenumber">1.11.3.1</span> <span class="title">Equal Variance Populations: Pooled t-test</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Point-Estimates-and-Confidence-Intervals.html#subsec-Welch-t-test" class="internal"><span class="codenumber">1.11.3.2</span> <span class="title">Welch t test</span></a></div></li>
 </ul>
 </li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Point-Estimates-and-Confidence-Intervals.html#subsec-Estimating-Variance" class="internal"><span class="codenumber">1.11.4</span> <span class="title">Confidence Interval of Variance</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Point-Estimates-and-Confidence-Intervals.html#subsec-Difference-in-Variance-of-Two-Normal-Distributions" class="internal"><span class="codenumber">1.11.5</span> <span class="title">Comparing Variances of Two Normal Distributions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-Hypothesis-Tests.html" class="internal"><span class="codenumber">1.12</span> <span class="title">Hypothesis Tests</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
@@ -303,7 +316,7 @@ window.MathJax = {
 <li id="sec-Point-Estimates-and-Confidence-Intervals-2-2-1-2"><div class="para" id="sec-Point-Estimates-and-Confidence-Intervals-2-2-1-2-1">
 <dfn class="terminology">Hypothesis Testing</dfn> to answer questions such as : "Is the value of the parameter exactly such an such?" For example, "Is the average height of an adult human being exactly 5 feet and 4 inches?" and "Is average height of Indians greater than the average height of Chinese?" You can set up hypothesis testing not just of parameters but of pretty much anything, including ML models - "does this model perform better than the other?"".</div></li>
 </ol>
-</div></section><section class="subsection" id="subsec-Parameter-Estimation"><h3 class="heading hide-type">
+</div> <div class="para" id="sec-Point-Estimates-and-Confidence-Intervals-2-3">Both of these topics deserve their own sections. In this section we will tackle issues associated with the point estimation and defer the hypothesis testing to the next section.</div></section><section class="subsection" id="subsec-Parameter-Estimation"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.11.1</span><span class="space"> </span><span class="title">Parameter Estimation</span>
 </h3>
 <section class="introduction" id="subsec-Parameter-Estimation-2"><div class="para" id="subsec-Parameter-Estimation-2-1"></div></section><section class="subsubsection" id="subsubsec-Basic-Setup"><h4 class="heading hide-type">
@@ -334,12 +347,12 @@ S^2 = \frac{1}{n-1}\sum_{i=1}^n \left( X_i - \overline{X}  \right)^2\quad (n \gt
 <div class="para" id="subsubsec-Basic-Setup-4">The population mean <span class="process-math">\(\mu\)</span> and population variance <span class="process-math">\(\sigma^2\)</span> are of course, unknown. We will see below how to use the sample mean and sample variance to get an estimate of these population quantities.</div>
 <div class="para logical" id="subsubsec-Basic-Setup-5">
 <div class="para">Note that both <span class="process-math">\(\overline{X}\)</span> and <span class="process-math">\(S^2\)</span> are random variables. So, they have their own probability distributions:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\rho_{\overline{X}}(x),\quad \rho_{S^2}(s^2),
-\end{equation*}
+<div class="displaymath process-math" id="subsubsec-Basic-Setup-5-3">
+\begin{align*}
+\amp \overline{X} \sim \mathcal{N}\left(\mu, \frac{\sigma^2}{n} \right),\,\qquad \frac{(n-1)S^2}{\sigma^2} \sim \chi^2_{n-1}
+\end{align*}
 </div>
-<div class="para">where the subscript denotes the random variable and the the small letter inside the braces denotes the value of the variable for the PDF. If we have a discrete variable, we use PMF in place of PDF.  Sometimes, we also deal with the random variable <span class="process-math">\(S\text{,}\)</span> the sample standard deviation,</div>
+<div class="para">Sometimes, we also deal with the random variable <span class="process-math">\(S\text{,}\)</span> the sample standard deviation,</div>
 <div class="displaymath process-math" id="subsubsec-Basic-Setup-5-5">
 \begin{equation}
 S = \sqrt{\frac{1}{n-1}\sum_{i=1}^n \left( X_i - \overline{X}  \right)^2}\quad (n \gt 1).\tag{1.11.4}
@@ -355,7 +368,7 @@ S = \sqrt{\frac{1}{n-1}\sum_{i=1}^n \left( X_i - \overline{X}  \right)^2}\quad (
 </div>
 <div class="para">where <span class="process-math">\(p\)</span> is the probability of success (i.e., <span class="process-math">\(1\)</span>) in each Bernoulli trial. That is, in this case, sample mean is an estimator of proportion of <span class="process-math">\(1\)</span>’s in the population.</div>
 </div>
-<div class="para" id="subsubsec-Basic-Setup-7">Now, we will discuss couple of different ways to estimate population parameters based on the data.</div></section><section class="subsubsection" id="subsubsec-Maximum-Likelihood-Estimate"><h4 class="heading hide-type">
+<div class="para" id="subsubsec-Basic-Setup-7">Now, we will discuss a procedure called <em class="alert">maximum likelihood estimation (MLE)</em> to estimate population parameters based on the data. There is another commonly used method of estimation <em class="alert">maximum a posteriori estimation (MAP)</em> based on Bayes’ principle will be discussed in a future section.</div></section><section class="subsubsection" id="subsubsec-Maximum-Likelihood-Estimate"><h4 class="heading hide-type">
 <span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">1.11.1.2</span><span class="space"> </span><span class="title">Maximum Likelihood Estimate</span>
 </h4>
 <div class="para logical" id="subsubsec-Maximum-Likelihood-Estimate-2">
@@ -394,46 +407,80 @@ P_{J}(x_1, x_2, \cdots, x_n)\amp = \Pi_{i=1}^n p^{x_i} (1-p)^{1-x_i}\\
 \amp  = p^{\sum_i x_i} (1-p)^{\sum_i(1-x_i)}. 
 \end{align*}
 </div>
-<div class="para">This gives us an expression of the joint probability in terms of the data, i.e., <span class="process-math">\(\{x_1, x_2, \cdots, x_n \}\)</span> and the unknown parameter<span class="process-math">\(p\text{.}\)</span> In this context we treat <span class="process-math">\(P_J\)</span> as a function of the parameter <span class="process-math">\(p\)</span> and call it <dfn class="terminology">likelihood function</dfn>, denoted by <span class="process-math">\(L\)</span>
+<div class="para">This gives us an expression of the joint probability in terms of the data, i.e., <span class="process-math">\(\{x_1, x_2, \cdots, x_n \}\)</span> and the unknown parameter<span class="process-math">\(p\text{.}\)</span> P_J of course is a function of the data and parameter <span class="process-math">\(p\text{.}\)</span> But since our interest is to find <span class="process-math">\(p\)</span> that maximizes this joint probability for the given data, we think of <span class="process-math">\(P_J\)</span> as a function of <span class="process-math">\(p\text{.}\)</span> In this context we call <span class="process-math">\(P_J\)</span> by another name, <dfn class="terminology">likelihood function</dfn>, often denoted by <span class="process-math">\(L\)</span>
 </div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-estimation-Bernoulli-PMF.html" id="eqn-likelihod-function">
 \begin{equation}
-L = B_J.\tag{1.11.8}
+L(p) = P_J(p),\quad \text{ more generally},\ L(\theta) = P_J(\theta).\tag{1.11.8}
 \end{equation}
 </div>
-<div class="para">Thus, we have the following function that we need to maximize with respect to the paremeter <span class="process-math">\(p\)</span> to obtain the maximum likelihood estimate of <span class="process-math">\(p\text{.}\)</span>
+<div class="para">Thus, in the present example, we have the following function that we need to maximize with respect to the paremeter <span class="process-math">\(p\)</span> to obtain the maximum likelihood estimate of <span class="process-math">\(p\text{.}\)</span>
 </div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-estimation-Bernoulli-PMF.html">
 \begin{equation*}
 L(p) = p^{\sum_i x_i} (1-p)^{\sum_i(1-x_i)}.
 \end{equation*}
 </div>
-<div class="para">In this instance, taking derivative with respect to <span class="process-math">\(p\)</span> is not that hard, but in general, we maximize the log of <span class="process-math">\(L\text{.}\)</span> Since log is a monotonic function, the maximum of a log of a function will occur at the same place as the function itself. The log likelihood, denoted by <span class="process-math">\(LL\)</span>
+<div class="para">It will be less verbose to write <span class="process-math">\(\overline{x}\)</span> for the sample mean of the data at hand.  Let</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-estimation-Bernoulli-PMF.html">
+\begin{equation*}
+\overline{x} = \frac{1}{n}\sum_{i=1}^n x_i
+\end{equation*}
+</div>
+<div class="para">Then, likelihood for the <span class="process-math">\(n\)</span> Bernoulli experiments is</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-estimation-Bernoulli-PMF.html">
+\begin{equation*}
+L(p) = p^{n\overline{x}} (1-p)^{ n - n\overline{x}}.
+\end{equation*}
+</div>
+<div class="para">Notice that taking log both sides will turn this product into a sum. And, since log is a monotonic function of its argument, the maximum of a log of a function will occur at the same place as the function itself.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-estimation-Bernoulli-PMF.html">
+\begin{equation*}
+\log_{\text{max }p}\left( L(p) \right) = L_{\text{max }p}(p).
+\end{equation*}
+</div>
+<div class="para">For brevity, let us denote the log of likelihood by <span class="process-math">\(LL\text{.}\)</span>
 </div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-estimation-Bernoulli-PMF.html">
 \begin{equation*}
-LL (p) \equiv \log ( L (p) ) = \left(\sum_i x_i \right) \log p + \left( \sum_i(1-x_i) \right) \log (1-p). 
+LL (p) \equiv \log ( L (p) ) = \left(n\overline{x} \right) \log p + \left( n - n\overline{x} \right) \log (1-p). 
 \end{equation*}
 </div>
 <div class="para">Taking derivative with respect to <span class="process-math">\(p\)</span> and setting <span class="process-math">\(p=p_\text{MLE}\text{,}\)</span> we can solve for <span class="process-math">\(p_\text{MLE}\text{.}\)</span>
 </div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-estimation-Bernoulli-PMF.html">
 \begin{equation*}
-\frac{d LL(p)}{dp} = \frac{\sum_i x_i}{p_\text{MLE}} - \frac{\sum_i(1-x_i)}{1-p_\text{MLE}}.
+\frac{d LL(p)}{dp} = \frac{n\overline{x}}{p_\text{MLE}} - \frac{n - n\overline{x}}{1-p_\text{MLE}}.
 \end{equation*}
 </div>
 <div class="para">Noting that <span class="process-math">\(\sum_i 1 = n\)</span> here, we get</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-estimation-Bernoulli-PMF.html" id="eqn-p-MLE">
 \begin{equation}
-p_\text{MLE} = \frac{\sum_{i=1}^n x_i }{n}.\tag{1.11.9}
+p_\text{MLE} = \overline{x}.\tag{1.11.9}
 \end{equation}
 </div>
-<div class="para">This is just the average of the collected data on heads and tails, with heads being <span class="process-math">\(1\)</span> and tails being <span class="process-math">\(0\text{.}\)</span>
+<div class="para">That is, the MLE estimate of the proportion <span class="process-math">\(p\)</span> just the average of the collected data on heads and tails, with heads being <span class="process-math">\(1\)</span> and tails being <span class="process-math">\(0\text{.}\)</span>
 </div>
 </div>
-<article class="remark remark-like" id="subsubsec-Maximum-Likelihood-Estimate-6"><h5 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.11.1</span><span class="period">.</span><span class="space"> </span><span class="title">What if <span class="process-math">\(X\)</span> was not Bernoulli?</span>
-</h5> <div class="para logical" id="subsubsec-Maximum-Likelihood-Estimate-6-2">
+<article class="theorem theorem-like" id="thm-MLE-is-maximum"><h5 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.11.1</span><span class="period">.</span>
+</h5>
+<div class="para" id="thm-MLE-is-maximum-1-1">MLE estimate is maximum of the log likelihood function.</div></article><article class="proof" id="thm-MLE-is-maximum-2"><h5 class="heading"><span class="type">Proof<span class="period">.</span></span></h5>
+<div class="para logical" id="thm-MLE-is-maximum-2-1">
+<div class="para">To show that the extremeum found is the maximum and not the minimum, all we have to do is to check whether the sign of the second derivative when <span class="process-math">\(p=p_\text{MLE}\)</span> negative or not.</div>
+<div class="displaymath process-math" id="thm-MLE-is-maximum-2-1-2">
+\begin{align*}
+\left. \frac{d^2LL}{dp^2} \right|_{p = p_\text{MLE}} \amp  = -\frac{n\overline{x}}{p_\text{MLE}^2}  + \frac{n -n\overline{x} }{ \left( 1 - p_\text{MLE} \right)^2 }\\
+\amp  = -\frac{n\overline{x}}{\overline{x}^2}  + \frac{n ( 1 -\overline{x}) }{ \left( 1 - \overline{x} \right)^2 }\\
+\amp = -\frac{n}{\overline{x}}  + \frac{n }{ \left( 1 - \overline{x} \right)  } \\
+\amp = \frac{ -1}{ \overline{x} (\left( 1 - \overline{x} \right)) }  \lt 0.
+\end{align*}
+</div>
+<div class="para">Hence, MLE estimate is indeed a maximum of Likelihood function.<span class="process-math">\(\quad\blacksquare\)</span>
+</div>
+</div></article><article class="remark remark-like" id="subsubsec-Maximum-Likelihood-Estimate-7"><h5 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.11.2</span><span class="period">.</span><span class="space"> </span><span class="title">What if <span class="process-math">\(X\)</span> was not Bernoulli?</span>
+</h5> <div class="para logical" id="subsubsec-Maximum-Likelihood-Estimate-7-2">
 <div class="para">We just have to proceed a little differently after Eq. <a href="sec-Point-Estimates-and-Confidence-Intervals.html#eqn-estimation-joint-becomes-product" class="xref" data-knowl="./knowl/xref/eqn-estimation-joint-becomes-product.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.11.7">(1.11.7)</a>. In that equation, parameters, usually denoted by <span class="process-math">\(\theta\text{,}\)</span> of interest will appear in the probability distributions of the individual trials, same for every one of them.</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-estimation-joint-becomes-product.html" id="eqn-estimation-joint-general">
 \begin{equation}
@@ -453,39 +500,46 @@ LL(\theta) = \sum_{i=1}^n \log \left( P_X(x_i;\theta)\right).\tag{1.11.12}
 \end{equation}
 </div>
 <div class="para">In general, setting the derivative of <span class="process-math">\(LL\)</span> to zero and solving for the MLE estimate can only be done numercally.</div>
-</div></article><article class="example example-like" id="subsubsec-Maximum-Likelihood-Estimate-7"><h5 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.11.2</span><span class="period">.</span><span class="space"> </span><span class="title">Each Trial <span class="process-math">\(X \sim \mathcal{N}(\mu, \sigma^2)\)</span> of unknown <span class="process-math">\(\mu\)</span> and <span class="process-math">\(\sigma^2\)</span>.</span>
-</h5> <div class="para logical" id="subsubsec-Maximum-Likelihood-Estimate-7-2">
+</div></article><article class="example example-like" id="subsubsec-Maximum-Likelihood-Estimate-8"><h5 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.11.3</span><span class="period">.</span><span class="space"> </span><span class="title">Each Trial <span class="process-math">\(X \sim \mathcal{N}(\mu, \sigma^2)\)</span> of unknown <span class="process-math">\(\mu\)</span> and <span class="process-math">\(\sigma^2\)</span>.</span>
+</h5> <div class="para logical" id="subsubsec-Maximum-Likelihood-Estimate-8-2">
 <div class="para">We have</div>
 <div class="displaymath process-math">
 \begin{equation*}
 P_X(x) = \frac{1}{\sqrt{2\pi\sigma^2}\, e^{ -(x-\mu)^2/2\sigma^2 }}.
 \end{equation*}
 </div>
-</div> <div class="para logical" id="subsubsec-Maximum-Likelihood-Estimate-7-3">
+</div> <div class="para logical" id="subsubsec-Maximum-Likelihood-Estimate-8-3">
 <div class="para">In this case, suppose we want an MLE of <span class="process-math">\(\mu\)</span> and <span class="process-math">\(\sigma\text{.}\)</span> The log likelihood function will be (replacing <span class="process-math">\(\theta\)</span> by the actual parameters here in Eq. <a href="sec-Point-Estimates-and-Confidence-Intervals.html#eqn-loglikelihood-function" class="xref" data-knowl="./knowl/xref/eqn-loglikelihood-function.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.11.12">(1.11.12)</a>.)</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-loglikelihood-function.html" id="subsubsec-Maximum-Likelihood-Estimate-7-3-5">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-loglikelihood-function.html" id="subsubsec-Maximum-Likelihood-Estimate-8-3-5">
 \begin{align*}
 LL(\mu, \sigma^2) \amp \sum_{i=1}^n \log \left( P_X(x_i;\theta)\right). \\
 \amp = \sum_{i=1}^n\left[ - \frac{1}{2}\log(2\pi \sigma^2) - \frac{(x_i - \mu)^2}{2\sigma^2} \right].
 \end{align*}
 </div>
 <div class="para">Now, to find <span class="process-math">\(\mu_\text{MLE}\)</span> and <span class="process-math">\(\sigma_\text{MLE}\)</span> you will solve the following equations.</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-loglikelihood-function.html" id="subsubsec-Maximum-Likelihood-Estimate-7-3-8">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-loglikelihood-function.html" id="subsubsec-Maximum-Likelihood-Estimate-8-3-8">
 \begin{align*}
 \amp \left. \frac{\partial LL(\mu, \sigma^2)}{\partial \mu} \right|_{\mu_\text{MLE}, \sigma^2_\text{MLE}} = 0 \\
 \amp \left. \frac{\partial LL(\mu, \sigma)}{\partial \sigma^2} \right|_{\mu_\text{MLE}, \sigma^2_\text{MLE}} = 0 
 \end{align*}
 </div>
 <div class="para">Show that you get the following answers.</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-loglikelihood-function.html" id="subsubsec-Maximum-Likelihood-Estimate-7-3-9">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-loglikelihood-function.html" id="subsubsec-Maximum-Likelihood-Estimate-8-3-9">
 \begin{align*}
 \amp \mu_\text{MLE} = \frac{1}{n}\sum_{i}^n x_i \equiv \bar x,\\
 \amp \sigma_\text{MLE}^2 = \frac{1}{n}\sum_{i}^n \left(x_i - \bar x \right)^2 
 \end{align*}
 </div>
+<div class="para">The MLE estimate of the variance is a biased estimator. Often, we will use the following unbiased estimate for variance, also called the <dfn class="terminology">sample variance</dfn>.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-loglikelihood-function.html">
+\begin{equation*}
+s^2  = \frac{1}{n-1}\sum_{i}^n \left(x_i - \bar x \right)^2.
+\end{equation*}
+</div>
+<div class="para">Below we discuss the technical meaning of bias and unbias.</div>
 </div></article><article class="definition definition-like" id="def-estimators"><h5 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.11.3</span><span class="period">.</span><span class="space"> </span><span class="title">Estimators.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.11.4</span><span class="period">.</span><span class="space"> </span><span class="title">Estimators.</span>
 </h5> <div class="para" id="def-estimators-2-1">From the formulas for MLE etimates of <span class="process-math">\(p\)</span> of a Bernoulli <span class="process-math">\(X\)</span> and <span class="process-math">\(\mu\)</span> and <span class="process-math">\(\sigma^2\)</span> of a Gaussian <span class="process-math">\(X\text{,}\)</span> we can write random variables whose expectation values estimate these quantities. We call these random variables <dfn class="terminology">estimators</dfn>. We will denote them with capital letters as we have done for other random variables.</div> <div class="para logical" id="def-estimators-2-2">
 <div class="para">Thus the MLE estimator of <span class="process-math">\(p\)</span> of a Bernoulli variable <span class="process-math">\(X\)</span> will be</div>
 <div class="displaymath process-math" id="eqn-Bernoulli-p-estimator">
@@ -501,7 +555,7 @@ LL(\mu, \sigma^2) \amp \sum_{i=1}^n \log \left( P_X(x_i;\theta)\right). \\
 \end{align}
 </div>
 <div class="para">If expectation values of these estimators in their corresponding probability distributions yield the appropriate true values, <span class="process-math">\(p\)</span> for the Bernoulli case, and <span class="process-math">\(\mu\)</span> and <span class="process-math">\(\sigma^2\)</span> for the Normal case, we say that the estimator is an <dfn class="terminology">unbiased estimartor</dfn>.</div>
-</div></article><article class="proof" id="subsubsec-Maximum-Likelihood-Estimate-9"><h5 class="heading"><span class="title">Bernoulli <span class="process-math">\(\Pi_\text{MLE}\)</span> estimator is unbiased..</span></h5> <div class="para logical" id="subsubsec-Maximum-Likelihood-Estimate-9-2">
+</div></article><article class="proof" id="subsubsec-Maximum-Likelihood-Estimate-10"><h5 class="heading"><span class="title">Bernoulli <span class="process-math">\(\Pi_\text{MLE}\)</span> estimator is unbiased..</span></h5> <div class="para logical" id="subsubsec-Maximum-Likelihood-Estimate-10-2">
 <div class="para">To prove that <span class="process-math">\(\Pi_\text{MLE}\)</span> is unbiased, we calculate it/s expectation value in the Bernoulli PMF. We know that for expectation value of each <span class="process-math">\(X_i\)</span> is same:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -509,14 +563,14 @@ LL(\mu, \sigma^2) \amp \sum_{i=1}^n \log \left( P_X(x_i;\theta)\right). \\
 \end{equation*}
 </div>
 <div class="para">Therefore,</div>
-<div class="displaymath process-math" id="subsubsec-Maximum-Likelihood-Estimate-9-2-4">
+<div class="displaymath process-math" id="subsubsec-Maximum-Likelihood-Estimate-10-2-4">
 \begin{align*}
 \mathbb{E}\left[ \Pi_\text{MLE} \right] \amp  = \frac{1}{n}\sum_{i=1}^{n} \mathbb{E}\left[ X_i \right] =  \frac{1}{n}\sum_{i=1}^{n} p = \frac{1}{n} \times n\,p = p.
 \end{align*}
 </div>
 <div class="para">Hence <span class="process-math">\(\Pi_\text{MLE}\)</span> is an unbiased estimator of <span class="process-math">\(p\text{.}\)</span> <span class="process-math">\(\quad \blacksquare\)</span>
 </div>
-</div></article><article class="proof" id="subsubsec-Maximum-Likelihood-Estimate-10"><h5 class="heading"><span class="title">Gaussian <span class="process-math">\(M_\text{MLE}\)</span> estimator is unbiased..</span></h5> <div class="para" id="subsubsec-Maximum-Likelihood-Estimate-10-2">Here, we know that <span class="process-math">\(\mathbb{E}[X_i] = \mu\)</span> for each <span class="process-math">\(X_i\text{.}\)</span> Hence, just like the Bernoulli <span class="process-math">\(\Pi_\text{MLE}\text{,}\)</span> the expectation value of <span class="process-math">\(M_\text{MLE}\)</span> is also unbiased.</div></article><article class="proof" id="subsubsec-Maximum-Likelihood-Estimate-11"><h5 class="heading"><span class="title">Gaussian <span class="process-math">\(\Sigma_\text{MLE}^2\)</span> estimator is not unbiased..</span></h5> <div class="para logical" id="subsubsec-Maximum-Likelihood-Estimate-11-2">
+</div></article><article class="proof" id="subsubsec-Maximum-Likelihood-Estimate-11"><h5 class="heading"><span class="title">Gaussian <span class="process-math">\(M_\text{MLE}\)</span> estimator is unbiased..</span></h5> <div class="para" id="subsubsec-Maximum-Likelihood-Estimate-11-2">Here, we know that <span class="process-math">\(\mathbb{E}[X_i] = \mu\)</span> for each <span class="process-math">\(X_i\text{.}\)</span> Hence, just like the Bernoulli <span class="process-math">\(\Pi_\text{MLE}\text{,}\)</span> the expectation value of <span class="process-math">\(M_\text{MLE}\)</span> is also unbiased.</div></article><article class="proof" id="subsubsec-Maximum-Likelihood-Estimate-12"><h5 class="heading"><span class="title">Gaussian <span class="process-math">\(\Sigma_\text{MLE}^2\)</span> estimator is not unbiased..</span></h5> <div class="para logical" id="subsubsec-Maximum-Likelihood-Estimate-12-2">
 <div class="para">Now, we come to an estimator which is not unbiased. Let’s see. Since each <span class="process-math">\(X_i \sim \mathcal{N}(\mu, \sigma^2)\text{,}\)</span> the variance of each <span class="process-math">\(X_i\text{,}\)</span>
 </div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-Normal-sigma-sq-estimator.html" id="eqn-normal-variance-each-xi">
@@ -531,7 +585,7 @@ LL(\mu, \sigma^2) \amp \sum_{i=1}^n \log \left( P_X(x_i;\theta)\right). \\
 \end{equation}
 </div>
 <div class="para">Here is how I got this result.</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-Normal-sigma-sq-estimator.html" id="subsubsec-Maximum-Likelihood-Estimate-11-2-6">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-Normal-sigma-sq-estimator.html" id="subsubsec-Maximum-Likelihood-Estimate-12-2-6">
 \begin{align*}
 \mathbb{E}[M^2] \amp  = \mathbb{E}\left[ \frac{1}{n^2} \sum_{i=1}^n \sum_{j=1}^n X_i X_j\right]\, \quad\text{Use two indices, one for each }M.\\
 \amp = \frac{1}{n^2}\mathbb{E}\left[ \sum_{i=j} X_i X_j + \sum_{i\ne j} X_i X_j \right]\\
@@ -550,7 +604,7 @@ LL(\mu, \sigma^2) \amp \sum_{i=1}^n \log \left( P_X(x_i;\theta)\right). \\
 </div>
 <div class="para">I leave this part to you to complete. Now, we look at the expectation of the estimator <span class="process-math">\(\Sigma_\text{MLE}^2\text{.}\)</span>
 </div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-Normal-sigma-sq-estimator.html" id="subsubsec-Maximum-Likelihood-Estimate-11-2-9">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-Normal-sigma-sq-estimator.html" id="subsubsec-Maximum-Likelihood-Estimate-12-2-9">
 \begin{align*}
 \mathbb{E}\left[ \Sigma_\text{MLE}^2 \right] \amp = \mathbb{E}\left[ \frac{1}{n}\sum_{i}^n \left(X_i - M  \right)^2 \right]\\
 \amp = \frac{1}{n} \sum_{i=1^n} \mathbb{E}[X_i^2] - \frac{2}{n} \sum_{i=1}^n\mathbb{E}[MX_i] + \frac{1}{n}\sum_{i=1}^n\mathbb{E}[M^2] \\
@@ -560,79 +614,77 @@ LL(\mu, \sigma^2) \amp \sum_{i=1}^n \log \left( P_X(x_i;\theta)\right). \\
 </div>
 <div class="para">Hence <span class="process-math">\(\Sigma_\text{MLE}^2\)</span> is not an unbiased estimator of <span class="process-math">\(\sigma^2\)</span> of a Normal variable. <span class="process-math">\(\qquad \blacksquare\)</span>
 </div>
-</div> <div class="para logical" id="subsubsec-Maximum-Likelihood-Estimate-11-3">
-<div class="para">From the result above, it is immediately obvious that had we divided by <span class="process-math">\((n-)\)</span> in the definition of <span class="process-math">\(\Sigma_\text{MLE}^2\)</span> rather than by <span class="process-math">\(n\text{,}\)</span> the modified <span class="process-math">\(\Sigma_\text{uMLE}^2\)</span> will be an unbiased estimator of <span class="process-math">\(\sigma^2\text{.}\)</span>
+</div></article><article class="definition definition-like" id="def-unbiased-sample-variance"><h5 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.11.5</span><span class="period">.</span><span class="space"> </span><span class="title">Unbiased Sample Variance.</span>
+</h5> <div class="para logical" id="def-unbiased-sample-variance-2-1">
+<div class="para">From the result above, it is immediately obvious that had we divided by <span class="process-math">\((n-)\)</span> in the definition of <span class="process-math">\(\Sigma_\text{MLE}^2\)</span> rather than by <span class="process-math">\(n\text{,}\)</span> the modified quantity, to be denoted by <span class="process-math">\(S^2\)</span> will be an unbiased estimator of <span class="process-math">\(\sigma^2\text{.}\)</span>
 </div>
 <div class="displaymath process-math" id="eqn-unbiased-estimator-of-sigma-square">
 \begin{equation}
-\Sigma_\text{uMLE}^2 = \frac{1}{n-1}\sum_{i=1}^n \left( X_i - M \right)^2.\tag{1.11.18}
+S^2 = \frac{1}{n-1}\sum_{i=1}^n \left( X_i - M \right)^2.\tag{1.11.18}
 \end{equation}
 </div>
-<div class="para">You can verify that expectation value of this estimator will be <span class="process-math">\(\sigma^2\text{.}\)</span> Interestingly, although <span class="process-math">\(\Sigma_\text{uMLE}^2\)</span> is an unbiased estimator of <span class="process-math">\(\sigma^2\text{,}\)</span> its square root <span class="process-math">\(\Sigma_\text{uMLE}\)</span> is not an unbiased estimator of <span class="process-math">\(\sigma\text{.}\)</span>
+<div class="para">We call this quantity <dfn class="terminology">Sample Variance</dfn>. It is a random variable since it depends upon the random variables <span class="process-math">\(X_i\)</span>’s and <span class="process-math">\(M\text{.}\)</span>
 </div>
-</div> <div class="para logical" id="subsubsec-Maximum-Likelihood-Estimate-11-4">
-<div class="para">A less algebraic way of proving the unbiasedness of <span class="process-math">\(\Sigma_\text{uMLE}^2\)</span> is to recall the chi square disrtribution variable. A Gaussian variable <span class="process-math">\(X\)</span> with mean <span class="process-math">\(\mu\)</span> and variance <span class="process-math">\(\sigma^2\)</span> and sample variance defined by <span class="process-math">\(S^2\)</span> defined by</div>
-<div class="displaymath process-math">
-\begin{equation*}
-S^2 = \frac{1}{n-1}\sum_i \left( X_i - \frac{1}{n}\sum_{j=1}^n X_i \right)^2.
-\end{equation*}
+</div></article><article class="proof" id="subsubsec-Maximum-Likelihood-Estimate-14"><h5 class="heading"><span class="title"><span class="process-math">\(S^2\)</span> is unbiased.</span></h5> <div class="para" id="subsubsec-Maximum-Likelihood-Estimate-14-2">You can verify that expectation value of sample variance will be the (unknown) population variance <span class="process-math">\(\sigma^2\)</span> by a more direct calculation but a less algebraic way of proving the unbiasedness of <span class="process-math">\(S^2\)</span> is to notice its relation to chi square disrtribution.</div> <div class="para logical" id="subsubsec-Maximum-Likelihood-Estimate-14-3">
+<div class="para">Consider a Gaussian variable <span class="process-math">\(X\)</span> with mean <span class="process-math">\(\mu\)</span> and variance <span class="process-math">\(\sigma^2\)</span> and sample variance defined by <span class="process-math">\(S^2\)</span> formula defined above. Then, following is true of a related variable <span class="process-math">\(Y\text{:}\)</span>
 </div>
-<div class="para">Then, the following is true</div>
 <div class="displaymath process-math">
 \begin{equation*}
 Y \equiv \frac{(n-1) S^2 }{\sigma^2} \sim \chi_{n-1}^2.
 \end{equation*}
 </div>
-<div class="para">The expectation value of the <span class="process-math">\(\chi^2\)</span> variable is the degree of freedom of the <span class="process-math">\(\chi^2\text{.}\)</span> Therefore</div>
+<div class="para">Let’s use <span class="process-math">\(\chi^2_{n-1}\)</span> symbol for <span class="process-math">\(Y\)</span> to remind us of its distribution. And, rearrange the above relation to</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\mathbb{E}[Y] = n-1,
+S^2 = \frac{\sigma^2}{n-1}\,\chi^2_{n-1}.
 \end{equation*}
 </div>
-<div class="para">which is</div>
+<div class="para">Clearly, the expectation value of <span class="process-math">\(S^2\)</span> will be simply</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\mathbb{E}\left[  \frac{(n-1) S^2 }{\sigma^2} \right] = n-1.
+\mathbb{E}[S^2] = \frac{\sigma^2}{n-1}\,\mathbb{E}\left[\chi^2_{n-1}\right].
 \end{equation*}
 </div>
-<div class="para">Hence</div>
+<div class="para">But the expectation value of <span class="process-math">\(\chi^2\)</span> variable is just its degree of freedom, which is <span class="process-math">\((n-1)\)</span> here. Hence,</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\mathbb{E}[S^2] = \sigma^2.
+\mathbb{E}[S^2] = \frac{\sigma^2}{n-1}\,\mathbb{E}\times (n-1) = \sigma^2\quad \implies S^2\text{ unbiased}. \quad \blacksquare
 \end{equation*}
+</div>
+<div class="para">Interestingly, although <span class="process-math">\(S^2\)</span> is an unbiased estimator of <span class="process-math">\(\sigma^2\text{,}\)</span> its square root <span class="process-math">\(\Sigma_\text{uMLE}\)</span> is not an unbiased estimator of <span class="process-math">\(\sigma\text{.}\)</span>
 </div>
 </div></article></section></section><section class="subsection" id="subsec-Confidence-Interval"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.11.2</span><span class="space"> </span><span class="title">Confidence Interval  TODO</span>
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.11.2</span><span class="space"> </span><span class="title">Confidence Interval</span>
 </h3>
-<section class="introduction" id="subsec-Confidence-Interval-2"><div class="para" id="subsec-Confidence-Interval-2-1">From the point estimation section above, we learned how to use maximum likelihood procedure on the sampled data for computing parameters that model distribution of a random variable in nature. For instance, we saw that sample mean gives an unbiased estimate of the probability of success (<span class="process-math">\(1\)</span>’s) in a <span class="process-math">\(0/1\)</span> system. But, how can we be sure that the estimated value is close to the true value since the later is not known? This is where the idea of confidence interval comes in.</div> <article class="definition definition-like" id="def-confidence-interval"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.11.4</span><span class="period">.</span>
-</h4>
-<div class="para logical" id="def-confidence-interval-1-1">
-<div class="para">A <dfn class="terminology">confidence interval</dfn> for a parameter <span class="process-math">\(\theta\)</span> is an interval of values, <span class="process-math">\((\theta_\text{low}, \theta_\text{high})\)</span> which contains the true unknown (maybe, even unknowable) value of <span class="process-math">\(\theta\)</span> at a particular level of confidence.  The confidence level is usually written as a percentage using a complementary  quantity <span class="process-math">\(\alpha\)</span> as</div>
+<section class="introduction" id="subsec-Confidence-Interval-2"><div class="para" id="subsec-Confidence-Interval-2-1">From the point estimation section above, we learned how to use maximum likelihood procedure on the sampled data for computing parameters that model distribution of a random variable in nature. For instance, we saw that sample mean gives an unbiased estimate of the probability of success (<span class="process-math">\(1\)</span>’s) in a <span class="process-math">\(0/1\)</span> system. But, how can we be sure that the estimated value is close to the true value since the later is not known? This is where the idea of confidence interval comes in.</div> <div class="para" id="subsec-Confidence-Interval-2-2">A <dfn class="terminology">confidence interval</dfn> for a parameter <span class="process-math">\(\theta\)</span> is an interval of values, <span class="process-math">\((\theta_\text{low}, \theta_\text{high})\)</span> <em class="alert">which could contain</em> the true unknown (maybe, even unknowable) value of <span class="process-math">\(\theta\)</span> at a particular level of confidence.</div> <div class="para logical" id="subsec-Confidence-Interval-2-3">
+<div class="para">The confidence level is usually written as a percentage using a complementary  quantity <span class="process-math">\(\alpha\)</span> (alpha), which is written as a fraction of <span class="process-math">\(1\text{,}\)</span> as follows.</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \text{Confidence Level } = (1-\alpha)100\%,
 \end{equation*}
 </div>
-<div class="para">where <span class="process-math">\(\alpha\)</span> is a fraction. The fractional quantity <span class="process-math">\((1-\alpha)\)</span> is called <dfn class="terminology">confidence coefficient</dfn>. For instance,, if we want <span class="process-math">\(95\%\)</span> confidence level, we would have</div>
+<div class="para">The fractional quantity <span class="process-math">\((1-\alpha)\)</span> is called <dfn class="terminology">confidence coefficient</dfn>. For instance,, if we want <span class="process-math">\(95\%\)</span> confidence level, we would have</div>
 <div class="displaymath process-math">
 \begin{equation*}
 95\%\,\text{Confidence Level} \iff \alpha = 1- 0.95 = 0.05.
 \end{equation*}
 </div>
 <div class="para">Clearly, greater the confidence level (or, equivalently, smaller <span class="process-math">\(\alpha\)</span>), greater should be our confidence that the unknown parameter is contained somewhere inside the confidence interval.</div>
-</div> <div class="para logical" id="def-confidence-interval-1-2">
-<div class="para">Thus, we define confidence interval <span class="process-math">\((\theta_\text{low}, \theta_\text{high})\)</span> by requiring that the following probability statement be true.</div>
-<div class="displaymath process-math">
-\begin{equation*}
-P(\theta_\text{low} \lt \theta \lt  \theta_\text{high}) = (1-\alpha).
-\end{equation*}
+</div> <article class="definition definition-like" id="def-confidence-interval"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.11.6</span><span class="period">.</span><span class="space"> </span><span class="title">Confidence Interval.</span>
+</h4> <div class="para logical" id="def-confidence-interval-2-1">
+<div class="para">A confidence interval <span class="process-math">\((\theta_\text{low}, \theta_\text{high})\)</span> of an unknown parameter <span class="process-math">\(\theta\)</span> of a statistical model is defined by the probability of the event that the interval contains the true value of the parameter be equal to the desired confidence level. That is,</div>
+<div class="displaymath process-math" id="eqn-confidence-interval-probability">
+\begin{equation}
+P(\theta_\text{low} \lt \theta \lt  \theta_\text{high}) = (1-\alpha).\tag{1.11.19}
+\end{equation}
 </div>
-<div class="para">We will see examples of how we can compute <span class="process-math">\(\theta_\text{low}\)</span> and <span class="process-math">\(\theta_\text{high}\)</span> from the data collected and some assumptions about the distribution from which data may have arisen.</div>
+<div class="para">We will see examples of how we can compute <span class="process-math">\(\theta_\text{low}\)</span> and <span class="process-math">\(\theta_\text{high}\)</span> from the data collected.</div>
 </div></article></section><section class="subsubsection" id="subsubsec-Z-Intervals"><h4 class="heading hide-type">
 <span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">1.11.2.1</span><span class="space"> </span><span class="title">The Z Intervals</span>
 </h4>
-<div class="para" id="subsubsec-Z-Intervals-2">The confidence interval, called the <dfn class="terminology">Z interval</dfn>, is a confidence interval of the population mean <span class="process-math">\(\mu\)</span> when we are provided with the exact value of the population variance <span class="process-math">\(\sigma^2\text{.}\)</span> At this point, let’s not worry about how we somehow know the population variance but not the population mean. We are assuming this so that we can apply the Central Limit Theorem (CLT) to this problem.  Out aim is to lay out the theoretical steps in an understandable way so when we remove the assumption about the sample variance, it will not be too high a barrier. The procedure is best illustrated by a numerical example.</div>
+<div class="para" id="subsubsec-Z-Intervals-2">The confidence interval, called the <dfn class="terminology">Z interval</dfn>, is a confidence interval of the population mean <span class="process-math">\(\mu\)</span> when we are provided with the exact value of the population variance <span class="process-math">\(\sigma^2\text{.}\)</span> At this point, let’s not worry about how we somehow know the population variance but not the population mean. We are assuming this so that we can apply the Central Limit Theorem (CLT) to this problem. The procedure is best illustrated by a numerical example.</div>
 <div class="para logical" id="subsubsec-Z-Intervals-3">
 <div class="para">Supose our project is to study height of male adults in a populatoin in which the height varies with a known variance of <span class="process-math">\(\sigma^2 = 25\,\text{cm}^2\text{.}\)</span> We wish to find the confidence interval of the mean height <span class="process-math">\(\mu\)</span> at the confidence level of <span class="process-math">\(95\%\text{,}\)</span> i.e.,</div>
 <div class="displaymath process-math">
@@ -640,86 +692,153 @@ P(\theta_\text{low} \lt \theta \lt  \theta_\text{high}) = (1-\alpha).
 \alpha = 1 - 0.95 = 0.05.
 \end{equation*}
 </div>
-</div>
-<div class="para logical" id="subsubsec-Z-Intervals-4">
-<div class="para">We collect data by measuring the heights of <span class="process-math">\(50\)</span> randomly selected adults. From which, we can of course find the sample mean. Say, we found the result <span class="process-math">\(170 \, \text{cm}\text{.}\)</span> As before, we use capital letters for the random variable and small letters for their values.</div>
+<div class="para">That is, we want to find <span class="process-math">\(h_\text{low}\)</span>  and <span class="process-math">\(h_\text{high}\)</span> so that the following  statement is true.</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\bar{h} \equiv \overline{H} = \frac{1}{n}\sum_{i=1}^nh_i = 170\, \text{cm}. 
+P( h_\text{low} \lt h \lt h_\text{high} ) = 0.95,
 \end{equation*}
 </div>
-<div class="para">So, we have <span class="process-math">\(\bar{h} = 170\, \text{cm}\)</span> from sample and <span class="process-math">\(\sigma = 5\,\text{cm}\)</span> from the population. So, how do we get a confidence interval for <span class="process-math">\(\mu\text{?}\)</span>
+<div class="para">where <span class="process-math">\(h\)</span> is the true mean of all adult males in the population, which could, in principle, be obtained by measuring heights of every adult male, but, in practice, unpractical.</div>
 </div>
-</div>
+<div class="para" id="subsubsec-Z-Intervals-4">Notation: We use capital letters for the random variable name and small letters for their values. Thus, we will use <span class="process-math">\(H\)</span> for the variable height, <span class="process-math">\(h_i\)</span> for individual heights, <span class="process-math">\(h\)</span> for population mean, <span class="process-math">\(\overline{H}\)</span> for sample mean, <span class="process-math">\(\overline{h}\)</span> for the value of the sample mean from the sample collected.</div>
 <div class="para logical" id="subsubsec-Z-Intervals-5">
-<div class="para">Recall that according to CLT, if a variable <span class="process-math">\(H\)</span> has population mean <span class="process-math">\(\mu\text{,}\)</span> population variance <span class="process-math">\(\sigma^2\text{,}\)</span> and <span class="process-math">\(n\)</span> points of data, <span class="process-math">\(H_1, H_2, \cdots, H_n\text{,}\)</span> are collected then, for large enough <span class="process-math">\(n\text{,}\)</span> the following variable has a standard normal distribution.</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-confidence-interval.html" id="eqn-Z-variable-from-h-bar-mu-sigma">
+<div class="para">Therefore, we collect a sample by measuring the heights of <span class="process-math">\(50\)</span> randomly selected adults. From which, we can, of course, find the sample mean <span class="process-math">\(\overline{h}\text{.}\)</span> Say, we found the result <span class="process-math">\(170 \, \text{cm}\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\overline{h} \equiv \overline{H} = \frac{1}{50}\sum_{i=1}^{50}h_i = 170\, \text{cm}. 
+\end{equation*}
+</div>
+<div class="para">We are also given the population variance of heights to be:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sigma^2 = 25\,\text{cm}^2.
+\end{equation*}
+</div>
+<div class="para">Our task is to find values of <span class="process-math">\(h_\text{low}\)</span> and <span class="process-math">\(h_\text{high}\)</span> from <span class="process-math">\(n\text{,}\)</span> <span class="process-math">\(\overline{h}\text{,}\)</span> and <span class="process-math">\(\sigma^2\text{.}\)</span>
+</div>
+</div>
+<article class="remark remark-like" id="subsubsec-Z-Intervals-6"><h5 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.11.7</span><span class="period">.</span><span class="space"> </span><span class="title">The Answer.</span>
+</h5> <div class="para logical" id="subsubsec-Z-Intervals-6-2">
+<div class="para">Let me just give you the answer first and then we will look at the theory based on our thinking that the distribution is more or less like a Gaussian distribution.</div>
+<ol class="decimal" id="subsubsec-Z-Intervals-6-2-1">
+<li id="subsubsec-Z-Intervals-6-2-1-1">
+<div class="para" id="subsubsec-Z-Intervals-6-2-1-1-1">Assuming, the included probability is the central part of a Gaussian, we can implement the probability required in Eq. <a href="sec-Point-Estimates-and-Confidence-Intervals.html#eqn-confidence-interval-probability" class="xref" data-knowl="./knowl/xref/eqn-confidence-interval-probability.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.11.19">(1.11.19)</a> by using the standard normal distribution’s CDF, <span class="process-math">\(\Phi\text{.}\)</span>
+</div>
+<div class="para logical" id="subsubsec-Z-Intervals-6-2-1-1-2">
+<div class="para">We want to include <span class="process-math">\((1-\alpha)\)</span> amount of central part of Gaussian and leave out equal amount, say <span class="process-math">\(x\)</span> on either side, with total being <span class="process-math">\(1\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x + (1-\alpha) + x = 1.
+\end{equation*}
+</div>
+<div class="para">That gives <span class="process-math">\(x = \alpha/2\text{.}\)</span> Hence, to get <span class="process-math">\(Z\)</span> value at the upper end, we need to find <span class="process-math">\(z\)</span> which gives probability <span class="process-math">\(1-\alpha/2\text{.}\)</span> That is, we need to solve the following problems for <span class="process-math">\(z_\text{high}\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="subsubsec-Z-Intervals-6-2-1-1-2-10">
+\begin{align*}
+\amp \Phi(z_\text{high}) = 1 - \frac{\alpha}{2}.  
+\end{align*}
+</div>
+<div class="para">This will be</div>
+<div class="displaymath process-math">
+\begin{equation*}
+z_\text{high} = \Phi^{-1} \left( 1 - \frac{\alpha}{2} \right)
+\end{equation*}
+</div>
+<div class="para">For <span class="process-math">\(\Phi^{-1}(k) \text{,}\)</span> you can use a numeerical tool such as scipy.stats.norm.ppf(k). When I looked up the number for <span class="process-math">\(k=0.95\text{,}\)</span> the value was approximately 1.96.</div>
+</div>
+<div class="para logical" id="subsubsec-Z-Intervals-6-2-1-1-3">
+<div class="para">We call this value <span class="process-math">\(z_{\alpha/2}\text{.}\)</span>
+</div>
+<div class="displaymath process-math" id="eqn-z-high-equals-z-alpha-over-2">
 \begin{equation}
-Z \equiv \frac{\overline{H} - \mu}{ \sigma/\sqrt{n}} \sim \mathcal{N}(0,1),\tag{1.11.19}
+z_\text{high} \equiv z_{\alpha/2}.\tag{1.11.20}
 \end{equation}
 </div>
-<div class="para">where <span class="process-math">\(\overline{H}\)</span> is the sample mean. Supposing that <span class="process-math">\(n=50\)</span> is large enough to apply CLT to our height problem, we can this <span class="process-math">\(Z\)</span> variabale to connect to the probability statement about the confidence interval to find the low and high values of the heights.</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-confidence-interval.html" id="eqn-probability-low-high-heights">
+<div class="para">From symmetry of the standard normal about <span class="process-math">\(z=0\text{,}\)</span> we arrive at</div>
+<div class="displaymath process-math" id="eqn-z-low-equal-minus-z-high">
 \begin{equation}
-P\left( z_\text{low} \lt Z \lt z_\text{high} \right) = 1-\alpha = 0.95.\tag{1.11.20}
+z_\text{low} = - z_\text{high} = - z_{\alpha/2}.\tag{1.11.21}
 \end{equation}
 </div>
-<div class="para">What are these <span class="process-math">\(z_\text{low}\)</span> and <span class="process-math">\(z_\text{high}\text{?}\)</span> To find these values, we look at the PDF and CDF of a standard Normal disribution as shown in <a href="sec-Point-Estimates-and-Confidence-Intervals.html#fig-confidence-interval" class="xref" data-knowl="./knowl/xref/fig-confidence-interval.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.11.5">Figure 1.11.5</a>. The CDF shows that to include the middle <span class="process-math">\((1-\alpha)\)</span> of the probability, we need the following values of <span class="process-math">\(Z\text{:}\)</span>
 </div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-confidence-interval.html">
+</li>
+<li id="subsubsec-Z-Intervals-6-2-1-2"><div class="para logical" id="subsubsec-Z-Intervals-6-2-1-2-1">
+<div class="para">Calculate the high and low limits of the confidence interval by</div>
+<div class="displaymath process-math" id="subsubsec-Z-Intervals-6-2-1-2-1-1">
+\begin{align*}
+\amp h_\text{low} = \overline{h} - z_{\alpha/2}\,\frac{\sigma}{\sqrt{n}}  \\
+\amp h_\text{high} = \overline{h} + z_{\alpha/2}\,\frac{\sigma}{\sqrt{n}}  
+\end{align*}
+</div>
+</div></li>
+</ol>
+</div> <div class="para" id="subsubsec-Z-Intervals-6-3">So, that’s all there is to the <span class="process-math">\(Z\)</span>-confidence interval.</div></article><div class="para" id="subsubsec-Z-Intervals-7"><em class="alert">The Dtails:</em></div>
+<div class="para logical" id="subsubsec-Z-Intervals-8">
+<div class="para">Recall that according to CLT, if a variable <span class="process-math">\(H\)</span> has population mean <span class="process-math">\(\mu\text{,}\)</span> population variance <span class="process-math">\(\sigma^2\text{,}\)</span> and <span class="process-math">\(n\)</span> points of data, <span class="process-math">\(H_1, H_2, \cdots, H_n\text{,}\)</span> with sample mean <span class="process-math">\(\overline{H}\text{,}\)</span> then, for large enough <span class="process-math">\(n\text{,}\)</span> the following variable <span class="process-math">\(Z\)</span> constructed from them has a standard normal distribution.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-confidence-interval-probability.html ./knowl/xref/eqn-confidence-interval-probability.html ./knowl/xref/fig-confidence-interval.html" id="eqn-Z-variable-from-h-bar-mu-sigma">
+\begin{equation}
+Z \equiv \frac{\overline{H} - \mu}{ \sigma/\sqrt{n}} \sim \mathcal{N}(0,1),\tag{1.11.22}
+\end{equation}
+</div>
+<div class="para">Suppose, instead of Eq. <a href="sec-Point-Estimates-and-Confidence-Intervals.html#eqn-confidence-interval-probability" class="xref" data-knowl="./knowl/xref/eqn-confidence-interval-probability.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.11.19">(1.11.19)</a>, we start with first trying to find <span class="process-math">\(z_\text{low}\)</span> and <span class="process-math">\(z_\text{high}\)</span> with the same probability,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-confidence-interval-probability.html ./knowl/xref/eqn-confidence-interval-probability.html ./knowl/xref/fig-confidence-interval.html" id="eqn-probability-low-high-heights">
+\begin{equation}
+P\left( z_\text{low} \lt Z \lt z_\text{high} \right) = 1-\alpha = 0.95.\tag{1.11.23}
+\end{equation}
+</div>
+<div class="para">Can we then somehow transform this to the Eq. <a href="sec-Point-Estimates-and-Confidence-Intervals.html#eqn-confidence-interval-probability" class="xref" data-knowl="./knowl/xref/eqn-confidence-interval-probability.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.11.19">(1.11.19)</a>? Following steps show you how.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-confidence-interval-probability.html ./knowl/xref/eqn-confidence-interval-probability.html ./knowl/xref/fig-confidence-interval.html" id="subsubsec-Z-Intervals-8-15">
+\begin{align*}
+\amp P\left( z_\text{low} \lt \frac{\overline{H} - \mu}{ \sigma/\sqrt{n}} \lt z_\text{high} \right) = 1-\alpha\\
+\amp P\left( z_\text{low} \frac{\sigma}{\sqrt{n}} \lt  \overline{H} - \mu  \lt z_\text{high} \frac{\sigma}{\sqrt{n}} \right) = 1-\alpha \\
+\amp P\left( z_\text{high} \frac{\sigma}{\sqrt{n}} \gt \mu -  \overline{H} \gt z_\text{low} \frac{\sigma}{\sqrt{n}} \right) = 1-\alpha\\
+\amp P\left( \overline{H} + z_{high} \frac{\sigma}{\sqrt{n}} \gt \mu   \gt \overline{H} + z_\text{low} \frac{\sigma}{\sqrt{n}} \right) = 1-\alpha\\
+\amp P\left(\overline{H} + z_\text{low} \frac{\sigma}{\sqrt{n}} \lt \mu \lt \overline{H} + z_\text{high} \frac{\sigma}{\sqrt{n}}   \right) = 1-\alpha
+\end{align*}
+</div>
+<div class="para">This shows that the <span class="process-math">\(h_\text{low}\)</span> and<span class="process-math">\(h_\text{high}\)</span> of the confidence interval are</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-confidence-interval-probability.html ./knowl/xref/eqn-confidence-interval-probability.html ./knowl/xref/fig-confidence-interval.html" id="subsubsec-Z-Intervals-8-18">
+\begin{align}
+\amp h_\text{low} = \overline{H} + z_\text{low} \frac{\sigma}{\sqrt{n}} \tag{1.11.24}\\
+\amp h_\text{high} = \overline{H} + z_\text{high} \frac{\sigma}{\sqrt{n}} \tag{1.11.25}
+\end{align}
+</div>
+<div class="para">How do you get these <span class="process-math">\(z_\text{low}\)</span> and <span class="process-math">\(z_\text{high}\text{?}\)</span> To find these values, we look at the PDF and CDF of a standard Normal disribution as shown in <a href="sec-Point-Estimates-and-Confidence-Intervals.html#fig-confidence-interval" class="xref" data-knowl="./knowl/xref/fig-confidence-interval.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.11.8">Figure 1.11.8</a>. The CDF shows that to include the middle <span class="process-math">\((1-\alpha)\)</span> of the probability, we need the following values of <span class="process-math">\(Z\text{:}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-confidence-interval-probability.html ./knowl/xref/eqn-confidence-interval-probability.html ./knowl/xref/fig-confidence-interval.html">
 \begin{equation*}
 z_\text{low} = - z_{\alpha/2}, \quad z_\text{high} = z_{\alpha/2}.
 \end{equation*}
 </div>
 <div class="para">The value of <span class="process-math">\(z_{\alpha/2}\)</span> corresponds to the probability value</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-confidence-interval.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-confidence-interval-probability.html ./knowl/xref/eqn-confidence-interval-probability.html ./knowl/xref/fig-confidence-interval.html">
 \begin{equation*}
 p_{\alpha/2} = 1-\frac{\alpha}{2} = 1 - \frac{0.05}{2} = 0.975.
 \end{equation*}
 </div>
 <div class="para">Therefore, we solve the following equation to get <span class="process-math">\(z_{high}\text{.}\)</span>
 </div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-confidence-interval.html" id="eqn-z-alpha-over-2">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-confidence-interval-probability.html ./knowl/xref/eqn-confidence-interval-probability.html ./knowl/xref/fig-confidence-interval.html" id="eqn-z-alpha-over-2">
 \begin{equation}
-\Phi(z_\text{high}) = p_{\alpha/2}.\tag{1.11.21}
+\Phi(z_\text{high}) = p_{\alpha/2}.\tag{1.11.26}
 \end{equation}
 </div>
 <div class="para">Inverting this equation gives</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-confidence-interval.html" id="eqn-inverse-CDF-for-z-alpha-over-2">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-confidence-interval-probability.html ./knowl/xref/eqn-confidence-interval-probability.html ./knowl/xref/fig-confidence-interval.html" id="eqn-inverse-CDF-for-z-alpha-over-2">
 \begin{equation}
-z_\text{high} \equiv z_{\alpha/2}  = \Phi^{-1}( p_{\alpha/2} ) = \Phi^{-1}( 0.975 ) \approx 1.96.\tag{1.11.22}
+z_\text{high} \equiv z_{\alpha/2}  = \Phi^{-1}( p_{\alpha/2} ) = \Phi^{-1}( 0.975 ) \approx 1.96.\tag{1.11.27}
 \end{equation}
 </div>
 <div class="para">This solved our immediate problem of <span class="process-math">\(z_\text{low}\)</span> and <span class="process-math">\(z_\text{high}\text{.}\)</span>
 </div>
 </div>
 <figure class="figure figure-like" id="fig-confidence-interval"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/confidence-interval.png" class="contained" alt="Calculation for the upper and lower values of Z."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.11.5<span class="period">.</span></span><span class="space"> </span>Calculation for the upper and lower values of <span class="process-math">\(Z\text{.}\)</span> The shaded areas on the two sides each have <span class="process-math">\(\alpha/2\text{,}\)</span> here, <span class="process-math">\(2.5\%\)</span> area under the Gaussian curve. The confidence interval is to include the middle <span class="process-math">\(1-\alpha\text{,}\)</span> here <span class="process-math">\(95\%\)</span> of the area.</figcaption></figure><div class="para logical" id="subsubsec-Z-Intervals-7">
-<div class="para">Having found that <span class="process-math">\(z_\text{low}\)</span> and <span class="process-math">\(z_\text{high}\)</span> are just <span class="process-math">\(-z_{\alpha/2}\)</span> and <span class="process-math">\(z_{\alpha/2}\text{,}\)</span> let us rewrite Eq.<a href="sec-Point-Estimates-and-Confidence-Intervals.html#eqn-probability-low-high-heights" class="xref" data-knowl="./knowl/xref/eqn-probability-low-high-heights.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.11.20">(1.11.20)</a> as follows. or equivalently,</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-probability-low-high-heights.html" id="eqn-probability-low-high-heights-2">
-\begin{equation}
-P\left( -z_{\alpha/2} \lt \frac{\overline{H} - \mu}{ \sigma/\sqrt{n}} \lt z_{\alpha/2} \right) = 1-\alpha,\tag{1.11.23}
-\end{equation}
-</div>
-<div class="para">The event of this probability can be rewritten to see the confidential interval of the population mean <span class="process-math">\(\mu\)</span> that is contained in the statement. Follow the following sequence of steps:</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-probability-low-high-heights.html" id="subsubsec-Z-Intervals-7-8">
-\begin{align*}
-\amp P\left( -z_{\alpha/2} \lt \frac{\overline{H} - \mu}{ \sigma/\sqrt{n}} \lt z_{\alpha/2} \right) = 1-\alpha\\
-\amp P\left( -z_{\alpha/2} \frac{\sigma}{\sqrt{n}} \lt  \overline{H} - \mu  \lt z_{\alpha/2} \frac{\sigma}{\sqrt{n}} \right) = 1-\alpha \\
-\amp P\left( +z_{\alpha/2} \frac{\sigma}{\sqrt{n}} \gt \mu -  \overline{H} \gt - z_{\alpha/2} \frac{\sigma}{\sqrt{n}} \right) = 1-\alpha\\
-\amp P\left( \overline{H} + z_{\alpha/2} \frac{\sigma}{\sqrt{n}} \gt \mu   \gt \overline{H}- z_{\alpha/2} \frac{\sigma}{\sqrt{n}} \right) = 1-\alpha\\
-\amp P\left(\overline{H}- z_{\alpha/2} \frac{\sigma}{\sqrt{n}} \lt \mu \lt \overline{H} + z_{\alpha/2} \frac{\sigma}{\sqrt{n}}   \right) = 1-\alpha
-\end{align*}
-</div>
-<div class="para">From the statement of the event we can immediately read the low and high limit on the population mean <span class="process-math">\(\mu\)</span> at the confidence level <span class="process-math">\((1-\alpha)100\%\text{.}\)</span>
-</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-probability-low-high-heights.html" id="eqn-Z-confidence-interval">
-\begin{equation}
-\left( \overline{H}- z_{\alpha/2} \frac{\sigma}{\sqrt{n}},\ \overline{H} +  z_{\alpha/2} \frac{\sigma}{\sqrt{n}} \right)\tag{1.11.24}
-\end{equation}
-</div>
-<div class="para">In the present example, we will have the following numerical values.</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-probability-low-high-heights.html" id="subsubsec-Z-Intervals-7-12">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.11.8<span class="period">.</span></span><span class="space"> </span>Calculation for the upper and lower values of <span class="process-math">\(Z\text{.}\)</span> The shaded areas on the two sides each have <span class="process-math">\(\alpha/2\text{,}\)</span> here, <span class="process-math">\(2.5\%\)</span> area under the Gaussian curve. The confidence interval is to include the middle <span class="process-math">\(1-\alpha\text{,}\)</span> here <span class="process-math">\(95\%\)</span> of the area.</figcaption></figure><div class="para logical" id="subsubsec-Z-Intervals-10">
+<div class="para"> Working out the numerical values in the example data we find the confidence interval.</div>
+<div class="displaymath process-math" id="subsubsec-Z-Intervals-10-1">
 \begin{align*}
 \amp \overline{H} = 170\,\text{cm}\\
 \amp z_{\alpha/2} \frac{\sigma}{\sqrt{n}} = 1.96\times \frac{5\,\text{cm}}{\sqrt{50}} = 1.39\,\text{ cm}\\
@@ -729,7 +848,7 @@ P\left( -z_{\alpha/2} \lt \frac{\overline{H} - \mu}{ \sigma/\sqrt{n}} \lt z_{\al
 </div>
 <div class="para">Hence, the <span class="process-math">\(95\%\)</span> confidence interval for heights of adult males in the population is <span class="process-math">\((168.61\,\text{cm},\ 171.39\,\text{cm})\text{.}\)</span> This interval is called <dfn class="terminology">Z interval</dfn> because we use the Standard Normal distribution. It is applicable when we use a <em class="alert">known population variance</em>. As has already been pointed out that this is not the case in real settings. The variance must also be estimated from the collected data. We turn to remedy this problem in the next section.</div>
 </div>
-<div class="para logical" id="subsubsec-Z-Intervals-8">
+<div class="para logical" id="subsubsec-Z-Intervals-11">
 <div class="para">
 <em class="alert">Correct and Wrong Interpretations of Confidence Intervals:</em> How should you interpret the following probability statement?</div>
 <div class="displaymath process-math">
@@ -740,7 +859,7 @@ P\left(\overline{H}- z_{\alpha/2} \frac{\sigma}{\sqrt{n}} \lt \mu \lt \overline{
 <div class="para">To simplify notation in our discussion, let’s rewrite this equation with <span class="process-math">\(L\)</span> for the lower end and <span class="process-math">\(U\)</span> for the upper end of the Z-interval.</div>
 <div class="displaymath process-math" id="eqn-L-mu-U">
 \begin{equation}
-P\left(L  \lt \mu \lt U  \right) = 1-\alpha,\tag{1.11.25}
+P\left(L  \lt \mu \lt U  \right) = 1-\alpha,\tag{1.11.28}
 \end{equation}
 </div>
 <div class="para">with</div>
@@ -751,8 +870,8 @@ L = \overline{H}- z_{\alpha/2} \frac{\sigma}{\sqrt{n}},\quad U = \overline{H}+ z
 </div>
 <div class="para">Notice that <span class="process-math">\(\overline{H}\)</span> depends on the data <span class="process-math">\(\{ h_1, h_2, \cdots, h_{50}\}\)</span> we had collected by measuring the heights of <span class="process-math">\(50\)</span> adult males chisen randomly from the population. Therefore, <span class="process-math">\(L\)</span> and <span class="process-math">\(U\)</span> depend on the data as well. It’s highly likely that if we repeat this experiment of randomly selecting <span class="process-math">\(50\)</span> adult males and measuring their heights, you will get a different result. Hence, <span class="process-math">\(L\)</span> and <span class="process-math">\(U\)</span> are also random variables.</div>
 </div>
-<div class="para" id="subsubsec-Z-Intervals-9">But population mean <span class="process-math">\(\mu\)</span> is one definitely number, which would the average of ALL males in the population. Although <span class="process-math">\(\mu\)</span> is not known but there is no uncertainty in what it is supposed to be. Therefore, we cannot say probability of <span class="process-math">\(\mu\)</span> to be in this interval is such and such - you can only assign probability to uncertain events and value of <span class="process-math">\(\mu\)</span> is not uncertain.</div>
-<div class="para" id="subsubsec-Z-Intervals-10">Here, the uncertainty is in the confidence interval since both <span class="process-math">\(L\)</span> and <span class="process-math">\(U\)</span> are uncertain, depending on the data instances. As you repeat collection of data, you will get different <span class="process-math">\((L,U)\)</span> from each data instance. Some of those ranges will include <span class="process-math">\(\mu\)</span> some will not. The way to interpret Eq. <a href="sec-Point-Estimates-and-Confidence-Intervals.html#eqn-L-mu-U" class="xref" data-knowl="./knowl/xref/eqn-L-mu-U.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.11.25">(1.11.25)</a> is that among numerous repeats of data, <span class="process-math">\((-1\alpha)100%\)</span> of the time the <span class="process-math">\((L,U)\)</span> range will include <span class="process-math">\(\mu\text{.}\)</span> Whether a particular interval will include the <span class="process-math">\(\mu\)</span> is either a yes or no answer, not a probability answer. You might ask about the probability of the event that any one of the confidence interval includes <span class="process-math">\(\mu\)</span> in it - the answer to that probability will be <span class="process-math">\((1-\alpha)100%\text{.}\)</span>
+<div class="para" id="subsubsec-Z-Intervals-12">But population mean <span class="process-math">\(\mu\)</span> is one definitely number, which would the average of ALL males in the population. Although <span class="process-math">\(\mu\)</span> is not known but there is no uncertainty in what it is supposed to be. Therefore, we cannot say probability of <span class="process-math">\(\mu\)</span> to be in this interval is such and such - you can only assign probability to uncertain events and value of <span class="process-math">\(\mu\)</span> is not uncertain.</div>
+<div class="para" id="subsubsec-Z-Intervals-13">Here, the uncertainty is in the confidence interval since both <span class="process-math">\(L\)</span> and <span class="process-math">\(U\)</span> are uncertain, depending on the data instances. As you repeat collection of data, you will get different <span class="process-math">\((L,U)\)</span> from each data instance. Some of those ranges will include <span class="process-math">\(\mu\)</span> some will not. The way to interpret Eq. <a href="sec-Point-Estimates-and-Confidence-Intervals.html#eqn-L-mu-U" class="xref" data-knowl="./knowl/xref/eqn-L-mu-U.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.11.28">(1.11.28)</a> is that among numerous repeats of data, <span class="process-math">\((-1\alpha)100\%\)</span> of the time the <span class="process-math">\((L,U)\)</span> range will include <span class="process-math">\(\mu\text{.}\)</span> Whether a particular interval will include the <span class="process-math">\(\mu\)</span> is either a yes or no answer, not a probability answer. You might ask about the probability of the event that any one of the confidence interval includes <span class="process-math">\(\mu\)</span> in it - the answer to that probability will be <span class="process-math">\((1-\alpha)100\%\text{.}\)</span>
 </div></section><section class="subsubsection" id="subsubsec-t-Intervals"><h4 class="heading hide-type">
 <span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">1.11.2.2</span><span class="space"> </span><span class="title">The t-Intervals</span>
 </h4>
@@ -760,7 +879,7 @@ L = \overline{H}- z_{\alpha/2} \frac{\sigma}{\sqrt{n}},\quad U = \overline{H}+ z
 <div class="para">Let’s study the same problem of determining the mean height of a population of male adults in a population. We had collected <span class="process-math">\(50\)</span> heights, <span class="process-math">\(\{h_1, h_2, \cdots, h_{50} \}\)</span> and computed their sample mean to be <span class="process-math">\(\overline{h} = 170 \, \text{cm}\text{.}\)</span> We know nothing about either population mean <span class="process-math">\(\mu\)</span> or population variance <span class="process-math">\(\sigma^2\text{.}\)</span> But, in addition to <span class="process-math">\(\overline{h}\text{,}\)</span> we can compute sample variance from the <span class="process-math">\(h_i\)</span>’s, e.g., the unbiased sample mean.</div>
 <div class="displaymath process-math" id="eqn-sample-mean">
 \begin{equation}
-S^2 = \frac{1}{n-1} \sum_{i=1}^n\left( H_i  -  \overline{H} \right),\tag{1.11.26}
+S^2 = \frac{1}{n-1} \sum_{i=1}^n\left( H_i  -  \overline{H} \right),\tag{1.11.29}
 \end{equation}
 </div>
 <div class="para">where I have written everything in terms of the randdom variables for each sampling step, viz., <span class="process-math">\(\left(H_1, H_2, \cdots, H_{n}\right)\)</span> with <span class="process-math">\(n=50\)</span> here, and</div>
@@ -776,26 +895,68 @@ S^2 = \frac{1}{n-1} \sum_{i=1}^n\left( H_i  -  \overline{H} \right),\tag{1.11.26
 s^2 = 49\, \text{cm}^2
 \end{equation*}
 </div>
-<div class="para">How would we now use <span class="process-math">\(\overline{h}\)</span> and <span class="process-math">\(s^2\)</span> to find confidence interval at confidence level <span class="process-math">\((1-\alpha)100%\text{?}\)</span>
+<div class="para">How would we now use <span class="process-math">\(\overline{h}\)</span> and <span class="process-math">\(s^2\)</span> to find confidence interval at confidence level <span class="process-math">\((1-\alpha)100\%\text{?}\)</span>
 </div>
 </div>
 <div class="para logical" id="subsubsec-t-Intervals-3">
 <div class="para">This is where the theory of Student <span class="process-math">\(t\)</span> distribution comes handy since the following variable <span class="process-math">\(T\)</span> obes a  <span class="process-math">\(t\)</span> distribution of degrees of freedom equal to <span class="process-math">\((n-1)\text{.}\)</span>
 </div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-Z-variable-from-h-bar-mu-sigma.html ./knowl/xref/fig-t-confidence-interval.html ./knowl/xref/fig-confidence-interval.html">
+<div class="displaymath process-math" id="eqn-T-defined-here-goes-as-t-n-minus-1">
+\begin{equation}
+T = \frac{ \overline{H}- \mu }{ S/\sqrt{n} } \sim t_{n-1}.\tag{1.11.30}
+\end{equation}
+</div>
+</div>
+<article class="proof" id="subsubsec-t-Intervals-4"><h5 class="heading"><span class="type">Proof<span class="period">.</span></span></h5>
+<div class="para logical" id="subsubsec-t-Intervals-4-1">
+<div class="para">Note that <span class="process-math">\(T\)</span> contstructed in Eq. <a href="sec-Point-Estimates-and-Confidence-Intervals.html#eqn-T-defined-here-goes-as-t-n-minus-1" class="xref" data-knowl="./knowl/xref/eqn-T-defined-here-goes-as-t-n-minus-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.11.30">(1.11.30)</a> is different than the <span class="process-math">\(T\)</span> we had defined when we discussed the <span class="process-math">\(t\)</span>-distribution. There, we had the degree of freedom of the <span class="process-math">\(t\)</span>-distribution in the definition. Let <span class="process-math">\(r\)</span> be the degree of freedom, in place of <span class="process-math">\(n\)</span> used nefore so that we separate the <span class="process-math">\(n\)</span> from samples taken to <span class="process-math">\(r\)</span> for the degree of freedom.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-T-defined-here-goes-as-t-n-minus-1.html ./knowl/xref/eqn-T-defined-here-goes-as-t-n-minus-1.html ./knowl/xref/eqn-T-defined-here-goes-as-t-n-minus-1.html">
 \begin{equation*}
-T = \frac{ \overline{H}- \mu }{ S/\sqrt{n} } \sim t_{n-1}.
+T_\text{before} = \frac{Z}{Y/\sqrt{r}} \sim t_{r},
 \end{equation*}
 </div>
-<div class="para">The parallels of <span class="process-math">\(T\)</span> here and <span class="process-math">\(Z\)</span> in Eq. <a href="sec-Point-Estimates-and-Confidence-Intervals.html#eqn-Z-variable-from-h-bar-mu-sigma" class="xref" data-knowl="./knowl/xref/eqn-Z-variable-from-h-bar-mu-sigma.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.11.19">(1.11.19)</a> is obvious with only changes being</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-Z-variable-from-h-bar-mu-sigma.html ./knowl/xref/fig-t-confidence-interval.html ./knowl/xref/fig-confidence-interval.html">
+<div class="para">where it was assumed that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-T-defined-here-goes-as-t-n-minus-1.html ./knowl/xref/eqn-T-defined-here-goes-as-t-n-minus-1.html ./knowl/xref/eqn-T-defined-here-goes-as-t-n-minus-1.html">
 \begin{equation*}
-\sigma, Z \sim \mathcal{N}(0,1) \longrightarrow S, T\sim t_{n-1}. 
+Z\sim\mathcal{N}(0,1),\qquad Y\sim \chi^2_{r}.
 \end{equation*}
 </div>
+<div class="para">In Eq. <a href="sec-Point-Estimates-and-Confidence-Intervals.html#eqn-T-defined-here-goes-as-t-n-minus-1" class="xref" data-knowl="./knowl/xref/eqn-T-defined-here-goes-as-t-n-minus-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.11.30">(1.11.30)</a> we need to deal with <span class="process-math">\(S^2\text{,}\)</span> for which we will make use of the result:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-T-defined-here-goes-as-t-n-minus-1.html ./knowl/xref/eqn-T-defined-here-goes-as-t-n-minus-1.html ./knowl/xref/eqn-T-defined-here-goes-as-t-n-minus-1.html">
+\begin{equation*}
+(n-1)\frac{S^2}{\sigma^2} \sim \chi^2_{n-1}.\qquad \text{(We will prove this later.)}
+\end{equation*}
+</div>
+<div class="para">Let’s now make the following manipulations of the expression in Eq. <a href="sec-Point-Estimates-and-Confidence-Intervals.html#eqn-T-defined-here-goes-as-t-n-minus-1" class="xref" data-knowl="./knowl/xref/eqn-T-defined-here-goes-as-t-n-minus-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.11.30">(1.11.30)</a>.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-T-defined-here-goes-as-t-n-minus-1.html ./knowl/xref/eqn-T-defined-here-goes-as-t-n-minus-1.html ./knowl/xref/eqn-T-defined-here-goes-as-t-n-minus-1.html" id="subsubsec-t-Intervals-4-1-16">
+\begin{align*}
+T  \amp = \frac{ \overline{H}- \mu }{ S/\sqrt{n} }   =  \frac{ \frac{ \overline{H}- \mu }{\sigma\sqrt{n}} }{ S/\sigma }  = \frac{ Z }{ S/\sigma }   = \frac{ Z }{ \sqrt{ S^2/\sigma^2} }   = \frac{ Z }{ \sqrt{ Y/r} } 
+\end{align*}
+</div>
+<div class="para">Here, <span class="process-math">\(Z\sim\mathcal{N}(0,1)\)</span> and</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-T-defined-here-goes-as-t-n-minus-1.html ./knowl/xref/eqn-T-defined-here-goes-as-t-n-minus-1.html ./knowl/xref/eqn-T-defined-here-goes-as-t-n-minus-1.html">
+\begin{equation*}
+Y = r\, S^2/\sigma^2 \sim \chi^2_{n-1}\, \text{ if } r = n-1.
+\end{equation*}
+</div>
+<div class="para">Hence, we have the conditions for <span class="process-math">\(t_{n-1}\)</span> distribution for the defined <span class="process-math">\(T\)</span> variable:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-T-defined-here-goes-as-t-n-minus-1.html ./knowl/xref/eqn-T-defined-here-goes-as-t-n-minus-1.html ./knowl/xref/eqn-T-defined-here-goes-as-t-n-minus-1.html">
+\begin{equation*}
+T = \frac{Z \sim \mathcal{N}(0,1)}{ \sqrt{(Y \sim \chi^2_{n-1})/(n-1)}  },
+\end{equation*}
+</div>
+<div class="para">which is <span class="process-math">\(t\)</span>-distribution of degree of freedom equal <span class="process-math">\((n-1)\text{.}\)</span> <span class="process-math">\(\qquad \blacksquare\)</span>
+</div>
+</div></article><div class="para logical" id="subsubsec-t-Intervals-5">
 <div class="para">
-<a href="sec-Point-Estimates-and-Confidence-Intervals.html#fig-t-confidence-interval" class="xref" data-knowl="./knowl/xref/fig-t-confidence-interval.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.11.6">Figure 1.11.6</a> shows parallels to <a href="sec-Point-Estimates-and-Confidence-Intervals.html#fig-confidence-interval" class="xref" data-knowl="./knowl/xref/fig-confidence-interval.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.11.5">Figure 1.11.5</a> and illustrates that all we need to do is to use <span class="process-math">\(t\)</span> distribution of <span class="process-math">\((n-1) = 50-1 = 49\)</span> degrees of freedom here. The value of <span class="process-math">\(T\)</span> separating the included exluded excluded probabilities is very close to the corresponding <span class="process-math">\(Z\)</span> values since we have a fairly high degree of freedom.</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-Z-variable-from-h-bar-mu-sigma.html ./knowl/xref/fig-t-confidence-interval.html ./knowl/xref/fig-confidence-interval.html">
+<a href="sec-Point-Estimates-and-Confidence-Intervals.html#fig-t-confidence-interval" class="xref" data-knowl="./knowl/xref/fig-t-confidence-interval.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.11.9">Figure 1.11.9</a> shows parallels to <a href="sec-Point-Estimates-and-Confidence-Intervals.html#fig-confidence-interval" class="xref" data-knowl="./knowl/xref/fig-confidence-interval.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.11.8">Figure 1.11.8</a> and illustrates that all we need to do is to use <span class="process-math">\(t\)</span> distribution of <span class="process-math">\((n-1) = 50-1 = 49\)</span> degrees of freedom here. The parallels of <span class="process-math">\(T\)</span> here and <span class="process-math">\(Z\)</span> in Eq. <a href="sec-Point-Estimates-and-Confidence-Intervals.html#eqn-Z-variable-from-h-bar-mu-sigma" class="xref" data-knowl="./knowl/xref/eqn-Z-variable-from-h-bar-mu-sigma.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.11.22">(1.11.22)</a> is obvious with only changes being</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-t-confidence-interval.html ./knowl/xref/fig-confidence-interval.html ./knowl/xref/eqn-Z-variable-from-h-bar-mu-sigma.html">
+\begin{equation*}
+\sigma \longrightarrow S, \quad Z \sim \mathcal{N}(0,1) \longrightarrow T\sim t_{n-1}. 
+\end{equation*}
+</div>
+<div class="para">The value of <span class="process-math">\(T\)</span> separating the included exluded excluded probabilities is very close to the corresponding <span class="process-math">\(Z\)</span> values since we have a fairly high degree of freedom.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-t-confidence-interval.html ./knowl/xref/fig-confidence-interval.html ./knowl/xref/eqn-Z-variable-from-h-bar-mu-sigma.html">
 \begin{equation*}
 t_{n-1, \alpha/2} = t_{50-1, 0.025} \approx 2.01 \text{ compare to } z_{0.025} \approx 1.96. 
 \end{equation*}
@@ -803,15 +964,15 @@ t_{n-1, \alpha/2} = t_{50-1, 0.025} \approx 2.01 \text{ compare to } z_{0.025} \
 <div class="para">The difference is atrtributable to the flat tail aspect of the <span class="process-math">\(t\)</span> distribution compared to the standard normal distribution.</div>
 </div>
 <figure class="figure figure-like" id="fig-t-confidence-interval"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/t-confidence-interval.png" class="contained" alt="Calculation for the upper and lower values of T."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.11.6<span class="period">.</span></span><span class="space"> </span>Calculation for the upper and lower values of <span class="process-math">\(T\text{.}\)</span> The shaded areas on the two sides each have <span class="process-math">\(\alpha/2\text{,}\)</span> here, <span class="process-math">\(2.5\%\)</span> area under the Gaussian curve. The confidence interval is to include the middle <span class="process-math">\(1-\alpha\text{,}\)</span> here <span class="process-math">\(95\%\)</span> of the area.</figcaption></figure><div class="para logical" id="subsubsec-t-Intervals-5">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.11.9<span class="period">.</span></span><span class="space"> </span>Calculation for the upper and lower values of <span class="process-math">\(T\text{.}\)</span> The shaded areas on the two sides each have <span class="process-math">\(\alpha/2\text{,}\)</span> here, <span class="process-math">\(2.5\%\)</span> area under the Gaussian curve. The confidence interval is to include the middle <span class="process-math">\(1-\alpha\text{,}\)</span> here <span class="process-math">\(95\%\)</span> of the area.</figcaption></figure><div class="para logical" id="subsubsec-t-Intervals-7">
 <div class="para">Therefore, the <span class="process-math">\(t\)</span> confidence interval at confidence interval <span class="process-math">\((1-\alpha)100%\)</span> is</div>
 <div class="displaymath process-math" id="eqn-t-confidence-interval">
 \begin{equation}
-\left(\overline{H}- t_{n-1, \alpha/2} \frac{s}{\sqrt{n}},\  \overline{H} + t_{n-1, \alpha/2} \frac{s}{\sqrt{n}}   \right) \tag{1.11.27}
+\left(\overline{H}- t_{n-1, \alpha/2} \frac{s}{\sqrt{n}},\  \overline{H} + t_{n-1, \alpha/2} \frac{s}{\sqrt{n}}   \right) \tag{1.11.31}
 \end{equation}
 </div>
 <div class="para">Numerically, in our example, we will get</div>
-<div class="displaymath process-math" id="subsubsec-t-Intervals-5-4">
+<div class="displaymath process-math" id="subsubsec-t-Intervals-7-4">
 \begin{align*}
 \amp \overline{H} = 170\,\text{cm}\\
 \amp t_{n-1, \alpha/2} \frac{s}{\sqrt{n}} = 2.01\times \frac{7\,\text{cm}}{\sqrt{50}} = 1.99\,\text{ cm}\\
@@ -825,9 +986,570 @@ t_{n-1, \alpha/2} = t_{50-1, 0.025} \approx 2.01 \text{ compare to } z_{0.025} \
 t\text{-Confidence Interval at } 95\% = \left( 168.01\,\text{cm},\ 171.99\,\text{cm} \right).
 \end{equation*}
 </div>
-</div></section></section></section></div>
+</div></section></section><section class="subsection" id="subsec-Difference-Between-Two-Means"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.11.3</span><span class="space"> </span><span class="title">Difference Between Two Means</span>
+</h3>
+<section class="introduction" id="subsec-Difference-Between-Two-Means-2"><div class="para" id="subsec-Difference-Between-Two-Means-2-1">Often we are faced with trying to figure out if the means of two different populations are reasonably same, without having any clue about their actual values. Above we learned what to do with saying something definite about the mean of one population from a sample of the data. So, here we will want to say something about their difference.</div> <div class="para" id="subsec-Difference-Between-Two-Means-2-2">For a simpler setting, as we did with the <span class="process-math">\(Z\)</span> intervals, we could assume that we somehow know the population variances and further that they are equal. That appears to be too drastic an assumption. Instead, we will say, we want to get all the information from the data collected from the two populations. Except that we will assume the distributions are Gaussian/Normal.</div> <div class="para logical" id="subsec-Difference-Between-Two-Means-2-3">
+<div class="para">Let give names <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> to the variables in the two populations. Let their means be denoted by <span class="process-math">\(\mu_X\)</span> and <span class="process-math">\(\mu_Y\text{,}\)</span> respectively, and similarly for their unknown variances.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+X\sim \mathcal{N}(\mu_X, \sigma_X^2),\quad Y\sim \mathcal{N}(\mu_Y, \sigma_Y^2).
+\end{equation*}
+</div>
+<div class="para">We wish to detemine <span class="process-math">\(t\)</span>-Confidence Interval of <span class="process-math">\(\mu_X - \mu_Y\)</span> at the confidence level <span class="process-math">\((1-\alpha)\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="subsec-Difference-Between-Two-Means-2-4">
+<div class="para">Let data collected from the two populations be</div>
+<div class="displaymath process-math" id="subsec-Difference-Between-Two-Means-2-4-1">
+\begin{align*}
+\mathcal{D}_X\amp = \{X_1, X_2, \cdots, X_n \} \\
+\mathcal{D}_Y\amp = \{Y_1, Y_2, \cdots, Y_m \} 
+\end{align*}
+</div>
+</div> <div class="para logical" id="subsec-Difference-Between-Two-Means-2-5">
+<div class="para">From these data we can evaluate their sample means and sample variances.</div>
+<div class="displaymath process-math" id="subsec-Difference-Between-Two-Means-2-5-1">
+\begin{align*}
+\amp  \overline{X}  = \frac{1}{n}\sum_{i=1}^n X_i\\
+\amp  \overline{Y}  = \frac{1}{m}\sum_{i=1}^m Y_i\\
+\amp S_X^2 = \frac{1}{n-1}\sum_{i=1}^n \left( X_i - \overline{X}  \right)^2\\
+\amp S_Y^2 = \frac{1}{m-1}\sum_{i=1}^m \left( Y_i - \overline{Y}  \right)^2
+\end{align*}
+</div>
+</div></section><section class="subsubsection" id="subsubsec-Equal-Variance-Populations"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">1.11.3.1</span><span class="space"> </span><span class="title">Equal Variance Populations: Pooled t-test</span>
+</h4>
+<div class="para logical" id="subsubsec-Equal-Variance-Populations-2">
+<div class="para">Suppose we suspect that <span class="process-math">\(\sigma^2\)</span> for the two populations are identical, then we would pool the data and compute a single pooled “best” sample variance.</div>
+<div class="displaymath process-math" id="eqn-pooled-sample-variance">
+\begin{equation}
+S_p^2 = \frac{ (n-1)S_X^2 + (m-1)S_Y^2  }{n+m-2}.\tag{1.11.32}
+\end{equation}
+</div>
+<div class="para">Then the confidence interval on <span class="process-math">\(\mu_X - \mu_Y\)</span> can be deduced from the following theorem.</div>
+</div>
+<article class="theorem theorem-like" id="thm-pooled-sample-variance-t-distribution"><h5 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.11.10</span><span class="period">.</span>
+</h5>
+<div class="para logical" id="thm-pooled-sample-variance-t-distribution-1-1">
+<div class="para">Let two random variables <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> be normal distributions with equal variances.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+X \sim \mathcal{N}(\mu_X, \sigma^2),\quad Y \sim \mathcal{N}(\mu_Y, \sigma^2).
+\end{equation*}
+</div>
+<div class="para">From the data <span class="process-math">\(\mathcal{D}_X\)</span> and <span class="process-math">\(\mathcal{D}_Y\text{,}\)</span> we compute the their sample means <span class="process-math">\(\overline{X}\text{,}\)</span> <span class="process-math">\(\overline{Y}\)</span> and pooled variance,<span class="process-math">\(S_p\text{.}\)</span> Then, the following variable has a <span class="process-math">\(t\)</span>-distribution.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+T = \frac{ (\overline{X} - \overline{Y}) - (\mu_X - \mu_Y) }{ S_p \left(  \frac{1}{n} + \frac{1}{m} \right)} \sim t_{n+m-2}.
+\end{equation*}
+</div>
+</div></article><div class="para logical" id="subsubsec-Equal-Variance-Populations-4">
+<div class="para">We are not going to prove this theorem. From this <span class="process-math">\(t\)</span>-distribution, however, you can discover the <span class="process-math">\((1-\alpha)100\%\)</span> confidence interval of the population mean difference will be</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left(\overline{x} - \overline{y}\right) \pm t_{n+m-2, \alpha/2}\,s_p \left(  \frac{1}{n} + \frac{1}{m} \right)
+\end{equation*}
+</div>
+<div class="para">where all the lower case letters for variables indicate the values obtained on the corresponding datasets.</div>
+</div></section><section class="subsubsection" id="subsec-Welch-t-test"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">1.11.3.2</span><span class="space"> </span><span class="title">Welch t test</span>
+</h4>
+<div class="para" id="subsec-Welch-t-test-2">The above described pooled variance works when the variances of the two populations being compared are equal. When we cannot make that assumption, we turn to the Welch’s <span class="process-math">\(t\)</span>-test for guidance in setting confidence interval for the difference of means.</div>
+<div class="para logical" id="subsec-Welch-t-test-3">
+<div class="para">Let’s start with the answer first. Welch showed that upto two moments of the distribution, the following variable has a <span class="process-math">\(t\)</span>-distribution of degree of freedom <span class="process-math">\(r\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+T = \frac{Z_w}{ \sqrt{ \frac{S_X^2}{n} + \frac{S_Y^2}{m}  } } \sim t_r,
+\end{equation*}
+</div>
+<div class="para">where</div>
+<div class="displaymath process-math" id="subsec-Welch-t-test-3-4">
+\begin{align*}
+\amp Z_w = \frac{ (\overline{X} - \overline{Y}) - (\mu_X - \mu_Y) }{ \sqrt{ \frac{s_X^2}{n} + \frac{s_Y^2}{m}  } },\\
+\amp r = \frac{ \left( \frac{s_X^2}{n} + \frac{s_Y^2}{m} \right)^2  }{ \frac{s_X^4}{n^2(n-1)} + \frac{s_Y^4}{m^2(m-1)} },
+\end{align*}
+</div>
+<div class="para">where <span class="process-math">\(s_x\)</span> and <span class="process-math">\(s_Y\)</span> are sample standard deviation. Using this result, it is straight forward procedure, as shown for single mean case to find the <span class="process-math">\((1-\alpha)100\%\)</span> confidence interval for the difference in means of two separate populations.</div>
+<div class="displaymath process-math" id="eqn-welch-t-confidence-interval-2">
+\begin{equation}
+\overline{X} -  \overline{Y} \pm t_{r,\alpha/2}\, \sqrt{ \frac{s_X^2}{n} + \frac{s_Y^2}{m}  } \tag{1.11.33}
+\end{equation}
+</div>
+<div class="para">The example at the end of this section illustrates a use of this formula.</div>
+</div>
+<article class="proof" id="subsec-Welch-t-test-4"><h5 class="heading"><span class="title">The Hard Work:.</span></h5> <div class="para logical" id="subsec-Welch-t-test-4-2">
+<div class="para">To start with consider the difference in the sample means:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-cr-1.html ./knowl/xref/eqn-cr-2.html">
+\begin{equation*}
+W = \overline{X} - \overline{Y}.
+\end{equation*}
+</div>
+<div class="para">The expectation and variance of <span class="process-math">\(W\)</span> is readily calculated from the expectation and variance of means.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-cr-1.html ./knowl/xref/eqn-cr-2.html" id="subsec-Welch-t-test-4-2-3">
+\begin{align*}
+\amp \mathbb{E}[W] = \mu_X - \mu_Y,\quad \text{ and },\\
+\amp \textrm{Var}(W) = \textrm{Var}(\overline{X}) + \textrm{Var}(\overline{X}) = \frac{\sigma_X^2}{n} + \frac{\sigma_Y^2}{m}.
+\end{align*}
+</div>
+<div class="para">Therefore, we can construct a normal variable by subtracting the expectation value from <span class="process-math">\(W\)</span> and scaling by the square root of its variance. Therefore, the variable <span class="process-math">\(Z_w\)</span> defined by</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-cr-1.html ./knowl/xref/eqn-cr-2.html">
+\begin{equation*}
+Z_w = \frac{ W - (\mu_X - \mu_Y) }{ \sqrt{ \frac{\sigma_X^2}{n} + \frac{\sigma_Y^2}{m}  } }
+\end{equation*}
+</div>
+<div class="para">should have the standard normal distribution.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-cr-1.html ./knowl/xref/eqn-cr-2.html">
+\begin{equation*}
+Z_w  \sim \mathcal{N}(0,1).
+\end{equation*}
+</div>
+<div class="para">We can’t use <span class="process-math">\(Z_w\)</span> to construct a confidence interval that depends solely on the data collected since it has the unknown population variances <span class="process-math">\(\sigma_X^2\)</span> and <span class="process-math">\(\sigma_Y^2\text{.}\)</span> What would happen if we replace them with sample variances? That is, we want to look at the following as a candidate, similar to the <span class="process-math">\(t\)</span>-confidence interval for mean from the <span class="process-math">\(Z\)</span>-confidence interval we saw above:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-cr-1.html ./knowl/xref/eqn-cr-2.html">
+\begin{equation*}
+\frac{ W - (\mu_X - \mu_Y) }{ \sqrt{ \frac{S_X^2}{n} + \frac{S_Y^2}{m}  } }
+\end{equation*}
+</div>
+<div class="para">We want  to convert this into a <span class="process-math">\(t\)</span> variable. First let us convert the numerator to <span class="process-math">\(Z_w\text{.}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-cr-1.html ./knowl/xref/eqn-cr-2.html">
+\begin{equation*}
+\frac{ Z_w \, \sqrt{ \frac{\sigma_X^2}{n} + \frac{\sigma_Y^2}{m}  } }{ \sqrt{ \frac{S_X^2}{n} + \frac{S_Y^2}{m}  } }.
+\end{equation*}
+</div>
+<div class="para">If this quantity could be transformed into the following form</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-cr-1.html ./knowl/xref/eqn-cr-2.html">
+\begin{equation*}
+\frac{Z}{ \sqrt{Y/r} },\text{  with } Z\sim \mathcal{N}(0,1),\ \ Y\large{\sim} \chi^2_r,
+\end{equation*}
+</div>
+<div class="para">for some <span class="process-math">\(r\text{,}\)</span> this compisite quantity will go as <span class="process-math">\(t_{r}\)</span>-distribution. But, it is not possible to do that. So, Welch looked at a closely related quantity that can be turned into a <span class="process-math">\(T\)</span>-variable up to two moments of the distribution, i.e, only the mean and the variance. The quantity he constructed is</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-cr-1.html ./knowl/xref/eqn-cr-2.html">
+\begin{equation*}
+\frac{ Z_w }{ \sqrt{ \frac{S_X^2}{n} + \frac{S_Y^2}{m}  } }.
+\end{equation*}
+</div>
+<div class="para">Now, we demand that this be equal to a multiplier <span class="process-math">\(c\)</span> of a <span class="process-math">\(\chi_r^2\)</span> variable and try to solve for <span class="process-math">\(r\)</span> for equating mean and variances of the two sides.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-cr-1.html ./knowl/xref/eqn-cr-2.html">
+\begin{equation*}
+\frac{S_X^2}{n} + \frac{S_Y^2}{m} = c\, \chi_r^2.
+\end{equation*}
+</div>
+<div class="para">Taking expectation and variance of the two sides gives:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-cr-1.html ./knowl/xref/eqn-cr-2.html" id="subsec-Welch-t-test-4-2-26">
+\begin{align}
+\amp\mathbb{E} \left[ \frac{S_X^2}{n} + \frac{S_Y^2}{m} \right]  = \mathbb{E}\left[ c\, \chi^2_r \right],\tag{1.11.34}\\
+\amp \textrm{Var}\left( \frac{S_X^2}{n} + \frac{S_Y^2}{m} \right)  = \textrm{Var}\left( c\, \chi^2_r \right),\tag{1.11.35}
+\end{align}
+</div>
+<div class="para">Now, we can use the following to simplify.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-cr-1.html ./knowl/xref/eqn-cr-2.html" id="subsec-Welch-t-test-4-2-27">
+\begin{align*}
+\amp \mathbb{E}[c\,\chi^2_r] = c\, \mathbb{E}[\chi^2_r] = c\, r \\
+\amp \textrm{Var}\left( c\, \chi^2_r \right) = c^2\,\textrm{Var}\left(  \chi^2_r \right) = c^2\times 2 r\\
+\amp \mathbb{E} \left[ \frac{S_x^2}{n} \right] = \frac{1}{n} \mathbb{E}[S_x^2] = \frac{1}{n}\,s_X^2\\
+\amp \textrm{Var}\left( \frac{S_X^2}{n} \right) = \frac{1}{n^2} \textrm{Var}( S_X^2) = \frac{1}{n^2}\frac{ 2 \sigma_X^4 }{n-1} \approx \frac{1}{n^2}\frac{ 2 s_X^4 }{n-1}
+\end{align*}
+</div>
+<div class="para">The last one is obtained from taking variance of the following and repacing <span class="process-math">\(\sigma^2\)</span> by the value fo sample variance from the collected data.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-cr-1.html ./knowl/xref/eqn-cr-2.html">
+\begin{equation*}
+(n-1)\,\frac{S^2}{\sigma^2} \sim \chi^2_{n-1}.
+\end{equation*}
+</div>
+<div class="para">Now, we can rewrite Eqs. <a href="sec-Point-Estimates-and-Confidence-Intervals.html#subsec-Welch-t-test-4-2-26" class="xref" data-knowl="./knowl/xref/eqn-cr-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.11.34">(1.11.34)</a> and <a href="sec-Point-Estimates-and-Confidence-Intervals.html#subsec-Welch-t-test-4-2-26" class="xref" data-knowl="./knowl/xref/eqn-cr-2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.11.35">(1.11.35)</a> and solve for <span class="process-math">\(r\text{.}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-cr-1.html ./knowl/xref/eqn-cr-2.html" id="eqn-Welch-Satterthwaite-Equation">
+\begin{equation}
+r = \frac{ \left( \frac{s_X^2}{n} + \frac{s_Y^2}{m} \right)^2  }{ \frac{s_X^4}{n^2(n-1)} + \frac{s_Y^4}{m^2(m-1)} }.\tag{1.11.36}
+\end{equation}
+</div>
+<div class="para">This equation is called <dfn class="terminology">the Welch Satterthwaite Equation</dfn>. Now, we all the ingredients to construct a <span class="process-math">\(t\)</span>-distribution variable which we can use to find the required confidence interval.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-cr-1.html ./knowl/xref/eqn-cr-2.html" id="eqn-t-variabel-for-welch">
+\begin{equation}
+T = \frac{Z_w}{\sqrt{\frac{S_X^2}{n} + \frac{S_Y^2}{m} }} \Large{\sim} \chi^2_r.\tag{1.11.37}
+\end{equation}
+</div>
+</div> <div class="para logical" id="subsec-Welch-t-test-4-3">
+<div class="para">After all this work, the Welch’s <span class="process-math">\(T\)</span> leads to the following confidence interval at confidence level <span class="process-math">\((1-\alpha)100\%\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="eqn-welch-t-confidence-interval">
+\begin{equation}
+\overline{X} -  \overline{Y} \pm t_{r,\alpha/2}\, \sqrt{ \frac{s_X^2}{n} + \frac{s_Y^2}{m}  }. \tag{1.11.38}
+\end{equation}
+</div>
+</div></article><article class="example example-like" id="subsec-Welch-t-test-5"><h5 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.11.11</span><span class="period">.</span>
+</h5>
+<div class="para logical" id="subsec-Welch-t-test-5-1">
+<div class="para">Suppose we wish to compare the population mean heights of adult males from two separate populations. We measure heights of <span class="process-math">\(50\)</span> adults from <span class="process-math">\(X\)</span>-population and <span class="process-math">\(40\)</span> from the <span class="process-math">\(Y\)</span>-population. From the sample we calculate sample means and variance and find the following values.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\overline{X} = 170\,\text{cm},\ s_X^2 = 49\,\text{cm}^2,\quad  \overline{Y} = 165\,\text{cm},\ s_Y^2 = 64\,\text{cm}^2.
+\end{equation*}
+</div>
+<div class="para">Find the confidence interval for the difference of their means <span class="process-math">\(\mu_X - \mu_Y\)</span> at <span class="process-math">\(95\%\)</span> confidence level.</div>
+</div> <div class="para logical" id="subsec-Welch-t-test-5-2">
+<div class="para">We first calculate the degree of freedom <span class="process-math">\(r\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+r = \frac{ \left( \frac{49}{50} + \frac{64}{40} \right)^2  }{ \frac{(49/50)^2}{49} + \frac{(64/40)^2}{39} } = 78.08 
+\end{equation*}
+</div>
+<div class="para">For the confidence interval we need <span class="process-math">\(t_{r,\alpha/2}\text{.}\)</span> for that we look up python scipy.stats.t.ppp(78.08, 0.025) for <span class="process-math">\(\alpha=0.05\text{,}\)</span> i.e., <span class="process-math">\(95\%\)</span> confidence level. We get a value of <span class="process-math">\(1.99\text{.}\)</span> Therefore, the confidence interval is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+170\,\text{cm} -  165\,\text{cm} \pm 1.99\, \sqrt{ \frac{49\,\text{cm}^2}{50} + \frac{64\,\text{cm}^2}{40} } = 5\,\text{cm} \pm 3.2\,\text{cm}.
+\end{equation*}
+</div>
+<div class="para">That is <span class="process-math">\((1.8\,\text{cm}, 8.2\,\text{cm}  ) \text{.}\)</span> This says that zero is not in this range. So, if the claim was that the two populations have the same population means, then we could reject that claim at this level of confidence. These decisions are formalized more in the hypothesis testing section.</div>
+</div></article></section></section><section class="subsection" id="subsec-Estimating-Variance"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.11.4</span><span class="space"> </span><span class="title">Confidence Interval of Variance</span>
+</h3>
+<div class="para logical" id="subsec-Estimating-Variance-2">
+<div class="para">If you were comparing two normal variables, you would naturally want to compare not only their means but also their variances to conclude if their distributions were more or less same or not. It turns out putting confidence interval on variance is readily done based on the fact that the following scaled sample variance of <span class="process-math">\(n\)</span> samples <span class="process-math">\(\[X_i,\ i=1,2,\cdots, X_n\]\)</span> from a Gaussian distribution of population variance <span class="process-math">\(\sigma^2\)</span> varies as <span class="process-math">\(\chi^2_{n-1}\text{.}\)</span>
+</div>
+<div class="displaymath process-math" id="eqn-variance-chi-square-n-minus-1">
+\begin{equation}
+(n-1)\frac{S^2}{\sigma^2} \large{\sim} \chi^2_{n-1},\tag{1.11.39}
+\end{equation}
+</div>
+<div class="para">where</div>
+<div class="displaymath process-math">
+\begin{equation*}
+S^2 = \frac{1}{n-1}\sum_{i=1}^n\left( X_i - \overline{X}  \right)^2,\ \ \overline{X} = \frac{1}{n}\sum_{i=1}^n X_i.
+\end{equation*}
+</div>
+<div class="para">We have used this result before in the context of comapring two means. I present a proof of this claim below, just for completeness sake. Its okay if you want to skip over the proof. I will work out the formula for the confidence interval after the proof.</div>
+</div>
+<div class="para" id="subsec-Estimating-Variance-3">So, how do we use Eq. <a href="sec-Point-Estimates-and-Confidence-Intervals.html#eqn-variance-chi-square-n-minus-1" class="xref" data-knowl="./knowl/xref/eqn-variance-chi-square-n-minus-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.11.39">(1.11.39)</a> to obtain a <span class="process-math">\((1-\alpha)100\%\)</span> confidence interval on <span class="process-math">\(\sigma^2\text{?}\)</span> It’s the same routine. We atart with the probability statement and then mainipulate the event to write it in a way so that we can read off the  confidence interval.</div>
+<div class="para logical" id="subsec-Estimating-Variance-4">
+<div class="para">I will flip the script a bit here, just for fun. We want <span class="process-math">\((L, U)\)</span> so that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-sigma-square-chi2-confidence-interval.html" id="subsec-Estimating-Variance-4-2">
+\begin{align*}
+\amp P( L \lt \sigma^2 \lt U  )  = 1- \alpha\\
+\amp P\left( \frac{1}{L} \gt \frac{1}{\sigma^2} \gt \frac{1}{U}  \right)  = 1- \alpha \\
+\amp P\left(  \frac{(n-1)S^2}{L} \gt \frac{(n-1)S^2}{\sigma^2} \gt  \frac{(n-1)S^2}{U} \right)  = 1- \alpha \\
+\amp P\left( \frac{(n-1)S^2}{U} \lt \frac{(n-1)S^2}{\sigma^2} \lt \frac{(n-1)S^2}{L} \right) = 1- \alpha \\
+\amp P\left( a \lt \chi^2_{n-1}\lt b\right) = 1- \alpha 
+\end{align*}
+</div>
+<div class="para">In the last step, we replaced the composite quantity by a <span class="process-math">\(\chi^2_{n-1}\)</span> variable to make connection with the CDF and inverse CDF of <span class="process-math">\(\chi^2_{n-1}\)</span> distribution. The quantities <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> can be read off from a plot of the appropriate probability density, here <span class="process-math">\(\chi^2_{n-1}\)</span> as shown in <a href="sec-Point-Estimates-and-Confidence-Intervals.html#fig-sigma-square-chi2-confidence-interval" class="xref" data-knowl="./knowl/xref/fig-sigma-square-chi2-confidence-interval.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.11.12">Figure 1.11.12</a>, which are labeled in the figure as <span class="process-math">\(\chi^2_{n-1,\alpha/2}\)</span> and <span class="process-math">\(\chi^2_{n-1,1-\alpha/2}\text{,}\)</span> respectively.  Therefore, substituting the value of <span class="process-math">\(S^2\)</span> from the data, writing it as <span class="process-math">\(s^2\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-sigma-square-chi2-confidence-interval.html">
+\begin{equation*}
+\frac{(n-1)s^2}{U} = a = \chi^2_{n-1,\alpha/2},\quad \frac{(n-1)s^2}{L} = \chi^2_{n-1,1-\alpha/2}
+\end{equation*}
+</div>
+<div class="para">This gives the desired upper and lower ends of the confidence interval for the population variance <span class="process-math">\(\sigma^2\text{.}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-sigma-square-chi2-confidence-interval.html" id="eqn-confidence-interval">
+\begin{equation}
+\left(  \frac{(n-1)s^2}{\chi^2_{n-1,1-\alpha/2}},\quad  \frac{(n-1)s^2}{\chi^2_{n-1,\alpha/2}}  \right).\tag{1.11.40}
+\end{equation}
+</div>
+</div>
+<figure class="figure figure-like" id="fig-sigma-square-chi2-confidence-interval"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/sigma-square-chi2-confidence-interval.png" class="contained" alt="Calculation for the upper and lower values of chi square."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.11.12<span class="period">.</span></span><span class="space"> </span>Calculation for the upper and lower values of included probability of a  <span class="process-math">\(\chi^2\)</span> PDF distribution. The shaded areas on the two sides each have <span class="process-math">\(\alpha/2\text{,}\)</span> here, <span class="process-math">\(2.5\%\)</span> area under the curve. The confidence interval is to include the middle <span class="process-math">\(1-\alpha\text{,}\)</span> here <span class="process-math">\(95\%\)</span> of the area. You use inverse of the CDF to find the values <span class="process-math">\(\chi^2_{n-1,\alpha/2}\)</span> and <span class="process-math">\(\chi^2_{n-1,1-\alpha/2}\text{.}\)</span></figcaption></figure><article class="example example-like" id="subsec-Estimating-Variance-6"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.11.13</span><span class="period">.</span><span class="space"> </span><span class="title">Numerical Example (Continued).</span>
+</h4> <div class="para logical" id="subsec-Estimating-Variance-6-2">
+<div class="para">In our heights example, let’s look at the first population, where we had sampled <span class="process-math">\(n=50\)</span> adult males with sample mean height equal to <span class="process-math">\(\overline{x} = 170,\text{cm}\)</span> and sample variance equal to <span class="process-math">\(s^2 = 49\,\text{cm}^2\text{.}\)</span> We want to get <span class="process-math">\((1-\alpha)100\% = 95\%\)</span> confidence interval for the population variance <span class="process-math">\(\sigma^2\text{.}\)</span> First we use scipy.stats.chi2.ppf(x, df) with <span class="process-math">\(x = \alpha/2\)</span> and <span class="process-math">\(1-\alpha/2\)</span> for <span class="process-math">\(df = n-1 = 49\text{.}\)</span>
+</div>
+<div class="displaymath process-math" id="subsec-Estimating-Variance-6-2-9">
+\begin{align*}
+\amp \chi^2_{n-1,1-\alpha/2} = \text{scipy.stats.chi2.ppf}(0.975, 49) = 70.22.\\
+\amp \chi^2_{n-1,\alpha/2} = \text{scipy.stats.chi2.ppf}(0.025, 49) = 31.55.
+\end{align*}
+</div>
+<div class="para">These give the lower and upper values for the <span class="process-math">\(95\%\)</span> confidence interval to be <span class="process-math">\((L,\ U)\)</span> with</div>
+<div class="displaymath process-math" id="subsec-Estimating-Variance-6-2-12">
+\begin{align*}
+\amp L = \frac{(n-1)s^2}{\chi^2_{n-1,1-\alpha/2}} = \frac{ (50-1) \times 49  }{70.22} = 34.19,\\
+\amp U = \frac{(n-1)s^2}{\chi^2_{n-1, \alpha/2}} = \frac{ (50-1) \times 49  }{31.55} = 76.10.
+\end{align*}
+</div>
+</div> <div class="para" id="subsec-Estimating-Variance-6-3"></div></article><article class="proof" id="subsec-Estimating-Variance-7"><h4 class="heading"><span class="title">Proof of Eq. (1.11.39)..</span></h4> <div class="para logical" id="subsec-Estimating-Variance-7-2">
+<div class="para">Let’s recall that if we have <span class="process-math">\(n\)</span> standard normal variables <span class="process-math">\(Z_1, Z_2, \cdots, Z_n\)</span> then sum of their squares has a <span class="process-math">\(\chi^2_n\)</span> distribution.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+Z_1^2 + Z_2^2 + \cdots + Z_n^2 \large{\sim} \chi^2_n.
+\end{equation*}
+</div>
+<div class="para">This was shown in detail when we discussed the <span class="process-math">\(\chi^2\)</span> distribution.</div>
+</div> <div class="para logical" id="subsec-Estimating-Variance-7-3">
+<div class="para">For our proof of Eq. <a href="sec-Point-Estimates-and-Confidence-Intervals.html#eqn-variance-chi-square-n-minus-1" class="xref" data-knowl="./knowl/xref/eqn-variance-chi-square-n-minus-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.11.39">(1.11.39)</a>, we will start with independent and identically disrtibuted (i.i.d.) <span class="process-math">\(n\)</span> Gaussian variables <span class="process-math">\(X_i\)</span>’s that are <span class="process-math">\(X_i \sim \mathcal{N}(\mu, \sigma^2)\text{.}\)</span> Let us construct normal variables from them and sum their squares. Let</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-variance-chi-square-n-minus-1.html ./knowl/xref/eqn-w-equal-R-plus-Z-sq.html">
+\begin{equation*}
+W  = \sum_{i=1}^n \left(  \frac{X_i -\mu}{\sigma}  \right)^2.
+\end{equation*}
+</div>
+<div class="para">We want to introduce sample mean <span class="process-math">\(\overline{X}\)</span> so that we can build the samole variance on the right side. We can do this by adding and subtracting <span class="process-math">\(\overline{X}\)</span> in the numerator and expanding.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-variance-chi-square-n-minus-1.html ./knowl/xref/eqn-w-equal-R-plus-Z-sq.html" id="subsec-Estimating-Variance-7-3-8">
+\begin{align*}
+W\amp = \sum_{i=1}^n \left(  \frac{(X_i - \overline{X}) +(\overline{X} -\mu)}{\sigma}  \right)^2\\
+\amp  = \sum_{i=1}^n \frac{ ( X_i - \overline{X} )^2 }{\sigma^2}
++ 2 \sum_{i=1}^n \left(\frac{X_i - \overline{X}}{\sigma}\right)\ \left(\frac{\overline{X} - \mu}{\sigma}\right) + 
+\sum_{i=1}^n \left(\frac{\overline{X} - \mu}{\sigma} \right)^2\\
+\amp = (n-1)\frac{S^2}{\sigma^2} + 0 + n\, \left(\frac{\overline{X} - \mu}{\sigma} \right)^2
+\end{align*}
+</div>
+<div class="para">The middle term became zero because <span class="process-math">\(\sum_i(X_i - \overline{X} ) = n\overline{X} - n \overline{X} = 0\text{.}\)</span> The last term is actually a standard normal variable since the sample mean goes as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-variance-chi-square-n-minus-1.html ./knowl/xref/eqn-w-equal-R-plus-Z-sq.html">
+\begin{equation*}
+\overline{X} \sim \mathcal{N}(\mu, \sigma^2/n  ), 
+\end{equation*}
+</div>
+<div class="para">and we have subtracted the mean of this sample mean and scaled it by its standard deviation.  Let’s rename it <span class="process-math">\(Z\text{.}\)</span> Then, we have the following equation</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-variance-chi-square-n-minus-1.html ./knowl/xref/eqn-w-equal-R-plus-Z-sq.html">
+\begin{equation*}
+W = (n-1)\frac{S^2}{\sigma^2} + Z^2,\, \text{ where } W\sim \chi^2_n,\ Z\sim\mathcal{N}(0,1).
+\end{equation*}
+</div>
+<div class="para">For brevity in calculations below let us rename the first term on the right side <span class="process-math">\(R\text{.}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-variance-chi-square-n-minus-1.html ./knowl/xref/eqn-w-equal-R-plus-Z-sq.html" id="eqn-w-equal-R-plus-Z-sq">
+\begin{equation}
+W = R + Z^2, \text{ or } R = W - Z^2.\tag{1.11.41}
+\end{equation}
+</div>
+<div class="para">How can we get distributon of <span class="process-math">\(R\)</span> if we know the distributions of <span class="process-math">\(W\)</span> and <span class="process-math">\(Z\text{?}\)</span> Since the rrelations are additive, moment generative function helps here. Moment generating function is defined by expectation value of an exponential function. For example, for <span class="process-math">\(W\text{:}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-variance-chi-square-n-minus-1.html ./knowl/xref/eqn-w-equal-R-plus-Z-sq.html">
+\begin{equation*}
+\mathcal{M}_W(t) = \mathbb{E}[e^{tW}]
+\end{equation*}
+</div>
+<div class="para">When you work this out for <span class="process-math">\(\chi^2_n\)</span> distribution, yiu get</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-variance-chi-square-n-minus-1.html ./knowl/xref/eqn-w-equal-R-plus-Z-sq.html">
+\begin{equation*}
+\mathbb{E}[e^{tW}] = \frac{1}{(1-2t)^{n/2}} = (1-2t)^{-n/2}.
+\end{equation*}
+</div>
+<div class="para">The <span class="process-math">\(Z^2\)</span> variable can be thought of <span class="process-math">\(\chi^2_{n=1}\text{,}\)</span> i.e., of a sum of standard normal with only one term. Hence, its’ moment generating function is</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-variance-chi-square-n-minus-1.html ./knowl/xref/eqn-w-equal-R-plus-Z-sq.html">
+\begin{equation*}
+\mathcal{M}_{Z^2}(t) = \mathbb{E}[e^{tZ^2}] = \frac{1}{(1-2t)^{1/2}}.
+\end{equation*}
+</div>
+<div class="para">Now, we go back to Eq. <a href="sec-Point-Estimates-and-Confidence-Intervals.html#eqn-w-equal-R-plus-Z-sq" class="xref" data-knowl="./knowl/xref/eqn-w-equal-R-plus-Z-sq.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.11.41">(1.11.41)</a> to determine the moment generating function of <span class="process-math">\(R\text{:}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-variance-chi-square-n-minus-1.html ./knowl/xref/eqn-w-equal-R-plus-Z-sq.html">
+\begin{equation*}
+
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-variance-chi-square-n-minus-1.html ./knowl/xref/eqn-w-equal-R-plus-Z-sq.html" id="subsec-Estimating-Variance-7-3-28">
+\begin{align*}
+\mathbb{E}[e^{tR}]\amp  = \mathbb{E}[e^{t(W-Z^2)}]  = \mathbb{E}[e^{tW}]\mathbb{E}[e^{-tZ^2}]= \frac{\mathbb{E}[e^{tW}]}{ \mathbb{E}[e^{tZ^2}] }\\
+\amp  =  \frac{(1-2t)^{-n/2}}{(1-2t)^{-1/2}} = (1-2t)^{-(n-1)/2}
+\end{align*}
+</div>
+<div class="para">This is just the moment generating function of a <span class="process-math">\(\chi^2_{n-1}\text{.}\)</span> <span class="process-math">\(\quad\blacksquare\)</span>
+</div>
+</div></article></section><section class="subsection" id="subsec-Difference-in-Variance-of-Two-Normal-Distributions"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.11.5</span><span class="space"> </span><span class="title">Comparing Variances of Two Normal Distributions</span>
+</h3>
+<div class="para logical" id="subsec-Difference-in-Variance-of-Two-Normal-Distributions-2">
+<div class="para">Ability to compare variances can help us decide how similar or different two normal distributions are. Suppose we have two popolations <span class="process-math">\(X \sim \mathcal{N}(\mu_X, \sigma_X^2)\)</span> and <span class="process-math">\(Y \sim \mathcal{N}(\mu_Y, \sigma_Y^2)\text{.}\)</span> Suppose we have collected <span class="process-math">\(n\)</span> samples from <span class="process-math">\(X\)</span> and <span class="process-math">\(m\)</span> samples from <span class="process-math">\(Y\)</span> from which we have computed the sample means and sample variances:</div>
+<div class="displaymath process-math" id="subsec-Difference-in-Variance-of-Two-Normal-Distributions-2-7">
+\begin{align*}
+\amp\overline{X} = \frac{1}{n}\sum_{i=1}^n X_i\\
+\amp\overline{Y} = \frac{1}{m}\sum_{i=1}^n Y_i\\
+\amp S_X^2 =  \frac{1}{n}\sum_{i=1}^n\left( X_i  - \overline{X} \right)^2\\
+\amp S_Y^2 =  \frac{1}{m}\sum_{i=1}^n\left( Y_i  - \overline{Y} \right)^2
+\end{align*}
+</div>
+<div class="para">We have already tackled the question of comparing means <span class="process-math">\(\mu_X\)</span> and <span class="process-math">\(\my_Y\)</span> by finding the confidence interval in  <span class="process-math">\(\mu_X - \mu_Y\text{.}\)</span> Now, we wish to find someway to compare <span class="process-math">\(\sigma_X^2\)</span> to <span class="process-math">\(\sigma_Y^2\text{.}\)</span> It turns out that we can find the <span class="process-math">\((1-\alpha)100\%\)</span> confidence interval on their ratio.</div>
+<div class="displaymath process-math" id="eqn-1-minus-a-confidence-on-sigsq1-over-sigsq2">
+\begin{equation}
+\frac{S_Y^2}{S_X^2}\,a \lt \frac{\sigma_X^2}{\sigma_Y^2} \lt \frac{S_Y^2}{S_X^2}\,b,\tag{1.11.42}
+\end{equation}
+</div>
+<div class="para">where</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a = F_{n-1, m-1}^{-1}( \alpha/2 ),\quad a = F_{n-1, m-1}^{-1}( 1 - \alpha/2 ),
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(F^{-1}\)</span> is the inverse CDF of the <span class="process-math">\(F\)</span>-distribution and the the subscripts in its symbol list the numerator and denominator dimensions of the <span class="process-math">\(F\)</span>-distribution. We will derive the <span class="process-math">\(F\)</span>-distribution PDF below. But here, we present how you would use them in calculating the confidence interval.</div>
+</div>
+<article class="example example-like" id="subsec-Difference-in-Variance-of-Two-Normal-Distributions-3"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.11.14</span><span class="period">.</span><span class="space"> </span><span class="title">Numerical Example.</span>
+</h4> <div class="para" id="subsec-Difference-in-Variance-of-Two-Normal-Distributions-3-2">Let’s go back to the heights of two population we have studied before. We had 50 samples from population <span class="process-math">\(X\)</span> with sample mean equal to <span class="process-math">\(170\,\text{cm}\)</span> and sample variance <span class="process-math">\(s_X^2 = 49\,\text{cm}^2\text{.}\)</span> We had <span class="process-math">\(40\)</span> samples from population <span class="process-math">\(Y\)</span> with sample mean equal to <span class="process-math">\(165\,\text{cm}\)</span> and sample variance <span class="process-math">\(s_Y^2 = 64\,\text{cm}^2\text{.}\)</span> What will be the <span class="process-math">\(95\%\text{,}\)</span> i.e., <span class="process-math">\(\alpha=0.05\text{,}\)</span> confidence interval of <span class="process-math">\(\sigma_Y^2/\sigma_X^2\text{?}\)</span>
+</div> <div class="para logical" id="subsec-Difference-in-Variance-of-Two-Normal-Distributions-3-3">
+<div class="para">
+<a href="sec-Point-Estimates-and-Confidence-Intervals.html#fig-sigma-square-ratio-F-confidence-interval" class="xref" data-knowl="./knowl/xref/fig-sigma-square-ratio-F-confidence-interval.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.11.15">Figure 1.11.15</a> shows the included and excluded area and the values of the right and left edges of the excluded probabilities.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-sigma-square-ratio-F-confidence-interval.html">
+\begin{equation*}
+a = 0.54,\quad b = 1.81.
+\end{equation*}
+</div>
+<div class="para">Therefore, the lower and upper ends of the <span class="process-math">\(95\%\)</span> confidence interval is</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-sigma-square-ratio-F-confidence-interval.html" id="subsec-Difference-in-Variance-of-Two-Normal-Distributions-3-3-4">
+\begin{align*}
+\amp L = \frac{s_Y^2}{s_X^2}\,a  = \frac{64}{49}\times 0.54 = 0.705\\
+\amp U = \frac{s_Y^2}{s_X^2}\,b  = \frac{64}{49}\times 1.81 = 2.36
+\end{align*}
+</div>
+<div class="para">Interesting the value <span class="process-math">\(1.0\)</span> is in the range <span class="process-math">\((0.705,\ 2.36)\)</span>  found here.</div>
+</div> <figure class="figure figure-like" id="fig-sigma-square-ratio-F-confidence-interval"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/sigma-square-ratio-F-confidence-interval.png" class="contained" alt="Calculation for the upper and lower values of chi square."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.11.15<span class="period">.</span></span><span class="space"> </span>Calculation for the upper and lower values of included probability of a  <span class="process-math">\(F_{49,39}\)</span> PDF distribution. The shaded areas on the two sides each have <span class="process-math">\(\alpha/2\text{,}\)</span> here, <span class="process-math">\(2.5\%\)</span> area under the curve. The confidence interval is to include the middle <span class="process-math">\(1-\alpha\text{,}\)</span> here <span class="process-math">\(95\%\)</span> of the area. You use inverse of the CDF to find the values <span class="process-math">\(F_{49,39,\alpha/2}\)</span> and <span class="process-math">\(F_{49, 39,1-\alpha/2}\text{.}\)</span></figcaption></figure></article><article class="remark remark-like" id="subsec-Difference-in-Variance-of-Two-Normal-Distributions-4"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.11.16</span><span class="period">.</span><span class="space"> </span><span class="title">How did the formula (1.11.42) come about?</span>
+</h4> <div class="para logical" id="subsec-Difference-in-Variance-of-Two-Normal-Distributions-4-2">
+<div class="para">We will need to convert <span class="process-math">\(S_X^2\)</span> and <span class="process-math">\(S_Y^2\)</span> variables into <span class="process-math">\(\chi^2\)</span> distributions. Let</div>
+<div class="displaymath process-math" id="eqn-Sx-and-Sy-to-A-B">
+\begin{equation}
+A = (n-1)\frac{S_X^2}{\sigma_X^2},\quad A = (m-1)\frac{S_Y^2}{\sigma_Y^2}.\tag{1.11.43}
+\end{equation}
+</div>
+<div class="para">From our previous discussions, you know that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A \sim \chi^2_{n-1},\quad B\sim \chi^2_{m-1}.
+\end{equation*}
+</div>
+<div class="para">For brevity of writing, let us introduce the degrees of freedoms by</div>
+<div class="displaymath process-math" id="eqn-u-and-v-dfs">
+\begin{equation}
+u = n-1,\quad v = m-1.\tag{1.11.44}
+\end{equation}
+</div>
+<div class="para">From <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> and their degrees of freedoms, let us construct a new variable, <span class="process-math">\(F\)</span>
+</div>
+<div class="displaymath process-math" id="eqn-f-distribution-variable">
+\begin{equation}
+F = \frac{ A / u }{ B / v}.\tag{1.11.45}
+\end{equation}
+</div>
+<div class="para">Then, as we will see below that <span class="process-math">\(F\)</span> has the following ugly-looking PDF:</div>
+<div class="displaymath process-math" id="eqn-F-distribution-PDF">
+\begin{equation}
+\rho_F(f;u,v) = \frac{\Gamma\left( \frac{u + v}{2}\right)}{\Gamma\left( \frac{u}{2}\right) \Gamma\left( \frac{v}{2}\right)}\, \left( \frac{u}{v}\right)^{u/2}\ f^{v/2 -1}\,\left( 1 + \frac{u}{v}\,f \right)^{ -(u + v)/2 }.\tag{1.11.46}
+\end{equation}
+</div>
+<div class="para">The <span class="process-math">\(A\)</span> is called the numerator variable and <span class="process-math">\(B\)</span> the denominator variable and <span class="process-math">\(u\)</span> and <span class="process-math">\(v\)</span> the numerator and denominator degrees of freedoms. This formula has already been programmed into stat packages. We just need to understand how to use it to get <span class="process-math">\((1-\alpha)100\%\)</span> confidence interval. By now, I expect you to know the drill that you just look us the <span class="process-math">\(\textrm{scipy.stats.f.ppf()}\)</span> function, which takes in three parameters <span class="process-math">\(\textrm{ppf(q, dfn=u, dfd=v)}\text{.}\)</span> Thus, we require the following.</div>
+<div class="displaymath process-math" id="eqn-confidence-interval-f-variable">
+\begin{equation}
+P( a \lt F \lt b  ) = 1-\alpha.\tag{1.11.47}
+\end{equation}
+</div>
+<div class="para">From the definition of CDF, <span class="process-math">\(F\text{,}\)</span> we can say that</div>
+<div class="displaymath process-math" id="eqn-F-distrib-CDF-Inverse">
+\begin{equation}
+a = F^{-1}_{u,v}(\alpha/2), \quad b = F^{-1}_{u,v}(1 - \alpha/2).\tag{1.11.48}
+\end{equation}
+</div>
+<div class="para">Now, we brign in the values of <span class="process-math">\(f\)</span> in terms of <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="subsec-Difference-in-Variance-of-Two-Normal-Distributions-4-2-26">
+\begin{align*}
+\amp P\left( a \lt \frac{ \frac{S_X^2}{\sigma_X^2}}{ \frac{S_Y^2}{\sigma_Y^2}} \lt b  \right) = 1-\alpha. \\
+\amp P\left( a\, \frac{S_Y^2}{S_X^2} \lt \frac{\sigma_Y^2}{\sigma_X^2} \lt b \, \frac{S_Y^2}{S_X^2} \right) = 1-\alpha.
+\end{align*}
+</div>
+<div class="para">This shows the confidence interval of <span class="process-math">\(\sigma_Y^2/\sigma_X^2 \text{,}\)</span> both unknwon quantities.</div>
+</div></article><article class="proof" id="subsec-Difference-in-Variance-of-Two-Normal-Distributions-5"><h4 class="heading"><span class="title">Derivation of PDF of the F-distribution.</span></h4> <div class="para logical" id="subsec-Difference-in-Variance-of-Two-Normal-Distributions-5-2">
+<div class="para">First let’s copy the basic variables from definitions.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F = \frac{A/u}{B/v},
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are independent variables.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A \sim \chi^2_u,\quad B\sim \chi^2_v.
+\end{equation*}
+</div>
+<div class="para">Since they are assumed to be independent, their joint probability will factorize.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\rho_{AB}(a,b) da db = \rho_{A}(a) da \times \rho_{A}(a) db.
+\end{equation*}
+</div>
+<div class="para">In transforming from <span class="process-math">\((A,B)\)</span> to <span class="process-math">\(F\text{,}\)</span> we are seeking a probability along lines of <span class="process-math">\(F\)</span> in the <span class="process-math">\((A,B)\)</span>-plane. The trick is to introduce another variable <span class="process-math">\(W\)</span> which is identical to <span class="process-math">\(B\)</span> then go from two-variable world of <span class="process-math">\((A,B)\)</span> to a two-variable world of <span class="process-math">\((F,W)\text{.}\)</span> You can then integrate out the <span class="process-math">\(W\)</span> to obtain the probability density of just <span class="process-math">\(F\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="subsec-Difference-in-Variance-of-Two-Normal-Distributions-5-3">
+<div class="para">The transformation between the two sets of variables are:</div>
+<div class="displaymath process-math" id="subsec-Difference-in-Variance-of-Two-Normal-Distributions-5-3-1">
+\begin{align*}
+\amp F = \frac{A/u}{B/v},\quad W = B\\
+\amp A = \frac{u}{v}F W,\quad B = W
+\end{align*}
+</div>
+<div class="para">By equating probability in an infinitesimal intervals in the <span class="process-math">\((A,B)\)</span> and <span class="process-math">\((F,W)\)</span> planes, we get</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\rho_{FW}(f,w) df dw = \rho_{AB}(a,b) da db = \left[\rho_{A}(a) \rho_{B}(b)\right]_{f,w} |J| df dw,
+\end{equation*}
+</div>
+<div class="para">where the subscript <span class="process-math">\(f,w\)</span> is instruction to cast the quantities within the brackets into <span class="process-math">\(f,w\)</span> variables using the transformations above and <span class="process-math">\(|J|\)</span> is the Jacobian.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+|J| = \det\begin{pmatrix}
+\frac{\partial a}{\partial f} \amp \frac{\partial a}{\partial w}\\ 
+\frac{\partial b}{\partial f} \amp \frac{\partial b}{\partial w}
+\end{pmatrix}  = \frac{u}{v}\,w.
+\end{equation*}
+</div>
+<div class="para">Since, we already know that <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are <span class="process-math">\(\chi^2_u\)</span> and <span class="process-math">\(\chi^2_v\)</span> distributions, we can immediately write down the joint PDF of <span class="process-math">\(FW\text{.}\)</span>
+</div>
+<div class="displaymath process-math" id="subsec-Difference-in-Variance-of-Two-Normal-Distributions-5-3-14">
+\begin{align*}
+\rho_{FW}(f,w) \amp = \left[\rho_{A}(a) \rho_{B}(b)\right]_{f,w}\, \frac{u}{v}\,w\\
+\amp  = \left[\chi^2_u(a) \chi^2_v(b)\right]_{f,w}\, \frac{u}{v}\,w\\
+\amp  = \chi^2_u(u f w/v) \chi^2_v(w)\, \frac{u}{v}\,w\\
+\amp =  \frac{ (ufw/v)^{u/2 -1 } e^{-ufw/2v} \, w^{v/2-1} e^{-w/2}\,(u/v) w  }{ 2^{u/2}\Gamma(u/2)\, 2^{v/2}\Gamma(v/2) }
+\end{align*}
+</div>
+<div class="para">Now, we separate out <span class="process-math">\(w\)</span>-dependent parts so we can integrate over this auxiliary variable. We get</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{ (u/v)^{u/2} f^{u/2 - 1} }{ 2^{ \frac{u+v}{2} }\Gamma(u/2)\Gamma(v/2) }  
+w^{\frac{u+v}{2}-1} e^{-\frac{1}{2}(\frac{uf}{v} + 1)\,w}.
+\end{equation*}
+</div>
+<div class="para">Integrating away <span class="process-math">\(w\)</span> just requires the following integral.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_0^\infty w^{\frac{u+v}{2}-1} e^{-\frac{1}{2}(\frac{uf}{v} + 1)\,w} dw.
+\end{equation*}
+</div>
+<div class="para">Changing the variable to</div>
+<div class="displaymath process-math">
+\begin{equation*}
+t = \frac{1}{2}(\frac{uf}{v} + 1)\,w, 
+\end{equation*}
+</div>
+<div class="para">this integral becomes</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left( \frac{1}{ \frac{1}{2}(\frac{uf}{v} + 1) } \right)^{ \frac{u+v}{2}} \int_0^\infty t^{\frac{u+v}{2}-1} e^{-t} dt.
+\end{equation*}
+</div>
+<div class="para">The integral part, now simply a <span class="process-math">\(\Gamma\)</span> function.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Gamma\left(\frac{u+v}{2} \right) = \int_0^\infty t^{\frac{u+v}{2}-1} e^{-t} dt.
+\end{equation*}
+</div>
+<div class="para">Now, you can put all the factors together, which results in the cancellation of <span class="process-math">\(2\)</span>’s to obtain the PDF of the <span class="process-math">\(F\)</span> variable.</div>
+<div class="displaymath process-math" id="subsec-Difference-in-Variance-of-Two-Normal-Distributions-5-3-25">
+\begin{align*}
+\rho_F(f) \amp = \int_{0}^{\infty}\,\rho_{FW}(f,w)\,dw \\
+\amp = \frac{ \Gamma\left( \frac{u+v}{2}\right) }{ \Gamma\left( \frac{u}{2}\right)\,\Gamma\left( \frac{v}{2}\right)  } \left( \frac{u}{v} \right)^{\frac{u}{2} } f^{\frac{u}{2} - 1} \left(  1 + \frac{u}{v}f \right)^{ \frac{u+v}{2} } 
+\end{align*}
+</div>
+<div class="para">This is of course normalized to probability <span class="process-math">\(1\)</span> as you can verify by doing the following integral.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_0^\infty\, \rho_F(f)\,df = 1.
+\end{equation*}
+</div>
+</div></article></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="sec-t-and-chi-square.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec-t-and-chi-square.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-Hypothesis-Tests.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

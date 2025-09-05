@@ -124,6 +124,9 @@ window.MathJax = {
 #sec-Point-Estimates-and-Confidence-Intervals-2-2-1 { counter-set: sec-Point-Estimates-and-Confidence-Intervals-2-2-1 0; }
 #sec-Point-Estimates-and-Confidence-Intervals-2-2-1 > li::marker { content: ""counter(sec-Point-Estimates-and-Confidence-Intervals-2-2-1,decimal)"."; }
 #sec-Point-Estimates-and-Confidence-Intervals-2-2-1 > li { counter-increment: sec-Point-Estimates-and-Confidence-Intervals-2-2-1; }
+#subsubsec-Z-Intervals-6-2-1 { counter-set: subsubsec-Z-Intervals-6-2-1 0; }
+#subsubsec-Z-Intervals-6-2-1 > li::marker { content: ""counter(subsubsec-Z-Intervals-6-2-1,decimal)"."; }
+#subsubsec-Z-Intervals-6-2-1 > li { counter-increment: subsubsec-Z-Intervals-6-2-1; }
 </style>
 </head>
 <body id="ML-Notes" class="pretext book ignore-math">
@@ -280,14 +283,24 @@ window.MathJax = {
 </ul>
 </li>
 <li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="sec-Point-Estimates-and-Confidence-Intervals.html#subsec-Confidence-Interval" class="internal"><span class="codenumber">1.11.2</span> <span class="title">Confidence Interval  TODO</span></a></div>
+<div class="toc-title-box"><a href="sec-Point-Estimates-and-Confidence-Intervals.html#subsec-Confidence-Interval" class="internal"><span class="codenumber">1.11.2</span> <span class="title">Confidence Interval</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Point-Estimates-and-Confidence-Intervals.html#subsubsec-Z-Intervals" class="internal"><span class="codenumber">1.11.2.1</span> <span class="title">The Z Intervals</span></a></div></li>
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Point-Estimates-and-Confidence-Intervals.html#subsubsec-t-Intervals" class="internal"><span class="codenumber">1.11.2.2</span> <span class="title">The t-Intervals</span></a></div></li>
 </ul>
 </li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-Point-Estimates-and-Confidence-Intervals.html#subsec-Difference-Between-Two-Means" class="internal"><span class="codenumber">1.11.3</span> <span class="title">Difference Between Two Means</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Point-Estimates-and-Confidence-Intervals.html#subsubsec-Equal-Variance-Populations" class="internal"><span class="codenumber">1.11.3.1</span> <span class="title">Equal Variance Populations: Pooled t-test</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Point-Estimates-and-Confidence-Intervals.html#subsec-Welch-t-test" class="internal"><span class="codenumber">1.11.3.2</span> <span class="title">Welch t test</span></a></div></li>
 </ul>
 </li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Point-Estimates-and-Confidence-Intervals.html#subsec-Estimating-Variance" class="internal"><span class="codenumber">1.11.4</span> <span class="title">Confidence Interval of Variance</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Point-Estimates-and-Confidence-Intervals.html#subsec-Difference-in-Variance-of-Two-Normal-Distributions" class="internal"><span class="codenumber">1.11.5</span> <span class="title">Comparing Variances of Two Normal Distributions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-Hypothesis-Tests.html" class="internal"><span class="codenumber">1.12</span> <span class="title">Hypothesis Tests</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
@@ -393,7 +406,7 @@ P( x \le X \le x + dx ) = \frac{1}{2^{n/2}\Gamma(n/2)}\,x^{\frac{n}{2}-1}\,e^{-x
 <div class="para">The mean and variance is not that challenging a calulation either if you are not afraid of these integrals. first thing I will do to the PDF is to rewrite in variable <span class="process-math">\(y=x/2\text{.}\)</span> You can show that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-chi2-PDF.html">
 \begin{equation*}
-\rho_X(x; n) = \frac{1}{Gamma(n/2)}\,y^{\frac{n}{2}-1}\,e^{-y},\quad x = 2y,\ 0 \le y \lt \infty,
+\rho_X(x; n) = \frac{1}{\Gamma(n/2)}\,y^{\frac{n}{2}-1}\,e^{-y},\quad x = 2y,\ 0 \le y \lt \infty,
 \end{equation*}
 </div>
 <div class="para">Now, it is much easier to see the Gamma functions in the integrals when you compute expectation values of powers of <span class="process-math">\(X\text{.}\)</span>  Thus, mean will be</div>
@@ -497,7 +510,7 @@ J =
 <div class="para">Therefore, the Jacobian is</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-y-equal-w.html ./knowl/xref/eqn-z-equal-t-sqrt-w-by-n.html ./knowl/xref/eqn-joint-PDF-in-YZ-space.html">
 \begin{equation*}
-J =                         \begin{vmatrix}
+J = \begin{vmatrix}
 1 \amp 0\\
 \frac{t}{2\sqrt{n w}} \amp \sqrt{ \frac{w}{n} }
 \end{vmatrix}
