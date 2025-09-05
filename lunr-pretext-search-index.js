@@ -1204,7 +1204,79 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.12",
   "title": "Hypothesis Tests",
-  "body": " Hypothesis Tests    "
+  "body": " Hypothesis Tests   Often we want to know if a new data contradicts an established belief. That's when hypothesis tests are valuable in assigning a degree of confidence in decision to reject or not to reject the current belief, which are usually cast in terms of values of parameters. Ultimately, it helps decide if a difference or relationship observed in a sample is a real effect in the population or just due to random chance.    Some of the questions settled by hypotheis testing can also be settled by examining the confidential interval. For instance, if the hypothesized value happens to be outside the confidence interval, then we would reject the hypotheis that the parameter has that value. In that regard hypothesis tests and confidence intervals are similar.  Whether we use a confidence interval or a hypothesis test depends on the specific question at hand. For estimating population parameters, confidence interval is more appropriate. However, if we have already been given a value of some parameter and we want to know if that is true or not, then we choose hypothesis testing.  Hypothesis tests usually follow a pattern of three steps:   Begin with a starting guess or some established\/default knowledge, called the Null Hypothesis , denoted by . We also have an Alternate Hypotheis , denoted by , which claims a new possibility. You need both to figure out where to look in order to be able to reject or not reject .    Collect data (either from your own study or from someone else's). Compute appropriate quantities.    Decide on criteria of rejecting the null hypothesis. Use probability theory to implement the criteria.     There are two ways hypothesis tests are implemented:    Rejection region or critical region or critical value     The p-Value.      In this section we will first study hypothesis tests using rejection region approach. After that we will look at the p-value approach.    Hypothesis Test using Rejection Regions  Suppose we want to know if a coin is a fair coin. We can start with the assumption that the coin is a fair coin, meaning the probability of getting Heads ( ) is equal to the probability of getting Tails ( ). This will be the hypothesis about the proportional parameter of the Bernoulli distribution that we expect in binary system. Since is asking us to look both above and below , this test is called two-tailed test . If alternate hypothesis was claiming that , we will look only the region above and that would have been a one-tail test . Similarly for the case .  For the second step, we need to get data. So, let's toss the coin times. Suppose, we got Heads and Tails. We use real number for the Heads and for the Tails. From these we calculate the sample mean to compare with the mean claimed to be true by the null hypothesis. Let's use the symbol for the sample mean here. Clearly, . So, should we say that claim is false? Not, so fast. We need to decide on the criteria upon which we will decide on reject or not.  Suppose, we have the criteria that we will reject if data gave us the sample mean beyond some value, either above or below as stated in the alternate hypothesis . How would we set this threshold value? We can use the confidence level and an assumption about the distribution of the sample mean. If the number of data points (here tosses) is large enough, we can use Central Limit Theorem, as we have done before, to assume that (using capital letter for the random variable) is normally distributed with the true characteristics given by the claims of . Here, these would mean the following expectation if is true: It's easier to work with a standardized normal distribution by introducing a variable, find the appropriate values for rejecting , and then recover the values of the sample mean for rejecting . If the value from our data fell in the rejection regions, we will reject and if not, we will not reject . A plot of helps here. Suppose, we choose the confidence at , i.e., . Our rejection values of will be either side of that are far away so that the net probability in the rejection regions are . This is shown in . From the , we find the corresponding values: Our data gave us the value as shown in Eq. . This value is not in either of the rejection regions although it is quite close to the upper region. Hence, we will not reject the null hypothesis . Had we obtained Heads, out of tosses of the coin, we would have rejected the hypothesis.   Calculation for rejection values of . The shaded areas on the two sides each have , here, area under the Gaussian curve. We see that if from our data were or less than , we will reject .   Calculation for rejection values of Z.    Case of a One-Tail Test  Suppose, instead of the Alternate Hypothesi in Eq. , we had a different Alternate Hypothesis but the same null hypothesis. With the same experimental result of Heads in tosses, as above, let us decide whether we can reject at the same level. Going through the same steps, but now, we need the entire of the rejection region will now be all in the direction . That gives the critical value of . This gives the rejection region in p to be: The value of is in the rejection region. Hence, we reject that the coin is fair in favor of the alternate hypothesis . Same data but different alternate hypothesis gives you a different decision!   What if we had chosen a different level?  A short answer is you might have a different conclusion about rejecting . That is why you cannot just go -shopping till you get the decision you want. (If you want to do -shopping, you better do the p-Value as I explain below.) You must first set the value BEFORE you do the analysis. For instance, if you had set in the two-tail case above, you would have rejected while you were not able to reject at . If you had set , you wouldn't have rejected either. So, your conclusion does depend on you level of confidence you desire. Recall the level of confidence in complement of , i.e., .     Type I and TypeII Errors  In the example above regarding whether the coin is fair or not, we analyzed the data collected from tosses assuming the coin was fair (the null hypotheis, ), and found that at the we were unable to reject since our data had Heads. We also noticed that, had we got Heads, which is entirely possible, we would have rejected .  This shows that just a variation in data collection, can lead us to the opposite conclusion, regardless of whether happens to be true or not in reality. This makes two types of error possible in our decision.  We say that we have made a Type I Error if we rejected the null hypothesis even though it shouldn't have been.  A Type II Error occurs when we fail to reject when we should have rejected it.    The p Value Approach  In the examples of rejection region approach, we saw that you failed to reject the null hypothesis if was too low. That is, there is a largest , oe equivalently, smallest significance lavel at which we will be able to reject the null hypothsis, . That smallest is called the value of the data.  Traditional low values such as or is considered statistically significant. Recall that we set the value of or BEFORE we do the analysis. Here we would do the same and demand that the value obtained from the data be less than .   Let's look at the same example as the two-tail test presented above. Due to the misunderstanding of letter being used for proportion in the example and the same letter used for value, I will change the proportion symbol to and the corresponding random variable to . The hypotheses were The data from tosses had shown that . We had introduced a standard normal variable to implement expectations assuming were true. The value corresponding to the data is By inserting this in the CDF of the standard normal we find Because of the two-tail nature of the alternate hypothesis, this must correspond to since we would have the probability above it. This gives . That is, the -value will be . This is too high value for rejecting since , the threshold value.  Of course, you can, then, wrongly turn around, and say, let's go back and set just so that you can use your data to reject in favor of . That is why, people insist that for rejecting some well-established fact embodied in the null hypothesis, your value must be very very small. From an NIH paper:    The best practice is to report all values for all variables within a study design rather than only providing values for variables with significant findings. Including all values provides evidence for study validity and limits suspicion for selective reporting\/data mining.    "
+},
+{
+  "id": "sec-Hypothesis-Tests-2-4",
+  "level": "2",
+  "url": "sec-Hypothesis-Tests.html#sec-Hypothesis-Tests-2-4",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Null Hypothesis Alternate Hypotheis "
+},
+{
+  "id": "subsec-Hypothesis-Test-for-One-Proportion-2",
+  "level": "2",
+  "url": "sec-Hypothesis-Tests.html#subsec-Hypothesis-Test-for-One-Proportion-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "two-tailed test one-tail test "
+},
+{
+  "id": "fig-z-rejection-zones",
+  "level": "2",
+  "url": "sec-Hypothesis-Tests.html#fig-z-rejection-zones",
+  "type": "Figure",
+  "number": "1.12.1",
+  "title": "",
+  "body": " Calculation for rejection values of . The shaded areas on the two sides each have , here, area under the Gaussian curve. We see that if from our data were or less than , we will reject .   Calculation for rejection values of Z.   "
+},
+{
+  "id": "subsec-Hypothesis-Test-for-One-Proportion-6",
+  "level": "2",
+  "url": "sec-Hypothesis-Tests.html#subsec-Hypothesis-Test-for-One-Proportion-6",
+  "type": "Remark",
+  "number": "1.12.2",
+  "title": "Case of a One-Tail Test.",
+  "body": "Case of a One-Tail Test  Suppose, instead of the Alternate Hypothesi in Eq. , we had a different Alternate Hypothesis but the same null hypothesis. With the same experimental result of Heads in tosses, as above, let us decide whether we can reject at the same level. Going through the same steps, but now, we need the entire of the rejection region will now be all in the direction . That gives the critical value of . This gives the rejection region in p to be: The value of is in the rejection region. Hence, we reject that the coin is fair in favor of the alternate hypothesis . Same data but different alternate hypothesis gives you a different decision!  "
+},
+{
+  "id": "subsec-Hypothesis-Test-for-One-Proportion-7",
+  "level": "2",
+  "url": "sec-Hypothesis-Tests.html#subsec-Hypothesis-Test-for-One-Proportion-7",
+  "type": "Remark",
+  "number": "1.12.3",
+  "title": "What if we had chosen a different <span class=\"process-math\">\\(\\alpha\\)<\/span> level?",
+  "body": "What if we had chosen a different level?  A short answer is you might have a different conclusion about rejecting . That is why you cannot just go -shopping till you get the decision you want. (If you want to do -shopping, you better do the p-Value as I explain below.) You must first set the value BEFORE you do the analysis. For instance, if you had set in the two-tail case above, you would have rejected while you were not able to reject at . If you had set , you wouldn't have rejected either. So, your conclusion does depend on you level of confidence you desire. Recall the level of confidence in complement of , i.e., .  "
+},
+{
+  "id": "subsec-TypeI-and-TypeII-Errors-4",
+  "level": "2",
+  "url": "sec-Hypothesis-Tests.html#subsec-TypeI-and-TypeII-Errors-4",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Type I Error "
+},
+{
+  "id": "subsec-TypeI-and-TypeII-Errors-5",
+  "level": "2",
+  "url": "sec-Hypothesis-Tests.html#subsec-TypeI-and-TypeII-Errors-5",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Type II Error "
+},
+{
+  "id": "sec-Additional-Mathematical-Techniques",
+  "level": "1",
+  "url": "sec-Additional-Mathematical-Techniques.html",
+  "type": "Section",
+  "number": "1.13",
+  "title": "Additional Mathematical Techniques",
+  "body": " Additional Mathematical Techniques    "
 },
 {
   "id": "backmatter-2",
