@@ -127,12 +127,12 @@ window.MathJax = {
 #subsubsec-Z-Intervals-6-2-1 { counter-set: subsubsec-Z-Intervals-6-2-1 0; }
 #subsubsec-Z-Intervals-6-2-1 > li::marker { content: ""counter(subsubsec-Z-Intervals-6-2-1,decimal)"."; }
 #subsubsec-Z-Intervals-6-2-1 > li { counter-increment: subsubsec-Z-Intervals-6-2-1; }
-#sec-Hypothesis-Tests-2-4-1 { counter-set: sec-Hypothesis-Tests-2-4-1 0; }
-#sec-Hypothesis-Tests-2-4-1 > li::marker { content: ""counter(sec-Hypothesis-Tests-2-4-1,decimal)"."; }
-#sec-Hypothesis-Tests-2-4-1 > li { counter-increment: sec-Hypothesis-Tests-2-4-1; }
-#sec-Hypothesis-Tests-2-5-1 { counter-set: sec-Hypothesis-Tests-2-5-1 0; }
-#sec-Hypothesis-Tests-2-5-1 > li::marker { content: ""counter(sec-Hypothesis-Tests-2-5-1,decimal)"."; }
-#sec-Hypothesis-Tests-2-5-1 > li { counter-increment: sec-Hypothesis-Tests-2-5-1; }
+#sec-Hypothesis-Tests-2-3-1 { counter-set: sec-Hypothesis-Tests-2-3-1 0; }
+#sec-Hypothesis-Tests-2-3-1 > li::marker { content: ""counter(sec-Hypothesis-Tests-2-3-1,decimal)"."; }
+#sec-Hypothesis-Tests-2-3-1 > li { counter-increment: sec-Hypothesis-Tests-2-3-1; }
+#sec-Hypothesis-Tests-2-6-1 { counter-set: sec-Hypothesis-Tests-2-6-1 0; }
+#sec-Hypothesis-Tests-2-6-1 > li::marker { content: ""counter(sec-Hypothesis-Tests-2-6-1,decimal)"."; }
+#sec-Hypothesis-Tests-2-6-1 > li { counter-increment: sec-Hypothesis-Tests-2-6-1; }
 </style>
 </head>
 <body id="ML-Notes" class="pretext book ignore-math">
@@ -240,9 +240,10 @@ window.MathJax = {
 <div class="toc-title-box"><a href="sec-Example-Discrete-Probability-Distributions.html#subsec-Binomial-Distribution" class="internal"><span class="codenumber">1.7.2</span> <span class="title">Binomial Distribution</span></a></div>
 <ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Example-Discrete-Probability-Distributions.html#subsubsec-Average-of-Random-Variables" class="internal"><span class="codenumber">1.7.2.1</span> <span class="title">Average of Random Variables</span></a></div></li></ul>
 </li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Example-Discrete-Probability-Distributions.html#subsec-Multinomial-Distribution" class="internal"><span class="codenumber">1.7.3</span> <span class="title">Multinomial/Categorical Distribution</span></a></div></li>
 <li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="sec-Example-Discrete-Probability-Distributions.html#subsec-Poisson-Distribution" class="internal"><span class="codenumber">1.7.3</span> <span class="title">Poisson Distribution</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Example-Discrete-Probability-Distributions.html#subsub-Poisson-Process" class="internal"><span class="codenumber">1.7.3.1</span> <span class="title">Poisson Process</span></a></div></li></ul>
+<div class="toc-title-box"><a href="sec-Example-Discrete-Probability-Distributions.html#subsec-Poisson-Distribution" class="internal"><span class="codenumber">1.7.4</span> <span class="title">Poisson Distribution</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Example-Discrete-Probability-Distributions.html#subsub-Poisson-Process" class="internal"><span class="codenumber">1.7.4.1</span> <span class="title">Poisson Process</span></a></div></li></ul>
 </li>
 </ul>
 </li>
@@ -309,9 +310,10 @@ window.MathJax = {
 <li class="toc-item toc-section active">
 <div class="toc-title-box"><a href="sec-Hypothesis-Tests.html" class="internal"><span class="codenumber">1.12</span> <span class="title">Hypothesis Tests</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Hypothesis-Tests.html#subsec-Hypothesis-Test-for-One-Proportion" class="internal"><span class="codenumber">1.12.1</span> <span class="title">Hypothesis Test using Rejection Regions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Hypothesis-Tests.html#subsec-Hypothesis-Test-for-One-Proportion" class="internal"><span class="codenumber">1.12.1</span> <span class="title">Simple Tests using Rejection Regions</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Hypothesis-Tests.html#subsec-TypeI-and-TypeII-Errors" class="internal"><span class="codenumber">1.12.2</span> <span class="title">Type I and TypeII Errors</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Hypothesis-Tests.html#subsec-The-p-Value" class="internal"><span class="codenumber">1.12.3</span> <span class="title">The p Value Approach</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Hypothesis-Tests.html#subsec-chi-sq-goodness-of-fit-test" class="internal"><span class="codenumber">1.12.4</span> <span class="title">Chi Square Goodness of Fit Test</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-Additional-Mathematical-Techniques.html" class="internal"><span class="codenumber">1.13</span> <span class="title">Additional Mathematical Techniques</span></a></div></li>
@@ -322,151 +324,256 @@ window.MathJax = {
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-Hypothesis-Tests"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">1.12</span><span class="space"> </span><span class="title">Hypothesis Tests</span>
 </h2>
-<section class="introduction" id="sec-Hypothesis-Tests-2"><div class="para" id="sec-Hypothesis-Tests-2-1">Often we want to know if a new data contradicts an established belief. That’s when hypothesis tests are valuable in assigning a degree of confidence in decision to reject or not to reject the current belief, which are usually cast in terms of values of parameters. Ultimately, it helps decide if a difference or relationship observed in a sample is a real effect in the population or just due to random chance.</div> <div class="para" id="sec-Hypothesis-Tests-2-2">Some of the questions settled by hypotheis testing can also be settled by examining the confidential interval. For instance, if the hypothesized value happens to be outside the confidence interval, then we would reject the hypotheis that the parameter has that value. In that regard hypothesis tests and confidence intervals are similar.</div> <div class="para" id="sec-Hypothesis-Tests-2-3">Whether we use a confidence interval or a hypothesis test depends on the specific question at hand. For estimating population parameters, confidence interval is more appropriate. However, if we have already been given a value of some parameter and we want to know if that is true or not, then we choose hypothesis testing.</div> <div class="para logical" id="sec-Hypothesis-Tests-2-4">
+<section class="introduction" id="sec-Hypothesis-Tests-2"><div class="para" id="sec-Hypothesis-Tests-2-1">Often we want to know if a new data contradicts an established belief presented as a hypothesis about the value(s) of one or more parameters of a statistical model. Hypotheis testing provides a process for determining whether a hypotheis should be rejected based upon the data. This topic is of fundamental importance in  applications of statistics to real life.</div> <div class="para logical" id="sec-Hypothesis-Tests-2-2">
+<div class="para">Suppose we have a statistical distribution of a random variable <span class="process-math">\(X\text{,}\)</span> given by either a PMF or a PDf or a CDF which contains a parameter. For example,it may be a Binomial distribution with parameters <span class="process-math">\(n\)</span> and <span class="process-math">\(p\text{.}\)</span> A hypothesis here may be about the value of <span class="process-math">\(p\)</span> for some fixed <span class="process-math">\(n\text{,}\)</span> say <span class="process-math">\(n=100\text{.}\)</span> Following are examples of hypotheses.</div>
+<div class="displaymath process-math" id="sec-Hypothesis-Tests-2-2-7">
+\begin{align*}
+\amp (1)\ H_1:\quad p = 0.5 \\
+\amp (2)\ H_2:\quad 0.6 \gt p \le 1.0 \\
+\amp (3)\ H_3:\quad p \ne 0.5
+\end{align*}
+</div>
+<div class="para">Hypthesis <span class="process-math">\(H_1\)</span> is an example of a <dfn class="terminology">simple hypothesis</dfn> since it completely defines the distribution to be <span class="process-math">\(\text{Binomial(100, 0.5)}\text{.}\)</span> In caqse of a simple hypothesis, we can also write hypothesis in a distribution notation.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+H_0 \sim \textrm{Binomial}(100, 0.5).
+\end{equation*}
+</div>
+<div class="para">Hypothesis <span class="process-math">\(H_2\)</span> and (or <span class="process-math">\(H_3\)</span>) is an example of <dfn class="terminology">composite hopthesis</dfn> since there are more than one distribution depending upon the value of <span class="process-math">\(p\text{,}\)</span> e.g., distributions <span class="process-math">\(\text{Binomial(100, 0.7)}\)</span> and <span class="process-math">\(\text{Binomial(100, 0.8)}\)</span> satisfy <span class="process-math">\(H_2\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="sec-Hypothesis-Tests-2-3">
+<div class="para">There are basically two approaches to implement hypothesis testing as we will illustrate in the following sections.</div>
+<ol class="decimal" id="sec-Hypothesis-Tests-2-3-1">
+<li id="sec-Hypothesis-Tests-2-3-1-1"><div class="para" id="sec-Hypothesis-Tests-2-3-1-1-1">
+<em class="alert">Rejection region</em> or critical region or critical value</div></li>
+<li id="sec-Hypothesis-Tests-2-3-1-2"><div class="para" id="sec-Hypothesis-Tests-2-3-1-2-1"><em class="alert">The p-Value.</em></div></li>
+</ol>
+</div> <div class="para" id="sec-Hypothesis-Tests-2-4"></div> <div class="para" id="sec-Hypothesis-Tests-2-5"></div> <div class="para logical" id="sec-Hypothesis-Tests-2-6">
 <div class="para">Hypothesis tests usually follow a pattern of three steps:</div>
-<ol class="decimal" id="sec-Hypothesis-Tests-2-4-1">
-<li id="sec-Hypothesis-Tests-2-4-1-1">
-<div class="para" id="sec-Hypothesis-Tests-2-4-1-1-1">Begin with a starting guess or some “established/default” knowledge, called the <dfn class="terminology">Null Hypothesis</dfn>, denoted by <span class="process-math">\(H_0\text{.}\)</span> We also have an <dfn class="terminology">Alternate Hypotheis</dfn>, denoted by <span class="process-math">\(H_A\text{,}\)</span> which claims a new possibility. You need both to figure out where to look in order to be able to reject or not reject <span class="process-math">\(\H_0\text{.}\)</span>
-</div>
-<div class="para logical" id="sec-Hypothesis-Tests-2-4-1-1-2">
-<div class="para">If <span class="process-math">\(H_0\)</span> or <span class="process-math">\(H_A\)</span> completely specifies the distribution of the data, then we say the test is a <dfn class="terminology">simple test</dfn>, otherwise it is <dfn class="terminology">composite test</dfn>. An example will be the probability of Heads in a coin toss with outcome of a toss variable <span class="process-math">\(X\text{,}\)</span> which is <span class="process-math">\(1\)</span> when Head and <span class="process-math">\(0\)</span> when Tails, i.e., a Bernoulli variable:</div>
+<ol class="decimal" id="sec-Hypothesis-Tests-2-6-1">
+<li id="sec-Hypothesis-Tests-2-6-1-1"><div class="para" id="sec-Hypothesis-Tests-2-6-1-1-1">State a <dfn class="terminology">null hypothesis</dfn>, denoted by <span class="process-math">\(H_0\text{,}\)</span> which will usually be a simple hypothesis and an <dfn class="terminology">alternate hypothesis</dfn>, denoted by either <span class="process-math">\(H_1\)</span> or <span class="process-math">\(H_1\text{.}\)</span> There is no expectation that alternate hypothesis be just the complement of the null hypothesis. For instance, <span class="process-math">\(H_0: p = 0.5\)</span> and <span class="process-math">\(H_1: p \gt 0.5\text{,}\)</span> which leaves the possibility that <span class="process-math">\(p \lt 0.5\)</span> unaccounted for.</div></li>
+<li id="sec-Hypothesis-Tests-2-6-1-2">
+<div class="para" id="sec-Hypothesis-Tests-2-6-1-2-1">We now, need to decide on a <dfn class="terminology">test statistic</dfn>, which is a random variable. By a <dfn class="terminology">test statisic, <span class="process-math">\(T\)</span></dfn> we mean a function of the data, <span class="process-math">\(f(x_1, x_2, \cdots, x_n)\text{,}\)</span> whose distribution <span class="process-math">\(\rho_T\)</span> can be used to find the rejection/critical region for the rejection of the <span class="process-math">\(H_0\)</span> hypothesis. We then, collect data and compute the test statistic’s value on that data.</div>
+<div class="para logical" id="sec-Hypothesis-Tests-2-6-1-2-2">
+<div class="para">For instance, sample mean <span class="process-math">\(\overline{X}\)</span> will be the statistic for the proportion <span class="process-math">\(p\)</span> in the Binomial distribution. Another test statistic for the <span class="process-math">\(H_0: p = p_0\)</span> would be the normalized sample mean.</div>
 <div class="displaymath process-math">
 \begin{equation*}
-H_0: p = 0.5\implies H_0 = \text{Bernoulli}(p=0.5).
+Z = \frac{\sqrt{n}(\overline{X} -p_0) }{\sqrt{p_0(1-p_0)} }.
 \end{equation*}
 </div>
-<div class="para">This will be a hypothesis for a simple test. For an example of a compisite test, we can envision a Gaussian random variable <span class="process-math">\(X\)</span> and the null hypothesis looks like:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-H_0: \mu = 0\implies H_0 = \mathcal{N}(0, \sigma^2 \gt 0),
-\end{equation*}
-</div>
-<div class="para">where <span class="process-math">\(\sigma^2\)</span> is unspecified, which makes <span class="process-math">\(H_0\)</span> not fully specifying the distribution from which data would be sampled, assuming <span class="process-math">\(H_A\)</span> is also not specifying any distribution fully.</div>
 </div>
 </li>
-<li id="sec-Hypothesis-Tests-2-4-1-2"><div class="para" id="sec-Hypothesis-Tests-2-4-1-2-1">Collect data (either from your own study or from someone else’s). Compute appropriate quantities.</div></li>
-<li id="sec-Hypothesis-Tests-2-4-1-3"><div class="para logical" id="sec-Hypothesis-Tests-2-4-1-3-1">
-<div class="para">Decide on criteria of rejecting the null hypothesis. Use probability theory to implement the criteria. This step involves a significance level of the test, which we usually designate by <span class="process-math">\(\alpha\text{,}\)</span> whose complementary <span class="process-math">\((1-\alpha)100%\)</span> was used to denote the confidence level in the confidence interval calculations. Here, given a significance level <span class="process-math">\(\alpha\text{,}\)</span> we seek the probability of rejecting <span class="process-math">\(H_0\)</span> by using the model applying the model corresponding to <span class="process-math">\(H_0\)</span> to the data collected.</div>
-<div class="displaymath process-math">
-\begin{equation*}
-P_{H_0}(\text{Given Data, Reject } H_0) = \alpha.
-\end{equation*}
-</div>
-</div></li>
+<li id="sec-Hypothesis-Tests-2-6-1-3"><div class="para" id="sec-Hypothesis-Tests-2-6-1-3-1">Use <em class="alert">probability theory</em> to draw conclusion whether null hypothesis can be rejected, either because the data was in the rejection region or that the p Value was small enough.</div></li>
 </ol>
-</div> <div class="para logical" id="sec-Hypothesis-Tests-2-5">
-<div class="para">There are two ways hypothesis tests are implemented:</div>
-<ol class="decimal" id="sec-Hypothesis-Tests-2-5-1">
-<li id="sec-Hypothesis-Tests-2-5-1-1"><div class="para" id="sec-Hypothesis-Tests-2-5-1-1-1">
-<em class="alert">Rejection region</em> or critical region or critical value</div></li>
-<li id="sec-Hypothesis-Tests-2-5-1-2"><div class="para" id="sec-Hypothesis-Tests-2-5-1-2-1"><em class="alert">The p-Value.</em></div></li>
-</ol>
-</div> <div class="para" id="sec-Hypothesis-Tests-2-6">In this section we will first study hypothesis tests using rejection region approach. After that we will look at the p-value approach.</div></section><section class="subsection" id="subsec-Hypothesis-Test-for-One-Proportion"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.12.1</span><span class="space"> </span><span class="title">Hypothesis Test using Rejection Regions</span>
+</div>  </section><section class="subsection" id="subsec-Hypothesis-Test-for-One-Proportion"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.12.1</span><span class="space"> </span><span class="title">Simple Tests using Rejection Regions</span>
 </h3>
 <div class="para logical" id="subsec-Hypothesis-Test-for-One-Proportion-2">
-<div class="para">Suppose we want to know if a coin is a fair coin. We can start with the assumption that the coin is a fair coin, meaning the probability of getting Heads (<span class="process-math">\(X=1\)</span>) is equal to the probability of getting Tails (<span class="process-math">\(X=0\)</span>). This will be the hypothesis about the proportional parameter <span class="process-math">\(p\)</span> of the Bernoulli distribution that we expect in <span class="process-math">\(0/1\)</span> binary system.</div>
-<div class="displaymath process-math" id="subsec-Hypothesis-Test-for-One-Proportion-2-5">
-\begin{align}
-\amp \text{Null hypothesis, } H_0: \quad p = 0.5 \equiv p_0\tag{1.12.1}\\
-\amp \text{Alternate hypothesis, } H_A: \quad p \ne p_0\tag{1.12.2}
-\end{align}
-</div>
-<div class="para">Since <span class="process-math">\(H_A\)</span> is asking us to look both above and below <span class="process-math">\(p_0\text{,}\)</span> this test is called <dfn class="terminology">two-tailed test</dfn>. If alternate hypothesis was claiming that <span class="process-math">\(p \gt p_0\text{,}\)</span> we will look only the region above <span class="process-math">\(p_0\)</span>and that would have been a <dfn class="terminology">one-tail test</dfn>. Similarly for the case <span class="process-math">\(H_A:\ p\lt p_0\text{.}\)</span>
+<div class="para">
+<em class="alert">Problem:</em> Suppose we want to know if a coin is a fair coin. We can start with the assumption that the coin is a fair coin, meaning the probability of getting Heads (<span class="process-math">\(X=1\)</span>) is equal to the probability of getting Tails (<span class="process-math">\(X=0\)</span>).</div>
+<div class="displaymath process-math">
+\begin{equation*}
+p = 0.5.
+\end{equation*}
 </div>
 </div>
 <div class="para logical" id="subsec-Hypothesis-Test-for-One-Proportion-3">
-<div class="para">For the second step, we need to get data. So, let’s toss the coin <span class="process-math">\(100\)</span> times. Suppose, we got <span class="process-math">\(59\)</span> Heads and <span class="process-math">\(41\)</span> Tails. We use real number <span class="process-math">\(1\)</span> for the Heads and <span class="process-math">\(0\)</span> for the Tails. From these we calculate the sample mean to compare with the mean claimed to be true by the null hypothesis. Let’s use the symbol <span class="process-math">\(\overline{p}\)</span> for the sample mean here.</div>
+<div class="para">
+<em class="alert">The Hypotheses:</em> Let us use the symbol <span class="process-math">\(p_0\)</span> for the number <span class="process-math">\(0.5\text{,}\)</span> just to comply with notation of using the subscript with anything that is the null hypotheis. Writing in terms of a null hypothesis and an alternate hypotheis, we will express it as follows.</div>
+<div class="displaymath process-math" id="subsec-Hypothesis-Test-for-One-Proportion-3-4">
+\begin{align}
+\amp \text{Null hypothesis, } H_0: \quad p =  p_0\tag{1.12.1}\\
+\amp \text{Alternate hypothesis, } H_1: \quad p \ne p_0\tag{1.12.2}
+\end{align}
+</div>
+<div class="para">The null hypotheis is a simple hypothesis and it is of course specifying the Bernoulli distribution completely and we can write it more explicitly as follows.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+H_0 \sim \text{Bernoulli}(p_0)
+\end{equation*}
+</div>
+<div class="para">Hypothesis <span class="process-math">\(H_1\)</span> is a composite hypothesis. We can pick any value of <span class="process-math">\(p\)</span> other than <span class="process-math">\(p_0\)</span> to specify one of the infintely many Bernoulli distributons corresponding to the hypothesis <span class="process-math">\(H_1\text{.}\)</span>
+</div>
+</div>
+<div class="para" id="subsec-Hypothesis-Test-for-One-Proportion-4">Since <span class="process-math">\(H_1\)</span> is asking us to look both above and below <span class="process-math">\(p_0\text{,}\)</span> this test is called a <dfn class="terminology">two-tailed test</dfn>. If alternate hypothesis was claiming that <span class="process-math">\(p \gt p_0\text{,}\)</span> we will look only the region above <span class="process-math">\(p_0\)</span>and that would have been a <dfn class="terminology">one-tail test</dfn>. Similarly for the case <span class="process-math">\(H_1:\ p\lt p_0\text{.}\)</span>
+</div>
+<div class="para" id="subsec-Hypothesis-Test-for-One-Proportion-5">
+<em class="alert">The Data and the Statistic:</em> To obtain the data, let’s toss the coin <span class="process-math">\(n=100\)</span> times. Suppose, we get <span class="process-math">\(59\)</span> Heads and <span class="process-math">\(41\)</span> Tails. We use real number <span class="process-math">\(1.0\)</span> for the Heads and <span class="process-math">\(0.0\)</span> for the Tails.</div>
+<div class="para logical" id="subsec-Hypothesis-Test-for-One-Proportion-6">
+<div class="para">Our hypothesis is about the proportion <span class="process-math">\(p\text{,}\)</span> which can be estimated by th sample mean <span class="process-math">\(\overline{X}\)</span> of the <span class="process-math">\(100\)</span> random variables, <span class="process-math">\((X_1, X_2, \cdots, X_{n})\)</span> from our data collection process as we have seen before.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\overline{X} = \frac{1}{n}\left( X_1 + X_2 + \cdots + X_{n} \right).
+\end{equation*}
+</div>
+<div class="para">Using the data we get</div>
 <div class="displaymath process-math" id="eqn-proportion-from-data-hypothesis-testing">
 \begin{equation}
-\overline{p} = \frac{1}{n}\sum_{i=1}^n\, X_i =  \frac{59}{100} = 0.59.\tag{1.12.3}
+\overline{X} =  \frac{1}{100}\left(59\times 1 + 41\times 0 \right) = 0.59.\tag{1.12.3}
 \end{equation}
 </div>
-<div class="para">Clearly, <span class="process-math">\(\overline{p} \ne 0.5\text{.}\)</span> So, should we say that claim <span class="process-math">\(H_0\)</span> is false? Not, so fast. We need to decide on the criteria upon which we will decide on reject <span class="process-math">\(H_0\)</span> or not.</div>
+<div class="para">Clearly, <span class="process-math">\(\overline{X} \ne p_0\text{.}\)</span> So, should we say that claim <span class="process-math">\(H_0\)</span> is false? Not, so fast. We need to decide on the criteria upon which we will decide whether this value is too far from <span class="process-math">\(p_0\text{.}\)</span> For that we use probability theory.</div>
 </div>
-<div class="para logical" id="subsec-Hypothesis-Test-for-One-Proportion-4">
-<div class="para">Suppose, we have the criteria that we will reject <span class="process-math">\(H_0\)</span> if data gave us the sample mean beyond some value, either above or below as stated in the alternate hypothesis <span class="process-math">\(H_A\text{.}\)</span> How would we set this threshold value? We can use the confidence level <span class="process-math">\((1-\alpha)100\%\)</span> and an assumption about the distribution of the sample mean. If the number of data points (here <span class="process-math">\(n=100\)</span> tosses) is large enough, we can use Central Limit Theorem, as we have done before, to assume that <span class="process-math">\(\overline{P}\)</span> (using capital letter for the random variable) is normally distributed with the “true” characteristics given by the claims of <span class="process-math">\(H_0\text{.}\)</span> Here, these would mean the following expectation if <span class="process-math">\(H_0\)</span> is true:</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-z-rejection-zones.html ./knowl/xref/eqn-proportion-from-data-hypothesis-testing.html">
+<div class="para logical" id="subsec-Hypothesis-Test-for-One-Proportion-7">
+<div class="para">
+<em class="alert">Use probability theory:</em> Assuming <span class="process-math">\(H_0\)</span> is true, we can work out its consequences and compare how the test statistic fits in with those consequences. Here, our experiment for finding <span class="process-math">\(\overline{X}\)</span> is a scaled <span class="process-math">\(\text{Binomial}(n,p)\)</span> experiment since</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-z-rejection-zones.html">
 \begin{equation*}
-\overline{P} \sim \mathcal{N}\left(p_0, \frac{p_0(1-p_0)}{n} \right).
+X_\text{sum} = X_1 + X_2 + \cdots + X_n \sim \sim \text{Binomial}(n,p).
 \end{equation*}
 </div>
-<div class="para">It’s easier to work with a standardized normal distribution by introducing a <span class="process-math">\(Z\)</span> variable, find the appropriate <span class="process-math">\(Z\)</span> values for rejecting <span class="process-math">\(H_0\text{,}\)</span> and then recover the values of the sample mean <span class="process-math">\(\overline{P}\)</span> for rejecting <span class="process-math">\(H_0\text{.}\)</span> If the value <span class="process-math">\(\overline{p}\)</span> from our data fell in the rejection regions, we will reject <span class="process-math">\(H_0\)</span> and if not, we will not reject <span class="process-math">\(H_0\text{.}\)</span>
-</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-z-rejection-zones.html ./knowl/xref/eqn-proportion-from-data-hypothesis-testing.html">
+<div class="para">Assuming <span class="process-math">\(H_0\)</span> to be true,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-z-rejection-zones.html">
 \begin{equation*}
-Z = \frac{ \overline{P} - p_0  }{ \sqrt{ \frac{p_0(1-p_0)}{n} }  } = \frac{\overline{P} - 0.5}{0.05}.
+X_\text{sum} \sim \text{Binomial}(n,p_0).
 \end{equation*}
 </div>
-<div class="para">A plot of <span class="process-math">\(Z\)</span> helps here. Suppose, we choose the confidence at <span class="process-math">\((1-\alpha)100\% = 95\%\text{,}\)</span> i.e., <span class="process-math">\(\alpha = 0.05\text{.}\)</span> Our rejection values of <span class="process-math">\(Z\)</span> will be either side of <span class="process-math">\(Z=0\)</span> that are far away so that the net probability in the rejection regions are <span class="process-math">\(5\%\text{.}\)</span> This is shown in <a href="sec-Hypothesis-Tests.html#fig-z-rejection-zones" class="xref" data-knowl="./knowl/xref/fig-z-rejection-zones.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.12.1">Figure 1.12.1</a>. From the <span class="process-math">\(Z=\pm 1.96\text{,}\)</span> we find the corresponding <span class="process-math">\(\overline{P}\)</span> values:</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-z-rejection-zones.html ./knowl/xref/eqn-proportion-from-data-hypothesis-testing.html" id="subsec-Hypothesis-Test-for-One-Proportion-4-28">
+<div class="para">With large <span class="process-math">\(n\text{,}\)</span> specifically, if <span class="process-math">\(np_0 \gt 5\)</span> and <span class="process-math">\(n(1-p_0) \gt 5\text{,}\)</span> which is the case here since <span class="process-math">\((n p_0 = 50,  n(1-p_0) = 50)\text{,}\)</span> the sample mean of the data can be seen to follow a Gaussian distribution</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-z-rejection-zones.html">
+\begin{equation*}
+\overline{X} = \frac{X_\text{sum}}{n} \sim \mathcal{N}(\hat\mu, \hat\sigma^2),
+\end{equation*}
+</div>
+<div class="para">where</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-z-rejection-zones.html">
+\begin{equation*}
+\hat\mu = \frac{x_1 + x_2 + \cdots + x_n}{n},\quad \hat\sigma^2 = \frac{p_0(1-p_0)}{n}.
+\end{equation*}
+</div>
+<div class="para">That is, if <span class="process-math">\(H_0\)</span> is true, we expect sample mean,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-z-rejection-zones.html">
+\begin{equation*}
+\overline{X} \sim \mathcal{N}\left(p_0, \frac{p_0(1-p_0)}{n} \right).
+\end{equation*}
+</div>
+<div class="para">It’s almost always easier to work with a standard normal variable <span class="process-math">\(Z\text{,}\)</span> which can be obtained by subtracting away the mean and scaling by the square root of the variance.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-z-rejection-zones.html">
+\begin{equation*}
+Z = \frac{ \overline{X} - p_0  }{ \sqrt{ \frac{p_0(1-p_0)}{n} }  } = \frac{\overline{X} - 0.5}{ \sqrt{ \frac{0.5(1-0.5)}{100} } } = \frac{\overline{X} - 0.5}{0.05}.
+\end{equation*}
+</div>
+<div class="para">A plot of <span class="process-math">\(\rho(Z)\)</span> is shown in <a href="sec-Hypothesis-Tests.html#fig-z-rejection-zones" class="xref" data-knowl="./knowl/xref/fig-z-rejection-zones.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.12.1">Figure 1.12.1</a>.  We can visually see the areas that have to be included or exclued at a particluar confidence level.</div>
+</div>
+<div class="para" id="subsec-Hypothesis-Test-for-One-Proportion-8">While we have talked about confidence level <span class="process-math">\((1-\alpha)100\%\)</span> where we discussed the confidence interval, here, <span class="process-math">\(\alpha\)</span> is called <dfn class="terminology">significance level</dfn> of the test. We will see below that it represents the probability of error, so-called the type I error, that we would reject the hypothesis <span class="process-math">\(H_0\)</span> when in actuality it ws true.</div>
+<div class="para logical" id="subsec-Hypothesis-Test-for-One-Proportion-9">
+<div class="para">Suppose, we choose the significane level <span class="process-math">\(\alpha = 0.05\text{.}\)</span> Our rejection values of <span class="process-math">\(Z\)</span> will be on either side of <span class="process-math">\(Z=0\)</span> that are far away so that the net probability in the rejection regions add up to <span class="process-math">\(5\%\text{.}\)</span> We use the inverse CDF of the standard normal to find the rejection regions in the <span class="process-math">\(Z\)</span>-sampe space, which can of course, be translated in the original sample space of <span class="process-math">\((X_1, X_2, \cdots, X_n)\text{.}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-proportion-from-data-hypothesis-testing.html" id="subsec-Hypothesis-Test-for-One-Proportion-9-7">
 \begin{align*}
-\amp \text{Reject }H_0 \text{ if}:\\
-\amp \qquad\qquad \overline{p} \gt 0.5 + 1.96 \times 0.05 = 0.60, \quad \text{OR}\\
-\amp \qquad\qquad \overline{p} \gt 0.5 - 1.96 \times 0.05 = 0.40
+\amp\text{Upper side: } z_{1-\alpha/2} = \Phi^{-1}(1-\alpha/2) = \Phi^{-1}(0.975) = 1.96 \\
+\amp\text{Lower side: } z_{\alpha/2} = \Phi^{-1}(\alpha/2) = \Phi^{-1}(0.025) = -1.96 
 \end{align*}
 </div>
-<div class="para">Our data gave us the value <span class="process-math">\(\overline{p} = 0.59\)</span> as shown in Eq. <a href="sec-Hypothesis-Tests.html#eqn-proportion-from-data-hypothesis-testing" class="xref" data-knowl="./knowl/xref/eqn-proportion-from-data-hypothesis-testing.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.12.3">(1.12.3)</a>. This value is not in either of the rejection regions although it is quite close to the upper region. Hence, we will not reject the null hypothesis <span class="process-math">\(H_0\text{.}\)</span> Had we obtained <span class="process-math">\(61\)</span> Heads, out of <span class="process-math">\(100\)</span> tosses of the coin, we would have rejected the <span class="process-math">\(H_0\)</span> hypothesis.</div>
+<div class="para">We need to translate these critical values of <span class="process-math">\(Z\)</span> back to the sample space through the value of <span class="process-math">\(\overline{X}\text{.}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-proportion-from-data-hypothesis-testing.html" id="subsec-Hypothesis-Test-for-One-Proportion-9-10">
+\begin{align*}
+\amp \text{Reject }H_0 \text{ if}:\\
+\amp \qquad\qquad \overline{X} \gt 0.5 + 1.96 \times 0.05 = 0.60, \quad \text{OR}\\
+\amp \qquad\qquad \overline{X} \lt 0.5 - 1.96 \times 0.05 = 0.40
+\end{align*}
+</div>
+<div class="para">Our data gave us the value <span class="process-math">\(\overline{X} = 0.59\)</span> as shown in Eq. <a href="sec-Hypothesis-Tests.html#eqn-proportion-from-data-hypothesis-testing" class="xref" data-knowl="./knowl/xref/eqn-proportion-from-data-hypothesis-testing.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.12.3">(1.12.3)</a>. This value is not in either of the rejection regions. Hence, we will not reject the null hypothesis <span class="process-math">\(H_0\)</span> in favor of <span class="process-math">\(H_1\text{,}\)</span> even though this value is in the domain of <span class="process-math">\(H_1\text{.}\)</span> Had we obtained <span class="process-math">\(61\)</span> Heads, out of <span class="process-math">\(100\)</span> tosses of the coin, we would have rejected the <span class="process-math">\(H_0\)</span> hypothesis.</div>
 </div>
 <figure class="figure figure-like" id="fig-z-rejection-zones"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/z-rejection-zones.png" class="contained" alt="Calculation for rejection values of Z."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.12.1<span class="period">.</span></span><span class="space"> </span>Calculation for rejection values of <span class="process-math">\(Z\text{.}\)</span> The shaded areas on the two sides each have <span class="process-math">\(\alpha/2\text{,}\)</span> here, <span class="process-math">\(2.5\%\)</span> area under the Gaussian curve. We see that if <span class="process-math">\(z\)</span> from our data were <span class="process-math">\(\gt 1.96\)</span> or less than <span class="process-math">\(-1.96\text{,}\)</span> we will reject <span class="process-math">\(H_0\text{.}\)</span></figcaption></figure><article class="remark remark-like" id="subsec-Hypothesis-Test-for-One-Proportion-6"><h4 class="heading">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.12.1<span class="period">.</span></span><span class="space"> </span>Calculation for rejection values of <span class="process-math">\(Z\text{.}\)</span> The shaded areas on the two sides each have <span class="process-math">\(\alpha/2\text{,}\)</span> here, <span class="process-math">\(2.5\%\)</span> area under the Gaussian curve. We see that if <span class="process-math">\(z\)</span> from our data were <span class="process-math">\(\gt 1.96\)</span> or less than <span class="process-math">\(-1.96\text{,}\)</span> we will reject <span class="process-math">\(H_0\text{.}\)</span></figcaption></figure><article class="remark remark-like" id="subsec-Hypothesis-Test-for-One-Proportion-11"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.12.2</span><span class="period">.</span><span class="space"> </span><span class="title">Case of a One-Tail Test.</span>
-</h4> <div class="para logical" id="subsec-Hypothesis-Test-for-One-Proportion-6-2">
-<div class="para">Suppose, instead of the Alternate Hypothesi in Eq. <a href="sec-Hypothesis-Tests.html#subsec-Hypothesis-Test-for-One-Proportion-2-5" class="xref" data-knowl="./knowl/xref/eqn-two-tail-alternate-hypothesis.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.12.2">(1.12.2)</a>, we had a different Alternate Hypothesis but the same null hypothesis.</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-two-tail-alternate-hypothesis.html" id="subsec-Hypothesis-Test-for-One-Proportion-6-2-2">
+</h4> <div class="para logical" id="subsec-Hypothesis-Test-for-One-Proportion-11-2">
+<div class="para">Suppose, instead of the Alternate Hypothesi in Eq. <a href="sec-Hypothesis-Tests.html#subsec-Hypothesis-Test-for-One-Proportion-3-4" class="xref" data-knowl="./knowl/xref/eqn-two-tail-alternate-hypothesis.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.12.2">(1.12.2)</a>, we had a different Alternate Hypothesis but the same null hypothesis.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-two-tail-alternate-hypothesis.html" id="subsec-Hypothesis-Test-for-One-Proportion-11-2-2">
 \begin{align}
 \amp \text{Null hypothesis, } H_0: \quad p = 0.5 \equiv p_0\tag{1.12.4}\\
-\amp \text{Alternate hypothesis, } H_A: \quad p \gt p_0\tag{1.12.5}
+\amp \text{Alternate hypothesis, } H_1: \quad p \gt p_0\tag{1.12.5}
 \end{align}
 </div>
 <div class="para">With the same experimental result of <span class="process-math">\(59\)</span> Heads in <span class="process-math">\(100\)</span> tosses, as above, let us decide whether we can reject <span class="process-math">\(H_0\)</span> at the same <span class="process-math">\(\alpha = 0.05\)</span> level. Going through the same steps, but now, we need the entire <span class="process-math">\(5\%\)</span> of the rejection region will now be all in the direction <span class="process-math">\(Z\gt 0\text{.}\)</span> That gives the critical value of <span class="process-math">\(z = \Phi^{-1}(0.95) = 1.645\text{.}\)</span> This gives the rejection region in p to be:</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-two-tail-alternate-hypothesis.html">
 \begin{equation*}
-\text{Reject }H_0 \text{ if}: \overline{p} \gt 0.5 + 1.645 \times 0.05 = 0.582.
+\text{Reject }H_0 \text{ if}: \overline{X} \gt 0.5 + 1.645 \times 0.05 = 0.582.
 \end{equation*}
 </div>
-<div class="para">The value of <span class="process-math">\(\overline{p} = 59/100 = 0.59\)</span> is in the rejection region. Hence, we reject that the coin is fair in favor of the alternate hypothesis <span class="process-math">\(H_A\text{.}\)</span> Same data but different alternate hypothesis gives you a different decision!</div>
-</div></article><article class="remark remark-like" id="subsec-Hypothesis-Test-for-One-Proportion-7"><h4 class="heading">
+<div class="para">The value of <span class="process-math">\(\overline{X} = 59/100 = 0.59\)</span> is in the rejection region. Hence, we reject that the coin is fair in favor of the alternate hypothesis <span class="process-math">\(H_1\text{.}\)</span> Same data but different alternate hypothesis gives you a different decision!</div>
+</div></article><article class="remark remark-like" id="subsec-Hypothesis-Test-for-One-Proportion-12"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.12.3</span><span class="period">.</span><span class="space"> </span><span class="title">What if we had chosen a different <span class="process-math">\(\alpha\)</span> level?</span>
-</h4> <div class="para" id="subsec-Hypothesis-Test-for-One-Proportion-7-2">A short answer is you might have a different conclusion about rejecting <span class="process-math">\(H_0\text{.}\)</span> That is why you cannot just go <span class="process-math">\(\alpha\)</span>-shopping till you get the decision you want. (If you want to do <span class="process-math">\(\alpha\)</span>-shopping, you better do the p-Value as I explain below.) You must first set the <span class="process-math">\(\alpha\)</span> value BEFORE you do the analysis. For instance, if you had set <span class="process-math">\(\alpha = 0.10\)</span> in the two-tail case above, you would have rejected <span class="process-math">\(H_0\)</span> while you were not able to reject <span class="process-math">\(H_0\)</span> at <span class="process-math">\(\alpha=0.05\text{.}\)</span> If you had set <span class="process-math">\(\alpha = 0.06\text{,}\)</span> you wouldn’t have rejected <span class="process-math">\(H_0\)</span> either. So, your conclusion does depend on you level of confidence you desire. Recall the level of confidence in complement of <span class="process-math">\(\alpha\text{,}\)</span> i.e., <span class="process-math">\((1-\alpha)100\%\text{.}\)</span>
+</h4> <div class="para" id="subsec-Hypothesis-Test-for-One-Proportion-12-2">A short answer is you might have a different conclusion about rejecting <span class="process-math">\(H_0\text{.}\)</span> That is why you cannot just go <span class="process-math">\(\alpha\)</span>-shopping till you get the decision you want. (If you want to do <span class="process-math">\(\alpha\)</span>-shopping, you better do the p-Value as I explain below.) You must first set the <span class="process-math">\(\alpha\)</span> value BEFORE you do the analysis. For instance, if you had set <span class="process-math">\(\alpha = 0.10\)</span> in the two-tail case above, you would have rejected <span class="process-math">\(H_0\)</span> while you were not able to reject <span class="process-math">\(H_0\)</span> at <span class="process-math">\(\alpha=0.05\text{.}\)</span> If you had set <span class="process-math">\(\alpha = 0.06\text{,}\)</span> you wouldn’t have rejected <span class="process-math">\(H_0\)</span> either. So, your conclusion does depend on you level of confidence you desire. Recall the level of confidence in complement of <span class="process-math">\(\alpha\text{,}\)</span> i.e., <span class="process-math">\((1-\alpha)100\%\text{.}\)</span>
 </div></article></section><section class="subsection" id="subsec-TypeI-and-TypeII-Errors"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.12.2</span><span class="space"> </span><span class="title">Type I and TypeII Errors</span>
 </h3>
-<div class="para" id="subsec-TypeI-and-TypeII-Errors-2">In the example above regarding whether the coin is fair or not, we analyzed the data collected from <span class="process-math">\(100\)</span> tosses assuming the coin was fair (the null hypotheis, <span class="process-math">\(H_0\)</span>), and found that at the <span class="process-math">\((1-\alpha)100\%\)</span> we were unable to reject <span class="process-math">\(H_0\)</span> since our data had <span class="process-math">\(59\)</span> Heads. We also noticed that, had we got <span class="process-math">\(61\)</span> Heads, which is entirely possible, we would have rejected <span class="process-math">\(H_0\text{.}\)</span>
+<div class="para" id="subsec-TypeI-and-TypeII-Errors-2">In the example above regarding whether the coin is fair or not, we analyzed the data collected from <span class="process-math">\(100\)</span> tosses assuming the coin was fair (the null hypotheis, <span class="process-math">\(H_0\)</span>), and found that at significance level <span class="process-math">\(\alpha\)</span> we were unable to reject <span class="process-math">\(H_0\)</span> since our data had <span class="process-math">\(59\)</span> Heads. We also noticed that, had we got <span class="process-math">\(61\)</span> Heads, which is entirely possible, we would have rejected <span class="process-math">\(H_0\text{.}\)</span>
 </div>
-<div class="para" id="subsec-TypeI-and-TypeII-Errors-3">This shows that just a variation in data collection, can lead us to the opposite conclusion, regardless of whether <span class="process-math">\(H_0\)</span> happens to be true or not in reality. This makes two types of error possible in our decision.</div>
+<div class="para" id="subsec-TypeI-and-TypeII-Errors-3">This shows that just a variation in data collection, can lead us to the opposite conclusions, regardless of whether <span class="process-math">\(H_0\)</span> happens to be true or not in reality. This makes two types of error possible in our decision.</div>
 <div class="para logical" id="subsec-TypeI-and-TypeII-Errors-4">
-<div class="para">We say that we have made a <dfn class="terminology">Type I Error</dfn> if we rejected the null hypothesis <span class="process-math">\(H_0\)</span> in favor of <span class="process-math">\(H_A\)</span> even though it shouldn’t have been. The probability of rejecting <span class="process-math">\(H_0\)</span> while assuming that <span class="process-math">\(H_0\)</span> is the correct distribution is just the <dfn class="terminology">significance</dfn> <span class="process-math">\(\alpha\)</span> of the test.</div>
+<div class="para">We say that we have made a <dfn class="terminology">Type I Error</dfn> if we rejected the null hypothesis <span class="process-math">\(H_0\)</span> in favor of <span class="process-math">\(H_1\)</span> even though it shouldn’t have been. The probability of rejecting <span class="process-math">\(H_0\)</span> assuming <span class="process-math">\(H_0\)</span> is the correct distribution is what <span class="process-math">\(\alpha\)</span> was. That is why <span class="process-math">\(\alpha\)</span> is also called <dfn class="terminology">significance</dfn> of the test.</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\alpha = P_{H_0}(\text{Given Data, Reject} H_0).
+P(\text{Given Data and given }H_0\text{ as true,  Reject } H_0) = \alpha.
 \end{equation*}
 </div>
+<div class="para">Of course, the complement of this probability will be not to reject <span class="process-math">\(H_0\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P(\text{Given Data and given }H_0\text{ as true,  Do Not Reject } H_0)  = 1 - \alpha.
+\end{equation*}
+</div>
+<div class="para">Rejecting <span class="process-math">\(H_0\)</span> when <span class="process-math">\(H_0\)</span> is true will be an error, i.e., <span class="process-math">\(\alpha\)</span> is a level of error we would need to avoid.</div>
 </div>
 <div class="para logical" id="subsec-TypeI-and-TypeII-Errors-5">
-<div class="para">A <dfn class="terminology">Type II Error</dfn> occurs when we fail to reject <span class="process-math">\(H_0\)</span> in favor of <span class="process-math">\(H_A\)</span> when we should have rejected it. In this case, assumign simple <span class="process-math">\(H_A\)</span> hypothesis, we can compute the probability of rejecting <span class="process-math">\(H_0\text{.}\)</span>  This is probability of type II error, denoted by  <span class="process-math">\(\beta\text{.}\)</span>
+<div class="para">A <dfn class="terminology">Type II Error</dfn> occurs when we fail to reject <span class="process-math">\(H_0\)</span> in favor of <span class="process-math">\(H_1\)</span> when we should have rejected it. In the examples above, while <span class="process-math">\(H_0\)</span> was a simple hypothesis:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+H_0 \sim \text{Bernoulli}(p_0),
+\end{equation*}
+</div>
+<div class="para">the alternate hypothesis was a composite hypothesis, giving us distribution in terms of variable <span class="process-math">\(p\text{.}\)</span>
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
-\beta = P_{H_A}(\text{Given Data, Do Not Reject} H_0).
+H_1 \sim \text{Bernoulli}(p),\quad p\ne 0.
 \end{equation*}
 </div>
-<div class="para">Now <span class="process-math">\((1-\beta)\)</span> would be the probability of correctly rejecting <span class="process-math">\(H_0\)</span> if we assume <span class="process-math">\(H_A\)</span> is the correct distribution. This is called <dfn class="terminology">power</dfn> of the test.</div>
+<div class="para">To indicate the <span class="process-math">\(p\)</span>-dependence, let’s write this hypothesis as</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\text{Power} = 1 - \beta = P_{H_A}(\text{Given Data, Reject} H_0).
+H_1(p) \sim \text{Bernoulli}(p),\quad p\ne 0.
 \end{equation*}
 </div>
-</div></section><section class="subsection" id="subsec-The-p-Value"><h3 class="heading hide-type">
+<div class="para">So, based on the choice of the value of <span class="process-math">\(p\text{,}\)</span> we will get different probabilities of the event “Do not reject <span class="process-math">\(H_0\)</span>”, i.e., of making an error of this type. This probability is denoted by  <span class="process-math">\(\beta\text{,}\)</span> which will depende on the value of <span class="process-math">\(p\)</span> .</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\beta(p) = P(\text{Given Data and given }H_1(p)\text{ as true, Do Not Reject } H_0)
+\end{equation*}
+</div>
+<div class="para">The compliment of this probability will be the probability that when <span class="process-math">\(H_1\)</span> is true, we do reject <span class="process-math">\(H_0\text{,}\)</span> as we should.  This is called <dfn class="terminology">power</dfn> of the test, usually denoted by letter <span class="process-math">\(P\text{.}\)</span> Since, there are too many uses of letter <span class="process-math">\(P\text{,}\)</span> we will just refrain from that practice here.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\text{Power}(p) = 1 - \beta(p) = P(\text{Given Data and given }H_1(p)\text{ as true,  Do Not Reject } H_0).
+\end{equation*}
+</div>
+</div>
+<article class="remark remark-like" id="subsec-TypeI-and-TypeII-Errors-6"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.12.4</span><span class="period">.</span><span class="space"> </span><span class="title">.</span>
+</h4> <div class="para" id="subsec-TypeI-and-TypeII-Errors-6-2">To evaluate a statistical hypothesis for some parameter <span class="process-math">\(\theta\text{,}\)</span> we define a critical region. This region is chosen to balance the probabilities of Type I and Type II errors, keeping both as low as feasible. However, reducing the Type I error probability (<span class="process-math">\(\alpha\)</span>) typically increases the Type II error probability (<span class="process-math">\(\beta\)</span>), as these are inversely related. In most practical scenarios, controlling <span class="process-math">\(\alpha\)</span> is prioritized due to its importance in hypothesis testing.</div> <div class="para logical" id="subsec-TypeI-and-TypeII-Errors-6-3">
+<div class="para">The process for selecting the critical region is as follows:</div>
+<ul class="disc" id="subsec-TypeI-and-TypeII-Errors-6-3-1">
+<li id="subsec-TypeI-and-TypeII-Errors-6-3-1-1"><div class="para" id="subsec-TypeI-and-TypeII-Errors-6-3-1-1-1">Specify a desired level for the Type I error probability, <span class="process-math">\(\alpha\text{.}\)</span>
+</div></li>
+<li id="subsec-TypeI-and-TypeII-Errors-6-3-1-2"><div class="para" id="subsec-TypeI-and-TypeII-Errors-6-3-1-2-1">Identify a critical region that minimizes the Type II error probability, <span class="process-math">\(\beta\text{,}\)</span> for a specific alternative hypothesis parameter, <span class="process-math">\(\theta\text{.}\)</span>
+</div></li>
+<li id="subsec-TypeI-and-TypeII-Errors-6-3-1-3"><div class="para" id="subsec-TypeI-and-TypeII-Errors-6-3-1-3-1">If the resulting <span class="process-math">\(\beta(\theta)\)</span> is unacceptably high, consider increasing <span class="process-math">\(\alpha\)</span> to the maximum acceptable level.</div></li>
+<li id="subsec-TypeI-and-TypeII-Errors-6-3-1-4"><div class="para" id="subsec-TypeI-and-TypeII-Errors-6-3-1-4-1">If <span class="process-math">\(\beta(\theta)\)</span> remains too large, increase the sample size <span class="process-math">\(n\)</span> to improve the test’s power.</div></li>
+</ul>
+</div> <div class="para" id="subsec-TypeI-and-TypeII-Errors-6-4">A hypothesis test is deemed most powerful if it achieves the smallest possible <span class="process-math">\(\beta(\theta)\)</span> for a given <span class="process-math">\(\alpha\text{.}\)</span> The critical region of a most powerful test generally depends on the specific alternative parameter <span class="process-math">\(\theta\text{.}\)</span>
+</div></article></section><section class="subsection" id="subsec-The-p-Value"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.12.3</span><span class="space"> </span><span class="title">The p Value Approach</span>
 </h3>
-<div class="para" id="subsec-The-p-Value-2">In the examples of rejection region approach, we saw that you failed to reject the null hypothesis if <span class="process-math">\(\alpha\)</span> was too low. That is, there is a largest <span class="process-math">\(\alpha\text{,}\)</span> oe equivalently, smallest significance lavel <span class="process-math">\((1-\alpha)100\%\)</span> at which we will be able to reject the null hypothsis, <span class="process-math">\(H_0\text{.}\)</span> That smallest <span class="process-math">\((1-\alpha)100\%\)</span> is called the <span class="process-math">\(p\)</span> value of the data.</div>
+<div class="para" id="subsec-The-p-Value-2">In the examples of rejection region approach, we saw that you failed to reject the null hypothesis if <span class="process-math">\(\alpha\)</span> was too low. That is, there is a largest significance lavel <span class="process-math">\(\alpha\)</span> at which we will be able to reject the null hypothsis, <span class="process-math">\(H_0\text{.}\)</span> That <span class="process-math">\(\alpha\)</span> is called the <span class="process-math">\(p\)</span> value of the test.</div>
 <div class="para logical" id="subsec-The-p-Value-3">
-<div class="para">Traditional low <span class="process-math">\(p\)</span> values such as <span class="process-math">\(p \lt 0.05\)</span> or <span class="process-math">\(p \lt 0.01\)</span> is considered statistically significant. Recall that we set the value of <span class="process-math">\(\alpha\)</span> or <span class="process-math">\((1-\alpha)100%\)</span> BEFORE we do the analysis. Here we would do the same and demand that the <span class="process-math">\(p\)</span> value obtained from the data be less than <span class="process-math">\(\alpha\text{.}\)</span>
+<div class="para">Traditional low <span class="process-math">\(p\)</span> values such as <span class="process-math">\(p \lt 0.05\)</span> or <span class="process-math">\(p \lt 0.01\)</span> is considered statistically significant. Recall that we set the value of <span class="process-math">\(\alpha\)</span> or <span class="process-math">\((1-\alpha)100%\)</span> BEFORE we do the analysis. Here we would do the same and demand that the <span class="process-math">\(p\)</span> value obtained from the data be less than <span class="process-math">\(\alpha\)</span> for the test to be able to reject <span class="process-math">\(H_0\text{.}\)</span>
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
-\text{Reject } H_0 \text{ if } p\text{-value} \lt \alpha.
+\text{Reject } H_0 \text{ if } p \text{ value} \lt \alpha.
 \end{equation*}
 </div>
 </div>
@@ -475,7 +582,7 @@ Z = \frac{ \overline{P} - p_0  }{ \sqrt{ \frac{p_0(1-p_0)}{n} }  } = \frac{\over
 <div class="displaymath process-math" id="subsec-The-p-Value-4-5">
 \begin{align}
 \amp \text{Null hypothesis, } H_0: \quad \mu = 0.5 \equiv \mu_0\tag{1.12.6}\\
-\amp \text{Alternate hypothesis, } H_A: \quad \mu \ne \mu_0\tag{1.12.7}
+\amp \text{Alternate hypothesis, } H_1: \quad \mu \ne \mu_0\tag{1.12.7}
 \end{align}
 </div>
 <div class="para">The data from <span class="process-math">\(n=100\)</span> tosses had shown that <span class="process-math">\(\overline{\mu} = 0.59\text{.}\)</span> We had introduced a standard normal variable to implement expectations assuming <span class="process-math">\(H_0\)</span> were true.</div>
@@ -484,7 +591,7 @@ Z = \frac{ \overline{P} - p_0  }{ \sqrt{ \frac{p_0(1-p_0)}{n} }  } = \frac{\over
 Z = \frac{\overline{M} - 0.5}{0.05} \sim \mathcal{N}(0, 1).
 \end{equation*}
 </div>
-<div class="para">The <span class="process-math">\(Z\)</span> value corresponding to the data is</div>
+<div class="para">The information about <span class="process-math">\(H_0\)</span> being true is in the choice of the numerical values <span class="process-math">\(0.5\)</span> and <span class="process-math">\(0.05\text{.}\)</span> The <span class="process-math">\(Z\)</span> value corresponding to the data is obtained when we put the value fo the sample mean in this statistic.</div>
 <div class="displaymath process-math">
 \begin{equation*}
 z = \frac{0.59 - 0.5}{0.05} = 1.8.
@@ -502,11 +609,141 @@ q = \Phi(1.8) = 0.964.
 1-\alpha_q/2 = q = 0.964.
 \end{equation*}
 </div>
-<div class="para">This gives <span class="process-math">\(\alpha_q = 0.072\text{.}\)</span> That is, the <span class="process-math">\(p\)</span>-value will be <span class="process-math">\(0.072\text{.}\)</span> This is too high <span class="process-math">\(p\)</span> value for rejecting <span class="process-math">\(H_0\)</span> since <span class="process-math">\(p = 0.072 \gt \alpha=0.05\equiv p\text{th}\text{,}\)</span> the threshold value.</div>
+<div class="para">This gives <span class="process-math">\(\alpha_q = 0.072\text{.}\)</span> That is, the <span class="process-math">\(p\)</span> value will be <span class="process-math">\(0.072\text{.}\)</span> This is too high <span class="process-math">\(p\)</span> value for rejecting <span class="process-math">\(H_0\)</span> since <span class="process-math">\(p = 0.072 \gt \alpha=0.05\equiv p\text{th}\text{,}\)</span> the threshold value.</div>
 </div>
-<div class="para" id="subsec-The-p-Value-5">Of course, you can, then, wrongly turn around, and say, let’s go back and set <span class="process-math">\(p_\text{th} = 0.1\)</span> just so that you can use your data to reject <span class="process-math">\(H_0\)</span> in favor of <span class="process-math">\(H_A\text{.}\)</span> That is why, people insist that for rejecting some well-established fact embodied in the null hypothesis, your <span class="process-math">\(p\)</span> value must be very very small. From <a class="external" href="https://www.ncbi.nlm.nih.gov/books/NBK557421/" target="_blank">an NIH paper:</a><details class="ptx-footnote" aria-live="polite" id="subsec-The-p-Value-5-6"><summary class="ptx-footnote__number" title="Footnote 1.12.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="subsec-The-p-Value-5-6"><code class="code-inline tex2jax_ignore">www.ncbi.nlm.nih.gov/books/NBK557421/</code></div></details>
+<div class="para" id="subsec-The-p-Value-5">Of course, you can, then, wrongly turn around, and say, let’s go back and set <span class="process-math">\(p_\text{th} = 0.1\)</span> just so that you can use your data to reject <span class="process-math">\(H_0\)</span> in favor of <span class="process-math">\(H_1\text{.}\)</span> That is why, people insist that for rejecting some well-established fact embodied in the null hypothesis, your <span class="process-math">\(p\)</span> value must be very very small. From <a class="external" href="https://www.ncbi.nlm.nih.gov/books/NBK557421/" target="_blank">an NIH paper:</a><details class="ptx-footnote" aria-live="polite" id="subsec-The-p-Value-5-6"><summary class="ptx-footnote__number" title="Footnote 1.12.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="subsec-The-p-Value-5-6"><code class="code-inline tex2jax_ignore">www.ncbi.nlm.nih.gov/books/NBK557421/</code></div></details>
 </div>
-<div class="para" id="subsec-The-p-Value-6">“The best practice is to report all <span class="process-math">\(p\)</span> values for all variables within a study design rather than only providing <span class="process-math">\(p\)</span> values for variables with significant findings. Including all <span class="process-math">\(p\)</span> values provides evidence for study validity and limits suspicion for selective reporting/data mining.”</div></section></section></div>
+<div class="para" id="subsec-The-p-Value-6">“The best practice is to report all <span class="process-math">\(p\)</span> values for all variables within a study design rather than only providing <span class="process-math">\(p\)</span> values for variables with significant findings. Including all <span class="process-math">\(p\)</span> values provides evidence for study validity and limits suspicion for selective reporting/data mining.”</div></section><section class="subsection" id="subsec-chi-sq-goodness-of-fit-test"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.12.4</span><span class="space"> </span><span class="title">Chi Square Goodness of Fit Test</span>
+</h3>
+<div class="para logical" id="subsec-chi-sq-goodness-of-fit-test-2">
+<div class="para">Suppose we are dealing with a <span class="process-math">\(k\)</span>-class random variable or a real-valued variable which has been binned into <span class="process-math">\(k\)</span> bins. Each new data point is placed into one of the <span class="process-math">\(k\)</span> cartegories and the random variables <span class="process-math">\(X_i\)</span> for the bins <span class="process-math">\(i=1,\cdots,k\)</span> are the counts of samples in each class/bin. Such systems are governed by a multinomial distribution over the <span class="process-math">\(k\)</span> random variables <span class="process-math">\((X_1, X_2, \cdots, X_k)\)</span> which are constrained to add up to the total number <span class="process-math">\(n\)</span> of data points.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+X_1 + X_2 + \cdots + X_k = n,
+\end{equation*}
+</div>
+<div class="para">where each variable can rane between <span class="process-math">\(0\)</span> and <span class="process-math">\(n\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+X_i \in [0,\ n].
+\end{equation*}
+</div>
+<div class="para">We call the collection of the <span class="process-math">\(k\)</span> variables a multinomial random variable and will denote it in vector notation.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\vec{X} = (X_1, X_2, \cdots, X_k).
+\end{equation*}
+</div>
+<div class="para">Let <span class="process-math">\(p_i\)</span> be the probability of next data to be in the <span class="process-math">\(i^\text{th}\)</span> class (bin) and <span class="process-math">\(\vec{p} = (p_1, p_2, \cdots, p_k) \text{.}\)</span>  Then, we can write the distribution expected as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\vec{X} \sim \text{Multinomial}\left( \vec{p}\right),\quad \sum_{i=1}^k\, p_i = 1.
+\end{equation*}
+</div>
+<div class="para">By this, we mean the following probability mass function (PMF.)</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P(x_1, x_2, \cdots, x_k) = \frac{n!}{x_1!x_2!...x_k!}\,p_1^{x_1}\,p_2^{x_2}...\,p_k^{x_k},\quad \sum_{i=1}^k\,x_i = n.
+\end{equation*}
+</div>
+<div class="para">See the discussion on multinomial distribution in the section on discrete probability distributions for the following results.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbb{E}[X_i] = n\,p_i,\quad \textrm{Var}(X_i) = np_i(1-p_i), \quad \textrm{Cov}(X_i, X_{j\ne i}) = -n p_i p_j.
+\end{equation*}
+</div>
+<div class="para">Let the null hypothesis be</div>
+<div class="displaymath process-math">
+\begin{equation*}
+H_0:\quad p_i = p_{0i}\, \text{ for } i = 1, 2, \cdots, k.
+\end{equation*}
+</div>
+<div class="para">Let the alternate hypothesis be</div>
+<div class="displaymath process-math">
+\begin{equation*}
+H_1:\quad p_i \ne p_{0i}\, \text{ for } i = 1, 2, \cdots, k.
+\end{equation*}
+</div>
+<div class="para">The test is performed by <em class="emphasis">Pearson test statistic</em> <span class="process-math">\(Y\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="eqn-Pearson-test-statisitc">
+\begin{equation}
+Y = \sum_{i=1}^k\, \frac{\left( X_i  - n\,p_{i0}\right)^2}{n\,p_{i0}}.\tag{1.12.8}
+\end{equation}
+</div>
+<div class="para">For large values of <span class="process-math">\(n\text{,}\)</span> it can be shown, although with some difficulty, that the Pearson test statistic <span class="process-math">\(Y\)</span> has a  <span class="process-math">\(\chi^2\)</span> distribution with degrees of freedm equal to <span class="process-math">\(k-1\text{,}\)</span> one less than the number of classes/bins.</div>
+<div class="displaymath process-math" id="eqn-Pearson-test-statisitc-distribution">
+\begin{equation}
+Y \sim \chi^2_{k-1}.\tag{1.12.9}
+\end{equation}
+</div>
+<div class="para">Thus, to find the region for rejecting <span class="process-math">\(H_0\)</span> with significance level <span class="process-math">\(\\alpha\text{,}\)</span> we just need to find the rejection region above <span class="process-math">\(q\text{.}\)</span> The value of <span class="process-math">\(q\)</span> will be such that following probability statement is true.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P\left(\text{Reject }H_0 \text{ if }  Y \gt q \mid H_0\right) = \alpha.
+\end{equation*}
+</div>
+<div class="para">Using the inverse CDF of <span class="process-math">\(\chi^2_{k-1}\text{,}\)</span> this will be</div>
+<div class="displaymath process-math">
+\begin{equation*}
+q =  F^{-1}_{k-1}(1-\alpha).
+\end{equation*}
+</div>
+<div class="para">We use symbol <span class="process-math">\(\chi^2_{k-1,\ 1-\alpha}\)</span> for the value rather than <span class="process-math">\(q\text{.}\)</span>
+</div>
+</div>
+<article class="example example-like" id="subsec-chi-sq-goodness-of-fit-test-3"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.12.5</span><span class="period">.</span><span class="space"> </span><span class="title">Is the Die a Fair Die?</span>
+</h4> <div class="para" id="subsec-chi-sq-goodness-of-fit-test-3-2">Suppose we roll a six-sided die <span class="process-math">\(600\)</span> times and find the following numbers of faces 1 through 6: <span class="process-math">\(n_i = (80, 120, 100, 150, 130, 120)\text{.}\)</span> Is the die fair at significance level <span class="process-math">\(0.05\text{?}\)</span>
+</div> <div class="para logical" id="subsec-chi-sq-goodness-of-fit-test-3-3">
+<div class="para">By a fair die, we mean each side should have the proportion:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+p_{i0} = \frac{1}{6},\quad H_0:\ p_i = p_{i0}.,\quad H_1: p_i\ne 0.
+\end{equation*}
+</div>
+<div class="para">With <span class="process-math">\(n=1000\text{,}\)</span> for every side, we get <span class="process-math">\(np_{i0} = 600/6 = 100 \text{.}\)</span> Now, we calculate the Pearson test statistic:</div>
+<div class="displaymath process-math" id="subsec-chi-sq-goodness-of-fit-test-3-3-4">
+\begin{align*}
+Y \amp = \frac{ (80-100)^2 }{100} + \frac{ (120-100)^2 }{100} + 0 + \frac{ (150-100)^2 }{100} \\
+\amp \quad + \frac{ (130-100)^2 }{100} + \frac{ (120-100)^2 }{100}\\
+\amp = 4 + 4 + 0 + 25 + 9 + 4 = 46 
+\end{align*}
+</div>
+<div class="para">Now, we compare this to the critical value at the significance level which comes from the inverse <span class="process-math">\(\chi^2_{6-1}\)</span> distribution.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\chi^{2}_{5,\, 0.95} = 11.07.
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(Y \gt \chi^{2}_{5,\, 0.95} \text{,}\)</span> we can reject the fair die hypothesis <span class="process-math">\(H_0\text{.}\)</span>
+</div>
+</div></article><article class="example example-like" id="subsec-chi-sq-goodness-of-fit-test-4"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.12.6</span><span class="period">.</span><span class="space"> </span><span class="title">Testing a Distribution.</span>
+</h4> <div class="para" id="subsec-chi-sq-goodness-of-fit-test-4-2">Suppose we want to test if the random number generator that generates real number in the interval <span class="process-math">\((0, 1)\)</span> is uniformly distributed at significance <span class="process-math">\(\alpha = 0.02\)</span> . Now, we do not have classes like we did in the six-sided die. So, we create bins. Let us create bins of equal widths of <span class="process-math">\(0.1\)</span> and whenever we get a random number, we will place it in one of the <span class="process-math">\(10\)</span> bins.</div> <div class="para logical" id="subsec-chi-sq-goodness-of-fit-test-4-3">
+<div class="para">Suppose, we obtain <span class="process-math">\(1000\)</span> samples tht result in the following frequencies: <span class="process-math">\(n_i = (85, 88, 110, 105, 120, 112, 102, 80, 112, 86)\text{.}\)</span> Our <span class="process-math">\(H_0\)</span> hypothesis is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+p_{i0} = \frac{1}{10}.
+\end{equation*}
+</div>
+<div class="para">This will give <span class="process-math">\(n\,p_{i0} = 1000/10 = 100\text{.}\)</span> Now, we calculate the Pearson test statistic.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+Y = \sum_{i=1}^{10} \frac{ (n_i - 100 )^2  }{100} = 17.82.
+\end{equation*}
+</div>
+<div class="para">The critical value here is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\chi^2_{9,\,0.98} = 19.68.
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(Y \lt \chi^2_{9,\,0.98}\text{,}\)</span> we do not reject <span class="process-math">\(H_0\text{,}\)</span> i.e., the claim that the random number generator that gave us the values we observed is uniform at the significance level <span class="process-math">\(0.02\text{.}\)</span>
+</div>
+</div></article></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec-Point-Estimates-and-Confidence-Intervals.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-Additional-Mathematical-Techniques.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

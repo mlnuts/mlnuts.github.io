@@ -127,12 +127,12 @@ window.MathJax = {
 #subsubsec-Z-Intervals-6-2-1 { counter-set: subsubsec-Z-Intervals-6-2-1 0; }
 #subsubsec-Z-Intervals-6-2-1 > li::marker { content: ""counter(subsubsec-Z-Intervals-6-2-1,decimal)"."; }
 #subsubsec-Z-Intervals-6-2-1 > li { counter-increment: subsubsec-Z-Intervals-6-2-1; }
-#sec-Hypothesis-Tests-2-4-1 { counter-set: sec-Hypothesis-Tests-2-4-1 0; }
-#sec-Hypothesis-Tests-2-4-1 > li::marker { content: ""counter(sec-Hypothesis-Tests-2-4-1,decimal)"."; }
-#sec-Hypothesis-Tests-2-4-1 > li { counter-increment: sec-Hypothesis-Tests-2-4-1; }
-#sec-Hypothesis-Tests-2-5-1 { counter-set: sec-Hypothesis-Tests-2-5-1 0; }
-#sec-Hypothesis-Tests-2-5-1 > li::marker { content: ""counter(sec-Hypothesis-Tests-2-5-1,decimal)"."; }
-#sec-Hypothesis-Tests-2-5-1 > li { counter-increment: sec-Hypothesis-Tests-2-5-1; }
+#sec-Hypothesis-Tests-2-3-1 { counter-set: sec-Hypothesis-Tests-2-3-1 0; }
+#sec-Hypothesis-Tests-2-3-1 > li::marker { content: ""counter(sec-Hypothesis-Tests-2-3-1,decimal)"."; }
+#sec-Hypothesis-Tests-2-3-1 > li { counter-increment: sec-Hypothesis-Tests-2-3-1; }
+#sec-Hypothesis-Tests-2-6-1 { counter-set: sec-Hypothesis-Tests-2-6-1 0; }
+#sec-Hypothesis-Tests-2-6-1 > li::marker { content: ""counter(sec-Hypothesis-Tests-2-6-1,decimal)"."; }
+#sec-Hypothesis-Tests-2-6-1 > li { counter-increment: sec-Hypothesis-Tests-2-6-1; }
 </style>
 </head>
 <body id="ML-Notes" class="pretext book ignore-math">
@@ -240,9 +240,10 @@ window.MathJax = {
 <div class="toc-title-box"><a href="sec-Example-Discrete-Probability-Distributions.html#subsec-Binomial-Distribution" class="internal"><span class="codenumber">1.7.2</span> <span class="title">Binomial Distribution</span></a></div>
 <ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Example-Discrete-Probability-Distributions.html#subsubsec-Average-of-Random-Variables" class="internal"><span class="codenumber">1.7.2.1</span> <span class="title">Average of Random Variables</span></a></div></li></ul>
 </li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Example-Discrete-Probability-Distributions.html#subsec-Multinomial-Distribution" class="internal"><span class="codenumber">1.7.3</span> <span class="title">Multinomial/Categorical Distribution</span></a></div></li>
 <li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="sec-Example-Discrete-Probability-Distributions.html#subsec-Poisson-Distribution" class="internal"><span class="codenumber">1.7.3</span> <span class="title">Poisson Distribution</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Example-Discrete-Probability-Distributions.html#subsub-Poisson-Process" class="internal"><span class="codenumber">1.7.3.1</span> <span class="title">Poisson Process</span></a></div></li></ul>
+<div class="toc-title-box"><a href="sec-Example-Discrete-Probability-Distributions.html#subsec-Poisson-Distribution" class="internal"><span class="codenumber">1.7.4</span> <span class="title">Poisson Distribution</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Example-Discrete-Probability-Distributions.html#subsub-Poisson-Process" class="internal"><span class="codenumber">1.7.4.1</span> <span class="title">Poisson Process</span></a></div></li></ul>
 </li>
 </ul>
 </li>
@@ -309,9 +310,10 @@ window.MathJax = {
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-Hypothesis-Tests.html" class="internal"><span class="codenumber">1.12</span> <span class="title">Hypothesis Tests</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Hypothesis-Tests.html#subsec-Hypothesis-Test-for-One-Proportion" class="internal"><span class="codenumber">1.12.1</span> <span class="title">Hypothesis Test using Rejection Regions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Hypothesis-Tests.html#subsec-Hypothesis-Test-for-One-Proportion" class="internal"><span class="codenumber">1.12.1</span> <span class="title">Simple Tests using Rejection Regions</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Hypothesis-Tests.html#subsec-TypeI-and-TypeII-Errors" class="internal"><span class="codenumber">1.12.2</span> <span class="title">Type I and TypeII Errors</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Hypothesis-Tests.html#subsec-The-p-Value" class="internal"><span class="codenumber">1.12.3</span> <span class="title">The p Value Approach</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Hypothesis-Tests.html#subsec-chi-sq-goodness-of-fit-test" class="internal"><span class="codenumber">1.12.4</span> <span class="title">Chi Square Goodness of Fit Test</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-Additional-Mathematical-Techniques.html" class="internal"><span class="codenumber">1.13</span> <span class="title">Additional Mathematical Techniques</span></a></div></li>
@@ -498,7 +500,7 @@ P_{N,p}(X = m) = \frac{N!}{m! (N-m)!}\,p^m\,(1-p)^{N-m}.\tag{1.7.10}
 </div>
 <div class="para">It emphasizes the fact that even for the same <span class="process-math">\(p\text{,}\)</span> you have <em class="alert">different Binomial experiments</em> for different values of <span class="process-math">\(N\text{.}\)</span>  For instance, in Table <a href="sec-Example-Discrete-Probability-Distributions.html#tab-Binomial-frequency-and-prob" class="xref" data-knowl="./knowl/xref/tab-Binomial-frequency-and-prob.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 1.7.1: Binomial Experiment: Frequency and Approximate Probability">Table 1.7.1</a>, if you had conducted the experiment with <span class="process-math">\(20\)</span> Bernoulli trials in each Binomial experiment, instead of <span class="process-math">\(10\text{,}\)</span> you would have gotten much different probabilities for <span class="process-math">\(P(0),\ P(1), P(2), \cdots\text{.}\)</span> This is illustrated in the following figure, <a href="sec-Example-Discrete-Probability-Distributions.html#fig-binomial-10N20" class="xref" data-knowl="./knowl/xref/fig-binomial-10N20.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.7.2">Figure 1.7.2</a>.</div>
 </div> <figure class="figure figure-like" id="fig-binomial-10N20"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/binomial-10N20.png" class="contained" alt="llustrating that different N values in Binomial distribution correspond to different distributions. Here, with N=10 and N=20. See that the probabilities for same X value are different for the two distributions."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.2<span class="period">.</span></span><span class="space"> </span>Illustrating that different <span class="process-math">\(N\)</span> values in Binomial distribution correspond to different distributions. Here, with <span class="process-math">\(N=10\)</span> and <span class="process-math">\(N=20\text{.}\)</span> See that the probabilities for same <span class="process-math">\(X\)</span> value are different for the two distributions.</figcaption></figure> <div class="para" id="subsec-Binomial-Distribution-2-7">Following code was used to create the plot above.</div> <div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">import numpy as np
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.2<span class="period">.</span></span><span class="space"> </span>Illustrating that different <span class="process-math">\(N\)</span> values in Binomial distribution correspond to different distributions. Here, with <span class="process-math">\(N=10\)</span> and <span class="process-math">\(N=20\text{.}\)</span> See that the probabilities for same <span class="process-math">\(X\)</span> value are different for the two distributions.</figcaption></figure> <div class="para" id="subsec-Binomial-Distribution-2-7">Following code was used to create the plot above.</div> <div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-py">import numpy as np
 import matplotlib.pyplot as plt
 from scipy.stats import binom
 
@@ -633,8 +635,199 @@ plt.show()
 </div></li>
 </ul></div>
 <figure class="figure figure-like" id="fig-bernoulli-to-CLT"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/bernoulli-to-CLT.png" class="contained" alt="Illustrating that for large N the distribution of the average of N Bernoulli variables of the same p tends towards a Gaussian distribution."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.4<span class="period">.</span></span><span class="space"> </span>Illustrating that for large <span class="process-math">\(N\)</span> the distribution of the average of <span class="process-math">\(N\)</span> Bernoulli variables of the same <span class="process-math">\(p\)</span> tends towards a Gaussian distribution.</figcaption></figure></section></section><section class="subsection" id="subsec-Poisson-Distribution"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.7.3</span><span class="space"> </span><span class="title">Poisson Distribution</span>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.4<span class="period">.</span></span><span class="space"> </span>Illustrating that for large <span class="process-math">\(N\)</span> the distribution of the average of <span class="process-math">\(N\)</span> Bernoulli variables of the same <span class="process-math">\(p\)</span> tends towards a Gaussian distribution.</figcaption></figure></section></section><section class="subsection" id="subsec-Multinomial-Distribution"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.7.3</span><span class="space"> </span><span class="title">Multinomial/Categorical Distribution</span>
+</h3>
+<div class="para" id="subsec-Multinomial-Distribution-2">Multinomial distribution is like the binomial’s cooler cousin who handles multiple categories at once. Imagine rolling a die, sorting emails into spam, promo, or important, or predicting labels in a machine learning classifier. This distribution is your go-to for modeling counts across several outcomes. Why’s it a big deal in machine learning? It’s everywhere! In natural language processing, it powers things like bag-of-words models for text. In classification, it’s behind softmax outputs, where your model predicts probabilities over multiple classes. Plus, it’s key for understanding likelihoods in algorithms like Naive Bayes or evaluating models with metrics like cross-entropy loss. If you’re working with categorical data in ML, the multinomial is your best friend.</div>
+<article class="definition definition-like" id="def-multinomial"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.7.5</span><span class="period">.</span><span class="space"> </span><span class="title">Definition of the Multinomial Distribution.</span>
+</h4> <div class="para logical" id="def-multinomial-2-1">
+<div class="para">Picture this: you run <span class="process-math">\(n\)</span> independent trials, each with <span class="process-math">\(k\)</span> possible outcomes, where outcome <span class="process-math">\(i\)</span> has probability <span class="process-math">\(p_i\)</span> (and <span class="process-math">\(\sum_{i=1}^k p_i = 1\)</span>). Let us use a compact notation to represent variables for the <span class="process-math">\(k\)</span> outcomes as a vector: <span class="process-math">\(\vec{X} = (X_1, \dots, X_k)\)</span> count how many times each outcome happens. Then <span class="process-math">\(\vec{X} \sim \text{Multinomial}(n, \vec{p})\text{,}\)</span> with probability:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P(\vec{X} = \vec{x}) = \frac{n!}{x_1! x_2! \dots x_k!} p_1^{x_1} p_2^{x_2} \dots p_k^{x_k},
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(x_i\)</span> are non-negative integers summing to <span class="process-math">\(n\text{.}\)</span> Each <span class="process-math">\(X_i\)</span> is like a binomial, but they’re tied together since <span class="process-math">\(\sum x_i = n\text{.}\)</span>
+</div>
+</div></article><article class="example example-like" id="ex-multinomial-figure"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.6</span><span class="period">.</span><span class="space"> </span><span class="title">Visualizing with a Bar Plot.</span>
+</h4> <div class="para" id="ex-multinomial-figure-2">Let’s make this fun with a Python plot. Let’s simulate 1000 rolls of a fair six-sided die (<span class="process-math">\(k=6\text{,}\)</span> <span class="process-math">\(p_i = 1/6\)</span>) and show the counts in a bar chart, with each bar labeled with its frequency. Run this code to see how the counts wiggle around the expected <span class="process-math">\(n/k \approx 166.67\text{.}\)</span>
+</div> <div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-py">import numpy as np
+import matplotlib.pyplot as plt
+
+# Parameters
+n = 1000  # number of trials
+p = np.array([1/6] * 6)  # fair die probabilities
+labels = ['1', '2', '3', '4', '5', '6']
+
+# Generate one sample
+sample = np.random.multinomial(n, p)
+print(sample)
+
+# Plot
+bars = plt.bar(labels, sample, color='skyblue')
+plt.xlabel('Die Faces')
+plt.ylabel('Counts')
+plt.title('Multinomial Sample: 1000 Rolls of a Fair Die')
+
+# Add frequency labels on top of each bar
+for bar, count in zip(bars, sample):
+    plt.text(bar.get_x() + bar.get_width() / 2, bar.get_height(),
+            str(count), ha='center', va='bottom')
+
+plt.show()
+</code></pre></div> <div class="para" id="ex-multinomial-figure-4">
+<a href="sec-Example-Discrete-Probability-Distributions.html#fig-multinomial" class="xref" data-knowl="./knowl/xref/fig-multinomial.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.7.7">Figure 1.7.7</a> shows the results of runninng this program once. You would have to run it a few times to see the randomness, or bump up <span class="process-math">\(n\)</span> to watch the counts stabilize.</div> <figure class="figure figure-like" id="fig-multinomial"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/multinomial.png" class="contained" alt="Multinomial distribution resulting from simulation of a six-sided die shown as a bar graph."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.7<span class="period">.</span></span><span class="space"> </span>Multinomial distribution resulting from simulation of a six-sided die shown as a bar graph. Frequency of each outcome is shown with each bar showing its count on top with the constraint that the sum of all frequencies is equal to the total number of trials.</figcaption></figure></article><div class="para logical" id="subsec-Multinomial-Distribution-5">
+<div class="para">The mean, denoted by <span class="process-math">\(p_i\)</span> and variance, denoted by <span class="process-math">\(\Sigma_{ii}\)</span> (the use of two subscripts will become clear below when we discuss Covariance), of a multinomial variable, i.e., one of the <span class="process-math">\(X_i\)</span> in its definition, are</div>
+<div class="displaymath process-math" id="subsec-Multinomial-Distribution-5-4">
+\begin{align*}
+\amp \mathbb{E}[X_i] = \sum_{x_1,x_2,...,x_k} x_i P(x_1, x_2, \cdots, x_k) = n\,p_i \\
+\amp \textrm{Var}(X_i) = \mathbb{E}[X_i^2] - \left( \mathbb{E}[X_i] \right)^2 = n\,p_i\,(1-p_i)
+\end{align*}
+</div>
+<div class="para">The covariance among the different outcome variables is important here since different <span class="process-math">\(X_i\)</span>’s are not independent. In fact, covariance is given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\textrm{Cov}(X_i, X_{j\ne i}) \equiv \mathbb{E}\left( X_i\,X_j\right) - \mathbb{E}\left( X_i \right)\, \mathbb{E}\left( X_j \right) = - n p_i\,p_j.
+\end{equation*}
+</div>
+<div class="para">These are off-diagonal elements of the covariance matrix, usually denoted by a bold Greek letter, <span class="process-math">\(\mathbf{\Sigma}\)</span> with</div>
+<div class="displaymath process-math" id="subsec-Multinomial-Distribution-5-8">
+\begin{align*}
+\amp\mathbf{\Sigma}_{ii} = n p_i(1-p_i) \\
+\amp\mathbf{\Sigma}_{ij^{i \ne j}} = - p_ip_j 
+\end{align*}
+</div>
+<div class="para">The off-diagonals are negative because of th constraint among the variables.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+X_1 + X_2 + \cdots + X_k = n.
+\end{equation*}
+</div>
+</div>
+<article class="proof" id="subsec-Multinomial-Distribution-6"><h4 class="heading"><span class="title">Derivation of the Formula for the Mean.</span></h4> <div class="para logical" id="subsec-Multinomial-Distribution-6-2">
+<div class="para">Derivation of these formulas is instructive. So, I will include them here. Let’s take the class labeled <span class="process-math">\(i=1\)</span> for specificity.</div>
+<div class="displaymath process-math" id="subsec-Multinomial-Distribution-6-2-2">
+\begin{align*}
+\mathbb{E}[X_1] \amp  = \sum_{x_1=0}^{n} \frac{n}{x_1!} x_1 p_1^{x_1}\, \sum_{x_2=0}^{n} \frac{1}{x_2!} p_2^{x_2}\cdots \sum_{x_k=0}^{n} \frac{1}{x_k!} p_k^{x_k}\, \text{ with } \sum_{i=1}^k x_i = n.
+\end{align*}
+</div>
+<div class="para">Now, let us lump together the outcomes <span class="process-math">\(2, 3, \cdots, k\)</span> as <span class="process-math">\(\bar{1}\text{.}\)</span> Let the probability for <span class="process-math">\(\bar{1}\)</span> be <span class="process-math">\(p_\bar{1}\text{.}\)</span> Then, the sum with constraint already built in will be  just the Binomial distribution between the outcomes <span class="process-math">\(1\)</span> and <span class="process-math">\(\bar{1}\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbb{E}[X_1]  = \sum_{x_1=0}^{n} \frac{n}{x_1! x_\bar{1}} x_1 p_1^{x_1} p_\bar{1}^{x_\bar{1}!},\quad x_\bar{1} = \sum_{i=2}^k x_i. 
+\end{equation*}
+</div>
+<div class="para">It’s easy to do this sum with the trick of taking derivative to bring down a factor of <span class="process-math">\(x_1\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbb{E}[X_1]  = p_1\frac{\partial}{\partial p_1}\left( \sum_{x_1=0}^{n} \frac{n}{x_1! x_\bar{1}!} p_1^{x_1} p_\bar{1}^{x_\bar{1}}\right)
+\end{equation*}
+</div>
+<div class="para">The sum is just a binomial expression with <span class="process-math">\(p_1 + p_\bar{1} = 1\text{,}\)</span> which we use at the end.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbb{E}[X_1]  = p_1\frac{\partial}{\partial p_1}(p_1 + p_\bar{1})^n = n\,p_1 (p_1 + p_\bar{1})^{n-1} = n\,p_1.
+\end{equation*}
+</div>
+</div></article><article class="proof" id="subsec-Multinomial-Distribution-7"><h4 class="heading"><span class="title">Derivation of the Formula for the Variance.</span></h4> <div class="para logical" id="subsec-Multinomial-Distribution-7-2">
+<div class="para">For variance, we need to compute the second moment of the distribution. We use the same trick as for the first moment. Again, just lookig at <span class="process-math">\(i=1\)</span> will be enough.</div>
+<div class="displaymath process-math" id="subsec-Multinomial-Distribution-7-2-2">
+\begin{align*}
+\mathbb{E}[X_1^2] \amp = \left(p_1 \frac{\partial}{\partial p_1} \right) \left(p_1 \frac{\partial}{\partial p_1} \right) \left(p_1 + p_\bar{1} \right)^{n}\\
+\amp = \left(p_1 \frac{\partial}{\partial p_1} \right) \left[ n p_1\left(p_1 + p_\bar{1} \right)^{n} \right]  \\
+\amp = p_1\left( n + n(n-1)p_1\right),\quad (\text{ using }p_1 + p_\bar{1} = 1) 
+\end{align*}
+</div>
+<div class="para">Hence,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\text{Var}(X_1) = p_1\left( n + n(n-1)p_1\right) - (n\,p_1)^2 = n\,p_1 (1-p_1).
+\end{equation*}
+</div>
+</div></article><article class="proof" id="subsec-Multinomial-Distribution-8"><h4 class="heading"><span class="title">Using Indicator Variables to Prove Variance Formual.</span></h4> <div class="para logical" id="subsec-Multinomial-Distribution-8-2">
+<div class="para">There is a very useful method for doing calculations in multinomial variables (and other places as well). Here, we have <span class="process-math">\(n\)</span> experiments, each gives outcome in <span class="process-math">\(k\)</span> possibilities. So, we can intriduce <span class="process-math">\(n\times k\)</span> Bernouli random variables <span class="process-math">\(Y_{t,i}\text{,}\)</span> where <span class="process-math">\(t=1,2,\cdots, n\)</span> and <span class="process-math">\(i=1,2,\cdots,k\)</span> by the following.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+Y_{t,i} = 
+\begin{cases}
+1  \amp \text{ if trial } t \text{ has outcome } i\\
+0 \amp \text{ otherwise}
+\end{cases}
+\end{equation*}
+</div>
+<div class="para">Note that since <span class="process-math">\(Y_{t,i}\)</span> is a Bernoulli trial with probability <span class="process-math">\(p_i\text{,}\)</span> we will have easy answer:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbb{E}[Y_{t,i}] = p_i,\quad \text{Var}(Y_{t,i}) = p_i(1-p_i)
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(X_i\)</span> is the total number of trials that had outcome <span class="process-math">\(i\text{,}\)</span> we will have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+X_i = \sum_{t=1}^n\,Y_{t,i}.
+\end{equation*}
+</div>
+<div class="para">Now, it is almost trivial to get the mean, variance, and the off-diagonal covariances.</div>
+<div class="displaymath process-math" id="subsec-Multinomial-Distribution-8-2-14">
+\begin{align*}
+\mathbb{E}[X_i] \amp = \mathbb{E}\left[ \sum_{t=1}^n\, Y_{t,i} \right] = \sum_{t=1}^n \mathbb{E}\left[Y_{t,i} \right] \\
+\amp  = \sum_{t=1}^n\,p_i = p_i \sum_{t=1}^n\,1 = n\,p_i.
+\end{align*}
+</div>
+<div class="displaymath process-math" id="subsec-Multinomial-Distribution-8-2-15">
+\begin{align*}
+\text{Var}(X_i) \amp =  \text{Var}\left( \sum_{t=1}^n\, Y_{t,i} \right) = \sum_{t=1}^n \text{Var}\left( Y_{t,i} \right) = n\,p_i (1-p_i) 
+\end{align*}
+</div>
+<div class="para">For <span class="process-math">\(i \ne j\)</span> we have a do a little extra work, but still trivial.</div>
+<div class="displaymath process-math" id="subsec-Multinomial-Distribution-8-2-17">
+\begin{align*}
+\text{Cov}(X_i, X_j) \amp = \mathbb{E}[X_i X_j] - \mathbb{E}[X_i]\, \mathbb{E}[X_i] \\
+\amp = \mathbb{E}\left[\sum_{t=1}^n Y_{t,i}\, \sum_{s=1}^n Y_{s,j}\right] - n^2 p_i p_j  \\
+\amp = \mathbb{E}\left[\sum_{t=1}^n Y_{t,i}\,Y_{t,j} + \sum_{t \ne s} Y_{t,i}\,Y_{s,j} \right] - n^2 p_i p_j\\
+\amp = \sum_{t=1}^n\mathbb{E}\left[ Y_{t,i}\,Y_{t,j} \right] + \sum_{t \ne s} \mathbb{E}\left[ Y_{t,i}\,Y_{s,j} \right] - n^2 p_i p_j
+\end{align*}
+</div>
+<div class="para">Now, notice the first sum. Since in the same trial, you will get a unique outcome, either <span class="process-math">\(i\)</span> or <span class="process-math">\(j \ne i\text{.}\)</span> Hence, one of these <span class="process-math">\(Y\)</span> values will be zero in every term of the first term. That will make the first term identically zero.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbb{E}\left[ Y_{t,i}\,Y_{t,j} \right] = 0.
+\end{equation*}
+</div>
+<div class="para">In the second sum, the <span class="process-math">\(Y_{t,i}\)</span> and <span class="process-math">\(Y_{s\ne t,j}\)</span> are from different trials, so they must be independent.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbb{E}\left[ Y_{t,i}\,Y_{s,j} \right] = \mathbb{E}\left[ Y_{t,i} \right]\, \mathbb{E}\left[ Y_{s,j} \right] = p_i\,p_j
+\end{equation*}
+</div>
+<div class="para">This sums over trials <span class="process-math">\(t\ne s\text{,}\)</span> each of which run from <span class="process-math">\(1\)</span> to <span class="process-math">\(n\text{,}\)</span> so we have <span class="process-math">\(n(n-1)\)</span> terms in total.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{t \ne s}\, 1 = n(n-1).
+\end{equation*}
+</div>
+<div class="para">Hence, the off-diagonal covariance elements are</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\text{Cov}(X_i, X_{j\ne i}) = n(n-1)\,p_i p_j  n^2 p_i p_j = -n\,p_i p_i.
+\end{equation*}
+</div>
+</div></article><div class="para logical" id="subsec-Multinomial-Distribution-9">
+<div class="para">The <em class="alert">aymptotic</em> behavior of multinomial distribution when <span class="process-math">\(n\)</span> is huge is of considerable importance for powering tests like chi-squared for goodness of fit test, among other uses. So, I will just state here the results and use them later. By the multivariate central limit theorem, the proportions <span class="process-math">\(\vec{X}/n\)</span> get close to a multivariate normal in distribution sense:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sqrt{n} \left( \frac{\vec{X}}{n} - \vec{p} \right) \xrightarrow{d} \mathcal{N}(\mathbf{0}, \mathbf{\Sigma}),
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(\mathbf{\Sigma}\)</span> has diagonals <span class="process-math">\(p_i(1 - p_i)\)</span> and off-diagonals <span class="process-math">\(-p_i p_j\)</span> for <span class="process-math">\(i \neq j\text{.}\)</span>
+</div>
+</div></section><section class="subsection" id="subsec-Poisson-Distribution"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.7.4</span><span class="space"> </span><span class="title">Poisson Distribution</span>
 </h3>
 <section class="introduction" id="subsec-Poisson-Distribution-2"><div class="para logical" id="subsec-Poisson-Distribution-2-1">
 <div class="para">The Poisson distribution models the number of times an event occurs in a fixed interval of time or space, given that:</div>
@@ -733,7 +926,7 @@ P(X=0) = e^{-\lambda}\,\frac{\lambda^3}{3!} = e^{-0.3}\times \frac{0.3^3}{3!} \a
 P_{60}(X=10) = e^{-\lambda_{60}}\, \frac{\lambda^{10}}{10!} \approx 0.014.
 \end{equation*}
 </div>
-</div> <div class="para" id="subsec-Poisson-Distribution-2-5">A visual representation of the PMF often helps to build intuition. A simple program in Python can be used to to do that. The plot with <span class="process-math">\(\lambda = 3\)</span> is shown in <a href="sec-Example-Discrete-Probability-Distributions.html#fig-poisson-distribution" class="xref" data-knowl="./knowl/xref/fig-poisson-distribution.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.7.5">Figure 1.7.5</a>.</div> <div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">import numpy as np
+</div> <div class="para" id="subsec-Poisson-Distribution-2-5">A visual representation of the PMF often helps to build intuition. A simple program in Python can be used to to do that. The plot with <span class="process-math">\(\lambda = 3\)</span> is shown in <a href="sec-Example-Discrete-Probability-Distributions.html#fig-poisson-distribution" class="xref" data-knowl="./knowl/xref/fig-poisson-distribution.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.7.8">Figure 1.7.8</a>.</div> <div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-py">import numpy as np
 import matplotlib.pyplot as plt
 from scipy.stats import poisson
 
@@ -756,8 +949,8 @@ plt.legend()
 
 plt.show()
 </code></pre></div> <figure class="figure figure-like" id="fig-poisson-distribution"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/poisson.png" class="contained" alt="Poisson Distribution for lambda=3."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.5<span class="period">.</span></span><span class="space"> </span>Poisson Distribution for <span class="process-math">\(\lambda=3\text{.}\)</span> The most likely outcome is 3 decays per 10 seconds (the mean). Note that 0 or 1 decay is possible, but much less likely. Seeing 6 or more decays is rare, but not impossible.</figcaption></figure></section><section class="subsubsection" id="subsub-Poisson-Process"><h4 class="heading hide-type">
-<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">1.7.3.1</span><span class="space"> </span><span class="title">Poisson Process</span>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.8<span class="period">.</span></span><span class="space"> </span>Poisson Distribution for <span class="process-math">\(\lambda=3\text{.}\)</span> The most likely outcome is 3 decays per 10 seconds (the mean). Note that 0 or 1 decay is possible, but much less likely. Seeing 6 or more decays is rare, but not impossible.</figcaption></figure></section><section class="subsubsection" id="subsub-Poisson-Process"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">1.7.4.1</span><span class="space"> </span><span class="title">Poisson Process</span>
 </h4>
 <div class="para" id="subsub-Poisson-Process-2">A <em class="alert">Poisson process</em> is a stochastic process used to model the occurrence of events that happen independently and at a constant average rate over time or space.</div>
 <div class="para logical" id="subsub-Poisson-Process-3">
