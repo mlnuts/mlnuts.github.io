@@ -133,6 +133,12 @@ window.MathJax = {
 #sec-Hypothesis-Tests-2-6-1 { counter-set: sec-Hypothesis-Tests-2-6-1 0; }
 #sec-Hypothesis-Tests-2-6-1 > li::marker { content: ""counter(sec-Hypothesis-Tests-2-6-1,decimal)"."; }
 #sec-Hypothesis-Tests-2-6-1 > li { counter-increment: sec-Hypothesis-Tests-2-6-1; }
+#subsec-derivative-of-multiclass-loss-function-3-2-2 { counter-set: subsec-derivative-of-multiclass-loss-function-3-2-2 0; }
+#subsec-derivative-of-multiclass-loss-function-3-2-2 > li::marker { content: ""counter(subsec-derivative-of-multiclass-loss-function-3-2-2,decimal)"."; }
+#subsec-derivative-of-multiclass-loss-function-3-2-2 > li { counter-increment: subsec-derivative-of-multiclass-loss-function-3-2-2; }
+#subsec-derivative-of-multiclass-loss-function-3-3-1 { counter-set: subsec-derivative-of-multiclass-loss-function-3-3-1 0; }
+#subsec-derivative-of-multiclass-loss-function-3-3-1 > li::marker { content: ""counter(subsec-derivative-of-multiclass-loss-function-3-3-1,decimal)"."; }
+#subsec-derivative-of-multiclass-loss-function-3-3-1 > li { counter-increment: subsec-derivative-of-multiclass-loss-function-3-3-1; }
 </style>
 </head>
 <body id="ML-Notes" class="pretext book ignore-math">
@@ -152,7 +158,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-Point-Estimates-and-Confidence-Intervals.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-Essential-Probability-and-Statistics.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-Additional-Mathematical-Techniques.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-Point-Estimates-and-Confidence-Intervals.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-Essential-Probability-and-Statistics.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-Stats-Miscellaneous-Topics.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -270,6 +276,7 @@ window.MathJax = {
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LLN-and-CLT.html#subsec-LLN-vs-CLT" class="internal"><span class="codenumber">1.9.3</span> <span class="title">LLN vs. CLT</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LLN-and-CLT.html#subsec-Berry-Esseen" class="internal"><span class="codenumber">1.9.4</span> <span class="title">Berry-Esseen Theorem</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LLN-and-CLT.html#subsec-Why-Large-n-Matters" class="internal"><span class="codenumber">1.9.5</span> <span class="title">Why LLN and CLT Matter?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LLN-and-CLT.html#subsec-Large-n-Binomial-Distribution" class="internal"><span class="codenumber">1.9.6</span> <span class="title">Large n Binomial Distribution</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -316,7 +323,59 @@ window.MathJax = {
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Hypothesis-Tests.html#subsec-chi-sq-goodness-of-fit-test" class="internal"><span class="codenumber">1.12.4</span> <span class="title">Chi Square Goodness of Fit Test</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-Additional-Mathematical-Techniques.html" class="internal"><span class="codenumber">1.13</span> <span class="title">Additional Mathematical Techniques</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Stats-Miscellaneous-Topics.html" class="internal"><span class="codenumber">1.13</span> <span class="title">Miscellaneous Topics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Stats-Miscellaneous-Topics.html#sec-Stats-Miscellaneous-Topics-3" class="internal"><span class="codenumber">1.13.1</span> <span class="title">Discrete Approximation to the Cumulative Distribution Function via Binning</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Stats-Miscellaneous-Topics.html#subsec-Moment-Generating-Function" class="internal"><span class="codenumber">1.13.2</span> <span class="title">Moment Generating Functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-Additional-Mathematical-Techniques.html" class="internal"><span class="codenumber">1.14</span> <span class="title">Additional Mathematical Techniques</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-supervised-learning-basics.html" class="internal"><span class="codenumber">2</span> <span class="title">Basics of Supervised Learning</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Statistical-Decision-Theory.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Statistical Decision Theory</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Statistical-Decision-Theory.html#subsec-Squared-Error-Loss-Function" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Regression</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Statistical-Decision-Theory.html#subsec-KNN-method" class="internal"><span class="codenumber">2.1.2</span> <span class="title">The kNN Method</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Statistical-Decision-Theory.html#subsec-The-Simple-Linear-Regresson" class="internal"><span class="codenumber">2.1.3</span> <span class="title">The Simple Linear Regresson</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Binary-Classification.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Binary Classification</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Binary-Classification.html#subsecThe-Classification-Variable" class="internal"><span class="codenumber">2.2.1</span> <span class="title">The Classification Variable <span class="process-math">\(Y\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Binary-Classification.html#subsec-binary-classification-scalar-feature" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Binary Classification with Scalar <span class="process-math">\(X\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Binary-Classification.html#subsec-gradient-descent" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Gradient Descent for Logistic Regression</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Multi-Feature Problems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Linear-Regression" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Multi-Feature Linear Regression</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Linear-Regression-3" class="internal"><span class="codenumber">2.3.1.1</span> <span class="title">Taking Derivatives With Respect To A Vector</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Logistic-Regression" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Multi-Feature Logistic Regression</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Logistic-Regression-3" class="internal"><span class="codenumber">2.3.2.1</span> <span class="title">Derivatives of the Loss Function</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsubsec-logistic-regression-multivariate" class="internal"><span class="codenumber">2.3.2.2</span> <span class="title">A Python Program for the Logistic Regression</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-MultiClass-Classification.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Multi-Class Classification</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-MultiClass-Classification.html#subsec-Loss-Function-of-Multi-class-Classification" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Loss Function of Multiclass Classification</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-MultiClass-Classification.html#subsec-derivative-of-multiclass-loss-function" class="internal"><span class="codenumber">2.4.2</span> <span class="title">Derivative of Multiclass Loss Function</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-MultiClass-Classification.html#subsec-Model-Evaluations" class="internal"><span class="codenumber">2.4.3</span> <span class="title">Model Evaluations</span></a></div></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
@@ -324,7 +383,7 @@ window.MathJax = {
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-Hypothesis-Tests"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">1.12</span><span class="space"> </span><span class="title">Hypothesis Tests</span>
 </h2>
-<section class="introduction" id="sec-Hypothesis-Tests-2"><div class="para" id="sec-Hypothesis-Tests-2-1">Often we want to know if a new data contradicts an established belief presented as a hypothesis about the value(s) of one or more parameters of a statistical model. Hypotheis testing provides a process for determining whether a hypotheis should be rejected based upon the data. This topic is of fundamental importance in  applications of statistics to real life.</div> <div class="para logical" id="sec-Hypothesis-Tests-2-2">
+<section class="introduction" id="sec-Hypothesis-Tests-2"><div class="para" id="sec-Hypothesis-Tests-2-1">Often we want to know if a new data contradicts an established belief presented as a hypothesis about the value(s) of one or more parameters of a statistical model. hypothesis testing provides a process for determining whether a hypothesis should be rejected based upon the data. This topic is of fundamental importance in  applications of statistics to real life.</div> <div class="para logical" id="sec-Hypothesis-Tests-2-2">
 <div class="para">Suppose we have a statistical distribution of a random variable <span class="process-math">\(X\text{,}\)</span> given by either a PMF or a PDf or a CDF which contains a parameter. For example,it may be a Binomial distribution with parameters <span class="process-math">\(n\)</span> and <span class="process-math">\(p\text{.}\)</span> A hypothesis here may be about the value of <span class="process-math">\(p\)</span> for some fixed <span class="process-math">\(n\text{,}\)</span> say <span class="process-math">\(n=100\text{.}\)</span> Following are examples of hypotheses.</div>
 <div class="displaymath process-math" id="sec-Hypothesis-Tests-2-2-7">
 \begin{align*}
@@ -379,14 +438,14 @@ p = 0.5.
 </div>
 <div class="para logical" id="subsec-Hypothesis-Test-for-One-Proportion-3">
 <div class="para">
-<em class="alert">The Hypotheses:</em> Let us use the symbol <span class="process-math">\(p_0\)</span> for the number <span class="process-math">\(0.5\text{,}\)</span> just to comply with notation of using the subscript with anything that is the null hypotheis. Writing in terms of a null hypothesis and an alternate hypotheis, we will express it as follows.</div>
+<em class="alert">The Hypotheses:</em> Let us use the symbol <span class="process-math">\(p_0\)</span> for the number <span class="process-math">\(0.5\text{,}\)</span> just to comply with notation of using the subscript with anything that is the null hypothesis. Writing in terms of a null hypothesis and an alternate hypothesis, we will express it as follows.</div>
 <div class="displaymath process-math" id="subsec-Hypothesis-Test-for-One-Proportion-3-4">
 \begin{align}
 \amp \text{Null hypothesis, } H_0: \quad p =  p_0\tag{1.12.1}\\
 \amp \text{Alternate hypothesis, } H_1: \quad p \ne p_0\tag{1.12.2}
 \end{align}
 </div>
-<div class="para">The null hypotheis is a simple hypothesis and it is of course specifying the Bernoulli distribution completely and we can write it more explicitly as follows.</div>
+<div class="para">The null hypothesis is a simple hypothesis and it is of course specifying the Bernoulli distribution completely and we can write it more explicitly as follows.</div>
 <div class="displaymath process-math">
 \begin{equation*}
 H_0 \sim \text{Bernoulli}(p_0)
@@ -499,7 +558,7 @@ Z = \frac{ \overline{X} - p_0  }{ \sqrt{ \frac{p_0(1-p_0)}{n} }  } = \frac{\over
 </div></article></section><section class="subsection" id="subsec-TypeI-and-TypeII-Errors"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.12.2</span><span class="space"> </span><span class="title">Type I and TypeII Errors</span>
 </h3>
-<div class="para" id="subsec-TypeI-and-TypeII-Errors-2">In the example above regarding whether the coin is fair or not, we analyzed the data collected from <span class="process-math">\(100\)</span> tosses assuming the coin was fair (the null hypotheis, <span class="process-math">\(H_0\)</span>), and found that at significance level <span class="process-math">\(\alpha\)</span> we were unable to reject <span class="process-math">\(H_0\)</span> since our data had <span class="process-math">\(59\)</span> Heads. We also noticed that, had we got <span class="process-math">\(61\)</span> Heads, which is entirely possible, we would have rejected <span class="process-math">\(H_0\text{.}\)</span>
+<div class="para" id="subsec-TypeI-and-TypeII-Errors-2">In the example above regarding whether the coin is fair or not, we analyzed the data collected from <span class="process-math">\(100\)</span> tosses assuming the coin was fair (the null hypothesis, <span class="process-math">\(H_0\)</span>), and found that at significance level <span class="process-math">\(\alpha\)</span> we were unable to reject <span class="process-math">\(H_0\)</span> since our data had <span class="process-math">\(59\)</span> Heads. We also noticed that, had we got <span class="process-math">\(61\)</span> Heads, which is entirely possible, we would have rejected <span class="process-math">\(H_0\text{.}\)</span>
 </div>
 <div class="para" id="subsec-TypeI-and-TypeII-Errors-3">This shows that just a variation in data collection, can lead us to the opposite conclusions, regardless of whether <span class="process-math">\(H_0\)</span> happens to be true or not in reality. This makes two types of error possible in our decision.</div>
 <div class="para logical" id="subsec-TypeI-and-TypeII-Errors-4">
@@ -564,7 +623,114 @@ H_1(p) \sim \text{Bernoulli}(p),\quad p\ne 0.
 <li id="subsec-TypeI-and-TypeII-Errors-6-3-1-4"><div class="para" id="subsec-TypeI-and-TypeII-Errors-6-3-1-4-1">If <span class="process-math">\(\beta(\theta)\)</span> remains too large, increase the sample size <span class="process-math">\(n\)</span> to improve the test’s power.</div></li>
 </ul>
 </div> <div class="para" id="subsec-TypeI-and-TypeII-Errors-6-4">A hypothesis test is deemed most powerful if it achieves the smallest possible <span class="process-math">\(\beta(\theta)\)</span> for a given <span class="process-math">\(\alpha\text{.}\)</span> The critical region of a most powerful test generally depends on the specific alternative parameter <span class="process-math">\(\theta\text{.}\)</span>
-</div></article></section><section class="subsection" id="subsec-The-p-Value"><h3 class="heading hide-type">
+</div></article><article class="example example-like" id="subsec-TypeI-and-TypeII-Errors-7"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.12.5</span><span class="period">.</span><span class="space"> </span><span class="title">Statistical Model and Example for Hypothesis Testing.</span>
+</h4> <div class="para" id="subsec-TypeI-and-TypeII-Errors-7-2">This example introduces the concepts of Type I error probability (<span class="process-math">\(\alpha\)</span>), Type II error probability (<span class="process-math">\(\beta(\theta)\)</span>), and power (<span class="process-math">\(1 - \beta(\theta)\)</span>) using a hypothesis test for a normal distribution mean.</div> <div class="para" id="subsec-TypeI-and-TypeII-Errors-7-3">
+<em class="emphasis">Statistical Model:</em> Consider an independent random sample <span class="process-math">\(X_1, \dots, X_n\)</span> from a normal distribution <span class="process-math">\(N(\mu, \sigma^2)\text{,}\)</span> where the standard deviation <span class="process-math">\(\sigma\)</span> is known. We test the null hypothesis <span class="process-math">\(H_0: \mu = \mu_0\)</span> against the one-sided alternative <span class="process-math">\(H_1: \mu &gt; \mu_0\text{.}\)</span>
+</div> <div class="para" id="subsec-TypeI-and-TypeII-Errors-7-4">The test statistic is:</div> <div class="para logical" id="subsec-TypeI-and-TypeII-Errors-7-5"><div class="displaymath process-math">
+\begin{equation*}
+Z = \frac{\overline{X} - \mu_0}{\sigma / \sqrt{n}},
+\end{equation*}
+</div></div> <div class="para" id="subsec-TypeI-and-TypeII-Errors-7-6">which follows <span class="process-math">\(N(0, 1)\)</span> under <span class="process-math">\(H_0\text{.}\)</span> The critical region for the test is to reject <span class="process-math">\(H_0\)</span> if <span class="process-math">\(Z &gt; z_\alpha\text{,}\)</span> where <span class="process-math">\(z_\alpha\)</span> is the upper <span class="process-math">\(\alpha\)</span>-quantile of the standard normal distribution (e.g., <span class="process-math">\(z_{0.05} \approx 1.645\)</span>).</div> <div class="para" id="subsec-TypeI-and-TypeII-Errors-7-7">Recall key definitions:</div> <div class="para logical" id="subsec-TypeI-and-TypeII-Errors-7-8"><ul class="disc" id="subsec-TypeI-and-TypeII-Errors-7-8-1">
+<li id="subsec-TypeI-and-TypeII-Errors-7-8-1-1"><div class="para" id="subsec-TypeI-and-TypeII-Errors-7-8-1-1-1">
+<span class="process-math">\(\alpha = P(Z &gt; z_\alpha \mid H_0 \text{ true})\text{,}\)</span> the probability of a false positive (Type I error), controlled by the test design.</div></li>
+<li id="subsec-TypeI-and-TypeII-Errors-7-8-1-2"><div class="para" id="subsec-TypeI-and-TypeII-Errors-7-8-1-2-1">Under the alternative <span class="process-math">\(H_1: \mu = \theta &gt; \mu_0\text{,}\)</span> the test statistic follows <span class="process-math">\(Z \sim N(\delta, 1)\text{,}\)</span> where <span class="process-math">\(\delta = (\theta - \mu_0) \sqrt{n} / \sigma\text{.}\)</span>
+</div></li>
+<li id="subsec-TypeI-and-TypeII-Errors-7-8-1-3"><div class="para" id="subsec-TypeI-and-TypeII-Errors-7-8-1-3-1">
+<span class="process-math">\(\beta(\theta) = P(Z \leq z_\alpha \mid \mu = \theta) = \Phi(z_\alpha - \delta)\text{,}\)</span> where <span class="process-math">\(\Phi\)</span> is the standard normal cumulative distribution function, representing the Type II error probability.</div></li>
+<li id="subsec-TypeI-and-TypeII-Errors-7-8-1-4"><div class="para" id="subsec-TypeI-and-TypeII-Errors-7-8-1-4-1">Power: <span class="process-math">\(1 - \beta(\theta) = 1 - \Phi(z_\alpha - \delta)\text{,}\)</span> the probability of correctly rejecting <span class="process-math">\(H_0\)</span> when <span class="process-math">\(H_1\)</span> is true.</div></li>
+</ul></div> <div class="para" id="subsec-TypeI-and-TypeII-Errors-7-9">This model provides exact calculations and a closed-form power function, making it ideal for illustrating these concepts even though, for simplicity, we assume known <span class="process-math">\(\sigma\text{.}\)</span>
+</div> <div class="para" id="subsec-TypeI-and-TypeII-Errors-7-10">
+<em class="emphasis">Example Illustration:</em> Set <span class="process-math">\(\mu_0 = 0\text{,}\)</span> <span class="process-math">\(\sigma = 1\text{,}\)</span> <span class="process-math">\(n = 25\text{,}\)</span> and <span class="process-math">\(\alpha = 0.05\text{.}\)</span> Then <span class="process-math">\(z_\alpha \approx 1.645\text{,}\)</span> and the non-centrality parameter is <span class="process-math">\(\delta = \theta \cdot \sqrt{25} = 5\theta\text{.}\)</span>
+</div> <div class="para logical" id="subsec-TypeI-and-TypeII-Errors-7-11"><ul class="disc" id="subsec-TypeI-and-TypeII-Errors-7-11-1">
+<li id="subsec-TypeI-and-TypeII-Errors-7-11-1-1"><div class="para" id="subsec-TypeI-and-TypeII-Errors-7-11-1-1-1">At <span class="process-math">\(\theta = \mu_0 = 0\text{,}\)</span> <span class="process-math">\(\text{power}(0) = \alpha = 0.05\text{,}\)</span> as the power under the null equals the Type I error rate.</div></li>
+<li id="subsec-TypeI-and-TypeII-Errors-7-11-1-2"><div class="para" id="subsec-TypeI-and-TypeII-Errors-7-11-1-2-1">For a small effect, <span class="process-math">\(\theta = 0.2\text{,}\)</span> <span class="process-math">\(\delta = 1\text{,}\)</span> so <span class="process-math">\(\beta(0.2) = \Phi(1.645 - 1) \approx \Phi(0.645) \approx 0.74\text{,}\)</span> and <span class="process-math">\(\text{power}(0.2) \approx 0.26\text{.}\)</span>
+</div></li>
+<li id="subsec-TypeI-and-TypeII-Errors-7-11-1-3"><div class="para" id="subsec-TypeI-and-TypeII-Errors-7-11-1-3-1">For a larger effect, <span class="process-math">\(\theta = 0.6\text{,}\)</span> <span class="process-math">\(\delta = 3\text{,}\)</span> so <span class="process-math">\(\beta(0.6) = \Phi(1.645 - 3) \approx \Phi(-1.355) \approx 0.088\text{,}\)</span> and <span class="process-math">\(\text{power}(0.6) \approx 0.912\text{.}\)</span>
+</div></li>
+<li id="subsec-TypeI-and-TypeII-Errors-7-11-1-4"><div class="para" id="subsec-TypeI-and-TypeII-Errors-7-11-1-4-1">As <span class="process-math">\(\theta \to \infty\text{,}\)</span> <span class="process-math">\(\text{power}(\theta) \to 1\text{.}\)</span>
+</div></li>
+</ul></div> <div class="para" id="subsec-TypeI-and-TypeII-Errors-7-12">To visualize these relationships, in the upper part of <a href="sec-Hypothesis-Tests.html#fig-power-beta-plot" class="xref" data-knowl="./knowl/xref/fig-power-beta-plot.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.12.6">Figure 1.12.6</a> we plot <span class="process-math">\(\beta(\theta)\)</span> and the power function <span class="process-math">\(1 - \beta(\theta)\)</span> ) against <span class="process-math">\(\theta\text{.}\)</span> This "power curve" illustrates how the test’s ability to detect alternatives improves as <span class="process-math">\(\theta\)</span> moves away from <span class="process-math">\(\mu_0\text{.}\)</span> At <span class="process-math">\(\theta = \mu_0\text{,}\)</span> the power equals <span class="process-math">\(\alpha\text{,}\)</span> then rises toward 1.</div> <figure class="figure figure-like" id="fig-power-beta-plot"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/power-beta-plot.png" class="contained" alt="Power and beta plots."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.12.6<span class="period">.</span></span><span class="space"> </span>Type II error probability <span class="process-math">\(\beta(\theta)\)</span> and power of the test(<span class="process-math">\(1-\beta(\theta)\)</span>)  versus <span class="process-math">\(\theta\text{.}\)</span> Power rises as you go further away from the null hypothesis <span class="process-math">\(H_0\)</span>’s <span class="process-math">\(theta=0\text{.}\)</span></figcaption></figure> <div class="para" id="subsec-TypeI-and-TypeII-Errors-7-14">For a specific alternative, say <span class="process-math">\(\theta = 0.5\text{,}\)</span> the sampling distributions under <span class="process-math">\(H_0\)</span> and <span class="process-math">\(H_1\)</span> can be plotted in the lower part of <a href="sec-Hypothesis-Tests.html#fig-H0H1-alpha-beta-regions-plot" class="xref" data-knowl="./knowl/xref/fig-H0H1-alpha-beta-regions-plot.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.12.7">Figure 1.12.7</a>, with the right-tail under <span class="process-math">\(H_0\)</span> shaded to show <span class="process-math">\(\alpha\)</span> and the left-tail under <span class="process-math">\(H_1\)</span> up to the critical value shaded to show <span class="process-math">\(\beta\text{.}\)</span> The code that generated these figures is provided in program listing below the figure.</div> <figure class="figure figure-like" id="fig-H0H1-alpha-beta-regions-plot"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/H0H1-alpha-beta-regions-plot.png" class="contained" alt="Sampling distributions H0 and H1 to illustrate Type I and Type II errors."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.12.7<span class="period">.</span></span><span class="space"> </span>Sampling distributiions under <span class="process-math">\(H_0(\theta = 0.0)\)</span> and <span class="process-math">\(H_i(\theta = 0.5)\)</span> to visually show the areas corresponding to the Type I and Type II errors.</figcaption></figure></article><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">#Visualizing Type I and Type II Errors and Power in Hypothesis Testing
+#This example demonstrates plotting the power function and sampling 
+#distributions for a one-sided z-test for a normal mean.
+
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import norm
+
+# Parameters
+mu0 = 0       # Null mean
+sigma = 1     # Known standard deviation
+n = 25        # Sample size
+alpha = 0.05  # Type I error rate
+z_alpha = norm.ppf(1 - alpha)  # Critical value, approx 1.645
+
+# Function to compute power and beta for a given theta
+def power_theta(theta, mu0, sigma, n, z_alpha):
+    delta = (theta - mu0) * np.sqrt(n) / sigma
+    beta = norm.cdf(z_alpha - delta)
+    power = 1 - beta
+    return power, beta
+
+# Range of theta values for power curve (theta &gt;= mu0)
+theta_values = np.linspace(mu0, 1, 100)
+
+# Compute power and beta for each theta
+powers = np.array([power_theta(theta, mu0, sigma, n, z_alpha)[0] for theta in theta_values])
+betas = np.array([power_theta(theta, mu0, sigma, n, z_alpha)[1] for theta in theta_values])
+
+# Plot 1: Power curve and beta vs theta
+plt.figure(figsize=(10, 6))
+plt.plot(theta_values, powers, label='Power(theta) = 1 - beta(thet', color='blue'))
+plt.plot(theta_values, betas, label='beta(theta)', color='red', linestyle='--')
+plt.axhline(y=alpha, color='green', linestyle=':', label='alpha = 0.05')
+plt.axvline(x=mu0, color='black', linestyle='-', label='H0: mu = mu0')
+plt.title('Power and beta as Functions of Alternative Mean theta')
+plt.xlabel('Alternative Mean theta (under H1: mu \gt mu0)')
+plt.ylabel('Probability')
+plt.legend()
+plt.grid(True)
+plt.show()
+
+# Fixed theta for distribution plot (example: theta = 0.5)
+fixed_theta = 0.5
+delta_fixed = (fixed_theta - mu0) * np.sqrt(n) / sigma
+critical_value = z_alpha  # On the Z-scale
+
+# Z values for plotting density
+z_values = np.linspace(-4, 6, 500)
+
+# Densities
+density_h0 = norm.pdf(z_values, loc=0, scale=1)      # Under H0: N(0,1)
+density_h1 = norm.pdf(z_values, loc=delta_fixed, scale=1)  # Under H1: N(delta,1)
+
+# Plot 2: Sampling distributions with shaded α and β
+plt.figure(figsize=(10, 6))
+plt.plot(z_values, density_h0, label='Under H0: N(0,1)', color='blue')
+plt.plot(z_values, density_h1, 
+label=f'Under H1: N({delta_fixed:.2f},1) for theta={fixed_theta}', color='red')
+
+# Shade alpha: Rejection region under H0 (right of critical_value)
+plt.fill_between(z_values, density_h0, 
+where=(z_values \geq critical_value), color='blue', alpha=0.3, 
+label='alpha (Type I error)')
+
+# Shade beta: Acceptance region under H1 (left of critical_value)
+plt.fill_between(z_values, density_h1, 
+where=(z_values \leq critical_value), color='red', alpha=0.3, 
+label='beta (Type II error)')
+
+plt.axvline(x=critical_value, color='black', linestyle='--', 
+label=f'Critical value z_alpha ≈ {z_alpha:.3f}')
+plt.title(f'Sampling Distributions Showing alpha and beta for theta = {fixed_theta}')
+plt.xlabel('Test Statistic Z')
+plt.ylabel('Density')
+plt.legend()
+plt.grid(True)
+plt.show()
+</code></pre></div></section><section class="subsection" id="subsec-The-p-Value"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.12.3</span><span class="space"> </span><span class="title">The p Value Approach</span>
 </h3>
 <div class="para" id="subsec-The-p-Value-2">In the examples of rejection region approach, we saw that you failed to reject the null hypothesis if <span class="process-math">\(\alpha\)</span> was too low. That is, there is a largest significance lavel <span class="process-math">\(\alpha\)</span> at which we will be able to reject the null hypothsis, <span class="process-math">\(H_0\text{.}\)</span> That <span class="process-math">\(\alpha\)</span> is called the <span class="process-math">\(p\)</span> value of the test.</div>
@@ -695,7 +861,7 @@ q =  F^{-1}_{k-1}(1-\alpha).
 </div>
 </div>
 <article class="example example-like" id="subsec-chi-sq-goodness-of-fit-test-3"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.12.5</span><span class="period">.</span><span class="space"> </span><span class="title">Is the Die a Fair Die?</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.12.8</span><span class="period">.</span><span class="space"> </span><span class="title">Is the Die a Fair Die?</span>
 </h4> <div class="para" id="subsec-chi-sq-goodness-of-fit-test-3-2">Suppose we roll a six-sided die <span class="process-math">\(600\)</span> times and find the following numbers of faces 1 through 6: <span class="process-math">\(n_i = (80, 120, 100, 150, 130, 120)\text{.}\)</span> Is the die fair at significance level <span class="process-math">\(0.05\text{?}\)</span>
 </div> <div class="para logical" id="subsec-chi-sq-goodness-of-fit-test-3-3">
 <div class="para">By a fair die, we mean each side should have the proportion:</div>
@@ -721,7 +887,7 @@ Y \amp = \frac{ (80-100)^2 }{100} + \frac{ (120-100)^2 }{100} + 0 + \frac{ (150-
 <div class="para">Since <span class="process-math">\(Y \gt \chi^{2}_{5,\, 0.95} \text{,}\)</span> we can reject the fair die hypothesis <span class="process-math">\(H_0\text{.}\)</span>
 </div>
 </div></article><article class="example example-like" id="subsec-chi-sq-goodness-of-fit-test-4"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.12.6</span><span class="period">.</span><span class="space"> </span><span class="title">Testing a Distribution.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.12.9</span><span class="period">.</span><span class="space"> </span><span class="title">Testing a Distribution.</span>
 </h4> <div class="para" id="subsec-chi-sq-goodness-of-fit-test-4-2">Suppose we want to test if the random number generator that generates real number in the interval <span class="process-math">\((0, 1)\)</span> is uniformly distributed at significance <span class="process-math">\(\alpha = 0.02\)</span> . Now, we do not have classes like we did in the six-sided die. So, we create bins. Let us create bins of equal widths of <span class="process-math">\(0.1\)</span> and whenever we get a random number, we will place it in one of the <span class="process-math">\(10\)</span> bins.</div> <div class="para logical" id="subsec-chi-sq-goodness-of-fit-test-4-3">
 <div class="para">Suppose, we obtain <span class="process-math">\(1000\)</span> samples tht result in the following frequencies: <span class="process-math">\(n_i = (85, 88, 110, 105, 120, 112, 102, 80, 112, 86)\text{.}\)</span> Our <span class="process-math">\(H_0\)</span> hypothesis is</div>
 <div class="displaymath process-math">
@@ -745,7 +911,7 @@ Y = \sum_{i=1}^{10} \frac{ (n_i - 100 )^2  }{100} = 17.82.
 </div>
 </div></article></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="sec-Point-Estimates-and-Confidence-Intervals.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-Additional-Mathematical-Techniques.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec-Point-Estimates-and-Confidence-Intervals.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-Stats-Miscellaneous-Topics.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

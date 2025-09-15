@@ -133,6 +133,12 @@ window.MathJax = {
 #sec-Hypothesis-Tests-2-6-1 { counter-set: sec-Hypothesis-Tests-2-6-1 0; }
 #sec-Hypothesis-Tests-2-6-1 > li::marker { content: ""counter(sec-Hypothesis-Tests-2-6-1,decimal)"."; }
 #sec-Hypothesis-Tests-2-6-1 > li { counter-increment: sec-Hypothesis-Tests-2-6-1; }
+#subsec-derivative-of-multiclass-loss-function-3-2-2 { counter-set: subsec-derivative-of-multiclass-loss-function-3-2-2 0; }
+#subsec-derivative-of-multiclass-loss-function-3-2-2 > li::marker { content: ""counter(subsec-derivative-of-multiclass-loss-function-3-2-2,decimal)"."; }
+#subsec-derivative-of-multiclass-loss-function-3-2-2 > li { counter-increment: subsec-derivative-of-multiclass-loss-function-3-2-2; }
+#subsec-derivative-of-multiclass-loss-function-3-3-1 { counter-set: subsec-derivative-of-multiclass-loss-function-3-3-1 0; }
+#subsec-derivative-of-multiclass-loss-function-3-3-1 > li::marker { content: ""counter(subsec-derivative-of-multiclass-loss-function-3-3-1,decimal)"."; }
+#subsec-derivative-of-multiclass-loss-function-3-3-1 > li { counter-increment: subsec-derivative-of-multiclass-loss-function-3-3-1; }
 </style>
 </head>
 <body id="ML-Notes" class="pretext book ignore-math">
@@ -270,6 +276,7 @@ window.MathJax = {
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LLN-and-CLT.html#subsec-LLN-vs-CLT" class="internal"><span class="codenumber">1.9.3</span> <span class="title">LLN vs. CLT</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LLN-and-CLT.html#subsec-Berry-Esseen" class="internal"><span class="codenumber">1.9.4</span> <span class="title">Berry-Esseen Theorem</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LLN-and-CLT.html#subsec-Why-Large-n-Matters" class="internal"><span class="codenumber">1.9.5</span> <span class="title">Why LLN and CLT Matter?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LLN-and-CLT.html#subsec-Large-n-Binomial-Distribution" class="internal"><span class="codenumber">1.9.6</span> <span class="title">Large n Binomial Distribution</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -316,7 +323,59 @@ window.MathJax = {
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Hypothesis-Tests.html#subsec-chi-sq-goodness-of-fit-test" class="internal"><span class="codenumber">1.12.4</span> <span class="title">Chi Square Goodness of Fit Test</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-Additional-Mathematical-Techniques.html" class="internal"><span class="codenumber">1.13</span> <span class="title">Additional Mathematical Techniques</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Stats-Miscellaneous-Topics.html" class="internal"><span class="codenumber">1.13</span> <span class="title">Miscellaneous Topics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Stats-Miscellaneous-Topics.html#sec-Stats-Miscellaneous-Topics-3" class="internal"><span class="codenumber">1.13.1</span> <span class="title">Discrete Approximation to the Cumulative Distribution Function via Binning</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Stats-Miscellaneous-Topics.html#subsec-Moment-Generating-Function" class="internal"><span class="codenumber">1.13.2</span> <span class="title">Moment Generating Functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-Additional-Mathematical-Techniques.html" class="internal"><span class="codenumber">1.14</span> <span class="title">Additional Mathematical Techniques</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-supervised-learning-basics.html" class="internal"><span class="codenumber">2</span> <span class="title">Basics of Supervised Learning</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Statistical-Decision-Theory.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Statistical Decision Theory</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Statistical-Decision-Theory.html#subsec-Squared-Error-Loss-Function" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Regression</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Statistical-Decision-Theory.html#subsec-KNN-method" class="internal"><span class="codenumber">2.1.2</span> <span class="title">The kNN Method</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Statistical-Decision-Theory.html#subsec-The-Simple-Linear-Regresson" class="internal"><span class="codenumber">2.1.3</span> <span class="title">The Simple Linear Regresson</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Binary-Classification.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Binary Classification</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Binary-Classification.html#subsecThe-Classification-Variable" class="internal"><span class="codenumber">2.2.1</span> <span class="title">The Classification Variable <span class="process-math">\(Y\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Binary-Classification.html#subsec-binary-classification-scalar-feature" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Binary Classification with Scalar <span class="process-math">\(X\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Binary-Classification.html#subsec-gradient-descent" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Gradient Descent for Logistic Regression</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Multi-Feature Problems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Linear-Regression" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Multi-Feature Linear Regression</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Linear-Regression-3" class="internal"><span class="codenumber">2.3.1.1</span> <span class="title">Taking Derivatives With Respect To A Vector</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Logistic-Regression" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Multi-Feature Logistic Regression</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Logistic-Regression-3" class="internal"><span class="codenumber">2.3.2.1</span> <span class="title">Derivatives of the Loss Function</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsubsec-logistic-regression-multivariate" class="internal"><span class="codenumber">2.3.2.2</span> <span class="title">A Python Program for the Logistic Regression</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-MultiClass-Classification.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Multi-Class Classification</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-MultiClass-Classification.html#subsec-Loss-Function-of-Multi-class-Classification" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Loss Function of Multiclass Classification</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-MultiClass-Classification.html#subsec-derivative-of-multiclass-loss-function" class="internal"><span class="codenumber">2.4.2</span> <span class="title">Derivative of Multiclass Loss Function</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-MultiClass-Classification.html#subsec-Model-Evaluations" class="internal"><span class="codenumber">2.4.3</span> <span class="title">Model Evaluations</span></a></div></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
@@ -325,97 +384,97 @@ window.MathJax = {
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">1.9</span><span class="space"> </span><span class="title">Law of Large Numbers and Central Limit Theorem</span>
 </h2>
 <section class="introduction" id="sec-LLN-and-CLT-2"><div class="para" id="sec-LLN-and-CLT-2-1">The Law of Large Numbers (LLN) and Central Limit Theorem (CLT) are foundational results in probability and statistics, underpinning many inferential techniques. The LLN ensures that sample averages converge to the population mean, while the CLT describes the distribution of those averages as approximately normal for large samples. This section provides a detailed yet accessible exploration of these theorems, their assumptions, and their applications.</div> <div class="para" id="sec-LLN-and-CLT-2-2"><em class="alert">The Setup:</em></div> <div class="para logical" id="sec-LLN-and-CLT-2-3">
-<div class="para">Consider a sequence of independent and identically distributed (i.i.d.) random variables <span class="process-math">\(X_1, X_2, \dots, X_N\text{,}\)</span> each with the same probability distribution, mean <span class="process-math">\(\mu = \mathbb{E}[X_1]\text{,}\)</span> and variance <span class="process-math">\(\sigma^2 = \text{Var}(X_1)\text{,}\)</span> where <span class="process-math">\(\mathbb{E}[\cdot]\)</span> denotes the expected value. These will be called the <em class="alert">true mean</em> and the <em class="alert">true variance</em> as compared to their estimates from the <em class="alert">sample mean</em> random variable we have defined before:</div>
+<div class="para">Consider a sequence of independent and identically distributed (i.i.d.) random variables <span class="process-math">\(X_1, X_2, \dots, X_n\text{,}\)</span> each with the same probability distribution, mean <span class="process-math">\(\mu = \mathbb{E}[X_1]\text{,}\)</span> and variance <span class="process-math">\(\sigma^2 = \text{Var}(X_1)\text{,}\)</span> where <span class="process-math">\(\mathbb{E}[\cdot]\)</span> denotes the expected value. These will be called the <em class="alert">true mean</em> and the <em class="alert">true variance</em> as compared to their estimates from the <em class="alert">sample mean</em> random variable we have defined before:</div>
 <div class="displaymath process-math" id="eqn-sample-mean-random-variable">
 \begin{equation}
-\overline{X_N} = \frac{X_1 + X_2 + \cdots + X_N}{N} \equiv \frac{X_\text{sum}}{N}.\tag{1.9.1}
+\overline{X_n} = \frac{X_1 + X_2 + \cdots + X_n}{n} \equiv \frac{X_\text{sum}}{n}.\tag{1.9.1}
 \end{equation}
 </div>
-<div class="para">I want to emphasize again that the sample mean <span class="process-math">\(\overline{X_N}\)</span> is itself a random variable with its own distribution since it’s just a sum of other random variables divided by a scaler number. For instance, we have seen in the section on Discrete Random Variables, that if  <span class="process-math">\(X_i\)</span>’s were Bernoulli variables with probability <span class="process-math">\(p\)</span> and standard deviation <span class="process-math">\((\sigma = \sqrt{p(1-p)})\text{,}\)</span> <span class="process-math">\(\overline{X_N}\)</span> <span class="process-math">\(\sim\)</span> ScaledBinomial(N,p) with mean and variance as follows.</div>
+<div class="para">I want to emphasize again that the sample mean <span class="process-math">\(\overline{X_n}\)</span> is itself a random variable with its own distribution since it’s just a sum of other random variables divided by a scaler number. For instance, we have seen in the section on Discrete Random Variables, that if  <span class="process-math">\(X_i\)</span>’s were Bernoulli variables with probability <span class="process-math">\(p\)</span> and standard deviation <span class="process-math">\((\sigma = \sqrt{p(1-p)})\text{,}\)</span> <span class="process-math">\(\overline{X_n}\)</span> <span class="process-math">\(\sim\)</span> ScaledBinomial(n,p) with mean and variance as follows.</div>
 <div class="displaymath process-math" id="sec-LLN-and-CLT-2-3-15">
 \begin{align*}
-\amp \mathbb{E}[\overline{X_N}] =  \frac{\mathbb{E}[X_\text{sum}]}{N} = \frac{Np}{N} = p\\
-\amp \textrm{Var}(\overline{X_N}) = \frac{\textrm{Var}(X_\text{sum})}{N^2} =\frac{N p(1-p)}{N^2} =  \frac{p(1-p)}{N} = \frac{\sigma^2}{N}. 
+\amp \mathbb{E}[\overline{X_n}] =  \frac{\mathbb{E}[X_\text{sum}]}{n} = \frac{np}{n} = p\\
+\amp \textrm{Var}(\overline{X_n}) = \frac{\textrm{Var}(X_\text{sum})}{n^2} =\frac{n p(1-p)}{n^2} =  \frac{p(1-p)}{n} = \frac{\sigma^2}{n}. 
 \end{align*}
 </div>
-</div> <div class="para" id="sec-LLN-and-CLT-2-4">In the rest of this section we do not assume any particular distribution for the individual <span class="process-math">\(X_i\)</span> variables, except as required for the theorems we will study below. The Laws of Large Numbers (LLN) and Central Limit Theorem (CLT) describe the behavior of <span class="process-math">\(\overline{X_N}\)</span> as <span class="process-math">\(N\)</span> increases.</div> <div class="para" id="sec-LLN-and-CLT-2-5">The LLN and CLT require that the <span class="process-math">\(X_i\)</span> are independent and identically distributed (i.i.d.) with finite mean <span class="process-math">\(\mu\text{.}\)</span> The CLT additionally requires finite variance <span class="process-math">\(\sigma^2\text{,}\)</span> and the Strong LLN further requires a slightly stronger condition on the moments of <span class="process-math">\(X_i\text{.}\)</span>
+</div> <div class="para" id="sec-LLN-and-CLT-2-4">In the rest of this section we do not assume any particular distribution for the individual <span class="process-math">\(X_i\)</span> variables, except as required for the theorems we will study below. The Laws of Large Numbers (LLN) and Central Limit Theorem (CLT) describe the behavior of <span class="process-math">\(\overline{X_n}\)</span> as <span class="process-math">\(n\)</span> increases.</div> <div class="para" id="sec-LLN-and-CLT-2-5">The LLN and CLT require that the <span class="process-math">\(X_i\)</span> are independent and identically distributed (i.i.d.) with finite mean <span class="process-math">\(\mu\text{.}\)</span> The CLT additionally requires finite variance <span class="process-math">\(\sigma^2\text{,}\)</span> and the Strong LLN further requires a slightly stronger condition on the moments of <span class="process-math">\(X_i\text{.}\)</span>
 </div></section><section class="subsection" id="subsec-Law-of-Large-Numbers"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.9.1</span><span class="space"> </span><span class="title">The Law of Large Numbers (LLN)</span>
 </h3>
-<div class="para" id="subsec-Law-of-Large-Numbers-2">The LLN addresses the question: <em class="alert">What happens to the sample mean <span class="process-math">\(\overline{X_N}\)</span> as the sample size <span class="process-math">\(N\)</span> grows large?</em> It comes in two forms: the Weak LLN and the Strong LLN, which differ in their modes of convergence.</div>
+<div class="para" id="subsec-Law-of-Large-Numbers-2">The LLN addresses the question: <em class="alert">What happens to the sample mean <span class="process-math">\(\overline{X_n}\)</span> as the sample size <span class="process-math">\(n\)</span> grows large?</em> It comes in two forms: the Weak LLN and the Strong LLN, which differ in their modes of convergence.</div>
 <div class="para logical" id="subsec-Law-of-Large-Numbers-3">
 <div class="para">
-<em class="alert">Weak LLN:</em> The Weak LLN states that the probability that <span class="process-math">\(\overline{X_N}\)</span> deviates from the true mean <span class="process-math">\(\mu\)</span> by more than any positive amount <span class="process-math">\(\epsilon\)</span> approaches zero as <span class="process-math">\(n \to \infty\text{:}\)</span>
+<em class="alert">Weak LLN:</em> The Weak LLN states that the probability that <span class="process-math">\(\overline{X_n}\)</span> deviates from the true mean <span class="process-math">\(\mu\)</span> by more than any positive amount <span class="process-math">\(\epsilon\)</span> approaches zero as <span class="process-math">\(n \to \infty\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
-\lim_{n \to \infty} P(|\overline{X_N} - \mu| &gt; \epsilon) = 0, \quad \text{for all } \epsilon &gt; 0.
+\lim_{n \to \infty} P(|\overline{X_n} - \mu| &gt; \epsilon) = 0, \quad \text{for all } \epsilon &gt; 0.
 \end{equation*}
 </div>
 <div class="para">This is called convergence <em class="alert">in probability</em>, denoted:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\overline{X_N} \xrightarrow{P} \mu.
+\overline{X_n} \xrightarrow{P} \mu.
 \end{equation*}
 </div>
 </div>
 <div class="para logical" id="subsec-Law-of-Large-Numbers-4">
 <div class="para">
-<em class="alert">Strong LLN:</em> The Strong LLN states that the sequence of sample means <span class="process-math">\(\{ \cdots, \overline{X_{N}},\overline{X_{N+1}}, \overline{X_{N+2}}, \cdots   \}\)</span> converges to <span class="process-math">\(\mu\)</span> with probability 1 for larger and larger terms in the sequence.</div>
+<em class="alert">Strong LLN:</em> The Strong LLN states that the sequence of sample means <span class="process-math">\(\{ \cdots, \overline{X_{n}},\overline{X_{n+1}}, \overline{X_{n+2}}, \cdots   \}\)</span> converges to <span class="process-math">\(\mu\)</span> with probability 1 for larger and larger terms in the sequence.</div>
 <div class="displaymath process-math">
 \begin{equation*}
-P(\lim_{N \to \infty} \overline{X_N} = \mu) = 1.
+P(\lim_{n \to \infty} \overline{X_n} = \mu) = 1.
 \end{equation*}
 </div>
-<div class="para">This is called <em class="alert">almost sure convergence</em>, a stronger condition implying that almost all sample paths of <span class="process-math">\(\overline{X_N}\)</span> converge to <span class="process-math">\(\mu\text{.}\)</span>
+<div class="para">This is called <em class="alert">almost sure convergence</em>, a stronger condition implying that almost all sample paths of <span class="process-math">\(\overline{X_n}\)</span> converge to <span class="process-math">\(\mu\text{.}\)</span>
 </div>
 </div>
 <div class="para" id="subsec-Law-of-Large-Numbers-5">
-<em class="alert">Intuitive Example:</em> Consider tossing a fair coin with <span class="process-math">\(P(\text{heads}) = 0.5\text{,}\)</span> so <span class="process-math">\(X_i = 1\)</span> for heads and <span class="process-math">\(0\)</span> for tails, with <span class="process-math">\(\mu = E[X_i] = 0.5\text{.}\)</span> For <span class="process-math">\(n = 1\text{,}\)</span> <span class="process-math">\(\overline{X_1}= X_1\)</span> is either 0 or 1. For <span class="process-math">\(N = 10\text{,}\)</span> suppose we observe 7 heads, so <span class="process-math">\(\overline{X_{10}} = 7/10 = 0.7\text{.}\)</span> For <span class="process-math">\(N = 100\text{,}\)</span> we might get <span class="process-math">\(\overline{X_{100}} \approx 0.51\text{,}\)</span> and for <span class="process-math">\(N = 10,000\text{,}\)</span> <span class="process-math">\(\overline{X_{10,000}} \approx 0.5002\text{.}\)</span> As <span class="process-math">\(N\)</span> increases, <span class="process-math">\(\overline{X_N}\)</span> gets closer to <span class="process-math">\(\mu = 0.5\text{,}\)</span> illustrating the LLN. The Strong LLN guarantees this convergence occurs almost surely.</div>
+<em class="alert">Intuitive Example:</em> Consider tossing a fair coin with <span class="process-math">\(P(\text{heads}) = 0.5\text{,}\)</span> so <span class="process-math">\(X_i = 1\)</span> for heads and <span class="process-math">\(0\)</span> for tails, with <span class="process-math">\(\mu = E[X_i] = 0.5\text{.}\)</span> For <span class="process-math">\(n = 1\text{,}\)</span> <span class="process-math">\(\overline{X_1}= X_1\)</span> is either 0 or 1. For <span class="process-math">\(n = 10\text{,}\)</span> suppose we observe 7 heads, so <span class="process-math">\(\overline{X_{10}} = 7/10 = 0.7\text{.}\)</span> For <span class="process-math">\(n = 100\text{,}\)</span> we might get <span class="process-math">\(\overline{X_{100}} \approx 0.51\text{,}\)</span> and for <span class="process-math">\(n = 10,000\text{,}\)</span> <span class="process-math">\(\overline{X_{10,000}} \approx 0.5002\text{.}\)</span> As <span class="process-math">\(n\)</span> increases, <span class="process-math">\(\overline{X_n}\)</span> gets closer to <span class="process-math">\(\mu = 0.5\text{,}\)</span> illustrating the LLN. The Strong LLN guarantees this convergence occurs almost surely.</div>
 <div class="para" id="subsec-Law-of-Large-Numbers-6">
-<em class="alert">Visualization:</em> The following figure shows the sample mean of rolls of a fair six-sided die (with true mean <span class="process-math">\(\mu = (1+2+3+4+5+6)/6 = 3.5\)</span>) for increasing <span class="process-math">\(N\text{,}\)</span> converging to <span class="process-math">\(3.5\text{.}\)</span>
+<em class="alert">Visualization:</em> The following figure shows the sample mean of rolls of a fair six-sided die (with true mean <span class="process-math">\(\mu = (1+2+3+4+5+6)/6 = 3.5\)</span>) for increasing <span class="process-math">\(n\text{,}\)</span> converging to <span class="process-math">\(3.5\text{.}\)</span>
 </div>
 <figure class="figure figure-like" id="fig-die-rolls-sample-mean-vs-true-mean"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/die-rolls-sample-mean-vs-true-mean.png" class="contained" alt="Sample means of die rolls converging to 3.5."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.9.1<span class="period">.</span></span><span class="space"> </span>Illustration of the Law of Large Numbers: Sample means of fair six-sided die rolls converge to the true mean <span class="process-math">\(\mu = 3.5\)</span> as <span class="process-math">\(N\)</span> increases.</figcaption></figure></section><section class="subsection" id="subsec-Central-Limit-Theorem"><h3 class="heading hide-type">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.9.1<span class="period">.</span></span><span class="space"> </span>Illustration of the Law of Large Numbers: Sample means of fair six-sided die rolls converge to the true mean <span class="process-math">\(\mu = 3.5\)</span> as <span class="process-math">\(n\)</span> increases.</figcaption></figure></section><section class="subsection" id="subsec-Central-Limit-Theorem"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.9.2</span><span class="space"> </span><span class="title">Central Limit Theorem</span>
 </h3>
 <div class="para logical" id="subsec-Central-Limit-Theorem-2">
-<div class="para">The CLT states that for i.i.d. random variables <span class="process-math">\(X_1, X_2, \dots, X_N\)</span> with finite mean <span class="process-math">\(\mu\)</span> and finite variance <span class="process-math">\(\sigma^2\text{,}\)</span> the distribution of the sample mean <span class="process-math">\(\overline{X_N}\)</span> becomes approximately normal as <span class="process-math">\(N\)</span> increases:</div>
+<div class="para">The CLT states that for i.i.d. random variables <span class="process-math">\(X_1, X_2, \dots, X_n\)</span> with finite mean <span class="process-math">\(\mu\)</span> and finite variance <span class="process-math">\(\sigma^2\text{,}\)</span> the distribution of the sample mean <span class="process-math">\(\overline{X_n}\)</span> becomes approximately normal as <span class="process-math">\(n\)</span> increases:</div>
 <div class="displaymath process-math" id="eqn-CLT">
 \begin{equation}
-\overline{X_N} \xrightarrow{d} \mathcal{N}\left( \mu, \frac{\sigma^2}{N} \right),\tag{1.9.2}
+\overline{X_n} \xrightarrow{d} \mathcal{n}\left( \mu, \frac{\sigma^2}{n} \right),\tag{1.9.2}
 \end{equation}
 </div>
-<div class="para">where <span class="process-math">\(\xrightarrow{d}\)</span> denotes <dfn class="terminology">convergence in distribution</dfn>. By subtracting <span class="process-math">\(\mu\)</span> from the sample mean variable and dividing the result by <span class="process-math">\(\sigma/\sqrt{N}\text{,}\)</span> i.e., shifting and scaling, we obtain the standardized sample mean variable, usually denoted by letter <span class="process-math">\(Z\text{:}\)</span>
+<div class="para">where <span class="process-math">\(\xrightarrow{d}\)</span> denotes <dfn class="terminology">convergence in distribution</dfn>. By subtracting <span class="process-math">\(\mu\)</span> from the sample mean variable and dividing the result by <span class="process-math">\(\sigma/\sqrt{n}\text{,}\)</span> i.e., shifting and scaling, we obtain the standardized sample mean variable, usually denoted by letter <span class="process-math">\(Z\text{:}\)</span>
 </div>
 <div class="displaymath process-math" id="eqn-the-Zn-variable">
 \begin{equation}
-\overline{Z_N} = \frac{\sqrt{N} (\overline{X_N} - \mu)}{\sigma}.\tag{1.9.3}
+\overline{Z_n} = \frac{\sqrt{n} (\overline{X_n} - \mu)}{\sigma}.\tag{1.9.3}
 \end{equation}
 </div>
-<div class="para">It is easy to show that the standard sample mean <span class="process-math">\(\overline{Z_N}\)</span> converges to a standard normal distribution, which is usually easy to look up in numerical tables.</div>
+<div class="para">It is easy to show that the standard sample mean <span class="process-math">\(\overline{Z_n}\)</span> converges to a standard normal distribution, which is usually easy to look up in numerical tables.</div>
 <div class="displaymath process-math" id="eqn-the-normalized-CLT">
 \begin{equation}
-\overline{Z_N} \xrightarrow{d} \mathcal{N}(0, 1).\tag{1.9.4}
+\overline{Z_n} \xrightarrow{d} \mathcal{n}(0, 1).\tag{1.9.4}
 \end{equation}
 </div>
-<div class="para">The probability density of <span class="process-math">\(\overline{X_N}\)</span> for large <span class="process-math">\(N\)</span> is approximately:</div>
+<div class="para">The probability density of <span class="process-math">\(\overline{X_n}\)</span> for large <span class="process-math">\(n\)</span> is approximately:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\rho_{\overline{X_N}}(x) \approx \frac{1}{\sqrt{2\pi \sigma^2 / N}} \exp\left( -\frac{(x - \mu)^2}{2 \sigma^2 / N} \right).
+\rho_{\overline{X_n}}(x) \approx \frac{1}{\sqrt{2\pi \sigma^2 / n}} \exp\left( -\frac{(x - \mu)^2}{2 \sigma^2 / n} \right).
 \end{equation*}
 </div>
-<div class="para">The cumulative distribution function (CDF) of <span class="process-math">\(\overline{Z_N}\)</span> is:</div>
+<div class="para">The cumulative distribution function (CDF) of <span class="process-math">\(\overline{Z_n}\)</span> is:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-P(\overline{Z_N} \leq z) \approx \Phi(z) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^z  \exp\left( -\frac{t^2}{2} \right) dt.
+P(\overline{Z_n} \leq z) \approx \Phi(z) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^z  \exp\left( -\frac{t^2}{2} \right) dt.
 \end{equation*}
 </div>
 </div>
 <div class="para" id="subsec-Central-Limit-Theorem-3">The CLT is remarkable because it holds regardless of the underlying distribution of <span class="process-math">\(X_i\)</span> (e.g., Bernoulli, exponential, or normal), as long as <span class="process-math">\(\mu\)</span> and <span class="process-math">\(\sigma^2\)</span> are finite. <em class="emphasis">This explains why normal distributions appear in phenomena like measurement errors, test scores, or heights, which are aggregates of many small random effects. Hence, the name Normal!</em>
 </div>
 <div class="para" id="subsec-Central-Limit-Theorem-4">
-<em class="alert">Visualization:</em> <a href="sec-LLN-and-CLT.html#fig-clt-convergence" class="xref" data-knowl="./knowl/xref/fig-clt-convergence.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.9.2">Figure 1.9.2</a> shows histograms of <span class="process-math">\(\overline{X_N}\)</span> for a fair six-sided die for different sample sizes, illustrating convergence to a normal distribution.</div>
+<em class="alert">Visualization:</em> <a href="sec-LLN-and-CLT.html#fig-clt-convergence" class="xref" data-knowl="./knowl/xref/fig-clt-convergence.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.9.2">Figure 1.9.2</a> shows histograms of <span class="process-math">\(\overline{X_n}\)</span> for a fair six-sided die for different sample sizes, illustrating convergence to a normal distribution.</div>
 <figure class="figure figure-like" id="fig-clt-convergence"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/clt-convergence.png" class="contained" alt="Histograms showing CLT convergence for die rolls."></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.9.2<span class="period">.</span></span><span class="space"> </span>Histograms of sample means of fair six-sided die rolls for <span class="process-math">\(n = 10, 100, 500\text{,}\)</span> visually showing convergence to a normal distribution per the CLT.</figcaption></figure></section><section class="subsection" id="subsec-LLN-vs-CLT"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.9.3</span><span class="space"> </span><span class="title">LLN vs. CLT</span>
@@ -424,9 +483,9 @@ P(\overline{Z_N} \leq z) \approx \Phi(z) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^
 <div class="para">The LLN and CLT are complementary:</div>
 <ul class="disc" id="subsec-LLN-vs-CLT-2-1">
 <li id="subsec-LLN-vs-CLT-2-1-1"><div class="para" id="subsec-LLN-vs-CLT-2-1-1-1">
-<em class="alert">LLN:</em> Ensures that <span class="process-math">\(\overline{X_N} \to \mu\)</span> (in probability or almost surely), describing the convergence of the sample mean to the true mean.</div></li>
+<em class="alert">LLN:</em> Ensures that <span class="process-math">\(\overline{X_n} \to \mu\)</span> (in probability or almost surely), describing the convergence of the sample mean to the true mean.</div></li>
 <li id="subsec-LLN-vs-CLT-2-1-2"><div class="para" id="subsec-LLN-vs-CLT-2-1-2-1">
-<em class="alert">CLT:</em> Describes the distribution of fluctuations around <span class="process-math">\(\mu\text{,}\)</span> stating that <span class="process-math">\(\sqrt{N} (\overline{X_N} - \mu) / \sigma \xrightarrow{d} \mathcal{N}(0, 1)\text{,}\)</span> with deviations of order <span class="process-math">\(1/\sqrt{N}\text{.}\)</span>
+<em class="alert">CLT:</em> Describes the distribution of fluctuations around <span class="process-math">\(\mu\text{,}\)</span> stating that <span class="process-math">\(\sqrt{n} (\overline{X_n} - \mu) / \sigma \xrightarrow{d} \mathcal{n}(0, 1)\text{,}\)</span> with deviations of order <span class="process-math">\(1/\sqrt{n}\text{.}\)</span>
 </div></li>
 </ul>
 <div class="para">In essence, the LLN tells us where the sample mean goes, while the CLT tells us how it fluctuates around that value.</div>
@@ -434,31 +493,31 @@ P(\overline{Z_N} \leq z) \approx \Phi(z) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.9.4</span><span class="space"> </span><span class="title">Berry-Esseen Theorem</span>
 </h3>
 <div class="para logical" id="subsec-Berry-Esseen-2">
-<div class="para">The CLT states that <span class="process-math">\(\overline{X_N}\)</span> is approximately normal for large <span class="process-math">\(N\text{,}\)</span> but how large must <span class="process-math">\(N\)</span> be? The Berry-Esseen Theorem quantifies the rate of convergence. Let</div>
+<div class="para">The CLT states that <span class="process-math">\(\overline{X_n}\)</span> is approximately normal for large <span class="process-math">\(n\text{,}\)</span> but how large must <span class="process-math">\(n\)</span> be? The Berry-Esseen Theorem quantifies the rate of convergence. Let</div>
 <div class="displaymath process-math">
 \begin{equation*}
-S_N = \frac{X_1 + \cdots + X_N - N\,\mu}{\sigma \sqrt{N}}
+S_n = \frac{X_1 + \cdots + X_n - n\,\mu}{\sigma \sqrt{n}}
 \end{equation*}
 </div>
-<div class="para">be the standardized sum, with CDF <span class="process-math">\(F_N(x) = P(S_N \leq x)\text{.}\)</span> The theorem states:</div>
+<div class="para">be the standardized sum, with CDF <span class="process-math">\(F_n(x) = P(S_n \leq x)\text{.}\)</span> The theorem states:</div>
 <div class="displaymath process-math" id="eqn-Berry-Esseen-Theorem">
 \begin{equation}
-\sup_{x \in \mathbb{R}} \left|F_N(x) - \Phi(x)\right| \leq \frac{C \rho}{\sigma^3 \sqrt{N}},\tag{1.9.5}
+\sup_{x \in \mathbb{R}} \left|F_n(x) - \Phi(x)\right| \leq \frac{C \rho}{\sigma^3 \sqrt{n}},\tag{1.9.5}
 \end{equation}
 </div>
-<div class="para">where <span class="process-math">\(\rho = \mathbb{E}\left[\left|X_i - \mu\right|^3\right]\)</span> is the third absolute moment, <span class="process-math">\(\Phi(x)\)</span> is the standard normal CDF, and <span class="process-math">\(C\)</span> is a constant (<span class="process-math">\(C \leq 0.4748\text{,}\)</span> Shevtsova 2011). This implies that the error in the normal approximation decreases as <span class="process-math">\(1/\sqrt{N}\text{,}\)</span> modulated by the “tail-heaviness” factor <span class="process-math">\(\rho / \sigma^3\text{.}\)</span>
+<div class="para">where <span class="process-math">\(\rho = \mathbb{E}\left[\left|X_i - \mu\right|^3\right]\)</span> is the third absolute moment, <span class="process-math">\(\Phi(x)\)</span> is the standard normal CDF, and <span class="process-math">\(C\)</span> is a constant (<span class="process-math">\(C \leq 0.4748\text{,}\)</span> Shevtsova 2011). This implies that the error in the normal approximation decreases as <span class="process-math">\(1/\sqrt{n}\text{,}\)</span> modulated by the “tail-heaviness” factor <span class="process-math">\(\rho / \sigma^3\text{.}\)</span>
 </div>
 </div>
-<div class="para" id="subsec-Berry-Esseen-3">For example, for a fair six-sided die, <span class="process-math">\(\rho\)</span> is finite, and for <span class="process-math">\(N= 100\text{,}\)</span> the approximation error is small, ensuring reliable use of the CLT in practice.</div></section><section class="subsection" id="subsec-Why-Large-n-Matters"><h3 class="heading hide-type">
+<div class="para" id="subsec-Berry-Esseen-3">For example, for a fair six-sided die, <span class="process-math">\(\rho\)</span> is finite, and for <span class="process-math">\(n= 100\text{,}\)</span> the approximation error is small, ensuring reliable use of the CLT in practice.</div></section><section class="subsection" id="subsec-Why-Large-n-Matters"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.9.5</span><span class="space"> </span><span class="title">Why LLN and CLT Matter?</span>
 </h3>
 <div class="para" id="subsec-Why-Large-n-Matters-2">
 <em class="alert">LLN Applications:</em> The LLN justifies using sample means to estimate population means. For example, in polling, we survey a sample to estimate voter preferences. The LLN ensures that with a large enough sample, the sample mean is close to the true population mean, giving us confidence that the result can be used for decision making.</div>
-<div class="para" id="subsec-Why-Large-n-Matters-3">Consider rolling a fair six-sided die with true mean <span class="process-math">\(\mu = (1+2+3+4+5+6)/6 = 3.5\)</span> and variance <span class="process-math">\(\sigma^2 = \frac{1}{6} \sum_{i=1}^6 (i - 3.5)^2 = \frac{35}{12} \approx 2.9167\text{.}\)</span> For <span class="process-math">\(N = 100\)</span> rolls, suppose we compute <span class="process-math">\(\overline{X}_{100} = 3.6\text{.}\)</span> The LLN suggests <span class="process-math">\(\overline{X_{100}}\)</span> would be approximately <span class="process-math">\(3.5\text{.}\)</span> <a href="sec-LLN-and-CLT.html#fig-die-rolls-sample-mean-vs-true-mean" class="xref" data-knowl="./knowl/xref/fig-die-rolls-sample-mean-vs-true-mean.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.9.1">Figure 1.9.1</a>illustrates this convergence.</div>
+<div class="para" id="subsec-Why-Large-n-Matters-3">Consider rolling a fair six-sided die with true mean <span class="process-math">\(\mu = (1+2+3+4+5+6)/6 = 3.5\)</span> and variance <span class="process-math">\(\sigma^2 = \frac{1}{6} \sum_{i=1}^6 (i - 3.5)^2 = \frac{35}{12} \approx 2.9167\text{.}\)</span> For <span class="process-math">\(n = 100\)</span> rolls, suppose we compute <span class="process-math">\(\overline{X}_{100} = 3.6\text{.}\)</span> The LLN suggests <span class="process-math">\(\overline{X_{100}}\)</span> would be approximately <span class="process-math">\(3.5\text{.}\)</span> <a href="sec-LLN-and-CLT.html#fig-die-rolls-sample-mean-vs-true-mean" class="xref" data-knowl="./knowl/xref/fig-die-rolls-sample-mean-vs-true-mean.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.9.1">Figure 1.9.1</a>illustrates this convergence.</div>
 <div class="para" id="subsec-Why-Large-n-Matters-4">In statistical mechanics, the LLN applies to time averages in ergodic systems, ensuring that long-term observations of a particle’s behavior approximate the population average.</div>
 <div class="para logical" id="subsec-Why-Large-n-Matters-5">
 <div class="para">
-<em class="alert">CLT and Confidence Intervals:</em> The CLT enables us to quantify uncertainty in sample means via confidence intervals. We will cover the concwept of Confidence Interval in greater detail in the section on Inferential Statistics. Here, we just show an application. For the die example, suppose we roll <span class="process-math">\(N = 100\)</span> times and compute <span class="process-math">\(\overline{X_{100}} = 3.6\)</span> and sample standard deviation</div>
+<em class="alert">CLT and Confidence Intervals:</em> The CLT enables us to quantify uncertainty in sample means via confidence intervals. We will cover the concwept of Confidence Interval in greater detail in the section on Inferential Statistics. Here, we just show an application. For the die example, suppose we roll <span class="process-math">\(n = 100\)</span> times and compute <span class="process-math">\(\overline{X_{100}} = 3.6\)</span> and sample standard deviation</div>
 <div class="displaymath process-math">
 \begin{equation*}
 s = \sqrt{\frac{1}{99} \sum_{i=1}^{100} (X_i - 3.6)^2}.
@@ -467,7 +526,7 @@ s = \sqrt{\frac{1}{99} \sum_{i=1}^{100} (X_i - 3.6)^2}.
 <div class="para">Using the sample standard deviation <span class="process-math">\(s \approx \sqrt{2.9167} \approx 1.7078\text{,}\)</span> the <dfn class="terminology">standard error (SE)</dfn> is</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\textrm{SE} =  \frac{s}{\sqrt{N}} \approx 1.7078 / \sqrt{100} = 0.17078\text{.}
+\textrm{SE} =  \frac{s}{\sqrt{n}} \approx 1.7078 / \sqrt{100} = 0.17078\text{.}
 \end{equation*}
 </div>
 <div class="para">A <span class="process-math">\(95\%\)</span> confidence interval in this case will be:</div>
@@ -521,7 +580,10 @@ plt.show()
 </code></pre></div>
 <figure class="figure figure-like" id="fig-confidence-interval-die-roll"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/confidence-interval-die-roll.png" class="contained" alt="Histogram of die roll sample means with 95% CI."></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.9.3<span class="period">.</span></span><span class="space"> </span>Histogram of sample means from 10,000 trials of 100 fair six-sided die rolls, with a 95% confidence interval (dashed lines and arrow) around the estimated mean.</figcaption></figure><div class="para" id="subsec-Why-Large-n-Matters-9">
-<em class="alert">Other Applications:</em> The CLT is crucial for hypothesis testing (e.g., z-tests) and approximating probabilities for sums of random variables, such as total customer purchases in a store.</div></section></section></div>
+<em class="alert">Other Applications:</em> The CLT is crucial for hypothesis testing (e.g., z-tests) and approximating probabilities for sums of random variables, such as total customer purchases in a store.</div></section><section class="subsection" id="subsec-Large-n-Binomial-Distribution"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.9.6</span><span class="space"> </span><span class="title">Large n Binomial Distribution</span>
+</h3>
+<div class="para" id="subsec-Large-n-Binomial-Distribution-2"></div></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec-Continuous-Probability-Distributions.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-t-and-chi-square.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

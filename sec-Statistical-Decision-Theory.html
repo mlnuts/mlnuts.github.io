@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Statistical Decision Theory</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="ML Notes">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.css" integrity="sha512-cbQXwDFK7lj2Fqfkuxbo5iD1dSbLlJGXGpfTDqbggqjHJeyzx88I3rfwjS38WJag/ihH7lzuGlGHpDBymLirZQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.css" integrity="sha512-nXlJLUeqPMp1Q3+Bd8Qds8tXeRVQscMscwysJm821C++9w6WtsFbJjPenZ8cQVMXyqSAismveQJc0C1splFDCA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/colors_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
+<style>
+#subsec-Central-Tendency-3 { counter-set: subsec-Central-Tendency-3 0; }
+#subsec-Central-Tendency-3 > li::marker { content: ""counter(subsec-Central-Tendency-3,decimal)"."; }
+#subsec-Central-Tendency-3 > li { counter-increment: subsec-Central-Tendency-3; }
+#subsec-Dispersion-3 { counter-set: subsec-Dispersion-3 0; }
+#subsec-Dispersion-3 > li::marker { content: ""counter(subsec-Dispersion-3,decimal)"."; }
+#subsec-Dispersion-3 > li { counter-increment: subsec-Dispersion-3; }
+#subsec-Pandas-2-1-1 { counter-set: subsec-Pandas-2-1-1 0; }
+#subsec-Pandas-2-1-1 > li::marker { content: ""counter(subsec-Pandas-2-1-1,decimal)"."; }
+#subsec-Pandas-2-1-1 > li { counter-increment: subsec-Pandas-2-1-1; }
+#subsec-Pandas-4-2 { counter-set: subsec-Pandas-4-2 0; }
+#subsec-Pandas-4-2 > li::marker { content: ""counter(subsec-Pandas-4-2,decimal)"."; }
+#subsec-Pandas-4-2 > li { counter-increment: subsec-Pandas-4-2; }
+#sec-Numerical-and-Categorical-Data-2-1-1 { counter-set: sec-Numerical-and-Categorical-Data-2-1-1 0; }
+#sec-Numerical-and-Categorical-Data-2-1-1 > li::marker { content: ""counter(sec-Numerical-and-Categorical-Data-2-1-1,decimal)"."; }
+#sec-Numerical-and-Categorical-Data-2-1-1 > li { counter-increment: sec-Numerical-and-Categorical-Data-2-1-1; }
+#subsec-Axiomatic-View-of-Probability-7-2 { counter-set: subsec-Axiomatic-View-of-Probability-7-2 0; }
+#subsec-Axiomatic-View-of-Probability-7-2 > li::marker { content: ""counter(subsec-Axiomatic-View-of-Probability-7-2,decimal)""; }
+#subsec-Axiomatic-View-of-Probability-7-2 > li { counter-increment: subsec-Axiomatic-View-of-Probability-7-2; }
+#subsec-three-types-of-probabilities-3 { counter-set: subsec-three-types-of-probabilities-3 0; }
+#subsec-three-types-of-probabilities-3 > li::marker { content: ""counter(subsec-three-types-of-probabilities-3,decimal)"."; }
+#subsec-three-types-of-probabilities-3 > li { counter-increment: subsec-three-types-of-probabilities-3; }
+#subsub-Poisson-Process-3-5 { counter-set: subsub-Poisson-Process-3-5 0; }
+#subsub-Poisson-Process-3-5 > li::marker { content: ""counter(subsub-Poisson-Process-3-5,decimal)"."; }
+#subsub-Poisson-Process-3-5 > li { counter-increment: subsub-Poisson-Process-3-5; }
+#subsub-Poisson-Process-4-2 { counter-set: subsub-Poisson-Process-4-2 0; }
+#subsub-Poisson-Process-4-2 > li::marker { content: ""counter(subsub-Poisson-Process-4-2,decimal)"."; }
+#subsub-Poisson-Process-4-2 > li { counter-increment: subsub-Poisson-Process-4-2; }
+#exp-Waiting-Time-for-the-Third-Help-Desk-Call-2-2 { counter-set: exp-Waiting-Time-for-the-Third-Help-Desk-Call-2-2 0; }
+#exp-Waiting-Time-for-the-Third-Help-Desk-Call-2-2 > li::marker { content: ""counter(exp-Waiting-Time-for-the-Third-Help-Desk-Call-2-2,lower-alpha)""; }
+#exp-Waiting-Time-for-the-Third-Help-Desk-Call-2-2 > li { counter-increment: exp-Waiting-Time-for-the-Third-Help-Desk-Call-2-2; }
+#sec-Point-Estimates-and-Confidence-Intervals-2-2-1 { counter-set: sec-Point-Estimates-and-Confidence-Intervals-2-2-1 0; }
+#sec-Point-Estimates-and-Confidence-Intervals-2-2-1 > li::marker { content: ""counter(sec-Point-Estimates-and-Confidence-Intervals-2-2-1,decimal)"."; }
+#sec-Point-Estimates-and-Confidence-Intervals-2-2-1 > li { counter-increment: sec-Point-Estimates-and-Confidence-Intervals-2-2-1; }
+#subsubsec-Z-Intervals-6-2-1 { counter-set: subsubsec-Z-Intervals-6-2-1 0; }
+#subsubsec-Z-Intervals-6-2-1 > li::marker { content: ""counter(subsubsec-Z-Intervals-6-2-1,decimal)"."; }
+#subsubsec-Z-Intervals-6-2-1 > li { counter-increment: subsubsec-Z-Intervals-6-2-1; }
+#sec-Hypothesis-Tests-2-3-1 { counter-set: sec-Hypothesis-Tests-2-3-1 0; }
+#sec-Hypothesis-Tests-2-3-1 > li::marker { content: ""counter(sec-Hypothesis-Tests-2-3-1,decimal)"."; }
+#sec-Hypothesis-Tests-2-3-1 > li { counter-increment: sec-Hypothesis-Tests-2-3-1; }
+#sec-Hypothesis-Tests-2-6-1 { counter-set: sec-Hypothesis-Tests-2-6-1 0; }
+#sec-Hypothesis-Tests-2-6-1 > li::marker { content: ""counter(sec-Hypothesis-Tests-2-6-1,decimal)"."; }
+#sec-Hypothesis-Tests-2-6-1 > li { counter-increment: sec-Hypothesis-Tests-2-6-1; }
+#subsec-derivative-of-multiclass-loss-function-3-2-2 { counter-set: subsec-derivative-of-multiclass-loss-function-3-2-2 0; }
+#subsec-derivative-of-multiclass-loss-function-3-2-2 > li::marker { content: ""counter(subsec-derivative-of-multiclass-loss-function-3-2-2,decimal)"."; }
+#subsec-derivative-of-multiclass-loss-function-3-2-2 > li { counter-increment: subsec-derivative-of-multiclass-loss-function-3-2-2; }
+#subsec-derivative-of-multiclass-loss-function-3-3-1 { counter-set: subsec-derivative-of-multiclass-loss-function-3-3-1 0; }
+#subsec-derivative-of-multiclass-loss-function-3-3-1 > li::marker { content: ""counter(subsec-derivative-of-multiclass-loss-function-3-3-1,decimal)"."; }
+#subsec-derivative-of-multiclass-loss-function-3-3-1 > li { counter-increment: subsec-derivative-of-multiclass-loss-function-3-3-1; }
+</style>
+</head>
+<body id="ML-Notes" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="my-ML-Notes.html"><span class="title">ML Notes:</span> <span class="subtitle">Theoretical and Practical ML Concepts</span></a></h1>
+<p class="byline"></p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="ch-supervised-learning-basics.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-supervised-learning-basics.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-Binary-Classification.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-Essential-Probability-and-Statistics.html" class="internal"><span class="codenumber">1</span> <span class="title">Essential Probability and Statistics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Descriptive-Statistics.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Descriptive Statistics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Descriptive-Statistics.html#subsec-Central-Tendency" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Measures of Central Tendency</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Descriptive-Statistics.html#subsec-Dispersion" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Measures of Dispersion</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Descriptive-Statistics.html#subsec-Distribution-Shape" class="internal"><span class="codenumber">1.1.3</span> <span class="title">Distribution Shape</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-Descriptive-Statistics.html#kurtosis" class="internal"><span class="codenumber">1.1.4</span> <span class="title">Kurtosis: Checking Out the Tails</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Descriptive-Statistics.html#types-of-kurtosis" class="internal"><span class="codenumber">1.1.4.1</span> <span class="title">Types of Kurtosis</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Descriptive-Statistics.html#kurtosis-formula" class="internal"><span class="codenumber">1.1.4.2</span> <span class="title">How’s It Calculated?</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Descriptive-Statistics.html#kurtosis-examples" class="internal"><span class="codenumber">1.1.4.3</span> <span class="title">Real-World Examples</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Descriptive-Statistics.html#kurtosis-visual" class="internal"><span class="codenumber">1.1.4.4</span> <span class="title">Seeing Kurtosis in Action</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Descriptive-Statistics.html#kurtosis-python" class="internal"><span class="codenumber">1.1.4.5</span> <span class="title">Calculating Kurtosis with Python</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Descriptive-Statistics.html#kurtosis-wrapup" class="internal"><span class="codenumber">1.1.4.6</span> <span class="title">Why Kurtosis Matters</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-useful-descriptive-statistics-tools.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Computation and Visualization Tools</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-useful-descriptive-statistics-tools.html#sec-useful-descriptive-statistics-tools-3" class="internal"><span class="codenumber">1.2.1</span> <span class="title">The Power of NumPy and SciPy</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-useful-descriptive-statistics-tools.html#subsec-Pandas" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Pandas: Data Manipulation and Analysis</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-useful-descriptive-statistics-tools.html#subsec-Visualization" class="internal"><span class="codenumber">1.2.3</span> <span class="title">Visualization with Matplotlib and Seaborn</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Numerical-and-Categorical-Data.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Numerical and Categorical Data</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Numerical-and-Categorical-Data.html#subsec-Categorical-Data" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Categorical Data and One-Hot Encoding</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Numerical-and-Categorical-Data.html#subsec-Ordinal-Data" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Ordinal Data and Safe Encoding</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Numerical-and-Categorical-Data.html#subsec-Numerical-Data" class="internal"><span class="codenumber">1.3.3</span> <span class="title">Numerical Data: Discrete vs Continuous</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Numerical-and-Categorical-Data.html#subsec-data-type-summary" class="internal"><span class="codenumber">1.3.4</span> <span class="title">Data Type Summary</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Basic-Probability.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Basic Probability for Machine Learning</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Basic-Probability.html#subsec-Axiomatic-View-of-Probability" class="internal"><span class="codenumber">1.4.1</span> <span class="title">Axiomatic View of Probability</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Basic-Probability.html#subsec-sum-product-rules" class="internal"><span class="codenumber">1.4.2</span> <span class="title">Sum and Product Rules for Probability</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Basic-Probability.html#subsec-conditional-probability-independence" class="internal"><span class="codenumber">1.4.3</span> <span class="title">Conditional Probability and Independence</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Basic-Probability.html#subsec-probability-distributions" class="internal"><span class="codenumber">1.4.4</span> <span class="title">Probability Distributions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Basic-Probability.html#subsec-three-types-of-probabilities" class="internal"><span class="codenumber">1.4.5</span> <span class="title">Three Types of Probabilities</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Random-Variables-and-Probabilities.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Random Variables and Probabilities</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Random-Variables-and-Probabilities.html#subsec-Random-Variables" class="internal"><span class="codenumber">1.5.1</span> <span class="title">Random Variables, Probabilities, and Expectations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Random-Variables-and-Probabilities.html#subsec-Probability-Mass-Function" class="internal"><span class="codenumber">1.5.2</span> <span class="title">Probability Mass Function</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Random-Variables-and-Probabilities.html#subsec-Expectation-Values" class="internal"><span class="codenumber">1.5.3</span> <span class="title">Expectation Values</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Random-Variables-and-Probabilities.html#subsec-Probability-Distribution-of-Continuous-Variable" class="internal"><span class="codenumber">1.5.4</span> <span class="title">Probability Density of Continuous Variables</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Random-Variables-and-Probabilities.html#subsec-Cumulative-Distribution-Function" class="internal"><span class="codenumber">1.5.5</span> <span class="title">Cumulative Distribution Function (CDF)</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Two-or-More-Random-Variables.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Two or More Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Two-or-More-Random-Variables.html#subsec-Joint-Probability" class="internal"><span class="codenumber">1.6.1</span> <span class="title">Joint Probability</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Two-or-More-Random-Variables.html#subsec-Marginal-Probability" class="internal"><span class="codenumber">1.6.2</span> <span class="title">Marginal Probability</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Two-or-More-Random-Variables.html#subsec-Conditional-Probability" class="internal"><span class="codenumber">1.6.3</span> <span class="title">Conditional Probability</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Two-or-More-Random-Variables.html#subsec-conditional-probability-from-joint-probability" class="internal"><span class="codenumber">1.6.4</span> <span class="title">Bayes’ Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Two-or-More-Random-Variables.html#subsec-Independent-Variables" class="internal"><span class="codenumber">1.6.5</span> <span class="title">Independent Random Variables</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Two-or-More-Random-Variables.html#subsec-Covariance-and-Correlation" class="internal"><span class="codenumber">1.6.6</span> <span class="title">Covariance and Correlation</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Example-Discrete-Probability-Distributions.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Discrete Probability Distributions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Example-Discrete-Probability-Distributions.html#subsec-Bernoulli-Distribution" class="internal"><span class="codenumber">1.7.1</span> <span class="title">Bernoulli Distribution</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-Example-Discrete-Probability-Distributions.html#subsec-Binomial-Distribution" class="internal"><span class="codenumber">1.7.2</span> <span class="title">Binomial Distribution</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Example-Discrete-Probability-Distributions.html#subsubsec-Average-of-Random-Variables" class="internal"><span class="codenumber">1.7.2.1</span> <span class="title">Average of Random Variables</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Example-Discrete-Probability-Distributions.html#subsec-Multinomial-Distribution" class="internal"><span class="codenumber">1.7.3</span> <span class="title">Multinomial/Categorical Distribution</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-Example-Discrete-Probability-Distributions.html#subsec-Poisson-Distribution" class="internal"><span class="codenumber">1.7.4</span> <span class="title">Poisson Distribution</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Example-Discrete-Probability-Distributions.html#subsub-Poisson-Process" class="internal"><span class="codenumber">1.7.4.1</span> <span class="title">Poisson Process</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Continuous-Probability-Distributions.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Continuous Probability Distributions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-Continuous-Probability-Distributions.html#subsec-Uniform-Distribution" class="internal"><span class="codenumber">1.8.1</span> <span class="title">Uniform Distribution</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Continuous-Probability-Distributions.html#subsubsec-Inverse-Uniform-CDF" class="internal"><span class="codenumber">1.8.1.1</span> <span class="title">Inverse Uniform CDF</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-Continuous-Probability-Distributions.html#subsec-Normal-Distribution" class="internal"><span class="codenumber">1.8.2</span> <span class="title">Normal (Gaussian) Distribution</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Continuous-Probability-Distributions.html#subsubsec-Inverse-CDF-and-Sampling" class="internal"><span class="codenumber">1.8.2.1</span> <span class="title">Inverse CDF of Gaussian and Sampling</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Continuous-Probability-Distributions.html#subsec-Exponential-Distribution" class="internal"><span class="codenumber">1.8.3</span> <span class="title">Exponential Distribution</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Continuous-Probability-Distributions.html#subsec-Gamma-Distribution" class="internal"><span class="codenumber">1.8.4</span> <span class="title">Gamma Distribution</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-LLN-and-CLT.html" class="internal"><span class="codenumber">1.9</span> <span class="title">Law of Large Numbers and Central Limit Theorem</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LLN-and-CLT.html#subsec-Law-of-Large-Numbers" class="internal"><span class="codenumber">1.9.1</span> <span class="title">The Law of Large Numbers (LLN)</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LLN-and-CLT.html#subsec-Central-Limit-Theorem" class="internal"><span class="codenumber">1.9.2</span> <span class="title">Central Limit Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LLN-and-CLT.html#subsec-LLN-vs-CLT" class="internal"><span class="codenumber">1.9.3</span> <span class="title">LLN vs. CLT</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LLN-and-CLT.html#subsec-Berry-Esseen" class="internal"><span class="codenumber">1.9.4</span> <span class="title">Berry-Esseen Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LLN-and-CLT.html#subsec-Why-Large-n-Matters" class="internal"><span class="codenumber">1.9.5</span> <span class="title">Why LLN and CLT Matter?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LLN-and-CLT.html#subsec-Large-n-Binomial-Distribution" class="internal"><span class="codenumber">1.9.6</span> <span class="title">Large n Binomial Distribution</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-t-and-chi-square.html" class="internal"><span class="codenumber">1.10</span> <span class="title">Chi Square and Student t Distributions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-t-and-chi-square.html#subsec-Chi-Sqaure-Distribition" class="internal"><span class="codenumber">1.10.1</span> <span class="title">Chi Sqaure Distribition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-t-and-chi-square.html#subsec-t-ditribution" class="internal"><span class="codenumber">1.10.2</span> <span class="title">t-ditribution</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Point-Estimates-and-Confidence-Intervals.html" class="internal"><span class="codenumber">1.11</span> <span class="title">Point Estimates and Confidence Intervals</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-Point-Estimates-and-Confidence-Intervals.html#subsec-Parameter-Estimation" class="internal"><span class="codenumber">1.11.1</span> <span class="title">Parameter Estimation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Point-Estimates-and-Confidence-Intervals.html#subsubsec-Basic-Setup" class="internal"><span class="codenumber">1.11.1.1</span> <span class="title">Basic Setup</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Point-Estimates-and-Confidence-Intervals.html#subsubsec-Maximum-Likelihood-Estimate" class="internal"><span class="codenumber">1.11.1.2</span> <span class="title">Maximum Likelihood Estimate</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-Point-Estimates-and-Confidence-Intervals.html#subsec-Confidence-Interval" class="internal"><span class="codenumber">1.11.2</span> <span class="title">Confidence Interval</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Point-Estimates-and-Confidence-Intervals.html#subsubsec-Z-Intervals" class="internal"><span class="codenumber">1.11.2.1</span> <span class="title">The Z Intervals</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Point-Estimates-and-Confidence-Intervals.html#subsubsec-t-Intervals" class="internal"><span class="codenumber">1.11.2.2</span> <span class="title">The t-Intervals</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-Point-Estimates-and-Confidence-Intervals.html#subsec-Difference-Between-Two-Means" class="internal"><span class="codenumber">1.11.3</span> <span class="title">Difference Between Two Means</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Point-Estimates-and-Confidence-Intervals.html#subsubsec-Equal-Variance-Populations" class="internal"><span class="codenumber">1.11.3.1</span> <span class="title">Equal Variance Populations: Pooled t-test</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Point-Estimates-and-Confidence-Intervals.html#subsec-Welch-t-test" class="internal"><span class="codenumber">1.11.3.2</span> <span class="title">Welch t test</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Point-Estimates-and-Confidence-Intervals.html#subsec-Estimating-Variance" class="internal"><span class="codenumber">1.11.4</span> <span class="title">Confidence Interval of Variance</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Point-Estimates-and-Confidence-Intervals.html#subsec-Difference-in-Variance-of-Two-Normal-Distributions" class="internal"><span class="codenumber">1.11.5</span> <span class="title">Comparing Variances of Two Normal Distributions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Hypothesis-Tests.html" class="internal"><span class="codenumber">1.12</span> <span class="title">Hypothesis Tests</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Hypothesis-Tests.html#subsec-Hypothesis-Test-for-One-Proportion" class="internal"><span class="codenumber">1.12.1</span> <span class="title">Simple Tests using Rejection Regions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Hypothesis-Tests.html#subsec-TypeI-and-TypeII-Errors" class="internal"><span class="codenumber">1.12.2</span> <span class="title">Type I and TypeII Errors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Hypothesis-Tests.html#subsec-The-p-Value" class="internal"><span class="codenumber">1.12.3</span> <span class="title">The p Value Approach</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Hypothesis-Tests.html#subsec-chi-sq-goodness-of-fit-test" class="internal"><span class="codenumber">1.12.4</span> <span class="title">Chi Square Goodness of Fit Test</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Stats-Miscellaneous-Topics.html" class="internal"><span class="codenumber">1.13</span> <span class="title">Miscellaneous Topics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Stats-Miscellaneous-Topics.html#sec-Stats-Miscellaneous-Topics-3" class="internal"><span class="codenumber">1.13.1</span> <span class="title">Discrete Approximation to the Cumulative Distribution Function via Binning</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Stats-Miscellaneous-Topics.html#subsec-Moment-Generating-Function" class="internal"><span class="codenumber">1.13.2</span> <span class="title">Moment Generating Functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-Additional-Mathematical-Techniques.html" class="internal"><span class="codenumber">1.14</span> <span class="title">Additional Mathematical Techniques</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-supervised-learning-basics.html" class="internal"><span class="codenumber">2</span> <span class="title">Basics of Supervised Learning</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="sec-Statistical-Decision-Theory.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Statistical Decision Theory</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Statistical-Decision-Theory.html#subsec-Squared-Error-Loss-Function" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Regression</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Statistical-Decision-Theory.html#subsec-KNN-method" class="internal"><span class="codenumber">2.1.2</span> <span class="title">The kNN Method</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Statistical-Decision-Theory.html#subsec-The-Simple-Linear-Regresson" class="internal"><span class="codenumber">2.1.3</span> <span class="title">The Simple Linear Regresson</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Binary-Classification.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Binary Classification</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Binary-Classification.html#subsecThe-Classification-Variable" class="internal"><span class="codenumber">2.2.1</span> <span class="title">The Classification Variable <span class="process-math">\(Y\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Binary-Classification.html#subsec-binary-classification-scalar-feature" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Binary Classification with Scalar <span class="process-math">\(X\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Binary-Classification.html#subsec-gradient-descent" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Gradient Descent for Logistic Regression</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Multi-Feature Problems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Linear-Regression" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Multi-Feature Linear Regression</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Linear-Regression-3" class="internal"><span class="codenumber">2.3.1.1</span> <span class="title">Taking Derivatives With Respect To A Vector</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Logistic-Regression" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Multi-Feature Logistic Regression</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Logistic-Regression-3" class="internal"><span class="codenumber">2.3.2.1</span> <span class="title">Derivatives of the Loss Function</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsubsec-logistic-regression-multivariate" class="internal"><span class="codenumber">2.3.2.2</span> <span class="title">A Python Program for the Logistic Regression</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-MultiClass-Classification.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Multi-Class Classification</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-MultiClass-Classification.html#subsec-Loss-Function-of-Multi-class-Classification" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Loss Function of Multiclass Classification</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-MultiClass-Classification.html#subsec-derivative-of-multiclass-loss-function" class="internal"><span class="codenumber">2.4.2</span> <span class="title">Derivative of Multiclass Loss Function</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-MultiClass-Classification.html#subsec-Model-Evaluations" class="internal"><span class="codenumber">2.4.3</span> <span class="title">Model Evaluations</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-Statistical-Decision-Theory"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">2.1</span><span class="space"> </span><span class="title">Statistical Decision Theory</span>
+</h2>
+<section class="introduction" id="sec-Statistical-Decision-Theory-2"><div class="para" id="sec-Statistical-Decision-Theory-2-1">Statistics is the application of probability theory to real-world problems. Basically, two types of problems are handled by using statitics: (1) the estiamtion of parameters of a statistical model, and (2) predictions of future outcomes assuming the underlying probabilistic model is fully known. Both of these are necessary to make an optimized decision in an uncertain environment.</div> <div class="para" id="sec-Statistical-Decision-Theory-2-2">Optimization is done by minimizing  a loss function, or, alternately, maximizing a reward function. The choice of loss function is critical since that provides the constraint under which decisions will be optimal. We will see that the loss function for discrete random variables and continuous random variables will be different.</div> <div class="para logical" id="sec-Statistical-Decision-Theory-2-3">
+<div class="para">As an illustration of the optimization process let us consider two scalar random variables <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\text{.}\)</span> Suppose, we have made <span class="process-math">\(n\)</span> independent and identical observations of <span class="process-math">\((X,Y)\)</span> pairs:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\text{DATASET: }\mathcal{D} = \{ (x^{(1)},y^{(1)}), (x^{(2)},y^{(2)}), \cdots, (x^{(n)},y^{(n)}) \}
+\end{equation*}
+</div>
+<div class="para">We will use superscipts to indicate data instances, i.e., data points, and reserve the subscript indices for components of vector, matrix or tensor-like variables. Suppose the experiment from which the data was collected can be modeled by some statistical model, given by a joint distribution function <span class="process-math">\(F_{XY}(x,y; \theta)\)</span> or the corresponding joint probability density <span class="process-math">\(\rho_{XY}(x,y;\theta)\)</span> (or PMF in case of discrete variables) with parameters <span class="process-math">\(\theta\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="sec-Statistical-Decision-Theory-2-4">
+<div class="para">We want to predict <span class="process-math">\(y^{n+1}\)</span> that goes with the new <span class="process-math">\(x^{n+1}\)</span> assuming the relation between <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> are statistical. That is, we seek a function <span class="process-math">\(f(X)\)</span> which will give the “best” <span class="process-math">\(y^{n+1}\)</span> from <span class="process-math">\(f(x^{n+1})\text{.}\)</span> We will denote this optimal function by placing a hat on the symbol as in <span class="process-math">\(\hat{f}\text{.}\)</span> All we then we need to predict <span class="process-math">\(y^{n+1}\)</span> that goes with <span class="process-math">\(x^{n+1}\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+y^{n+1} = \hat{f}(x^{n+1}).
+\end{equation*}
+</div>
+</div> <div class="para logical" id="sec-Statistical-Decision-Theory-2-5">
+<div class="para">What is the meaning of “best” function here? We say that there is a loss function <span class="process-math">\(\mathcal{L}(X, Y=f(X))\)</span> that will be minimized if we chose the “right” <span class="process-math">\(f(X)\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\text{Loss Function: } \left.\mathcal{L}(X, Y)\right|_{Y=f(X)} \equiv \mathcal{L}(Y, f(X)).
+\end{equation*}
+</div>
+<div class="para">You would think that the optimal function would be obtained by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\hat f = \min\limits_{f}\ \mathcal{L}(Y, f(X))\quad (\text{INCORRECT!})
+\end{equation*}
+</div>
+<div class="para">This equation is minimizing a function of random variables <span class="process-math">\(X\)</span> and <span class="process-math">\(f(X)\text{.}\)</span> What we should be doing is to minimize its expectation value. Since we are in a joint distribution of <span class="process-math">\((X,Y)\text{,}\)</span> this optimization process should be</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\hat f = \min\limits_{f}\ \mathbb{E}_{XY}[\mathcal{L}(Y, f(X))]\quad (\text{CORRECT!})
+\end{equation*}
+</div>
+</div> <div class="para logical" id="sec-Statistical-Decision-Theory-2-6">
+<div class="para">It helps to separate out the <span class="process-math">\(y\)</span> and <span class="process-math">\(x\)</span> parts if we write the PDF of a joint distribution in terns of a conditional and a marginal distriution.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\rho_{XY}(x,y) = \rho_{Y\mid x}(y\mid x)\,\rho_X(x).
+\end{equation*}
+</div>
+<div class="para">Using this and integrating over <span class="process-math">\(y\)</span> inside the <span class="process-math">\(x\)</span> integral</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\hat f = \min\limits_{f}\ \int\ dx\ \rho_X(x) \,\left[  \int\, dy\, \rho_{Y\mid X}\ \mathcal{L}(y, f(x))  \right].
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\((\rho_X(x)\,dx)\)</span> is <span class="process-math">\(P(x \le X \le x + dx) \gt 0\text{,}\)</span> the minimization of the quantities just inside the square brackets <span class="process-math">\([\cdots]\)</span> is enough to find the optimal <span class="process-math">\(f\text{.}\)</span> Hence, you don’t need the full joint probability density, just the conditional density is enough.</div>
+<div class="displaymath process-math" id="eqn-optimal-f-from-joint-probability-density">
+\begin{equation}
+\hat f =  \min\limits_{f}\ \int\, dy\, \rho_{Y\mid X}\ \mathcal{L}(Y, f(X)).\tag{2.1.1}
+\end{equation}
+</div>
+<div class="para">The <dfn class="terminology">supervised learning</dfn> algorithms of Machine Learning are all based on this equation. Various algorithms try to “learn” the function <span class="process-math">\(\hat{f}\)</span> from the data and use them to make predictions on new datapoints. In this section, I will illustrate the application of this formula to a <em class="alert">regression task</em>. In the next section, we will discuss <em class="alert">a binary classification task</em>. </div>
+</div></section><section class="subsection" id="subsec-Squared-Error-Loss-Function"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.1.1</span><span class="space"> </span><span class="title">Regression</span>
+</h3>
+<div class="para logical" id="subsec-Squared-Error-Loss-Function-2">
+<div class="para">A common loss function for regression tasks for predicting continuous variable <span class="process-math">\(Y\)</span> is the <dfn class="terminology">squared error</dfn>.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathcal{L}( X, Y) = (Y - f(X))^2.
+\end{equation*}
+</div>
+<div class="para">For arbitrary point <span class="process-math">\((x,y)\)</span> in the random variable space of <span class="process-math">\((X,Y)\text{,}\)</span>  the error will be</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathcal{l} = (y - f(x))^2.
+\end{equation*}
+</div>
+<div class="para">Therefore, the equation for optimal <span class="process-math">\(f\)</span> becomes</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\hat f = \min\limits_{f}\ \int\, dy\, (y - f(x))^2\, \rho_{Y\mid X}(y\mid x).
+\end{equation*}
+</div>
+<div class="para">Setting the functional derivative of the integral on the right side to zero shoudl give us the extremum function, say <span class="process-math">\(\tilde{f}\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[\frac{\delta}{\delta f}\,\int\, dy\ (y - f(x))^2\right]_{f = \tilde{f}}\, \rho_{Y\mid X}(y\mid x) = 0
+\end{equation*}
+</div>
+<div class="para">This will give us (Think of a regular partial derivative with <span class="process-math">\(f\)</span> as an independent variable.)</div>
+<div class="displaymath process-math" id="subsec-Squared-Error-Loss-Function-2-12">
+\begin{align*}
+\int\, dy\, y \amp \, \rho_{Y\mid X}(y\mid x)= \int\, dy\, \tilde{f}(x)\, \rho_{Y\mid X}(y\mid x).\\
+\amp = \tilde{f}(x)\,\int\, dy\, \rho_{Y\mid X}(y\mid x) \quad (\text{since integraing over }y \text{ keeping } x \text{ fixed.})\\
+\amp = \tilde{f}(x)\quad (\text{ since the PDF is normalized})
+\end{align*}
+</div>
+<div class="para">That is the extremum of the squared loss occurs at  \tilde{f}.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\tilde{f} = \int\, dy\, y\, \rho_{Y\mid X}(y\mid x) = \mathbb{E}_{Y\mid X}[Y].
+\end{equation*}
+</div>
+<div class="para">Is it mimimum? To show that it is a minimum, try finding the second derivative and use the expectation symbol to hide away the integration.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{\delta }{\delta\, f}\left( \frac{\delta }{\delta\, f}\, \mathbb{E}_{Y \mid X}[\mathcal{L}(Y, f(X))] \right) = 2 \gt 0.
+\end{equation*}
+</div>
+<div class="para">That means the extremum value is actualy a minimum. Thus, the optimal funtion that minimizes the squared error is the one that maps <span class="process-math">\(x\)</span> to the mean value of <span class="process-math">\(Y\)</span> in the conditional probability <span class="process-math">\(\rho_{Y\mid X}\text{.}\)</span> Hence, in terms of the random variables, the optimal function is</div>
+<div class="displaymath process-math" id="eqn-optimal-function-for-squared-error">
+\begin{equation}
+\hat{f}(X) = \mathbb{E}_{Y \mid X}[Y] = \int\ dy\  y\ \rho_{Y\mid X}(y\mid x).\tag{2.1.2}
+\end{equation}
+</div>
+<div class="para">This is a theretical result of the prediction function. To apply this result to obtain <span class="process-math">\(y^{n+1}\)</span> that gies with <span class="process-math">\(x^{n+1}\text{,}\)</span> further assumptions are made. For instance, as we will see below in k-NN algorithm, each datapoint in the dataset <span class="process-math">\(\mathcal{D}\)</span> is given probaility <span class="process-math">\(1/k\text{,}\)</span> where <span class="process-math">\(k\)</span> is the number of nearest neighbors of <span class="process-math">\(x^{n+1}\)</span> in the training dataset.</div>
+</div>
+<div class="para" id="subsec-Squared-Error-Loss-Function-3">In some approached, we invoke a functional form of <span class="process-math">\(f\text{,}\)</span> e.g., a linear function of <span class="process-math">\(X\text{,}\)</span> then you can use the points in the dataset <span class="process-math">\(\mathcal{D}\)</span> to estimate parameters of that function which you can then use to make prediction for the new point <span class="process-math">\(x^{n+1}\text{.}\)</span>
+</div></section><section class="subsection" id="subsec-KNN-method"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.1.2</span><span class="space"> </span><span class="title">The kNN Method</span>
+</h3>
+<div class="para" id="subsec-KNN-method-2">A straightforward way of implementing the result in Eq. <a href="sec-Statistical-Decision-Theory.html#eqn-optimal-function-for-squared-error" class="xref" data-knowl="./knowl/xref/eqn-optimal-function-for-squared-error.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.1.2">(2.1.2)</a> for making prediction of <span class="process-math">\(y^{n+1}\)</span> for a new point with <span class="process-math">\(X = x^{n+1}\)</span> is to average the <span class="process-math">\(Y\)</span> values of points in the dataset <span class="process-math">\(\mathcal{D} = \{ (x^{(1)},y^{(1)}), (x^{(2)},y^{(2)}), \cdots, (x^{(n)},y^{(n)}) \}\)</span> closest to <span class="process-math">\(X = x^{n+1}\)</span> their <span class="process-math">\(X\)</span>-distances.</div>
+<div class="para" id="subsec-KNN-method-3">The simplest is, of course, to just look at the <em class="alert">nearest neightbor</em>, say “distance” to <span class="process-math">\(x^{a}\)</span> from <span class="process-math">\(x^{n+1}\)</span> is smallest, assuming unique for simplicity, then, you would say that that <span class="process-math">\(y^{n+1}\)</span> is same as <span class="process-math">\(y^{a}\text{.}\)</span>
+</div>
+<div class="para logical" id="subsec-KNN-method-4">
+<div class="para">If you have degenracy, say, distances to <span class="process-math">\(x^{a}\)</span> and <span class="process-math">\(x^{b}\)</span> from <span class="process-math">\(x^{n+1}\)</span> are smallest and equal. Then, for <span class="process-math">\(y^{n+1}\text{,}\)</span> we would just averate the <span class="process-math">\(y\)</span>’s.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+y^{n+1} = \frac{y^{a} + y^{b} }{2}.
+\end{equation*}
+</div>
+<div class="para">We might want to extend the averaging to more than the nearest average. That’s where <span class="process-math">\(k-NN\)</span> (<span class="process-math">\(k\)</span> Nearest Neighbors) algorithm comes in. You go to the location <span class="process-math">\(x^{n+1}\)</span> and expand out and count upto <span class="process-math">\(k\)</span> closest neighbors.. Say, indices for them are : <span class="process-math">\(i_1, i_2, \cdots, i_k\text{.}\)</span> Then, to predict <span class="process-math">\(y^{k+1}\)</span> you would average their <span class="process-math">\(y\)</span>’s, which is essentially approximating <span class="process-math">\(\rho_{Y\mid X} = 1/k\)</span> and truning the integral into a sum.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+y^{n+1} = \frac{1}{k}\left( y^{i_1} + y^{i_2} +\cdots + y^{i_k} \right).
+\end{equation*}
+</div>
+</div>
+<div class="para" id="subsec-KNN-method-5">For scalar functions <span class="process-math">\(X\text{,}\)</span> the k-NN method works quite well if you have sufficiently dense coverage of the <span class="process-math">\((X,Y)\)</span> by the data, but for vector variables, such as <span class="process-math">\(\vec{X}\)</span> with several components, say <span class="process-math">\(d\)</span>-coponents, the number of neighbors grows exponetially with <span class="process-math">\(d\text{,}\)</span> and the method become impractical. You can prove a theoretical result that shows that at some point it will become impossible since almost all datapoints will be included in any search and hence you will be predicting same <span class="process-math">\(y\)</span> for every <span class="process-math">\(x^{n+1}\text{.}\)</span> This result goes by the ominous phrase “the <dfn class="terminology">curse of dimensionality</dfn>”.</div></section><section class="subsection" id="subsec-The-Simple-Linear-Regresson"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.1.3</span><span class="space"> </span><span class="title">The Simple Linear Regresson</span>
+</h3>
+<div class="para logical" id="subsec-The-Simple-Linear-Regresson-2">
+<div class="para">For <span class="process-math">\(X\)</span> a scalar variable, a linear dependency of <span class="process-math">\(Y\)</span> on <span class="process-math">\(X\)</span> will be</div>
+<div class="displaymath process-math">
+\begin{equation*}
+Y = f(X) = \beta_0 + \beta_1\,X,
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(\beta_0\)</span> is the <span class="process-math">\(y\text{-intercept}\)</span> and <span class="process-math">\(\beta_1\)</span> the slope. The task is to find the optimal values of <span class="process-math">\(\beta_0\)</span> and <span class="process-math">\(\beta_1\)</span> that minimizes the squared error, where we now include a factor <span class="process-math">\(1/2\)</span> for cancling out a factor <span class="process-math">\(2\)</span> that results when you take derivatives.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathcal{L}(Y, f(X)) = \frac{1}{2} (Y - \beta_0 - \beta_1\,X)^2.
+\end{equation*}
+</div>
+<div class="para">Assuming the the dataset <span class="process-math">\(\mathcal{D}\)</span> is representative of the entire <span class="process-math">\(\rho_{Y\mid X}(y\mid x)\text{,}\)</span> we find approximation of the <span class="process-math">\(\mathbb{E}[L]\)</span> by setting</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\rho_{Y\mid X}(y^{(i)}\mid x^{(i)}) = \frac{1}{n},
+\end{equation*}
+</div>
+<div class="para">and repacing the integration by the sum. Let’s call this expectation value of <span class="process-math">\(\mathcal{L}\)</span> by <span class="process-math">\(\mathcal{L}_D\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathcal{L}_D = \frac{1}{2n}\sum_{i=1}^{n}\,\left(y^{(i)} - \beta_0 - \beta_1\,x^{(i)}\right)^2.
+\end{equation*}
+</div>
+<div class="para">Now, to find the optimal function <span class="process-math">\(f\text{,}\)</span> here the optimal parameters <span class="process-math">\(\beta_0\)</span> and <span class="process-math">\(\beta_1\text{,}\)</span> we just have to take partials with each and set to zero.</div>
+<div class="displaymath process-math" id="subsec-The-Simple-Linear-Regresson-2-23">
+\begin{align*}
+\amp \frac{\partial \mathcal{L}_D}{\partial \beta_0} = 0\\
+\amp \frac{\partial \mathcal{L}_D}{\partial \beta_1} = 0
+\end{align*}
+</div>
+<div class="para">These result in two linear equations in <span class="process-math">\(\beta_0\)</span> and <span class="process-math">\(\beta_1\)</span> which are easily solved. We denote the solutions by <span class="process-math">\(\hat{\beta}_0\)</span> and <span class="process-math">\(\hat{\beta}_1\text{.}\)</span> You will find that the following sums help in doing the algebra.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\bar{x} = \frac{1}{n}\,\sum_{i=1}^n\,x^{(i)},\quad \bar{y} = \frac{1}{n}\,\sum_{i=1}^n\,y^{(i)}.
+\end{equation*}
+</div>
+<div class="para">After algebra that you should do out, you will find the following expressions for the optimal parameters.</div>
+<div class="displaymath process-math" id="subsec-The-Simple-Linear-Regresson-2-29">
+\begin{align*}
+\amp \hat{\beta}_1 = \frac{ \sum_{i=1}^n\, ( x^{(i)} - \bar x )( y^{(i)} - \bar y ) }{ \sum_{i=1}^n\, \left( x^{(i)} - \bar{x} \right)^2 }\\
+\amp \hat{\beta}_0 = \bar{y} - \beta_1 \bar{x}
+\end{align*}
+</div>
+</div>
+<article class="example example-like" id="subsec-The-Simple-Linear-Regresson-3"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.1</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="subsec-The-Simple-Linear-Regresson-3-1">
+<div class="para">
+<a href="sec-Statistical-Decision-Theory.html#fig-simple_linear_regression" class="xref" data-knowl="./knowl/xref/fig-simple_linear_regression.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.1.2">Figure 2.1.2</a> shows a simple linear regression on a dataset <span class="process-math">\(\mathcal{D}\)</span> consisting of <span class="process-math">\(100\)</span> datapoints generated by adding noise to a linear deterministic function by</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-simple_linear_regression.html">
+\begin{equation*}
+Y = f(X) = 1.0 + 2.0 * X + \epsilon,
+\end{equation*}
+</div>
+<div class="para">where</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-simple_linear_regression.html">
+\begin{equation*}
+\epsilon \sim \mathcal{N}(0,1).
+\end{equation*}
+</div>
+<div class="para">Here, we have chosen known values of <span class="process-math">\(\beta_0 = 1.0\)</span> and <span class="process-math">\(\beta_1 = 2.0\)</span> to generate the data and want to know how well the simple linear regression produces estimates of these parameters.</div>
+</div> <div class="para logical" id="subsec-The-Simple-Linear-Regresson-3-2">
+<div class="para">The simple linear regression using <span class="process-math">\(100\)</span> datapoints gave the predicting funtion to be</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\hat{Y} = \hat{f}(X) = \hat{\beta}_0 + \hat{\beta}_1\, X,
+\end{equation*}
+</div>
+<div class="para">with</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\hat{\beta}_0 = 0.83,\quad \hat{\beta}_1 = 2.01.
+\end{equation*}
+</div>
+<div class="para">Compare them to the “true” values:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\beta_0 = 1.0,\quad \beta = 2.0.
+\end{equation*}
+</div>
+<div class="para">From the data, we appear to get a better estimate for the slope than that of the intercept.</div>
+</div> <div class="para logical" id="subsec-The-Simple-Linear-Regresson-3-3">
+<div class="para">Note that since the dataset, coming from a random sampling process, is a random variable. Therefore, the estimates <span class="process-math">\(\hat{\beta}_0\)</span> and <span class="process-math">\(\hat{\beta}_1\)</span> deduced from using <span class="process-math">\(\mathcal{D}\)</span> are also random variables with their own distributions.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\hat{\beta}_0 \sim \rho(\hat{\beta}_0),\quad \hat{\beta}_1 \sim \rho(\hat{\beta}_1).
+\end{equation*}
+</div>
+</div> <div class="para" id="subsec-The-Simple-Linear-Regresson-3-4">The estimates we gave above are just estimates of their mean values. And, of course, you can do an entire analysis of the significance level of these estimates. While important in statistics books, they will be largely ignored in the Machine Learning work. We take the view that the estimates of the parameters give us the best we can do.</div> <figure class="figure figure-like" id="fig-simple_linear_regression"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/supervised-learning-basics/simple_linear_regression.png" class="contained" alt="The image shows that linear fit to a scatter data."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.1.2<span class="period">.</span></span><span class="space"> </span>Illustration of a simple linear regression.</figcaption></figure> <div class="para" id="subsec-The-Simple-Linear-Regresson-3-6">The figure was generated by the following Python code.</div> <div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-py">import numpy as np
+import matplotlib.pyplot as plt
+
+# Sample dataset
+np.random.seed(42) # for reproducibility
+X = np.linspace(0, 10, 100)
+Y = 1.0+ 2.0 * X  + np.random.normal(0, 1, 100)  # Y = 2X + 1 + noise
+
+# Calculate means
+x_bar = np.mean(X)
+y_bar = np.mean(Y)
+
+# Calculate beta_1 (slope)
+numerator = np.sum((X - x_bar) * (Y - y_bar))
+denominator = np.sum((X - x_bar) ** 2)
+beta_1 = numerator / denominator
+
+# Calculate beta_0 (intercept)
+beta_0 = y_bar - beta_1 * x_bar
+
+# Print results
+print(f"Estimated beta_0 (intercept): {beta_0:.2f}")
+print(f"Estimated beta_1 (slope): {beta_1:.2f}")
+
+# Plot the data and regression line
+plt.scatter(X, Y, facecolors='none', edgecolors='blue', color='blue', label='Data points')
+plt.plot(X, beta_0 + beta_1 * X, color='red', label='Regression line')
+plt.xlabel('X')
+plt.ylabel('Y')
+plt.title('Simple Linear Regression Example')
+plt.legend()
+plt.grid(True)
+plt.show()
+</code></pre></div></article></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="ch-supervised-learning-basics.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-Binary-Classification.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>

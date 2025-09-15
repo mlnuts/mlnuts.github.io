@@ -133,6 +133,12 @@ window.MathJax = {
 #sec-Hypothesis-Tests-2-6-1 { counter-set: sec-Hypothesis-Tests-2-6-1 0; }
 #sec-Hypothesis-Tests-2-6-1 > li::marker { content: ""counter(sec-Hypothesis-Tests-2-6-1,decimal)"."; }
 #sec-Hypothesis-Tests-2-6-1 > li { counter-increment: sec-Hypothesis-Tests-2-6-1; }
+#subsec-derivative-of-multiclass-loss-function-3-2-2 { counter-set: subsec-derivative-of-multiclass-loss-function-3-2-2 0; }
+#subsec-derivative-of-multiclass-loss-function-3-2-2 > li::marker { content: ""counter(subsec-derivative-of-multiclass-loss-function-3-2-2,decimal)"."; }
+#subsec-derivative-of-multiclass-loss-function-3-2-2 > li { counter-increment: subsec-derivative-of-multiclass-loss-function-3-2-2; }
+#subsec-derivative-of-multiclass-loss-function-3-3-1 { counter-set: subsec-derivative-of-multiclass-loss-function-3-3-1 0; }
+#subsec-derivative-of-multiclass-loss-function-3-3-1 > li::marker { content: ""counter(subsec-derivative-of-multiclass-loss-function-3-3-1,decimal)"."; }
+#subsec-derivative-of-multiclass-loss-function-3-3-1 > li { counter-increment: subsec-derivative-of-multiclass-loss-function-3-3-1; }
 </style>
 </head>
 <body id="ML-Notes" class="pretext book ignore-math">
@@ -270,6 +276,7 @@ window.MathJax = {
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LLN-and-CLT.html#subsec-LLN-vs-CLT" class="internal"><span class="codenumber">1.9.3</span> <span class="title">LLN vs. CLT</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LLN-and-CLT.html#subsec-Berry-Esseen" class="internal"><span class="codenumber">1.9.4</span> <span class="title">Berry-Esseen Theorem</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LLN-and-CLT.html#subsec-Why-Large-n-Matters" class="internal"><span class="codenumber">1.9.5</span> <span class="title">Why LLN and CLT Matter?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LLN-and-CLT.html#subsec-Large-n-Binomial-Distribution" class="internal"><span class="codenumber">1.9.6</span> <span class="title">Large n Binomial Distribution</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -316,7 +323,59 @@ window.MathJax = {
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Hypothesis-Tests.html#subsec-chi-sq-goodness-of-fit-test" class="internal"><span class="codenumber">1.12.4</span> <span class="title">Chi Square Goodness of Fit Test</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-Additional-Mathematical-Techniques.html" class="internal"><span class="codenumber">1.13</span> <span class="title">Additional Mathematical Techniques</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Stats-Miscellaneous-Topics.html" class="internal"><span class="codenumber">1.13</span> <span class="title">Miscellaneous Topics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Stats-Miscellaneous-Topics.html#sec-Stats-Miscellaneous-Topics-3" class="internal"><span class="codenumber">1.13.1</span> <span class="title">Discrete Approximation to the Cumulative Distribution Function via Binning</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Stats-Miscellaneous-Topics.html#subsec-Moment-Generating-Function" class="internal"><span class="codenumber">1.13.2</span> <span class="title">Moment Generating Functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-Additional-Mathematical-Techniques.html" class="internal"><span class="codenumber">1.14</span> <span class="title">Additional Mathematical Techniques</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-supervised-learning-basics.html" class="internal"><span class="codenumber">2</span> <span class="title">Basics of Supervised Learning</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Statistical-Decision-Theory.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Statistical Decision Theory</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Statistical-Decision-Theory.html#subsec-Squared-Error-Loss-Function" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Regression</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Statistical-Decision-Theory.html#subsec-KNN-method" class="internal"><span class="codenumber">2.1.2</span> <span class="title">The kNN Method</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Statistical-Decision-Theory.html#subsec-The-Simple-Linear-Regresson" class="internal"><span class="codenumber">2.1.3</span> <span class="title">The Simple Linear Regresson</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Binary-Classification.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Binary Classification</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Binary-Classification.html#subsecThe-Classification-Variable" class="internal"><span class="codenumber">2.2.1</span> <span class="title">The Classification Variable <span class="process-math">\(Y\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Binary-Classification.html#subsec-binary-classification-scalar-feature" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Binary Classification with Scalar <span class="process-math">\(X\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Binary-Classification.html#subsec-gradient-descent" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Gradient Descent for Logistic Regression</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Multi-Feature Problems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Linear-Regression" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Multi-Feature Linear Regression</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Linear-Regression-3" class="internal"><span class="codenumber">2.3.1.1</span> <span class="title">Taking Derivatives With Respect To A Vector</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Logistic-Regression" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Multi-Feature Logistic Regression</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Logistic-Regression-3" class="internal"><span class="codenumber">2.3.2.1</span> <span class="title">Derivatives of the Loss Function</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsubsec-logistic-regression-multivariate" class="internal"><span class="codenumber">2.3.2.2</span> <span class="title">A Python Program for the Logistic Regression</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-MultiClass-Classification.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Multi-Class Classification</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-MultiClass-Classification.html#subsec-Loss-Function-of-Multi-class-Classification" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Loss Function of Multiclass Classification</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-MultiClass-Classification.html#subsec-derivative-of-multiclass-loss-function" class="internal"><span class="codenumber">2.4.2</span> <span class="title">Derivative of Multiclass Loss Function</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-MultiClass-Classification.html#subsec-Model-Evaluations" class="internal"><span class="codenumber">2.4.3</span> <span class="title">Model Evaluations</span></a></div></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
@@ -407,7 +466,7 @@ P(X=x) = p^x\:(1-p)^{1-x}.\tag{1.7.4}
 </div></section><section class="subsection" id="subsec-Binomial-Distribution"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.7.2</span><span class="space"> </span><span class="title">Binomial Distribution</span>
 </h3>
-<section class="introduction" id="subsec-Binomial-Distribution-2"><div class="para" id="subsec-Binomial-Distribution-2-1">Imagine a collection of <span class="process-math">\(N\)</span> identical coins. A <dfn class="terminology">Binomial experiment</dfn> on this system consists of tossing each coin once and counting the total number of Heads or Tails you got. For instance, for a <span class="process-math">\(10\)</span>-coin experiment, you might get no Heads at all or 1 Heads and 9 Tails, or 2 Heads and 8 Tails, etc. Record how many Heads you got in this trial, say you got 3 Heads. Now, let’s repeat the experiment. In the second trial, you might get a different number of Heads, say this time you got 8 Heads. That is, total number of heads in this experiment is an example of a Binomial random variable.</div> <div class="para" id="subsec-Binomial-Distribution-2-2">If you repeat this experiment many times, you can see a pattern emerge among the values of the random variable. Table <a href="sec-Example-Discrete-Probability-Distributions.html#tab-Binomial-frequency-and-prob" class="xref" data-knowl="./knowl/xref/tab-Binomial-frequency-and-prob.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 1.7.1: Binomial Experiment: Frequency and Approximate Probability">Table 1.7.1</a> shows results 2000 trials of this experiment, organized un a table, called a <dfn class="terminology">frequency table</dfn>. You have more chances of the results to be somewhere in the middle of the range of values than on either exremes.</div> <figure class="table table-like" id="tab-Binomial-frequency-and-prob"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.7.1<span class="period">.</span></span><span class="space"> </span>Binomial Experiment: Frequency and Approximate Probability</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<section class="introduction" id="subsec-Binomial-Distribution-2"><div class="para" id="subsec-Binomial-Distribution-2-1">Imagine a collection of <span class="process-math">\(n\)</span> identical coins. A <dfn class="terminology">Binomial experiment</dfn> on this system consists of tossing each coin once and counting the total number of Heads or Tails you got. For instance, for a <span class="process-math">\(10\)</span>-coin experiment, you might get no Heads at all or 1 Heads and 9 Tails, or 2 Heads and 8 Tails, etc. Record how many Heads you got in this trial, say you got 3 Heads. Now, let’s repeat the experiment. In the second trial, you might get a different number of Heads, say this time you got 8 Heads. That is, total number of heads in this experiment is an example of a Binomial random variable.</div> <div class="para" id="subsec-Binomial-Distribution-2-2">If you repeat this experiment many times, you can see a pattern emerge among the values of the random variable. Table <a href="sec-Example-Discrete-Probability-Distributions.html#tab-Binomial-frequency-and-prob" class="xref" data-knowl="./knowl/xref/tab-Binomial-frequency-and-prob.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 1.7.1: Binomial Experiment: Frequency and Approximate Probability">Table 1.7.1</a> shows results 2000 trials of this experiment, organized un a table, called a <dfn class="terminology">frequency table</dfn>. You have more chances of the results to be somewhere in the middle of the range of values than on either exremes.</div> <figure class="table table-like" id="tab-Binomial-frequency-and-prob"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.7.1<span class="period">.</span></span><span class="space"> </span>Binomial Experiment: Frequency and Approximate Probability</figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines">Total Number of Heads</td>
 <td class="l m b0 r0 l0 t0 lines">Frequency</td>
@@ -474,33 +533,33 @@ P(X=x) = p^x\:(1-p)^{1-x}.\tag{1.7.4}
 <td class="l m b0 r0 l0 t0 lines"></td>
 </tr>
 </table></div></figure> <div class="para" id="subsec-Binomial-Distribution-2-4">In general, a <dfn class="terminology">Binomial random variable</dfn> counts the total number of success (or failure) in a fixed number of Bernoulli trials. The resulting probabilities make up the Probability Mass Function (PMF) of <dfn class="terminology">Binomial disrtibution</dfn>. Since a Binomial experiment is a collection of identical and independent Bernoulli trials, it is possible to deduce a mathematical formula of the Binomial PMF based on the PMF of the Bernoulli.</div> <div class="para logical" id="subsec-Binomial-Distribution-2-5">
-<div class="para">Let <span class="process-math">\(p\)</span> be the probability in each Bernoulli trial and let there be <span class="process-math">\(N\)</span> Bernoulli trials in each Binomial experiment. In each trial of the Binomial experiment you will have a sequence of <span class="process-math">\(N\)</span> Bernoulli outcomes <span class="process-math">\(H\)</span> (for success) or <span class="process-math">\(T\)</span> (for failure).</div>
+<div class="para">Let <span class="process-math">\(p\)</span> be the probability in each Bernoulli trial and let there be <span class="process-math">\(n\)</span> Bernoulli trials in each Binomial experiment. In each trial of the Binomial experiment you will have a sequence of <span class="process-math">\(n\)</span> Bernoulli outcomes <span class="process-math">\(H\)</span> (for success) or <span class="process-math">\(T\)</span> (for failure).</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/tab-Binomial-frequency-and-prob.html ./knowl/xref/fig-binomial-10N20.html">
 \begin{equation*}
 \text{One Binomial Trial: } THTTTTHHTHHHTH...H\quad \text{(a total of N symbols.)}
 \end{equation*}
 </div>
-<div class="para">Suppose this sequence has <span class="process-math">\(m\)</span> Heads (<span class="process-math">\(H\)</span>) and <span class="process-math">\((N-m)\)</span> Tails (<span class="process-math">\(T\)</span>). The probability of this sequence of independent Bernoulli results will be just a product of <span class="process-math">\(m\)</span> factors of <span class="process-math">\(p\)</span> for each <span class="process-math">\(H\)</span> and <span class="process-math">\((N-m)\)</span> factors for <span class="process-math">\((1-p)\)</span> for each <span class="process-math">\(T\text{,}\)</span> which will give us</div>
+<div class="para">Suppose this sequence has <span class="process-math">\(m\)</span> Heads (<span class="process-math">\(H\)</span>) and <span class="process-math">\((n-m)\)</span> Tails (<span class="process-math">\(T\)</span>). The probability of this sequence of independent Bernoulli results will be just a product of <span class="process-math">\(m\)</span> factors of <span class="process-math">\(p\)</span> for each <span class="process-math">\(H\)</span> and <span class="process-math">\((n-m)\)</span> factors for <span class="process-math">\((1-p)\)</span> for each <span class="process-math">\(T\text{,}\)</span> which will give us</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/tab-Binomial-frequency-and-prob.html ./knowl/xref/fig-binomial-10N20.html">
 \begin{equation*}
-p^m\,(1-p)^{N-m}.
+p^m\,(1-p)^{n-m}.
 \end{equation*}
 </div>
-<div class="para">But the <span class="process-math">\(H\)</span> and <span class="process-math">\(T\)</span> could have occurred in any order and we would still have the same <span class="process-math">\(m\)</span> Heads.To get the probability of getting a total of <span class="process-math">\(m\)</span> Heads in any order, we must add up probabilities from all those other permutations as well. That should just mean we need to multiply the above one-order probability by the number of permutations of <span class="process-math">\(m\)</span> <span class="process-math">\(H\)</span>’s in <span class="process-math">\(N\)</span> slots and the remainder by <span class="process-math">\(T\)</span>’s. That turns out to be the Binomial coefficient, and hence the name Binomial distribution.</div>
+<div class="para">But the <span class="process-math">\(H\)</span> and <span class="process-math">\(T\)</span> could have occurred in any order and we would still have the same <span class="process-math">\(m\)</span> Heads.To get the probability of getting a total of <span class="process-math">\(m\)</span> Heads in any order, we must add up probabilities from all those other permutations as well. That should just mean we need to multiply the above one-order probability by the number of permutations of <span class="process-math">\(m\)</span> <span class="process-math">\(H\)</span>’s in <span class="process-math">\(n\)</span> slots and the remainder by <span class="process-math">\(T\)</span>’s. That turns out to be the Binomial coefficient, and hence the name Binomial distribution.</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/tab-Binomial-frequency-and-prob.html ./knowl/xref/fig-binomial-10N20.html" id="eqn-Binomial-distribution">
 \begin{equation}
-P(X = m; N, p) = \frac{N!}{m! (N-m)!}\,p^m\,(1-p)^{N-m}.\tag{1.7.9}
+P(X = m; n, p) = \frac{n!}{m! (n-m)!}\,p^m\,(1-p)^{n-m}.\tag{1.7.9}
 \end{equation}
 </div>
-<div class="para">Note that this distribution has two <em class="alert">fixed parameters</em>, the number of independent Bernoulli trials <span class="process-math">\(N\)</span> in each Binomial trial and <span class="process-math">\(p\text{,}\)</span> the probability of “success” in each Bernoulli trial. I will like to simplify this notation, by writing <span class="process-math">\(P\)</span> with subscripts <span class="process-math">\(N,p\)</span> and keep the <span class="process-math">\(X\)</span> when necessary.</div>
+<div class="para">Note that this distribution has two <em class="alert">fixed parameters</em>, the number of independent Bernoulli trials <span class="process-math">\(n\)</span> in each Binomial trial and <span class="process-math">\(p\text{,}\)</span> the probability of “success” in each Bernoulli trial. I will like to simplify this notation, by writing <span class="process-math">\(P\)</span> with subscripts <span class="process-math">\(n,p\)</span> and keep the <span class="process-math">\(X\)</span> when necessary.</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/tab-Binomial-frequency-and-prob.html ./knowl/xref/fig-binomial-10N20.html" id="eqn-Binomial-distribution-simpler">
 \begin{equation}
-P_{N,p}(X = m) = \frac{N!}{m! (N-m)!}\,p^m\,(1-p)^{N-m}.\tag{1.7.10}
+P_{n,p}(X = m) = \frac{n!}{m! (n-m)!}\,p^m\,(1-p)^{n-m}.\tag{1.7.10}
 \end{equation}
 </div>
-<div class="para">It emphasizes the fact that even for the same <span class="process-math">\(p\text{,}\)</span> you have <em class="alert">different Binomial experiments</em> for different values of <span class="process-math">\(N\text{.}\)</span>  For instance, in Table <a href="sec-Example-Discrete-Probability-Distributions.html#tab-Binomial-frequency-and-prob" class="xref" data-knowl="./knowl/xref/tab-Binomial-frequency-and-prob.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 1.7.1: Binomial Experiment: Frequency and Approximate Probability">Table 1.7.1</a>, if you had conducted the experiment with <span class="process-math">\(20\)</span> Bernoulli trials in each Binomial experiment, instead of <span class="process-math">\(10\text{,}\)</span> you would have gotten much different probabilities for <span class="process-math">\(P(0),\ P(1), P(2), \cdots\text{.}\)</span> This is illustrated in the following figure, <a href="sec-Example-Discrete-Probability-Distributions.html#fig-binomial-10N20" class="xref" data-knowl="./knowl/xref/fig-binomial-10N20.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.7.2">Figure 1.7.2</a>.</div>
+<div class="para">It emphasizes the fact that even for the same <span class="process-math">\(p\text{,}\)</span> you have <em class="alert">different Binomial experiments</em> for different values of <span class="process-math">\(n\text{.}\)</span>  For instance, in Table <a href="sec-Example-Discrete-Probability-Distributions.html#tab-Binomial-frequency-and-prob" class="xref" data-knowl="./knowl/xref/tab-Binomial-frequency-and-prob.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 1.7.1: Binomial Experiment: Frequency and Approximate Probability">Table 1.7.1</a>, if you had conducted the experiment with <span class="process-math">\(20\)</span> Bernoulli trials in each Binomial experiment, instead of <span class="process-math">\(10\text{,}\)</span> you would have gotten much different probabilities for <span class="process-math">\(P(0),\ P(1), P(2), \cdots\text{.}\)</span> This is illustrated in the following figure, <a href="sec-Example-Discrete-Probability-Distributions.html#fig-binomial-10N20" class="xref" data-knowl="./knowl/xref/fig-binomial-10N20.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.7.2">Figure 1.7.2</a>.</div>
 </div> <figure class="figure figure-like" id="fig-binomial-10N20"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/binomial-10N20.png" class="contained" alt="llustrating that different N values in Binomial distribution correspond to different distributions. Here, with N=10 and N=20. See that the probabilities for same X value are different for the two distributions."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.2<span class="period">.</span></span><span class="space"> </span>Illustrating that different <span class="process-math">\(N\)</span> values in Binomial distribution correspond to different distributions. Here, with <span class="process-math">\(N=10\)</span> and <span class="process-math">\(N=20\text{.}\)</span> See that the probabilities for same <span class="process-math">\(X\)</span> value are different for the two distributions.</figcaption></figure> <div class="para" id="subsec-Binomial-Distribution-2-7">Following code was used to create the plot above.</div> <div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-py">import numpy as np
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.2<span class="period">.</span></span><span class="space"> </span>Illustrating that different <span class="process-math">\(n\)</span> values in Binomial distribution correspond to different distributions. Here, with <span class="process-math">\(n=10\)</span> and <span class="process-math">\(n=20\text{.}\)</span> See that the probabilities for same <span class="process-math">\(X\)</span> value are different for the two distributions.</figcaption></figure> <div class="para" id="subsec-Binomial-Distribution-2-7">Following code was used to create the plot above.</div> <div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-py">import numpy as np
 import matplotlib.pyplot as plt
 from scipy.stats import binom
 
@@ -521,11 +580,11 @@ pmf2 = binom.pmf(x2, N2, p)
 fig, ax = plt.subplots(figsize=(8,5))
 
 # Binomial N1
-ax.vlines(x1, 0, pmf1, colors='blue', lw=2, label=f'Bin{N1}')
+ax.vlines(x1, 0, pmf1, colors='blue', lw=2, label=f'Bin{n1}')
 ax.plot(x1, pmf1, 'o', color='blue')
 
 # Binomial N2
-ax.vlines(x2, 0, pmf2, colors='orange', lw=2, label=f'Bin{N2}')
+ax.vlines(x2, 0, pmf2, colors='orange', lw=2, label=f'Bin{n2}')
 ax.plot(x2, pmf2, 'o', color='orange')
 
 # Labels and grid
@@ -536,32 +595,32 @@ ax.grid(axis='y', linestyle='--', alpha=0.6)
 ax.legend()
 
 plt.show()
-</code></pre></div> <div class="para" id="subsec-Binomial-Distribution-2-9">Another way to improve your intuition about the Binomial distribution is to look at the impact of changing <span class="process-math">\(p\)</span> value for the Bernoulli trials themselves - what impact do they have on a <span class="process-math">\(10\)</span>-Binomial? It is shown in <a href="sec-Example-Discrete-Probability-Distributions.html#fig-binomial-N10p2p5pp8" class="xref" data-knowl="./knowl/xref/fig-binomial-N10p2p5pp8.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.7.3">Figure 1.7.3</a>. These plots show that low <span class="process-math">\(p (0.2)\)</span> skews the PMF toward fewer successes; <span class="process-math">\(p = 0.5\)</span> produces a symmetric distribution centered at <span class="process-math">\(N/2\text{;}\)</span> high  <span class="process-math">\(p (0.8)\)</span> skews toward more successes.</div> <figure class="figure figure-like" id="fig-binomial-N10p2p5pp8"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/binomial-N10p2p5pp8.png" class="contained" alt="Illustrating that different p values in Binomial distribution correspond to different distributions but  with N=10."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.3<span class="period">.</span></span><span class="space"> </span>Illustrating that different <span class="process-math">\(p\)</span> values in Binomial distribution correspond to different distributions but  with <span class="process-math">\(N=10\text{.}\)</span></figcaption></figure> <div class="para logical" id="subsec-Binomial-Distribution-2-11">
+</code></pre></div> <div class="para" id="subsec-Binomial-Distribution-2-9">Another way to improve your intuition about the Binomial distribution is to look at the impact of changing <span class="process-math">\(p\)</span> value for the Bernoulli trials themselves - what impact do they have on a <span class="process-math">\(10\)</span>-Binomial? It is shown in <a href="sec-Example-Discrete-Probability-Distributions.html#fig-binomial-N10p2p5pp8" class="xref" data-knowl="./knowl/xref/fig-binomial-N10p2p5pp8.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.7.3">Figure 1.7.3</a>. These plots show that low <span class="process-math">\(p (0.2)\)</span> skews the PMF toward fewer successes; <span class="process-math">\(p = 0.5\)</span> produces a symmetric distribution centered at <span class="process-math">\(n/2\text{;}\)</span> high  <span class="process-math">\(p (0.8)\)</span> skews toward more successes.</div> <figure class="figure figure-like" id="fig-binomial-N10p2p5pp8"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/binomial-N10p2p5pp8.png" class="contained" alt="Illustrating that different p values in Binomial distribution correspond to different distributions but  with N=10."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.3<span class="period">.</span></span><span class="space"> </span>Illustrating that different <span class="process-math">\(p\)</span> values in Binomial distribution correspond to different distributions but  with <span class="process-math">\(n=10\text{.}\)</span></figcaption></figure> <div class="para logical" id="subsec-Binomial-Distribution-2-11">
 <div class="para">For doing analytical calculations with the Binomial distribution, it is important to recall the following algebraic identity, called Binomial expansion.</div>
 <div class="displaymath process-math" id="eqn-Binomial-expansion">
 \begin{equation}
-(a + b)^N = \sum_{m=0}^{N}\, \frac{N!}{m! (N-m)!}\,a^m\,b^{N-m}.\tag{1.7.11}
+(a + b)^n = \sum_{m=0}^{n}\, \frac{n!}{m! (n-m)!}\,a^m\,b^{n-m}.\tag{1.7.11}
 \end{equation}
 </div>
 <div class="para">Using this it is straightforward to show that Binomial distribution is normalized properly since</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\sum_{m=0}^{N}\,P_{N,p}(X = m) = \sum_{m=0}^{N}\,\frac{N!}{m! (N-m)!}\,p^m\,(1-p)^{N-m} = \left[ p + (1-p)\right]^N = 1.
+\sum_{m=0}^{n}\,P_{n,p}(X = m) = \sum_{m=0}^{n}\,\frac{n!}{m! (n-m)!}\,p^m\,(1-p)^{n-m} = \left[ p + (1-p)\right]^n = 1.
 \end{equation*}
 </div>
 <div class="para">The mean <span class="process-math">\(\mu\)</span> of the Binomial random variable <span class="process-math">\(X\)</span> can be obtained by weighing each value of <span class="process-math">\(X \in \{0, 1, 2, \cdots, N\} \)</span> by the corresponding probability. This is just the expectation value of the variable <span class="process-math">\(X\)</span> itself.</div>
 <div class="displaymath process-math" id="eqn-men-Binomial-distribution">
 \begin{equation}
-\mu = \mathbb{E}[X] = \sum_{m=0}^{N}\, m \, P_{N,p}(X = m) = N\,p.\tag{1.7.12}
+\mu = \mathbb{E}[X] = \sum_{m=0}^{n}\, m \, P_{n,p}(X = m) = N\,p.\tag{1.7.12}
 \end{equation}
 </div>
 <div class="para">A simple method of showing the result involves taking an appropriate derivative appropriately.</div>
 <div class="displaymath process-math" id="subsec-Binomial-Distribution-2-11-8">
 \begin{align*}
-\sum_{m=0}^{N}\,m\,\frac{N!}{m! (N-m)!}\,p^m\,(1-p)^{N-m} \amp  = \left[ p\frac{d}{dp}\sum_{m=0}^{N}\,\frac{N!}{m! (N-m)!}\,p^m\,q^{N-m} \right]_{q=1-p}\\
-\amp = \left[ p\frac{d}{dp}(p + q)^N \right]_{q=1-p} \\
-\amp = \left[p N(p + q)^{N-1} \right]_{q=1-p} = N\, p.
+\sum_{m=0}^{n}\,m\,\frac{n!}{m! (n-m)!}\,p^m\,(1-p)^{n-m} \amp  = \left[ p\frac{d}{dp}\sum_{m=0}^{n}\,\frac{n!}{m! (n-m)!}\,p^m\,q^{n-m} \right]_{q=1-p}\\
+\amp = \left[ p\frac{d}{dp}(p + q)^n \right]_{q=1-p} \\
+\amp = \left[p n(p + q)^{n-1} \right]_{q=1-p} = N\, p.
 \end{align*}
 </div>
 <div class="para">The variance is similarly shown to be</div>
@@ -573,46 +632,46 @@ plt.show()
 <div class="para">And, the standard deviation <span class="process-math">\(\sigma\)</span> is just the square root.</div>
 <div class="displaymath process-math" id="eqn-stdev-Binomial-distribution">
 \begin{equation}
-\sigma = \sqrt{\textrm{Var}(X) } = \sqrt{N\,p\,(1-p)}.\tag{1.7.14}
+\sigma = \sqrt{\textrm{Var}(X) } = \sqrt{n\,p\,(1-p)}.\tag{1.7.14}
 \end{equation}
 </div>
 </div></section><section class="subsubsection" id="subsubsec-Average-of-Random-Variables"><h4 class="heading hide-type">
 <span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">1.7.2.1</span><span class="space"> </span><span class="title">Average of Random Variables</span>
 </h4>
 <div class="para logical" id="subsubsec-Average-of-Random-Variables-2">
-<div class="para">If we divide the Binomial random variable by <span class="process-math">\(N\text{,}\)</span> the number of independent Bernoulli trials in the Binomial experiment, we will get the average of those Bernoulli trials. Let <span class="process-math">\(X_1,\ X_2, \ \cdots\ , X_N\)</span> denote the Bernoulli random variables that make up the Binomial experiment. The average, denoted by <span class="process-math">\(\overline{X_N}\)</span> will just be</div>
+<div class="para">If we divide the Binomial random variable by <span class="process-math">\(n\text{,}\)</span> the number of independent Bernoulli trials in the Binomial experiment, we will get the average of those Bernoulli trials. Let <span class="process-math">\(X_1,\ X_2, \ \cdots\ , X_n\)</span> denote the Bernoulli random variables that make up the Binomial experiment. The average, denoted by <span class="process-math">\(\overline{X_n}\)</span> will just be</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\overline{X_N} =  \frac{X_1 + X_2 + \cdots + X_N}{N}.
+\overline{X_n} =  \frac{X_1 + X_2 + \cdots + X_n}{n}.
 \end{equation*}
 </div>
 <div class="para"> This random variable is called <dfn class="terminology">sample mean</dfn>. From the values the Binomial random value in the numerator, it is clear that the samle mean will be one of the following values in each Binomial trial.</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\overline{X_N} \in \{  0, \frac{1}{N}, \frac{2}{N}, \cdots, \frac{N}{N}=1 \}
+\overline{X_n} \in \{  0, \frac{1}{n}, \frac{2}{n}, \cdots, \frac{n}{n}=1 \}
 \end{equation*}
 </div>
-<div class="para">A good way to think about the sample mean is that you have some elementary experiment whose outcome is <span class="process-math">\(1\)</span> or <span class="process-math">\(0\)</span> (the component Bernoulli trials) and you would like to find out <span class="process-math">\(p\text{.}\)</span> So, you set up <span class="process-math">\(N\)</span> trials and average them to get a better estimation.</div>
+<div class="para">A good way to think about the sample mean is that you have some elementary experiment whose outcome is <span class="process-math">\(1\)</span> or <span class="process-math">\(0\)</span> (the component Bernoulli trials) and you would like to find out <span class="process-math">\(p\text{.}\)</span> So, you set up <span class="process-math">\(n\)</span> trials and average them to get a better estimation.</div>
 </div>
 <div class="para logical" id="subsubsec-Average-of-Random-Variables-3">
-<div class="para">With <span class="process-math">\(p\)</span> being probability of any of the individual Bernoulli variables to produce a success, i.e., <span class="process-math">\(p = P(X_i = 1)\)</span> for every one of the <span class="process-math">\(i = 1, 2, \cdots, N\text{,}\)</span> it is immediately follows that expectation value of the sample mean variable is just <span class="process-math">\(p\text{,}\)</span> independent of <span class="process-math">\(N\text{.}\)</span>
+<div class="para">With <span class="process-math">\(p\)</span> being probability of any of the individual Bernoulli variables to produce a success, i.e., <span class="process-math">\(p = P(X_i = 1)\)</span> for every one of the <span class="process-math">\(i = 1, 2, \cdots, N\text{,}\)</span> it is immediately follows that expectation value of the sample mean variable is just <span class="process-math">\(p\text{,}\)</span> independent of <span class="process-math">\(n\text{.}\)</span>
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
-\mathbb{E}[\overline{X_N}]  = p.
+\mathbb{E}[\overline{X_n}]  = p.
 \end{equation*}
 </div>
 <div class="para">Due to the scaling of the Binomial variable to get the sample mean variable, the variance of the sample mean variable is <span class="process-math">\(1/N^2\)</span> times the variance of the Binomial variable.</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\text{Var}(\overline{X_N}) =  \frac{ \sqrt{N p(1-p)} }{N^2} =  \frac{p(1-p)}{N},
+\text{Var}(\overline{X_n}) =  \frac{ \sqrt{n p(1-p)} }{n^2} =  \frac{p(1-p)}{n},
 \end{equation*}
 </div>
-<div class="para">which translates to the standard deviation that goes as <span class="process-math">\(\sim 1/\sqrt{N}\)</span>
+<div class="para">which translates to the standard deviation that goes as <span class="process-math">\(\sim 1/\sqrt{n}\)</span>
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
-\sigma = \sqrt{ \text{Var}(\overline{X_N}) } = \frac{\sqrt{p(1-p)}}{\sqrt{N}}.
+\sigma = \sqrt{ \text{Var}(\overline{X_n}) } = \frac{\sqrt{p(1-p)}}{\sqrt{n}}.
 \end{equation*}
 </div>
 <div class="para">As you include increasing number of Bernoulli trials in each Binomial experiment, you estimate of the mean of the sample mean shrink around the true value <span class="process-math">\(p\text{.}\)</span> <em class="alert">Where does this result matter?</em>
@@ -620,22 +679,22 @@ plt.show()
 </div>
 <div class="para logical" id="subsubsec-Average-of-Random-Variables-4"><ul class="disc" id="subsubsec-Average-of-Random-Variables-4-1">
 <li id="subsubsec-Average-of-Random-Variables-4-1-1"><div class="para" id="subsubsec-Average-of-Random-Variables-4-1-1-1">
-<em class="alert">Estimation:</em> In statistics, we often estimate <span class="process-math">\(p\)</span> by <span class="process-math">\(\langle \overline{X_N} \rangle\)</span> from data.</div></li>
+<em class="alert">Estimation:</em> In statistics, we often estimate <span class="process-math">\(p\)</span> by <span class="process-math">\(\langle \overline{X_n} \rangle\)</span> from data.</div></li>
 <li id="subsubsec-Average-of-Random-Variables-4-1-2"><div class="para" id="subsubsec-Average-of-Random-Variables-4-1-2-1">
-<em class="alert">Interpretation:</em> If you run multiple experiments, your average success rate will be centered at <span class="process-math">\(p\)</span> and become more concentrated as <span class="process-math">\(N\)</span> grows since the standard deviation drops as <span class="process-math">\(\sim 1/\sqrt{N}\text{.}\)</span> This is illustrated in <a href="sec-Example-Discrete-Probability-Distributions.html#fig-bernoulli-to-CLT" class="xref" data-knowl="./knowl/xref/fig-bernoulli-to-CLT.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.7.4">Figure 1.7.4</a>.</div></li>
+<em class="alert">Interpretation:</em> If you run multiple experiments, your average success rate will be centered at <span class="process-math">\(p\)</span> and become more concentrated as <span class="process-math">\(n\)</span> grows since the standard deviation drops as <span class="process-math">\(\sim 1/\sqrt{n}\text{.}\)</span> This is illustrated in <a href="sec-Example-Discrete-Probability-Distributions.html#fig-bernoulli-to-CLT" class="xref" data-knowl="./knowl/xref/fig-bernoulli-to-CLT.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.7.4">Figure 1.7.4</a>.</div></li>
 <li id="subsubsec-Average-of-Random-Variables-4-1-3"><div class="para logical" id="subsubsec-Average-of-Random-Variables-4-1-3-1">
 <div class="para">
-<em class="alert">Connection to the Central Limit Theorem:</em> For large <span class="process-math">\(N\text{,}\)</span> it can be shown that the probability distribution of the random variable <span class="process-math">\(\overline{X_N}\)</span> tends to become Gaussian with the mean <span class="process-math">\(p\)</span> and variance <span class="process-math">\(p(1-p)/N\text{.}\)</span> We write this as</div>
+<em class="alert">Connection to the Central Limit Theorem:</em> For large <span class="process-math">\(n\text{,}\)</span> it can be shown that the probability distribution of the random variable <span class="process-math">\(\overline{X_n}\)</span> tends to become Gaussian with the mean <span class="process-math">\(p\)</span> and variance <span class="process-math">\(p(1-p)/N\text{.}\)</span> We write this as</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\overline{X_N} \approx \text{Gaussian}\left( p, \frac{p(1-p)}{N}\right),
+\overline{X_n} \approx \text{Gaussian}\left( p, \frac{p(1-p)}{n}\right),
 \end{equation*}
 </div>
 <div class="para">even though each <span class="process-math">\(X_i\)</span> is a discrete random variable. This goes by the name <em class="alert">Central Limit Theorem</em>, which we will discuss in another section.</div>
 </div></li>
 </ul></div>
 <figure class="figure figure-like" id="fig-bernoulli-to-CLT"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/bernoulli-to-CLT.png" class="contained" alt="Illustrating that for large N the distribution of the average of N Bernoulli variables of the same p tends towards a Gaussian distribution."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.4<span class="period">.</span></span><span class="space"> </span>Illustrating that for large <span class="process-math">\(N\)</span> the distribution of the average of <span class="process-math">\(N\)</span> Bernoulli variables of the same <span class="process-math">\(p\)</span> tends towards a Gaussian distribution.</figcaption></figure></section></section><section class="subsection" id="subsec-Multinomial-Distribution"><h3 class="heading hide-type">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.4<span class="period">.</span></span><span class="space"> </span>Illustrating that for large <span class="process-math">\(n\)</span> the distribution of the average of <span class="process-math">\(n\)</span> Bernoulli variables of the same <span class="process-math">\(p\)</span> tends towards a Gaussian distribution.</figcaption></figure></section></section><section class="subsection" id="subsec-Multinomial-Distribution"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.7.3</span><span class="space"> </span><span class="title">Multinomial/Categorical Distribution</span>
 </h3>
 <div class="para" id="subsec-Multinomial-Distribution-2">Multinomial distribution is like the binomial’s cooler cousin who handles multiple categories at once. Imagine rolling a die, sorting emails into spam, promo, or important, or predicting labels in a machine learning classifier. This distribution is your go-to for modeling counts across several outcomes. Why’s it a big deal in machine learning? It’s everywhere! In natural language processing, it powers things like bag-of-words models for text. In classification, it’s behind softmax outputs, where your model predicts probabilities over multiple classes. Plus, it’s key for understanding likelihoods in algorithms like Naive Bayes or evaluating models with metrics like cross-entropy loss. If you’re working with categorical data in ML, the multinomial is your best friend.</div>
@@ -821,7 +880,7 @@ X_i = \sum_{t=1}^n\,Y_{t,i}.
 <div class="para">The <em class="alert">aymptotic</em> behavior of multinomial distribution when <span class="process-math">\(n\)</span> is huge is of considerable importance for powering tests like chi-squared for goodness of fit test, among other uses. So, I will just state here the results and use them later. By the multivariate central limit theorem, the proportions <span class="process-math">\(\vec{X}/n\)</span> get close to a multivariate normal in distribution sense:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\sqrt{n} \left( \frac{\vec{X}}{n} - \vec{p} \right) \xrightarrow{d} \mathcal{N}(\mathbf{0}, \mathbf{\Sigma}),
+\sqrt{n} \left( \frac{\vec{X}}{n} - \vec{p} \right) \xrightarrow{d} \mathcal{n}(\mathbf{0}, \mathbf{\Sigma}),
 \end{equation*}
 </div>
 <div class="para">where <span class="process-math">\(\mathbf{\Sigma}\)</span> has diagonals <span class="process-math">\(p_i(1 - p_i)\)</span> and off-diagonals <span class="process-math">\(-p_i p_j\)</span> for <span class="process-math">\(i \neq j\text{.}\)</span>
@@ -878,10 +937,10 @@ e^{\lambda} = \sum_{k=0}^\infty\, \frac{\lambda^{k}}{k!}
 </div>
 <div class="para">where the missing steps are left for the student to practice, using the same type of argument as introducing <span class="process-math">\(\lambda\,(d/d\lambda)\)</span> operators appropriately.</div>
 </div> <div class="para logical" id="subsec-Poisson-Distribution-2-2">
-<div class="para">A mathematically interesting result is that in an appropriate limit, a Binomial distribution can be shown to become same as Poisson distribution. I will just state the result without giving you the detailed calculations. (hint: You can get <span class="process-math">\(k\)</span> factors of <span class="process-math">\(N\)</span> from <span class="process-math">\(N!/(N-k)!\)</span>).</div>
+<div class="para">A mathematically interesting result is that in an appropriate limit, a Binomial distribution can be shown to become same as Poisson distribution. I will just state the result without giving you the detailed calculations. (hint: You can get <span class="process-math">\(k\)</span> factors of <span class="process-math">\(n\)</span> from <span class="process-math">\(n!/(n-k)!\)</span>).</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\frac{N!}{k! (N-k)!}\, p^k\, (1-p)^{N-k} \xrightarrow{N\rightarrow \infty,\ p\rightarrow 0,\ Np=\lambda, \text{fixed}} e^{-\lambda}\,\frac{\lambda^k}{k!}
+\frac{n!}{k! (n-k)!}\, p^k\, (1-p)^{n-k} \xrightarrow{n\rightarrow \infty,\ p\rightarrow 0,\ np=\lambda, \text{fixed}} e^{-\lambda}\,\frac{\lambda^k}{k!}
 \end{equation*}
 </div>
 </div> <div class="para logical" id="subsec-Poisson-Distribution-2-3">
@@ -954,26 +1013,26 @@ plt.show()
 </h4>
 <div class="para" id="subsub-Poisson-Process-2">A <em class="alert">Poisson process</em> is a stochastic process used to model the occurrence of events that happen independently and at a constant average rate over time or space.</div>
 <div class="para logical" id="subsub-Poisson-Process-3">
-<div class="para">Formally, a Poisson process is a counting process <span class="process-math">\(( \{N(t), t \ge 0\} )\text{,}\)</span> where <span class="process-math">\(N(t)\)</span> represents the number of events that have occurred <em class="alert">up to time</em> <span class="process-math">\(t\text{,}\)</span> and it satisfies the following properties:</div>
+<div class="para">Formally, a Poisson process is a counting process <span class="process-math">\(( \{X(t), t \ge 0\} )\text{,}\)</span> where <span class="process-math">\(X(t)\)</span> represents the number of events that have occurred <em class="alert">up to time</em> <span class="process-math">\(t\text{,}\)</span> and it satisfies the following properties:</div>
 <ol class="decimal" id="subsub-Poisson-Process-3-5">
 <li id="subsub-Poisson-Process-3-5-1"><div class="para" id="subsub-Poisson-Process-3-5-1-1">
-<em class="alert">Initial Condition</em>: <span class="process-math">\(( N(0) = 0 )\text{,}\)</span> meaning the process starts with no events at time zero.</div></li>
+<em class="alert">Initial Condition</em>: <span class="process-math">\(( X(0) = 0 )\text{,}\)</span> meaning the process starts with no events at time zero.</div></li>
 <li id="subsub-Poisson-Process-3-5-2"><div class="para" id="subsub-Poisson-Process-3-5-2-1">
 <em class="alert">Independent Increments</em>: The number of events in non-overlapping time intervals is independent. For example, the number of events in <span class="process-math">\((t_1, t_2]\)</span> is independent of the number in <span class="process-math">\((t_3, t_4]\)</span> if the intervals do not overlap.</div></li>
 <li id="subsub-Poisson-Process-3-5-3"><div class="para" id="subsub-Poisson-Process-3-5-3-1">
-<em class="alert">Stationary Increments</em>: The number of events in a time interval of length <span class="process-math">\(t \text{,}\)</span> i.e., <span class="process-math">\(N(s+t) - N(s) \text{,}\)</span> depends only on the length <span class="process-math">\(t \)</span> and not on the starting point <span class="process-math">\(s \text{.}\)</span>
+<em class="alert">Stationary Increments</em>: The number of events in a time interval of length <span class="process-math">\(t \text{,}\)</span> i.e., <span class="process-math">\(X(s+t) - X(s) \text{,}\)</span> depends only on the length <span class="process-math">\(t \)</span> and not on the starting point <span class="process-math">\(s \text{.}\)</span>
 </div></li>
 <li id="subsub-Poisson-Process-3-5-4"><div class="para logical" id="subsub-Poisson-Process-3-5-4-1">
 <div class="para">
 <em class="alert">Poisson Distribution</em>: The number of events in any interval of length <span class="process-math">\(t \)</span> follows a Poisson distribution with mean <span class="process-math">\(\lambda t \text{,}\)</span> where <span class="process-math">\(\lambda &gt; 0 \)</span> is the <em class="alert">rate parameter</em> (average number of events per unit time). The probability of <span class="process-math">\(k \)</span> events in an interval of length <span class="process-math">\(t \)</span> is:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-P(N(t) = k) = \frac{(\lambda t)^k e^{-\lambda t}}{k!}, \quad k = 0, 1, 2, \dots
+P(X(t) = k) = \frac{(\lambda t)^k e^{-\lambda t}}{k!}, \quad k = 0, 1, 2, \dots
 \end{equation*}
 </div>
 </div></li>
 <li id="subsub-Poisson-Process-3-5-5"><div class="para" id="subsub-Poisson-Process-3-5-5-1">
-<em class="alert">No Simultaneous Events</em>: The probability of two or more events occurring at exactly the same time is negligible (technically, the probability of multiple events in an infinitesimally small interval is zero).</div></li>
+<em class="alert">no Simultaneous Events</em>: The probability of two or more events occurring at exactly the same time is negligible (technically, the probability of multiple events in an infinitesimally small interval is zero).</div></li>
 </ol>
 </div>
 <div class="para logical" id="subsub-Poisson-Process-4">
