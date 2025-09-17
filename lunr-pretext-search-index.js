@@ -1648,6 +1648,87 @@ var ptx_lunr_docs = [
   "body": "Predicting Hand Written Digits  In this section, we will build a multiclass logistic regression model (also known as softmax regression) from scratch in Python. Instead of relying on pre-built machine learning libraries, we will implement the mathematics ourselves using NumPy and optimize the parameters with gradient descent.  For data, we will use the classic MNIST handwritten digits dataset , a benchmark in machine learning that contains 70,000 grayscale images of digits 0 through 9. Each image is a 28×28 pixel grid, which we flatten into a feature vector of dimension 784. The target labels are integers from 0 to 9. To simplify the task and keep training efficient, we will restrict the dataset to only the first five digits (0–4). This gives us a five-class classification problem with inputs and one-hot encoded outputs , where is the number of samples.  This exercise illustrates how the softmax function converts raw model scores into probabilities across multiple classes and how cross-entropy loss guides learning. It also demonstrates the practical use of MNIST as a stepping stone toward understanding more complex models like neural networks.  The program below produces the following output:   Every 50 Epoch print the progress:    Epoch 50, Loss: 0.1036    Epoch 100, Loss: 0.0939    Epoch 150, Loss: 0.0886    Epoch 200, Loss: 0.0850    Epoch 250, Loss: 0.0822    Epoch 300, Loss: 0.0800    Epoch 350, Loss: 0.0782    Epoch 400, Loss: 0.0766    Epoch 450, Loss: 0.0752    Epoch 500, Loss: 0.0740    Print out the performance at the end of 500 epochs (i.e., iterations through the entire training dataset) Training accuracy: 0.9797, Test accuracy: 0.9671. Here, training accuracy is the accuracy measured on the trtaining dataset and the test accuracy is the one measured on the test dataset.  The program also plots loss versus iterations and some example prediction labels and the corresponding photos in the test dataset.   Predicted labels and actual digits images.   Predicted labels and actual digits images.    import numpy as np import matplotlib.pyplot as plt from sklearn.preprocessing import StandardScaler from sklearn.metrics import accuracy_score from sklearn.model_selection import train_test_split from sklearn.datasets import fetch_openml mnist = fetch_openml('mnist_784', version=1, as_frame=False) X, y = mnist.data, mnist.target.astype(int) # Train\/test split (e.g., 80\/20) X_train, X_test, y_train, y_test = train_test_split( X, y, test_size=0.2, random_state=42 ) # ------------------------- # 1. Load MNIST and restrict to digits 0–4 # ------------------------- # (X_train, y_train), (X_test, y_test) = mnist.load_data() # keep only digits 0-4 train_mask = y_train < 5 test_mask = y_test < 5 X_train = X_train[train_mask] y_train = y_train[train_mask] X_test = X_test[test_mask] y_test = y_test[test_mask] # flatten images from 28x28 → 784 X_train = X_train.reshape(X_train.shape[0], -1).astype(np.float32) X_test = X_test.reshape(X_test.shape[0], -1).astype(np.float32) # normalize scaler = StandardScaler() X_train = scaler.fit_transform(X_train) X_test = scaler.transform(X_test) # one-hot labels num_classes = len(np.unique(y_train)) y_train_oh = np.eye(num_classes)[y_train] y_test_oh = np.eye(num_classes)[y_test] # ------------------------- # 2. Softmax + loss # ------------------------- def softmax(logits): exp_logits = np.exp(logits - np.max(logits, axis=1, keepdims=True)) return exp_logits \/ np.sum(exp_logits, axis=1, keepdims=True) def cross_entropy_loss(y_true, y_pred): eps = 1e-15 return -np.mean(np.sum(y_true * np.log(y_pred + eps), axis=1)) # ------------------------- # 3. Gradient descent training # ------------------------- def train_softmax_classification(X, y, num_classes, lr=0.1, epochs=300): n_samples, n_features = X.shape W = np.zeros((n_features, num_classes)) b = np.zeros((1, num_classes)) losses = [] for epoch in range(epochs): logits = X @ W + b y_pred = softmax(logits) loss = cross_entropy_loss(y, y_pred) losses.append(loss) grad_W = (X.T @ (y_pred - y)) \/ n_samples grad_b = np.mean(y_pred - y, axis=0, keepdims=True) W -= lr * grad_W b -= lr * grad_b if (epoch+1) % 50 == 0: print(f\"Epoch {epoch+1}, Loss: {loss:.4f}\") return W, b, losses # ------------------------- # 4. Train # ------------------------- W, b, losses = train_softmax_classification(X_train, y_train_oh, num_classes, lr=0.5, epochs=500) # ------------------------- # 5. Evaluate # ------------------------- def predict(X, W, b): logits = X @ W + b return np.argmax(softmax(logits), axis=1) y_pred_train = predict(X_train, W, b) y_pred_test = predict(X_test, W, b) train_acc = accuracy_score(y_train, y_pred_train) test_acc = accuracy_score(y_test, y_pred_test) print(f\"Training accuracy: {train_acc:.4f}\") print(f\"Test accuracy: {test_acc:.4f}\") # ------------------------- # 6. Plot loss curve # ------------------------- plt.figure(figsize=(6,4)) plt.plot(losses, label=\"Training Loss\") plt.xlabel(\"Epochs\") plt.ylabel(\"Cross-Entropy Loss\") plt.title(\"Loss Curve\") plt.legend() plt.show() # ------------------------- # 7. Plot sample predictions # ------------------------- fig, axes = plt.subplots(2, 5, figsize=(10,5)) indices = np.random.choice(len(X_test), size=10, replace=False) for ax, idx in zip(axes.flat, indices): img = X_test[idx].reshape(28, 28) ax.imshow(img, cmap=\"gray\") ax.axis(\"off\") pred = y_pred_test[idx] true = y_test[idx] ax.set_title(f\"P:{pred}, T:{true}\") plt.suptitle(\"Sample Predictions (P=Predicted, T=True)\") plt.show()  "
 },
 {
+  "id": "sec-Evaluating-Predictions",
+  "level": "1",
+  "url": "sec-Evaluating-Predictions.html",
+  "type": "Section",
+  "number": "2.5",
+  "title": "Evaluating Predictions",
+  "body": " Evaluating Predictions   So far we have talked about learning parameters for models of the conditional probability in various types of problems using a dataset of values called the training dataset . We call the with optimized parameters is called a trained model .  To evaluate the quality of a trained model, so as not to introduce bias in the process we need a fresh dataset, which was not used during the training of the model, or, in any way could have biased the training process. This pristine set-aside-for-test dataset is called the test dataset . Often, the strategy is to split all the data we have into two subsets for training and testing purposes. We use the test subset solely for testing.  We will use the following notation for the training and test subsets:   The quality of a model is then tested on the test dataset using a scoring function that closely aligns with the objective of the project. Since the evaluation metrics depend on the type of questions we want to answer, it is best to describe them with examples as we will illustrate in this section.        Evaluating Regression Tasks  In regression tasks, the trained model is usually a probability density function , where are the estimated or trained parameters. Suppose, we want to predict the best given an , what should be the predictor function and how should we evaluate it? The answer depends on whether is a skewed distribution or not.   Non-skewed Distribution   Suppose, is not skewed. Then, the best prediction for is the mean value of . Therefore, the predictor function will be where I have included the parameter indicator so that we are aware that the predictor funtion will depend upon the parameters of the model for which are estimated\/trained using the trainign dataset .  To evaluate the quality of this predictor, the average value of the Mean Squared Error is the score function that also minimizes the training error when used during the training f the model. The formula for squared error is Evaluating its average over the test set gives us the mean squared error. That is, mean squared error is empirical expectation of the squared error (a random variable) in the distribution represented by the test dataset, with each datapoint weighing equally. When we use this same formula during the training, we minimze the following error function. where 's are to be adjusted during the training. You should note different uses of the squared error during training and testing for this task.   Non-skewed Distribution   If is skewed or if you suspect that the training data has outliers that have influenced the estimation process, then, a better prediction of best  will be the median of the distribution. The score function in that case would be the expectation of the absolute difference between the predictor and the true. This score function is called mean absolute error (MAE)      Evaluating Binary Classification  In a binary classification, the task is to predict whether a given belongs to one of the two classes, (i.e., True\/Success) or (i.e., False\/Failure). We have modeled the conditional probability mass function , i.e., probability of outcome being for a given , as a sigmoid in the logistic regression algorithm, whose parameters were optimized by using the training data .  For brevity, let us denote the trained probability by This will be our predictor when combined with a threshold for decision. Thus, at the end of training, we end up with a trained model, , which directly predicts by the following decision rules: Note that depends upon and the training dataset. We will just show it as . In our examples, we used the threshold . We will discuss below a systematic way of choosing appropriate threshold for a problem. For now, suppose, we have rule for converting trained model into predictions on the outcomes.  To evaluate the trained model, a simple measure is the percentage of the times we got the prediction right. This is called accuracy . The score function for this measure will just be a Kronecker delta of the predictor and the corresponding . As a random variable, accuracy will by The accuracy will be the expectation value of this random variable. When it is evaluated on the test dataset we will get the following.   For many problems, accuracy turns out to be a good enough metric for evaluating the quality of predictions. Accuracy, however, misses some details that you might care about. For instance, it lumps together being right on both and cases and you might care more about being right on, say the outcome than on the outcome . In these cases, you might want to look more closely at when you are wrong and when you are right.  Just as there are two events when you are right, i.e., you predict and data (i.e., true) value is also and you predict when the fata value of also , there are two ways of being wrong: you predict but the data value of and yoou predict but the data value is . Suppose, we refer to as positive and as negative , then we call these various types of outcomes by different names.    True Positive (TP) : You predict and data (i.e., true) value is also .   True Negative (TN) : You predict and data (i.e., true) value is also .   False Positive (FP) : You predict but the data (i.e., true) value is .   False Negative (FN) : You predict but the data (i.e., true) value is .   Suppose, there are points in the test dataset and you find , , , and . It is a common practice to present these numbers in a matrix, aptly called the confusion matrix .         Actual  Positive Negative Totals  Predicted  Predicted  Positive  TP FP  Negative  FN TN    Totals Actuals            Actual  Positive Negative Totals  Predicted  Predicted  Positive   Negative     Totals Actuals     From the confusion matrix, you can further deduce important metric of the performance of a model. For instance, we may want to know, What percentage of the actual were we able to predict to be ? It's called recall or True Positive Rate (TPR) . All the positives in the real data are now in the TP and FN since FN are actually positives which got incorrectly predicted to be negatives. Sometimes, it's more important to know what proportions of all my positive predictions was actuall prositive in the test dataset. This measure is called precision . There is also a False Positive Rate (FPR) . This measures mistakes in predictions made by the model when looking at the negatives in the test data. It is calculated by dividing the FP (incorrect predictions on negatives in the test data) by the number of datapoints that were actually negatives. The accuracy that we have discussed before will be It would be a good exercise for the student to find the values of these quantities from the table of values given above.   "
+},
+{
+  "id": "sec-Evaluating-Predictions-2-1",
+  "level": "2",
+  "url": "sec-Evaluating-Predictions.html#sec-Evaluating-Predictions-2-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "the training dataset trained model "
+},
+{
+  "id": "sec-Evaluating-Predictions-2-2",
+  "level": "2",
+  "url": "sec-Evaluating-Predictions.html#sec-Evaluating-Predictions-2-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "the test dataset "
+},
+{
+  "id": "sec-Evaluating-Predictions-2-4",
+  "level": "2",
+  "url": "sec-Evaluating-Predictions.html#sec-Evaluating-Predictions-2-4",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "scoring function "
+},
+{
+  "id": "subsec-Evaluating-Regression-Tasks-5",
+  "level": "2",
+  "url": "sec-Evaluating-Predictions.html#subsec-Evaluating-Regression-Tasks-5",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Mean Squared Error score function "
+},
+{
+  "id": "subsec-Evaluating-Regression-Tasks-7",
+  "level": "2",
+  "url": "sec-Evaluating-Predictions.html#subsec-Evaluating-Regression-Tasks-7",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "mean absolute error (MAE) "
+},
+{
+  "id": "subsec-Evaluating-Binary-Classification-4",
+  "level": "2",
+  "url": "sec-Evaluating-Predictions.html#subsec-Evaluating-Binary-Classification-4",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "accuracy accuracy "
+},
+{
+  "id": "subsec-Evaluating-Binary-Classification-6",
+  "level": "2",
+  "url": "sec-Evaluating-Predictions.html#subsec-Evaluating-Binary-Classification-6",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "True Positive (TP) True Negative (TN) False Positive (FP) False Negative (FN) confusion matrix "
+},
+{
+  "id": "subsec-Evaluating-Binary-Classification-8",
+  "level": "2",
+  "url": "sec-Evaluating-Predictions.html#subsec-Evaluating-Binary-Classification-8",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "recall True Positive Rate (TPR) precision False Positive Rate (FPR) accuracy "
+},
+{
   "id": "backmatter-2",
   "level": "1",
   "url": "backmatter-2.html",
