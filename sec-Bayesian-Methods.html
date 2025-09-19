@@ -570,52 +570,57 @@ P(Y=\text{not spam} \mid X) \propto 0.6 \times 0.5 \times 0.5 = 0.150.
 <td class="l m b0 r0 l0 t0 lines">0.99</td>
 <td class="l m b0 r0 l0 t0 lines">1115</td>
 </tr>
-</table></div> <div class="para" id="subsec-Naive-Bayes-6-8">New message predictions (0=ham, 1=spam):</div> <div class="para" id="subsec-Naive-Bayes-6-9">Message: Free offer! Win a $1000 gift card now!... –&gt; spam</div> <div class="para" id="subsec-Naive-Bayes-6-10">Message: Hey, let’s meet tomorrow at 5pm.... –&gt; ham</div> <div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-py"># Naive Bayes Example: SMS Spam Detection
-# Step 1: Import libraries
+</table></div> <div class="para" id="subsec-Naive-Bayes-6-8">New message predictions (0=ham, 1=spam):</div> <div class="para" id="subsec-Naive-Bayes-6-9">Message: Free offer! Win a $1000 gift card now!... –&gt; spam</div> <div class="para" id="subsec-Naive-Bayes-6-10">Message: Hey, let’s meet tomorrow at 5pm.... –&gt; ham</div> <div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-py"># Naive Bayes spam classifier with confusion matrix
+import matplotlib.pyplot as plt
 import pandas as pd
+import seaborn as sns
 from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.metrics import classification_report, confusion_matrix
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import MultinomialNB
-from sklearn.metrics import confusion_matrix, classification_report
-import seaborn as sns
-import matplotlib.pyplot as plt
-# You might need to download the data file to your local drive sometimes
-#!wget https://archive.ics.uci.edu/static/public/228/sms+spam+collection.zip
-#!unzip sms+spam+collection.zip
-#!cp SMSSpamCollection SMSSpamCollection.txt
-#!ls -l SMSSpamCollection.txt
-#!head -5 SMSSpamCollection.txt
-# Step 2: Load dataset (SMS Spam Collection from UCI repository)
-url = "https://archive.ics.uci.edu/ml/machine-learning-databases/00228/smsspamcollection.zip"
-df = pd.read_csv(url, compression="zip", sep="\t", names=["label", "message"])
+# -----------------------
+# 1. Load dataset
+# -----------------------
+# Use a GitHub-hosted copy of the SMS Spam Collection dataset
+url = "https://raw.githubusercontent.com/justmarkham/DAT8/master/data/sms.tsv"
+df = pd.read_csv(url, sep="\t", names=["label", "message"])
 print("Dataset shape:", df.shape)
 print(df.head())
-# Step 3: Preprocess labels
-df["label"] = df["label"].map({"ham": 0, "spam": 1})  # ham=0, spam=1
-# Step 4: Train/test split
+# -----------------------
+# 2. Preprocess
+# -----------------------
+df["label"] = df["label"].map({"ham": 0, "spam": 1})
 X_train, X_test, y_train, y_test = train_test_split(
     df["message"], df["label"], test_size=0.2, random_state=42
 )
-# Step 5: Convert text to numerical features
+# Convert text to bag-of-words
 vectorizer = CountVectorizer(stop_words="english")
 X_train_vec = vectorizer.fit_transform(X_train)
 X_test_vec = vectorizer.transform(X_test)
-# Step 6: Train Naive Bayes classifier
+# -----------------------
+# 3. Train model
+# -----------------------
 model = MultinomialNB()
 model.fit(X_train_vec, y_train)
-# Step 7: Predictions
+# -----------------------
+# 4. Evaluate
+# -----------------------
 y_pred = model.predict(X_test_vec)
-# Step 8: Confusion matrix
 cm = confusion_matrix(y_test, y_pred)
 plt.figure(figsize=(5, 4))
-sns.heatmap(cm, annot=True, fmt="d", cmap="Blues",
-            xticklabels=["Ham", "Spam"],
-            yticklabels=["Ham", "Spam"])
+sns.heatmap(
+    cm,
+    annot=True,
+    fmt="d",
+    cmap="Blues",
+    xticklabels=["Ham", "Spam"],
+    yticklabels=["Ham", "Spam"],
+)
 plt.xlabel("Predicted")
 plt.ylabel("Actual")
 plt.title("Confusion Matrix")
+plt.tight_layout()
 plt.show()
-# Step 9: Classification report
 print("\nClassification Report:\n")
 print(classification_report(y_test, y_pred, target_names=["Ham", "Spam"]))
 </code></pre></div></article></section></section></div>
