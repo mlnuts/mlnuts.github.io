@@ -384,7 +384,7 @@ window.MathJax = {
 <div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsec-Evaluating-Binary-Classification" class="internal"><span class="codenumber">2.5.2</span> <span class="title">Evaluating Binary Classification</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsubsec-Metrics-of-Binary-Classification" class="internal"><span class="codenumber">2.5.2.1</span> <span class="title">Metrics of BinaryClassification</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsubsec-ROC-PR-Curves" class="internal"><span class="codenumber">2.5.2.2</span> <span class="title">ROC and Precision-Recall Curves</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsubsec-ROC-PR-Curves" class="internal"><span class="codenumber">2.5.2.2</span> <span class="title">Performance at Difference Thresholds</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -716,15 +716,13 @@ C_{ij} = \text{Cost of predicting }Y=i\text{ when actually it is }Y=j.
 C_{10} = 100,\quad C_{01} = 1.
 \end{equation*}
 </div>
-</div>
-<div class="para" id="subsubsec-Metrics-of-Binary-Classification-17"><em class="alert">Performance at Difference Thresholds</em></div>
-<div class="para" id="subsubsec-Metrics-of-Binary-Classification-18">All the metrics discussed so far have been tied to a single threshold for decision to predict one of the classes based on the value of probability for different classes when given an <span class="process-math">\(X\text{.}\)</span> Now, when you vary threshold, all those numbers change - TP, FN, FP, and TN, they all depend upon the threshold used. So, what would be a good threshold to test the model on? Or, if you have two trained models, how can you tell if one performs better than the other?</div>
-<div class="para" id="subsubsec-Metrics-of-Binary-Classification-19">There are basically, two ways we study what happens as we vary threshold: (1) Receiver-Operating Characteristic Curve (ROC) and (2) Precision-Recall (PR) Curve. They look similar when the dataset is balanced between the two classes, but when there is a high imbalance, you would want to use the PR curve.</div></section><section class="subsubsection" id="subsubsec-ROC-PR-Curves"><h4 class="heading hide-type">
-<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">2.5.2.2</span><span class="space"> </span><span class="title">ROC and Precision-Recall Curves</span>
+</div></section><section class="subsubsection" id="subsubsec-ROC-PR-Curves"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">2.5.2.2</span><span class="space"> </span><span class="title">Performance at Difference Thresholds</span>
 </h4>
-<div class="para" id="subsubsec-ROC-PR-Curves-2">After training a model, we have predicted probabilities <span class="process-math">\(p_\hat\theta(X)\)</span> for the positive class. The threshold only affects how we convert probabilities into binary predictions. Hence, varying the threshold does not change the model itself, only the predicted class assignments.</div>
-<div class="para" id="subsubsec-ROC-PR-Curves-3"><em class="alert">ROC Curve</em></div>
-<div class="para logical" id="subsubsec-ROC-PR-Curves-4">
+<div class="para" id="subsubsec-ROC-PR-Curves-2">All the metrics discussed so far have been tied to a single threshold for decision to predict one of the classes based on the value of probability for different classes when given an <span class="process-math">\(X\text{.}\)</span> Now, when you vary threshold, all those numbers change - TP, FN, FP, and TN, they all depend upon the threshold used. So, what would be a good threshold to test the model on? Or, if you have two trained models, how can you tell if one performs better than the other?</div>
+<div class="para" id="subsubsec-ROC-PR-Curves-3">There are basically, two ways we study what happens as we vary threshold: (1) Receiver-Operating Characteristic Curve (ROC) and (2) Precision-Recall (PR) Curve. They look similar when the dataset is balanced between the two classes, but when there is a high imbalance, you would want to use the PR curve.</div>
+<div class="para" id="subsubsec-ROC-PR-Curves-4"><em class="alert">ROC Curve</em></div>
+<div class="para logical" id="subsubsec-ROC-PR-Curves-5">
 <div class="para">The <dfn class="terminology">Receiver Operating Characteristic (ROC) curve</dfn> plots <dfn class="terminology">True Positive Rate (TPR)</dfn> against <dfn class="terminology">False Positive Rate (FPR)</dfn> for all thresholds:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -733,8 +731,8 @@ C_{10} = 100,\quad C_{01} = 1.
 </div>
 <div class="para">The ROC curve illustrates how well a model discriminates positives from negatives regardless of the threshold. The <dfn class="terminology">area under the ROC curve (AUC-ROC)</dfn> summarizes this ability: a perfect classifier has AUC = 1.</div>
 </div>
-<div class="para" id="subsubsec-ROC-PR-Curves-5"><em class="alert">Precision-Recall (PR) Curve</em></div>
-<div class="para logical" id="subsubsec-ROC-PR-Curves-6">
+<div class="para" id="subsubsec-ROC-PR-Curves-6"><em class="alert">Precision-Recall (PR) Curve</em></div>
+<div class="para logical" id="subsubsec-ROC-PR-Curves-7">
 <div class="para">The <dfn class="terminology">Precision-Recall (PR) curve</dfn> plots <dfn class="terminology">Precision</dfn> versus <dfn class="terminology">Recall</dfn> for all thresholds:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -743,50 +741,70 @@ C_{10} = 100,\quad C_{01} = 1.
 </div>
 <div class="para">PR curves are especially informative for imbalanced datasets, as they focus on the correctness of positive predictions. When the positive class is rare, a classifier can appear to perform well in ROC but poorly in PR.</div>
 </div>
-<div class="para" id="subsubsec-ROC-PR-Curves-7"><em class="alert">Example: Balanced vs Imbalanced Dataset</em></div>
-<div class="para logical" id="subsubsec-ROC-PR-Curves-8">
+<div class="para" id="subsubsec-ROC-PR-Curves-8"><em class="alert">Example: Balanced vs Imbalanced Dataset</em></div>
+<div class="para logical" id="subsubsec-ROC-PR-Curves-9">
 <div class="para">Consider a dataset with 1000 samples:</div>
-<ul class="disc" id="subsubsec-ROC-PR-Curves-8-1">
-<li id="subsubsec-ROC-PR-Curves-8-1-1"><div class="para" id="p-derived-subsubsec-ROC-PR-Curves-8-1-1">Balanced dataset: 500 positives, 500 negatives.</div></li>
-<li id="subsubsec-ROC-PR-Curves-8-1-2"><div class="para" id="p-derived-subsubsec-ROC-PR-Curves-8-1-2">Imbalanced dataset: 100 positives, 900 negatives.</div></li>
+<ul class="disc" id="subsubsec-ROC-PR-Curves-9-1">
+<li id="subsubsec-ROC-PR-Curves-9-1-1"><div class="para" id="p-derived-subsubsec-ROC-PR-Curves-9-1-1">Balanced dataset: 500 positives, 500 negatives.</div></li>
+<li id="subsubsec-ROC-PR-Curves-9-1-2"><div class="para" id="p-derived-subsubsec-ROC-PR-Curves-9-1-2">Imbalanced dataset: 100 positives, 900 negatives.</div></li>
 </ul>
 <div class="para">A classifier that predicts probabilities for each sample will generate ROC and PR curves differently in the two cases:</div>
 </div>
-<div class="para" id="subsubsec-ROC-PR-Curves-9">In the <dfn class="terminology">balanced dataset</dfn>, ROC and PR curves are often visually similar because positives and negatives are roughly equal. High TPR and low FPR imply high precision as well. In the <dfn class="terminology">imbalanced dataset</dfn>, ROC can appear deceptively optimistic because FPR = FP / (FP + TN) remains small when negatives dominate, while PR curves reveal low precision if most predicted positives are actually false positives.</div>
-<div class="para" id="subsubsec-ROC-PR-Curves-10"><em class="alert">Comparison Table</em></div>
-<figure class="table table-like" id="subsubsec-ROC-PR-Curves-11"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.5.1<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<div class="para" id="subsubsec-ROC-PR-Curves-10">In the <dfn class="terminology">balanced dataset</dfn>, ROC and PR curves are often visually similar because positives and negatives are roughly equal. High TPR and low FPR imply high precision as well. In the <dfn class="terminology">imbalanced dataset</dfn>, ROC can appear deceptively optimistic because FPR = FP / (FP + TN) remains small when negatives dominate, while PR curves reveal low precision if most predicted positives are actually false positives.</div>
+<div class="para" id="subsubsec-ROC-PR-Curves-11"><em class="alert">Comparison Table</em></div>
+<div class="para" id="subsubsec-ROC-PR-Curves-12">Following are key differences in the ROC and PR curves.</div>
+<figure class="table table-like" id="subsubsec-ROC-PR-Curves-13"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.5.1<span class="period">.</span></span><span class="space"> </span>Receiver-Operating Characterisitcs (ROC) Curve</figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines">Aspect</td>
 <td class="l m b0 r0 l0 t0 lines">ROC Curve</td>
-<td class="l m b0 r0 l0 t0 lines">PR Curve</td>
 </tr>
 <tr>
 <td class="l m b0 r0 l0 t0 lines">X-axis</td>
 <td class="l m b0 r0 l0 t0 lines">FPR = FP / (FP + TN)</td>
-<td class="l m b0 r0 l0 t0 lines">Recall = TP / (TP + FN)</td>
 </tr>
 <tr>
 <td class="l m b0 r0 l0 t0 lines">Y-axis</td>
 <td class="l m b0 r0 l0 t0 lines">TPR = Recall = TP / (TP + FN)</td>
-<td class="l m b0 r0 l0 t0 lines">Precision = TP / (TP + FP)</td>
 </tr>
 <tr>
 <td class="l m b0 r0 l0 t0 lines">Focus</td>
 <td class="l m b0 r0 l0 t0 lines">Discrimination between positives and negatives overall</td>
-<td class="l m b0 r0 l0 t0 lines">Performance on positive class, correctness of positive predictions</td>
 </tr>
 <tr>
 <td class="l m b0 r0 l0 t0 lines">Effect of class imbalance</td>
 <td class="l m b0 r0 l0 t0 lines">Low; ROC may look optimistic in rare positives</td>
-<td class="l m b0 r0 l0 t0 lines">High; PR shows poor precision when positives are rare</td>
 </tr>
 <tr>
 <td class="l m b0 r0 l0 t0 lines">Use case</td>
 <td class="l m b0 r0 l0 t0 lines">General model comparison; balanced datasets</td>
+</tr>
+</table></div></figure><figure class="table table-like" id="subsubsec-ROC-PR-Curves-14"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.5.2<span class="period">.</span></span><span class="space"> </span>Precision-Recall (PR) Curve</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Aspect</td>
+<td class="l m b0 r0 l0 t0 lines">PR Curve</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">X-axis</td>
+<td class="l m b0 r0 l0 t0 lines">Recall = TP / (TP + FN)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Y-axis</td>
+<td class="l m b0 r0 l0 t0 lines">Precision = TP / (TP + FP)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Focus</td>
+<td class="l m b0 r0 l0 t0 lines">Performance on positive class, correctness of positive predictions</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Effect of class imbalance</td>
+<td class="l m b0 r0 l0 t0 lines">High; PR shows poor precision when positives are rare</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Use case</td>
 <td class="l m b0 r0 l0 t0 lines">Imbalanced datasets or when positive-class performance is critical</td>
 </tr>
-</table></div></figure><div class="para" id="subsubsec-ROC-PR-Curves-12"><em class="alert">Python Example: Balanced vs Imbalanced</em></div>
-<div class="para" id="subsubsec-ROC-PR-Curves-13">The following code demonstrates ROC and PR curves for both balanced and imbalanced datasets.</div>
+</table></div></figure><div class="para" id="subsubsec-ROC-PR-Curves-15"><em class="alert">Python Example: Balanced vs Imbalanced</em></div>
+<div class="para" id="subsubsec-ROC-PR-Curves-16">The following code demonstrates ROC and PR curves for both balanced and imbalanced datasets.</div>
 <div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">import numpy as np
 from sklearn.datasets import make_classification
 from sklearn.model_selection import train_test_split
@@ -829,9 +847,7 @@ n_informative=2, n_redundant=10, weights=[0.9,0.1],
 random_state=42)
 plot_curves(X_imb, y_imb, 'Imbalanced Dataset')
 </code></pre></div>
-<div class="para" id="subsubsec-ROC-PR-Curves-15">Observing the plots: - In the balanced case, ROC and PR curves are both informative and roughly aligned. - In the imbalanced case, the ROC curve may still appear high, while the PR curve shows that precision drops for lower thresholds, highlighting the challenge of predicting rare positives correctly.</div>
-<div class="para" id="subsubsec-ROC-PR-Curves-16"><em class="alert">Key Takeaways</em></div>
-<div class="para" id="subsubsec-ROC-PR-Curves-17">- Thresholds do not affect the model parameters, only the predicted classes. - ROC curves visualize TPR vs FPR across thresholds and summarize overall discrimination. - PR curves visualize precision vs recall and highlight performance on the positive class, particularly for rare events. - F1-score balances precision and recall at a single threshold, whereas ROC and PR curves summarize performance across all thresholds. - Use ROC for general evaluation and PR when positives are rare or costly to misclassify.</div></section></section></section></div>
+<div class="para" id="subsubsec-ROC-PR-Curves-18">Observing the plots: - In the balanced case, ROC and PR curves are both informative and roughly aligned. - In the imbalanced case, the ROC curve may still appear high, while the PR curve shows that precision drops for lower thresholds, highlighting the challenge of predicting rare positives correctly.</div></section></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec-MultiClass-Classification.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-Bayesian-Methods.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
