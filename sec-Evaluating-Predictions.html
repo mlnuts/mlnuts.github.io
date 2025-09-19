@@ -806,9 +806,10 @@ C_{10} = 100,\quad C_{01} = 1.
 </table></div></figure><div class="para" id="subsubsec-ROC-PR-Curves-15"><em class="alert">Python Example: Balanced vs Imbalanced</em></div>
 <div class="para" id="subsubsec-ROC-PR-Curves-16">The following code demonstrates ROC and PR curves for both balanced and imbalanced datasets. The code produces ROC and PR curves for two types of data.</div>
 <div class="para" id="subsubsec-ROC-PR-Curves-17">
-<a href="sec-Evaluating-Predictions.html#fig-roc-and-pr-curves" class="xref" data-knowl="./knowl/xref/fig-roc-and-pr-curves.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.5.3">Figure 2.5.3</a> shows a comparison of ROC and Precision-Recall (PR) curves on balanced and imbalanced datasets. The left panels show performance on a balanced dataset, where both ROC and PR curves indicate strong classifier performance. In the balanced case, ROC and PR curves are both informative and roughly aligned. The right panels show performance on an imbalanced dataset, where the PR curve highlights the challenge of low precision for the minority class, while the ROC curve may appear overly optimistic.</div>
-<figure class="figure figure-like" id="fig-roc-and-pr-curves"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/./images/supervised-learning-basics/roc-and-pr-curves.png" class="contained" alt="ROC and Precision-Recall curves comparing classifier performance on balanced (left) and imbalanced (right) datasets. The PR curve better highlights performance on the minority class under imbalance."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.5.3<span class="period">.</span></span><span class="space"> </span>ROC and Precision-Recall curves comparing classifier performance on balanced (left) and imbalanced (right) datasets. The PR curve better highlights performance on the minority class under imbalance.</figcaption></figure><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">import numpy as np
+<a href="sec-Evaluating-Predictions.html#fig-roc-and-pr-curves" class="xref" data-knowl="./knowl/xref/fig-roc-and-pr-curves.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.5.3">Figure 2.5.3</a> shows a comparison of ROC and Precision-Recall (PR) curves on balanced and imbalanced datasets. The top panels show performance on a balanced dataset, where both ROC and PR curves indicate strong classifier performance. In the balanced case, ROC and PR curves are both informative and roughly aligned. The bottom panels show performance on an imbalanced dataset, where the PR curve highlights the challenge of low precision for the minority class, while the ROC curve may appear overly optimistic.</div>
+<figure class="figure figure-like" id="fig-roc-and-pr-curves"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/./images/supervised-learning-basics/roc_pr_curve_2025-09-19.png" class="contained" alt="ROC and Precision-Recall curves comparing classifier performance on balanced (left) and imbalanced (right) datasets. The PR curve better highlights performance on the minority class under imbalance."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.5.3<span class="period">.</span></span><span class="space"> </span>ROC and Precision-Recall curves comparing classifier performance on balanced (left) and imbalanced (right) datasets. The PR curve better highlights performance on the minority class under imbalance.</figcaption></figure><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py"># written with the help of GPT-5.
+import numpy as np
 from sklearn.datasets import make_classification
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
@@ -840,7 +841,7 @@ plt.legend()
 plt.tight_layout()
 plt.show()
 # Balanced dataset
-X_bal, y_bal = make_classification(n_samples=1000, n_features=20, n_classes=2,
+X_bal, y_bal = make_classification(n_samples=10000, n_features=20, n_classes=2,
 n_informative=2, n_redundant=10, weights=[0.5,0.5],
 random_state=42)
 plot_curves(X_bal, y_bal, 'Balanced Dataset')
