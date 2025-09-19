@@ -526,7 +526,50 @@ P(Y=\text{not spam} \mid X) \propto 0.6 \times 0.5 \times 0.5 = 0.150.
 <li id="subsec-Naive-Bayes-6-1-1-4"><div class="para" id="subsec-Naive-Bayes-6-1-1-4-1">Evaluates it using a confusion matrix.</div></li>
 <li id="subsec-Naive-Bayes-6-1-1-5"><div class="para" id="subsec-Naive-Bayes-6-1-1-5-1">Prints precision, recall, F1-score.</div></li>
 </ul>
-</div> <div class="para" id="subsec-Naive-Bayes-6-2">When you run the program, you would get outputs like the following. Vocabulary size: 7441 Accuracy: 0.9883408071748879 Confusion Matrix: [[961   5] [  8 141]] Classification Report: precision    recall  f1-score   support ham       0.99      0.99      0.99       966 spam       0.97      0.95      0.96       149 accuracy                           0.99      1115 macro avg       0.98      0.97      0.97      1115 weighted avg       0.99      0.99      0.99      1115 New message predictions (0=ham, 1=spam): Message: Free offer! Win a $1000 gift card now!... -&gt; spam Message: Hey, let’s meet tomorrow at 5pm.... -&gt; ham</div> <div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-py"># Naive Bayes Example: SMS Spam Detection
+</div> <div class="para" id="subsec-Naive-Bayes-6-2">When you run the program, you would get outputs like the following.</div> <div class="para" id="subsec-Naive-Bayes-6-3">Vocabulary size: 7441 Accuracy: 0.9883408071748879</div> <div class="para" id="subsec-Naive-Bayes-6-4">Confusion Matrix:</div> <div class="para" id="subsec-Naive-Bayes-6-5">[[961   5]</div> <div class="para" id="subsec-Naive-Bayes-6-6">[  8 141]]</div> <div class="para" id="subsec-Naive-Bayes-6-7">Classification Report:</div> <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">precision</td>
+<td class="l m b0 r0 l0 t0 lines">recall</td>
+<td class="l m b0 r0 l0 t0 lines">f1-score</td>
+<td class="l m b0 r0 l0 t0 lines">support</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">ham</td>
+<td class="l m b0 r0 l0 t0 lines">0.99</td>
+<td class="l m b0 r0 l0 t0 lines">0.99</td>
+<td class="l m b0 r0 l0 t0 lines">0.99</td>
+<td class="l m b0 r0 l0 t0 lines">966</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">spam</td>
+<td class="l m b0 r0 l0 t0 lines">0.97</td>
+<td class="l m b0 r0 l0 t0 lines">0.95</td>
+<td class="l m b0 r0 l0 t0 lines">0.96</td>
+<td class="l m b0 r0 l0 t0 lines">149</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">accuracy</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">0.99</td>
+<td class="l m b0 r0 l0 t0 lines">1115</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">macro avg</td>
+<td class="l m b0 r0 l0 t0 lines">0.98</td>
+<td class="l m b0 r0 l0 t0 lines">0.97</td>
+<td class="l m b0 r0 l0 t0 lines">0.97</td>
+<td class="l m b0 r0 l0 t0 lines">1115</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">weighted avg</td>
+<td class="l m b0 r0 l0 t0 lines">0.99</td>
+<td class="l m b0 r0 l0 t0 lines">0.99</td>
+<td class="l m b0 r0 l0 t0 lines">0.99</td>
+<td class="l m b0 r0 l0 t0 lines">1115</td>
+</tr>
+</table></div> <div class="para" id="subsec-Naive-Bayes-6-9">New message predictions (0=ham, 1=spam):</div> <div class="para" id="subsec-Naive-Bayes-6-10">Message: Free offer! Win a $1000 gift card now!... -&gt; spam</div> <div class="para" id="subsec-Naive-Bayes-6-11">Message: Hey, let’s meet tomorrow at 5pm.... -&gt; ham</div> <div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-py"># Naive Bayes Example: SMS Spam Detection
 # Step 1: Import libraries
 import pandas as pd
 from sklearn.feature_extraction.text import CountVectorizer
