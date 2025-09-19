@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Descriptive Statistics</title>
+<title>Bayesian Methods</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -158,7 +158,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="ch-Essential-Probability-and-Statistics.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-Essential-Probability-and-Statistics.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-useful-descriptive-statistics-tools.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-Evaluating-Predictions.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-supervised-learning-basics.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -168,10 +168,10 @@ window.MathJax = {
 <div class="ptx-page">
 <div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
 <li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
-<li class="toc-item toc-chapter contains-active">
+<li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-Essential-Probability-and-Statistics.html" class="internal"><span class="codenumber">1</span> <span class="title">Essential Probability and Statistics</span></a></div>
-<ul class="structural toc-item-list contains-active">
-<li class="toc-item toc-section active">
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-Descriptive-Statistics.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Descriptive Statistics</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Descriptive-Statistics.html#subsec-Central-Tendency" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Measures of Central Tendency</span></a></div></li>
@@ -333,9 +333,9 @@ window.MathJax = {
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-Additional-Mathematical-Techniques.html" class="internal"><span class="codenumber">1.14</span> <span class="title">Additional Mathematical Techniques</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-chapter">
+<li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ch-supervised-learning-basics.html" class="internal"><span class="codenumber">2</span> <span class="title">Basics of Supervised Learning</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-Statistical-Decision-Theory.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Statistical Decision Theory</span></a></div>
 <ul class="structural toc-item-list">
@@ -383,7 +383,7 @@ window.MathJax = {
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsec-Evaluating-Binary-Classification" class="internal"><span class="codenumber">2.5.2</span> <span class="title">Evaluating Binary Classification</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section">
+<li class="toc-item toc-section active">
 <div class="toc-title-box"><a href="sec-Bayesian-Methods.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Bayesian Methods</span></a></div>
 <ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Bayesian-Methods.html#subsec-Naive-Bayes" class="internal"><span class="codenumber">2.6.1</span> <span class="title">Naive Bayes Algorithm</span></a></div></li></ul>
 </li>
@@ -391,377 +391,131 @@ window.MathJax = {
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-Descriptive-Statistics"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.1</span><span class="space"> </span><span class="title">Descriptive Statistics</span>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-Bayesian-Methods"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">2.6</span><span class="space"> </span><span class="title">Bayesian Methods</span>
 </h2>
-<section class="introduction" id="sec-Descriptive-Statistics-2"><div class="para" id="sec-Descriptive-Statistics-2-1">Descriptive statistics summarize key features of a dataset, providing insights into its central tendency, dispersion, and shape. This process, known as <em class="alert">Exploratory Data Analysis (EDA)</em>, helps identify patterns and trends before applying advanced statistical methods. Common measures include mean, median, mode, variance, standard deviation, range, quartiles, and visualizations like histograms and boxplots. These tools are essential for understanding data in fields like education, finance, and science.</div></section><section class="subsection" id="subsec-Central-Tendency"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.1.1</span><span class="space"> </span><span class="title">Measures of Central Tendency</span>
+<section class="introduction" id="sec-Bayesian-Methods-2"><div class="para logical" id="sec-Bayesian-Methods-2-1">
+<div class="para">In supervised learning, we often model the conditional probability <span class="process-math">\(P(Y \mid X)\text{.}\)</span> This naturally appears in Bayes’ theorem as the “posterior probability”. Recall the identity:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P(Y \mid X) P(X) = P(X \mid Y) P(Y).
+\end{equation*}
+</div>
+<div class="para">Equivalently, Bayes’ theorem can be written as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P(Y \mid X) = \frac{P(X \mid Y) P(Y)}{P(X)}.
+\end{equation*}
+</div>
+<div class="para">When we use Bayes’ theorem to model conditional probabilities and guide decision-making, the resulting approaches are called <dfn class="terminology">Bayesian methods</dfn>.</div>
+</div> <div class="para logical" id="sec-Bayesian-Methods-2-2">
+<div class="para">For comparing possible outcomes <span class="process-math">\(Y=y_i\)</span> given the same <span class="process-math">\(X\text{,}\)</span> the denominator <span class="process-math">\(P(X)\)</span> cancels out, so we only need relative probabilities:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P(Y \mid X) \propto P(X \mid Y) P(Y) \equiv \tilde P(Y \mid X).
+\end{equation*}
+</div>
+<div class="para">Let us call the right side un-normalized probabilities <span class="process-math">\(\tilde P(Y \mid X)\text{.}\)</span> Then, to make decision of which outcome is more likely, we just compare their unnormalized probabilities rather than the actual probabilities since the two woudl give the same answer.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P(Y=y_i \mid X) \gt P(Y=y_j \mid X) \iff \tilde P(Y=y_i \mid X) \gt \tilde P(Y=y_j \mid X)
+\end{equation*}
+</div>
+<div class="para">Therefore, we choose <span class="process-math">\(Y=y_i \)</span> over <span class="process-math">\(Y=y_j\)</span> by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\text{if }  \tilde P(Y=y_i \mid X) \gt \tilde P(Y=y_j \mid X) \text{ the, pick }y_i\text{ over }y_j.
+\end{equation*}
+</div>
+<div class="para">Thus the unnormalized probabilites are sufficient to decide which outcome of <span class="process-math">\(Y\)</span> is more probable for a given <span class="process-math">\(X\)</span> without needing to know the full distribution <span class="process-math">\(P(X)\text{.}\)</span> All we need are: The conditional distributions <span class="process-math">\(P(X \mid Y=y_i)\text{,}\)</span> and The prior probabilities <span class="process-math">\(P(Y=y_i)\text{,}\)</span> i.e., the marginal probabilities of each outcome of <span class="process-math">\(Y\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="sec-Bayesian-Methods-2-3">
+<div class="para">If <span class="process-math">\(Y\)</span> is a discrete variable with <span class="process-math">\(K\)</span> classes, then, you would just use the function <span class="process-math">\(arg\ max\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+y_\text{pred} = \arg\max_y \bigg[  P(X \mid Y=y) P(Y=y)  \bigg]
+\end{equation*}
+</div>
+<div class="para">Basically, arg max goes over the list of values generated on the right side for various values of <span class="process-math">\(y\text{,}\)</span> i.e., for <span class="process-math">\(y_1, y_2, \cdots, y_K\text{,}\)</span> and then outputs the index of <span class="process-math">\(y\text{,}\)</span> which corresponds to the largest value in the list. If you have ties, then it outputs the first in the list. You can also have it printout all the items in the tie and output one randomly from that sublist.</div>
+</div></section><section class="subsection" id="subsec-Naive-Bayes"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.6.1</span><span class="space"> </span><span class="title">Naive Bayes Algorithm</span>
 </h3>
-<div class="para" id="subsec-Central-Tendency-2">Measures of central tendency describe the "typical" value in a dataset.</div>
-<ol class="decimal" id="subsec-Central-Tendency-3">
-<li id="subsec-Central-Tendency-3-1">
-<div class="para logical" id="subsec-Central-Tendency-3-1-1">
+<div class="para logical" id="subsec-Naive-Bayes-2">
+<div class="para">The <dfn class="terminology">Naive Bayes</dfn> algorithm applies Bayes’ theorem under a simplifying assumption: the features of <span class="process-math">\(X = (X_1, X_2, \ldots, X_r)\)</span> are conditionally independent given the class label <span class="process-math">\(Y\text{.}\)</span> Formally,</div>
+<div class="displaymath process-math" id="subsec-Naive-Bayes-2-4">
+\begin{gather*}
+P(X_1, X_2, \ldots, X_r \mid Y) = \prod_{k=1}^{r} P(X_k \mid Y).
+\end{gather*}
+</div>
+<div class="para">This assumption is rarely true in practice, but it makes the computation of <span class="process-math">\(P(X \mid Y)\)</span> tractable, and the resulting classifier often performs surprisingly well.</div>
+</div>
+<div class="para logical" id="subsec-Naive-Bayes-3">
+<div class="para">Substituting this factorization into Bayes’ theorem, we obtain</div>
+<div class="displaymath process-math" id="subsec-Naive-Bayes-3-1">
+\begin{gather*}
+P(Y \mid X) \propto P(Y) \prod_{k=1}^{r} P(X_k \mid Y).
+\end{gather*}
+</div>
+<div class="para">A Naive Bayes classifier assigns the label</div>
+<div class="displaymath process-math" id="subsec-Naive-Bayes-3-2">
+\begin{gather*}
+y_\text{pred} = \arg\max_y P(Y=y) \prod_{k=1}^{r} P(X_k \mid Y=y).
+\end{gather*}
+</div>
+</div>
+<div class="para logical" id="subsec-Naive-Bayes-4">
 <div class="para">
-<em class="alert">Mean (Average)</em>: The mean, denoted <span class="process-math">\(\mu\text{,}\)</span> is the sum of all data points divided by their count. For a dataset <span class="process-math">\(\{x_1, x_2, \dots, x_N\}\)</span> with <span class="process-math">\(N\)</span> points, the mean is:</div>
-<div class="displaymath process-math" id="eqn-mean-of-N-data-points">
-\begin{equation}
-\mu = \frac{1}{N} \sum_{i=1}^{N} x_i\tag{1.1.1}
-\end{equation}
-</div>
-<div class="para">where <span class="process-math">\(\sum_{i=1}^{N} x_i = x_1 + x_2 + \dots + x_N\text{.}\)</span>
-</div>
-</div>
-<div class="para logical" id="subsec-Central-Tendency-3-1-2">
-<div class="para">Example: For student grades <span class="process-math">\(\{85, 90, 90, 95, 100\}\text{,}\)</span> the mean is:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\mu = \frac{85 + 90 + 90 + 95 + 100}{5} = \frac{460}{5} = 92
-\end{equation*}
-</div>
-</div>
-<div class="para" id="subsec-Central-Tendency-3-1-3">However, mean of a dataset can be misleading if you have a few ouliers since mean is very senisitve to outliers. For instance, say you have a dataset of income, which is <span class="process-math">\(\{20000\text{,}\)</span> <span class="process-math">\(30000\text{,}\)</span> <span class="process-math">\(35000\text{,}\)</span> <span class="process-math">\(40000\text{,}\)</span> <span class="process-math">\(1000000\}\text{.}\)</span> Clearly, most of the income is in the <span class="process-math">\(30\text{K}\)</span> area, but the mean of this dataset is <span class="process-math">\(225000\text{,}\)</span> skewed by the outlier. In this case, the median would better represents the typical value in the dataset.</div>
-</li>
-<li id="subsec-Central-Tendency-3-2">
-<div class="para" id="subsec-Central-Tendency-3-2-1">
-<em class="alert">Median</em>: The median is the middle value in a sorted dataset, where <span class="process-math">\(50\%\)</span> of the data lies below and above. For odd <span class="process-math">\(N\text{,}\)</span> it’s the middle value; for even <span class="process-math">\(N\text{,}\)</span> it’s the average of the two middle values.</div>
-<div class="para" id="subsec-Central-Tendency-3-2-2">Example: For <span class="process-math">\(\{85, 90, 95\}\)</span> (sorted), median = <span class="process-math">\(90\text{.}\)</span> For <span class="process-math">\(\{85, 90, 91, 95\}\text{,}\)</span> median <span class="process-math">\(= (90 + 91)/2 = 90.5\text{.}\)</span> For incomes <span class="process-math">\(\{20000\text{,}\)</span> <span class="process-math">\(30000\text{,}\)</span> <span class="process-math">\(35000\text{,}\)</span> <span class="process-math">\(40000\text{,}\)</span> <span class="process-math">\(1000000\}\text{,}\)</span> median = <span class="process-math">\(35000\text{,}\)</span> robust to the outlier.</div>
-</li>
-<li id="subsec-Central-Tendency-3-3">
-<div class="para" id="subsec-Central-Tendency-3-3-1">
-<em class="alert">Mode</em>: The mode is the most frequent value. A dataset may have no mode, one mode (unimodal), or multiple modes (bimodal or multimodal).</div>
-<div class="para" id="subsec-Central-Tendency-3-3-2">Example: <span class="process-math">\(\{85, 90, 90, 95, 100\}\)</span> has mode 90. <span class="process-math">\(\{85, 90, 90, 95, 95\}\)</span> is bimodal <span class="process-math">\((90, 95)\text{.}\)</span> <span class="process-math">\(\{85, 90, 95\}\)</span> has no mode.</div>
-</li>
-</ol>
-<div class="para" id="subsec-Central-Tendency-4">
-<em class="alert">Comparison</em>: Consider incomes <span class="process-math">\(\{20000\text{,}\)</span> <span class="process-math">\(30000\text{,}\)</span> <span class="process-math">\(35000\text{,}\)</span> <span class="process-math">\(40000\text{,}\)</span> <span class="process-math">\(1000000\}\text{.}\)</span> Mean = <span class="process-math">\(225000\text{,}\)</span> median = <span class="process-math">\(35000\text{,}\)</span> mode = none. The median best reflects the typical income due to the outlier. See <a href="sec-Descriptive-Statistics.html#fig-central-tendency" class="xref" data-knowl="./knowl/xref/fig-central-tendency.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.1.1">Figure 1.1.1</a> for a visual comparison.</div>
-<figure class="figure figure-like" id="fig-central-tendency"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/central-tendency.png" class="contained" alt="Density plot showing central tendency measures."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.1<span class="period">.</span></span><span class="space"> </span>Density plot of incomes with mean, median, and no mode.</figcaption></figure></section><section class="subsection" id="subsec-Dispersion"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.1.2</span><span class="space"> </span><span class="title">Measures of Dispersion</span>
-</h3>
-<div class="para" id="subsec-Dispersion-2">Dispersion measures how spread out data is around the central tendency.</div>
-<ol class="decimal" id="subsec-Dispersion-3">
-<li id="subsec-Dispersion-3-1">
-<div class="para" id="subsec-Dispersion-3-1-1">
-<em class="alert">Variance and Standard Deviation</em>: Variance (<span class="process-math">\(\sigma^2\)</span>) measures average squared deviation from the mean; standard deviation (<span class="process-math">\(\sigma\)</span>) is its square root, in the same units as the data.</div>
-<div class="para logical" id="subsec-Dispersion-3-1-2">
-<div class="para">For a population:</div>
-<div class="displaymath process-math" id="eqn-pop-variance-of-N-data-points">
-\begin{equation}
-\sigma^2 = \frac{1}{N} \sum_{i=1}^{N} (x_i - \mu)^2,\tag{1.1.2}
-\end{equation}
-</div>
-<div class="para">where <span class="process-math">\(\mu\)</span> is the population (true) mean. The data collected from a polulation is called sample. From the sample we can only calculate as estimate of the corresponding population quantities. We define estimate of sample variance by keeping the same divisor <span class="process-math">\(N\)</span> as in the true variance definitionor, define with a divisor <span class="process-math">\(N-1\text{,}\)</span> which is called an unbiased estimate of variance.</div>
-<div class="displaymath process-math" id="eqn-sample-variance-of-N-data-points">
-\begin{equation}
-s^2 = \frac{1}{N-1} \sum_{i=1}^{N} (x_i - \bar{x})^2\tag{1.1.3}
-\end{equation}
-</div>
-<div class="para">where <span class="process-math">\(\bar{x}\)</span> is the sample mean.</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\bar{x} = \frac{1}{N} \sum_{i=1}^{N}\, x_i. 
-\end{equation*}
-</div>
-</div>
-<div class="para logical" id="subsec-Dispersion-3-1-3">
-<div class="para">Example: For grades <span class="process-math">\(\{85, 90, 90, 95, 100\}\text{,}\)</span> <span class="process-math">\(\bar{x} = 92\text{.}\)</span> Population variance:</div>
-<div class="displaymath process-math" id="subsec-Dispersion-3-1-3-3">
+<em class="emphasis">Example:</em> Suppose we want to classify whether an email is “spam” or “not spam” based on two binary features: <span class="process-math">\(X_1 =\)</span> “contains the word ‘free’” and <span class="process-math">\(X_2 =\)</span> “contains the word ‘money’.” From training data we estimate:</div>
+<div class="displaymath process-math" id="subsec-Naive-Bayes-4-6">
 \begin{align*}
-\sigma^2 \amp= \frac{(85-92)^2 + (90-92)^2 + (90-92)^2 + (95-92)^2 + (100-92)^2}{5} \\
-\amp = \frac{126}{5} = 25.2. 
+\amp P(Y=\text{spam}) = 0.4, \quad P(Y=\text{not spam}) = 0.6,\\
+\amp P(X_1=1 \mid Y=\text{spam}) = 0.7, \quad P(X_1=1 \mid Y=\text{not spam}) = 0.1,\\
+\amp P(X_2=1 \mid Y=\text{spam}) = 0.6, \quad P(X_2=1 \mid Y=\text{not spam}) = 0.05.
 \end{align*}
 </div>
-<div class="para">This will give the <dfn class="terminology">standard deviation</dfn>, <span class="process-math">\(\sigma\text{:}\)</span>
+<div class="para">If an email contains both words (<span class="process-math">\(X_1=1, X_2=1\)</span>), then</div>
+<div class="displaymath process-math" id="subsec-Naive-Bayes-4-8">
+\begin{align*}
+\amp  P(Y=\text{spam} \mid X)\propto  \\
+\amp \qquad P(Y=\text{spam})  P(X_1=1\mid Y=\text{spam}) P(X_2=1\mid Y=\text{spam}) \\
+\amp\qquad\qquad  =    0.4 \times 0.7 \times 0.6 = 0.168,\\
+\amp P(Y=\text{not spam} \mid X) \propto \\
+\amp \quad P(Y=\text{not spam}) P(X_1=1\mid Y=\text{not spam}) P(X_2=1\mid Y=\text{not spam}) \\
+\amp\qquad\qquad = 0.6 \times 0.1 \times 0.05 = 0.003.
+\end{align*}
 </div>
-<div class="displaymath process-math">
-\begin{equation*}
-\sigma = \sqrt{\sigma^2} = \sqrt{25.2} \approx 5.0        
-\end{equation*}
+<div class="para">Since <span class="process-math">\(0.168 &gt; 0.003\text{,}\)</span> the classifier predicts “spam”.</div>
 </div>
-<div class="para">Sample variance, on the other hand, will be:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-s^2 = 126/4 = 31.5\text{,}
-\end{equation*}
+<div class="para logical" id="subsec-Naive-Bayes-5">
+<div class="para">
+<em class="emphasis">Example:</em> Suppose we want to classify whether an email is “spam” or “not spam” based on two binary features: <span class="process-math">\(X_1 =\)</span> “contains the word ‘deal’” and <span class="process-math">\(X_2 =\)</span> “contains the word ‘win’.” From training data we estimate:</div>
+<div class="displaymath process-math" id="subsec-Naive-Bayes-5-6">
+\begin{gather*}
+P(Y=\text{spam}) = 0.4, \quad P(Y=\text{not spam}) = 0.6,\\
+P(X_1=1 \mid Y=\text{spam}) = 0.7, \quad P(X_1=1 \mid Y=\text{not spam}) = 0.5,\\
+P(X_2=1 \mid Y=\text{spam}) = 0.7, \quad P(X_2=1 \mid Y=\text{not spam}) = 0.5.
+\end{gather*}
 </div>
-<div class="para">and sample standard deviation</div>
-<div class="displaymath process-math">
-\begin{equation*}
-s \approx 5.61\text{.}
-\end{equation*}
-</div>
-</div>
-<div class="para" id="subsec-Dispersion-3-1-4">
-<a href="sec-Descriptive-Statistics.html#fig-variance-comparison" class="xref" data-knowl="./knowl/xref/fig-variance-comparison.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.1.2">Figure 1.1.2</a> illustrated the tighter vs. wider spread for a low variance (e.g., <span class="process-math">\(\sigma = 0.04\)</span>) vs. high variance (e.g., <span class="process-math">\(\sigma = 4.00\)</span>).</div>
-<figure class="figure figure-like" id="fig-variance-comparison"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/variance-comparison.png" class="contained" alt="Comparison of low and high variance data."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.2<span class="period">.</span></span><span class="space"> </span>Comparing low and high variance datasets.</figcaption></figure>
-</li>
-<li id="subsec-Dispersion-3-2">
-<div class="para" id="subsec-Dispersion-3-2-1">
-<em class="alert">Range and Quartiles</em>: Range = max - min. Quartiles divide sorted data into four parts: Q1 (25th percentile), Q2 (median, 50th), Q3 (75th). Use linear interpolation: position = <span class="process-math">\((N-1) \cdot p\text{,}\)</span> where <span class="process-math">\(p = 0.25, 0.5, 0.75\text{.}\)</span>
-</div>
-<div class="para logical" id="subsec-Dispersion-3-2-2">
-<div class="para">Example: For grades <span class="process-math">\(\{70, 75, 80, 85, 90, 95, 100\}\text{,}\)</span> <span class="process-math">\(N=7\text{.}\)</span> Median <span class="process-math">\((\text{Q2}) = 85\text{.}\)</span> <span class="process-math">\(\text{Q1} = 75\text{,}\)</span> <span class="process-math">\(\text{Q3} = 95\text{.}\)</span> Range <span class="process-math">\(= 100 - 70 = 30\text{.}\)</span> <span class="process-math">\(\text{IQR} = \text{Q3} - \text{Q1} = 20\text{.}\)</span> Outliers:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\text{Below: }\ \text{Q1} - 1.5\times\text{IQR} = 45; \quad \text{  Above:}\ \text{Q3} + 1.5 \times \text{IQR} = 125.
-\end{equation*}
-</div>
-<div class="para">These grades have no outliers.</div>
-</div>
-</li>
-</ol></section><section class="subsection" id="subsec-Distribution-Shape"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.1.3</span><span class="space"> </span><span class="title">Distribution Shape</span>
-</h3>
-<div class="para" id="subsec-Distribution-Shape-2">
-<em class="alert">Histogram</em>: Histograms show frequency distributions by grouping data into bins of equal size from min to a bin that includes the max data. So, if you have data from <span class="process-math">\(x_\text{min}\)</span> to <span class="process-math">\(x_\text{max}\)</span> with a bin size <span class="process-math">\(b\text{.}\)</span> Then, bins will have <span class="process-math">\(x_\text{min} \le x \lt x_\text{min} + b\text{,}\)</span> <span class="process-math">\(x_\text{min} + b \le x \lt x_\text{min} + 2b\text{,}\)</span> <span class="process-math">\(\cdots\text{,}\)</span> till you have exhausted all data. The last bin may extend beyond the data as in the example below.</div>
-<div class="para" id="subsec-Distribution-Shape-3">Example: For grades <span class="process-math">\(\{70, 72, 75, 75, 80,\)</span> <span class="process-math">\(80, 85, 90, 95, 100\}\text{,}\)</span> with bin size <span class="process-math">\(10\)</span> from <span class="process-math">\(70\)</span> to <span class="process-math">\(110\text{,}\)</span> see <a href="sec-Descriptive-Statistics.html#tab-Histogram-Table" class="xref" data-knowl="./knowl/xref/tab-Histogram-Table.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 1.1.3: Histogram of Grades">Table 1.1.3</a>.</div>
-<figure class="table table-like" id="tab-Histogram-Table"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.1.3<span class="period">.</span></span><span class="space"> </span>Histogram of Grades</figcaption><div class="tabular-box natural-width"><table class="tabular">
-<tr class="header-horizontal">
-<th scope="col" class="l m b0 r0 l0 t0 lines">Bin</th>
-<th scope="col" class="l m b0 r0 l0 t0 lines">Range</th>
-<th scope="col" class="l m b0 r0 l0 t0 lines">Data</th>
-<th scope="col" class="l m b0 r0 l0 t0 lines">Count</th>
-<th scope="col" class="l m b0 r0 l0 t0 lines">Frequency</th>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">1</td>
-<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(70 \le x \lt 80\)</span></td>
-<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\{70, 72, 75, 75\}\)</span></td>
-<td class="l m b0 r0 l0 t0 lines">4</td>
-<td class="l m b0 r0 l0 t0 lines">0.333</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">2</td>
-<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(80 \le x \lt 90\)</span></td>
-<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\{80, 82, 85\}\)</span></td>
-<td class="l m b0 r0 l0 t0 lines">3</td>
-<td class="l m b0 r0 l0 t0 lines">0.333</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">3</td>
-<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(90 \le x \lt 100\)</span></td>
-<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\{93, 95\}\)</span></td>
-<td class="l m b0 r0 l0 t0 lines">2</td>
-<td class="l m b0 r0 l0 t0 lines">0.222</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">4</td>
-<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(100 \le x \lt 110\)</span></td>
-<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\{100\}\)</span></td>
-<td class="l m b0 r0 l0 t0 lines">1</td>
-<td class="l m b0 r0 l0 t0 lines">0.111</td>
-</tr>
-</table></div></figure><div class="para" id="subsec-Distribution-Shape-5">Many computer libraries have histogram plotting routines. For instance <a href="sec-Descriptive-Statistics.html#fig-descriptive-statistics-histogram" class="xref" data-knowl="./knowl/xref/fig-descriptive-statistics-histogram.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.1.4">Figure 1.1.4</a> was generated from the Python program listed after it. The histogram has been decorated with the mean and median of the data also.</div>
-<figure class="figure figure-like" id="fig-descriptive-statistics-histogram"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/histogram.png" class="contained" alt="Histogram with mean and median lines."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.4<span class="period">.</span></span><span class="space"> </span>Histogram of grades with mean and median.</figcaption></figure><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-py">Example Histogram
-
-import matplotlib.pyplot as plt
-import numpy as np
-
-data = [70, 72, 75, 75, 80, 82, 85, 93, 95, 100]
-bins = [70, 80, 90, 100, 110]
-freq_arr, bins_arr = np.histogram(data, bins) # returns frequency
-width = bins_arr[1:] - bins_arr[:-1]
-plt.figure(figsize=(8, 5))
-plt.hist(data, bins=bins, edgecolor='black', alpha=0.7)
-# this is just plt.bar(bins_arr[:-1], freq_arr, width)
-mean = np.mean(data)
-median = np.median(data)
-plt.axvline(mean, color='red', linestyle='--', label=f'Mean = {mean:.1f}')
-plt.axvline(median, color='green', linestyle='-', label=f'Median = {median:.1f}')
-plt.xlabel('Grade')
-plt.ylabel('Frequency')
-plt.title('Histogram of Student Grades')
-plt.xticks(bins)
-plt.grid(axis='y', alpha=0.3)
-plt.legend()
-plt.savefig('histogram.png')
-plt.show()
-</code></pre></div>
-<div class="para" id="subsec-Distribution-Shape-8">
-<em class="alert">Boxplot</em>: Boxplots show min, Q1, median, Q3, max (whiskers), and outliers (points beyond Q1 <span class="process-math">\(- 1.5\times \)</span>IQR or Q3 <span class="process-math">\(+ 1.5\times\)</span>IQR).</div>
-<div class="para" id="subsec-Distribution-Shape-9">Example: For grades with an outlier <span class="process-math">\(\{70, 75, 80, 85, 90, 95, 100, 150\}\text{,}\)</span> <span class="process-math">\(\text{Q1} = 77.5\text{,}\)</span> <span class="process-math">\(\text{Q2} = 87.5\text{,}\)</span> <span class="process-math">\(\text{Q3} = 97.5\text{,}\)</span> <span class="process-math">\(\text{IQR} = 20\text{.}\)</span> Outliers: ≤<span class="process-math">\(150\)</span> is above <span class="process-math">\(\text{Q3} + 1.5*\text{IQR} = 127.5\text{.}\)</span> See <a href="sec-Descriptive-Statistics.html#fig-descriptive-statistics-boxplots" class="xref" data-knowl="./knowl/xref/fig-descriptive-statistics-boxplots.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.1.5">Figure 1.1.5</a>.</div>
-<figure class="figure figure-like" id="fig-descriptive-statistics-boxplots"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/boxplot.png" class="contained" alt="Boxplot with one outlier."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.5<span class="period">.</span></span><span class="space"> </span>Boxplot of grades with annotated quartiles and outlier.</figcaption></figure><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-py">      Updated boxplot with annotations
-      
-import matplotlib.pyplot as plt
-import numpy as np
-
-data = [70, 75, 80, 85, 90, 95, 100, 150]
-
-plt.figure(figsize=(8, 4))
-bp = plt.boxplot(data, vert=False, patch_artist=True, boxprops=dict(facecolor='lightblue'), medianprops=dict(color='red'))
-
-q1, median, q3 = np.percentile(data, [25, 50, 75])
-plt.text(q1 - 5, 1.1, 'Q1', ha='right')
-plt.text(median, 1.1, 'Median', ha='center')
-plt.text(q3 + 5, 1.1, 'Q3', ha='left')
-plt.text(150, 1.3, 'Outlier', ha='center')
-
-plt.title('Boxplot of Student Grades')
-plt.xlabel('Grade')
-plt.grid(True, alpha=0.3)
-plt.savefig('boxplot.png')
-plt.show()
-</code></pre></div>
-<div class="para" id="subsec-Distribution-Shape-12">
-<em class="alert">Skewness</em>: Skewness tells us about the shape of the distribution, specifically if it’s "tilted" to one side. In a positively skewed distribution (right skew), the tail on the right side is longer, while in a negatively skewed distribution (left skew), the tail on the left side is longer.</div>
-<div class="para" id="subsec-Distribution-Shape-13">Positive skew example: Imagine a dataset of household incomes: <span class="process-math">\({20000, 30000, 35000, 40000, 1000000}\text{.}\)</span> The income of 1 million is much higher than the others, causing the data to be right-skewed. Most people earn a lower income, but a few very high incomes stretch the right side of the distribution, creating a longer right tail.</div>
-<div class="para" id="subsec-Distribution-Shape-14">Negative skew example: Think of a set of exam scores <span class="process-math">\({50, 60, 70, 80, 90, 95}\text{.}\)</span> If most students score high but a few perform very poorly, the data is left-skewed. The low scores create a long tail on the left side of the distribution.</div>
-<div class="para" id="subsec-Distribution-Shape-15">See <a href="sec-Descriptive-Statistics.html#fig-skewness-comparison" class="xref" data-knowl="./knowl/xref/fig-skewness-comparison.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.1.6">Figure 1.1.6</a> for a visual representation.</div>
-<figure class="figure figure-like" id="fig-skewness-comparison"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/essential-probability-and-statistics/skewness-comparison.png" class="contained" alt="Comparison of normal vs. skewed distributions."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.6<span class="period">.</span></span><span class="space"> </span>Histograms comparing a normal distribution and a right-skewed distribution.</figcaption></figure><div class="para" id="subsec-Distribution-Shape-17">To help visualize the difference, here’s a Python code that generates two types of distributions: a normal (symmetrical) one and a right-skewed one. The plot will show how the shapes of these two distributions differ.</div>
-<div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-py">Skewness Visualization 
-
-import matplotlib.pyplot as plt 
-import numpy as np 
-from scipy.stats import norm, skewnorm
-
-np.random.seed(42)
-normal_data = np.random.normal(50, 10, 1000) # Normal distribution
-skewed_data = np.random.exponential(20000, 1000) # Right-skewed distribution
-
-fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 4))
-
-# normal distribution
-
-ax1.hist(normal_data, bins=30, edgecolor='black', alpha=0.7)
-ax1.set_title('Normal Distribution')
-ax1.set_xlabel('Value')
-ax1.set_ylabel('Frequency')
-
-#Plot right-skewed distribution
-
-ax2.hist(skewed_data, bins=30, edgecolor='black', alpha=0.7)
-ax2.set_title('Right-Skewed Distribution')
-ax2.set_xlabel('Value')
-ax2.set_ylabel('Frequency')
-
-plt.tight_layout()
-plt.savefig('skewness-comparison.png')
-plt.show()
-</code></pre></div></section><section class="subsection" id="kurtosis"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.1.4</span><span class="space"> </span><span class="title">Kurtosis: Checking Out the Tails</span>
-</h3>
-<section class="introduction" id="kurtosis-2"><div class="para" id="kurtosis-2-1">After digging into mean, median, mode, and skewness, let’s talk <em class="emphasis">kurtosis</em>. This stat zooms in on the "tailedness" of our data—how often we see wild outliers compared to a normal distribution. It’s like checking the edges of our data’s shape to see if they’re loaded with extreme values or totally chill.</div></section><section class="subsubsection" id="types-of-kurtosis"><h4 class="heading hide-type">
-<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">1.1.4.1</span><span class="space"> </span><span class="title">Types of Kurtosis</span>
-</h4>
-<div class="para" id="types-of-kurtosis-2">Kurtosis comes in three flavors:</div>
-<ul class="disc" id="types-of-kurtosis-3">
-<li id="types-of-kurtosis-3-1"><div class="para" id="types-of-kurtosis-3-1-1">
-<em class="emphasis">Mesokurtic</em>: Matches a normal distribution. Not too many outliers, not too few. It’s the just-right vibe.</div></li>
-<li id="types-of-kurtosis-3-2"><div class="para" id="types-of-kurtosis-3-2-1">
-<em class="emphasis">Leptokurtic</em>: Sharp peak, heavy tails. Think lots of outliers, like stock prices during a market rollercoaster.</div></li>
-<li id="types-of-kurtosis-3-3"><div class="para" id="types-of-kurtosis-3-3-1">
-<em class="emphasis">Platykurtic</em>: Flatter peak, light tails. Fewer outliers, like steady daily temps.</div></li>
-</ul></section><section class="subsubsection" id="kurtosis-formula"><h4 class="heading hide-type">
-<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">1.1.4.2</span><span class="space"> </span><span class="title">How’s It Calculated?</span>
-</h4>
-<div class="para" id="kurtosis-formula-2">Kurtosis measures how much data hangs out in the tails. The formula for <em class="emphasis">excess kurtosis</em> (comparing to a normal distribution) is:</div>
-<div class="para" id="kurtosis-formula-3"><span class="process-math">\(\text{Excess Kurtosis} = \frac{1}{N} \sum_{i=1}^{N} \left( \frac{x_i - \mu}{\sigma} \right)^4 - 3\)</span></div>
-<div class="para" id="kurtosis-formula-4">Here, <span class="process-math">\(N\)</span> is the number of data points, <span class="process-math">\(x_i\)</span> is each data point, <span class="process-math">\(\mu\)</span> is the mean, and <span class="process-math">\(\sigma\)</span> is the standard deviation. Don’t stress the math—Python will handle it in a bit!</div></section><section class="subsubsection" id="kurtosis-examples"><h4 class="heading hide-type">
-<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">1.1.4.3</span><span class="space"> </span><span class="title">Real-World Examples</span>
-</h4>
-<div class="para" id="kurtosis-examples-2">Let’s connect kurtosis to mean, median, mode, and skewness:</div>
-<ul class="disc" id="kurtosis-examples-3">
-<li id="kurtosis-examples-3-1"><div class="para" id="kurtosis-examples-3-1-1">
-<em class="emphasis">Leptokurtic Example</em>: Take stock returns: <code class="code-inline tex2jax_ignore">{5, 7, 8, 8, 10, 12, 12, 12, 12, 50}</code>. That 50 is a massive outlier, bulking up the tails (like skewness, but focused on extremes). This is leptokurtic—expect some crazy swings.</div></li>
-<li id="kurtosis-examples-3-2"><div class="para" id="kurtosis-examples-3-2-1">
-<em class="emphasis">Platykurtic Example</em>: Now daily temperatures: <code class="code-inline tex2jax_ignore">{30, 32, 33, 34, 35, 36, 38}</code>. No wild outliers, just values chilling around the mean and median. This is platykurtic—nice and calm.</div></li>
-</ul>
-<div class="para" id="kurtosis-examples-4">While skewness shows if our data’s lopsided, kurtosis tells us if outliers are stealing the show.</div></section><section class="subsubsection" id="kurtosis-visual"><h4 class="heading hide-type">
-<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">1.1.4.4</span><span class="space"> </span><span class="title">Seeing Kurtosis in Action</span>
-</h4>
-<div class="para" id="kurtosis-visual-2">Picture kurtosis with histograms (like we used for mean and skewness):</div>
-<ul class="disc" id="kurtosis-visual-3">
-<li id="kurtosis-visual-3-1"><div class="para" id="kurtosis-visual-3-1-1">
-<em class="emphasis">Leptokurtic</em>: Sharp peak, chunky tails (lots of outliers).</div></li>
-<li id="kurtosis-visual-3-2"><div class="para" id="kurtosis-visual-3-2-1">
-<em class="emphasis">Platykurtic</em>: Flatter top, skinny tails (few outliers).</div></li>
-<li id="kurtosis-visual-3-3"><div class="para" id="kurtosis-visual-3-3-1">
-<em class="emphasis">Mesokurtic</em>: Classic bell curve, balanced tails.</div></li>
-</ul>
-<div class="para" id="kurtosis-visual-4">Check out this chart to see the difference:</div>
-<figure class="figure figure-like" id="kurtosis-chart"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/./images/essential-probability-and-statistics/kurtosis.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.7<span class="period">.</span></span><span class="space"> </span>Kurtosis Comparison: The top subplot shows the full distributions, with leptokurtic (sharp peak, heavy tails with more outliers, like stock returns), mesokurtic (normal distribution, balanced tails), and platykurtic (flat peak, light tails with fewer outliers, like temperatures). The bottom subplot zooms in on the right tail, showing how leptokurtic tails decay slower (higher density at large values) compared to mesokurtic and platykurtic tails, which drop off faster.</figcaption></figure><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-py">import numpy as np
-import matplotlib.pyplot as plt
-from scipy.stats import kurtosis, t, norm, uniform
-
-# Data for kurtosis calculation
-stock_data = [5, 7, 8, 8, 10, 12, 12, 12, 12, 50]  # Leptokurtic
-temp_data = [30, 32, 33, 34, 35, 36, 38]  # Platykurtic
-
-# Calculate kurtosis
-kurt_stock = kurtosis(stock_data, fisher=True)
-kurt_temp = kurtosis(temp_data, fisher=True)
-print(f"Stock Returns Kurtosis: {kurt_stock:.2f} (Leptokurtic)")
-print(f"Temperature Kurtosis: {kurt_temp:.2f} (Platykurtic)")
-
-# Generate data for plotting distributions
-x = np.linspace(-10, 10, 200)  # Wider range to show tails
-
-# Leptokurtic: Student's t-distribution (df=3 for heavy tails)
-lepto = t.pdf(x, df=3) * 1.2  # Scale for visibility
-
-# Mesokurtic: Normal distribution
-meso = norm.pdf(x)
-
-# Platykurtic: Uniform-like distribution (approximated)
-platy = uniform.pdf(x, loc=-2, scale=4) * 0.8  # Flat, light tails
-
-# Create figure with two subplots
-fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(10, 8), sharex=False)
-
-# Full distribution plot (top subplot)
-ax1.plot(x, lepto, label='Leptokurtic (Heavy Tails)', color='#FF5733')
-ax1.plot(x, meso, label='Mesokurtic (Normal)', color='#33FF57')
-ax1.plot(x, platy, label='Platykurtic (Light Tails)', color='#3357FF')
-ax1.set_title('Kurtosis Comparison: Full Distribution')
-ax1.set_xlabel('Value')
-ax1.set_ylabel('Density')
-ax1.legend()
-ax1.grid(True)
-
-# Tail-focused plot (bottom subplot)
-ax2.plot(x, lepto, label='Leptokurtic (Heavy Tails)', color='#FF5733')
-ax2.plot(x, meso, label='Mesokurtic (Normal)', color='#33FF57')
-ax2.plot(x, platy, label='Platykurtic (Light Tails)', color='#3357FF')
-ax2.set_title('Kurtosis Comparison: Right Tail Focus')
-ax2.set_xlabel('Value')
-ax2.set_ylabel('Density')
-ax2.set_xlim(3, 10)  # Focus on right tail
-ax2.set_ylim(0, 0.05)  # Zoom in on low density
-ax2.legend()
-ax2.grid(True)
-
-# Adjust layout and save
-plt.tight_layout()
-plt.savefig('kurtosis.png', dpi=300, bbox_inches='tight')  # Save both subplots
-plt.show()
-</code></pre></div></section><section class="subsubsection" id="kurtosis-python"><h4 class="heading hide-type">
-<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">1.1.4.5</span><span class="space"> </span><span class="title">Calculating Kurtosis with Python</span>
-</h4>
-<div class="para" id="kurtosis-python-2">Since we’re all about descriptive stats, let’s compute kurtosis with Python (more tools coming up later). Here’s a script for our stock returns example:</div>
-<div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-py">from scipy.stats import kurtosis
-import numpy as np
-
-# Stock returns data (leptokurtic)
-data = [5, 7, 8, 8, 10, 12, 12, 12, 12, 50]
-
-# Calculate excess kurtosis
-kurt = kurtosis(data, fisher=True)
-print(f"Excess Kurtosis: {kurt:.2f}")
-
-# Positive value means leptokurtic (heavy tails)!
-</code></pre></div>
-<div class="para" id="kurtosis-python-4">Run this, and you’ll see a positive kurtosis, confirming big outliers in our stock returns. Try the temperature data <code class="code-inline tex2jax_ignore">{30, 32, 33, 34, 35, 36, 38}</code> for a negative kurtosis and that platykurtic vibe.</div></section><section class="subsubsection" id="kurtosis-wrapup"><h4 class="heading hide-type">
-<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">1.1.4.6</span><span class="space"> </span><span class="title">Why Kurtosis Matters</span>
-</h4>
-<div class="para" id="kurtosis-wrapup-2">Kurtosis wraps up our descriptive stats crew—mean, median, mode, and skewness. It’s like a heads-up about outliers. High kurtosis (leptokurtic) yells “watch out for big swings!”—think risky stocks. Low kurtosis (platykurtic) says “smooth sailing”—like predictable weather. It’s another piece of your data’s story.</div></section></section><section class="conclusion" id="sec-Descriptive-Statistics-7"><h3 class="heading">Conclusion.<span></span>
-</h3> <div class="para" id="sec-Descriptive-Statistics-7-2">In summary, descriptive statistics provide essential tools for understanding and summarizing datasets, helping to reveal underlying patterns and trends. By examining measures of central tendency (mean, median, mode), we can identify the "typical" values of a dataset, while measures of dispersion (variance, standard deviation, range, and quartiles) show how spread out the data is. Visualizations like histograms, boxplots, and density plots enhance this understanding by allowing us to visually inspect the distribution and shape of the data. As we move forward, the next section will explore the tools available for calculating these descriptive statistics, giving us the means to automate and refine these analyses in practice.</div></section></section></div>
+<div class="para">Now consider three scenarios: If the email contains only “deal” (<span class="process-math">\(X_1=1, X_2=0\)</span>):<div class="displaymath process-math" id="subsec-Naive-Bayes-5-7-1-2">
+\begin{gather*}
+P(Y=\text{spam} \mid X) \propto 0.4 \times 0.7 \times (1-0.7) = 0.084,\\
+P(Y=\text{not spam} \mid X) \propto 0.6 \times 0.5 \times (1-0.5) = 0.150.
+\end{gather*}
+</div>The classifier predicts “not spam”. If the email contains only “win” (<span class="process-math">\(X_1=0, X_2=1\)</span>):<div class="displaymath process-math" id="subsec-Naive-Bayes-5-7-2-2">
+\begin{gather*}
+P(Y=\text{spam} \mid X) \propto 0.4 \times (1-0.7) \times 0.7 = 0.084,\\
+P(Y=\text{not spam} \mid X) \propto 0.6 \times (1-0.5) \times 0.5 = 0.150.
+\end{gather*}
+</div>Again the classifier predicts “not spam”. If the email contains both words (<span class="process-math">\(X_1=1, X_2=1\)</span>):<div class="displaymath process-math" id="subsec-Naive-Bayes-5-7-3-2">
+\begin{gather*}
+P(Y=\text{spam} \mid X) \propto 0.4 \times 0.7 \times 0.7 = 0.196,\\
+P(Y=\text{not spam} \mid X) \propto 0.6 \times 0.5 \times 0.5 = 0.150.
+\end{gather*}
+</div>Now the classifier predicts “spam”.</div>
+</div></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="ch-Essential-Probability-and-Statistics.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-useful-descriptive-statistics-tools.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec-Evaluating-Predictions.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

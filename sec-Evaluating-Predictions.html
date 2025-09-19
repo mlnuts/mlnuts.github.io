@@ -158,7 +158,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-MultiClass-Classification.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-supervised-learning-basics.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-MultiClass-Classification.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-supervised-learning-basics.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-Bayesian-Methods.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -383,6 +383,10 @@ window.MathJax = {
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsec-Evaluating-Binary-Classification" class="internal"><span class="codenumber">2.5.2</span> <span class="title">Evaluating Binary Classification</span></a></div></li>
 </ul>
 </li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Bayesian-Methods.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Bayesian Methods</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Bayesian-Methods.html#subsec-Naive-Bayes" class="internal"><span class="codenumber">2.6.1</span> <span class="title">Naive Bayes Algorithm</span></a></div></li></ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
@@ -407,17 +411,17 @@ window.MathJax = {
 <div class="para">Suppose, <span class="process-math">\(\rho_{Y\mid X}\)</span> is not skewed. Then, the “best” prediction for <span class="process-math">\(Y\)</span> is the mean value of <span class="process-math">\(Y\text{.}\)</span> Therefore, the predictor function will be</div>
 <div class="displaymath process-math">
 \begin{equation*}
-f_\theta(X) = \mathbb{E}[Y\mid X][Y] = \int y\rho_{Y\mid X}(y;\hat\theta)\, dy.
+f_\theta(X) = \mathbb{E}[Y\mid X][Y] = \int y\rho_{Y\mid X}(y;\theta)\, dy.
 \end{equation*}
 </div>
-<div class="para">where I have included the parameter indicator so that we are aware that the predictor funtion will depend upon the parameters of the model for <span class="process-math">\(\rho\)</span> which are estimated/trained using the trainign dataset <span class="process-math">\(\mathcal{D}\text{.}\)</span>
+<div class="para">where I have included the parameter indicator so that we are aware that the predictor function will depend upon the parameters of the model for <span class="process-math">\(\rho\)</span> which are estimated/trained using the trainign dataset <span class="process-math">\(\mathcal{D}\text{.}\)</span>
 </div>
 </div>
 <div class="para logical" id="subsec-Evaluating-Regression-Tasks-5">
 <div class="para">To evaluate the quality of this predictor, the average value of the <dfn class="terminology">Mean Squared Error</dfn> is the <dfn class="terminology">score function</dfn> that also minimizes the training error when used during the training f the model. The formula for squared error is</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\textrm{SE} = \left( f(X) - Y\right)^2              
+\textrm{SE} = \left( f(X) - Y\right)^2
 \end{equation*}
 </div>
 <div class="para">Evaluating its average over the test set gives us the mean squared error.</div>
@@ -452,10 +456,10 @@ f_\theta(X) = \mathbb{E}[Y\mid X][Y] = \int y\rho_{Y\mid X}(y;\hat\theta)\, dy.
 <div class="para">For brevity, let us denote the trained probability by</div>
 <div class="displaymath process-math">
 \begin{equation*}
-P_{Y \mid X}(Y=1;\theta) \equiv p_\hat{\theta}(X).
+P_{Y \mid X}(Y=1;\hat\theta) \equiv p_\hat{\theta}(X).
 \end{equation*}
 </div>
-<div class="para">This will be our predictor when combined with a threshold for decision.  Thus, at the end of training, we end up with a trained model, <span class="process-math">\(P_{Y \mid X}(Y=1;\hat\theta)\text{,}\)</span> which directly predicts <span class="process-math">\(Y\)</span> by the following decision rules:</div>
+<div class="para">This will be our predictor when combined with a threshold for decision. Thus, at the end of training, we end up with a trained model, <span class="process-math">\(P_{Y \mid X}(Y=1;\hat\theta)\text{,}\)</span> which directly predicts <span class="process-math">\(Y\)</span> by the following decision rules:</div>
 <div class="displaymath process-math" id="subsec-Evaluating-Binary-Classification-3-4">
 \begin{align*}
 \amp Y_\text{pred} = 1\ \text{ if }\  p_\hat{\theta}(X) \gt p_\text{th}\\
@@ -464,14 +468,12 @@ P_{Y \mid X}(Y=1;\theta) \equiv p_\hat{\theta}(X).
 </div>
 <div class="para">Note that <span class="process-math">\(Y_\text{pred}\)</span> depends upon <span class="process-math">\(X\)</span> and the training dataset. We will just show it as <span class="process-math">\(Y_\text{pred}(X)\text{.}\)</span> In our examples, we used the threshold <span class="process-math">\(p_\text{th} = 0.5\text{.}\)</span> We will discuss below a systematic way of choosing appropriate threshold for a problem. For now, suppose, we have rule for converting trained model into predictions on the outcomes.</div>
 </div>
-<div class="para logical" id="subsec-Evaluating-Binary-Classification-4">
+<div class="para" id="subsec-Evaluating-Binary-Classification-4"><em class="alert">Accuracy</em></div>
+<div class="para logical" id="subsec-Evaluating-Binary-Classification-5">
 <div class="para">To evaluate the trained model, a simple measure is the percentage of the times we got the prediction right. This is called <dfn class="terminology">accuracy</dfn>. The score function for this measure will just be a Kronecker delta of the predictor and the corresponding <span class="process-math">\(Y\text{.}\)</span> As a random variable, <dfn class="terminology">accuracy</dfn> will by</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\text{Accuracy}(X,Y)\ = \begin{cases}
-1 \amp Y_\text{pred}(X) = Y \\
-0 \amp \text{otherwise}
-\end{cases}
+\text{Accuracy}(X,Y)\ = \begin{cases} 1 \amp Y_\text{pred}(X) = Y \\ 0 \amp \text{otherwise} \end{cases}
 \end{equation*}
 </div>
 <div class="para">The accuracy will be the expectation value of this random variable. When it is  evaluated on the test dataset <span class="process-math">\(\mathcal{D}_t\)</span> we will get the following.</div>
@@ -481,20 +483,21 @@ P_{Y \mid X}(Y=1;\theta) \equiv p_\hat{\theta}(X).
 \end{equation*}
 </div>
 </div>
-<div class="para" id="subsec-Evaluating-Binary-Classification-5">For many problems, accuracy turns out to be a good enough metric for evaluating the quality of predictions. Accuracy, however, misses some details that you might care about. For instance, it lumps together being right on both <span class="process-math">\(Y=1\)</span> and <span class="process-math">\(Y=0\)</span> cases and you might care more about being right on, say the outcome <span class="process-math">\(1\)</span> than on the outcome <span class="process-math">\(0\text{.}\)</span> In these cases, you might want to look more closely at when you are wrong and when you are right.</div>
-<div class="para logical" id="subsec-Evaluating-Binary-Classification-6">
+<div class="para" id="subsec-Evaluating-Binary-Classification-6"><em class="alert">Confusion Matrix</em></div>
+<div class="para" id="subsec-Evaluating-Binary-Classification-7">For many problems, accuracy turns out to be a good enough metric for evaluating the quality of predictions. Accuracy, however, misses some details that you might care about. For instance, it lumps together being right on both <span class="process-math">\(Y=1\)</span> and <span class="process-math">\(Y=0\)</span> cases and you might care more about being right on, say the outcome <span class="process-math">\(1\)</span> than on the outcome <span class="process-math">\(0\text{.}\)</span> In these cases, you might want to look more closely at when you are wrong and when you are right.</div>
+<div class="para logical" id="subsec-Evaluating-Binary-Classification-8">
 <div class="para">Just as there are two events when you are right, i.e., you predict <span class="process-math">\(1\)</span> and data (i.e., true) value is also <span class="process-math">\(1\)</span> and you predict <span class="process-math">\(0\)</span> when the fata value of also <span class="process-math">\(0\text{,}\)</span> there are two ways of being wrong:  you predict <span class="process-math">\(1\)</span> but the data value of <span class="process-math">\(0\)</span> and yoou predict <span class="process-math">\(0\)</span> but the data value is <span class="process-math">\(1\text{.}\)</span> Suppose, we refer to <span class="process-math">\(Y=1\)</span> as “positive” and <span class="process-math">\(Y=0\)</span> as “negative”, then we call these various types of outcomes by different names.</div>
-<ul class="disc" id="subsec-Evaluating-Binary-Classification-6-13"><li id="subsec-Evaluating-Binary-Classification-6-13-1">
-<div class="para" id="subsec-Evaluating-Binary-Classification-6-13-1-1">
+<ul class="disc" id="subsec-Evaluating-Binary-Classification-8-13"><li id="subsec-Evaluating-Binary-Classification-8-13-1">
+<div class="para" id="subsec-Evaluating-Binary-Classification-8-13-1-1">
 <dfn class="terminology">True Positive (TP)</dfn>: You predict <span class="process-math">\(1\)</span> and data (i.e., true) value is also <span class="process-math">\(1\text{.}\)</span>
 </div>
-<div class="para" id="subsec-Evaluating-Binary-Classification-6-13-1-2">
+<div class="para" id="subsec-Evaluating-Binary-Classification-8-13-1-2">
 <dfn class="terminology">True Negative (TN)</dfn>: You predict <span class="process-math">\(0\)</span> and data (i.e., true) value is also <span class="process-math">\(0\text{.}\)</span>
 </div>
-<div class="para" id="subsec-Evaluating-Binary-Classification-6-13-1-3">
+<div class="para" id="subsec-Evaluating-Binary-Classification-8-13-1-3">
 <dfn class="terminology">False Positive (FP)</dfn>: You predict <span class="process-math">\(1\)</span> but the data (i.e., true) value is  <span class="process-math">\(0\text{.}\)</span>
 </div>
-<div class="para" id="subsec-Evaluating-Binary-Classification-6-13-1-4">
+<div class="para" id="subsec-Evaluating-Binary-Classification-8-13-1-4">
 <dfn class="terminology">False Negative (FN)</dfn>: You predict <span class="process-math">\(0\)</span>  but the data (i.e., true) value is <span class="process-math">\(1\text{.}\)</span>
 </div>
 </li></ul>
@@ -541,7 +544,7 @@ P_{Y \mid X}(Y=1;\theta) \equiv p_\hat{\theta}(X).
 <td class="c m b3 r0 l0 t0 lines"></td>
 </tr>
 </table></div>
-<div class="sbspanel top" style="width:20%;"><div class="para" id="subsec-Evaluating-Binary-Classification-7-2"></div></div>
+<div class="sbspanel top" style="width:20%;"><div class="para" id="subsec-Evaluating-Binary-Classification-9-2"></div></div>
 <div class="sbspanel fixed-width top" style="width:40%;"><table class="tabular">
 <tr>
 <td class="l m b0 r3 l0 t0 lines">Actual<span class="process-math">\(\rightarrow\)</span>
@@ -583,7 +586,7 @@ P_{Y \mid X}(Y=1;\theta) \equiv p_\hat{\theta}(X).
 </tr>
 </table></div>
 </div></div>
-<div class="para logical" id="subsec-Evaluating-Binary-Classification-8">
+<div class="para logical" id="subsec-Evaluating-Binary-Classification-10">
 <div class="para">From the confusion matrix, you can further deduce important metric of the performance of a model. For instance, we may want to know, “What percentage of the actual <span class="process-math">\(Y=1\)</span> were we able to predict to be <span class="process-math">\(1\text{?}\)</span>” It’s called <dfn class="terminology">recall</dfn> or <dfn class="terminology">True Positive Rate (TPR)</dfn>. All the positives in the real data are now in the TP and FN since FN are actually positives which got incorrectly predicted to be negatives.</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -609,9 +612,95 @@ P_{Y \mid X}(Y=1;\theta) \equiv p_\hat{\theta}(X).
 \end{equation*}
 </div>
 <div class="para">It would be a good exercise for the student to find the values of these quantities from the table of values given above.</div>
+</div>
+<div class="para" id="subsec-Evaluating-Binary-Classification-11"><em class="alert">Role of Threshold in Decision</em></div>
+<div class="para" id="subsec-Evaluating-Binary-Classification-12">As you know that the decision to predict a value of the target <span class="process-math">\(Y\)</span> is based on comparing the predicted probability <span class="process-math">\(p_\hat\theta(X)\)</span> (which is the probability of the event that <span class="process-math">\(Y=1\)</span> given an <span class="process-math">\(X\)</span>) to a threshold <span class="process-math">\(p_\text{th}\text{,}\)</span> which we had taken to be <span class="process-math">\(0.5\text{.}\)</span> That is if <span class="process-math">\(p_\hat\theta \gt 0.5\text{,}\)</span> we predicted that <span class="process-math">\(Y\)</span> is category <span class="process-math">\(1\)</span> for the given <span class="process-math">\(X\text{.}\)</span> This basically says, that the given <span class="process-math">\(X\)</span> is more than <span class="process-math">\(50\%\)</span> likely to be choice <span class="process-math">\(Y=1\text{.}\)</span>
+</div>
+<div class="para" id="subsec-Evaluating-Binary-Classification-13">Now, imagine, <span class="process-math">\(X\)</span> is a picture captured by a security camera and <span class="process-math">\(Y=1\)</span> opens the door to a high security building. You really want a more stringent requirement that <span class="process-math">\(p_\text{th} = 0.5\)</span> to let people in the building. When you increase the threshold, you lower the False Positives since you do not predict as many positives as you did before, but also increase the False Negatives because now some of the true <span class="process-math">\(Y=1\)</span> will be rejected by <span class="process-math">\(Y\ne 1\)</span> prediction.</div>
+<div class="para logical" id="subsec-Evaluating-Binary-Classification-14">
+<div class="para">One way to implement different importance of different outcomes is to associate cost to different outcomes in a matrix. This matrix is called <dfn class="terminology">cost matrix</dfn>, <span class="process-math">\(\mathbf{C}\text{.}\)</span> The elements of <span class="process-math">\(\mathbf{C}\)</span> will be as follows.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+C_{ij} = \text{Cost of predicting }Y=i\text{ when actually it is }Y=j.
+\end{equation*}
+</div>
+<div class="para">For a binary classificaiton, <span class="process-math">\(i \in \{0, 1\}\)</span> and <span class="process-math">\(j \in \{0, 1\}\text{.}\)</span> The costs for the correct predictions would, of course, be zero. Thus,</div>
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:30%;"><div class="para logical" id="subsec-Evaluating-Binary-Classification-15-1"><div class="displaymath process-math" id="subsec-Evaluating-Binary-Classification-15-1-1">
+\begin{align*}
+\amp C_{00} = \text{Cost for } TN = 0 \\
+\amp C_{01} = \text{Cost for } FN \\
+\amp C_{10} = \text{Cost for } FP \\
+\amp C_{11} = \text{Cost for } TP  = 0
+\end{align*}
+</div></div></div>
+<div class="sbspanel top" style="width:10%;"><div class="para" id="subsec-Evaluating-Binary-Classification-15-2"></div></div>
+<div class="sbspanel fixed-width top" style="width:40%;"><table class="tabular">
+<tr>
+<td class="l m b0 r3 l0 t0 lines">Actual<span class="process-math">\(\rightarrow\)</span>
+</td>
+<td class="c m b0 r1 l0 t0 lines">Positive</td>
+<td class="c m b0 r1 l0 t0 lines">Negative</td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b3 r3 l0 t0 lines">Predicted<span class="process-math">\(\downarrow\)</span>
+</td>
+<td class="c m b3 r1 l0 t0 lines"></td>
+<td class="c m b3 r1 l0 t0 lines"></td>
+<td class="c m b3 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r3 l0 t0 lines">Positive</td>
+<td class="c m b1 r1 l0 t0 lines"><span class="process-math">\(C_{11}\)</span></td>
+<td class="c m b1 r1 l0 t0 lines"><span class="process-math">\(C_{10}\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r3 l0 t0 lines">Negative</td>
+<td class="c m b0 r1 l0 t0 lines"><span class="process-math">\(C_{01}\)</span></td>
+<td class="c m b0 r1 l0 t0 lines"><span class="process-math">\(C_{00}\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r3 l0 t0 lines"></td>
+<td class="c m b1 r1 l0 t0 lines"></td>
+<td class="c m b1 r1 l0 t0 lines"></td>
+<td class="c m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b3 r3 l0 t0 lines"></td>
+<td class="c m b3 r1 l0 t0 lines"></td>
+<td class="c m b3 r1 l0 t0 lines"></td>
+<td class="c m b3 r0 l0 t0 lines"></td>
+</tr>
+</table></div>
+<div class="sbspanel top" style="width:20%;"><div class="para" id="subsec-Evaluating-Binary-Classification-15-4"></div></div>
+</div></div>
+<div class="para logical" id="subsec-Evaluating-Binary-Classification-16">
+<div class="para">The error incurred in predicting the test data can be then weighed accordingly.</div>
+<div class="displaymath process-math" id="subsec-Evaluating-Binary-Classification-16-1">
+\begin{align*}
+\text{Weighted Cost} \amp =\frac{\left[ C_{01} \times  FN  + C_{10} \times  FP \right]}{TP + TN + FP + FN}
+\end{align*}
+</div>
+<div class="para">Thus, in case of the security identification, we might impose a heavy cost of False positive and low for False Negative. How heavy should the relative ratios be? That depends on the requirements of the system. For instance, you could demand a <span class="process-math">\(100\)</span>-fold cost when testing.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+C_{10} = 100,\quad C_{01} = 1,
+\end{equation*}
+</div>
+<div class="para">During the training, you might also make the decision to reach <span class="process-math">\((Y=1)\)</span> harder by increasing the threshold.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+p_\text{th}  = 0.9.
+\end{equation*}
+</div>
+<div class="para">Increasing the threshod will lower th false positives, but will also increase false negatives, leading the system to deny entry to the building to some who should be let in. Another instance for including cost in the training process occurs when we have an <dfn class="terminology">imbalanced dataset</dfn>, e.g. may be you have <span class="process-math">\(1\)</span> spam email for every <span class="process-math">\(1000\)</span> regular mail, and you are trying to predict if a given email is a spam or not. You can immediately see that if you predicted every email not be to be spam email, you will only be wrong <span class="process-math">\(0.1\%\)</span> of the time. That is not wuite what you want. So, you would have to try to balance the two classes of data in your training set. One strategy is to weigh each regular email class just <span class="process-math">\(0.0001\)</span> for each spam email <span class="process-math">\(1.0\)</span> times. We will discuss these strategies of training imbalanced data in a later chapter.</div>
 </div></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="sec-MultiClass-Classification.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec-MultiClass-Classification.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-Bayesian-Methods.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
