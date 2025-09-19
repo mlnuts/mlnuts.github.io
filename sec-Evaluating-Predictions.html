@@ -380,7 +380,13 @@ window.MathJax = {
 <div class="toc-title-box"><a href="sec-Evaluating-Predictions.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Evaluating Predictions</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsec-Evaluating-Regression-Tasks" class="internal"><span class="codenumber">2.5.1</span> <span class="title">Evaluating Regression Tasks</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsec-Evaluating-Binary-Classification" class="internal"><span class="codenumber">2.5.2</span> <span class="title">Evaluating Binary Classification</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsec-Evaluating-Binary-Classification" class="internal"><span class="codenumber">2.5.2</span> <span class="title">Evaluating Binary Classification</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsubsec-Metrics-of-Binary-Classification" class="internal"><span class="codenumber">2.5.2.1</span> <span class="title">Metrics of BinaryClassification</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsubsec-ROC-PR-Curves" class="internal"><span class="codenumber">2.5.2.2</span> <span class="title">ROC and Precision-Recall Curves</span></a></div></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -450,9 +456,8 @@ f_\theta(X) = \mathbb{E}[Y\mid X][Y] = \int y\rho_{Y\mid X}(y;\theta)\, dy.
 </div></section><section class="subsection" id="subsec-Evaluating-Binary-Classification"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.5.2</span><span class="space"> </span><span class="title">Evaluating Binary Classification</span>
 </h3>
-<div class="para" id="subsec-Evaluating-Binary-Classification-2">In a binary classification, the task is to predict whether a given <span class="process-math">\(X\)</span> belongs to one of the two classes, <span class="process-math">\(Y=1\)</span> (i.e., True/Success) or <span class="process-math">\(Y=0\)</span> (i.e., False/Failure). In the logistic regression algorithm, we have modeled the conditional probability mass function <span class="process-math">\(P_{Y \mid X}(Y=1;\theta)\text{,}\)</span> i.e., probability of outcome being <span class="process-math">\(Y=1\)</span> for a given <span class="process-math">\(X\text{,}\)</span> as a sigmoid, whose parameters were optimized by using the training data <span class="process-math">\(\mathcal{D}\text{.}\)</span>
-</div>
-<div class="para logical" id="subsec-Evaluating-Binary-Classification-3">
+<section class="introduction" id="subsec-Evaluating-Binary-Classification-2"><div class="para" id="subsec-Evaluating-Binary-Classification-2-1">In a binary classification, the task is to predict whether a given <span class="process-math">\(X\)</span> belongs to one of the two classes, <span class="process-math">\(Y=1\)</span> (i.e., True/Success) or <span class="process-math">\(Y=0\)</span> (i.e., False/Failure). In the logistic regression algorithm, we have modeled the conditional probability mass function <span class="process-math">\(P_{Y \mid X}(Y=1;\theta)\text{,}\)</span> i.e., probability of outcome being <span class="process-math">\(Y=1\)</span> for a given <span class="process-math">\(X\text{,}\)</span> as a sigmoid, whose parameters were optimized by using the training data <span class="process-math">\(\mathcal{D}\text{.}\)</span>
+</div> <div class="para logical" id="subsec-Evaluating-Binary-Classification-2-2">
 <div class="para">For brevity, let us denote the trained probability by</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -460,16 +465,18 @@ P_{Y \mid X}(Y=1;\hat\theta) \equiv p_\hat{\theta}(X).
 \end{equation*}
 </div>
 <div class="para">This will be our <dfn class="terminology">predictor</dfn>. AFTER the training is done, we use the predictor with a <dfn class="terminology">threshold</dfn> <span class="process-math">\(p_\text{th}\)</span> for<dfn class="terminology">decision</dfn>.</div>
-<div class="displaymath process-math" id="subsec-Evaluating-Binary-Classification-3-6">
+<div class="displaymath process-math" id="subsec-Evaluating-Binary-Classification-2-2-6">
 \begin{align*}
 \amp Y_\text{pred} = 1\ \text{ if }\  p_\hat{\theta}(X) \gt p_\text{th}\\
 \amp Y_\text{pred} = 0\ \text{ otherwise.}
 \end{align*}
 </div>
 <div class="para">Note that <span class="process-math">\(Y_\text{pred}\)</span> depends upon <span class="process-math">\(X\)</span> and the training dataset through the predictor <span class="process-math">\(p_\hat{\theta}(X)\text{.}\)</span> In our examples in previous sections, we have used the threshold <span class="process-math">\(p_\text{th} = 0.5\)</span> but that may not be optimal for all problems. We will discuss below a systematic way of choosing appropriate threshold for a problem. For now, suppose, we have a rule for converting trained model into predictions on the outcomes and we want to evaluate the quality of resulting predictions.</div>
-</div>
-<div class="para" id="subsec-Evaluating-Binary-Classification-4"><em class="alert">Accuracy</em></div>
-<div class="para logical" id="subsec-Evaluating-Binary-Classification-5">
+</div></section><section class="subsubsection" id="subsubsec-Metrics-of-Binary-Classification"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">2.5.2.1</span><span class="space"> </span><span class="title">Metrics of BinaryClassification</span>
+</h4>
+<div class="para" id="subsubsec-Metrics-of-Binary-Classification-2"><em class="alert">Accuracy</em></div>
+<div class="para logical" id="subsubsec-Metrics-of-Binary-Classification-3">
 <div class="para">To evaluate the trained model, a simple measure is the percentage of the times we got the prediction right, whether it was for <span class="process-math">\(Y=1\)</span> or for <span class="process-math">\(Y=0\text{.}\)</span> This measure is called <dfn class="terminology">accuracy</dfn> of the model. The score function for this measure will just be a Kronecker delta of the predictor and the corresponding <span class="process-math">\(Y\text{.}\)</span> As a random variable, <dfn class="terminology">accuracy</dfn> will by</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -483,21 +490,21 @@ P_{Y \mid X}(Y=1;\hat\theta) \equiv p_\hat{\theta}(X).
 \end{equation*}
 </div>
 </div>
-<div class="para" id="subsec-Evaluating-Binary-Classification-6"><em class="alert">Confusion Matrix</em></div>
-<div class="para" id="subsec-Evaluating-Binary-Classification-7">For many problems, accuracy turns out to be good enough for evaluating the quality of predictions. Accuracy, however, misses some details that you might care about. For instance, it lumps together being right on both <span class="process-math">\(Y=1\)</span> and <span class="process-math">\(Y=0\)</span> cases and you might care more about being right on, say the outcome <span class="process-math">\(1\)</span> than on the outcome <span class="process-math">\(0\text{.}\)</span> In these cases, you might want to look more closely at when you are wrong and when you are right.</div>
-<div class="para logical" id="subsec-Evaluating-Binary-Classification-8">
+<div class="para" id="subsubsec-Metrics-of-Binary-Classification-4"><em class="alert">Confusion Matrix</em></div>
+<div class="para" id="subsubsec-Metrics-of-Binary-Classification-5">For many problems, accuracy turns out to be good enough for evaluating the quality of predictions. Accuracy, however, misses some details that you might care about. For instance, it lumps together being right on both <span class="process-math">\(Y=1\)</span> and <span class="process-math">\(Y=0\)</span> cases and you might care more about being right on, say the outcome <span class="process-math">\(1\)</span> than on the outcome <span class="process-math">\(0\text{.}\)</span> In these cases, you might want to look more closely at when you are wrong and when you are right.</div>
+<div class="para logical" id="subsubsec-Metrics-of-Binary-Classification-6">
 <div class="para">Just as there are two events for which you can be right, i.e., when you predict <span class="process-math">\(1\)</span> and data (i.e., true) value is also <span class="process-math">\(1\text{,}\)</span> and when you predict <span class="process-math">\(0\)</span> when the data value is also <span class="process-math">\(0\text{,}\)</span> there are two ways of being wrong:  you predict <span class="process-math">\(1\)</span> but the data value is <span class="process-math">\(0\)</span> and you predict <span class="process-math">\(0\)</span> but the data value is <span class="process-math">\(1\text{.}\)</span> Suppose, we refer to <em class="alert"><span class="process-math">\(Y=1\)</span>  as  positive</em> and <em class="alert"><span class="process-math">\(Y=0\)</span> as negative</em>, then we call these various types of outcomes by different names.</div>
-<ul class="disc" id="subsec-Evaluating-Binary-Classification-8-11"><li id="subsec-Evaluating-Binary-Classification-8-11-1">
-<div class="para" id="subsec-Evaluating-Binary-Classification-8-11-1-1">
+<ul class="disc" id="subsubsec-Metrics-of-Binary-Classification-6-11"><li id="subsubsec-Metrics-of-Binary-Classification-6-11-1">
+<div class="para" id="subsubsec-Metrics-of-Binary-Classification-6-11-1-1">
 <dfn class="terminology">True Positive (TP)</dfn>: You predict <span class="process-math">\(1\)</span> and data (i.e., true) value is also <span class="process-math">\(1\text{.}\)</span>
 </div>
-<div class="para" id="subsec-Evaluating-Binary-Classification-8-11-1-2">
+<div class="para" id="subsubsec-Metrics-of-Binary-Classification-6-11-1-2">
 <dfn class="terminology">True Negative (TN)</dfn>: You predict <span class="process-math">\(0\)</span> and data (i.e., true) value is also <span class="process-math">\(0\text{.}\)</span>
 </div>
-<div class="para" id="subsec-Evaluating-Binary-Classification-8-11-1-3">
+<div class="para" id="subsubsec-Metrics-of-Binary-Classification-6-11-1-3">
 <dfn class="terminology">False Positive (FP)</dfn>: You predict <span class="process-math">\(1\)</span> but the data (i.e., true) value is  <span class="process-math">\(0\text{.}\)</span>
 </div>
-<div class="para" id="subsec-Evaluating-Binary-Classification-8-11-1-4">
+<div class="para" id="subsubsec-Metrics-of-Binary-Classification-6-11-1-4">
 <dfn class="terminology">False Negative (FN)</dfn>: You predict <span class="process-math">\(0\)</span>  but the data (i.e., true) value is <span class="process-math">\(1\text{.}\)</span>
 </div>
 </li></ul>
@@ -544,7 +551,7 @@ P_{Y \mid X}(Y=1;\hat\theta) \equiv p_\hat{\theta}(X).
 <td class="c m b3 r0 l0 t0 lines"></td>
 </tr>
 </table></div>
-<div class="sbspanel top" style="width:20%;"><div class="para" id="subsec-Evaluating-Binary-Classification-9-2"></div></div>
+<div class="sbspanel top" style="width:20%;"><div class="para" id="subsubsec-Metrics-of-Binary-Classification-7-2"></div></div>
 <div class="sbspanel fixed-width top" style="width:40%;"><table class="tabular">
 <tr>
 <td class="l m b0 r3 l0 t0 lines">Actual<span class="process-math">\(\rightarrow\)</span>
@@ -586,7 +593,7 @@ P_{Y \mid X}(Y=1;\hat\theta) \equiv p_\hat{\theta}(X).
 </tr>
 </table></div>
 </div></div>
-<div class="para logical" id="subsec-Evaluating-Binary-Classification-10">
+<div class="para logical" id="subsubsec-Metrics-of-Binary-Classification-8">
 <div class="para">From the confusion matrix, you can further deduce important metrics of the performance of a model. For instance, we may want to know, “What percentage of the actual <span class="process-math">\(Y=1\)</span> were we able to predict to be <span class="process-math">\(1\text{?}\)</span>” It’s called <dfn class="terminology">recall</dfn> or <dfn class="terminology">True Positive Rate (TPR)</dfn>. All the positives in the real data are now be in the TP or FN since FN are actually positives which got incorrectly predicted to be negatives.</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -613,42 +620,39 @@ P_{Y \mid X}(Y=1;\hat\theta) \equiv p_\hat{\theta}(X).
 </div>
 <div class="para">It would be a good exercise for the student to find the values of these quantities from the table of values given above.</div>
 </div>
-<div class="para" id="subsec-Evaluating-Binary-Classification-11"><em class="alert"><span class="process-math">\(F_1\)</span> Score:</em></div>
-<div class="para logical" id="subsec-Evaluating-Binary-Classification-12">
+<div class="para" id="subsubsec-Metrics-of-Binary-Classification-9"><em class="alert"><span class="process-math">\(F_1\)</span> Score:</em></div>
+<div class="para logical" id="subsubsec-Metrics-of-Binary-Classification-10">
 <div class="para">There is always a tradeoff between precision and recall. For instance,</div>
-<ul class="disc" id="subsec-Evaluating-Binary-Classification-12-1">
-<li id="subsec-Evaluating-Binary-Classification-12-1-1"><div class="para" id="subsec-Evaluating-Binary-Classification-12-1-1-1">A cautious classifier will have a high threshold for deciding on positives, which will lead to less False Positives but high False Negatives. That will mean it will give high precision and low recall, as you can verify from the denominators of precision and recall defining equations.</div></li>
-<li id="subsec-Evaluating-Binary-Classification-12-1-2"><div class="para" id="subsec-Evaluating-Binary-Classification-12-1-2-1">On the other hand, an aggressive classifier will try to label positives more liberally, leading to high False Positives and low False Negatives, which will be a high recall, low precision case.</div></li>
+<ul class="disc" id="subsubsec-Metrics-of-Binary-Classification-10-1">
+<li id="subsubsec-Metrics-of-Binary-Classification-10-1-1"><div class="para" id="subsubsec-Metrics-of-Binary-Classification-10-1-1-1">A cautious classifier will have a high threshold for deciding on positives, which will lead to less False Positives but high False Negatives. That will mean it will give high precision and low recall, as you can verify from the denominators of precision and recall defining equations.</div></li>
+<li id="subsubsec-Metrics-of-Binary-Classification-10-1-2"><div class="para" id="subsubsec-Metrics-of-Binary-Classification-10-1-2-1">On the other hand, an aggressive classifier will try to label positives more liberally, leading to high False Positives and low False Negatives, which will be a high recall, low precision case.</div></li>
 </ul>
 <div class="para">Sometimes, we want to opt for a balance between these two extremes. That’s where we use <span class="process-math">\(F_1\)</span> score. The <span class="process-math">\(F_1\)</span>-score is defined by the harmonic mean of precision and recall:</div>
-<div class="displaymath process-math" id="subsec-Evaluating-Binary-Classification-12-4">
+<div class="displaymath process-math" id="subsubsec-Metrics-of-Binary-Classification-10-4">
 \begin{gather*}
 F_1 = 2 \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}}
 \end{gather*}
 </div>
 <div class="para">where factor <span class="process-math">\(2\)</span> makes sure that if precision and recall are equal, the <span class="process-math">\(F_1\)</span> score will be equal to them also. Expressed in terms of the confusion matrix entries:</div>
 </div>
-<div class="para logical" id="subsec-Evaluating-Binary-Classification-13"><div class="displaymath process-math" id="subsec-Evaluating-Binary-Classification-13-1">
+<div class="para logical" id="subsubsec-Metrics-of-Binary-Classification-11"><div class="displaymath process-math" id="subsubsec-Metrics-of-Binary-Classification-11-1">
 \begin{gather*}
 F_1 = \frac{2 \cdot TP}{2 \cdot TP + FP + FN}
 \end{gather*}
 </div></div>
-<div class="para" id="subsec-Evaluating-Binary-Classification-14">Intuitively, F1-score is high only when both precision and recall are high. If either is low, the harmonic mean ensures the F1-score reflects that imbalance. It is particularly useful when we care about both avoiding false positives (FP) and false negatives (FN) equally.</div>
-<div class="para" id="subsec-Evaluating-Binary-Classification-15"><em class="alert">Role of Threshold in Decision</em></div>
-<div class="para" id="subsec-Evaluating-Binary-Classification-16">As you know that the decision to predict a value of the target <span class="process-math">\(Y\)</span> is based on comparing the predicted probability <span class="process-math">\(p_\hat\theta(X)\)</span> (which is the probability of the event that <span class="process-math">\(Y=1\)</span> given an <span class="process-math">\(X\)</span>) to a threshold <span class="process-math">\(p_\text{th}\text{,}\)</span> which we had taken to be <span class="process-math">\(0.5\text{.}\)</span> That is if <span class="process-math">\(p_\hat\theta \gt 0.5\text{,}\)</span> we predicted that <span class="process-math">\(Y\)</span> is category <span class="process-math">\(1\)</span> for the given <span class="process-math">\(X\text{.}\)</span> This basically says, that the given <span class="process-math">\(X\)</span> is more than <span class="process-math">\(50\%\)</span> likely to be choice <span class="process-math">\(Y=1\text{.}\)</span>
-</div>
-<div class="para" id="subsec-Evaluating-Binary-Classification-17">Now, imagine, <span class="process-math">\(X\)</span> is a picture captured by a security camera and <span class="process-math">\(Y=1\)</span> opens the door to a high security building. You really want a more stringent requirement that <span class="process-math">\(p_\text{th} = 0.5\)</span> to let people in the building. When you increase the threshold, you lower the False Positives since you do not predict as many positives as you did before, but also increase the False Negatives because now some of the true <span class="process-math">\(Y=1\)</span> will be rejected by <span class="process-math">\(Y\ne 1\)</span> prediction.</div>
-<div class="para logical" id="subsec-Evaluating-Binary-Classification-18">
-<div class="para">One way to implement different importance of different outcomes is to associate cost to different outcomes in a matrix. This matrix is called <dfn class="terminology">cost matrix</dfn>, <span class="process-math">\(\mathbf{C}\text{.}\)</span> The elements of <span class="process-math">\(\mathbf{C}\)</span> will be as follows.</div>
+<div class="para" id="subsubsec-Metrics-of-Binary-Classification-12">Intuitively, F1-score is high only when both precision and recall are high. If either is low, the harmonic mean ensures the F1-score reflects that imbalance. It is particularly useful when we care about both avoiding false positives (FP) and false negatives (FN) equally.</div>
+<div class="para" id="subsubsec-Metrics-of-Binary-Classification-13"><em class="alert">Using Cost Matrix for Evaluation</em></div>
+<div class="para logical" id="subsubsec-Metrics-of-Binary-Classification-14">
+<div class="para">One way to implement importance of different types of mistakes in predictions is to associate different costs to different outcomes. This is usually displayed in a matrix format. This matrix is called <dfn class="terminology">cost matrix</dfn>, <span class="process-math">\(\mathbf{C}\text{,}\)</span> whose elements will have the following meaning.</div>
 <div class="displaymath process-math">
 \begin{equation*}
 C_{ij} = \text{Cost of predicting }Y=i\text{ when actually it is }Y=j.
 \end{equation*}
 </div>
-<div class="para">For a binary classificaiton, <span class="process-math">\(i \in \{0, 1\}\)</span> and <span class="process-math">\(j \in \{0, 1\}\text{.}\)</span> The costs for the correct predictions would, of course, be zero. Thus,</div>
+<div class="para">For, instance, for a binary classificaiton, <span class="process-math">\(i \in \{0, 1\}\)</span> and <span class="process-math">\(j \in \{0, 1\}\text{.}\)</span> The costs for the correct predictions would, of course, be zero. Thus,</div>
 </div>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel top" style="width:30%;"><div class="para logical" id="subsec-Evaluating-Binary-Classification-19-1"><div class="displaymath process-math" id="subsec-Evaluating-Binary-Classification-19-1-1">
+<div class="sbspanel top" style="width:30%;"><div class="para logical" id="subsubsec-Metrics-of-Binary-Classification-15-1"><div class="displaymath process-math" id="subsubsec-Metrics-of-Binary-Classification-15-1-1">
 \begin{align*}
 \amp C_{00} = \text{Cost for } TN = 0 \\
 \amp C_{01} = \text{Cost for } FN \\
@@ -656,7 +660,7 @@ C_{ij} = \text{Cost of predicting }Y=i\text{ when actually it is }Y=j.
 \amp C_{11} = \text{Cost for } TP  = 0
 \end{align*}
 </div></div></div>
-<div class="sbspanel top" style="width:10%;"><div class="para" id="subsec-Evaluating-Binary-Classification-19-2"></div></div>
+<div class="sbspanel top" style="width:10%;"><div class="para" id="subsubsec-Metrics-of-Binary-Classification-15-2"></div></div>
 <div class="sbspanel fixed-width top" style="width:40%;"><table class="tabular">
 <tr>
 <td class="l m b0 r3 l0 t0 lines">Actual<span class="process-math">\(\rightarrow\)</span>
@@ -697,11 +701,11 @@ C_{ij} = \text{Cost of predicting }Y=i\text{ when actually it is }Y=j.
 <td class="c m b3 r0 l0 t0 lines"></td>
 </tr>
 </table></div>
-<div class="sbspanel top" style="width:20%;"><div class="para" id="subsec-Evaluating-Binary-Classification-19-4"></div></div>
+<div class="sbspanel top" style="width:20%;"><div class="para" id="subsubsec-Metrics-of-Binary-Classification-15-4"></div></div>
 </div></div>
-<div class="para logical" id="subsec-Evaluating-Binary-Classification-20">
+<div class="para logical" id="subsubsec-Metrics-of-Binary-Classification-16">
 <div class="para">The costs incurred when evaluating the performance on the test data can be then weighed accordingly.</div>
-<div class="displaymath process-math" id="subsec-Evaluating-Binary-Classification-20-1">
+<div class="displaymath process-math" id="subsubsec-Metrics-of-Binary-Classification-16-1">
 \begin{align*}
 \text{Weighted Cost} \amp =\frac{\left[ C_{01} \times  FN  + C_{10} \times  FP \right]}{TP + TN + FP + FN}
 \end{align*}
@@ -712,7 +716,122 @@ C_{ij} = \text{Cost of predicting }Y=i\text{ when actually it is }Y=j.
 C_{10} = 100,\quad C_{01} = 1.
 \end{equation*}
 </div>
-</div></section></section></div>
+</div>
+<div class="para" id="subsubsec-Metrics-of-Binary-Classification-17"><em class="alert">Performance at Difference Thresholds</em></div>
+<div class="para" id="subsubsec-Metrics-of-Binary-Classification-18">All the metrics discussed so far have been tied to a single threshold for decision to predict one of the classes based on the value of probability for different classes when given an <span class="process-math">\(X\text{.}\)</span> Now, when you vary threshold, all those numbers change - TP, FN, FP, and TN, they all depend upon the threshold used. So, what would be a good threshold to test the model on? Or, if you have two trained models, how can you tell if one performs better than the other?</div>
+<div class="para" id="subsubsec-Metrics-of-Binary-Classification-19">There are basically, two ways we study what happens as we vary threshold: (1) Receiver-Operating Characteristic Curve (ROC) and (2) Precision-Recall (PR) Curve. They look similar when the dataset is balanced between the two classes, but when there is a high imbalance, you would want to use the PR curve.</div></section><section class="subsubsection" id="subsubsec-ROC-PR-Curves"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">2.5.2.2</span><span class="space"> </span><span class="title">ROC and Precision-Recall Curves</span>
+</h4>
+<div class="para" id="subsubsec-ROC-PR-Curves-2">After training a model, we have predicted probabilities <span class="process-math">\(p_\hat\theta(X)\)</span> for the positive class. The threshold only affects how we convert probabilities into binary predictions. Hence, varying the threshold does not change the model itself, only the predicted class assignments.</div>
+<div class="para" id="subsubsec-ROC-PR-Curves-3"><em class="alert">ROC Curve</em></div>
+<div class="para logical" id="subsubsec-ROC-PR-Curves-4">
+<div class="para">The <dfn class="terminology">Receiver Operating Characteristic (ROC) curve</dfn> plots <dfn class="terminology">True Positive Rate (TPR)</dfn> against <dfn class="terminology">False Positive Rate (FPR)</dfn> for all thresholds:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\text{TPR } = \frac{TP}{TP+FN},\quad \text{FPR } = \frac{FP}{FP+TN}.
+\end{equation*}
+</div>
+<div class="para">The ROC curve illustrates how well a model discriminates positives from negatives regardless of the threshold. The <dfn class="terminology">area under the ROC curve (AUC-ROC)</dfn> summarizes this ability: a perfect classifier has AUC = 1.</div>
+</div>
+<div class="para" id="subsubsec-ROC-PR-Curves-5"><em class="alert">Precision-Recall (PR) Curve</em></div>
+<div class="para logical" id="subsubsec-ROC-PR-Curves-6">
+<div class="para">The <dfn class="terminology">Precision-Recall (PR) curve</dfn> plots <dfn class="terminology">Precision</dfn> versus <dfn class="terminology">Recall</dfn> for all thresholds:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\text{Precision } = \frac{TP}{TP+FP},\quad \text{Recall } = \frac{TP}{TP+FN}.
+\end{equation*}
+</div>
+<div class="para">PR curves are especially informative for imbalanced datasets, as they focus on the correctness of positive predictions. When the positive class is rare, a classifier can appear to perform well in ROC but poorly in PR.</div>
+</div>
+<div class="para" id="subsubsec-ROC-PR-Curves-7"><em class="alert">Example: Balanced vs Imbalanced Dataset</em></div>
+<div class="para logical" id="subsubsec-ROC-PR-Curves-8">
+<div class="para">Consider a dataset with 1000 samples:</div>
+<ul class="disc" id="subsubsec-ROC-PR-Curves-8-1">
+<li id="subsubsec-ROC-PR-Curves-8-1-1"><div class="para" id="p-derived-subsubsec-ROC-PR-Curves-8-1-1">Balanced dataset: 500 positives, 500 negatives.</div></li>
+<li id="subsubsec-ROC-PR-Curves-8-1-2"><div class="para" id="p-derived-subsubsec-ROC-PR-Curves-8-1-2">Imbalanced dataset: 100 positives, 900 negatives.</div></li>
+</ul>
+<div class="para">A classifier that predicts probabilities for each sample will generate ROC and PR curves differently in the two cases:</div>
+</div>
+<div class="para" id="subsubsec-ROC-PR-Curves-9">In the <dfn class="terminology">balanced dataset</dfn>, ROC and PR curves are often visually similar because positives and negatives are roughly equal. High TPR and low FPR imply high precision as well. In the <dfn class="terminology">imbalanced dataset</dfn>, ROC can appear deceptively optimistic because FPR = FP / (FP + TN) remains small when negatives dominate, while PR curves reveal low precision if most predicted positives are actually false positives.</div>
+<div class="para" id="subsubsec-ROC-PR-Curves-10"><em class="alert">Comparison Table</em></div>
+<figure class="table table-like" id="subsubsec-ROC-PR-Curves-11"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.5.1<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Aspect</td>
+<td class="l m b0 r0 l0 t0 lines">ROC Curve</td>
+<td class="l m b0 r0 l0 t0 lines">PR Curve</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">X-axis</td>
+<td class="l m b0 r0 l0 t0 lines">FPR = FP / (FP + TN)</td>
+<td class="l m b0 r0 l0 t0 lines">Recall = TP / (TP + FN)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Y-axis</td>
+<td class="l m b0 r0 l0 t0 lines">TPR = Recall = TP / (TP + FN)</td>
+<td class="l m b0 r0 l0 t0 lines">Precision = TP / (TP + FP)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Focus</td>
+<td class="l m b0 r0 l0 t0 lines">Discrimination between positives and negatives overall</td>
+<td class="l m b0 r0 l0 t0 lines">Performance on positive class, correctness of positive predictions</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Effect of class imbalance</td>
+<td class="l m b0 r0 l0 t0 lines">Low; ROC may look optimistic in rare positives</td>
+<td class="l m b0 r0 l0 t0 lines">High; PR shows poor precision when positives are rare</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Use case</td>
+<td class="l m b0 r0 l0 t0 lines">General model comparison; balanced datasets</td>
+<td class="l m b0 r0 l0 t0 lines">Imbalanced datasets or when positive-class performance is critical</td>
+</tr>
+</table></div></figure><div class="para" id="subsubsec-ROC-PR-Curves-12"><em class="alert">Python Example: Balanced vs Imbalanced</em></div>
+<div class="para" id="subsubsec-ROC-PR-Curves-13">The following code demonstrates ROC and PR curves for both balanced and imbalanced datasets.</div>
+<div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">import numpy as np
+from sklearn.datasets import make_classification
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import roc_curve, precision_recall_curve, roc_auc_score, average_precision_score
+import matplotlib.pyplot as plt
+def plot_curves(X, y, title_suffix):
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+model = LogisticRegression()
+model.fit(X_train, y_train)
+y_prob = model.predict_proba(X_test)[:,1]
+fpr, tpr, _ = roc_curve(y_test, y_prob)
+precision, recall, _ = precision_recall_curve(y_test, y_prob)
+auc_roc = roc_auc_score(y_test, y_prob)
+avg_precision = average_precision_score(y_test, y_prob)
+plt.figure(figsize=(12,5))
+plt.subplot(1,2,1)
+plt.plot(fpr, tpr, label=f'ROC AUC = {auc_roc:.2f}')
+plt.plot([0,1],[0,1],'k--')
+plt.xlabel('False Positive Rate')
+plt.ylabel('True Positive Rate')
+plt.title(f'ROC Curve ({title_suffix})')
+plt.legend()
+plt.subplot(1,2,2)
+plt.plot(recall, precision, label=f'Avg Precision = {avg_precision:.2f}')
+plt.xlabel('Recall')
+plt.ylabel('Precision')
+plt.title(f'Precision-Recall Curve ({title_suffix})')
+plt.legend()
+plt.tight_layout()
+plt.show()
+# Balanced dataset
+X_bal, y_bal = make_classification(n_samples=1000, n_features=20, n_classes=2,
+n_informative=2, n_redundant=10, weights=[0.5,0.5],
+random_state=42)
+plot_curves(X_bal, y_bal, 'Balanced Dataset')
+# Imbalanced dataset
+X_imb, y_imb = make_classification(n_samples=1000, n_features=20, n_classes=2,
+n_informative=2, n_redundant=10, weights=[0.9,0.1],
+random_state=42)
+plot_curves(X_imb, y_imb, 'Imbalanced Dataset')
+</code></pre></div>
+<div class="para" id="subsubsec-ROC-PR-Curves-15">Observing the plots: - In the balanced case, ROC and PR curves are both informative and roughly aligned. - In the imbalanced case, the ROC curve may still appear high, while the PR curve shows that precision drops for lower thresholds, highlighting the challenge of predicting rare positives correctly.</div>
+<div class="para" id="subsubsec-ROC-PR-Curves-16"><em class="alert">Key Takeaways</em></div>
+<div class="para" id="subsubsec-ROC-PR-Curves-17">- Thresholds do not affect the model parameters, only the predicted classes. - ROC curves visualize TPR vs FPR across thresholds and summarize overall discrimination. - PR curves visualize precision vs recall and highlight performance on the positive class, particularly for rare events. - F1-score balances precision and recall at a single threshold, whereas ROC and PR curves summarize performance across all thresholds. - Use ROC for general evaluation and PR when positives are rare or costly to misclassify.</div></section></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec-MultiClass-Classification.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-Bayesian-Methods.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
