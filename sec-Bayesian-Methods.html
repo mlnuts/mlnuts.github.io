@@ -526,7 +526,7 @@ P(Y=\text{not spam} \mid X) \propto 0.6 \times 0.5 \times 0.5 = 0.150.
 <li id="subsec-Naive-Bayes-6-1-1-4"><div class="para" id="subsec-Naive-Bayes-6-1-1-4-1">Evaluates it using a confusion matrix.</div></li>
 <li id="subsec-Naive-Bayes-6-1-1-5"><div class="para" id="subsec-Naive-Bayes-6-1-1-5-1">Prints precision, recall, F1-score.</div></li>
 </ul>
-</div> <div class="para" id="subsec-Naive-Bayes-6-2"></div> <div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-py"># Naive Bayes Example: SMS Spam Detection
+</div> <div class="para" id="subsec-Naive-Bayes-6-2">When you run the program, you would get outputs like the following. Vocabulary size: 7441 Accuracy: 0.9883408071748879 Confusion Matrix: [[961   5] [  8 141]] Classification Report: precision    recall  f1-score   support ham       0.99      0.99      0.99       966 spam       0.97      0.95      0.96       149 accuracy                           0.99      1115 macro avg       0.98      0.97      0.97      1115 weighted avg       0.99      0.99      0.99      1115 New message predictions (0=ham, 1=spam): Message: Free offer! Win a $1000 gift card now!... -&gt; spam Message: Hey, let’s meet tomorrow at 5pm.... -&gt; ham</div> <div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-py"># Naive Bayes Example: SMS Spam Detection
 # Step 1: Import libraries
 import pandas as pd
 from sklearn.feature_extraction.text import CountVectorizer
