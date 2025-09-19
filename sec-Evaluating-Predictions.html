@@ -613,11 +613,32 @@ P_{Y \mid X}(Y=1;\hat\theta) \equiv p_\hat{\theta}(X).
 </div>
 <div class="para">It would be a good exercise for the student to find the values of these quantities from the table of values given above.</div>
 </div>
-<div class="para" id="subsec-Evaluating-Binary-Classification-11"><em class="alert">Role of Threshold in Decision</em></div>
-<div class="para" id="subsec-Evaluating-Binary-Classification-12">As you know that the decision to predict a value of the target <span class="process-math">\(Y\)</span> is based on comparing the predicted probability <span class="process-math">\(p_\hat\theta(X)\)</span> (which is the probability of the event that <span class="process-math">\(Y=1\)</span> given an <span class="process-math">\(X\)</span>) to a threshold <span class="process-math">\(p_\text{th}\text{,}\)</span> which we had taken to be <span class="process-math">\(0.5\text{.}\)</span> That is if <span class="process-math">\(p_\hat\theta \gt 0.5\text{,}\)</span> we predicted that <span class="process-math">\(Y\)</span> is category <span class="process-math">\(1\)</span> for the given <span class="process-math">\(X\text{.}\)</span> This basically says, that the given <span class="process-math">\(X\)</span> is more than <span class="process-math">\(50\%\)</span> likely to be choice <span class="process-math">\(Y=1\text{.}\)</span>
+<div class="para" id="subsec-Evaluating-Binary-Classification-11"><em class="alert"><span class="process-math">\(F_1\)</span> Score:</em></div>
+<div class="para logical" id="subsec-Evaluating-Binary-Classification-12">
+<div class="para">There is alwys a tradeoff between precision and recall. For instance,</div>
+<ul class="disc" id="subsec-Evaluating-Binary-Classification-12-1">
+<li id="subsec-Evaluating-Binary-Classification-12-1-1"><div class="para" id="subsec-Evaluating-Binary-Classification-12-1-1-1">A cautious classifier will have a high threshold for deciding on positives, which will lead to less False Positives but high False Negatives. That will mean it will give high precision and low recall, as you can verify from the denominators of precision and recall defining equations.</div></li>
+<li id="subsec-Evaluating-Binary-Classification-12-1-2"><div class="para" id="subsec-Evaluating-Binary-Classification-12-1-2-1">On the other hand, an aggressive classifier will try to label positives more liberally, leading to high False Positives and low False Negatives, which will be a high recall, low precision case.</div></li>
+</ul>
+<div class="para">Sometimes, we want to opt for a balance between these two extremes. That’s where we use <span class="process-math">\(F_1\)</span> score. The <span class="process-math">\(F_1\)</span>-score is defined by the harmonic mean of precision and recall:</div>
+<div class="displaymath process-math" id="subsec-Evaluating-Binary-Classification-12-4">
+\begin{gather*}
+F_1 = 2 \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}}
+\end{gather*}
 </div>
-<div class="para" id="subsec-Evaluating-Binary-Classification-13">Now, imagine, <span class="process-math">\(X\)</span> is a picture captured by a security camera and <span class="process-math">\(Y=1\)</span> opens the door to a high security building. You really want a more stringent requirement that <span class="process-math">\(p_\text{th} = 0.5\)</span> to let people in the building. When you increase the threshold, you lower the False Positives since you do not predict as many positives as you did before, but also increase the False Negatives because now some of the true <span class="process-math">\(Y=1\)</span> will be rejected by <span class="process-math">\(Y\ne 1\)</span> prediction.</div>
-<div class="para logical" id="subsec-Evaluating-Binary-Classification-14">
+<div class="para">where factor <span class="process-math">\(2\)</span> makes sure that if precision and recall are equal, the <span class="process-math">\(F_1\)</span> score will be equal to them also. Expressed in terms of the confusion matrix entries:</div>
+</div>
+<div class="para logical" id="subsec-Evaluating-Binary-Classification-13"><div class="displaymath process-math" id="subsec-Evaluating-Binary-Classification-13-1">
+\begin{gather*}
+F_1 = \frac{2 \cdot TP}{2 \cdot TP + FP + FN}
+\end{gather*}
+</div></div>
+<div class="para" id="subsec-Evaluating-Binary-Classification-14">Intuitively, F1-score is high only when both precision and recall are high. If either is low, the harmonic mean ensures the F1-score reflects that imbalance. It is particularly useful when we care about both avoiding false positives (FP) and false negatives (FN) equally.</div>
+<div class="para" id="subsec-Evaluating-Binary-Classification-15"><em class="alert">Role of Threshold in Decision</em></div>
+<div class="para" id="subsec-Evaluating-Binary-Classification-16">As you know that the decision to predict a value of the target <span class="process-math">\(Y\)</span> is based on comparing the predicted probability <span class="process-math">\(p_\hat\theta(X)\)</span> (which is the probability of the event that <span class="process-math">\(Y=1\)</span> given an <span class="process-math">\(X\)</span>) to a threshold <span class="process-math">\(p_\text{th}\text{,}\)</span> which we had taken to be <span class="process-math">\(0.5\text{.}\)</span> That is if <span class="process-math">\(p_\hat\theta \gt 0.5\text{,}\)</span> we predicted that <span class="process-math">\(Y\)</span> is category <span class="process-math">\(1\)</span> for the given <span class="process-math">\(X\text{.}\)</span> This basically says, that the given <span class="process-math">\(X\)</span> is more than <span class="process-math">\(50\%\)</span> likely to be choice <span class="process-math">\(Y=1\text{.}\)</span>
+</div>
+<div class="para" id="subsec-Evaluating-Binary-Classification-17">Now, imagine, <span class="process-math">\(X\)</span> is a picture captured by a security camera and <span class="process-math">\(Y=1\)</span> opens the door to a high security building. You really want a more stringent requirement that <span class="process-math">\(p_\text{th} = 0.5\)</span> to let people in the building. When you increase the threshold, you lower the False Positives since you do not predict as many positives as you did before, but also increase the False Negatives because now some of the true <span class="process-math">\(Y=1\)</span> will be rejected by <span class="process-math">\(Y\ne 1\)</span> prediction.</div>
+<div class="para logical" id="subsec-Evaluating-Binary-Classification-18">
 <div class="para">One way to implement different importance of different outcomes is to associate cost to different outcomes in a matrix. This matrix is called <dfn class="terminology">cost matrix</dfn>, <span class="process-math">\(\mathbf{C}\text{.}\)</span> The elements of <span class="process-math">\(\mathbf{C}\)</span> will be as follows.</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -627,7 +648,7 @@ C_{ij} = \text{Cost of predicting }Y=i\text{ when actually it is }Y=j.
 <div class="para">For a binary classificaiton, <span class="process-math">\(i \in \{0, 1\}\)</span> and <span class="process-math">\(j \in \{0, 1\}\text{.}\)</span> The costs for the correct predictions would, of course, be zero. Thus,</div>
 </div>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel top" style="width:30%;"><div class="para logical" id="subsec-Evaluating-Binary-Classification-15-1"><div class="displaymath process-math" id="subsec-Evaluating-Binary-Classification-15-1-1">
+<div class="sbspanel top" style="width:30%;"><div class="para logical" id="subsec-Evaluating-Binary-Classification-19-1"><div class="displaymath process-math" id="subsec-Evaluating-Binary-Classification-19-1-1">
 \begin{align*}
 \amp C_{00} = \text{Cost for } TN = 0 \\
 \amp C_{01} = \text{Cost for } FN \\
@@ -635,7 +656,7 @@ C_{ij} = \text{Cost of predicting }Y=i\text{ when actually it is }Y=j.
 \amp C_{11} = \text{Cost for } TP  = 0
 \end{align*}
 </div></div></div>
-<div class="sbspanel top" style="width:10%;"><div class="para" id="subsec-Evaluating-Binary-Classification-15-2"></div></div>
+<div class="sbspanel top" style="width:10%;"><div class="para" id="subsec-Evaluating-Binary-Classification-19-2"></div></div>
 <div class="sbspanel fixed-width top" style="width:40%;"><table class="tabular">
 <tr>
 <td class="l m b0 r3 l0 t0 lines">Actual<span class="process-math">\(\rightarrow\)</span>
@@ -676,11 +697,11 @@ C_{ij} = \text{Cost of predicting }Y=i\text{ when actually it is }Y=j.
 <td class="c m b3 r0 l0 t0 lines"></td>
 </tr>
 </table></div>
-<div class="sbspanel top" style="width:20%;"><div class="para" id="subsec-Evaluating-Binary-Classification-15-4"></div></div>
+<div class="sbspanel top" style="width:20%;"><div class="para" id="subsec-Evaluating-Binary-Classification-19-4"></div></div>
 </div></div>
-<div class="para logical" id="subsec-Evaluating-Binary-Classification-16">
+<div class="para logical" id="subsec-Evaluating-Binary-Classification-20">
 <div class="para">The error incurred in predicting the test data can be then weighed accordingly.</div>
-<div class="displaymath process-math" id="subsec-Evaluating-Binary-Classification-16-1">
+<div class="displaymath process-math" id="subsec-Evaluating-Binary-Classification-20-1">
 \begin{align*}
 \text{Weighted Cost} \amp =\frac{\left[ C_{01} \times  FN  + C_{10} \times  FP \right]}{TP + TN + FP + FN}
 \end{align*}
