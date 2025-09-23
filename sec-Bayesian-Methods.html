@@ -139,6 +139,9 @@ window.MathJax = {
 #subsec-derivative-of-multiclass-loss-function-3-3-1 { counter-set: subsec-derivative-of-multiclass-loss-function-3-3-1 0; }
 #subsec-derivative-of-multiclass-loss-function-3-3-1 > li::marker { content: ""counter(subsec-derivative-of-multiclass-loss-function-3-3-1,decimal)"."; }
 #subsec-derivative-of-multiclass-loss-function-3-3-1 > li { counter-increment: subsec-derivative-of-multiclass-loss-function-3-3-1; }
+#subsec-Validation-Data-6-1 { counter-set: subsec-Validation-Data-6-1 0; }
+#subsec-Validation-Data-6-1 > li::marker { content: ""counter(subsec-Validation-Data-6-1,decimal)"."; }
+#subsec-Validation-Data-6-1 > li { counter-increment: subsec-Validation-Data-6-1; }
 </style>
 </head>
 <body id="ML-Notes" class="pretext book ignore-math">
@@ -158,7 +161,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-Evaluating-Predictions.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-supervised-learning-basics.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-Evaluating-Predictions.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-supervised-learning-basics.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-Model-Selection.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -384,7 +387,7 @@ window.MathJax = {
 <div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsec-Evaluating-Binary-Classification" class="internal"><span class="codenumber">2.5.2</span> <span class="title">Evaluating Binary Classification</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsubsec-Metrics-of-Binary-Classification" class="internal"><span class="codenumber">2.5.2.1</span> <span class="title">Metrics of BinaryClassification</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsubsec-ROC-PR-Curves" class="internal"><span class="codenumber">2.5.2.2</span> <span class="title">Performance at Difference Thresholds</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsubsec-ROC-PR-Curves-AUC-2" class="internal"><span class="codenumber">2.5.2.2</span> <span class="title">Evaluating Model Performance Across Thresholds</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -392,6 +395,16 @@ window.MathJax = {
 <li class="toc-item toc-section active">
 <div class="toc-title-box"><a href="sec-Bayesian-Methods.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Bayesian Methods</span></a></div>
 <ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Bayesian-Methods.html#subsec-Naive-Bayes" class="internal"><span class="codenumber">2.6.1</span> <span class="title">Naive Bayes Algorithm</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Model-Selection.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Model Selection</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Validation-Data" class="internal"><span class="codenumber">2.7.1</span> <span class="title">Validation Data</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Out-of-Sample-Error" class="internal"><span class="codenumber">2.7.2</span> <span class="title">Generalization Error</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Sources-of-Generalization-Error" class="internal"><span class="codenumber">2.7.3</span> <span class="title">Sources of Generalization Error</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Overfitting-and-Underfitting" class="internal"><span class="codenumber">2.7.4</span> <span class="title">Overfitting and Underfitting</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Bias-Variance-Tradeoff" class="internal"><span class="codenumber">2.7.5</span> <span class="title">Bias-Variance Tradeoff</span></a></div></li>
+</ul>
 </li>
 </ul>
 </li>
@@ -401,19 +414,19 @@ window.MathJax = {
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">2.6</span><span class="space"> </span><span class="title">Bayesian Methods</span>
 </h2>
 <section class="introduction" id="sec-Bayesian-Methods-2"><div class="para logical" id="sec-Bayesian-Methods-2-1">
-<div class="para">In supervised learning, we often model the conditional probability <span class="process-math">\(P(Y \mid X)\text{.}\)</span> This naturally appears in Bayes’ theorem as the “posterior probability”. Recall the identity:</div>
+<div class="para">In supervised learning, we often model the conditional probability <span class="process-math">\(P(Y \mid X)\text{.}\)</span> This naturally appears in Bayes’s theorem as the “posterior probability”. Recall the identity:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 P(Y \mid X) P(X) = P(X \mid Y) P(Y).
 \end{equation*}
 </div>
-<div class="para">Equivalently, Bayes’ theorem can be written as</div>
+<div class="para">Equivalently, Bayes’s theorem can be written as</div>
 <div class="displaymath process-math">
 \begin{equation*}
 P(Y \mid X) = \frac{P(X \mid Y) P(Y)}{P(X)}.
 \end{equation*}
 </div>
-<div class="para">When we use Bayes’ theorem to model conditional probabilities and guide decision-making, the resulting approaches are called <dfn class="terminology">Bayesian methods</dfn>.</div>
+<div class="para">When we use Bayes’s theorem to model conditional probabilities and guide decision-making, the resulting approaches are called <dfn class="terminology">Bayesian methods</dfn>.</div>
 </div> <div class="para logical" id="sec-Bayesian-Methods-2-2">
 <div class="para">For comparing possible outcomes <span class="process-math">\(Y=y_i\)</span> given the same <span class="process-math">\(X\text{,}\)</span> the denominator <span class="process-math">\(P(X)\)</span> cancels out, so we only need relative probabilities:</div>
 <div class="displaymath process-math">
@@ -433,8 +446,12 @@ P(Y=y_i \mid X) \gt P(Y=y_j \mid X) \iff \tilde P(Y=y_i \mid X) \gt \tilde P(Y=y
 \text{if }  \tilde P(Y=y_i \mid X) \gt \tilde P(Y=y_j \mid X) \text{ the, pick }y_i\text{ over }y_j.
 \end{equation*}
 </div>
-<div class="para">Thus the unnormalized probabilites are sufficient to decide which outcome of <span class="process-math">\(Y\)</span> is more probable for a given <span class="process-math">\(X\)</span> without needing to know the full distribution <span class="process-math">\(P(X)\text{.}\)</span> All we need are: The conditional distributions <span class="process-math">\(P(X \mid Y=y_i)\text{,}\)</span> and The prior probabilities <span class="process-math">\(P(Y=y_i)\text{,}\)</span> i.e., the marginal probabilities of each outcome of <span class="process-math">\(Y\text{.}\)</span>
-</div>
+<div class="para">Thus the unnormalized probabilites are sufficient to decide which outcome of <span class="process-math">\(Y\)</span> is more probable for a given <span class="process-math">\(X\)</span> without needing to know the full distribution <span class="process-math">\(P(X)\text{.}\)</span> All we need are:</div>
+<ul class="disc" id="sec-Bayesian-Methods-2-2-13">
+<li id="sec-Bayesian-Methods-2-2-13-1"><div class="para" id="sec-Bayesian-Methods-2-2-13-1-1">The conditional distributions <span class="process-math">\(P(X \mid Y=y_i)\text{,}\)</span> and</div></li>
+<li id="sec-Bayesian-Methods-2-2-13-2"><div class="para" id="sec-Bayesian-Methods-2-2-13-2-1">The prior probabilities <span class="process-math">\(P(Y=y_i)\text{,}\)</span> i.e., the marginal probabilities of each outcome of <span class="process-math">\(Y\text{.}\)</span>
+</div></li>
+</ul>
 </div> <div class="para logical" id="sec-Bayesian-Methods-2-3">
 <div class="para">If <span class="process-math">\(Y\)</span> is a discrete variable with <span class="process-math">\(K\)</span> classes, then, you would just use the function <span class="process-math">\(arg\ max\text{.}\)</span>
 </div>
@@ -444,7 +461,22 @@ y_\text{pred} = \arg\max_y \bigg[  P(X \mid Y=y) P(Y=y)  \bigg]
 \end{equation*}
 </div>
 <div class="para">Basically, arg max goes over the list of values generated on the right side for various values of <span class="process-math">\(y\text{,}\)</span> i.e., for <span class="process-math">\(y_1, y_2, \cdots, y_K\text{,}\)</span> and then outputs the index of <span class="process-math">\(y\text{,}\)</span> which corresponds to the largest value in the list. If you have ties, then it outputs the first in the list. You can also have it printout all the items in the tie and output one randomly from that sublist.</div>
-</div></section><section class="subsection" id="subsec-Naive-Bayes"><h3 class="heading hide-type">
+</div> <div class="para logical" id="sec-Bayesian-Methods-2-4">
+<div class="para">Bayes’s method is used not only for making predictions of the labels, but also to learn parameters of a model. Suppose we have a dataset <span class="process-math">\(\mathcal{D} = \{Z^{i}, i=1, 2, \cdots, n \}\text{,}\)</span> where I am writing <span class="process-math">\(Z\)</span> that includes both <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\text{.}\)</span> We assume that the datapoints are actually samples from some unknown distribution <span class="process-math">\(P(Z)\)</span> (mass function or density). We model this distribution by <span class="process-math">\(P(Z,\theta)\)</span> and would like to estimate the parameters <span class="process-math">\(\theta\)</span> using the data. So, we use Bayes’s and cast the problem of improving <span class="process-math">\(\theta\)</span> from evolution of our knowledge about <span class="process-math">\(\theta\)</span> from the prior <span class="process-math">\(P(\theta)\)</span> to the posterior <span class="process-math">\(P(\theta \mid Z)\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P(\theta \mid Z) = \frac{ P(Z\mid \theta) P(\theta)  }{P(Z)},
+\end{equation*}
+</div>
+<div class="para">where we can think of <span class="process-math">\(P(Z)\text{,}\)</span> the marginal for the  <span class="process-math">\(Z\)</span> alone, as just a normalization of the unnormalized probability density in the numerator on the right, i.e.,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P(Z) = \int\, P(Z\mid \theta) P(\theta)\,d\theta.
+\end{equation*}
+</div>
+<div class="para">Now, each datapoint can be used to update the posterior. We do not go over this approach further here and will return at this issue later.</div>
+</div> <div class="para" id="sec-Bayesian-Methods-2-5">In this section, we will next discuss a very commonly used approximate method known as the Naive Bayes method.</div></section><section class="subsection" id="subsec-Naive-Bayes"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.6.1</span><span class="space"> </span><span class="title">Naive Bayes Algorithm</span>
 </h3>
 <div class="para logical" id="subsec-Naive-Bayes-2">
@@ -470,70 +502,89 @@ y_\text{pred} = \arg\max_y P(Y=y) \prod_{k=1}^{r} P(X_k \mid Y=y).
 \end{gather*}
 </div>
 </div>
-<div class="para logical" id="subsec-Naive-Bayes-4">
-<div class="para">
-<em class="emphasis">Example:</em> Suppose we want to classify whether an email is “spam” or “not spam” based on two binary features: <span class="process-math">\(X_1 =\)</span> “contains the word ‘free’” and <span class="process-math">\(X_2 =\)</span> “contains the word ‘money’.” From training data we estimate:</div>
-<div class="displaymath process-math" id="subsec-Naive-Bayes-4-6">
+<article class="example example-like" id="subsec-Naive-Bayes-4"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.6.1</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="subsec-Naive-Bayes-4-1">
+<div class="para">Suppose we want to classify whether an email is “spam” or “ham” based on two binary features: <span class="process-math">\(X_1 =\)</span> “contains the word ‘free’” and <span class="process-math">\(X_2 =\)</span> “contains the word ‘money’.” From training data we estimate:</div>
+<div class="displaymath process-math" id="subsec-Naive-Bayes-4-1-5">
 \begin{align*}
-\amp P(Y=\text{spam}) = 0.4, \quad P(Y=\text{not spam}) = 0.6,\\
-\amp P(X_1=1 \mid Y=\text{spam}) = 0.7, \quad P(X_1=1 \mid Y=\text{not spam}) = 0.1,\\
-\amp P(X_2=1 \mid Y=\text{spam}) = 0.6, \quad P(X_2=1 \mid Y=\text{not spam}) = 0.05.
+\amp P(Y=\text{spam}) = 0.4, \quad P(Y=\text{ham}) = 0.6,\\
+\amp P(X_1=1 \mid Y=\text{spam}) = 0.7, \quad P(X_1=1 \mid Y=\text{ham}) = 0.1,\\
+\amp P(X_2=1 \mid Y=\text{spam}) = 0.6, \quad P(X_2=1 \mid Y=\text{ham}) = 0.05.
 \end{align*}
 </div>
 <div class="para">If an email contains both words (<span class="process-math">\(X_1=1, X_2=1\)</span>), then</div>
-<div class="displaymath process-math" id="subsec-Naive-Bayes-4-8">
+<div class="displaymath process-math" id="subsec-Naive-Bayes-4-1-7">
 \begin{align*}
 \amp  P(Y=\text{spam} \mid X)\propto  \\
 \amp \qquad P(Y=\text{spam})  P(X_1=1\mid Y=\text{spam}) P(X_2=1\mid Y=\text{spam}) \\
 \amp\qquad\qquad  =    0.4 \times 0.7 \times 0.6 = 0.168,\\
-\amp P(Y=\text{not spam} \mid X) \propto \\
-\amp \quad P(Y=\text{not spam}) P(X_1=1\mid Y=\text{not spam}) P(X_2=1\mid Y=\text{not spam}) \\
+\amp P(Y=\text{ham} \mid X) \propto \\
+\amp \quad P(Y=\text{ham}) P(X_1=1\mid Y=\text{ham}) P(X_2=1\mid Y=\text{ham}) \\
 \amp\qquad\qquad = 0.6 \times 0.1 \times 0.05 = 0.003.
 \end{align*}
 </div>
 <div class="para">Since <span class="process-math">\(0.168 &gt; 0.003\text{,}\)</span> the classifier predicts “spam”.</div>
-</div>
-<div class="para logical" id="subsec-Naive-Bayes-5">
-<div class="para">
-<em class="emphasis">Example:</em> Suppose we want to classify whether an email is “spam” or “not spam” based on two binary features: <span class="process-math">\(X_1 =\)</span> “contains the word ‘deal’” and <span class="process-math">\(X_2 =\)</span> “contains the word ‘win’.” From training data we estimate:</div>
-<div class="displaymath process-math" id="subsec-Naive-Bayes-5-6">
-\begin{gather*}
-P(Y=\text{spam}) = 0.4, \quad P(Y=\text{not spam}) = 0.6,\\
-P(X_1=1 \mid Y=\text{spam}) = 0.7, \quad P(X_1=1 \mid Y=\text{not spam}) = 0.5,\\
-P(X_2=1 \mid Y=\text{spam}) = 0.7, \quad P(X_2=1 \mid Y=\text{not spam}) = 0.5.
-\end{gather*}
-</div>
-<div class="para">Now consider three scenarios: If the email contains only “deal” (<span class="process-math">\(X_1=1, X_2=0\)</span>):<div class="displaymath process-math" id="subsec-Naive-Bayes-5-7-1-2">
-\begin{gather*}
-P(Y=\text{spam} \mid X) \propto 0.4 \times 0.7 \times (1-0.7) = 0.084,\\
-P(Y=\text{not spam} \mid X) \propto 0.6 \times 0.5 \times (1-0.5) = 0.150.
-\end{gather*}
-</div>The classifier predicts “not spam”. If the email contains only “win” (<span class="process-math">\(X_1=0, X_2=1\)</span>):<div class="displaymath process-math" id="subsec-Naive-Bayes-5-7-2-2">
-\begin{gather*}
-P(Y=\text{spam} \mid X) \propto 0.4 \times (1-0.7) \times 0.7 = 0.084,\\
-P(Y=\text{not spam} \mid X) \propto 0.6 \times (1-0.5) \times 0.5 = 0.150.
-\end{gather*}
-</div>Again the classifier predicts “not spam”. If the email contains both words (<span class="process-math">\(X_1=1, X_2=1\)</span>):<div class="displaymath process-math" id="subsec-Naive-Bayes-5-7-3-2">
-\begin{gather*}
-P(Y=\text{spam} \mid X) \propto 0.4 \times 0.7 \times 0.7 = 0.196,\\
-P(Y=\text{not spam} \mid X) \propto 0.6 \times 0.5 \times 0.5 = 0.150.
-\end{gather*}
-</div>Now the classifier predicts “spam”.</div>
-</div>
-<article class="example example-like" id="subsec-Naive-Bayes-6"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.6.1</span><span class="period">.</span>
+</div></article><article class="example example-like" id="subsec-Naive-Bayes-5"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.6.2</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="subsec-Naive-Bayes-6-1">
-<div class="para">In this example, I include a complete Python program, generated with the assistance of OpenAI’s ChatGPT (GPT-5), September 2025, that uses the Naive Bayes classifier, called MultinomialNB(), from scikit-learn. I have tested it on Google Colab and locally on my Mac and it works correctly. Scikit-learn library saves a lot of hassle of programming from scratch, which we have practiced on simpler problems before to get a sense of the math steps. Later on, we will use other libraries such as TensorFlow and PyTorch. Notice the preprocessing step of the data handling. A lot of people get stuck at that step since it is highly problem dependent. Now a days, you can just ask one of the AI models to help you out on that step and more likely than not you will get a reasonably good way to handle your data as long as you give it a complete prompt on what you have and what you want it to be.</div>
-<ul class="disc" id="subsec-Naive-Bayes-6-1-1">
-<li id="subsec-Naive-Bayes-6-1-1-1"><div class="para" id="subsec-Naive-Bayes-6-1-1-1-1">The program loads a dataset that’s freely available online (the SMS Spam Collection dataset hosted by UCI) by downloading the dataset (4,827 ham, 747 spam). Uses a bag-of-words (CountVectorizer) to turn text into features.</div></li>
-<li id="subsec-Naive-Bayes-6-1-1-2"><div class="para" id="subsec-Naive-Bayes-6-1-1-2-1">Splits into train/test sets. That sets a part of the data for testing purposes ONLY.</div></li>
-<li id="subsec-Naive-Bayes-6-1-1-3"><div class="para" id="subsec-Naive-Bayes-6-1-1-3-1">Trains the Naive Bayes model MultinomialNB().</div></li>
-<li id="subsec-Naive-Bayes-6-1-1-4"><div class="para" id="subsec-Naive-Bayes-6-1-1-4-1">Evaluates it using a confusion matrix.</div></li>
-<li id="subsec-Naive-Bayes-6-1-1-5"><div class="para" id="subsec-Naive-Bayes-6-1-1-5-1">Prints precision, recall, F1-score.</div></li>
+<div class="para logical" id="subsec-Naive-Bayes-5-1">
+<div class="para">Suppose we want to classify whether an email is “spam” or “ham” based on two binary features: <span class="process-math">\(X_1 =\)</span> “contains the word ’deal’” and <span class="process-math">\(X_2 =\)</span> “contains the word ’win’.” From training data we estimate:</div>
+<div class="displaymath process-math" id="subsec-Naive-Bayes-5-1-7">
+\begin{align*}
+\amp P(Y=\text{spam}) = 0.4, \quad P(Y=\text{ham}) = 0.6,\\
+\amp P(X_1=1 \mid Y=\text{spam}) = 0.7, \quad P(X_1=1 \mid Y=\text{ham}) = 0.5,\\
+\amp P(X_2=1 \mid Y=\text{spam}) = 0.7, \quad P(X_2=1 \mid Y=\text{ham}) = 0.5.
+\end{align*}
+</div>
+<div class="para">Now consider three scenarios:</div>
+<ul class="disc" id="subsec-Naive-Bayes-5-1-8">
+<li id="subsec-Naive-Bayes-5-1-8-1"><div class="para logical" id="subsec-Naive-Bayes-5-1-8-1-1">
+<div class="para">If the email contains only “deal” (<span class="process-math">\(X_1=1, X_2=0\)</span>):</div>
+<div class="displaymath process-math" id="subsec-Naive-Bayes-5-1-8-1-1-2">
+\begin{align*}
+\amp P(Y=\text{spam} \mid X) \propto 0.4 \times 0.7 \times (1-0.7) = 0.084,\\
+\amp P(Y=\text{ham} \mid X) \propto 0.6 \times 0.5 \times (1-0.5) = 0.150.
+\end{align*}
+</div>
+<div class="para">The classifier predicts “ham”.</div>
+</div></li>
+<li id="subsec-Naive-Bayes-5-1-8-2"><div class="para logical" id="subsec-Naive-Bayes-5-1-8-2-1">
+<div class="para">If the email contains only “win” (<span class="process-math">\(X_1=0, X_2=1\)</span>):</div>
+<div class="displaymath process-math" id="subsec-Naive-Bayes-5-1-8-2-1-2">
+\begin{align*}
+\amp P(Y=\text{spam} \mid X) \propto 0.4 \times (1-0.7) \times 0.7 = 0.084,\\
+\amp P(Y=\text{ham} \mid X) \propto 0.6 \times (1-0.5) \times 0.5 = 0.150.
+\end{align*}
+</div>
+<div class="para">Again the classifier predicts “ham”.</div>
+</div></li>
+<li id="subsec-Naive-Bayes-5-1-8-3"><div class="para logical" id="subsec-Naive-Bayes-5-1-8-3-1">
+<div class="para">If the email contains both words (<span class="process-math">\(X_1=1, X_2=1\)</span>):</div>
+<div class="displaymath process-math" id="subsec-Naive-Bayes-5-1-8-3-1-2">
+\begin{align*}
+\amp P(Y=\text{spam} \mid X) \propto 0.4 \times 0.7 \times 0.7 = 0.196,\\
+\amp P(Y=\text{ham} \mid X) \propto 0.6 \times 0.5 \times 0.5 = 0.150.
+\end{align*}
+</div>
+<div class="para">Now the classifier predicts “spam”.</div>
+</div></li>
 </ul>
-</div> <div class="para" id="subsec-Naive-Bayes-6-2">When you run the program, you would get outputs like the following.</div> <div class="para" id="subsec-Naive-Bayes-6-3">Vocabulary size: 7441 Accuracy: 0.9883408071748879</div> <div class="para" id="subsec-Naive-Bayes-6-4">Confusion Matrix:</div> <figure class="figure figure-like" id="fig-naive-bayes-sms-confusion-matrix"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/./images/supervised-learning-basics/naive-bayes-sms-confusion-matrix.png" class="contained" alt="The Confusion Matrix."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.2<span class="period">.</span></span><span class="space"> </span>The confuction matrix. Note: here the actuals are left to right and predicted are from top to bottom.</figcaption></figure> <div class="para" id="subsec-Naive-Bayes-6-6">Classification Report:</div> <div class="tabular-box natural-width"><table class="tabular">
+</div></article><article class="example example-like" id="subsec-Naive-Bayes-6"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.6.3</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec-Naive-Bayes-6-1">In this example, I include a complete Python program, generated with the assistance of OpenAI’s ChatGPT (GPT-5), September 2025, that uses the Naive Bayes classifier, called MultinomialNB(), from scikit-learn. I have tested it on Google Colab and locally on my Mac and it works correctly. Scikit-learn library saves a lot of hassle of programming from scratch, which we have practiced on simpler problems before to get a sense of the math steps. Later on, we will use other libraries such as TensorFlow and PyTorch.</div> <div class="para logical" id="subsec-Naive-Bayes-6-2">
+<div class="para">Notice the preprocessing step of the data handling. A lot of people get stuck at that step since it is highly problem dependent. Now a days, you can just ask one of the AI models to help you out on that step and more likely than not you will get a reasonably good way to handle your data as long as you give it a complete prompt on what you have and what you want it to be.</div>
+<ul class="disc" id="subsec-Naive-Bayes-6-2-1">
+<li id="subsec-Naive-Bayes-6-2-1-1"><div class="para" id="subsec-Naive-Bayes-6-2-1-1-1">The program loads a dataset that’s freely available online (the SMS Spam Collection dataset hosted by UCI) by downloading the dataset (4,827 ham, 747 spam). Uses a bag-of-words (CountVectorizer) to turn text into features.</div></li>
+<li id="subsec-Naive-Bayes-6-2-1-2"><div class="para" id="subsec-Naive-Bayes-6-2-1-2-1">Splits into train/test sets. That sets a part of the data for testing purposes ONLY.</div></li>
+<li id="subsec-Naive-Bayes-6-2-1-3"><div class="para" id="subsec-Naive-Bayes-6-2-1-3-1">Trains the Naive Bayes model MultinomialNB().</div></li>
+<li id="subsec-Naive-Bayes-6-2-1-4"><div class="para" id="subsec-Naive-Bayes-6-2-1-4-1">Evaluates it using a confusion matrix.</div></li>
+<li id="subsec-Naive-Bayes-6-2-1-5"><div class="para" id="subsec-Naive-Bayes-6-2-1-5-1">Prints precision, recall, F1-score.</div></li>
+</ul>
+</div> <div class="para" id="subsec-Naive-Bayes-6-3">When you run the program, you would get outputs like the following.</div> <div class="para" id="subsec-Naive-Bayes-6-4">Vocabulary size: 7441 Accuracy: 0.9883408071748879</div> <div class="para" id="subsec-Naive-Bayes-6-5">Confusion Matrix:</div> <figure class="figure figure-like" id="fig-naive-bayes-sms-confusion-matrix"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/./images/supervised-learning-basics/naive-bayes-sms-confusion-matrix.png" class="contained" alt="The Confusion Matrix."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.4<span class="period">.</span></span><span class="space"> </span>The confuction matrix. Note: here the actuals are left to right and predicted are from top to bottom.</figcaption></figure> <div class="para" id="subsec-Naive-Bayes-6-7">Classification Report:</div> <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines"></td>
 <td class="l m b0 r0 l0 t0 lines">precision</td>
@@ -576,7 +627,7 @@ P(Y=\text{not spam} \mid X) \propto 0.6 \times 0.5 \times 0.5 = 0.150.
 <td class="l m b0 r0 l0 t0 lines">0.99</td>
 <td class="l m b0 r0 l0 t0 lines">1115</td>
 </tr>
-</table></div> <div class="para" id="subsec-Naive-Bayes-6-8">New message predictions (0=ham, 1=spam):</div> <div class="para" id="subsec-Naive-Bayes-6-9">Message: Free offer! Win a $1000 gift card now!... –&gt; spam</div> <div class="para" id="subsec-Naive-Bayes-6-10">Message: Hey, let’s meet tomorrow at 5pm.... –&gt; ham</div> <div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-py"># Naive Bayes spam classifier with confusion matrix
+</table></div> <div class="para" id="subsec-Naive-Bayes-6-9">New message predictions (0=ham, 1=spam):</div> <div class="para" id="subsec-Naive-Bayes-6-10">Message: Free offer! Win a $1000 gift card now!... –&gt; spam</div> <div class="para" id="subsec-Naive-Bayes-6-11">Message: Hey, let’s meet tomorrow at 5pm.... –&gt; ham</div> <div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-py"># Naive Bayes spam classifier with confusion matrix
 import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
@@ -631,7 +682,7 @@ print("\nClassification Report:\n")
 print(classification_report(y_test, y_pred, target_names=["Ham", "Spam"]))
 </code></pre></div></article></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="sec-Evaluating-Predictions.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec-Evaluating-Predictions.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-Model-Selection.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

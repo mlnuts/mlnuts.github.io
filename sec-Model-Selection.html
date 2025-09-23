@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Colophon</title>
+<title>Model Selection</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -161,7 +161,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="frontmatter.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="frontmatter.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="ch-Essential-Probability-and-Statistics.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-Bayesian-Methods.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-supervised-learning-basics.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -170,7 +170,7 @@ window.MathJax = {
 \)</span></div>
 <div class="ptx-page">
 <div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
-<li class="toc-item toc-frontmatter contains-active"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-Essential-Probability-and-Statistics.html" class="internal"><span class="codenumber">1</span> <span class="title">Essential Probability and Statistics</span></a></div>
 <ul class="structural toc-item-list">
@@ -336,9 +336,9 @@ window.MathJax = {
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-Additional-Mathematical-Techniques.html" class="internal"><span class="codenumber">1.14</span> <span class="title">Additional Mathematical Techniques</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-chapter">
+<li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ch-supervised-learning-basics.html" class="internal"><span class="codenumber">2</span> <span class="title">Basics of Supervised Learning</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-Statistical-Decision-Theory.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Statistical Decision Theory</span></a></div>
 <ul class="structural toc-item-list">
@@ -396,7 +396,7 @@ window.MathJax = {
 <div class="toc-title-box"><a href="sec-Bayesian-Methods.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Bayesian Methods</span></a></div>
 <ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Bayesian-Methods.html#subsec-Naive-Bayes" class="internal"><span class="codenumber">2.6.1</span> <span class="title">Naive Bayes Algorithm</span></a></div></li></ul>
 </li>
-<li class="toc-item toc-section">
+<li class="toc-item toc-section active">
 <div class="toc-title-box"><a href="sec-Model-Selection.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Model Selection</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Validation-Data" class="internal"><span class="codenumber">2.7.1</span> <span class="title">Validation Data</span></a></div></li>
@@ -410,11 +410,152 @@ window.MathJax = {
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="colophon" id="front-colophon"><h2 class="heading hide-type">
-<span class="type">Colophon</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Colophon</span>
-</h2></section></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-Model-Selection"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">2.7</span><span class="space"> </span><span class="title">Model Selection</span>
+</h2>
+<section class="introduction" id="sec-Model-Selection-2"><div class="para" id="sec-Model-Selection-2-1">Suppose you have trained more than one model using the same training data and would like to choose the best among them. That is, you have a number of trained/estimated predictors, <span class="process-math">\(\hat{f}_1(X), \hat{f}_2(X), \cdots, \hat{f}_q(X)\)</span> and we want to pick “best” among them. This task is called <dfn class="terminology">model selection</dfn>. It is done using a part of the training dataset that is called validation data as we explain below.</div></section><section class="subsection" id="subsec-Validation-Data"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.7.1</span><span class="space"> </span><span class="title">Validation Data</span>
+</h3>
+<div class="para" id="subsec-Validation-Data-2">Since, in the model selection, we cannot yet use the set-aside test dataset to evaluate the final model, you need to set aside a part of your training data itself for the model selection step. This dataset is called <dfn class="terminology">validation data</dfn>. Unlike the set-aside dataset, which is used only on the final model, you can use the validation data as many times as needed during the training.</div>
+<div class="para" id="subsec-Validation-Data-3">Peviously, we used <span class="process-math">\(n\)</span> datapoints as training and <span class="process-math">\(m\)</span> datapints as set-aside test dataset. Now, we will have three datasets <span class="process-math">\(n_{t}\)</span> training examples, <span class="process-math">\(n_{v}\)</span> validation examples and <span class="process-math">\(m\)</span> testing examples. The proportion of total data that should be placed in the three bins varies from project to project and availability of data. If we have plenty of data to work with, a common breakdown is shown in <a href="sec-Model-Selection.html#fig-data_split_proportions" class="xref" data-knowl="./knowl/xref/fig-data_split_proportions.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.7.1">Figure 2.7.1</a>. </div>
+<figure class="figure figure-like" id="fig-data_split_proportions"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/supervised-learning-basics/data_split_proportions.png" class="contained" alt="(for accessibility)"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.7.1<span class="period">.</span></span><span class="space"> </span>If there is plentiful data, one can use <span class="process-math">\(50\%/25\%/25\%\)</span> (or <span class="process-math">\(60\%/20\%/20\%\)</span>) train/validation/test split. In other cases, other strategies such as cross-validation are more common.</figcaption></figure><div class="para" id="subsec-Validation-Data-5">Often we do not have the luxury of plenty of data. Then, we have to be creative how to split all the data that we have to work with into three categories. First, you must set aside a reasonable amount for testing, say <span class="process-math">\(20\%\text{,}\)</span> for the final model evaluation. Then, you treat the entirety of the rest of the data as both training and validation data, but you do not use the same datapoints in both in any one training cycle. Let’s call this set a <em class="alert">combined training dataset</em>. Now, we can choose from several strategies to implement the cross-validation.</div>
+<div class="para logical" id="subsec-Validation-Data-6"><ol class="decimal" id="subsec-Validation-Data-6-1">
+<li id="subsec-Validation-Data-6-1-1"><div class="para" id="subsec-Validation-Data-6-1-1-1">
+<dfn class="terminology">Leave p out cross validation</dfn> (LOOCV). You do multiple runs through the combined training data, and in each cycle,  you leave different <span class="process-math">\(p\)</span> examples out for validation and use the rest for training. That is, you never use the examples you used for training as validation. In an extereme case of this strategy, there is Leave One Out policy, when <span class="process-math">\(p=1\text{.}\)</span>
+</div></li>
+<li id="subsec-Validation-Data-6-1-2">
+<div class="para" id="subsec-Validation-Data-6-1-2-1">A more common strategy is <dfn class="terminology">K-fold cross-validation</dfn>. In each training cycle, you split the combined training data into <span class="process-math">\(K\)</span> equally sized <dfn class="terminology">folds</dfn>. You use <span class="process-math">\(K-1\)</span> of these fold for training and one fold for validation as illustrated in <a href="sec-Model-Selection.html#fig-kfold_cv" class="xref" data-knowl="./knowl/xref/fig-kfold_cv.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.7.2">Figure 2.7.2</a>.</div>
+<div class="para" id="subsec-Validation-Data-6-1-2-2">In a <dfn class="terminology">stratified K-fold</dfn> cross-validation, you attempt to ensure that each fold has the same proportions of each class. The stratified K-fold is specially important if you have an imbalanced data, which happens when one class or a number of classes are either over-represented or underrepresented in the dataset.</div>
+</li>
+</ol></div>
+<figure class="figure figure-like" id="fig-kfold_cv"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/supervised-learning-basics/kfold_cv.png" class="contained" alt="(for accessibility)"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.7.2<span class="period">.</span></span><span class="space"> </span>Illustration of the operations of a K-fold cross-validation for <span class="process-math">\(K=5\text{.}\)</span></figcaption></figure><div class="para" id="subsec-Validation-Data-8"></div>
+<div class="para" id="subsec-Validation-Data-9"></div></section><section class="subsection" id="subsec-Out-of-Sample-Error"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.7.2</span><span class="space"> </span><span class="title">Generalization Error</span>
+</h3>
+<div class="para" id="subsec-Out-of-Sample-Error-2">After training any model, we want the model to perform well on new data. The error on a new data that was not used in the training of the model, is called <dfn class="terminology">generalizaton error</dfn> or <dfn class="terminology">out-of-sample error</dfn>. This error gives us the clearest picture of how the trained model will perform in the “real” world.</div>
+<div class="para logical" id="subsec-Out-of-Sample-Error-3">
+<div class="para">Let us illustrate this concept in the context of a regression task of a quantitative or interval target variable <span class="process-math">\(Y\)</span> and a <span class="process-math">\(r\)</span>-dimensional feature vector <span class="process-math">\(\mathbf{X}\)</span> with error being the square error. With the trained predictor <span class="process-math">\(\hat f(\mathbf{X})\text{,}\)</span> the squared error (a random variable) will be</div>
+<div class="displaymath process-math" id="eqn-ms-squared-error">
+\begin{equation}
+\mathcal{L}(Y, \hat f(\mathbf{X})) = \left( Y - \hat f(\mathbf{X})\right)^2.\tag{2.7.1}
+\end{equation}
+</div>
+<div class="para">If you evaluate it’s expectation in the training dataset <span class="process-math">\(\mathcal{D}_t = \{ (x^{(i)}), y^{(i)}), i = 1, 2, \cdots, n_t \}\text{,}\)</span> we call the result the <dfn class="terminology">training error</dfn> or <dfn class="terminology">in-sample error</dfn>.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathcal{L}_\text{in} = \frac{1}{n_t}\sum_{i=1}^{n_t}\, \left( y^{(i)} - \hat f(\mathbf{x}^{(i)})\right)^2.
+\end{equation*}
+</div>
+<div class="para">This is of course of not much use since this error is on the same datapoints that were used to produce the trained model <span class="process-math">\(\hat f(\mathbf{X})\)</span> in the first place. It is mostly used for diagnositc purposes since this error shoudl go down with each training of the model as the model “learns” to fit better and better to the training dataset.</div>
+</div>
+<div class="para logical" id="subsec-Out-of-Sample-Error-4">
+<div class="para">Evaluating the error of Eq. <a href="sec-Model-Selection.html#eqn-ms-squared-error" class="xref" data-knowl="./knowl/xref/eqn-ms-squared-error.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.7.1">(2.7.1)</a> on a new data <span class="process-math">\(\left( \mathbf{x}^{(0)}, y^{(0)} \right)\text{,}\)</span> we will get</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-ms-squared-error.html">
+\begin{equation*}
+\mathcal{l}^{(0)} = \left(y^{(0)} - \hat f(\mathbf{x}^{(0)})\right)^2.
+\end{equation*}
+</div>
+<div class="para">The expectation of the error on a validattion dataset <span class="process-math">\(\mathcal{D}_v\)</span> it will be</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-ms-squared-error.html">
+\begin{equation*}
+\mathcal{L}_\text{val} = \frac{1}{n_v}\sum_{i=1}^{n_v}\, \left( y^{(i)} - \hat f(\mathbf{x}^{(i)})\right)^2.
+\end{equation*}
+</div>
+<div class="para">This is an out-of-sample or generalization error. We use validation error to decide among competing models. Similarly, on a set-aside test dataset,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-ms-squared-error.html">
+\begin{equation*}
+\mathcal{L}_\text{test} = \frac{1}{m}\sum_{i=1}^{m}\, \left( y^{(i)} - \hat f(\mathbf{x}^{(i)})\right)^2.
+\end{equation*}
+</div>
+<div class="para">This is also an out-of-sample or generalization error. We use this test error to evaluate the final model.</div>
+</div></section><section class="subsection" id="subsec-Sources-of-Generalization-Error"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.7.3</span><span class="space"> </span><span class="title">Sources of Generalization Error</span>
+</h3>
+<div class="para logical" id="subsec-Sources-of-Generalization-Error-2">
+<div class="para">One can understand the sources of generalization errors by looking at ore closely at the errors in a single example. Recall the random nature of <span class="process-math">\((\mathbf{X}, Y)\)</span> in the fact that for a given <span class="process-math">\(X\text{,}\)</span> infinitely many values of <span class="process-math">\(Y\)</span> are possible which are given by the conditional distribution <span class="process-math">\(\rho(\mathbf{X}, Y)\text{.}\)</span> We usually  model the statistical nature of the <span class="process-math">\(Y\)</span> variable by a random Gaussian noise as follows.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-ms-y-eq-fx-plus-ep.html" id="eqn-ms-y-eq-fx-plus-ep">
+\begin{equation}
+Y = f(X) + \epsilon,\tag{2.7.2}
+\end{equation}
+</div>
+<div class="para">where</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-ms-y-eq-fx-plus-ep.html">
+\begin{equation*}
+\epsilon \sim \mathcal{N}(0, \sigma_\epsilon^2).
+\end{equation*}
+</div>
+<div class="para">When the feature vector has a particulat value, say <span class="process-math">\(\mathbf{X} = \mathbf{x}^{(0)}\text{,}\)</span> the model will predict <span class="process-math">\(\hat f(\mathbf{x}^{(0)})\)</span> for <span class="process-math">\(Y\)</span> is a random variable and it can take any value according to the <span class="process-math">\(\rho(\mathbf{X}, Y)\text{.}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-ms-y-eq-fx-plus-ep.html">
+\begin{equation*}
+\mathcal{L} = \left(Y - \hat f(\mathbf{x}^{(0)})\right)^2.
+\end{equation*}
+</div>
+<div class="para">The theoretical expected value of this error in the distribution <span class="process-math">\(\rho(\mathbf{X}, Y)\)</span> will be</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-ms-y-eq-fx-plus-ep.html">
+\begin{equation*}
+\mathbb{E}[\mathcal{L}] = \mathbb{E}\left[ \left(Y - \hat f(\mathbf{x}^{(0)})\right)^2 \right].
+\end{equation*}
+</div>
+<div class="para">From Eq. <a href="sec-Model-Selection.html#eqn-ms-y-eq-fx-plus-ep" class="xref" data-knowl="./knowl/xref/eqn-ms-y-eq-fx-plus-ep.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.7.2">(2.7.2)</a>, we see that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-ms-y-eq-fx-plus-ep.html">
+\begin{equation*}
+\mathbb{E}[Y] = f(\mathbf{x}^{(0)}) + \mathbb{E}[\epsilon] = f(\mathbf{x}^{(0)}) + 0,
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(f\)</span> is an unknown non-random function. But, <span class="process-math">\(\hat f\)</span> is actually a known but random function, since it depends on the training data, which is a sample from the unknown joint distribution <span class="process-math">\(\rho(\mathbf{X}, Y)\)</span>
+</div>
+</div></section><section class="subsection" id="subsec-Overfitting-and-Underfitting"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.7.4</span><span class="space"> </span><span class="title">Overfitting and Underfitting</span>
+</h3>
+<div class="para" id="subsec-Overfitting-and-Underfitting-2">Similar arguments of using appropriate number of fitting parameters apply to more complicated data distributions - the basic principle being the fewer the fitting parameters <em class="emphasis">that capture the inherent relationship</em> the better. You don’t want so few that you are unable to capture important relationships.</div>
+<div class="para logical" id="subsec-Overfitting-and-Underfitting-3">
+<div class="para">Let’s illustrate this by an example. Suppose, actual <span class="process-math">\(Y\)</span> is a noisy <span class="process-math">\(4^\text{th}\)</span> order polynomial of <span class="process-math">\(X\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+Y = b_0 + b_1 X + b_2 X^2 + b_3 X^3 + b_4 X^4 + \epsilon,
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(\epsilon \sim \mathcal{N}(0,1)\text{.}\)</span> If you try to model this data by a lower than <span class="process-math">\(4^\text{th}\text{,}\)</span> say, by a quadratic polynomial,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+Y = w_0 + w_1 X + w_2 X^2,
+\end{equation*}
+</div>
+<div class="para">you will find that you do capture some of the trends in the original data, but the fit is not the best you can do. We say that you are <dfn class="terminology">underfitting</dfn> the data. However, if you try to model the data by a <span class="process-math">\(8^\text{th}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+Y = w_0 + \sum_{i=`1}^8\, w_i X^i,
+\end{equation*}
+</div>
+<div class="para">you are likely to fit not just the trend in the data but also the noise part from the random noise <span class="process-math">\(\epsilon\text{.}\)</span> This is called <dfn class="terminology">overfitting</dfn>. We say that this model has higher <dfn class="terminology">complexity</dfn> than the simpler one.</div>
+</div>
+<div class="para" id="subsec-Overfitting-and-Underfitting-4">Although a study of complexity and degrees of freedom are important theoretically, but we will take a loose account of them by just counting the trainable/fitting variables/parameters in a model as an indicator for the degrees of freedom. You clearly want smallest number of fitting parameters suitable for a given problem. As we sometimes say in physics, "With enough free parameters you can fit a cow!"</div></section><section class="subsection" id="subsec-Bias-Variance-Tradeoff"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.7.5</span><span class="space"> </span><span class="title">Bias-Variance Tradeoff</span>
+</h3>
+<div class="para" id="subsec-Bias-Variance-Tradeoff-2">https://www.ibm.com/think/topics/bias-variance-tradeoff has a very clear explanation.</div>
+<div class="para" id="subsec-Bias-Variance-Tradeoff-3">Bias-variance tradeoff is an important concept in statistical learning. It is tied to the complexity of the model and underfitting and overfitting we have mentioned above. In general an underfitting model has a high bias, meaning far from the truth, and low variance, meaning does not fluctuate much about the truth, and an overfitting model has a low bias but high variance. We will learn these terms below in the context of a regression task.</div>
+<div class="para logical" id="subsec-Bias-Variance-Tradeoff-4">
+<div class="para">Suppose we generate a random output <span class="process-math">\(Y\)</span> from a given <span class="process-math">\(X\)</span> by adding a Gaussian noise to <span class="process-math">\(f(X)\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+Y = f(X) + \epsilon,\quad \epsilon \sim \mathcal{N}(0,1).
+\end{equation*}
+</div>
+<div class="para">We do not know the actual <span class="process-math">\(f\)</span> but can approximate it by <span class="process-math">\(\hat f\)</span> by minimizing the error function with respect to <span class="process-math">\(f\)</span> with minimum error being</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathcal{L}_\text{min} = \mathbb{E}_{Y\mid X}{ \left( Y - \hat f(X) \right)^2 }.
+\end{equation*}
+</div>
+</div></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="frontmatter.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-Essential-Probability-and-Statistics.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec-Bayesian-Methods.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

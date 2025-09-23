@@ -139,6 +139,9 @@ window.MathJax = {
 #subsec-derivative-of-multiclass-loss-function-3-3-1 { counter-set: subsec-derivative-of-multiclass-loss-function-3-3-1 0; }
 #subsec-derivative-of-multiclass-loss-function-3-3-1 > li::marker { content: ""counter(subsec-derivative-of-multiclass-loss-function-3-3-1,decimal)"."; }
 #subsec-derivative-of-multiclass-loss-function-3-3-1 > li { counter-increment: subsec-derivative-of-multiclass-loss-function-3-3-1; }
+#subsec-Validation-Data-6-1 { counter-set: subsec-Validation-Data-6-1 0; }
+#subsec-Validation-Data-6-1 > li::marker { content: ""counter(subsec-Validation-Data-6-1,decimal)"."; }
+#subsec-Validation-Data-6-1 > li { counter-increment: subsec-Validation-Data-6-1; }
 </style>
 </head>
 <body id="ML-Notes" class="pretext book ignore-math">
@@ -384,7 +387,7 @@ window.MathJax = {
 <div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsec-Evaluating-Binary-Classification" class="internal"><span class="codenumber">2.5.2</span> <span class="title">Evaluating Binary Classification</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsubsec-Metrics-of-Binary-Classification" class="internal"><span class="codenumber">2.5.2.1</span> <span class="title">Metrics of BinaryClassification</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsubsec-ROC-PR-Curves" class="internal"><span class="codenumber">2.5.2.2</span> <span class="title">Performance at Difference Thresholds</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsubsec-ROC-PR-Curves-AUC-2" class="internal"><span class="codenumber">2.5.2.2</span> <span class="title">Evaluating Model Performance Across Thresholds</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -392,6 +395,16 @@ window.MathJax = {
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-Bayesian-Methods.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Bayesian Methods</span></a></div>
 <ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Bayesian-Methods.html#subsec-Naive-Bayes" class="internal"><span class="codenumber">2.6.1</span> <span class="title">Naive Bayes Algorithm</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Model-Selection.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Model Selection</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Validation-Data" class="internal"><span class="codenumber">2.7.1</span> <span class="title">Validation Data</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Out-of-Sample-Error" class="internal"><span class="codenumber">2.7.2</span> <span class="title">Generalization Error</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Sources-of-Generalization-Error" class="internal"><span class="codenumber">2.7.3</span> <span class="title">Sources of Generalization Error</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Overfitting-and-Underfitting" class="internal"><span class="codenumber">2.7.4</span> <span class="title">Overfitting and Underfitting</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Bias-Variance-Tradeoff" class="internal"><span class="codenumber">2.7.5</span> <span class="title">Bias-Variance Tradeoff</span></a></div></li>
+</ul>
 </li>
 </ul>
 </li>
@@ -630,7 +643,7 @@ P_{Y \mid X}(Y=1;\hat\theta) \equiv p_\hat{\theta}(X).
 <div class="para">Sometimes, we want to opt for a balance between these two extremes. That’s where we use <span class="process-math">\(F_1\)</span> score. The <span class="process-math">\(F_1\)</span>-score is defined by the harmonic mean of precision and recall:</div>
 <div class="displaymath process-math" id="subsubsec-Metrics-of-Binary-Classification-10-4">
 \begin{gather*}
-F_1 = 2 \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}}
+F_1 = 2 \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}}, 
 \end{gather*}
 </div>
 <div class="para">where factor <span class="process-math">\(2\)</span> makes sure that if precision and recall are equal, the <span class="process-math">\(F_1\)</span> score will be equal to them also. Expressed in terms of the confusion matrix entries:</div>
@@ -716,44 +729,34 @@ C_{ij} = \text{Cost of predicting }Y=i\text{ when actually it is }Y=j.
 C_{10} = 100,\quad C_{01} = 1.
 \end{equation*}
 </div>
-</div></section><section class="subsubsection" id="subsubsec-ROC-PR-Curves"><h4 class="heading hide-type">
-<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">2.5.2.2</span><span class="space"> </span><span class="title">Performance at Difference Thresholds</span>
+</div></section><section class="subsubsection" id="subsubsec-ROC-PR-Curves-AUC-2"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">2.5.2.2</span><span class="space"> </span><span class="title">Evaluating Model Performance Across Thresholds</span>
 </h4>
-<div class="para" id="subsubsec-ROC-PR-Curves-2">All the metrics discussed so far have been tied to a single threshold for decision to predict one of the classes based on the value of probability for different classes when given an <span class="process-math">\(X\text{.}\)</span> Now, when you vary threshold, all those numbers change - TP, FN, FP, and TN, they all depend upon the threshold used. So, what would be a good threshold to test the model on? Or, if you have two trained models, how can you tell if one performs better than the other?</div>
-<div class="para" id="subsubsec-ROC-PR-Curves-3">There are basically, two ways we study what happens as we vary threshold: (1) Receiver-Operating Characteristic Curve (ROC) and (2) Precision-Recall (PR) Curve. They look similar when the dataset is balanced between the two classes, but when there is a high imbalance, you would want to use the PR curve.</div>
-<div class="para" id="subsubsec-ROC-PR-Curves-4"><em class="alert">ROC Curve</em></div>
-<div class="para logical" id="subsubsec-ROC-PR-Curves-5">
-<div class="para">The <dfn class="terminology">Receiver Operating Characteristic (ROC) curve</dfn> plots <dfn class="terminology">True Positive Rate (TPR)</dfn> against <dfn class="terminology">False Positive Rate (FPR)</dfn> for all thresholds:</div>
+<div class="para" id="subsubsec-ROC-PR-Curves-AUC-2-2">Metrics like accuracy or F1-score depend on a single classification threshold. Varying this threshold changes true positives (TP), false negatives (FN), false positives (FP), and true negatives (TN). To compare models or choose an optimal threshold, we use two curves: the Receiver Operating Characteristic (ROC) curve and the Precision-Recall (PR) curve. These are similar for balanced datasets but differ significantly for imbalanced ones, where PR curves are more informative.</div>
+<div class="para" id="subsubsec-ROC-PR-Curves-AUC-2-3"><em class="alert">ROC Curve and AUC-ROC</em></div>
+<div class="para logical" id="subsubsec-ROC-PR-Curves-AUC-2-4">
+<div class="para">The <dfn class="terminology">ROC curve</dfn> plots the True Positive Rate (TPR, or Recall) against the False Positive Rate (FPR) across all thresholds:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\text{TPR } = \frac{TP}{TP+FN},\quad \text{FPR } = \frac{FP}{FP+TN}.
+\text{TPR} = \frac{TP}{TP+FN}, \quad \text{FPR} = \frac{FP}{FP+TN}.
 \end{equation*}
 </div>
-<div class="para">The ROC curve illustrates how well a model discriminates positives from negatives regardless of the threshold. The <dfn class="terminology">area under the ROC curve (AUC-ROC)</dfn> summarizes this ability: a perfect classifier has AUC = 1.</div>
+<div class="para">It shows how well a model separates positives from negatives. The <dfn class="terminology">Area Under the ROC Curve (AUC-ROC)</dfn> summarizes this: AUC-ROC = 1 for a perfect model, 0.5 for a random one. AUC-ROC measures the probability that a positive instance is ranked higher than a negative one.</div>
 </div>
-<div class="para" id="subsubsec-ROC-PR-Curves-6"><em class="alert">Precision-Recall (PR) Curve</em></div>
-<div class="para logical" id="subsubsec-ROC-PR-Curves-7">
-<div class="para">The <dfn class="terminology">Precision-Recall (PR) curve</dfn> plots <dfn class="terminology">Precision</dfn> versus <dfn class="terminology">Recall</dfn> for all thresholds:</div>
+<div class="para" id="subsubsec-ROC-PR-Curves-AUC-2-5"><em class="alert">Precision-Recall Curve and AUC-PR</em></div>
+<div class="para logical" id="subsubsec-ROC-PR-Curves-AUC-2-6">
+<div class="para">The <dfn class="terminology">PR curve</dfn> plots Precision against Recall:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\text{Precision } = \frac{TP}{TP+FP},\quad \text{Recall } = \frac{TP}{TP+FN}.
+\text{Precision} = \frac{TP}{TP+FP}, \quad \text{Recall} = \frac{TP}{TP+FN}.
 \end{equation*}
 </div>
-<div class="para">PR curves are especially informative for imbalanced datasets, as they focus on the correctness of positive predictions. When the positive class is rare, a classifier can appear to perform well in ROC but poorly in PR.</div>
+<div class="para">It focuses on positive class performance, making it ideal for imbalanced datasets where positives are rare. The <dfn class="terminology">Area Under the PR Curve (AUC-PR)</dfn>, or Average Precision, quantifies this performance: AUC-PR = 1 for a perfect model, lower for poor positive-class predictions.</div>
 </div>
-<div class="para" id="subsubsec-ROC-PR-Curves-8"><em class="alert">Example: Balanced vs Imbalanced Dataset</em></div>
-<div class="para logical" id="subsubsec-ROC-PR-Curves-9">
-<div class="para">Consider a dataset with 1000 samples:</div>
-<ul class="disc" id="subsubsec-ROC-PR-Curves-9-1">
-<li id="subsubsec-ROC-PR-Curves-9-1-1"><div class="para" id="p-derived-subsubsec-ROC-PR-Curves-9-1-1">Balanced dataset: 500 positives, 500 negatives.</div></li>
-<li id="subsubsec-ROC-PR-Curves-9-1-2"><div class="para" id="p-derived-subsubsec-ROC-PR-Curves-9-1-2">Imbalanced dataset: 100 positives, 900 negatives.</div></li>
-</ul>
-<div class="para">A classifier that predicts probabilities for each sample will generate ROC and PR curves differently in the two cases:</div>
-</div>
-<div class="para" id="subsubsec-ROC-PR-Curves-10">In the <dfn class="terminology">balanced dataset</dfn>, ROC and PR curves are often visually similar because positives and negatives are roughly equal. High TPR and low FPR imply high precision as well. In the <dfn class="terminology">imbalanced dataset</dfn>, ROC can appear deceptively optimistic because FPR = FP / (FP + TN) remains small when negatives dominate, while PR curves reveal low precision if most predicted positives are actually false positives.</div>
-<div class="para" id="subsubsec-ROC-PR-Curves-11"><em class="alert">Comparison Table</em></div>
-<div class="para" id="subsubsec-ROC-PR-Curves-12">Following are key differences in the ROC and PR curves.</div>
-<figure class="table table-like" id="subsubsec-ROC-PR-Curves-13"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.5.1<span class="period">.</span></span><span class="space"> </span>Receiver-Operating Characterisitcs (ROC) Curve</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<div class="para" id="subsubsec-ROC-PR-Curves-AUC-2-7"><em class="alert">Uses of AUC-ROC vs. AUC-PR</em></div>
+<div class="para" id="subsubsec-ROC-PR-Curves-AUC-2-8">AUC-ROC is best for balanced datasets or when false positives and negatives have similar costs, as it evaluates overall discrimination. AUC-PR is better for imbalanced datasets (e.g., fraud detection, rare disease diagnosis), as it emphasizes precision and recall for the positive class, avoiding the misleading optimism of ROC when negatives dominate.</div>
+<div class="para" id="subsubsec-ROC-PR-Curves-AUC-2-9">Following are key differences in the ROC and PR curves.</div>
+<figure class="table table-like" id="subsubsec-ROC-PR-Curves-AUC-2-10"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.5.1<span class="period">.</span></span><span class="space"> </span>Receiver-Operating Characterisitcs (ROC) Curve</figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines">Aspect</td>
 <td class="l m b0 r0 l0 t0 lines">ROC Curve</td>
@@ -778,7 +781,7 @@ C_{10} = 100,\quad C_{01} = 1.
 <td class="l m b0 r0 l0 t0 lines">Use case</td>
 <td class="l m b0 r0 l0 t0 lines">General model comparison; balanced datasets</td>
 </tr>
-</table></div></figure><figure class="table table-like" id="subsubsec-ROC-PR-Curves-14"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.5.2<span class="period">.</span></span><span class="space"> </span>Precision-Recall (PR) Curve</figcaption><div class="tabular-box natural-width"><table class="tabular">
+</table></div></figure><figure class="table table-like" id="subsubsec-ROC-PR-Curves-AUC-2-11"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.5.2<span class="period">.</span></span><span class="space"> </span>Precision-Recall (PR) Curve</figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines">Aspect</td>
 <td class="l m b0 r0 l0 t0 lines">PR Curve</td>
@@ -803,53 +806,102 @@ C_{10} = 100,\quad C_{01} = 1.
 <td class="l m b0 r0 l0 t0 lines">Use case</td>
 <td class="l m b0 r0 l0 t0 lines">Imbalanced datasets or when positive-class performance is critical</td>
 </tr>
-</table></div></figure><div class="para" id="subsubsec-ROC-PR-Curves-15"><em class="alert">Python Example: Balanced vs Imbalanced</em></div>
-<div class="para" id="subsubsec-ROC-PR-Curves-16">The following code demonstrates ROC and PR curves for both balanced and imbalanced datasets. The code produces ROC and PR curves for two types of data.</div>
-<div class="para" id="subsubsec-ROC-PR-Curves-17">
-<a href="sec-Evaluating-Predictions.html#fig-roc-and-pr-curves" class="xref" data-knowl="./knowl/xref/fig-roc-and-pr-curves.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.5.3">Figure 2.5.3</a> shows a comparison of ROC and Precision-Recall (PR) curves on balanced and imbalanced datasets. The top panels show performance on a balanced dataset, where both ROC and PR curves indicate strong classifier performance. In the balanced case, ROC and PR curves are both informative and roughly aligned. The bottom panels show performance on an imbalanced dataset, where the PR curve highlights the challenge of low precision for the minority class, while the ROC curve may appear overly optimistic.</div>
-<figure class="figure figure-like" id="fig-roc-and-pr-curves"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/./images/supervised-learning-basics/roc_pr_curve_2025-09-19.png" class="contained" alt="ROC and Precision-Recall curves comparing classifier performance on balanced (left) and imbalanced (right) datasets. The PR curve better highlights performance on the minority class under imbalance."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.5.3<span class="period">.</span></span><span class="space"> </span>ROC and Precision-Recall curves comparing classifier performance on balanced (left) and imbalanced (right) datasets. The PR curve better highlights performance on the minority class under imbalance.</figcaption></figure><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-py"># written with the help of GPT-5.
+</table></div></figure><div class="para" id="subsubsec-ROC-PR-Curves-AUC-2-12"><em class="alert">Selecting a Preferred Model</em></div>
+<div class="para" id="subsubsec-ROC-PR-Curves-AUC-2-13">To choose between models, compare their AUC-ROC (for balanced data) or AUC-PR (for imbalanced data). Higher AUC indicates better performance. For ROC, the curve closest to the top-left corner is best; for PR, it’s the top-right. If false positives are costly (e.g., spam detection), pick the model with higher precision at the desired recall level from the PR curve.</div>
+<div class="para" id="subsubsec-ROC-PR-Curves-AUC-2-14"><em class="alert">Example: Balanced vs. Imbalanced Datasets</em></div>
+<div class="para logical" id="subsubsec-ROC-PR-Curves-AUC-2-15">
+<div class="para">Consider a dataset with 1000 samples:</div>
+<ul class="disc" id="subsubsec-ROC-PR-Curves-AUC-2-15-1">
+<li id="subsubsec-ROC-PR-Curves-AUC-2-15-1-1"><div class="para" id="p-derived-subsubsec-ROC-PR-Curves-AUC-2-15-1-1">Balanced: 500 positives, 500 negatives.</div></li>
+<li id="subsubsec-ROC-PR-Curves-AUC-2-15-1-2"><div class="para" id="p-derived-subsubsec-ROC-PR-Curves-AUC-2-15-1-2">Imbalanced: 100 positives, 900 negatives.</div></li>
+</ul>
+<div class="para">In balanced datasets, ROC and PR curves look similar. In imbalanced datasets, ROC may seem optimistic due to low FPR, while PR reveals low precision for rare positives.</div>
+</div>
+<div class="para" id="subsubsec-ROC-PR-Curves-AUC-2-16"><em class="alert">Python Example: Shading AUC for Two Models</em></div>
+<div class="para" id="subsubsec-ROC-PR-Curves-AUC-2-17">The following code compares two models on a balanced dataset: a "good" logistic regression model and a "poor" one trained on noisy features. It plots ROC and PR curves, shading the AUC to highlight performance differences. Run this code to generate the figures shown below.</div>
+<figure class="figure figure-like" id="fig-roc-pr-auc-shaded"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="external/./images/supervised-learning-basics/roc_pr_auc_shaded_2025-09-19.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.5.3<span class="period">.</span></span><span class="space"> </span>ROC and Precision-Recall curves with shaded AUC comparing a good and poor model on a balanced dataset. The dots on the curves show the optimal threshold for the models; Youden’s index (max TPR - FPR) for optimal for ROC and max F1 score for optimal PR were chosen by Grok.</figcaption></figure><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-py">                        # The code produced by Grok
 import numpy as np
 from sklearn.datasets import make_classification
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import roc_curve, precision_recall_curve, roc_auc_score, average_precision_score
+from sklearn.metrics import roc_curve, precision_recall_curve,
+    roc_auc_score, average_precision_score
 import matplotlib.pyplot as plt
-def plot_curves(X, y, title_suffix):
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
-    model = LogisticRegression()
-    model.fit(X_train, y_train)
-    y_prob = model.predict_proba(X_test)[:,1]
-    fpr, tpr, _ = roc_curve(y_test, y_prob)
-    precision, recall, _ = precision_recall_curve(y_test, y_prob)
-    auc_roc = roc_auc_score(y_test, y_prob)
-    avg_precision = average_precision_score(y_test, y_prob)
-    plt.figure(figsize=(12,5))
-    plt.subplot(1,2,1)
-    plt.plot(fpr, tpr, label=f'ROC AUC = {auc_roc:.2f}')
-    plt.plot([0,1],[0,1],'k--')
-    plt.xlabel('False Positive Rate')
-    plt.ylabel('True Positive Rate')
-    plt.title(f'ROC Curve ({title_suffix})')
-    plt.legend()
-    plt.subplot(1,2,2)
-    plt.plot(recall, precision, label=f'Avg Precision = {avg_precision:.2f}')
-    plt.xlabel('Recall')
-    plt.ylabel('Precision')
-    plt.title(f'Precision-Recall Curve ({title_suffix})')
-    plt.legend()
-    plt.tight_layout()
-    plt.show()
-# Balanced dataset
-X_bal, y_bal = make_classification(n_samples=10000, n_features=20, n_classes=2,
-n_informative=2, n_redundant=10, weights=[0.5,0.5],
-random_state=42)
-plot_curves(X_bal, y_bal, 'Balanced Dataset')
-# Imbalanced dataset
-X_imb, y_imb = make_classification(n_samples=1000, n_features=20, n_classes=2,
-n_informative=2, n_redundant=10, weights=[0.9,0.1],
-random_state=42)
-plot_curves(X_imb, y_imb, 'Imbalanced Dataset')
+# Good model: Easy dataset, balanced, many informative features
+X_good, y_good = make_classification(n_samples=5000, n_features=20,
+    n_informative=18, n_redundant=0, n_clusters_per_class=1,
+    weights=[0.5, 0.5], flip_y=0.0, random_state=42)
+X_train_good, X_test_good, y_train_good, y_test_good =
+    train_test_split(X_good, y_good, test_size=0.3, random_state=42)
+good_model = LogisticRegression().fit(X_train_good, y_train_good)
+y_prob_good = good_model.predict_proba(X_test_good)[:, 1]
+# Poor model: Hard dataset, imbalanced, few informative, much noise, label noise
+X_poor, y_poor = make_classification(n_samples=1000, n_features=20,
+    n_informative=2, n_redundant=10, n_clusters_per_class=2,
+    weights=[0.95, 0.05], flip_y=0.2, random_state=0)
+X_train_poor, X_test_poor, y_train_poor, y_test_poor =
+    train_test_split(X_poor, y_poor, test_size=0.3, random_state=42)
+poor_model = LogisticRegression().fit(X_train_poor, y_train_poor)
+y_prob_poor = poor_model.predict_proba(X_test_poor)[:, 1]
+# ROC curves
+fpr_g, tpr_g, thresh_g = roc_curve(y_test_good, y_prob_good)
+auc_roc_g = roc_auc_score(y_test_good, y_prob_good)
+# Optimal for ROC: Youden's index (max TPR - FPR)
+youden_idx_g = np.argmax(tpr_g - fpr_g)
+opt_fpr_g = fpr_g[youden_idx_g]
+opt_tpr_g = tpr_g[youden_idx_g]
+# PR
+prec_g, rec_g, thresh_pr_g = precision_recall_curve(y_test_good, y_prob_good)
+auc_pr_g = average_precision_score(y_test_good, y_prob_good)
+# Optimal for PR: max F1 score
+f1_g = 2 * prec_g * rec_g / (prec_g + rec_g + 1e-10)
+f1_idx_g = np.argmax(f1_g[:-1])  # Exclude last point as it's invalid
+opt_rec_g = rec_g[f1_idx_g]
+opt_prec_g = prec_g[f1_idx_g]
+# Similar for poor
+fpr_p, tpr_p, thresh_p = roc_curve(y_test_poor, y_prob_poor)
+auc_roc_p = roc_auc_score(y_test_poor, y_prob_poor)
+youden_idx_p = np.argmax(tpr_p - fpr_p)
+opt_fpr_p = fpr_p[youden_idx_p]
+opt_tpr_p = tpr_p[youden_idx_p]
+prec_p, rec_p, thresh_pr_p = precision_recall_curve(y_test_poor, y_prob_poor)
+auc_pr_p = average_precision_score(y_test_poor, y_prob_poor)
+f1_p = 2 * prec_p * rec_p / (prec_p + rec_p + 1e-10)
+f1_idx_p = np.argmax(f1_p[:-1])
+opt_rec_p = rec_p[f1_idx_p]
+opt_prec_p = prec_p[f1_idx_p]
+# Plot
+plt.figure(figsize=(12, 6))
+plt.subplot(1, 2, 1)
+plt.plot(fpr_g, tpr_g, label=f'Good (AUC = {auc_roc_g:.2f})', color='blue')
+plt.fill_between(fpr_g, tpr_g, color='blue', alpha=0.2)
+plt.plot(fpr_p, tpr_p, label=f'Poor (AUC = {auc_roc_p:.2f})', color='orange')
+plt.fill_between(fpr_p, tpr_p, color='orange', alpha=0.2)
+plt.plot([0, 1], [0, 1], 'k--')
+plt.scatter(opt_fpr_g, opt_tpr_g, marker='o', color='blue',
+    label='Good Opt (Youden)')
+plt.scatter(opt_fpr_p, opt_tpr_p, marker='o', color='orange',
+    label='Poor Opt (Youden)')
+plt.xlabel('False Positive Rate')
+plt.ylabel('True Positive Rate')
+plt.title('ROC Curves')
+plt.legend()
+plt.subplot(1, 2, 2)
+plt.plot(rec_g, prec_g, label=f'Good (AP = {auc_pr_g:.2f})', color='blue')
+plt.fill_between(rec_g, prec_g, color='blue', alpha=0.2)
+plt.plot(rec_p, prec_p, label=f'Poor (AP = {auc_pr_p:.2f})', color='orange')
+plt.fill_between(rec_p, prec_p, color='orange', alpha=0.2)
+plt.scatter(opt_rec_g, opt_prec_g, marker='o', color='blue',
+    label='Good Opt (F1 max)')
+plt.scatter(opt_rec_p, opt_prec_p, marker='o', color='orange',
+    label='Poor Opt (F1 max)')
+plt.xlabel('Recall')
+plt.ylabel('Precision')
+plt.title('PR Curves')
+plt.legend()
+plt.tight_layout()
+plt.show()
 </code></pre></div></section></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec-MultiClass-Classification.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-Bayesian-Methods.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
