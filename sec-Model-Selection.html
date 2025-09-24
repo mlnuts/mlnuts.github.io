@@ -401,7 +401,9 @@ window.MathJax = {
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Validation-Data" class="internal"><span class="codenumber">2.7.1</span> <span class="title">Validation Data</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Out-of-Sample-Error" class="internal"><span class="codenumber">2.7.2</span> <span class="title">Generalization Error</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Sources-of-Generalization-Error" class="internal"><span class="codenumber">2.7.3</span> <span class="title">Sources of Generalization Error</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Sources-of-Generalization-Error" class="internal"><span class="codenumber">2.7.3</span> <span class="title">Bias and Variance of Model in Generalization Error</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Bias-Variance-in-Practice" class="internal"><span class="codenumber">2.7.4</span> <span class="title">Bias-Variance Tradeoff in Practice</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-K-fold-cross-validation" class="internal"><span class="codenumber">2.7.5</span> <span class="title">K-fold Cross Validation</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -423,7 +425,7 @@ window.MathJax = {
 <dfn class="terminology">Leave p out cross validation</dfn> (LOOCV). You do multiple runs through the combined training data, and in each cycle,  you leave different <span class="process-math">\(p\)</span> examples out for validation and use the rest for training. That is, you never use the examples you used for training as validation. In an extereme case of this strategy, there is Leave One Out policy, when <span class="process-math">\(p=1\text{.}\)</span>
 </div></li>
 <li id="subsec-Validation-Data-6-1-2">
-<div class="para" id="subsec-Validation-Data-6-1-2-1">A more common strategy is <dfn class="terminology">K-fold cross-validation</dfn>. In each training cycle, you split the combined training data into <span class="process-math">\(K\)</span> equally sized <dfn class="terminology">folds</dfn>. You use <span class="process-math">\(K-1\)</span> of these fold for training and one fold for validation as illustrated in <a href="sec-Model-Selection.html#fig-kfold_cv" class="xref" data-knowl="./knowl/xref/fig-kfold_cv.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.7.2">Figure 2.7.2</a>.</div>
+<div class="para" id="subsec-Validation-Data-6-1-2-1">A more common strategy is <dfn class="terminology">K-fold cross-validation</dfn>. In each training cycle, you split the combined training data into <span class="process-math">\(K\)</span> equally sized <dfn class="terminology">folds</dfn>. You use <span class="process-math">\(K-1\)</span> of these fold for training and one fold for validation as illustrated in <a href="sec-Model-Selection.html#fig-kfold_cv" class="xref" data-knowl="./knowl/xref/fig-kfold_cv.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.7.2">Figure 2.7.2</a>. We will go over K-fold cross validation in more detail below in another section.</div>
 <div class="para" id="subsec-Validation-Data-6-1-2-2">In a <dfn class="terminology">stratified K-fold</dfn> cross-validation, you attempt to ensure that each fold has the same proportions of each class. The stratified K-fold is specially important if you have an imbalanced data, which happens when one class or a number of classes are either over-represented or underrepresented in the dataset.</div>
 </li>
 </ol></div>
@@ -469,7 +471,7 @@ window.MathJax = {
 </div>
 <div class="para">This is also an out-of-sample or generalization error. We use this test error to evaluate the final model.</div>
 </div></section><section class="subsection" id="subsec-Sources-of-Generalization-Error"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.7.3</span><span class="space"> </span><span class="title">Sources of Generalization Error</span>
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.7.3</span><span class="space"> </span><span class="title">Bias and Variance of Model in Generalization Error</span>
 </h3>
 <div class="para logical" id="subsec-Sources-of-Generalization-Error-2">
 <div class="para">To understand the various sources of generalization errors let us look more closely at the expected error in a single input vector <span class="process-math">\(x^{(0)}\text{.}\)</span>
@@ -567,13 +569,13 @@ a = f(x^{(0)}) - \langle\hat f(x^{(0)})\rangle,\quad b = \langle\hat f(x^{(0)})\
 \mathbb{E}_{XY}[\mathcal{L}^{(0)}] = \sigma_\epsilon^2 +  \left( \langle\hat f(x^{(0)})\rangle - f(x^{(0)}) \right)^2 + \mathbb{E}_{D_t}\left[ \left(\hat f(x^{(0)}) - \langle\hat f(x^{(0)})\rangle \right)^2 \right]\tag{2.7.5}
 \end{equation}
 </div>
-<div class="para">The error has three terms: the first term is called the <dfn class="terminology">irreducible error</dfn> - it is completely model-independent and is inherent to the statistical nature of the variables themselves. The second term is the square of how different the expected model over all training sets is different from the true value at the datapoint. This is called <dfn class="terminology">bias</dfn> of the model.</div>
+<div class="para">The error has three terms: the first term is called the <dfn class="terminology">irreducible error</dfn> - it is completely model-independent and is inherent to the statistical nature of the variables themselves. The second term is the square of how different the prediction of the mean model is from the true value at the datapoint under consideration. This is called <dfn class="terminology">bias</dfn> of the model.</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-ms-single-point-squared-error.html">
 \begin{equation*}
 \text{Bias } =   \langle\hat f(x^{(0)})\rangle - f(x^{(0)}).
 \end{equation*}
 </div>
-<div class="para">Since, this term appear as a square, only the relative sign matters. It’s contribution to the error is called <dfn class="terminology">Bias<span class="process-math">\(^2\)</span></dfn>. The last term in the error is the <dfn class="terminology">variance</dfn> of the model in its distribution. Basically, model will change with different training samples, resulting in a collection of models, and this error comes from how variable various models would be from the mean model, which is designated here by <span class="process-math">\(\langle\hat f(x^{(0)})\rangle\text{.}\)</span>
+<div class="para">The contribution of this term to the error appears as it’s square and therefore it is called <dfn class="terminology">Bias<span class="process-math">\(^2\)</span></dfn>. The last term in the error is the <dfn class="terminology">variance</dfn> of the model in its distribution. Basically, model will change with different training samples, resulting in a collection of models, and this error comes from how variable various models would be from the mean model, which is designated here by <span class="process-math">\(\langle\hat f(x^{(0)})\rangle\text{.}\)</span>
 </div>
 </div>
 <div class="para logical" id="subsec-Sources-of-Generalization-Error-4">
@@ -583,9 +585,120 @@ a = f(x^{(0)}) - \langle\hat f(x^{(0)})\rangle,\quad b = \langle\hat f(x^{(0)})\
 \textbf{Generalization Error} = \textbf{Irreducible} + \textbf{Bias}^2 + \textbf{Variance}.\tag{2.7.6}
 \end{equation}
 </div>
-<div class="para">This result is called Bias-Variance Decomposition of the expected error. Altough, we have arrived at it by examining squared error for a regression task, one can show that the decomposition is general and works out for other tasks as well. We will see below that this decomposition is important in understanding how to handle complexity in models. For instance, more complex models, i.e., models with higher degrees of freedoms tend to have less Bias squared error but higher Variance error. That is, there is a tradeoff between reducing Bias squared error and Variance error when selecting the complexity of models.</div>
+<div class="para">This result is called Bias-Variance Decomposition of the expected error. Altough, we have arrived at it by examining squared error for a regression task, one can show that the decomposition is general and works out for other tasks as well. We will see below that this decomposition is important in understanding how to handle complexity in models.</div>
 </div>
-<div class="para" id="subsec-Sources-of-Generalization-Error-5"></div></section></section></div>
+<div class="para" id="subsec-Sources-of-Generalization-Error-5">When creating a machine learning model, the challenge is to design it so it learns the real patterns without making too many mistakes. We see here that the two main reasons for error are bias and variance. High bias and low variance comes from using an overly simple model that misses the mark in a consistent way, i.e., consistently wrong. Variance happens when the model reacts too strongly to the training data, leading to big swings in its predictions.</div>
+<div class="para" id="subsec-Sources-of-Generalization-Error-6">The trick is to manage both at the same time. Too much bias means the model underfits and overlooks useful information. Too much variance means it overfits, confusing random noise for actual patterns. Good models sit somewhere in the middle, which is why strong results in training don’t always carry over to new situations.</div></section><section class="subsection" id="subsec-Bias-Variance-in-Practice"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.7.4</span><span class="space"> </span><span class="title">Bias-Variance Tradeoff in Practice</span>
+</h3>
+<div class="para" id="subsec-Bias-Variance-in-Practice-2">When creating a machine learning model, the challenge is to design it so it learns the real patterns without making too many mistakes. We saw above that the two main reasons for generalization error are bias and variance. High bias and low variance comes from using an overly simple model that misses the mark in a consistent way. Variance happens when the model reacts too strongly to the training data, leading to big swings in its predictions.</div>
+<div class="para" id="subsec-Bias-Variance-in-Practice-3">The trick is to manage both at the same time. Too much bias means the model <dfn class="terminology">underfits</dfn> and overlooks useful information as shown in <a href="sec-Model-Selection.html#fig-bias_variance_tradeoff" class="xref" data-knowl="./knowl/xref/fig-bias_variance_tradeoff.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.7.3">Figure 2.7.3</a>. Too much variance means it <dfn class="terminology">overfits</dfn>, confusing random noise for actual patterns. Good models sit somewhere in the middle, which is why strong results in training don’t always carry over to new situations.</div>
+<figure class="figure figure-like" id="fig-bias_variance_tradeoff"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/supervised-learning-basics/bias_variance_tradeoff.png" class="contained" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.7.3<span class="period">.</span></span><span class="space"> </span>Illustration of underfit, right fit, and overfit. The fitting was done by using polynomials of various degrees as shown.</figcaption></figure><div class="para" id="subsec-Bias-Variance-in-Practice-5">Another way to look at the role of complexity in the bias-variance tradeoff is shown in <a href="sec-Model-Selection.html#fig-bias_variance_tradeoff_and_complexity" class="xref" data-knowl="./knowl/xref/fig-bias_variance_tradeoff_and_complexity.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.7.4">Figure 2.7.4</a>. As you increase the complexity of the model, the bias will tend to go down, but the variance will increase such that the net effect is that error is minimum for an intermediate complexity.</div>
+<figure class="figure figure-like" id="fig-bias_variance_tradeoff_and_complexity"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/supervised-learning-basics/bias_variance_tradeoff_and_complexity.png" class="contained" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.7.4<span class="period">.</span></span><span class="space"> </span>Illustration of change of bias-square and variance with the complexity of the  model.</figcaption></figure><div class="para" id="subsec-Bias-Variance-in-Practice-7">As we can see in these figures that high-bias models, such as linear regression when the actual data is nonlinear, are usually too simplistic to capture the true pattern in the data. We say that they underfit the data. This leads to high errors on both the training set itself and the validation dataset. On the other side are the high variance models, such as decision trees without pruning and neural networks without regularization, which tend to have too much flexibility and fit even the noise in the training data. This overfitting of data gives a low error on the training set but high error on the validation dataset.</div>
+<div class="para" id="subsec-Bias-Variance-in-Practice-8">
+<dfn class="terminology">Leaning curves</dfn> are used to diagnose underfitting and overfitting problems in a model. As shown in <a href="sec-Model-Selection.html#fig-learning_curves" class="xref" data-knowl="./knowl/xref/fig-learning_curves.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.7.5">Figure 2.7.5</a>, we train the model using multiple training sets of varying sizes and plot training and validation errors versus size of the training set. In the underfitting case, both training and validation errors stay high with the gap between them remaining small, indicating the the model is too simplistic to capture patterns. In the overfitting case, the training error is very low and the validation error stays much higher, i.e., the  model memorizes the training data but fails on unseen data.</div>
+<figure class="figure figure-like" id="fig-learning_curves"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/supervised-learning-basics/learning_curves.png" class="contained" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.7.5<span class="period">.</span></span><span class="space"> </span>Learning curves help diagnose underfitting and overfitting problems in a model.</figcaption></figure><div class="para" id="subsec-Bias-Variance-in-Practice-10"></div></section><section class="subsection" id="subsec-K-fold-cross-validation"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.7.5</span><span class="space"> </span><span class="title">K-fold Cross Validation</span>
+</h3>
+<div class="para" id="subsec-K-fold-cross-validation-2">Cross Validation is perhaps the most used method for comparing and selecting models based on an estimate of the generalization errors by those models. As we have discussed above in the K-fold cross-validation, we use <span class="process-math">\(K-1\)</span> parts to fit (i.e., train) the model and the remaining part as the validation data to test the trained model.</div>
+<div class="para" id="subsec-K-fold-cross-validation-3">For instance, if you have <span class="process-math">\(K=5\text{,}\)</span> we will have <span class="process-math">\(5\)</span> folds as shown in <a href="sec-Model-Selection.html#fig-kfold_cv" class="xref" data-knowl="./knowl/xref/fig-kfold_cv.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.7.2">Figure 2.7.2</a>. In one cycle, we train on all the data except one of the folds. Suppose, we have picked the <span class="process-math">\(j^\text{th}\)</span> fold for validation, then we train on all data in folds <span class="process-math">\(1 \text{ to } (j-1)\text{ and } (j+1) \text{ to } K\text{,}\)</span> which we can indicate by <span class="process-math">\(K^{(-j)}\text{,}\)</span> <span class="process-math">\(K\)</span> folds except <span class="process-math">\(j\text{.}\)</span>
+</div>
+<div class="para" id="subsec-K-fold-cross-validation-4">Suppose we have a model <span class="process-math">\(f(x,\theta)\)</span> that we want to train by optimizing <span class="process-math">\(\theta\)</span> using the Gradient Descent. Suppose the model also has a hyperparameter <span class="process-math">\(\lambda\)</span> which needs to be optimized as well. <dfn class="terminology">Hyperparameters</dfn> are parameters that are not trained by the training loop. That makes the model actually indexed by the hyperparameter, viz., <span class="process-math">\(f(x,\theta; \lambda)\text{.}\)</span>
+</div>
+<div class="para logical" id="subsec-K-fold-cross-validation-5">
+<div class="para">We first get the optimized model <span class="process-math">\(f(x,\hat\theta; \lambda)\)</span> using the data in <span class="process-math">\(K^{(-j)}\)</span> for one value of <span class="process-math">\(\lambda\text{,}\)</span> say <span class="process-math">\(\lambda=\lambda_1\text{.}\)</span> Then, we get the validation error on this model on the current fold.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+l_1 = \frac{1}{n_j}\sum_{1=1}^{n_j}\, L( y^{(i)}, f(x^{(i)},\hat\theta; \lambda_1) )
+\end{equation*}
+</div>
+<div class="para">The error <span class="process-math">\(l_1\)</span> can be improved by repeating the training on <span class="process-math">\(j=1, \cdots, K\text{,}\)</span> generating <span class="process-math">\(K\)</span> values of <span class="process-math">\(l_1\text{,}\)</span> which can be averaged to get a better estimate of the generalization error.</div>
+</div>
+<div class="para logical" id="subsec-K-fold-cross-validation-6">
+<div class="para">Now, we repeat the training loop for a different <span class="process-math">\(\lambda\text{,}\)</span> say <span class="process-math">\(\lambda=\lambda_2\)</span> with the validation error</div>
+<div class="displaymath process-math">
+\begin{equation*}
+l_2 = \frac{1}{n_j}\sum_{1=1}^{n_j}\, L( y^{(i)}, f(x^{(i)},\hat\theta; \lambda_2) )
+\end{equation*}
+</div>
+<div class="para">We can repeat for as many <span class="process-math">\(\lambda\)</span>’s as we need. Then, we can use the validation errors, to pick the   <span class="process-math">\(\lambda\)</span> that gave the least validation error.</div>
+</div>
+<article class="example example-like" id="subsec-K-fold-cross-validation-7"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.7.6</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="subsec-K-fold-cross-validation-7-1">
+<div class="para">In this example we illustrate the use of cross-validation to pick the best model by fitting a noisy sinusoid by polynomilas with unknown best degree of the polynomial.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(x, \theta; \lambda) = \sum_{i=0}^{\lambda}\, \theta_i x^{i}.
+\end{equation*}
+</div>
+<div class="para">Here, <span class="process-math">\(\theta\)</span> are the coefficients, which will be obtained by a linear regression algorithm and <span class="process-math">\(\lambda\text{,}\)</span> the degree of polynomial of the model, is the hyperparameter. To find the best value of the hyperparameter we use the generalization error on the validation subset in a 5-fold cross-validation procedure. For error, we will use the square-root of the square error we have talked above by computing mean root mean squared error (RMSE) on the validation subsets of various folds.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\text{RMSE} = \sqrt{\frac{1}{n_v} \left(  y^{(i)} -  f(x^{(i)},\hat\theta; \lambda) \right)^2}.
+\end{equation*}
+</div>
+<div class="para">Note, the <span class="process-math">\(\hat\theta\)</span> are the optimum values of the coefficients obtained by using the training dataset. Only after we have obtained the trained model, we compute the RMSE on the validation dataset. All of these steps can be implemented from scratch or you can use excellent standard libraries such as sklearn and PyTorch.</div>
+</div> <div class="para logical" id="subsec-K-fold-cross-validation-7-2">
+<div class="para">The program listed below first generates some data with noise. Then, we try to fit the data with polynomial regression models of varying degrees. The function cross_val_score(...) takes that model and performs the following steps for each fold:</div>
+<ul class="disc" id="subsec-K-fold-cross-validation-7-2-1">
+<li id="subsec-K-fold-cross-validation-7-2-1-1"><div class="para" id="subsec-K-fold-cross-validation-7-2-1-1-1">Splits the data into training and validation sets (according to the KFold splitter).</div></li>
+<li id="subsec-K-fold-cross-validation-7-2-1-2"><div class="para" id="subsec-K-fold-cross-validation-7-2-1-2-1">Trains (fits) the model on the training set. Since, this model is just a linear regression, the fit is just one step. If we had a neural network, we would train for a number of epochs, i.e., cycles through the trianing subsets.</div></li>
+<li id="subsec-K-fold-cross-validation-7-2-1-3"><div class="para" id="subsec-K-fold-cross-validation-7-2-1-3-1">Evaluates it on the validation set using the chosen metric (in this case, negative MSE).</div></li>
+<li id="subsec-K-fold-cross-validation-7-2-1-4"><div class="para" id="subsec-K-fold-cross-validation-7-2-1-4-1">Repeats this across all folds.</div></li>
+<li id="subsec-K-fold-cross-validation-7-2-1-5"><div class="para" id="subsec-K-fold-cross-validation-7-2-1-5-1">The function then returns the list of validation scores (one per fold).</div></li>
+</ul>
+</div> <div class="para" id="subsec-K-fold-cross-validation-7-3">
+<a href="sec-Model-Selection.html#fig-polynomial_regression_cv" class="xref" data-knowl="./knowl/xref/fig-polynomial_regression_cv.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.7.7">Figure 2.7.7</a> shows the result for different values of <span class="process-math">\(\lambda\)</span> along the abscissa, each of those values correspond to a different model. This plot may produce a clear U-shaped curve as in this figure, but often can be very noisy. Here, low-degree polynomials (deg 1 and 2), have high bias and high error, clear indicators of underfit. The high-degree polynomials have high validation error, which is an indicator of overfit. The intermediate range has the best compromise with the least error.</div> <figure class="figure figure-like" id="fig-polynomial_regression_cv"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/supervised-learning-basics/polynomial_regression_cv.png" class="contained" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.7.7<span class="period">.</span></span><span class="space"> </span>Illustration of the use of cross-validation to select the model with the least generalization error. The data is fit with polynomials of different degrees by regression.</figcaption></figure> <div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-py"># This program is based on a program generated by GPT-5.
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.preprocessing import PolynomialFeatures
+from sklearn.linear_model import LinearRegression
+from sklearn.pipeline import make_pipeline
+from sklearn.model_selection import cross_val_score, KFold
+plt.rcParams['axes.labelsize'] = 14
+plt.rcParams['xtick.labelsize'] = 12
+plt.rcParams['ytick.labelsize'] = 12
+plt.rcParams['legend.fontsize'] = 12
+# 1. Generate synthetic data
+np.random.seed(42)
+X = np.linspace(0, 5, 50).reshape(-1, 1)
+y = np.sin(X).ravel() + 
+    np.random.normal(scale=0.6, size=X.shape[0])  # noisy sine wave
+# 2. Hyperparameter: polynomial degree
+degrees = range(1, 11)
+cv_rmse = []
+kf = KFold(n_splits=5, shuffle=True, random_state=42)
+# 3. Cross-validation for each degree
+for deg in degrees:
+    model = make_pipeline(PolynomialFeatures(deg), LinearRegression())
+    scores = cross_val_score(model, X, y, cv=kf,
+        scoring='neg_mean_squared_error') # implements the cross-validation
+    rmse_mean = np.sqrt(-scores.mean())
+    cv_rmse.append(rmse_mean)
+    print(f"Degree={deg:2d} -&gt; CV mean RMSE = {rmse_mean:.3f}")
+# 4. Find best degree
+best_deg = degrees[np.argmin(cv_rmse)]
+best_rmse = min(cv_rmse)
+print(f"\nBest polynomial degree = {best_deg}, CV mean RMSE = {best_rmse:.3f}")
+# 5. Plot
+plt.figure(figsize=(8,5))
+plt.plot(degrees, cv_rmse, marker='o', color='blue')
+plt.axvline(best_deg, color='red', linestyle='--',
+    label=f"Best polynomial degree = {best_deg}")
+plt.xlabel("Polynomial Degree")
+plt.ylabel("Mean CV RMSE")
+plt.xticks(degrees)
+plt.legend(loc="upper center")
+plt.grid(True, linestyle='--', alpha=0.6)
+plt.tight_layout()
+plt.show()
+</code></pre></div></article></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec-Bayesian-Methods.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
