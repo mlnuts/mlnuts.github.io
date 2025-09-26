@@ -13,10 +13,8 @@
 <body class="ignore-math">
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-decision-rule-for-scalar-x-for-logistic-regression.html ./knowl/xref/eqn-total-negative-log-likelhood-loss.html">
 \begin{align}
-\amp \frac{\partial \mathcal{L}_D}{\partial \beta_0} = - \frac{1}{n} \sum_{i=1}^n\, \left[ 
-\frac{ y^{(i)} } { \sigma^{(i)} } - \frac{ 1 - y^{(i)} }{ 1 - \sigma^{(i)} } \right]\,\frac{\partial \sigma^{(i)}}{\partial z^{(i)}}\,\frac{\partial z^{(i)}}{\partial \beta_0} = 0  \tag{2.2.10}\\
-\amp \frac{\partial \mathcal{L}_D}{\partial \beta_1} = - \frac{1}{n} \sum_{i=1}^n\, \left[ 
-\frac{ y^{(i)} } { \sigma^{(i)} } - \frac{ 1 - y^{(i)} }{ 1 - \sigma^{(i)} } \right]\,\frac{\partial \sigma^{(i)}}{\partial z^{(i)}}\,\frac{\partial z^{(i)}}{\partial \beta_1} = 0 \tag{2.2.11}
+\amp \frac{\partial \mathcal{L}_D}{\partial w_0} = - \frac{1}{n} \sum_{i=1}^n\, \left[ \frac{ y^{(i)} } { \sigma^{(i)} } - \frac{ 1 - y^{(i)} }{ 1 - \sigma^{(i)} } \right]\,\frac{\partial \sigma^{(i)}}{\partial z^{(i)}}\,\frac{\partial z^{(i)}}{\partial w_0} = 0  \tag{2.3.10}\\
+\amp \frac{\partial \mathcal{L}_D}{\partial w_1} = - \frac{1}{n} \sum_{i=1}^n\, \left[ \frac{ y^{(i)} } { \sigma^{(i)} } - \frac{ 1 - y^{(i)} }{ 1 - \sigma^{(i)} } \right]\,\frac{\partial \sigma^{(i)}}{\partial z^{(i)}}\,\frac{\partial z^{(i)}}{\partial w_1} = 0 \tag{2.3.11}
 \end{align}
 </div>
 <span class="incontext"><a class="internal" href="sec-Binary-Classification.html#subsec-binary-classification-scalar-feature-19-17">in-context</a></span>

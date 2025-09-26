@@ -12,7 +12,7 @@
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
-<meta property="book:title" content="ML Notes">
+<meta property="book:title" content="">
 <script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
@@ -133,6 +133,9 @@ window.MathJax = {
 #sec-Hypothesis-Tests-2-6-1 { counter-set: sec-Hypothesis-Tests-2-6-1 0; }
 #sec-Hypothesis-Tests-2-6-1 > li::marker { content: ""counter(sec-Hypothesis-Tests-2-6-1,decimal)"."; }
 #sec-Hypothesis-Tests-2-6-1 > li { counter-increment: sec-Hypothesis-Tests-2-6-1; }
+#sec-Regression-2-2-1 { counter-set: sec-Regression-2-2-1 0; }
+#sec-Regression-2-2-1 > li::marker { content: ""counter(sec-Regression-2-2-1,decimal)"."; }
+#sec-Regression-2-2-1 > li { counter-increment: sec-Regression-2-2-1; }
 #subsec-derivative-of-multiclass-loss-function-3-2-2 { counter-set: subsec-derivative-of-multiclass-loss-function-3-2-2 0; }
 #subsec-derivative-of-multiclass-loss-function-3-2-2 > li::marker { content: ""counter(subsec-derivative-of-multiclass-loss-function-3-2-2,decimal)"."; }
 #subsec-derivative-of-multiclass-loss-function-3-2-2 > li { counter-increment: subsec-derivative-of-multiclass-loss-function-3-2-2; }
@@ -147,7 +150,7 @@ window.MathJax = {
 <body id="ML-Notes" class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
 <a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
-<h1 class="heading"><a href="my-ML-Notes.html"><span class="title">ML Notes:</span> <span class="subtitle">Theoretical and Practical ML Concepts</span></a></h1>
+<h1 class="heading"><a href="my-ML-Notes.html"><span class="title"></span></a></h1>
 <p class="byline"></p>
 </div>
 </div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
@@ -161,7 +164,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-Statistical-Decision-Theory.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-supervised-learning-basics.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-Multi-Feature-Problems.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-Regression.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-supervised-learning-basics.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-Multi-Feature-Problems.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -341,153 +344,127 @@ window.MathJax = {
 <ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-Statistical-Decision-Theory.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Statistical Decision Theory</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Statistical-Decision-Theory.html#subsec-Squared-Error-Loss-Function" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Regression</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Statistical-Decision-Theory.html#subsec-KNN-method" class="internal"><span class="codenumber">2.1.2</span> <span class="title">The kNN Method</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Statistical-Decision-Theory.html#subsec-The-Simple-Linear-Regresson" class="internal"><span class="codenumber">2.1.3</span> <span class="title">The Simple Linear Regresson</span></a></div></li>
-</ul>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Statistical-Decision-Theory.html#subsec-KNN-method" class="internal"><span class="codenumber">2.1.1</span> <span class="title">The kNN Method</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Regression.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Regression</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Regression.html#subsec-The-Simple-Linear-Regresson" class="internal"><span class="codenumber">2.2.1</span> <span class="title">The Simple Linear Regresson</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section active">
-<div class="toc-title-box"><a href="sec-Binary-Classification.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Binary Classification</span></a></div>
+<div class="toc-title-box"><a href="sec-Binary-Classification.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Binary Classification</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Binary-Classification.html#subsecThe-Classification-Variable" class="internal"><span class="codenumber">2.2.1</span> <span class="title">The Classification Variable <span class="process-math">\(Y\)</span></span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Binary-Classification.html#subsec-binary-classification-scalar-feature" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Binary Classification with Scalar <span class="process-math">\(X\)</span></span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Binary-Classification.html#subsec-gradient-descent" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Gradient Descent for Logistic Regression</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Binary-Classification.html#subsecThe-Classification-Variable" class="internal"><span class="codenumber">2.3.1</span> <span class="title">The Classification Variable <span class="process-math">\(Y\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Binary-Classification.html#subsec-binary-classification-scalar-feature" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Binary Classification with Scalar <span class="process-math">\(X\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Binary-Classification.html#subsec-gradient-descent" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Gradient Descent for Logistic Regression</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Multi-Feature Problems</span></a></div>
+<div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Multi-Feature Problems</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Linear-Regression" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Multi-Feature Linear Regression</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Linear-Regression-3" class="internal"><span class="codenumber">2.3.1.1</span> <span class="title">Taking Derivatives With Respect To A Vector</span></a></div></li></ul>
+<div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Linear-Regression" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Multi-Feature Linear Regression</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Linear-Regression-3" class="internal"><span class="codenumber">2.4.1.1</span> <span class="title">Taking Derivatives With Respect To A Vector</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Logistic-Regression" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Multi-Feature Logistic Regression</span></a></div>
+<div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Logistic-Regression" class="internal"><span class="codenumber">2.4.2</span> <span class="title">Multi-Feature Logistic Regression</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Logistic-Regression-3" class="internal"><span class="codenumber">2.3.2.1</span> <span class="title">Derivatives of the Loss Function</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsubsec-logistic-regression-multivariate" class="internal"><span class="codenumber">2.3.2.2</span> <span class="title">A Python Program for the Logistic Regression</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Logistic-Regression-3" class="internal"><span class="codenumber">2.4.2.1</span> <span class="title">Derivatives of the Loss Function</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsubsec-logistic-regression-multivariate" class="internal"><span class="codenumber">2.4.2.2</span> <span class="title">A Python Program for the Logistic Regression</span></a></div></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-MultiClass-Classification.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Multi-Class Classification</span></a></div>
+<div class="toc-title-box"><a href="sec-MultiClass-Classification.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Multi-Class Classification</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-MultiClass-Classification.html#subsec-Loss-Function-of-Multi-class-Classification" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Loss Function of Multiclass Classification</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-MultiClass-Classification.html#subsec-derivative-of-multiclass-loss-function" class="internal"><span class="codenumber">2.4.2</span> <span class="title">Derivative of Multiclass Loss Function</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-MultiClass-Classification.html#subsec-Model-Evaluations" class="internal"><span class="codenumber">2.4.3</span> <span class="title">Model Evaluations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-MultiClass-Classification.html#subsec-Loss-Function-of-Multi-class-Classification" class="internal"><span class="codenumber">2.5.1</span> <span class="title">Loss Function of Multiclass Classification</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-MultiClass-Classification.html#subsec-derivative-of-multiclass-loss-function" class="internal"><span class="codenumber">2.5.2</span> <span class="title">Derivative of Multiclass Loss Function</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-Evaluating-Predictions.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Evaluating Predictions</span></a></div>
+<div class="toc-title-box"><a href="sec-Evaluating-Predictions.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Evaluating Predictions</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsec-Evaluating-Regression-Tasks" class="internal"><span class="codenumber">2.5.1</span> <span class="title">Evaluating Regression Tasks</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsec-Evaluating-Regression-Tasks" class="internal"><span class="codenumber">2.6.1</span> <span class="title">Evaluating Regression Tasks</span></a></div></li>
 <li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsec-Evaluating-Binary-Classification" class="internal"><span class="codenumber">2.5.2</span> <span class="title">Evaluating Binary Classification</span></a></div>
+<div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsec-Evaluating-Binary-Classification" class="internal"><span class="codenumber">2.6.2</span> <span class="title">Evaluating Binary Classification</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsubsec-Metrics-of-Binary-Classification" class="internal"><span class="codenumber">2.5.2.1</span> <span class="title">Metrics of BinaryClassification</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsubsec-ROC-PR-Curves-AUC-2" class="internal"><span class="codenumber">2.5.2.2</span> <span class="title">Evaluating Model Performance Across Thresholds</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsubsec-Metrics-of-Binary-Classification" class="internal"><span class="codenumber">2.6.2.1</span> <span class="title">Metrics of BinaryClassification</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsubsec-ROC-PR-Curves-AUC-2" class="internal"><span class="codenumber">2.6.2.2</span> <span class="title">Evaluating Model Performance Across Thresholds</span></a></div></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-Bayesian-Methods.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Bayesian Methods</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Bayesian-Methods.html#subsec-Naive-Bayes" class="internal"><span class="codenumber">2.6.1</span> <span class="title">Naive Bayes Algorithm</span></a></div></li></ul>
+<div class="toc-title-box"><a href="sec-Bayesian-Methods.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Bayesian Methods</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Bayesian-Methods.html#subsec-Naive-Bayes" class="internal"><span class="codenumber">2.7.1</span> <span class="title">Naive Bayes Algorithm</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-Model-Selection.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Model Selection</span></a></div>
+<div class="toc-title-box"><a href="sec-Model-Selection.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Model Selection</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Validation-Data" class="internal"><span class="codenumber">2.7.1</span> <span class="title">Validation Data</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Out-of-Sample-Error" class="internal"><span class="codenumber">2.7.2</span> <span class="title">Generalization Error</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Sources-of-Generalization-Error" class="internal"><span class="codenumber">2.7.3</span> <span class="title">Bias and Variance of Model in Generalization Error</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Bias-Variance-in-Practice" class="internal"><span class="codenumber">2.7.4</span> <span class="title">Bias-Variance Tradeoff in Practice</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-K-fold-cross-validation" class="internal"><span class="codenumber">2.7.5</span> <span class="title">K-fold Cross Validation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Validation-Data" class="internal"><span class="codenumber">2.8.1</span> <span class="title">Validation Data</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Out-of-Sample-Error" class="internal"><span class="codenumber">2.8.2</span> <span class="title">Generalization Error</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Sources-of-Generalization-Error" class="internal"><span class="codenumber">2.8.3</span> <span class="title">Bias and Variance of Model in Generalization Error</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Bias-Variance-in-Practice" class="internal"><span class="codenumber">2.8.4</span> <span class="title">Bias-Variance Tradeoff in Practice</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-K-fold-cross-validation" class="internal"><span class="codenumber">2.8.5</span> <span class="title">K-fold Cross Validation</span></a></div></li>
 </ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Multivariate-Regression-Project.html" class="internal"><span class="codenumber">2.9</span> <span class="title">A Multivariate Regression Project</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Multivariate-Regression-Project.html#subsec-" class="internal"><span class="codenumber">2.9.1</span> <span class="title"></span></a></div></li></ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-Binary-Classification"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">2.2</span><span class="space"> </span><span class="title">Binary Classification</span>
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">2.3</span><span class="space"> </span><span class="title">Binary Classification</span>
 </h2>
 <section class="introduction" id="sec-Binary-Classification-2"><div class="para" id="sec-Binary-Classification-2-1"></div></section><section class="subsection" id="subsecThe-Classification-Variable"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.2.1</span><span class="space"> </span><span class="title">The Classification Variable <span class="process-math">\(Y\)</span></span>
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.3.1</span><span class="space"> </span><span class="title">The Classification Variable <span class="process-math">\(Y\)</span></span>
 </h3>
 <div class="para logical" id="subsecThe-Classification-Variable-2">
 <div class="para">In addition to the regression task discussed in the previous section, we are also interested in <em class="alert">classification tasks</em>. In a classification task, <span class="process-math">\(Y\)</span> is a discrete variable with values are the classes or categories, and the task of the algorithm is to predict a class to which the feature variable <span class="process-math">\(X\)</span> goes with. In the case of <span class="process-math">\(k\)</span>-classes, we treat the <span class="process-math">\(Y\)</span> variable as a collection of <span class="process-math">\(k\)</span> discrete variables, each taking either <span class="process-math">\(0\)</span> or <span class="process-math">\(1\)</span> showing the outcome being  that class observed or not. This is the one-hot reprsentation that we have discussed before. We usually, think of te collection as a column vector, which is sometimes typed as a transpose of a row vector.</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-optimal-f-from-joint-probability-density.html">
 \begin{equation*}
-Y = \begin{bmatrix}
-Y_1\\
-Y_2\\
-Y_3\\
-\vdots\\
-Y_k
-\end{bmatrix} =  [Y_1\ Y_2\ \cdots\ Y_k]^T 
+Y = \begin{bmatrix} Y_1\\ Y_2\\ Y_3\\ \vdots\\ Y_k \end{bmatrix} =  [Y_1\ Y_2\ \cdots\ Y_k]^T
 \end{equation*}
 </div>
 <div class="para">In any observation of the variable <span class="process-math">\(Y\text{,}\)</span> you find only one of these variables to have a <span class="process-math">\(1\)</span> and the rest zeros, e.g., if your first observation of <span class="process-math">\(Y\text{,}\)</span> i.e., <span class="process-math">\(y^{(1)}\)</span> is a class <span class="process-math">\(2\text{,}\)</span> then, your <span class="process-math">\(y^{(1)}\)</span> is represented by the following.</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-optimal-f-from-joint-probability-density.html">
 \begin{equation*}
-y^{(1)} = \begin{bmatrix}
-0\\
-1\\
-0\\
-\vdots\\
-0
-\end{bmatrix} =  [0\ 1\ 0\ \cdots\ 0]^T 
+y^{(1)} = \begin{bmatrix} 0\\ 1\\ 0\\ \vdots\\ 0 \end{bmatrix} =  [0\ 1\ 0\ \cdots\ 0]^T
 \end{equation*}
 </div>
 <div class="para">In the theory of supervised learning given in the last section for continuous <span class="process-math">\(Y\text{,}\)</span> we now replace the conditional PDF of <span class="process-math">\((Y \mid X)\)</span> by the corresponding Probability Mass Function (PMF) and the integration by a summation. We will also use <span class="process-math">\(\hat{Y}\)</span> for the optimal function in place of <span class="process-math">\(\hat{f}\)</span> to empahsize that it will be also a discrete variables of the same type as <span class="process-math">\(Y\text{.}\)</span> Thus, Eq. <a href="sec-Statistical-Decision-Theory.html#eqn-optimal-f-from-joint-probability-density" class="xref" data-knowl="./knowl/xref/eqn-optimal-f-from-joint-probability-density.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.1.1">(2.1.1)</a> is replaced by</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-optimal-f-from-joint-probability-density.html" id="eqn-optimal-f-from-joint-probability-mass">
 \begin{equation}
-\hat{Y} \equiv \hat{f} =  \min\limits_{f}\ \sum_{c=1}^{k}\ \mathcal{L}(Y_c, f(X))\ P(Y_c\mid X).\tag{2.2.1}
+\hat{Y} \equiv \hat{f} =  \min\limits_{f}\ \sum_{c=1}^{k}\ \mathcal{L}(Y_c, f(X))\ P(Y_c\mid X).\tag{2.3.1}
 \end{equation}
 </div>
 <div class="para">In a <dfn class="terminology">binary classification</dfn>, <span class="process-math">\(Y\)</span> can take one of the two values: yes/no, true/false, up/down, cat/dog, 0/1, etc. Hence, a binary classification <span class="process-math">\(Y\)</span> will be a collection of two random <span class="process-math">\(0/1\)</span> variables.</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-optimal-f-from-joint-probability-density.html">
 \begin{equation*}
-Y = \begin{bmatrix}
-Y_1\\
-Y_2\\
-\end{bmatrix} =  [Y_1\ Y_2]^T                 
+Y = \begin{bmatrix} Y_1\\ Y_2\\ \end{bmatrix} =  [Y_1\ Y_2]^T
 \end{equation*}
 </div>
 <div class="para">In any observation, you will observe one of the two states:</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-optimal-f-from-joint-probability-density.html">
 \begin{equation*}
-y^{(i)} = \begin{bmatrix}
-1\\
-0\\
-\end{bmatrix} \quad \text{ or }\quad  \begin{bmatrix}
-0\\
-1\\
-\end{bmatrix}
+y^{(i)} = \begin{bmatrix} 1\\ 0\\ \end{bmatrix} \quad \text{ or }\quad  \begin{bmatrix} 0\\ 1\\ \end{bmatrix}
 \end{equation*}
 </div>
 <div class="para">Although, it is fine to think of observations in this language of vectors. However, for a two state, there is a much simpler way of thinking of the variable <span class="process-math">\(Y\)</span> - just use the value of class <span class="process-math">\(1\text{,}\)</span> i.e., <span class="process-math">\(Y_1\)</span> for <span class="process-math">\(Y\text{:}\)</span>
 </div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-optimal-f-from-joint-probability-density.html">
 \begin{equation*}
-Y = \begin{cases}
-1 \amp \text{ if state } \begin{bmatrix}
-1\\
-0\\
-\end{bmatrix},\\
-0 \amp \text{ if state } \begin{bmatrix}
-0\\
-1\\
-\end{bmatrix}.
+Y = \begin{cases} 1 \amp \text{ if state } \begin{bmatrix} 1\\ 0\\ \end{bmatrix},\\ 0 \amp \text{ if state } \begin{bmatrix} 0\\ 1\\ \end{bmatrix}.
 \end{cases}
 \end{equation*}
 </div>
 <div class="para">This makes algebra simpler since, now <span class="process-math">\(Y\)</span> is just a scaler with two values, <span class="process-math">\(0\)</span> and <span class="process-math">\(1\text{.}\)</span>
 </div>
 </div></section><section class="subsection" id="subsec-binary-classification-scalar-feature"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.2.2</span><span class="space"> </span><span class="title">Binary Classification with Scalar <span class="process-math">\(X\)</span></span>
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.3.2</span><span class="space"> </span><span class="title">Binary Classification with Scalar <span class="process-math">\(X\)</span></span>
 </h3>
 <div class="para" id="subsec-binary-classification-scalar-feature-2">In this setup, we have a scalar variable <span class="process-math">\(X\)</span> (a single real-valued feature) and a binary response variable <span class="process-math">\(Y\)</span> that takes two values, typically <span class="process-math">\(Y \in \{0, 1\}\text{,}\)</span> representing two classes. The goal is binary classification: given a value of <span class="process-math">\(X\text{,}\)</span> predict the class label <span class="process-math">\(Y\text{.}\)</span>
 </div>
@@ -497,7 +474,7 @@ Y = \begin{cases}
 </div>
 <div class="displaymath process-math" id="eqn-function-in-binary-classification">
 \begin{equation}
-f(x^{(i)})  = P(Y=1\mid X=x^{(i)})\tag{2.2.2}
+f(x^{(i)})  = P(Y=1\mid X=x^{(i)})\tag{2.3.2}
 \end{equation}
 </div>
 <div class="para">Note that if we know the conditional probability mass function, then this function has a definite value for each value of <span class="process-math">\(X\text{.}\)</span> We can write it more generally without specifying <span class="process-math">\(X\)</span> as</div>
@@ -508,14 +485,11 @@ f(X)  = P(Y=1\mid X).
 </div>
 </div>
 <div class="para" id="subsec-binary-classification-scalar-feature-5"><em class="alert">The Loss Function</em></div>
-<div class="para" id="subsec-binary-classification-scalar-feature-6">Since we trying to predict conditional probability of <span class="process-math">\(Y=1\)</span> given an <span class="process-math">\(X\text{,}\)</span> if actual value was <span class="process-math">\(y=1\text{,}\)</span> then from a loss function we expect that it be small when predicted probability is closer to <span class="process-math">\(1\)</span> than if it closer to zero. Negative log of probability captures this aspect well as shown in <a href="sec-Binary-Classification.html#fig-binary_cross_entropy_loss" class="xref" data-knowl="./knowl/xref/fig-binary_cross_entropy_loss.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.2.1">Figure 2.2.1</a>. Thus, we expect the loss function to have the following form.</div>
+<div class="para" id="subsec-binary-classification-scalar-feature-6">Since we trying to predict conditional probability of <span class="process-math">\(Y=1\)</span> given an <span class="process-math">\(X\text{,}\)</span> if actual value was <span class="process-math">\(y=1\text{,}\)</span> then from a loss function we expect that it be small when predicted probability is closer to <span class="process-math">\(1\)</span> than if it closer to zero. Negative log of probability captures this aspect well as shown in <a href="sec-Binary-Classification.html#fig-binary_cross_entropy_loss" class="xref" data-knowl="./knowl/xref/fig-binary_cross_entropy_loss.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.3.1">Figure 2.3.1</a>. Thus, we expect the loss function to have the following form.</div>
 <div class="para logical" id="subsec-binary-classification-scalar-feature-7">
 <div class="displaymath process-math">
 \begin{equation*}
-\mathcal{L}(Y, f(X)) = \begin{cases}
--\log P_\theta(Y=1 \mid X) \amp \text{ if }\ \ Y = 1\\
--\log \left( 1  - P_\theta(Y=1 \mid X) \right) \amp \text{ if }\ \ Y = 0
-\end{cases}
+\mathcal{L}(Y, f(X)) = \begin{cases} -\log P_\theta(Y=1 \mid X) \amp \text{ if }\ \ Y = 1\\ -\log \left( 1  - P_\theta(Y=1 \mid X) \right) \amp \text{ if }\ \ Y = 0 \end{cases}
 \end{equation*}
 </div>
 <div class="para">We can combine these two expressions into one.</div>
@@ -526,12 +500,12 @@ f(X)  = P(Y=1\mid X).
 </div>
 </div>
 <figure class="figure figure-like" id="fig-binary_cross_entropy_loss"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/supervised-learning-basics/binary_cross_entropy_loss.png" class="contained" alt="The image shows negative log likelihood functions of twobinary classes. The functions give zero loss for the correct class and maximum loss for the other class."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.1<span class="period">.</span></span><span class="space"> </span>Negative log likelihood loss functions for the two classes of a binary classification task.</figcaption></figure><div class="para logical" id="subsec-binary-classification-scalar-feature-9">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.1<span class="period">.</span></span><span class="space"> </span>Negative log likelihood loss functions for the two classes of a binary classification task.</figcaption></figure><div class="para logical" id="subsec-binary-classification-scalar-feature-9">
 <div class="para">The optimal value of parameters will be obtained when we minimize it’s expectation value using the dataset. Recall that the data consists of pairs <span class="process-math">\(\mathcal{D} = (x^{(i)}, y^{(i)})\)</span> for <span class="process-math">\(i = 1, \dots, n\text{,}\)</span> where the <span class="process-math">\(x^{(i)}\)</span> are points on the real line since we have a scalar <span class="process-math">\(X\text{,}\)</span> and <span class="process-math">\(y^{(i)}\)</span> indicates the class, which is either <span class="process-math">\(1\)</span> or <span class="process-math">\(0\text{.}\)</span> Weighing each datapoint equally by a factt <span class="process-math">\(1/n\)</span> gives us the following expectation, to be denoted by <span class="process-math">\(\mathcal{L}_D\text{,}\)</span>
 </div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-total-negative-log-likelhood-loss.html" id="eqn-total-negative-log-likelhood-loss">
 \begin{equation}
-\mathcal{L}_D= - \frac{1}{n}\sum_{i=1}^{n} \left[ y^{(i)}\log p_\theta^{(i)} + (1-y^{(i)}) ( 1 - \log p_\theta^{(i)}) \right],\tag{2.2.3}
+\mathcal{L}_D= - \frac{1}{n}\sum_{i=1}^{n} \left[ y^{(i)}\log p_\theta^{(i)} + (1-y^{(i)}) ( 1 - \log p_\theta^{(i)}) \right],\tag{2.3.3}
 \end{equation}
 </div>
 <div class="para">where</div>
@@ -540,44 +514,44 @@ f(X)  = P(Y=1\mid X).
 p_\theta^{(i)} = P_\theta(y^{(i)}= 1 \mid X=x^{(i)}).
 \end{equation*}
 </div>
-<div class="para">The expected loss in Eq. <a href="sec-Binary-Classification.html#eqn-total-negative-log-likelhood-loss" class="xref" data-knowl="./knowl/xref/eqn-total-negative-log-likelhood-loss.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.2.3">(2.2.3)</a> is called <dfn class="terminology">Binary Cross Entropy</dfn>. As before, we get the optimum value of the parameter(s) <span class="process-math">\(\theta\)</span> by solving the following extremum finding equation.</div>
+<div class="para">The expected loss in Eq. <a href="sec-Binary-Classification.html#eqn-total-negative-log-likelhood-loss" class="xref" data-knowl="./knowl/xref/eqn-total-negative-log-likelhood-loss.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.3.3">(2.3.3)</a> is called <dfn class="terminology">Binary Cross Entropy</dfn>. As before, we get the optimum value of the parameter(s) <span class="process-math">\(\theta\)</span> by solving the following extremum finding equation.</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-total-negative-log-likelhood-loss.html" id="eqn-minimization-of-error">
 \begin{equation}
-\frac{\partial \mathcal{L}_D}{\partial \theta} = 0,\tag{2.2.4}
+\frac{\partial \mathcal{L}_D}{\partial \theta} = 0,\tag{2.3.4}
 \end{equation}
 </div>
 <div class="para">one for each <span class="process-math">\(\theta\text{.}\)</span> We have already shown how it is dome in the case of linear regression. Now, in the following we will discuss a linear model for classification that is called the logistic regression.</div>
 </div>
 <div class="para" id="subsec-binary-classification-scalar-feature-10"><em class="alert">The Logistic Regression Model</em></div>
-<div class="para" id="subsec-binary-classification-scalar-feature-11">Now, we will specify statistical model for <span class="process-math">\(P_\theta(Y=1, X)\)</span> that is used in a common algoritm called <dfn class="terminology">Logistic Regression</dfn>. Logistic regression here will try to find the best separation point on the <span class="process-math">\(X\)</span> axis that will minimize the net error on the dataset <span class="process-math">\(\mathcal{D}\)</span> even though the data for some values of <span class="process-math">\(X\)</span> are not so clear since there are datapoints that correspond to both classes as shown in <a href="sec-Binary-Classification.html#fig-binary_classification_overlap" class="xref" data-knowl="./knowl/xref/fig-binary_classification_overlap.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.2.2">Figure 2.2.2</a> .</div>
+<div class="para" id="subsec-binary-classification-scalar-feature-11">Now, we will specify statistical model for <span class="process-math">\(P_\theta(Y=1, X)\)</span> that is used in a common algoritm called <dfn class="terminology">Logistic Regression</dfn>. Logistic regression here will try to find the best separation point on the <span class="process-math">\(X\)</span> axis that will minimize the net error on the dataset <span class="process-math">\(\mathcal{D}\)</span> even though the data for some values of <span class="process-math">\(X\)</span> are not so clear since there are datapoints that correspond to both classes as shown in <a href="sec-Binary-Classification.html#fig-binary_classification_overlap" class="xref" data-knowl="./knowl/xref/fig-binary_classification_overlap.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.3.2">Figure 2.3.2</a> .</div>
 <figure class="figure figure-like" id="fig-binary_classification_overlap"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/supervised-learning-basics/binary_classification_overlap.png" class="contained" alt="Illustration of a binary classification overlap in X for the two classes."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.2<span class="period">.</span></span><span class="space"> </span>Illustration of a binary classification overlap in <span class="process-math">\(X\)</span> for the two classes.</figcaption></figure><div class="para" id="subsec-binary-classification-scalar-feature-13">If <span class="process-math">\(X\)</span> consisted of two variables, say <span class="process-math">\((X_1, X_2)\text{,}\)</span> then it will find a straight line in the <span class="process-math">\((X_1, X_2)\)</span> plane that is the decision line that minimizes the error. For higher dimensional situations, logistic regression predicts the decision planes and hyperplanes that minizations of error. These decision point/planes are not perfect if no linear boundary can separate the points in the dataset. That is, we will never get a zero error on <span class="process-math">\(\mathcal{D}\)</span> in these cases.</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.2<span class="period">.</span></span><span class="space"> </span>Illustration of a binary classification overlap in <span class="process-math">\(X\)</span> for the two classes.</figcaption></figure><div class="para" id="subsec-binary-classification-scalar-feature-13">If <span class="process-math">\(X\)</span> consisted of two variables, say <span class="process-math">\((X_1, X_2)\text{,}\)</span> then it will find a straight line in the <span class="process-math">\((X_1, X_2)\)</span> plane that is the decision line that minimizes the error. For higher dimensional situations, logistic regression predicts the decision planes and hyperplanes that minizations of error. These decision point/planes are not perfect if no linear boundary can separate the points in the dataset. That is, we will never get a zero error on <span class="process-math">\(\mathcal{D}\)</span> in these cases.</div>
 <div class="para logical" id="subsec-binary-classification-scalar-feature-14">
 <div class="para">In logistic regression we models the probability by a sigmoid function of a linear combination of a constant and a linear function of <span class="process-math">\(X\text{:}\)</span>
 </div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-sigmoid_function.html" id="eqn-logistic-regression-probability-model">
 \begin{equation}
-P_\theta(Y=1 \mid X=x) = \sigma(\beta_0 + \beta_1 x),\tag{2.2.5}
+P_\theta(Y=1 \mid X=x) = \sigma(w_0 + w_1 x),\tag{2.3.5}
 \end{equation}
 </div>
-<div class="para">where sigmoid function, writing (<span class="process-math">\(z = \beta_0 + \beta_1 x\)</span>)</div>
+<div class="para">where sigmoid function, writing (<span class="process-math">\(z = w_0 + w_1 x\)</span>)</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-sigmoid_function.html" id="eqn-sigmoid-function">
 \begin{equation}
-\sigma(z) = \frac{e^{z}}{1 + e^{z}} = \frac{1}{1 + e^{-z}}\tag{2.2.6}
+\sigma(z) = \frac{e^{z}}{1 + e^{z}} = \frac{1}{1 + e^{-z}}\tag{2.3.6}
 \end{equation}
 </div>
-<div class="para">The range for <span class="process-math">\(z\)</span> is from <span class="process-math">\(-\infty\)</span> to <span class="process-math">\(+\infty\text{.}\)</span> A plot of sigmoid versus the original variable for different choices of the “scale (or slope)” parameter <span class="process-math">\(\beta_1\)</span> is shown in <a href="sec-Binary-Classification.html#fig-sigmoid_function" class="xref" data-knowl="./knowl/xref/fig-sigmoid_function.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.2.3">Figure 2.2.3</a>. You can see that sigmoid function’s output is restricted to the range <span class="process-math">\((0,1)\)</span> suporting it’s use as a probability.</div>
+<div class="para">The range for <span class="process-math">\(z\)</span> is from <span class="process-math">\(-\infty\)</span> to <span class="process-math">\(+\infty\text{.}\)</span> A plot of sigmoid versus the original variable for different choices of the “scale (or slope)” parameter <span class="process-math">\(w_1\)</span> is shown in <a href="sec-Binary-Classification.html#fig-sigmoid_function" class="xref" data-knowl="./knowl/xref/fig-sigmoid_function.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.3.3">Figure 2.3.3</a>. You can see that sigmoid function’s output is restricted to the range <span class="process-math">\((0,1)\)</span> suporting it’s use as a probability.</div>
 </div>
 <div class="para logical" id="subsec-binary-classification-scalar-feature-15">
 <div class="para">An usefu fact about sigmoid is about its derivative, which can be written in terms of sigmoid itself as you can verify by explictily doing it.</div>
 <div class="displaymath process-math" id="eqn-derivative-of-sigmoid">
 \begin{equation}
-\frac{d\sigma(z)}{dz} = \sigma(1-\sigma).\tag{2.2.7}
+\frac{d\sigma(z)}{dz} = \sigma(1-\sigma).\tag{2.3.7}
 \end{equation}
 </div>
 </div>
 <figure class="figure figure-like" id="fig-sigmoid_function"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/supervised-learning-basics/sigmoid_function.png" class="contained" alt="Sigmoid function rises from zero to 1 when z goes from minus infinity to infinity."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.3<span class="period">.</span></span><span class="space"> </span>Sigmoid function.</figcaption></figure><div class="para logical" id="subsec-binary-classification-scalar-feature-17">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.3<span class="period">.</span></span><span class="space"> </span>Sigmoid function.</figcaption></figure><div class="para logical" id="subsec-binary-classification-scalar-feature-17">
 <div class="para">The <dfn class="terminology">decision boundary</dfn> depends on the choice of the threshold. For instance, if we choose <span class="process-math">\(p_\text{th} = 0.5\text{,}\)</span> then we will classify into two <span class="process-math">\(Y\)</span> classes as follows.</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -589,119 +563,107 @@ P_\theta(Y=1 \mid X=x) = \sigma(\beta_0 + \beta_1 x),\tag{2.2.5}
 \begin{align*}
 \amp  \frac{1}{1 + e^{-z}} = 0.5 = \frac{1}{2}\\
 \amp \quad \implies 1 + e^{-z} = 2,\implies e^{-z} = 1 \implies z = 0 \\
-\amp \quad \implies \beta_0 + \beta_1 x = 0 \implies x_\text{decision} = -\beta_0 / \beta_1.
+\amp \quad \implies w_0 + w_1 x = 0 \implies x_\text{decision} = -w_0 / w_1.
 \end{align*}
 </div>
 <div class="para">Thereofore, the decision point on the <span class="process-math">\(X\)</span>-axis for a scalar <span class="process-math">\(X\)</span> using the optimal values of the parameters will be</div>
 <div class="displaymath process-math" id="eqn-decision-rule-for-scalar-x-for-logistic-regression">
 \begin{equation}
-x_\text{decision} = -\hat{\beta}_0 / \hat{\beta}_1.\tag{2.2.8}
+x_\text{decision} = -\hat{w}_0 / \hat{w}_1.\tag{2.3.8}
 \end{equation}
 </div>
 <div class="para">That is, we predict <span class="process-math">\(Y=1\)</span> if <span class="process-math">\(X \gt x_\text{decision}\)</span> and <span class="process-math">\(Y=0\)</span> otherwise.</div>
 </div>
 <div class="para" id="subsec-binary-classification-scalar-feature-18"><em class="alert">Estimating Optimal Parameters From The Data</em></div>
 <div class="para logical" id="subsec-binary-classification-scalar-feature-19">
-<div class="para">Eq. <a href="sec-Binary-Classification.html#eqn-decision-rule-for-scalar-x-for-logistic-regression" class="xref" data-knowl="./knowl/xref/eqn-decision-rule-for-scalar-x-for-logistic-regression.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.2.8">(2.2.8)</a> has boiled the task of classification of a new data <span class="process-math">\(x^{n+1}\)</span> to comparing it to the optimal <span class="process-math">\(\hat{\beta}_0 / \hat{\beta}_1\text{.}\)</span> The optimal <span class="process-math">\(\beta_0\)</span> and <span class="process-math">\(\beta_1\)</span> are the values of these parameters that minimize the loss function  <span class="process-math">\(\mathcal{L}_D\)</span> in Eq. <a href="sec-Binary-Classification.html#eqn-total-negative-log-likelhood-loss" class="xref" data-knowl="./knowl/xref/eqn-total-negative-log-likelhood-loss.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.2.3">(2.2.3)</a>. Writing the loss function using the logistic regression model’s probability function <span class="process-math">\(\sigma(\beta_0 + \beta_1\, X)\text{.}\)</span> With <span class="process-math">\(z^{(i)}\)</span> for <span class="process-math">\(\beta_0 + \beta_1\, x^{(i)}\text{,}\)</span> will have</div>
+<div class="para">Eq. <a href="sec-Binary-Classification.html#eqn-decision-rule-for-scalar-x-for-logistic-regression" class="xref" data-knowl="./knowl/xref/eqn-decision-rule-for-scalar-x-for-logistic-regression.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.3.8">(2.3.8)</a> has boiled the task of classification of a new data <span class="process-math">\(x^{n+1}\)</span> to comparing it to the optimal <span class="process-math">\(\hat{w}_0 / \hat{w}_1\text{.}\)</span> The optimal <span class="process-math">\(w_0\)</span> and <span class="process-math">\(w_1\)</span> are the values of these parameters that minimize the loss function  <span class="process-math">\(\mathcal{L}_D\)</span> in Eq. <a href="sec-Binary-Classification.html#eqn-total-negative-log-likelhood-loss" class="xref" data-knowl="./knowl/xref/eqn-total-negative-log-likelhood-loss.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.3.3">(2.3.3)</a>. Writing the loss function using the logistic regression model’s probability function <span class="process-math">\(\sigma(w_0 + w_1\, X)\text{.}\)</span> With <span class="process-math">\(z^{(i)}\)</span> for <span class="process-math">\(w_0 + w_1\, x^{(i)}\text{,}\)</span> will have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-decision-rule-for-scalar-x-for-logistic-regression.html ./knowl/xref/eqn-total-negative-log-likelhood-loss.html" id="eqn-LD-for-logistic-regression">
 \begin{equation}
-\mathcal{L}_D = - \frac{1}{n} \sum_{i=1}^n\, \left[ y^{(i)} \log \sigma(z^{(i)})  
-+ (1 - y^{(i)}) (1 -  \log \sigma(z^{(i)}) )
-\right]\tag{2.2.9}
+\mathcal{L}_D = - \frac{1}{n} \sum_{i=1}^n\, \left[ y^{(i)} \log \sigma(z^{(i)}) + (1 - y^{(i)}) (1 -  \log \sigma(z^{(i)}) ) \right]\tag{2.3.9}
 \end{equation}
 </div>
-<div class="para">To find it’s extremum point in the plane of parameters <span class="process-math">\((\beta_0, \beta_1 )\text{,}\)</span> in principle, we just need to solve the following for <span class="process-math">\(\beta_0\)</span> and <span class="process-math">\(\beta_1\text{.}\)</span> For simpler notation, let’s write <span class="process-math">\(\sigma^{(i)}\)</span> for <span class="process-math">\(\sigma(z^{(i)})\text{.}\)</span>
+<div class="para">To find it’s extremum point in the plane of parameters <span class="process-math">\((w_0, w_1 )\text{,}\)</span> in principle, we just need to solve the following for <span class="process-math">\(w_0\)</span> and <span class="process-math">\(w_1\text{.}\)</span> For simpler notation, let’s write <span class="process-math">\(\sigma^{(i)}\)</span> for <span class="process-math">\(\sigma(z^{(i)})\text{.}\)</span>
 </div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-decision-rule-for-scalar-x-for-logistic-regression.html ./knowl/xref/eqn-total-negative-log-likelhood-loss.html" id="subsec-binary-classification-scalar-feature-19-17">
 \begin{align}
-\amp \frac{\partial \mathcal{L}_D}{\partial \beta_0} = - \frac{1}{n} \sum_{i=1}^n\, \left[ 
-\frac{ y^{(i)} } { \sigma^{(i)} } - \frac{ 1 - y^{(i)} }{ 1 - \sigma^{(i)} } \right]\,\frac{\partial \sigma^{(i)}}{\partial z^{(i)}}\,\frac{\partial z^{(i)}}{\partial \beta_0} = 0  \tag{2.2.10}\\
-\amp \frac{\partial \mathcal{L}_D}{\partial \beta_1} = - \frac{1}{n} \sum_{i=1}^n\, \left[ 
-\frac{ y^{(i)} } { \sigma^{(i)} } - \frac{ 1 - y^{(i)} }{ 1 - \sigma^{(i)} } \right]\,\frac{\partial \sigma^{(i)}}{\partial z^{(i)}}\,\frac{\partial z^{(i)}}{\partial \beta_1} = 0 \tag{2.2.11}
+\amp \frac{\partial \mathcal{L}_D}{\partial w_0} = - \frac{1}{n} \sum_{i=1}^n\, \left[ \frac{ y^{(i)} } { \sigma^{(i)} } - \frac{ 1 - y^{(i)} }{ 1 - \sigma^{(i)} } \right]\,\frac{\partial \sigma^{(i)}}{\partial z^{(i)}}\,\frac{\partial z^{(i)}}{\partial w_0} = 0  \tag{2.3.10}\\
+\amp \frac{\partial \mathcal{L}_D}{\partial w_1} = - \frac{1}{n} \sum_{i=1}^n\, \left[ \frac{ y^{(i)} } { \sigma^{(i)} } - \frac{ 1 - y^{(i)} }{ 1 - \sigma^{(i)} } \right]\,\frac{\partial \sigma^{(i)}}{\partial z^{(i)}}\,\frac{\partial z^{(i)}}{\partial w_1} = 0 \tag{2.3.11}
 \end{align}
 </div>
 <div class="para">With</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-decision-rule-for-scalar-x-for-logistic-regression.html ./knowl/xref/eqn-total-negative-log-likelhood-loss.html" id="subsec-binary-classification-scalar-feature-19-18">
 \begin{align*}
-\amp \frac{\partial z^{(i)}}{\partial \beta_0} = \frac{\partial (\beta_0 + \beta_1\,x^{(i)})}{\partial \beta_0} = 1.\\
-\amp \frac{\partial z^{(i)}}{\partial \beta_1} = \frac{\partial (\beta_0 + \beta_1\,x^{(i)})}{\partial \beta_1} = x^{(i)}.
+\amp \frac{\partial z^{(i)}}{\partial w_0} = \frac{\partial (w_0 + w_1\,x^{(i)})}{\partial w_0} = 1.\\
+\amp \frac{\partial z^{(i)}}{\partial w_1} = \frac{\partial (w_0 + w_1\,x^{(i)})}{\partial w_1} = x^{(i)}.
 \end{align*}
 </div>
 <div class="para">Unlike what happened in the case of linear regression, it’s not possible to solve these equations analytically. Among several numerical algorithms, <em class="alert">gradient descent</em> method is the most commonly used method.</div>
 </div></section><section class="subsection" id="subsec-gradient-descent"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.2.3</span><span class="space"> </span><span class="title">Gradient Descent for Logistic Regression</span>
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.3.3</span><span class="space"> </span><span class="title">Gradient Descent for Logistic Regression</span>
 </h3>
-<div class="para" id="subsec-gradient-descent-2">To minimize the cross-entropy loss <span class="process-math">\(\mathcal{L}_D\)</span> defined in <a href="sec-Binary-Classification.html#eqn-LD-for-logistic-regression" class="xref" data-knowl="./knowl/xref/eqn-LD-for-logistic-regression.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.2.9">(2.2.9)</a>, we use the <em class="alert">gradient descent</em> algorithm, as the partial derivatives <a href="sec-Binary-Classification.html#subsec-binary-classification-scalar-feature-19-17" class="xref" data-knowl="./knowl/xref/eqn-partial-L-partial-beta-0.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.2.10">(2.2.10)</a> and <a href="sec-Binary-Classification.html#subsec-binary-classification-scalar-feature-19-17" class="xref" data-knowl="./knowl/xref/eqn-partial-L-partial-beta-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.2.11">(2.2.11)</a> cannot be solved analytically. Gradient descent iteratively updates the parameters <span class="process-math">\(\beta_0\)</span> and <span class="process-math">\(\beta_1\)</span> to reduce <span class="process-math">\(\mathcal{L}_D\)</span> by moving in the direction of the negative gradient. The amount of update to apply in each iteration is controlled by the <dfn class="terminology">learning rate</dfn> parameter <span class="process-math">\(\alpha\text{.}\)</span>
+<div class="para" id="subsec-gradient-descent-2">To minimize the cross-entropy loss <span class="process-math">\(\mathcal{L}_D\)</span> defined in <a href="sec-Binary-Classification.html#eqn-LD-for-logistic-regression" class="xref" data-knowl="./knowl/xref/eqn-LD-for-logistic-regression.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.3.9">(2.3.9)</a>, we use the <em class="alert">gradient descent</em> algorithm, as the partial derivatives <a href="sec-Binary-Classification.html#subsec-binary-classification-scalar-feature-19-17" class="xref" data-knowl="./knowl/xref/eqn-partial-L-partial-w-0.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.3.10">(2.3.10)</a> and <a href="sec-Binary-Classification.html#subsec-binary-classification-scalar-feature-19-17" class="xref" data-knowl="./knowl/xref/eqn-partial-L-partial-w-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.3.11">(2.3.11)</a> cannot be solved analytically. Gradient descent iteratively updates the parameters <span class="process-math">\(w_0\)</span> and <span class="process-math">\(w_1\)</span> to reduce <span class="process-math">\(\mathcal{L}_D\)</span> by moving in the direction of the negative gradient. The amount of update to apply in each iteration is controlled by the <dfn class="terminology">learning rate</dfn> parameter <span class="process-math">\(\alpha\text{.}\)</span>
 </div>
 <div class="para logical" id="subsec-gradient-descent-3">
 <div class="para">The update rule for each parameter is:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\beta_j \gets \beta_j - \alpha \frac{\partial \mathcal{L}_D}{\partial \beta_j}, \quad j \in \{0, 1\},
+w_j \gets w_j - \alpha \frac{\partial \mathcal{L}_D}{\partial w_j}, \quad j \in \{0, 1\},
 \end{equation*}
 </div>
-<div class="para">where <span class="process-math">\(\alpha\)</span> is the learning rate, a positive scalar controlling the step size. Using the sigmoid function’s derivative, <span class="process-math">\(\frac{\partial \sigma^{(i)}}{\partial z^{(i)}} = \sigma^{(i)}(1 - \sigma^{(i)})\text{,}\)</span> where <span class="process-math">\(z^{(i)} = \beta_0 + \beta_1 x^{(i)}\text{,}\)</span> and noting that <span class="process-math">\(\frac{\partial z^{(i)}}{\partial \beta_0} = 1\)</span> and <span class="process-math">\(\frac{\partial z^{(i)}}{\partial \beta_1} = x^{(i)}\text{,}\)</span> the gradients are:</div>
+<div class="para">where <span class="process-math">\(\alpha\)</span> is the learning rate, a positive scalar controlling the step size. Using the sigmoid function’s derivative, <span class="process-math">\(\frac{\partial \sigma^{(i)}}{\partial z^{(i)}} = \sigma^{(i)}(1 - \sigma^{(i)})\text{,}\)</span> where <span class="process-math">\(z^{(i)} = w_0 + w_1 x^{(i)}\text{,}\)</span> and noting that <span class="process-math">\(\frac{\partial z^{(i)}}{\partial w_0} = 1\)</span> and <span class="process-math">\(\frac{\partial z^{(i)}}{\partial w_1} = x^{(i)}\text{,}\)</span> the gradients are:</div>
 <div class="displaymath process-math" id="subsec-gradient-descent-3-7">
 \begin{align*}
-\amp \frac{\partial \mathcal{L}_D}{\partial \beta_0} = \frac{1}{n} \sum_{i=1}^n (\sigma^{(i)} - y^{(i)}), \\
-\amp \frac{\partial \mathcal{L}_D}{\partial \beta_1} = \frac{1}{n} \sum_{i=1}^n (\sigma^{(i)} - y^{(i)}) x^{(i)}, 
+\amp \frac{\partial \mathcal{L}_D}{\partial w_0} = \frac{1}{n} \sum_{i=1}^n (\sigma^{(i)} - y^{(i)}), \\
+\amp \frac{\partial \mathcal{L}_D}{\partial w_1} = \frac{1}{n} \sum_{i=1}^n (\sigma^{(i)} - y^{(i)}) x^{(i)}, 
 \end{align*}
 </div>
-<div class="para">where <span class="process-math">\(\sigma^{(i)} = \sigma(\beta_0 + \beta_1 x^{(i)})\text{.}\)</span>
+<div class="para">where <span class="process-math">\(\sigma^{(i)} = \sigma(w_0 + w_1 x^{(i)})\text{.}\)</span>
 </div>
 </div>
-<div class="para" id="subsec-gradient-descent-4">Starting from an initial guess for <span class="process-math">\((\beta_0, \beta_1)\text{,}\)</span> gradient descent iteratively applies these updates until <span class="process-math">\(\mathcal{L}_D\)</span> converges to a minimum or a maximum number of iterations is reached. The process can be visualized in the <span class="process-math">\((\beta_0, \beta_1)\)</span> plane, where the loss <span class="process-math">\(\mathcal{L}_D\)</span> forms a surface, and each update moves the parameters along the negative gradient toward the minimum. This is illustrated in <a href="sec-Binary-Classification.html#fig-gradient_descent_projected" class="xref" data-knowl="./knowl/xref/fig-gradient_descent_projected.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.2.4">Figure 2.2.4</a>.</div>
+<div class="para" id="subsec-gradient-descent-4">Starting from an initial guess for <span class="process-math">\((w_0, w_1)\text{,}\)</span> gradient descent iteratively applies these updates until <span class="process-math">\(\mathcal{L}_D\)</span> converges to a minimum or a maximum number of iterations is reached. The process can be visualized in the <span class="process-math">\((w_0, w_1)\)</span> plane, where the loss <span class="process-math">\(\mathcal{L}_D\)</span> forms a surface, and each update moves the parameters along the negative gradient toward the minimum. This is illustrated in <a href="sec-Binary-Classification.html#fig-gradient_descent_projected" class="xref" data-knowl="./knowl/xref/fig-gradient_descent_projected.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.3.4">Figure 2.3.4</a>.</div>
 <figure class="figure figure-like" id="fig-gradient_descent_projected"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/supervised-learning-basics/gradient_descent_projected-2.png" class="contained" alt="Gradient descent showing arrows as updates move the point in the parameter space towards the point where minimum of loss occurs."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.4<span class="period">.</span></span><span class="space"> </span>Gradient descent in the <span class="process-math">\((\beta_0, \beta_1)\)</span> plane, showing the loss surface for <span class="process-math">\(\mathcal{L}_D\)</span> with arrows indicating parameter updates toward the minimum of the loss function.</figcaption></figure><div class="para" id="subsec-gradient-descent-6">Following program shows the python code for the simulation that find the optimal values of <span class="process-math">\(\hat{\beta}_0\)</span> and  <span class="process-math">\(\hat{\beta}_1\)</span> by gradient descent method. To produce larger arrow for the figure I used a large <dfn class="terminology">learning rate</dfn>, which is named alpha in the program. For a fast and yet reliable convergence, learning rate has to be chosen carefully. Often, one needs to do experimentation to find an effective learning rate for the problem at han.</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.4<span class="period">.</span></span><span class="space"> </span>Gradient descent in the <span class="process-math">\((w_0, w_1)\)</span> plane, showing the loss surface for <span class="process-math">\(\mathcal{L}_D\)</span> with arrows indicating parameter updates toward the minimum of the loss function.</figcaption></figure><div class="para" id="subsec-gradient-descent-6">Following program shows the python code for the simulation that find the optimal values of <span class="process-math">\(\hat{w}_0\)</span> and  <span class="process-math">\(\hat{w}_1\)</span> by gradient descent method. To produce larger arrow for the figure I used a large <dfn class="terminology">learning rate</dfn>, which is named alpha in the program. For a fast and yet reliable convergence, learning rate has to be chosen carefully. Often, one needs to do experimentation to find an effective learning rate for the problem at han.</div>
 <div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-py">import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
-
 # Generate synthetic data
 np.random.seed(42)
 n = 50
 X = np.concatenate([np.random.normal(0, 1, n), np.random.normal(2, 1, n)])
 Y = np.concatenate([np.zeros(n), np.ones(n)])
-
 # Sigmoid function
 def sigmoid(z):
     return 1 / (1 + np.exp(-z))
-
 # Compute loss
-def compute_loss(beta0, beta1, X, Y):
-    z = beta0 + beta1 * X
+def compute_loss(w0, w1, X, Y):
+    z = w0 + w1 * X
     sigma = sigmoid(z)
     loss =  -(1/len(X)) * np.sum(Y * np.log(sigma + 1e-10) + 
     (1 - Y) * np.log(1 - sigma + 1e-10))#small values to prevent log of zero.
     return loss
-
 # Compute gradients
-def compute_gradients(beta0, beta1, X, Y):
-    z = beta0 + beta1 * X
+def compute_gradients(w0, w1, X, Y):
+    z = w0 + w1 * X
     sigma = sigmoid(z)
-    grad_beta0 = (1/len(X)) * np.sum(sigma - Y)
-    grad_beta1 = (1/len(X)) * np.sum((sigma - Y) * X)
-    return grad_beta0, grad_beta1
-
+    grad_w0 = (1/len(X)) * np.sum(sigma - Y)
+    grad_w1 = (1/len(X)) * np.sum((sigma - Y) * X)
+    return grad_w0, grad_w1
 # Gradient descent
 alpha = 1.0
 num_iterations = 10
-beta0, beta1 = 2.0, -3.0  # Initial guess
-path = [(beta0, beta1)]
-
+w0, w1 = 2.0, -3.0  # Initial guess
+path = [(w0, w1)]
 for _ in range(num_iterations):
-    grad_beta0, grad_beta1 = compute_gradients(beta0, beta1, X, Y)
-    beta0 -= alpha * grad_beta0
-    beta1 -= alpha * grad_beta1
-    path.append((beta0, beta1))
-
+    grad_w0, grad_w1 = compute_gradients(w0, w1, X, Y)
+    w0 -= alpha * grad_w0
+    w1 -= alpha * grad_w1
+    path.append((w0, w1))
 # Create mesh for loss surface
-beta0_range = np.linspace(-3, 3, 50)
-beta1_range = np.linspace(-3, 3, 50)
-B0, B1 = np.meshgrid(beta0_range, beta1_range)
-Loss = np.array([[compute_loss(b0, b1, X, Y) for b0 in beta0_range]\\
- for b1 in beta1_range])
-
+w0_range = np.linspace(-3, 3, 50)
+w1_range = np.linspace(-3, 3, 50)
+B0, B1 = np.meshgrid(w0_range, w1_range)
+Loss = np.array([[compute_loss(b0, b1, X, Y) for b0 in w0_range]\\
+ for b1 in w1_range])
 # Plot
 fig = plt.figure(figsize=(10, 8))
 ax = fig.add_subplot(111, projection='3d')
@@ -715,8 +677,7 @@ for i in range(len(path)-1):
             path[i+1, 0] - path[i, 0], path[i+1, 1] - path[i, 1], 
             loss_path[i+1] - loss_path[i],
             color='red', arrow_length_ratio=0.1)
-
-# Add projection onto the (beta_0, beta_1) plane
+# Add projection onto the (w_0, w_1) plane
 z_min = np.min(Loss) - 0.05  # Slightly below min for visibility
 ax.plot(path[:, 0], path[:, 1], z_min * np.ones_like(path[:, 0]), 
         'b--', label='Projected Path')
@@ -724,14 +685,12 @@ for i in range(len(path)-1):
     ax.quiver(path[i, 0], path[i, 1], z_min,
             path[i+1, 0] - path[i, 0], path[i+1, 1] - path[i, 1], 0,
             color='blue', arrow_length_ratio=0.5)
-
 # Add vertical lines from path to projection
 for i in range(len(path)):
     ax.plot([path[i, 0], path[i, 0]], [path[i, 1], path[i, 1]], 
             [loss_path[i], z_min], 'k--', alpha=0.5)
-
-ax.set_xlabel(r'$\beta_0$')
-ax.set_ylabel(r'$\beta_1$')
+ax.set_xlabel(r'$w_0$')
+ax.set_ylabel(r'$w_1$')
 ax.set_zlabel(r'$\mathcal{L}_D$')
 ax.set_title('Gradient Descent on Loss Surface with Projected Path')
 ax.legend()
@@ -739,12 +698,11 @@ plt.tight_layout()
 plt.savefig('gradient_descent_projected.png', dpi=300)
 plt.show()
 </code></pre></div>
-<div class="para" id="subsec-gradient-descent-8">A logistic regression solution of a binary classificaiton problem is shown in <a href="sec-Binary-Classification.html#fig-gradient_descent_with_overlap" class="xref" data-knowl="./knowl/xref/fig-gradient_descent_with_overlap.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.2.5">Figure 2.2.5</a>. The top plot shows how the parameters and the resulting decision boundary in the <span class="process-math">\(X\)</span>-space changes as we train the parameters. With sufficcient iterations of the algorithm, the values stabilize, corresponding to the minimum of the error discovered by the gradient descenct method. Since the data for the two classes have considerable overlap, no value of <span class="process-math">\(X\)</span> can separate the two classes.</div>
+<div class="para" id="subsec-gradient-descent-8">A logistic regression solution of a binary classificaiton problem is shown in <a href="sec-Binary-Classification.html#fig-gradient_descent_with_overlap" class="xref" data-knowl="./knowl/xref/fig-gradient_descent_with_overlap.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.3.5">Figure 2.3.5</a>. The top plot shows how the parameters and the resulting decision boundary in the <span class="process-math">\(X\)</span>-space changes as we train the parameters. With sufficcient iterations of the algorithm, the values stabilize, corresponding to the minimum of the error discovered by the gradient descenct method. Since the data for the two classes have considerable overlap, no value of <span class="process-math">\(X\)</span> can separate the two classes.</div>
 <figure class="figure figure-like" id="fig-gradient_descent_with_overlap"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/supervised-learning-basics/gradient_descent_with_overlap.png" class="contained" alt="The evolution of the parmeters and the decision boundary with iterations of the logistic regression algorithm. The parameters change initially, but they stabilize to their asymptotic values."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.5<span class="period">.</span></span><span class="space"> </span>The evolution of the parmeters and the decision boundary with iterations of the logistic regression algorithm.</figcaption></figure><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-py">import numpy as np
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.5<span class="period">.</span></span><span class="space"> </span>The evolution of the parmeters and the decision boundary with iterations of the logistic regression algorithm.</figcaption></figure><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-py">import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
-
 # Generate the data
 np.random.seed(42)
 n = 50
@@ -752,68 +710,58 @@ X0 = np.random.normal(0, 1, n)
 X1 = np.random.normal(2, 1, n)
 X = np.concatenate([X0, X1])
 Y = np.concatenate([np.zeros(n), np.ones(n)])
-
 # Define the sigmoid function
 def sigmoid(z):
     return 1 / (1 + np.exp(-z))
-
 # Compute gradients
-def compute_gradients(beta0, beta1, X, Y):
-    z = beta0 + beta1 * X
+def compute_gradients(w0, w1, X, Y):
+    z = w0 + w1 * X
     sigma = sigmoid(z)
-    grad_beta0 = (1 / len(X)) * np.sum(sigma - Y)
-    grad_beta1 = (1 / len(X)) * np.sum((sigma - Y) * X)
-    return grad_beta0, grad_beta1
-
+    grad_w0 = (1 / len(X)) * np.sum(sigma - Y)
+    grad_w1 = (1 / len(X)) * np.sum((sigma - Y) * X)
+    return grad_w0, grad_w1
 # Gradient descent parameters
 alpha = 1.0  # Learning rate
 num_iterations = 200  # Number of iterations
-beta0 = 0.0  # Initial beta_0
-beta1 = 0.0  # Initial beta_1
-
+w0 = 0.0  # Initial w_0
+w1 = 0.0  # Initial w_1
 # Lists to store decision boundaries and parameters
 boundaries = []
-beta0_vals = []
-beta1_vals = []
+w0_vals = []
+w1_vals = []
 iterations_list = []
-
 # Run gradient descent
 for iteration in range(1, num_iterations + 1):
-    grad_beta0, grad_beta1 = compute_gradients(beta0, beta1, X, Y)
-    beta0 -= alpha * grad_beta0
-    beta1 -= alpha * grad_beta1
-
-    # Compute decision boundary if beta1 is not zero
-    if abs(beta1) &gt; 1e-10:
-        boundary = -beta0 / beta1
-        beta0_vals.append(beta0)
-        beta1_vals.append(beta1)
+    grad_w0, grad_w1 = compute_gradients(w0, w1, X, Y)
+    w0 -= alpha * grad_w0
+    w1 -= alpha * grad_w1
+    # Compute decision boundary if w1 is not zero
+    if abs(w1) \gt 1e-10:
+        boundary = -w0 / w1
+        w0_vals.append(w0)
+        w1_vals.append(w1)
         boundaries.append(boundary)
         iterations_list.append(iteration)
-
 # Print final values
-print(f"Final beta_0: {beta0:.2f}")
-print(f"Final beta_1: {beta1:.2f}")
+print(f"Final w_0: {w0:.2f}")
+print(f"Final w_1: {w1:.2f}")
 print(f"Final decision boundary: {boundaries[-1]:.2f}")
-
 # Create figure with GridSpec for different subplot sizes
 fig = plt.figure(figsize=(10, 12))  # Overall figure size
 gs = gridspec.GridSpec(2, 1, height_ratios=[5, 1])  # Top plot taller, bottom plot shorter
-
 # Top subplot: Evolution of decision boundary and parameters
 ax1 = fig.add_subplot(gs[0])
 ax1.plot(iterations_list, boundaries, marker='o', markersize=2, 
 linestyle='-', color='blue', label=r'$x_{\text{decision}}$')
-ax1.plot(iterations_list, beta0_vals, marker='x', markersize=2, 
-linestyle='-', color='red', label=r'$\beta_0$')
-ax1.plot(iterations_list, beta1_vals, marker='s', markersize=2, 
-linestyle='-', color='green', label=r'$\beta_1$')
+ax1.plot(iterations_list, w0_vals, marker='x', markersize=2, 
+linestyle='-', color='red', label=r'$w_0$')
+ax1.plot(iterations_list, w1_vals, marker='s', markersize=2, 
+linestyle='-', color='green', label=r'$w_1$')
 ax1.set_xlabel('Iteration')
-ax1.set_ylabel(r'Decision Boundary $x$, $\beta_0$, $\beta_1$')
+ax1.set_ylabel(r'Decision Boundary $x$, $w_0$, $w_1$')
 ax1.set_title('Evolution of Decision Boundary and Parameters During Gradient Descent')
 ax1.grid(True)
 ax1.legend()
-
 # Bottom subplot: 1D data with decision boundary
 ax2 = fig.add_subplot(gs[1])
 ax2.scatter(X[Y==0], np.full(n, 0.1), marker='o', facecolors='none', 
@@ -827,13 +775,12 @@ ax2.set_yticklabels(['Class 1', 'Class 0'])
 ax2.set_title('1D Binary Classification Example with Overlap (Displaced Points)')
 ax2.grid(True)
 ax2.legend()
-
 # Adjust layout to prevent overlap
 plt.tight_layout()
 plt.show()
 </code></pre></div></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="sec-Statistical-Decision-Theory.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-Multi-Feature-Problems.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec-Regression.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-Multi-Feature-Problems.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

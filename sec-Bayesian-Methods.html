@@ -12,7 +12,7 @@
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
-<meta property="book:title" content="ML Notes">
+<meta property="book:title" content="">
 <script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
@@ -133,6 +133,9 @@ window.MathJax = {
 #sec-Hypothesis-Tests-2-6-1 { counter-set: sec-Hypothesis-Tests-2-6-1 0; }
 #sec-Hypothesis-Tests-2-6-1 > li::marker { content: ""counter(sec-Hypothesis-Tests-2-6-1,decimal)"."; }
 #sec-Hypothesis-Tests-2-6-1 > li { counter-increment: sec-Hypothesis-Tests-2-6-1; }
+#sec-Regression-2-2-1 { counter-set: sec-Regression-2-2-1 0; }
+#sec-Regression-2-2-1 > li::marker { content: ""counter(sec-Regression-2-2-1,decimal)"."; }
+#sec-Regression-2-2-1 > li { counter-increment: sec-Regression-2-2-1; }
 #subsec-derivative-of-multiclass-loss-function-3-2-2 { counter-set: subsec-derivative-of-multiclass-loss-function-3-2-2 0; }
 #subsec-derivative-of-multiclass-loss-function-3-2-2 > li::marker { content: ""counter(subsec-derivative-of-multiclass-loss-function-3-2-2,decimal)"."; }
 #subsec-derivative-of-multiclass-loss-function-3-2-2 > li { counter-increment: subsec-derivative-of-multiclass-loss-function-3-2-2; }
@@ -147,7 +150,7 @@ window.MathJax = {
 <body id="ML-Notes" class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
 <a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
-<h1 class="heading"><a href="my-ML-Notes.html"><span class="title">ML Notes:</span> <span class="subtitle">Theoretical and Practical ML Concepts</span></a></h1>
+<h1 class="heading"><a href="my-ML-Notes.html"><span class="title"></span></a></h1>
 <p class="byline"></p>
 </div>
 </div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
@@ -341,77 +344,80 @@ window.MathJax = {
 <ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-Statistical-Decision-Theory.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Statistical Decision Theory</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Statistical-Decision-Theory.html#subsec-KNN-method" class="internal"><span class="codenumber">2.1.1</span> <span class="title">The kNN Method</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Regression.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Regression</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Regression.html#subsec-The-Simple-Linear-Regresson" class="internal"><span class="codenumber">2.2.1</span> <span class="title">The Simple Linear Regresson</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Binary-Classification.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Binary Classification</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Statistical-Decision-Theory.html#subsec-Squared-Error-Loss-Function" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Regression</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Statistical-Decision-Theory.html#subsec-KNN-method" class="internal"><span class="codenumber">2.1.2</span> <span class="title">The kNN Method</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Statistical-Decision-Theory.html#subsec-The-Simple-Linear-Regresson" class="internal"><span class="codenumber">2.1.3</span> <span class="title">The Simple Linear Regresson</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Binary-Classification.html#subsecThe-Classification-Variable" class="internal"><span class="codenumber">2.3.1</span> <span class="title">The Classification Variable <span class="process-math">\(Y\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Binary-Classification.html#subsec-binary-classification-scalar-feature" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Binary Classification with Scalar <span class="process-math">\(X\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Binary-Classification.html#subsec-gradient-descent" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Gradient Descent for Logistic Regression</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-Binary-Classification.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Binary Classification</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Binary-Classification.html#subsecThe-Classification-Variable" class="internal"><span class="codenumber">2.2.1</span> <span class="title">The Classification Variable <span class="process-math">\(Y\)</span></span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Binary-Classification.html#subsec-binary-classification-scalar-feature" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Binary Classification with Scalar <span class="process-math">\(X\)</span></span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Binary-Classification.html#subsec-gradient-descent" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Gradient Descent for Logistic Regression</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Multi-Feature Problems</span></a></div>
+<div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Multi-Feature Problems</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Linear-Regression" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Multi-Feature Linear Regression</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Linear-Regression-3" class="internal"><span class="codenumber">2.3.1.1</span> <span class="title">Taking Derivatives With Respect To A Vector</span></a></div></li></ul>
+<div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Linear-Regression" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Multi-Feature Linear Regression</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Linear-Regression-3" class="internal"><span class="codenumber">2.4.1.1</span> <span class="title">Taking Derivatives With Respect To A Vector</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Logistic-Regression" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Multi-Feature Logistic Regression</span></a></div>
+<div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Logistic-Regression" class="internal"><span class="codenumber">2.4.2</span> <span class="title">Multi-Feature Logistic Regression</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Logistic-Regression-3" class="internal"><span class="codenumber">2.3.2.1</span> <span class="title">Derivatives of the Loss Function</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsubsec-logistic-regression-multivariate" class="internal"><span class="codenumber">2.3.2.2</span> <span class="title">A Python Program for the Logistic Regression</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Logistic-Regression-3" class="internal"><span class="codenumber">2.4.2.1</span> <span class="title">Derivatives of the Loss Function</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsubsec-logistic-regression-multivariate" class="internal"><span class="codenumber">2.4.2.2</span> <span class="title">A Python Program for the Logistic Regression</span></a></div></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-MultiClass-Classification.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Multi-Class Classification</span></a></div>
+<div class="toc-title-box"><a href="sec-MultiClass-Classification.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Multi-Class Classification</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-MultiClass-Classification.html#subsec-Loss-Function-of-Multi-class-Classification" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Loss Function of Multiclass Classification</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-MultiClass-Classification.html#subsec-derivative-of-multiclass-loss-function" class="internal"><span class="codenumber">2.4.2</span> <span class="title">Derivative of Multiclass Loss Function</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-MultiClass-Classification.html#subsec-Model-Evaluations" class="internal"><span class="codenumber">2.4.3</span> <span class="title">Model Evaluations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-MultiClass-Classification.html#subsec-Loss-Function-of-Multi-class-Classification" class="internal"><span class="codenumber">2.5.1</span> <span class="title">Loss Function of Multiclass Classification</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-MultiClass-Classification.html#subsec-derivative-of-multiclass-loss-function" class="internal"><span class="codenumber">2.5.2</span> <span class="title">Derivative of Multiclass Loss Function</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-Evaluating-Predictions.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Evaluating Predictions</span></a></div>
+<div class="toc-title-box"><a href="sec-Evaluating-Predictions.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Evaluating Predictions</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsec-Evaluating-Regression-Tasks" class="internal"><span class="codenumber">2.5.1</span> <span class="title">Evaluating Regression Tasks</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsec-Evaluating-Regression-Tasks" class="internal"><span class="codenumber">2.6.1</span> <span class="title">Evaluating Regression Tasks</span></a></div></li>
 <li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsec-Evaluating-Binary-Classification" class="internal"><span class="codenumber">2.5.2</span> <span class="title">Evaluating Binary Classification</span></a></div>
+<div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsec-Evaluating-Binary-Classification" class="internal"><span class="codenumber">2.6.2</span> <span class="title">Evaluating Binary Classification</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsubsec-Metrics-of-Binary-Classification" class="internal"><span class="codenumber">2.5.2.1</span> <span class="title">Metrics of BinaryClassification</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsubsec-ROC-PR-Curves-AUC-2" class="internal"><span class="codenumber">2.5.2.2</span> <span class="title">Evaluating Model Performance Across Thresholds</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsubsec-Metrics-of-Binary-Classification" class="internal"><span class="codenumber">2.6.2.1</span> <span class="title">Metrics of BinaryClassification</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsubsec-ROC-PR-Curves-AUC-2" class="internal"><span class="codenumber">2.6.2.2</span> <span class="title">Evaluating Model Performance Across Thresholds</span></a></div></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-section active">
-<div class="toc-title-box"><a href="sec-Bayesian-Methods.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Bayesian Methods</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Bayesian-Methods.html#subsec-Naive-Bayes" class="internal"><span class="codenumber">2.6.1</span> <span class="title">Naive Bayes Algorithm</span></a></div></li></ul>
+<div class="toc-title-box"><a href="sec-Bayesian-Methods.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Bayesian Methods</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Bayesian-Methods.html#subsec-Naive-Bayes" class="internal"><span class="codenumber">2.7.1</span> <span class="title">Naive Bayes Algorithm</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-Model-Selection.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Model Selection</span></a></div>
+<div class="toc-title-box"><a href="sec-Model-Selection.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Model Selection</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Validation-Data" class="internal"><span class="codenumber">2.7.1</span> <span class="title">Validation Data</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Out-of-Sample-Error" class="internal"><span class="codenumber">2.7.2</span> <span class="title">Generalization Error</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Sources-of-Generalization-Error" class="internal"><span class="codenumber">2.7.3</span> <span class="title">Bias and Variance of Model in Generalization Error</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Bias-Variance-in-Practice" class="internal"><span class="codenumber">2.7.4</span> <span class="title">Bias-Variance Tradeoff in Practice</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-K-fold-cross-validation" class="internal"><span class="codenumber">2.7.5</span> <span class="title">K-fold Cross Validation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Validation-Data" class="internal"><span class="codenumber">2.8.1</span> <span class="title">Validation Data</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Out-of-Sample-Error" class="internal"><span class="codenumber">2.8.2</span> <span class="title">Generalization Error</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Sources-of-Generalization-Error" class="internal"><span class="codenumber">2.8.3</span> <span class="title">Bias and Variance of Model in Generalization Error</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Bias-Variance-in-Practice" class="internal"><span class="codenumber">2.8.4</span> <span class="title">Bias-Variance Tradeoff in Practice</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-K-fold-cross-validation" class="internal"><span class="codenumber">2.8.5</span> <span class="title">K-fold Cross Validation</span></a></div></li>
 </ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Multivariate-Regression-Project.html" class="internal"><span class="codenumber">2.9</span> <span class="title">A Multivariate Regression Project</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Multivariate-Regression-Project.html#subsec-" class="internal"><span class="codenumber">2.9.1</span> <span class="title"></span></a></div></li></ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-Bayesian-Methods"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">2.6</span><span class="space"> </span><span class="title">Bayesian Methods</span>
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">2.7</span><span class="space"> </span><span class="title">Bayesian Methods</span>
 </h2>
 <section class="introduction" id="sec-Bayesian-Methods-2"><div class="para logical" id="sec-Bayesian-Methods-2-1">
 <div class="para">In supervised learning, we often model the conditional probability <span class="process-math">\(P(Y \mid X)\text{.}\)</span> This naturally appears in Bayes’s theorem as the “posterior probability”. Recall the identity:</div>
@@ -477,7 +483,7 @@ P(Z) = \int\, P(Z\mid \theta) P(\theta)\,d\theta.
 </div>
 <div class="para">Now, each datapoint can be used to update the posterior. We do not go over this approach further here and will return at this issue later.</div>
 </div> <div class="para" id="sec-Bayesian-Methods-2-5">In this section, we will next discuss a very commonly used approximate method known as the Naive Bayes method.</div></section><section class="subsection" id="subsec-Naive-Bayes"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.6.1</span><span class="space"> </span><span class="title">Naive Bayes Algorithm</span>
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.7.1</span><span class="space"> </span><span class="title">Naive Bayes Algorithm</span>
 </h3>
 <div class="para logical" id="subsec-Naive-Bayes-2">
 <div class="para">The <dfn class="terminology">Naive Bayes</dfn> algorithm applies Bayes’ theorem under a simplifying assumption: the features of <span class="process-math">\(X = (X_1, X_2, \ldots, X_r)\)</span> are conditionally independent given the class label <span class="process-math">\(Y\text{.}\)</span> Formally,</div>
@@ -503,7 +509,7 @@ y_\text{pred} = \arg\max_y P(Y=y) \prod_{k=1}^{r} P(X_k \mid Y=y).
 </div>
 </div>
 <article class="example example-like" id="subsec-Naive-Bayes-4"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.6.1</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.7.1</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="subsec-Naive-Bayes-4-1">
 <div class="para">Suppose we want to classify whether an email is “spam” or “ham” based on two binary features: <span class="process-math">\(X_1 =\)</span> “contains the word ‘free’” and <span class="process-math">\(X_2 =\)</span> “contains the word ‘money’.” From training data we estimate:</div>
@@ -527,7 +533,7 @@ y_\text{pred} = \arg\max_y P(Y=y) \prod_{k=1}^{r} P(X_k \mid Y=y).
 </div>
 <div class="para">Since <span class="process-math">\(0.168 &gt; 0.003\text{,}\)</span> the classifier predicts “spam”.</div>
 </div></article><article class="example example-like" id="subsec-Naive-Bayes-5"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.6.2</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.7.2</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="subsec-Naive-Bayes-5-1">
 <div class="para">Suppose we want to classify whether an email is “spam” or “ham” based on two binary features: <span class="process-math">\(X_1 =\)</span> “contains the word ’deal’” and <span class="process-math">\(X_2 =\)</span> “contains the word ’win’.” From training data we estimate:</div>
@@ -572,7 +578,7 @@ y_\text{pred} = \arg\max_y P(Y=y) \prod_{k=1}^{r} P(X_k \mid Y=y).
 </div></li>
 </ul>
 </div></article><article class="example example-like" id="subsec-Naive-Bayes-6"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.6.3</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.7.3</span><span class="period">.</span>
 </h4>
 <div class="para" id="subsec-Naive-Bayes-6-1">In this example, I include a complete Python program, generated with the assistance of OpenAI’s ChatGPT (GPT-5), September 2025, that uses the Naive Bayes classifier, called MultinomialNB(), from scikit-learn. I have tested it on Google Colab and locally on my Mac and it works correctly. Scikit-learn library saves a lot of hassle of programming from scratch, which we have practiced on simpler problems before to get a sense of the math steps. Later on, we will use other libraries such as TensorFlow and PyTorch.</div> <div class="para logical" id="subsec-Naive-Bayes-6-2">
 <div class="para">Notice the preprocessing step of the data handling. A lot of people get stuck at that step since it is highly problem dependent. Now a days, you can just ask one of the AI models to help you out on that step and more likely than not you will get a reasonably good way to handle your data as long as you give it a complete prompt on what you have and what you want it to be.</div>
@@ -584,7 +590,7 @@ y_\text{pred} = \arg\max_y P(Y=y) \prod_{k=1}^{r} P(X_k \mid Y=y).
 <li id="subsec-Naive-Bayes-6-2-1-5"><div class="para" id="subsec-Naive-Bayes-6-2-1-5-1">Prints precision, recall, F1-score.</div></li>
 </ul>
 </div> <div class="para" id="subsec-Naive-Bayes-6-3">When you run the program, you would get outputs like the following.</div> <div class="para" id="subsec-Naive-Bayes-6-4">Vocabulary size: 7441 Accuracy: 0.9883408071748879</div> <div class="para" id="subsec-Naive-Bayes-6-5">Confusion Matrix:</div> <figure class="figure figure-like" id="fig-naive-bayes-sms-confusion-matrix"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/./images/supervised-learning-basics/naive-bayes-sms-confusion-matrix.png" class="contained" alt="The Confusion Matrix."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.4<span class="period">.</span></span><span class="space"> </span>The confuction matrix. Note: here the actuals are left to right and predicted are from top to bottom.</figcaption></figure> <div class="para" id="subsec-Naive-Bayes-6-7">Classification Report:</div> <div class="tabular-box natural-width"><table class="tabular">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.7.4<span class="period">.</span></span><span class="space"> </span>The confuction matrix. Note: here the actuals are left to right and predicted are from top to bottom.</figcaption></figure> <div class="para" id="subsec-Naive-Bayes-6-7">Classification Report:</div> <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines"></td>
 <td class="l m b0 r0 l0 t0 lines">precision</td>

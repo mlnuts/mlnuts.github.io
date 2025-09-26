@@ -12,7 +12,7 @@
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
-<meta property="book:title" content="ML Notes">
+<meta property="book:title" content="">
 <script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
@@ -133,6 +133,9 @@ window.MathJax = {
 #sec-Hypothesis-Tests-2-6-1 { counter-set: sec-Hypothesis-Tests-2-6-1 0; }
 #sec-Hypothesis-Tests-2-6-1 > li::marker { content: ""counter(sec-Hypothesis-Tests-2-6-1,decimal)"."; }
 #sec-Hypothesis-Tests-2-6-1 > li { counter-increment: sec-Hypothesis-Tests-2-6-1; }
+#sec-Regression-2-2-1 { counter-set: sec-Regression-2-2-1 0; }
+#sec-Regression-2-2-1 > li::marker { content: ""counter(sec-Regression-2-2-1,decimal)"."; }
+#sec-Regression-2-2-1 > li { counter-increment: sec-Regression-2-2-1; }
 #subsec-derivative-of-multiclass-loss-function-3-2-2 { counter-set: subsec-derivative-of-multiclass-loss-function-3-2-2 0; }
 #subsec-derivative-of-multiclass-loss-function-3-2-2 > li::marker { content: ""counter(subsec-derivative-of-multiclass-loss-function-3-2-2,decimal)"."; }
 #subsec-derivative-of-multiclass-loss-function-3-2-2 > li { counter-increment: subsec-derivative-of-multiclass-loss-function-3-2-2; }
@@ -147,7 +150,7 @@ window.MathJax = {
 <body id="ML-Notes" class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
 <a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
-<h1 class="heading"><a href="my-ML-Notes.html"><span class="title">ML Notes:</span> <span class="subtitle">Theoretical and Practical ML Concepts</span></a></h1>
+<h1 class="heading"><a href="my-ML-Notes.html"><span class="title"></span></a></h1>
 <p class="byline"></p>
 </div>
 </div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
@@ -341,79 +344,82 @@ window.MathJax = {
 <ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-Statistical-Decision-Theory.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Statistical Decision Theory</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Statistical-Decision-Theory.html#subsec-Squared-Error-Loss-Function" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Regression</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Statistical-Decision-Theory.html#subsec-KNN-method" class="internal"><span class="codenumber">2.1.2</span> <span class="title">The kNN Method</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Statistical-Decision-Theory.html#subsec-The-Simple-Linear-Regresson" class="internal"><span class="codenumber">2.1.3</span> <span class="title">The Simple Linear Regresson</span></a></div></li>
-</ul>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Statistical-Decision-Theory.html#subsec-KNN-method" class="internal"><span class="codenumber">2.1.1</span> <span class="title">The kNN Method</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-Binary-Classification.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Binary Classification</span></a></div>
+<div class="toc-title-box"><a href="sec-Regression.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Regression</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Regression.html#subsec-The-Simple-Linear-Regresson" class="internal"><span class="codenumber">2.2.1</span> <span class="title">The Simple Linear Regresson</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Binary-Classification.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Binary Classification</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Binary-Classification.html#subsecThe-Classification-Variable" class="internal"><span class="codenumber">2.2.1</span> <span class="title">The Classification Variable <span class="process-math">\(Y\)</span></span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Binary-Classification.html#subsec-binary-classification-scalar-feature" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Binary Classification with Scalar <span class="process-math">\(X\)</span></span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Binary-Classification.html#subsec-gradient-descent" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Gradient Descent for Logistic Regression</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Binary-Classification.html#subsecThe-Classification-Variable" class="internal"><span class="codenumber">2.3.1</span> <span class="title">The Classification Variable <span class="process-math">\(Y\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Binary-Classification.html#subsec-binary-classification-scalar-feature" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Binary Classification with Scalar <span class="process-math">\(X\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Binary-Classification.html#subsec-gradient-descent" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Gradient Descent for Logistic Regression</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section active">
-<div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Multi-Feature Problems</span></a></div>
+<div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Multi-Feature Problems</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Linear-Regression" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Multi-Feature Linear Regression</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Linear-Regression-3" class="internal"><span class="codenumber">2.3.1.1</span> <span class="title">Taking Derivatives With Respect To A Vector</span></a></div></li></ul>
+<div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Linear-Regression" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Multi-Feature Linear Regression</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Linear-Regression-3" class="internal"><span class="codenumber">2.4.1.1</span> <span class="title">Taking Derivatives With Respect To A Vector</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Logistic-Regression" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Multi-Feature Logistic Regression</span></a></div>
+<div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Logistic-Regression" class="internal"><span class="codenumber">2.4.2</span> <span class="title">Multi-Feature Logistic Regression</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Logistic-Regression-3" class="internal"><span class="codenumber">2.3.2.1</span> <span class="title">Derivatives of the Loss Function</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsubsec-logistic-regression-multivariate" class="internal"><span class="codenumber">2.3.2.2</span> <span class="title">A Python Program for the Logistic Regression</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Logistic-Regression-3" class="internal"><span class="codenumber">2.4.2.1</span> <span class="title">Derivatives of the Loss Function</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsubsec-logistic-regression-multivariate" class="internal"><span class="codenumber">2.4.2.2</span> <span class="title">A Python Program for the Logistic Regression</span></a></div></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-MultiClass-Classification.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Multi-Class Classification</span></a></div>
+<div class="toc-title-box"><a href="sec-MultiClass-Classification.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Multi-Class Classification</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-MultiClass-Classification.html#subsec-Loss-Function-of-Multi-class-Classification" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Loss Function of Multiclass Classification</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-MultiClass-Classification.html#subsec-derivative-of-multiclass-loss-function" class="internal"><span class="codenumber">2.4.2</span> <span class="title">Derivative of Multiclass Loss Function</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-MultiClass-Classification.html#subsec-Model-Evaluations" class="internal"><span class="codenumber">2.4.3</span> <span class="title">Model Evaluations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-MultiClass-Classification.html#subsec-Loss-Function-of-Multi-class-Classification" class="internal"><span class="codenumber">2.5.1</span> <span class="title">Loss Function of Multiclass Classification</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-MultiClass-Classification.html#subsec-derivative-of-multiclass-loss-function" class="internal"><span class="codenumber">2.5.2</span> <span class="title">Derivative of Multiclass Loss Function</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-Evaluating-Predictions.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Evaluating Predictions</span></a></div>
+<div class="toc-title-box"><a href="sec-Evaluating-Predictions.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Evaluating Predictions</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsec-Evaluating-Regression-Tasks" class="internal"><span class="codenumber">2.5.1</span> <span class="title">Evaluating Regression Tasks</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsec-Evaluating-Regression-Tasks" class="internal"><span class="codenumber">2.6.1</span> <span class="title">Evaluating Regression Tasks</span></a></div></li>
 <li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsec-Evaluating-Binary-Classification" class="internal"><span class="codenumber">2.5.2</span> <span class="title">Evaluating Binary Classification</span></a></div>
+<div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsec-Evaluating-Binary-Classification" class="internal"><span class="codenumber">2.6.2</span> <span class="title">Evaluating Binary Classification</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsubsec-Metrics-of-Binary-Classification" class="internal"><span class="codenumber">2.5.2.1</span> <span class="title">Metrics of BinaryClassification</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsubsec-ROC-PR-Curves-AUC-2" class="internal"><span class="codenumber">2.5.2.2</span> <span class="title">Evaluating Model Performance Across Thresholds</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsubsec-Metrics-of-Binary-Classification" class="internal"><span class="codenumber">2.6.2.1</span> <span class="title">Metrics of BinaryClassification</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsubsec-ROC-PR-Curves-AUC-2" class="internal"><span class="codenumber">2.6.2.2</span> <span class="title">Evaluating Model Performance Across Thresholds</span></a></div></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-Bayesian-Methods.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Bayesian Methods</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Bayesian-Methods.html#subsec-Naive-Bayes" class="internal"><span class="codenumber">2.6.1</span> <span class="title">Naive Bayes Algorithm</span></a></div></li></ul>
+<div class="toc-title-box"><a href="sec-Bayesian-Methods.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Bayesian Methods</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Bayesian-Methods.html#subsec-Naive-Bayes" class="internal"><span class="codenumber">2.7.1</span> <span class="title">Naive Bayes Algorithm</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-Model-Selection.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Model Selection</span></a></div>
+<div class="toc-title-box"><a href="sec-Model-Selection.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Model Selection</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Validation-Data" class="internal"><span class="codenumber">2.7.1</span> <span class="title">Validation Data</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Out-of-Sample-Error" class="internal"><span class="codenumber">2.7.2</span> <span class="title">Generalization Error</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Sources-of-Generalization-Error" class="internal"><span class="codenumber">2.7.3</span> <span class="title">Bias and Variance of Model in Generalization Error</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Bias-Variance-in-Practice" class="internal"><span class="codenumber">2.7.4</span> <span class="title">Bias-Variance Tradeoff in Practice</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-K-fold-cross-validation" class="internal"><span class="codenumber">2.7.5</span> <span class="title">K-fold Cross Validation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Validation-Data" class="internal"><span class="codenumber">2.8.1</span> <span class="title">Validation Data</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Out-of-Sample-Error" class="internal"><span class="codenumber">2.8.2</span> <span class="title">Generalization Error</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Sources-of-Generalization-Error" class="internal"><span class="codenumber">2.8.3</span> <span class="title">Bias and Variance of Model in Generalization Error</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Bias-Variance-in-Practice" class="internal"><span class="codenumber">2.8.4</span> <span class="title">Bias-Variance Tradeoff in Practice</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-K-fold-cross-validation" class="internal"><span class="codenumber">2.8.5</span> <span class="title">K-fold Cross Validation</span></a></div></li>
 </ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Multivariate-Regression-Project.html" class="internal"><span class="codenumber">2.9</span> <span class="title">A Multivariate Regression Project</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Multivariate-Regression-Project.html#subsec-" class="internal"><span class="codenumber">2.9.1</span> <span class="title"></span></a></div></li></ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-Multi-Feature-Problems"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">2.3</span><span class="space"> </span><span class="title">Multi-Feature Problems</span>
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">2.4</span><span class="space"> </span><span class="title">Multi-Feature Problems</span>
 </h2>
-<section class="introduction" id="sec-Multi-Feature-Problems-2"><div class="para" id="sec-Multi-Feature-Problems-2-1">In supervised learning tasks, our objective is to predict the value of a target variable <span class="process-math">\(Y\text{,}\)</span> given the feature variable <span class="process-math">\(X\text{.}\)</span> Both <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> can be a multivariate variable - for instance, you may want to predict price <span class="process-math">\(Y\)</span> of a house based on it’s size <span class="process-math">\((X_1)\)</span> and neighborhood <span class="process-math">\((X_2)\text{.}\)</span> In this section, while we will keep the target variable a simple scalar, e.g., a rel number or binary <span class="process-math">\(0/1\)</span> or <span class="process-math">\(K\)</span>-categories, we will look at problems that have multiple <em class="alert">independent feature variables</em> in each instance of the data.</div> <div class="para logical" id="sec-Multi-Feature-Problems-2-2">
+<section class="introduction" id="sec-Multi-Feature-Problems-2"><div class="para" id="sec-Multi-Feature-Problems-2-1">In supervised learning tasks, our objective is to predict the value of a target variable <span class="process-math">\(Y\text{,}\)</span> given the feature variable <span class="process-math">\(X\text{.}\)</span> Both <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> can be a multivariate variable - for instance, you may want to predict price <span class="process-math">\(Y\)</span> of a house based on it’s size <span class="process-math">\((X_1)\)</span> and neighborhood <span class="process-math">\((X_2)\text{.}\)</span> In this section, while we will keep the target variable a simple scalar, e.g., a real number or binary <span class="process-math">\(0/1\)</span> or <span class="process-math">\(K\)</span>-categories, we will look at problems that have multiple <em class="alert">independent feature variables</em> in each instance of the data.</div> <div class="para logical" id="sec-Multi-Feature-Problems-2-2">
 <div class="para">Let <span class="process-math">\(X\)</span> consists of <span class="process-math">\(r\)</span> variables,</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -423,12 +429,7 @@ X = (X_1, X_2, \cdots, X_r)
 <div class="para">Usually, a vector notation is used to  organize the variables in a column vector or it’s transposed as a row vector.</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\vec{X} = \begin{bmatrix}
-X_1\\
-X_2\\
-\vdots\\
-X_r
-\end{bmatrix} =  [X_1\ X_2\ \cdots\ X_r]^T 
+\vec{X} = \begin{bmatrix} X_1\\ X_2\\ \vdots\\ X_r \end{bmatrix} =  [X_1\ X_2\ \cdots\ X_r]^T
 \end{equation*}
 </div>
 <div class="para">The datasets for such <span class="process-math">\((X,Y)\)</span> systems can be organized into table, e.g., a Excel sheet or a csv file. They are called <dfn class="terminology">structured data</dfn>.</div>
@@ -436,20 +437,13 @@ X_r
 <div class="para">A dataset <span class="process-math">\(\mathcal{D}\)</span> will consist of <span class="process-math">\(n\)</span> observations on <span class="process-math">\((X,Y)\)</span> and will look the same superficially, but each point will have more details.</div>
 <div class="displaymath process-math" id="eqn-multi-feature-dataset">
 \begin{equation}
-\mathcal{D} = \{
-(x^{(1)}, y^{(1)}), (x^{(2)}, y^{(2)}), \cdots, (x^{(n)}, y^{(n)})
-\}\tag{2.3.1}
+\mathcal{D} = \{ (x^{(1)}, y^{(1)}), (x^{(2)}, y^{(2)}), \cdots, (x^{(n)}, y^{(n)}) \}\tag{2.4.1}
 \end{equation}
 </div>
 <div class="para">with each <span class="process-math">\(x^{(i)}\text{,}\)</span> now having more details.</div>
 <div class="displaymath process-math">
 \begin{equation*}
-x^{(i)} = \begin{bmatrix}
-x_1^{(i)}\\
-x_2^{(i)}\\
-\vdots\\
-x_r^{(i)}
-\end{bmatrix}
+x^{(i)} = \begin{bmatrix} x_1^{(i)}\\ x_2^{(i)}\\ \vdots\\ x_r^{(i)} \end{bmatrix}
 \end{equation*}
 </div>
 </div> <div class="para logical" id="sec-Multi-Feature-Problems-2-4">
@@ -461,232 +455,176 @@ X = (X_{ij},\ i = 1,\cdots, 100,\ j = 1,\cdots, 120  ).
 </div>
 <div class="para">Often, books use a bold face letter <span class="process-math">\(\mathbf{X}\)</span> to represent such variables. We might also do that if we want to emphasize the multidimensionality aspect. Non-table data like these are referred to as <dfn class="terminology">unsrtructured data</dfn>. This is a catch all phrase and includes any <span class="process-math">\((X,Y)\)</span> data that is not organized as a table/sheets.</div>
 </div></section><section class="subsection" id="subsec-Multi-Feature-Linear-Regression"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.3.1</span><span class="space"> </span><span class="title">Multi-Feature Linear Regression</span>
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.4.1</span><span class="space"> </span><span class="title">Multi-Feature Linear Regression</span>
 </h3>
 <section class="introduction" id="subsec-Multi-Feature-Linear-Regression-2"><div class="para logical" id="subsec-Multi-Feature-Linear-Regression-2-1">
 <div class="para">In a linear regression, we model the predictor function by a constant plus a linear function of <span class="process-math">\(X\text{.}\)</span> When <span class="process-math">\(X\)</span> was a scaler we had</div>
 <div class="displaymath process-math">
 \begin{equation*}
-f(X) = \beta_0 + \beta_1\, X.
+f(X) = w_0 + w_1\, X.
 \end{equation*}
 </div>
 <div class="para">Now, we have <span class="process-math">\(X\)</span> that has <span class="process-math">\(r\)</span> components. That means, we will now have one term for each component.</div>
 <div class="displaymath process-math" id="eqn-linear-regression-multi-variate">
 \begin{equation}
-f(X) = \beta_0 + \beta_1\, X_1 + \beta_2\, X_2 + \cdots + \beta_r\, X_r.\tag{2.3.2}
+f(X) = w_0 + w_1\, X_1 + w_2\, X_2 + \cdots + w_r\, X_r.\tag{2.4.2}
 \end{equation}
 </div>
 <div class="para">That will result in the following empirical squared loss from the data.</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\mathcal{L}_D = \frac{1}{n}\,\sum_{i=1}^n\, \left( y^{(i)} - \beta_0 - \beta_1\, x_1^{(i)} - \beta_2\, x_2^{(i)} - \cdots - \beta_r\, x_r^{(i)}  \right)^2
+\mathcal{L}_D = \frac{1}{n}\,\sum_{i=1}^n\, \left( y^{(i)} - w_0 - w_1\, x_1^{(i)} - w_2\, x_2^{(i)} - \cdots - w_r\, x_r^{(i)}  \right)^2
 \end{equation*}
 </div>
-<div class="para">Optimized parameters will minimize this <span class="process-math">\(\mathcal{L}_D\text{.}\)</span> The derivative with respect <span class="process-math">\(\beta_0\)</span> has a different form than the other derivatives. Dropping a common factor <span class="process-math">\(2/n\text{.,}\)</span> the results are:</div>
+<div class="para">Optimized parameters will minimize this <span class="process-math">\(\mathcal{L}_D\text{.}\)</span> The derivative with respect <span class="process-math">\(w_0\)</span> has a different form than the other derivatives. Dropping a common factor <span class="process-math">\(2/n\text{.,}\)</span> the results are:</div>
 <div class="displaymath process-math" id="subsec-Multi-Feature-Linear-Regression-2-1-11">
 \begin{align*}
-\amp \frac{\partial \mathcal{L}_D}{\partial \beta_0} = \sum_{i=1}^n\, \left( \beta_0 + \beta_1\, x_1^{(i)} + \beta_2\, x_2^{(i)} + \cdots + \beta_r\, x_r^{(i)}  - y^{(i)}\right)  = 0 \\
-\amp \frac{\partial \mathcal{L}_D}{\partial \beta_s} = \sum_{i=1}^n\, \left( \beta_0 + \beta_1\, x_1^{(i)} + \beta_2\, x_2^{(i)} + \cdots + \beta_r\, x_r^{(i)}  - y^{(i)}\right)\,x_s^{(i)} = 0,
+\amp \frac{\partial \mathcal{L}_D}{\partial w_0} = \sum_{i=1}^n\, \left( w_0 + w_1\, x_1^{(i)} + w_2\, x_2^{(i)} + \cdots + w_r\, x_r^{(i)}  - y^{(i)}\right)  = 0 \\
+\amp \frac{\partial \mathcal{L}_D}{\partial w_s} = \sum_{i=1}^n\, \left( w_0 + w_1\, x_1^{(i)} + w_2\, x_2^{(i)} + \cdots + w_r\, x_r^{(i)}  - y^{(i)}\right)\,x_s^{(i)} = 0,
 \end{align*}
 </div>
-<div class="para">where the indices <span class="process-math">\(s=1,2,\cdots, r\text{.}\)</span> These equations are linear in the parameters <span class="process-math">\(\beta_0, \beta_1, \cdots, \beta_r\)</span> and can be solved analytically. A matrix language provides a more compact way to see the solution.</div>
+<div class="para">where the indices <span class="process-math">\(s=1,2,\cdots, r\text{.}\)</span> These equations are linear in the parameters <span class="process-math">\(w_0, w_1, \cdots, w_r\)</span> and can be solved analytically. A matrix language provides a more compact way to see the solution.</div>
 </div> <div class="para" id="subsec-Multi-Feature-Linear-Regression-2-2">Although, the matrix-form solution itself is not very illuminating, the language used to build the solution will be used throughout in more afvanced algorithms. Therefore, we take time to present it here.</div> <div class="para logical" id="subsec-Multi-Feature-Linear-Regression-2-3">
-<div class="para">Notice, we have <span class="process-math">\((r+1)\)</span> parameters, <span class="process-math">\(\beta_0, \beta_1, \beta_2, \cdots, \beta_r\text{.}\)</span> We organize them in a parameter vector <span class="process-math">\(\vec{\beta}\text{.}\)</span>
+<div class="para">Notice, we have <span class="process-math">\((r+1)\)</span> parameters, <span class="process-math">\(w_0, w_1, w_2, \cdots, w_r\text{.}\)</span> We organize them in a parameter vector <span class="process-math">\(\vec{w}\text{.}\)</span>
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
-\vec{\beta} = \begin{bmatrix}
-\beta_0\\
-\beta_1\\
-\beta_2\\
-\vdots\\
-\beta_r
-\end{bmatrix}
+\vec{w} = \begin{bmatrix} w_0\\ w_1\\ w_2\\ \vdots\\ w_r \end{bmatrix}
 \end{equation*}
 </div>
 <div class="para">We modify <span class="process-math">\(r\)</span>-dimensional <span class="process-math">\(\vec{X}\)</span> into an <span class="process-math">\((r+1)\)</span>-dimensional vector whose first element is <span class="process-math">\(1\)</span> and rest of them same as those of <span class="process-math">\(\vec{X}\text{.}\)</span>
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
-\vec{X}_\text{new} = \begin{bmatrix}
-1\\
-X_1\\
-X_2\\
-\vdots\\
-X_r
-\end{bmatrix}               
+\vec{X}_\text{new} = \begin{bmatrix} 1\\ X_1\\ X_2\\ \vdots\\ X_r \end{bmatrix}
 \end{equation*}
 </div>
-<div class="para">Then, <span class="process-math">\(f(\vec{X})\)</span> is just a dot product of <span class="process-math">\(\vec\beta\)</span> and <span class="process-math">\(\vec{X}_\text{new}\text{.}\)</span>
+<div class="para">Then, <span class="process-math">\(f(\vec{X})\)</span> is just a dot product of <span class="process-math">\(\vecw\)</span> and <span class="process-math">\(\vec{X}_\text{new}\text{.}\)</span>
 </div>
 <div class="displaymath process-math" id="subsec-Multi-Feature-Linear-Regression-2-3-14">
 \begin{align*}
-f(X) \amp = \vec{\beta} \cdot X_\text{new} = \vec{\beta}^T\,X_\text{new} = \vec{X}_\text{new}^T\,\vec{\beta}\\
-\amp  = \beta_0 + \beta_1\, X_1 + \beta_2\, X_2 + \cdots + \beta_r\, X_r.
+f(X) \amp = \vec{w} \cdot X_\text{new} = \vec{w}^T\,X_\text{new} = \vec{X}_\text{new}^T\,\vec{w}\\
+\amp  = w_0 + w_1\, X_1 + w_2\, X_2 + \cdots + w_r\, X_r.
 \end{align*}
 </div>
 <div class="para">The next level of compacting the notation is to represent the <span class="process-math">\(X\)</span> part of the dataset by rows in a matrix that now includes a <span class="process-math">\(1\)</span> at the first column location. Let’s denote this matrix <span class="process-math">\(\mathbb{X}_D\text{.}\)</span> It is called the <dfn class="terminology">design matrix</dfn> and isusually denoted without the subscript <span class="process-math">\(D\text{,}\)</span> but we want it there to remind us that it is a data-dependent quantity.</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\mathbf{X}_D = \begin{bmatrix}
-1 \amp x_1^{(1)} \amp x_2^{(1)}  \cdots  \amp x_r^{(1)}\\
-1 \amp x_1^{(2)} \amp x_2^{(2)}  \cdots  \amp x_r^{(2)}\\
-\vdots \\
-1 \amp x_1^{(n)} \amp x_2^{(n)}  \cdots  \amp x_r^{(n)}
-\end{bmatrix}
+\mathbf{X}_D = \begin{bmatrix} 1 \amp x_1^{(1)} \amp x_2^{(1)}  \cdots  \amp x_r^{(1)}\\ 1 \amp x_1^{(2)} \amp x_2^{(2)}  \cdots  \amp x_r^{(2)}\\ \vdots \\ 1 \amp x_1^{(n)} \amp x_2^{(n)}  \cdots  \amp x_r^{(n)} \end{bmatrix}
 \end{equation*}
 </div>
 <div class="para">The <span class="process-math">\(Y\)</span>-part of the dataset is now a <span class="process-math">\(n\)</span>-length vector. Let’s represent it by <span class="process-math">\(\mathbf{Y}_D\text{.}\)</span>
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
-\mathbf{Y}_D = \begin{bmatrix}
-y_1^{(1)}\\
-y_1^{(2)}\\
-\vdots \\
-y_1^{(n)}
-\end{bmatrix}
+\mathbf{Y}_D = \begin{bmatrix} y_1^{(1)}\\ y_1^{(2)}\\ \vdots \\ y_1^{(n)} \end{bmatrix}
 \end{equation*}
 </div>
 <div class="para">Using matrix multiplications, the empirical squared loss function now takes this really compact form.</div>
 <div class="displaymath process-math" id="eqn-linear-regression-empirical-loss-function">
 \begin{equation}
-\mathcal{L}_D = \frac{1}{n}\left( \mathbf{Y}_D - \mathbf{X}_D \vec{\beta} \right)^T\,\left( \mathbf{Y}_D - \mathbf{X}_D \vec{\beta} \right)\tag{2.3.3}
+\mathcal{L}_D = \frac{1}{n}\left( \mathbf{Y}_D - \mathbf{X}_D \vec{w} \right)^T\,\left( \mathbf{Y}_D - \mathbf{X}_D \vec{w} \right)\tag{2.4.3}
 \end{equation}
 </div>
-<div class="para">Setting the derivative of this loss function with vector <span class="process-math">\(\vec\beta\)</span> gives the following equation for the optimal parameters <span class="process-math">\(\hat{\vec{\beta}}\text{.}\)</span> For calculations of this step see below.</div>
+<div class="para">Setting the derivative of this loss function with vector <span class="process-math">\(\vecw\)</span> gives the following equation for the optimal parameters <span class="process-math">\(\hat{\vec{w}}\text{.}\)</span> For calculations of this step see below.</div>
 <div class="displaymath process-math" id="eqn-linear-regression-empirical-loss-function-derivative">
 \begin{equation}
-\frac{\partial \mathcal{L}_D}{\partial \vec{\beta}} = 0 \implies \mathbf{X}_D^T\,\mathbf{X}_D\,\hat{\vec{\beta}} - \mathbf{X}_D^T\, \mathbf{Y}_D  = 0.\tag{2.3.4}
+\frac{\partial \mathcal{L}_D}{\partial \vec{w}} = 0 \implies \mathbf{X}_D^T\,\mathbf{X}_D\,\hat{\vec{w}} - \mathbf{X}_D^T\, \mathbf{Y}_D  = 0.\tag{2.4.4}
 \end{equation}
 </div>
 <div class="para">Therefore, if the inverse of square matrix <span class="process-math">\((\mathbf{X}_D^T\,\mathbf{X}_D)\)</span> exists, then,</div>
-<div class="displaymath process-math" id="eqn-linear-regression-solution-betas">
+<div class="displaymath process-math" id="eqn-linear-regression-solution-ws">
 \begin{equation}
-\hat{\vec{\beta}} = \left(\mathbf{X}_D^T\,\mathbf{X}_D \right)^{-1}\,\mathbf{X}_D^T\, \mathbf{Y}_D.\tag{2.3.5}
+\hat{\vec{w}} = \left(\mathbf{X}_D^T\,\mathbf{X}_D \right)^{-1}\,\mathbf{X}_D^T\, \mathbf{Y}_D.\tag{2.4.5}
 \end{equation}
 </div>
-<div class="para">Using the estimated <span class="process-math">\(\hat{\vec{\beta}}\)</span> can be used in <span class="process-math">\(f(\vec X)\)</span> to predict <span class="process-math">\(Y\)</span> for a new <span class="process-math">\(\vec{x}^{(n+1)}\)</span> by</div>
+<div class="para">Using the estimated <span class="process-math">\(\hat{\vec{w}}\)</span> can be used in <span class="process-math">\(f(\vec X)\)</span> to predict <span class="process-math">\(Y\)</span> for a new <span class="process-math">\(\vec{x}^{(n+1)}\)</span> by</div>
 <div class="displaymath process-math" id="eqn-linear-regression-prediction-y-nplus1">
 \begin{equation}
-y^{(n+1)} = \vec x^{(n+1)}_\text{new} \cdot \hat{\vec{\beta}},\tag{2.3.6}
+y^{(n+1)} = \vec x^{(n+1)}_\text{new} \cdot \hat{\vec{w}},\tag{2.4.6}
 \end{equation}
 </div>
 <div class="para">where</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\vec x^{(n+1)}_\text{new} = \begin{bmatrix}
-1 \amp x_1^{(n+1)} \amp x_2^{(n+1)}  \cdots  \amp x_r^{(n+1)}
-\end{bmatrix}
+\vec x^{(n+1)}_\text{new} = \begin{bmatrix} 1 \amp x_1^{(n+1)} \amp x_2^{(n+1)}  \cdots  \amp x_r^{(n+1)} \end{bmatrix}
 \end{equation*}
 </div>
 </div></section><section class="subsubsection" id="subsec-Multi-Feature-Linear-Regression-3"><h4 class="heading hide-type">
-<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">2.3.1.1</span><span class="space"> </span><span class="title">Taking Derivatives With Respect To A Vector</span>
+<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">2.4.1.1</span><span class="space"> </span><span class="title">Taking Derivatives With Respect To A Vector</span>
 </h4>
 <div class="para logical" id="subsec-Multi-Feature-Linear-Regression-3-2">
-<div class="para">In Eq. <a href="sec-Multi-Feature-Problems.html#eqn-linear-regression-empirical-loss-function-derivative" class="xref" data-knowl="./knowl/xref/eqn-linear-regression-empirical-loss-function-derivative.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.3.4">(2.3.4)</a> I gve you the result of taking derivative of the loss function with respect to vector <span class="process-math">\(\vec\beta\text{.}\)</span> This actually is a compact way of writing the <em class="emphasis">derivatives with respect to each component of the vector</em>. What does <span class="process-math">\(\frac{\partial \mathcal{L}_D}{\partial \vec{\beta}}\)</span>  mean?</div>
+<div class="para">In Eq. <a href="sec-Multi-Feature-Problems.html#eqn-linear-regression-empirical-loss-function-derivative" class="xref" data-knowl="./knowl/xref/eqn-linear-regression-empirical-loss-function-derivative.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.4.4">(2.4.4)</a> I gve you the result of taking derivative of the loss function with respect to vector <span class="process-math">\(\vecw\text{.}\)</span> This actually is a compact way of writing the <em class="emphasis">derivatives with respect to each component of the vector</em>. What does <span class="process-math">\(\frac{\partial \mathcal{L}_D}{\partial \vec{w}}\)</span>  mean?</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-linear-regression-empirical-loss-function-derivative.html" id="eqn-derivative-of-a-vector-is-a-vector">
 \begin{equation}
-\frac{\partial \mathcal{L}_D}{\partial \vec{\beta}} = \begin{bmatrix}
-\frac{\partial \mathcal{L}_D}{\partial \beta_0}\\
-\frac{\partial \mathcal{L}_D}{\partial \beta_1}\\
-\frac{\partial \mathcal{L}_D}{\partial \beta_2}\\
-\vdots\\
-\frac{\partial \mathcal{L}_D}{\partial \beta_r}
-\end{bmatrix}\tag{2.3.7}
+\frac{\partial \mathcal{L}_D}{\partial \vec{w}} = \begin{bmatrix} \frac{\partial \mathcal{L}_D}{\partial w_0}\\ \frac{\partial \mathcal{L}_D}{\partial w_1}\\ \frac{\partial \mathcal{L}_D}{\partial w_2}\\ \vdots\\ \frac{\partial \mathcal{L}_D}{\partial w_r} \end{bmatrix}\tag{2.4.7}
 \end{equation}
 </div>
 <div class="para">We then work out expression for a generic row, say the <span class="process-math">\(s^\text{th}\)</span> row by writing out <span class="process-math">\(\mathcal{L}_D\)</span> explicitly. For simplification in notation, let us drop the subscript <span class="process-math">\(D\)</span> from our symbols, except for <span class="process-math">\(\mathcal{L}_D\text{.}\)</span> We are also going to pull <span class="process-math">\(n\)</span> on the <span class="process-math">\(\mathcal{L}_D\)</span> since <span class="process-math">\(n\)</span> is constant.</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-linear-regression-empirical-loss-function-derivative.html" id="subsec-Multi-Feature-Linear-Regression-3-2-13">
 \begin{align*}
-\frac{\partial (n\,\mathcal{L}_D)}{\partial \beta_s} \amp = 
-\frac{\partial}{\partial \beta_s} \sum_{i=1}^n\ \left[ \left( y^{(i)} - \sum_{t=0}^r x^{(i)\,}_t\,\beta_t\right)\, \left(y^{(i)} - \sum_{u=0}^r x^{(i)\,}_t\,\beta_u \right) \right]\\
-\amp = \sum_{i=1}^n\ \left[ \left( 0 - \sum_{t=0}^r x^{(i)\,}_t\,\delta_{ts}\right)\, \left(y^{(i)} - \sum_{u=0}^r x^{(i)\,}_u\,\beta_u \right) \right]\\
-\amp \quad + \sum_{i=1}^n\ \left[ \left( y^{(i)} - \sum_{t=0}^r x^{(i)\,}_t\,\beta_t\right)\, \left( 0 - \sum_{u=0}^r x^{(i)\,}_u\,\delta_{us} \right) \right],
+\frac{\partial (n\,\mathcal{L}_D)}{\partial w_s} \amp = \frac{\partial}{\partial w_s} \sum_{i=1}^n\ \left[ \left( y^{(i)} - \sum_{t=0}^r x^{(i)\,}_t\,w_t\right)\, \left(y^{(i)} - \sum_{u=0}^r x^{(i)\,}_t\,w_u \right) \right] \\
+\amp = \sum_{i=1}^n\ \left[ \left( 0 - \sum_{t=0}^r x^{(i)\,}_t\,\delta_{ts}\right)\, \left(y^{(i)} - \sum_{u=0}^r x^{(i)\,}_u\,w_u \right) \right]\\
+\amp \quad + \sum_{i=1}^n\ \left[ \left( y^{(i)} - \sum_{t=0}^r x^{(i)\,}_t\,w_t\right)\, \left( 0 - \sum_{u=0}^r x^{(i)\,}_u\,\delta_{us} \right) \right],
 \end{align*}
 </div>
 <div class="para">where <span class="process-math">\(\delta_{ts}\)</span> is Kronecker delta, which is <span class="process-math">\(1\)</span> when <span class="process-math">\(t=s\)</span> and <span class="process-math">\(0\)</span> otherwise.</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-linear-regression-empirical-loss-function-derivative.html">
 \begin{equation*}
-\delta_{ts} = \begin{cases}
-1\amp \quad \text{if }\ t=s\\
-0\amp \quad\text{otherwise}
-\end{cases}
+\delta_{ts} = \begin{cases} 1\amp \quad \text{if }\ t=s\\ 0\amp \quad\text{otherwise} \end{cases}
 \end{equation*}
 </div>
 <div class="para">Now, continuiung with the calculations,</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-linear-regression-empirical-loss-function-derivative.html" id="subsec-Multi-Feature-Linear-Regression-3-2-19">
 \begin{align*}
-\frac{\partial \mathcal{L}_D}{\partial \beta_s} \amp 
-= -\frac{2}{n} \sum_{i=1}^n\ \left[ x^{(i)\,}_s\, \left(y^{(i)} - \sum_{u=0}^r x^{(i)\,}_u\,\beta_u \right) \right]
+\frac{\partial \mathcal{L}_D}{\partial w_s} \amp = -\frac{2}{n} \sum_{i=1}^n\ \left[ x^{(i)\,}_s\, \left(y^{(i)} - \sum_{u=0}^r x^{(i)\,}_u\,w_u \right) \right] 
 \end{align*}
 </div>
-<div class="para">Setting this to zero will yield <span class="process-math">\((r+1)\)</span> equations in <span class="process-math">\((r+1)\)</span> unknown <span class="process-math">\(\beta_s\)</span>’s. Neglecting the common factor <span class="process-math">\((-2/n)\)</span> and writing the non-<span class="process-math">\(\beta\)</span> terms on the right side, we can collect all <span class="process-math">\(r+1\)</span> equations in a matrix form.</div>
+<div class="para">Setting this to zero will yield <span class="process-math">\((r+1)\)</span> equations in <span class="process-math">\((r+1)\)</span> unknown <span class="process-math">\(w_s\)</span>’s. Neglecting the common factor <span class="process-math">\((-2/n)\)</span> and writing the non-<span class="process-math">\(w\)</span> terms on the right side, we can collect all <span class="process-math">\(r+1\)</span> equations in a matrix form.</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-linear-regression-empirical-loss-function-derivative.html">
 \begin{equation*}
-\begin{bmatrix}
-\sum_{i=1}^n\,x_0^{(i)}x_0^{(i)} \amp \sum_{i=1}^n\,x_0^{(i)}x_1^{(i)} \amp \cdots \amp \sum_{i=1}^n\,x_0^{(i)}x_r^{(i)} \\
-\sum_{i=1}^n\,x_1^{(i)}x_0^{(i)} \amp \sum_{i=1}^n\,x_1^{(i)}x_1^{(i)} \amp \cdots \amp \sum_{i=1}^n\,x_1^{(i)}x_r^{(i)} \\
-\vdots\\
-\sum_{i=1}^n\,x_r^{(i)}x_0^{(i)} \amp \sum_{i=1}^n\,x_r^{(i)}x_1^{(i)} \amp \cdots \amp \sum_{i=1}^n\,x_r^{(i)}x_r^{(i)} \\
-\end{bmatrix}
-\
-\begin{bmatrix}
-\beta_0\\
-\beta_1\\
-\beta_2\\
-\vdots\\
-\beta_r
-\end{bmatrix} 
-= 
-\begin{bmatrix}
-\sum_{i=1}^n\,x_0^{(i)}y^{(i)}\\
-\sum_{i=1}^n\,x_1^{(i)}y^{(i)}\\
-\sum_{i=1}^n\,x_2^{(i)}y^{(i)}\\
-\vdots\\
-\sum_{i=1}^n\,x_r^{(i)}y^{(i)}
-\end{bmatrix}                  
+\begin{bmatrix} \sum_{i=1}^n\,x_0^{(i)}x_0^{(i)} \amp \sum_{i=1}^n\,x_0^{(i)}x_1^{(i)} \amp \cdots \amp \sum_{i=1}^n\,x_0^{(i)}x_r^{(i)} \\ \sum_{i=1}^n\,x_1^{(i)}x_0^{(i)} \amp \sum_{i=1}^n\,x_1^{(i)}x_1^{(i)} \amp \cdots \amp \sum_{i=1}^n\,x_1^{(i)}x_r^{(i)} \\ \vdots\\ \sum_{i=1}^n\,x_r^{(i)}x_0^{(i)} \amp \sum_{i=1}^n\,x_r^{(i)}x_1^{(i)} \amp \cdots \amp \sum_{i=1}^n\,x_r^{(i)}x_r^{(i)} \\ \end{bmatrix} \ \begin{bmatrix} w_0\\ w_1\\ w_2\\ \vdots\\ w_r \end{bmatrix} = \begin{bmatrix} \sum_{i=1}^n\,x_0^{(i)}y^{(i)}\\ \sum_{i=1}^n\,x_1^{(i)}y^{(i)}\\ \sum_{i=1}^n\,x_2^{(i)}y^{(i)}\\ \vdots\\ \sum_{i=1}^n\,x_r^{(i)}y^{(i)} \end{bmatrix}
 \end{equation*}
 </div>
-<div class="para">The left side is <span class="process-math">\(X_D^TX_D\vec\beta\)</span> and the right side is <span class="process-math">\(X_D^TY_D\text{.}\)</span>
+<div class="para">The left side is <span class="process-math">\(X_D^TX_D\vecw\)</span> and the right side is <span class="process-math">\(X_D^TY_D\text{.}\)</span>
 </div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-linear-regression-empirical-loss-function-derivative.html">
 \begin{equation*}
-\mathbf{X}_D^T\, \mathbf{X}_D\vec\beta = \mathbf{X}_D^T\, \mathbf{Y}_D.
+\mathbf{X}_D^T\, \mathbf{X}_D\vecw = \mathbf{X}_D^T\, \mathbf{Y}_D.
 \end{equation*}
 </div>
 </div></section></section><section class="subsection" id="subsec-Multi-Feature-Logistic-Regression"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.3.2</span><span class="space"> </span><span class="title">Multi-Feature Logistic Regression</span>
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.4.2</span><span class="space"> </span><span class="title">Multi-Feature Logistic Regression</span>
 </h3>
 <section class="introduction" id="subsec-Multi-Feature-Logistic-Regression-2"><div class="para" id="subsec-Multi-Feature-Logistic-Regression-2-1">In multivariate logistic regression, we model the probability that a binary outcome <span class="process-math">\(Y \in \{0, 1\}\)</span> equals 1 given a vector of features <span class="process-math">\(\vec{X} = (X_1, X_2, \dots, X_r)\text{.}\)</span> For this treatment, we focus on the two-dimensional case where <span class="process-math">\(r = 2\text{,}\)</span> so <span class="process-math">\(\vec{X} = (X_1, X_2)\text{.}\)</span> The model assumes a linear relationship in the logit space:</div> <div class="para logical" id="subsec-Multi-Feature-Logistic-Regression-2-2"><div class="displaymath process-math">
 \begin{equation*}
 P(Y=1 \mid X_1, X_2) = p = \frac{1}{1 + \exp(-z)},
 \end{equation*}
-</div></div> <div class="para" id="subsec-Multi-Feature-Logistic-Regression-2-3">where <span class="process-math">\(z = \beta_0 + \beta_1 X_1 + \beta_2 X_2\)</span> is the linear predictor, and <span class="process-math">\(\sigma(z) = \frac{1}{1 + \exp(-z)}\)</span> is the sigmoid (logistic) function that maps <span class="process-math">\(z\)</span> to a probability between 0 and 1. The parameters <span class="process-math">\(\beta_0\)</span> (intercept), <span class="process-math">\(\beta_1\text{,}\)</span> and <span class="process-math">\(\beta_2\)</span> (coefficients for <span class="process-math">\(X_1\)</span> and <span class="process-math">\(X_2\)</span>) are estimated from data.</div> <div class="para" id="subsec-Multi-Feature-Logistic-Regression-2-4">To train the model, meaning finding the optimal values of the parameters <span class="process-math">\(\beta_0\text{,}\)</span> <span class="process-math">\(\beta_1\text{,}\)</span> and <span class="process-math">\(\beta_2\text{,}\)</span> we minimize the data-based empirical binary cross-entropy loss (also known as the negative log-likelihood, up to a constant factor) as we did for scalar <span class="process-math">\(X\)</span> when we discussed the logistic regression for binary classification for a scalar <span class="process-math">\(X\text{:}\)</span>
+</div></div> <div class="para" id="subsec-Multi-Feature-Logistic-Regression-2-3">where <span class="process-math">\(z = w_0 + w_1 X_1 + w_2 X_2\)</span> is the linear predictor, and <span class="process-math">\(\sigma(z) = \frac{1}{1 + \exp(-z)}\)</span> is the sigmoid (logistic) function that maps <span class="process-math">\(z\)</span> to a probability between 0 and 1. The parameters <span class="process-math">\(w_0\)</span> (intercept), <span class="process-math">\(w_1\text{,}\)</span> and <span class="process-math">\(w_2\)</span> (coefficients for <span class="process-math">\(X_1\)</span> and <span class="process-math">\(X_2\)</span>) are estimated from data.</div> <div class="para" id="subsec-Multi-Feature-Logistic-Regression-2-4">To train the model, meaning finding the optimal values of the parameters <span class="process-math">\(w_0\text{,}\)</span> <span class="process-math">\(w_1\text{,}\)</span> and <span class="process-math">\(w_2\text{,}\)</span> we minimize the data-based empirical binary cross-entropy loss (also known as the negative log-likelihood, up to a constant factor) as we did for scalar <span class="process-math">\(X\)</span> when we discussed the logistic regression for binary classification for a scalar <span class="process-math">\(X\text{:}\)</span>
 </div> <div class="para logical" id="subsec-Multi-Feature-Logistic-Regression-2-5"><div class="displaymath process-math">
 \begin{equation*}
-\mathcal{L}_D(\vec{\beta}) = -\frac{1}{n} \sum_{i=1}^n \left[ y^{(i)} \log p^{(i)} + (1 - y^{(i)}) \log (1 - p^{(i)}) \right] \equiv \frac{1}{n} \sum_{i=1}^n\, l^{(i)},
+\mathcal{L}_D(\vec{w}) = -\frac{1}{n} \sum_{i=1}^n \left[ y^{(i)} \log p^{(i)} + (1 - y^{(i)}) \log (1 - p^{(i)}) \right] \equiv \frac{1}{n} \sum_{i=1}^n\, l^{(i)},
 \end{equation*}
-</div></div> <div class="para" id="subsec-Multi-Feature-Logistic-Regression-2-6">where <span class="process-math">\(n\)</span> is the number of observations, <span class="process-math">\(y^{(i)}\)</span> is the observed label for the <span class="process-math">\(i\)</span>-th data point, <span class="process-math">\(p^{(i)} = \sigma(\beta_0 + \beta_1 x_{1}^{(i)} + \beta_2 x_{2}^{(i)})\text{,}\)</span> and <span class="process-math">\(l^{(i)}\)</span> loss for the <span class="process-math">\(i^\text{th}\)</span> datapoint.</div> <div class="para logical" id="subsec-Multi-Feature-Logistic-Regression-2-7">
+</div></div> <div class="para" id="subsec-Multi-Feature-Logistic-Regression-2-6">where <span class="process-math">\(n\)</span> is the number of observations, <span class="process-math">\(y^{(i)}\)</span> is the observed label for the <span class="process-math">\(i\)</span>-th data point, <span class="process-math">\(p^{(i)} = \sigma(w_0 + w_1 x_{1}^{(i)} + w_2 x_{2}^{(i)})\text{,}\)</span> and <span class="process-math">\(l^{(i)}\)</span> loss for the <span class="process-math">\(i^\text{th}\)</span> datapoint.</div> <div class="para logical" id="subsec-Multi-Feature-Logistic-Regression-2-7">
 <div class="para">To find optimized parameters, we need the derivative of the loss function with respect to the parameters. A detailed calculation is shown below.</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\frac{\partial \mathcal{L}_D}{\partial \beta_s} = \frac{1}{n} \sum_{i=1}^n (p^{(i)} - y^{(i)}) x_{j}^{(i)}, \quad j = 0, 1, 2.
+\frac{\partial \mathcal{L}_D}{\partial w_s} = \frac{1}{n} \sum_{i=1}^n (p^{(i)} - y^{(i)}) x_{j}^{(i)}, \quad j = 0, 1, 2.
 \end{equation*}
 </div>
 </div> <div class="para logical" id="subsec-Multi-Feature-Logistic-Regression-2-8">
 <div class="para">In matrix form, if <span class="process-math">\(\mathbf{X}_D\)</span> is the <span class="process-math">\(n \times 3\)</span> design matrix (with a column of 1s for the intercept), the gradient vector is</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\nabla_{\vec\beta}\mathcal{L}_D = \frac{1}{n} \mathbf{X}_D^T (\vec{p} - \vec{y})\text{,}
+\nabla_{\vecw}\mathcal{L}_D = \frac{1}{n} \mathbf{X}_D^T (\vec{p} - \vec{y})\text{,}
 \end{equation*}
 </div>
 <div class="para">where <span class="process-math">\(\vec p\)</span> and <span class="process-math">\(\vec y\)</span> are <span class="process-math">\(n\)</span>-dimensional vectors with each component referring to the data instants.</div>
 </div> <div class="para logical" id="subsec-Multi-Feature-Logistic-Regression-2-9">
-<div class="para">Optimization by gradient descent method used these derivatives in each iteration through the dataset. The initial values of the parameters are set randomly or some other procedure and then evolved iteratively. Let us denote the values of the parameters at iteration <span class="process-math">\(t\)</span> by a superscript index <span class="process-math">\(t\text{,}\)</span> e.g., <span class="process-math">\(\vec{\beta}^{(t)}\text{,}\)</span> then after the next iteration, the values will be updated via gradient descent with the following rule.</div>
+<div class="para">Optimization by gradient descent method used these derivatives in each iteration through the dataset. The initial values of the parameters are set randomly or some other procedure and then evolved iteratively. Let us denote the values of the parameters at iteration <span class="process-math">\(t\)</span> by a superscript index <span class="process-math">\(t\text{,}\)</span> e.g., <span class="process-math">\(\vec{w}^{(t)}\text{,}\)</span> then after the next iteration, the values will be updated via gradient descent with the following rule.</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\vec{\beta}^{(t+1)} = \vec{\beta}^{(t)}  - \alpha\, \left[ \nabla_{\vec\beta}\mathcal{L}_D \right]_{\vec{\beta}^{(t)}},
+\vec{w}^{(t+1)} = \vec{w}^{(t)}  - \alpha\, \left[ \nabla_{\vecw}\mathcal{L}_D \right]_{\vec{w}^{(t)}},
 \end{equation*}
 </div>
 <div class="para">where <span class="process-math">\(\alpha\)</span> is the <em class="alert">learning rate</em>. The updates are repeated until convergence (e.g., when the empirical loss stabilizes).</div>
@@ -694,16 +632,16 @@ P(Y=1 \mid X_1, X_2) = p = \frac{1}{1 + \exp(-z)},
 <div class="para">After you find the optimal parameters, you can use them to deduce the boundary decision that you use to predict the class to which a new <span class="process-math">\(X\)</span> would belong. In the case of a two-dimensional <span class="process-math">\(X\text{,}\)</span> the decision boundary will be the following straight line.</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-logistic_regression_multivariate.html" id="eqn-logistic-regression-decision-line">
 \begin{equation}
-\hat{\beta}_0 + \hat{\beta}_1\, x_1 + \hat{\beta}_2\, x_2 = 0.\tag{2.3.8}
+\hat{w}_0 + \hat{w}_1\, x_1 + \hat{w}_2\, x_2 = 0.\tag{2.4.8}
 \end{equation}
 </div>
 <div class="para">
-<a href="sec-Multi-Feature-Problems.html#fig-logistic_regression_multivariate" class="xref" data-knowl="./knowl/xref/fig-logistic_regression_multivariate.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.3.1">Figure 2.3.1</a> shows an example decision boudary.</div>
+<a href="sec-Multi-Feature-Problems.html#fig-logistic_regression_multivariate" class="xref" data-knowl="./knowl/xref/fig-logistic_regression_multivariate.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.4.1">Figure 2.4.1</a> shows an example decision boudary.</div>
 </div> <figure class="figure figure-like" id="fig-logistic_regression_multivariate"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/supervised-learning-basics/logistic_regression_multivariate.png" class="contained" alt="The plot shows a line that is produced by the logistic regression algorithm that spearates the  (x1, x2)-space into the regions of two classes."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.1<span class="period">.</span></span><span class="space"> </span>Decision boundary in a binary classification problem that sseparates <span class="process-math">\((x_1, x_2)\)</span>-space into the regions of two classes.</figcaption></figure></section><section class="subsubsection" id="subsec-Multi-Feature-Logistic-Regression-3"><h4 class="heading hide-type">
-<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">2.3.2.1</span><span class="space"> </span><span class="title">Derivatives of the Loss Function</span>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.4.1<span class="period">.</span></span><span class="space"> </span>Decision boundary in a binary classification problem that sseparates <span class="process-math">\((x_1, x_2)\)</span>-space into the regions of two classes.</figcaption></figure></section><section class="subsubsection" id="subsec-Multi-Feature-Logistic-Regression-3"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">2.4.2.1</span><span class="space"> </span><span class="title">Derivatives of the Loss Function</span>
 </h4>
-<div class="para" id="subsec-Multi-Feature-Logistic-Regression-3-2">The loss is convex in <span class="process-math">\(\vec{\beta} = (\beta_0, \beta_1, \beta_2)\text{,}\)</span> so we can use gradient descent to find the minimum. The partial derivatives (gradient components) are derived as follows:</div>
+<div class="para" id="subsec-Multi-Feature-Logistic-Regression-3-2">The loss is convex in <span class="process-math">\(\vec{w} = (w_0, w_1, w_2)\text{,}\)</span> so we can use gradient descent to find the minimum. The partial derivatives (gradient components) are derived as follows:</div>
 <div class="para logical" id="subsec-Multi-Feature-Logistic-Regression-3-3">
 <div class="para">Start with the chain rule on a single term in the ampirical loss function:</div>
 <div class="displaymath process-math">
@@ -714,20 +652,20 @@ l^{(i)} \equiv -[y^{(i)} \log p^{(i)} + (1-y^{(i)}) \log (1-p^{(i)})]
 <div class="para">Dropping the indices from the symbols for simplicity, we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
--\frac{\partial}{\partial \beta_s} [y \log p + (1-y) \log (1-p)] = - \left[\frac{y}{p} - \frac{1-y}{1-p} \right]\frac{\partial p}{\partial \beta_s}.
+-\frac{\partial}{\partial w_s} [y \log p + (1-y) \log (1-p)] = - \left[\frac{y}{p} - \frac{1-y}{1-p} \right]\frac{\partial p}{\partial w_s}.
 \end{equation*}
 </div>
 <div class="para">The derivative on the right side is</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\frac{\partial p}{\partial \beta_s} = \frac{\partial \sigma(z(\vec\beta))}{\partial \beta_s} = \frac{\partial \sigma(z )}{\partial z}\, \frac{\partial z}{\partial \beta_s}.
+\frac{\partial p}{\partial w_s} = \frac{\partial \sigma(z(\vecw))}{\partial w_s} = \frac{\partial \sigma(z )}{\partial z}\, \frac{\partial z}{\partial w_s}.
 \end{equation*}
 </div>
-<div class="para">The last derivative is readily done since <span class="process-math">\(z = \beta_0 + \beta_1 x_1 + \beta_2 x_2\text{.}\)</span>
+<div class="para">The last derivative is readily done since <span class="process-math">\(z = w_0 + w_1 x_1 + w_2 x_2\text{.}\)</span>
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
-\frac{\partial z}{\partial \beta_s} = x_s,\quad (\text{recall }x_0 = 1).
+\frac{\partial z}{\partial w_s} = x_s,\quad (\text{recall }x_0 = 1).
 \end{equation*}
 </div>
 <div class="para">For the other derivative</div>
@@ -741,13 +679,13 @@ l^{(i)} \equiv -[y^{(i)} \log p^{(i)} + (1-y^{(i)}) \log (1-p^{(i)})]
 <div class="para">Putting these altogether, we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\frac{\partial l^{(i)}}{\partial \beta_s} = \left(p^{(i)} - y^{(i)} \right) x^{(i)}_s.
+\frac{\partial l^{(i)}}{\partial w_s} = \left(p^{(i)} - y^{(i)} \right) x^{(i)}_s.
 \end{equation*}
 </div>
 <div class="para">Therefore, the derivative of the empirical loss function will be</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\frac{\partial \mathcal{L}_D}{\partial \beta_s} = \frac{1}{n} \sum_{i=1}^n (p^{(i)} - y^{(i)}) x_{j}^{(i)}, \quad j = 0, 1, 2.
+\frac{\partial \mathcal{L}_D}{\partial w_s} = \frac{1}{n} \sum_{i=1}^n (p^{(i)} - y^{(i)}) x_{j}^{(i)}, \quad j = 0, 1, 2.
 \end{equation*}
 </div>
 </div>
@@ -755,19 +693,18 @@ l^{(i)} \equiv -[y^{(i)} \log p^{(i)} + (1-y^{(i)}) \log (1-p^{(i)})]
 <div class="para">In matrix form, if <span class="process-math">\(\mathbf{X}_D\)</span> is the <span class="process-math">\(n \times 3\)</span> design matrix (with a column of 1s for the intercept), the gradient vector is</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\nabla_{\vec\beta}\mathcal{L}_D = \frac{1}{n} \mathbf{X}_D^T (\vec{p} - \vec{y})\text{,}
+\nabla_{\vecw}\mathcal{L}_D = \frac{1}{n} \mathbf{X}_D^T (\vec{p} - \vec{y})\text{,}
 \end{equation*}
 </div>
 <div class="para">where <span class="process-math">\(\vec p\)</span> and <span class="process-math">\(\vec y\)</span> are <span class="process-math">\(n\)</span>-dimensional vectors with each component referring to the data instants.</div>
 </div></section><section class="subsubsection" id="subsubsec-logistic-regression-multivariate"><h4 class="heading hide-type">
-<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">2.3.2.2</span><span class="space"> </span><span class="title">A Python Program for the Logistic Regression</span>
+<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">2.4.2.2</span><span class="space"> </span><span class="title">A Python Program for the Logistic Regression</span>
 </h4>
 <div class="para" id="subsubsec-logistic-regression-multivariate-2">The following program implements logistic regression for a two-variate <span class="process-math">\(X\)</span> and <span class="process-math">\(Y \in \{0,\ 1\}\)</span> using gradient descent algorithm. In the future, we will learn to use python packages that do a lot of the calculations behind the scene.</div>
-<div class="para" id="subsubsec-logistic-regression-multivariate-3">The program below plots the value of the loss function at each iteration shown in <a href="sec-Multi-Feature-Problems.html#fig-loss_vs_iteration_logistic_regression_mv" class="xref" data-knowl="./knowl/xref/fig-loss_vs_iteration_logistic_regression_mv.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.3.2">Figure 2.3.2</a>. You can see that the loss stadily goes to zero for the dataset used.</div>
+<div class="para" id="subsubsec-logistic-regression-multivariate-3">The program below plots the value of the loss function at each iteration shown in <a href="sec-Multi-Feature-Problems.html#fig-loss_vs_iteration_logistic_regression_mv" class="xref" data-knowl="./knowl/xref/fig-loss_vs_iteration_logistic_regression_mv.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.4.2">Figure 2.4.2</a>. You can see that the loss stadily goes to zero for the dataset used.</div>
 <figure class="figure figure-like" id="fig-loss_vs_iteration_logistic_regression_mv"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/supervised-learning-basics/loss_vs_iteration_logistic_regression_mv.png" class="contained" alt="The plot shows loss decreasign with iteration."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.2<span class="period">.</span></span><span class="space"> </span>Loss function versus iteration.</figcaption></figure><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-py">import numpy as np
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.4.2<span class="period">.</span></span><span class="space"> </span>Loss function versus iteration.</figcaption></figure><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-py">import numpy as np
 import matplotlib.pyplot as plt
-
 # Generate data (reproducible)
 np.random.seed(42)
 n = 50
@@ -781,35 +718,29 @@ indices = np.arange(2 * n)
 np.random.shuffle(indices)
 X = X[indices]
 Y = Y[indices].reshape(-1, 1)
-
 # Add intercept column
 X_with_intercept = np.hstack((np.ones((2 * n, 1)), X))
-
 # Sigmoid function
 def sigmoid(z):
     return 1 / (1 + np.exp(-z))
-
 # Loss function
-def loss(X_with_intercept, Y, beta):
-    z = X_with_intercept @ beta
+def loss(X_with_intercept, Y, w):
+    z = X_with_intercept @ w
     p = sigmoid(z)
     return -np.mean(Y * np.log(p + 1e-10) + (1 - Y) * np.log(1 - p + 1e-10))
-
 # Gradient descent with loss tracking
-beta = np.zeros((3, 1))
+w = np.zeros((3, 1))
 learning_rate = 0.1
 iterations = 1000
 n_samples = X_with_intercept.shape[0]
 losses = []
-
 for i in range(iterations):
-    z = X_with_intercept @ beta
+    z = X_with_intercept @ w
     p = sigmoid(z)
     gradient = (1 / n_samples) * (X_with_intercept.T @ (p - Y))
-    beta -= learning_rate * gradient
-    current_loss = loss(X_with_intercept, Y, beta)
+    w -= learning_rate * gradient
+    current_loss = loss(X_with_intercept, Y, w)
     losses.append(current_loss)
-
 # Plot loss vs. iteration
 plt.figure(figsize=(8, 6))
 plt.plot(range(iterations), losses, 'b-')

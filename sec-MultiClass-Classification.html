@@ -12,7 +12,7 @@
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
-<meta property="book:title" content="ML Notes">
+<meta property="book:title" content="">
 <script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
@@ -133,6 +133,9 @@ window.MathJax = {
 #sec-Hypothesis-Tests-2-6-1 { counter-set: sec-Hypothesis-Tests-2-6-1 0; }
 #sec-Hypothesis-Tests-2-6-1 > li::marker { content: ""counter(sec-Hypothesis-Tests-2-6-1,decimal)"."; }
 #sec-Hypothesis-Tests-2-6-1 > li { counter-increment: sec-Hypothesis-Tests-2-6-1; }
+#sec-Regression-2-2-1 { counter-set: sec-Regression-2-2-1 0; }
+#sec-Regression-2-2-1 > li::marker { content: ""counter(sec-Regression-2-2-1,decimal)"."; }
+#sec-Regression-2-2-1 > li { counter-increment: sec-Regression-2-2-1; }
 #subsec-derivative-of-multiclass-loss-function-3-2-2 { counter-set: subsec-derivative-of-multiclass-loss-function-3-2-2 0; }
 #subsec-derivative-of-multiclass-loss-function-3-2-2 > li::marker { content: ""counter(subsec-derivative-of-multiclass-loss-function-3-2-2,decimal)"."; }
 #subsec-derivative-of-multiclass-loss-function-3-2-2 > li { counter-increment: subsec-derivative-of-multiclass-loss-function-3-2-2; }
@@ -147,7 +150,7 @@ window.MathJax = {
 <body id="ML-Notes" class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
 <a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
-<h1 class="heading"><a href="my-ML-Notes.html"><span class="title">ML Notes:</span> <span class="subtitle">Theoretical and Practical ML Concepts</span></a></h1>
+<h1 class="heading"><a href="my-ML-Notes.html"><span class="title"></span></a></h1>
 <p class="byline"></p>
 </div>
 </div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
@@ -341,77 +344,80 @@ window.MathJax = {
 <ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-Statistical-Decision-Theory.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Statistical Decision Theory</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Statistical-Decision-Theory.html#subsec-KNN-method" class="internal"><span class="codenumber">2.1.1</span> <span class="title">The kNN Method</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Regression.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Regression</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Regression.html#subsec-The-Simple-Linear-Regresson" class="internal"><span class="codenumber">2.2.1</span> <span class="title">The Simple Linear Regresson</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Binary-Classification.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Binary Classification</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Statistical-Decision-Theory.html#subsec-Squared-Error-Loss-Function" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Regression</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Statistical-Decision-Theory.html#subsec-KNN-method" class="internal"><span class="codenumber">2.1.2</span> <span class="title">The kNN Method</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Statistical-Decision-Theory.html#subsec-The-Simple-Linear-Regresson" class="internal"><span class="codenumber">2.1.3</span> <span class="title">The Simple Linear Regresson</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Binary-Classification.html#subsecThe-Classification-Variable" class="internal"><span class="codenumber">2.3.1</span> <span class="title">The Classification Variable <span class="process-math">\(Y\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Binary-Classification.html#subsec-binary-classification-scalar-feature" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Binary Classification with Scalar <span class="process-math">\(X\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Binary-Classification.html#subsec-gradient-descent" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Gradient Descent for Logistic Regression</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-Binary-Classification.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Binary Classification</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Binary-Classification.html#subsecThe-Classification-Variable" class="internal"><span class="codenumber">2.2.1</span> <span class="title">The Classification Variable <span class="process-math">\(Y\)</span></span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Binary-Classification.html#subsec-binary-classification-scalar-feature" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Binary Classification with Scalar <span class="process-math">\(X\)</span></span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Binary-Classification.html#subsec-gradient-descent" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Gradient Descent for Logistic Regression</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Multi-Feature Problems</span></a></div>
+<div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Multi-Feature Problems</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Linear-Regression" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Multi-Feature Linear Regression</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Linear-Regression-3" class="internal"><span class="codenumber">2.3.1.1</span> <span class="title">Taking Derivatives With Respect To A Vector</span></a></div></li></ul>
+<div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Linear-Regression" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Multi-Feature Linear Regression</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Linear-Regression-3" class="internal"><span class="codenumber">2.4.1.1</span> <span class="title">Taking Derivatives With Respect To A Vector</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Logistic-Regression" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Multi-Feature Logistic Regression</span></a></div>
+<div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Logistic-Regression" class="internal"><span class="codenumber">2.4.2</span> <span class="title">Multi-Feature Logistic Regression</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Logistic-Regression-3" class="internal"><span class="codenumber">2.3.2.1</span> <span class="title">Derivatives of the Loss Function</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsubsec-logistic-regression-multivariate" class="internal"><span class="codenumber">2.3.2.2</span> <span class="title">A Python Program for the Logistic Regression</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Logistic-Regression-3" class="internal"><span class="codenumber">2.4.2.1</span> <span class="title">Derivatives of the Loss Function</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsubsec-logistic-regression-multivariate" class="internal"><span class="codenumber">2.4.2.2</span> <span class="title">A Python Program for the Logistic Regression</span></a></div></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-section active">
-<div class="toc-title-box"><a href="sec-MultiClass-Classification.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Multi-Class Classification</span></a></div>
+<div class="toc-title-box"><a href="sec-MultiClass-Classification.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Multi-Class Classification</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-MultiClass-Classification.html#subsec-Loss-Function-of-Multi-class-Classification" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Loss Function of Multiclass Classification</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-MultiClass-Classification.html#subsec-derivative-of-multiclass-loss-function" class="internal"><span class="codenumber">2.4.2</span> <span class="title">Derivative of Multiclass Loss Function</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-MultiClass-Classification.html#subsec-Model-Evaluations" class="internal"><span class="codenumber">2.4.3</span> <span class="title">Model Evaluations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-MultiClass-Classification.html#subsec-Loss-Function-of-Multi-class-Classification" class="internal"><span class="codenumber">2.5.1</span> <span class="title">Loss Function of Multiclass Classification</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-MultiClass-Classification.html#subsec-derivative-of-multiclass-loss-function" class="internal"><span class="codenumber">2.5.2</span> <span class="title">Derivative of Multiclass Loss Function</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-Evaluating-Predictions.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Evaluating Predictions</span></a></div>
+<div class="toc-title-box"><a href="sec-Evaluating-Predictions.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Evaluating Predictions</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsec-Evaluating-Regression-Tasks" class="internal"><span class="codenumber">2.5.1</span> <span class="title">Evaluating Regression Tasks</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsec-Evaluating-Regression-Tasks" class="internal"><span class="codenumber">2.6.1</span> <span class="title">Evaluating Regression Tasks</span></a></div></li>
 <li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsec-Evaluating-Binary-Classification" class="internal"><span class="codenumber">2.5.2</span> <span class="title">Evaluating Binary Classification</span></a></div>
+<div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsec-Evaluating-Binary-Classification" class="internal"><span class="codenumber">2.6.2</span> <span class="title">Evaluating Binary Classification</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsubsec-Metrics-of-Binary-Classification" class="internal"><span class="codenumber">2.5.2.1</span> <span class="title">Metrics of BinaryClassification</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsubsec-ROC-PR-Curves-AUC-2" class="internal"><span class="codenumber">2.5.2.2</span> <span class="title">Evaluating Model Performance Across Thresholds</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsubsec-Metrics-of-Binary-Classification" class="internal"><span class="codenumber">2.6.2.1</span> <span class="title">Metrics of BinaryClassification</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsubsec-ROC-PR-Curves-AUC-2" class="internal"><span class="codenumber">2.6.2.2</span> <span class="title">Evaluating Model Performance Across Thresholds</span></a></div></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-Bayesian-Methods.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Bayesian Methods</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Bayesian-Methods.html#subsec-Naive-Bayes" class="internal"><span class="codenumber">2.6.1</span> <span class="title">Naive Bayes Algorithm</span></a></div></li></ul>
+<div class="toc-title-box"><a href="sec-Bayesian-Methods.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Bayesian Methods</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Bayesian-Methods.html#subsec-Naive-Bayes" class="internal"><span class="codenumber">2.7.1</span> <span class="title">Naive Bayes Algorithm</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-Model-Selection.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Model Selection</span></a></div>
+<div class="toc-title-box"><a href="sec-Model-Selection.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Model Selection</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Validation-Data" class="internal"><span class="codenumber">2.7.1</span> <span class="title">Validation Data</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Out-of-Sample-Error" class="internal"><span class="codenumber">2.7.2</span> <span class="title">Generalization Error</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Sources-of-Generalization-Error" class="internal"><span class="codenumber">2.7.3</span> <span class="title">Bias and Variance of Model in Generalization Error</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Bias-Variance-in-Practice" class="internal"><span class="codenumber">2.7.4</span> <span class="title">Bias-Variance Tradeoff in Practice</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-K-fold-cross-validation" class="internal"><span class="codenumber">2.7.5</span> <span class="title">K-fold Cross Validation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Validation-Data" class="internal"><span class="codenumber">2.8.1</span> <span class="title">Validation Data</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Out-of-Sample-Error" class="internal"><span class="codenumber">2.8.2</span> <span class="title">Generalization Error</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Sources-of-Generalization-Error" class="internal"><span class="codenumber">2.8.3</span> <span class="title">Bias and Variance of Model in Generalization Error</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Bias-Variance-in-Practice" class="internal"><span class="codenumber">2.8.4</span> <span class="title">Bias-Variance Tradeoff in Practice</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-K-fold-cross-validation" class="internal"><span class="codenumber">2.8.5</span> <span class="title">K-fold Cross Validation</span></a></div></li>
 </ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Multivariate-Regression-Project.html" class="internal"><span class="codenumber">2.9</span> <span class="title">A Multivariate Regression Project</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Multivariate-Regression-Project.html#subsec-" class="internal"><span class="codenumber">2.9.1</span> <span class="title"></span></a></div></li></ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-MultiClass-Classification"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">2.4</span><span class="space"> </span><span class="title">Multi-Class Classification</span>
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">2.5</span><span class="space"> </span><span class="title">Multi-Class Classification</span>
 </h2>
 <section class="introduction" id="sec-MultiClass-Classification-2"><div class="para" id="sec-MultiClass-Classification-2-1">In binary classification, the target <span class="process-math">\(Y\)</span> could be one of two categories — 0/1, yes/no, true/false, up/down, etc. In <dfn class="terminology">multiclass classification</dfn> tasks, we are asked to predict one most likely class from three or more discrete target classes. This is to be distinguished from a <dfn class="terminology">multilabel prediction task</dfn>, where you would predict two or more most likely classes from several posible classes.</div> <div class="para" id="sec-MultiClass-Classification-2-2">The extension from the binary classification task is straightforward, but at times can be confusing. We work out the details for a <span class="process-math">\(K\)</span>-class problem.</div> <div class="para logical" id="sec-MultiClass-Classification-2-3">
 <div class="para">First, we will discuss the loss function for the <span class="process-math">\(K\)</span>-class problem. Just like the binary classification problem, we model the conditional probabilities directly. We will see that a softmax function models the probabilities of the <span class="process-math">\(K\)</span> classes given <span class="process-math">\(X\)</span> such that their sum properly equals <span class="process-math">\(1\text{.}\)</span> Once, we have predictions of the probabilities <span class="process-math">\(p_1,\ p_2, \cdots, p_K\text{,}\)</span> we predict the class by simply finding the class that has the highest among them.</div>
@@ -421,7 +427,7 @@ window.MathJax = {
 \end{equation*}
 </div>
 </div></section><section class="subsection" id="subsec-Loss-Function-of-Multi-class-Classification"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.4.1</span><span class="space"> </span><span class="title">Loss Function of Multiclass Classification</span>
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.5.1</span><span class="space"> </span><span class="title">Loss Function of Multiclass Classification</span>
 </h3>
 <div class="para logical" id="subsec-Loss-Function-of-Multi-class-Classification-2">
 <div class="para">First, let us recall the binary classification for an <span class="process-math">\(r\)</span>-dimensional feature vector <span class="process-math">\(\vec X = (X_1, \cdots, X_r)\text{.}\)</span> There is one variable <span class="process-math">\(Y\)</span> which is encoded as <span class="process-math">\(Y \in \{0,1\}\text{,}\)</span> with <span class="process-math">\(Y=1\)</span> denoting class <span class="process-math">\(1\)</span> and <span class="process-math">\(Y=0\)</span> denoting class <span class="process-math">\(0\text{.}\)</span> The conditional probabilities of the two classes given <span class="process-math">\(X\)</span> are</div>
@@ -451,16 +457,13 @@ p_1(X; \theta) = \sigma(z),\ \ z = w_0 + w_1 X_1 + w_2 X_2 + \cdots + w_r X_r,
 <div class="para">When <span class="process-math">\(Y=1\text{,}\)</span> you only have the first term with log of the probability corresponding to class <span class="process-math">\(1\text{,}\)</span> and when <span class="process-math">\(Y=0\text{,}\)</span> you only have the second term, whose argument to the log is the probability for class <span class="process-math">\(0\text{.}\)</span> Let us introduce an indicator/kronecker delta variable to write this expression more succinctly.</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-binary-classification-loss-in-multiclass-sec.html ./knowl/xref/eqn-K-class-classification-loss.html" id="eqn-class-indicator-variable">
 \begin{equation}
-\delta_{y,c} = \begin{cases}
-1 \amp\ \text{ if } y=c\\
-0 \amp\ \text{ if } y\ne c
-\end{cases}\tag{2.4.1}
+\delta_{y,c} = \begin{cases} 1 \amp\ \text{ if } y=c\\ 0 \amp\ \text{ if } y\ne c \end{cases}\tag{2.5.1}
 \end{equation}
 </div>
 <div class="para">Then, the loss function is a sum over the two classes.</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-binary-classification-loss-in-multiclass-sec.html ./knowl/xref/eqn-K-class-classification-loss.html" id="eqn-binary-classification-loss-in-multiclass-sec">
 \begin{equation}
-\mathcal{L}_\text{binary} = - \sum_{c=0}^1\, \delta_{Y,c}\,\log p_c(X; \theta)\tag{2.4.2}
+\mathcal{L}_\text{binary} = - \sum_{c=0}^1\, \delta_{Y,c}\,\log p_c(X; \theta)\tag{2.5.2}
 \end{equation}
 </div>
 <div class="para">For instance, if you have a datapoint <span class="process-math">\((\vec{x}^{(i)}, y=0)\text{,}\)</span> i.e., this datapoint belongs to class <span class="process-math">\(0\text{,}\)</span> then the value of this loss function will be</div>
@@ -472,11 +475,11 @@ p_1(X; \theta) = \sigma(z),\ \ z = w_0 + w_1 X_1 + w_2 X_2 + \cdots + w_r X_r,
 \amp =  -  \log( p_0(\vec{x}^{(i)}; \theta) )  = -  \log( 1 - p_1(\vec{x}^{(i)}; \theta) ) 
 \end{align*}
 </div>
-<div class="para">The binary loss formula in Eq. <a href="sec-MultiClass-Classification.html#eqn-binary-classification-loss-in-multiclass-sec" class="xref" data-knowl="./knowl/xref/eqn-binary-classification-loss-in-multiclass-sec.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.4.2">(2.4.2)</a> can be clearly generalized to a <span class="process-math">\(K\)</span>-class classification problem, by just summing over <span class="process-math">\(K\)</span> classes, provided the probabilities add up to <span class="process-math">\(1\text{.}\)</span>
+<div class="para">The binary loss formula in Eq. <a href="sec-MultiClass-Classification.html#eqn-binary-classification-loss-in-multiclass-sec" class="xref" data-knowl="./knowl/xref/eqn-binary-classification-loss-in-multiclass-sec.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.5.2">(2.5.2)</a> can be clearly generalized to a <span class="process-math">\(K\)</span>-class classification problem, by just summing over <span class="process-math">\(K\)</span> classes, provided the probabilities add up to <span class="process-math">\(1\text{.}\)</span>
 </div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-binary-classification-loss-in-multiclass-sec.html ./knowl/xref/eqn-K-class-classification-loss.html" id="eqn-K-class-classification-loss">
 \begin{equation}
-\mathcal{L}_K = - \sum_{c=1}^K\, \delta_{Y,c}\,\log p_c(X; \theta),\ \ \text{ with }\ \ \sum_{c=1}^K\, p_c(X; \theta) = 1.\tag{2.4.3}
+\mathcal{L}_K = - \sum_{c=1}^K\, \delta_{Y,c}\,\log p_c(X; \theta),\ \ \text{ with }\ \ \sum_{c=1}^K\, p_c(X; \theta) = 1.\tag{2.5.3}
 \end{equation}
 </div>
 <div class="para">So, how should we model <span class="process-math">\(p_c(X; \theta)\text{?}\)</span> The sigmoid representation of <span class="process-math">\(p_1\)</span> for the binary case gives a clue if we rewrite the sigmoid a little differently:</div>
@@ -515,10 +518,10 @@ Z = e^{Z_1} + e^{Z_2} + \cdots + e^{Z_K}.
 \text{softmax}(Z_c) = \frac{e^{Z_c}}{\sum_{j=1}^K e^{Z_j}}.
 \end{equation*}
 </div>
-<div class="para">Using the softmax function, the <span class="process-math">\(K\)</span>-class loss in Eq. <a href="sec-MultiClass-Classification.html#eqn-K-class-classification-loss" class="xref" data-knowl="./knowl/xref/eqn-K-class-classification-loss.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.4.3">(2.4.3)</a> can be written compactly as</div>
+<div class="para">Using the softmax function, the <span class="process-math">\(K\)</span>-class loss in Eq. <a href="sec-MultiClass-Classification.html#eqn-K-class-classification-loss" class="xref" data-knowl="./knowl/xref/eqn-K-class-classification-loss.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.5.3">(2.5.3)</a> can be written compactly as</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-binary-classification-loss-in-multiclass-sec.html ./knowl/xref/eqn-K-class-classification-loss.html" id="eqn-softmax-loss-K-class">
 \begin{equation}
-\mathcal{L}_K = - \sum_{c=1}^K\, \delta_{Y,c}\,\log \text{softmax}(Z_c) = - \log \text{softmax}(Z_Y),\tag{2.4.4}
+\mathcal{L}_K = - \sum_{c=1}^K\, \delta_{Y,c}\,\log \text{softmax}(Z_c) = - \log \text{softmax}(Z_Y),\tag{2.5.4}
 \end{equation}
 </div>
 <div class="para">where <span class="process-math">\(Z_Y\)</span> is the score for class <span class="process-math">\(Y\)</span> coming from the input vector <span class="process-math">\(\vec X\)</span> and the parameters <span class="process-math">\(w_{Y,i}\)</span>’s:</div>
@@ -549,13 +552,12 @@ Z_{c_y}^{(i)} = w_{c_y,0} + \sum_{j=1}^r\, w_{c_y,j}\,X_j^{(i)},
 <div class="para">which we can use in the loss function. Thus, we optimize the following loss evaluated from all the datapoints in the dataset:</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-binary-classification-loss-in-multiclass-sec.html ./knowl/xref/eqn-K-class-classification-loss.html" id="subsec-Loss-Function-of-Multi-class-Classification-2-59">
 \begin{align*}
-\mathcal{L}_D \amp =  - \frac{1}{n} \sum_{i=1}^n\,\left[\sum_{c=1}^K\, \delta_{y^{(i)},c}\,\log \text{softmax}(Z_c)\right]
-= - \frac{1}{n} \sum_{i=1}^n\, \log \text{softmax}\left(Z_{c_y}^{(i)}\right)
+\mathcal{L}_D \amp =  - \frac{1}{n} \sum_{i=1}^n\,\left[\sum_{c=1}^K\, \delta_{y^{(i)},c}\,\log \text{softmax}(Z_c)\right] = - \frac{1}{n} \sum_{i=1}^n\, \log \text{softmax}\left(Z_{c_y}^{(i)}\right) 
 \end{align*}
 </div>
-<div class="para">From the indices that label the parameters, it appears that we have <span class="process-math">\((r+1)K\)</span> parameters, but since  probabilities over all <span class="process-math">\(K\)</span> classes must add up to <span class="process-math">\(1\text{,}\)</span> only <span class="process-math">\((r+1)(K-1)\)</span> parameters are independent.  This is included in the softmax function since shifting all scores by the same amount does not change the softmax output.</div>
+<div class="para">From the indices that label the parameters, it appears that we have <span class="process-math">\((r+1)K\)</span> parameters, but since  probabilities over all <span class="process-math">\(K\)</span> classes must add up to <span class="process-math">\(1\text{,}\)</span> only <span class="process-math">\((r+1)(K-1)\)</span> parameters are independent. This is included in the softmax function since shifting all scores by the same amount does not change the softmax output.</div>
 </div></section><section class="subsection" id="subsec-derivative-of-multiclass-loss-function"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.4.2</span><span class="space"> </span><span class="title">Derivative of Multiclass Loss Function</span>
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.5.2</span><span class="space"> </span><span class="title">Derivative of Multiclass Loss Function</span>
 </h3>
 <div class="para logical" id="subsec-derivative-of-multiclass-loss-function-2">
 <div class="para">Taking the derivative of <span class="process-math">\(\mathcal{L}_D\)</span> with respect to parameters <span class="process-math">\(w_{c, j}\)</span> with <span class="process-math">\(c = 1, 2, \cdots, K\)</span> (classes) and <span class="process-math">\(j = 0, 1, 2, \cdots, r\)</span> (bias part and <span class="process-math">\(r\)</span> components of feature vector <span class="process-math">\(\vec X\)</span>) will proceed the same way for each datapoint. So, it’s better to drop the index <span class="process-math">\((i)\)</span> from the notation when taking derivatives and restore them in the final results.</div>
@@ -577,14 +579,10 @@ Z_{c_y}^{(i)} = w_{c_y,0} + \sum_{j=1}^r\, w_{c_y,j}\,X_j^{(i)},
 <div class="para">where the sum on classes is using a dummy index <span class="process-math">\(c'\)</span> rather than <span class="process-math">\(c\text{,}\)</span> which is the index of a particular parameter with respect to which we seek the derivative. Now, the components on the right side can be worked out individually.</div>
 <div class="displaymath process-math" id="subsec-derivative-of-multiclass-loss-function-2-14">
 \begin{align*}
-\frac{\partial \log S(Z_c')}{ \partial Z_c'}  \amp  = \frac{\partial }{ \partial Z_c'}\log \left(  \frac{e^{Z_{c'}}}{\sum_{l=1}^K e^{Z_l}} \right)
-= \frac{\partial }{ \partial Z_c'}\left( Z_c' - \log ( \sum_{l=1}^K e^{Z_l} )  \right)\\
+\frac{\partial \log S(Z_c')}{ \partial Z_c'}  \amp  = \frac{\partial }{ \partial Z_c'}\log \left(  \frac{e^{Z_{c'}}}{\sum_{l=1}^K e^{Z_l}} \right) = \frac{\partial }{ \partial Z_c'}\left( Z_c' - \log ( \sum_{l=1}^K e^{Z_l} )  \right)\\
 \amp = 1 - \frac{\sum_{l=1}^K e^{Z_l}\delta_{c',l}}{\sum_{l=1}^K e^{Z_l}}  = 1 - \frac{ e^{Z_{c'}}}{\sum_{l=1}^K e^{Z_l}}  = 1 - S(Z_{c'})\\
 \frac{\partial Z_c'}{\partial w_{c, j}} \amp  = \frac{\partial }{\partial w_{c, j}} \left( w_{c',0} + \sum_{l=1}^r\,w_{c',l}x_l \right)\\
-\amp= \begin{cases}
-\delta_{cc'} \amp \text{if } j = 0\\
-\delta_{cc'}x_j \amp \text{if } j \ne 0
-\end{cases}
+\amp= \begin{cases} \delta_{cc'} \amp \text{if } j = 0\\ \delta_{cc'}x_j \amp \text{if } j \ne 0 \end{cases}  
 \end{align*}
 </div>
 <div class="para">Thus, we have the following derivatives for the empirical loss function with respect to the parameters.</div>
@@ -597,7 +595,7 @@ Z_{c_y}^{(i)} = w_{c_y,0} + \sum_{j=1}^r\, w_{c_y,j}\,X_j^{(i)},
 <div class="para">These derivatives are then used in the gradient descent algorithm to find their optimum values as has been illustrated before.</div>
 </div>
 <article class="example example-like" id="subsec-derivative-of-multiclass-loss-function-3"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.1</span><span class="period">.</span><span class="space"> </span><span class="title">The Iris Classification Problem.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.1</span><span class="period">.</span><span class="space"> </span><span class="title">The Iris Classification Problem.</span>
 </h4> <div class="para logical" id="subsec-derivative-of-multiclass-loss-function-3-2">
 <div class="para">The Iris dataset is one of the most famous datasets in machine learning. Collected by the botanist Ronald A. Fisher in 1936, it contains measurements of 150 iris flowers from three different species:</div>
 <ul class="disc" id="subsec-derivative-of-multiclass-loss-function-3-2-1">
@@ -638,36 +636,29 @@ from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import accuracy_score
-
 # -------------------------
 # 1. Load Iris dataset
 # -------------------------
 X, y = load_iris(return_X_y=True)
 num_classes = len(np.unique(y))  # 3 classes
-
 # Normalize features
 scaler = StandardScaler()
 X = scaler.fit_transform(X)
-
 # One-hot encode targets
 y_onehot = np.eye(num_classes)[y]
-
 # Train/test split
 X_train, X_test, y_train, y_test = train_test_split(
     X, y_onehot, test_size=0.2, random_state=42
 )
-
 # -------------------------
 # 2. Softmax + loss
 # -------------------------
 def softmax(logits):
     exp_logits = np.exp(logits - np.max(logits, axis=1, keepdims=True))
     return exp_logits / np.sum(exp_logits, axis=1, keepdims=True)
-
 def cross_entropy_loss(y_true, y_pred):
     eps = 1e-15
     return -np.mean(np.sum(y_true * np.log(y_pred + eps), axis=1))
-
 # -------------------------
 # 3. Training with gradient descent
 # -------------------------
@@ -676,50 +667,38 @@ def train_softmax_classification(X, y, num_classes, lr=0.1, epochs=500):
     W = np.zeros((n_features, num_classes))
     b = np.zeros((1, num_classes))
     losses = []
-
     for epoch in range(epochs):
         # Forward pass
         logits = X @ W + b
         y_pred = softmax(logits)
-
         # Loss
         loss = cross_entropy_loss(y, y_pred)
         losses.append(loss)
-
         # Gradients
         grad_W = (X.T @ (y_pred - y)) / n_samples
         grad_b = np.mean(y_pred - y, axis=0, keepdims=True)
-
         # Update
         W -= lr * grad_W
         b -= lr * grad_b
-
         if (epoch+1) % 100 == 0:
             print(f"Epoch {epoch+1}, Loss: {loss:.4f}")
-
     return W, b, losses
-
 # -------------------------
 # 4. Train model
 # -------------------------
 W, b, losses = train_softmax_classification(X_train, y_train, num_classes, lr=0.1, epochs=1000)
-
 # -------------------------
 # 5. Predictions \amp; Accuracy
 # -------------------------
 def predict(X, W, b):
     logits = X @ W + b
     return np.argmax(softmax(logits), axis=1)
-
 y_pred_train = predict(X_train, W, b)
 y_pred_test = predict(X_test, W, b)
-
 train_acc = accuracy_score(np.argmax(y_train, axis=1), y_pred_train)
 test_acc = accuracy_score(np.argmax(y_test, axis=1), y_pred_test)
-
 print(f"Training accuracy: {train_acc:.4f}")
 print(f"Test accuracy: {test_acc:.4f}")
-
 # -------------------------
 # 6. Plot loss curve
 # -------------------------
@@ -731,7 +710,7 @@ plt.title("Loss Curve (Iris Softmax Regression)")
 plt.legend()
 plt.show()
 </code></pre></div></article><article class="example example-like" id="subsec-derivative-of-multiclass-loss-function-4"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.2</span><span class="period">.</span><span class="space"> </span><span class="title">Predicting Hand Written Digits.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.2</span><span class="period">.</span><span class="space"> </span><span class="title">Predicting Hand Written Digits.</span>
 </h4> <div class="para" id="subsec-derivative-of-multiclass-loss-function-4-2">In this section, we will build a multiclass logistic regression model (also known as softmax regression) from scratch in Python. Instead of relying on pre-built machine learning libraries, we will implement the mathematics ourselves using NumPy and optimize the parameters with gradient descent.</div> <div class="para" id="subsec-derivative-of-multiclass-loss-function-4-3">For data, we will use the classic <dfn class="terminology">MNIST handwritten digits dataset</dfn>, a benchmark in machine learning that contains 70,000 grayscale images of digits 0 through 9. Each image is a 28×28 pixel grid, which we flatten into a feature vector of dimension 784. The target labels are integers from 0 to 9. To simplify the task and keep training efficient, we will restrict the dataset to only the first five digits (0–4). This gives us a five-class classification problem with inputs <span class="process-math">\(X ∈ ℝ^{n×784}\)</span> and one-hot encoded outputs <span class="process-math">\(Y ∈ ℝ^{n×5}\text{,}\)</span> where <span class="process-math">\(n\)</span> is the number of samples.</div> <div class="para" id="subsec-derivative-of-multiclass-loss-function-4-4">This exercise illustrates how the softmax function converts raw model scores into probabilities across multiple classes and how cross-entropy loss guides learning. It also demonstrates the practical use of MNIST as a stepping stone toward understanding more complex models like neural networks.</div> <div class="para" id="subsec-derivative-of-multiclass-loss-function-4-5">The program below produces the following output:</div> <div class="para" id="subsec-derivative-of-multiclass-loss-function-4-6">
 <em class="alert">Every 50 Epoch</em> print the progress:</div> <div class="tabular-box natural-width"><table class="tabular">
 <tr><td class="l m b0 r0 l0 t0 lines">Epoch 50, Loss: 0.1036</td></tr>
@@ -745,14 +724,12 @@ plt.show()
 <tr><td class="l m b0 r0 l0 t0 lines">Epoch 450, Loss: 0.0752</td></tr>
 <tr><td class="l m b0 r0 l0 t0 lines">Epoch 500, Loss: 0.0740</td></tr>
 </table></div> <div class="para" id="subsec-derivative-of-multiclass-loss-function-4-8">Print out the performance at the end of 500 epochs (i.e., iterations through the entire training dataset) Training accuracy: 0.9797, Test accuracy: 0.9671. Here, training accuracy is the accuracy measured on the trtaining dataset and the test accuracy is the one measured on the test dataset.</div> <div class="para" id="subsec-derivative-of-multiclass-loss-function-4-9">The program also plots loss versus iterations and some example prediction labels and the corresponding photos in the test dataset.</div> <figure class="figure figure-like" id="fig-mnist-predicted-digits"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/supervised-learning-basics/mnist-predicted-digits.png" class="contained" alt="Predicted labels and actual digits images."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.4.3<span class="period">.</span></span><span class="space"> </span>Predicted labels and actual digits images.</figcaption></figure> <div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-py">import numpy as np
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.5.3<span class="period">.</span></span><span class="space"> </span>Predicted labels and actual digits images.</figcaption></figure> <div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-py">import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import accuracy_score
-
 from sklearn.model_selection import train_test_split
 from sklearn.datasets import fetch_openml
-
 mnist = fetch_openml('mnist_784', version=1, as_frame=False)
 X, y = mnist.data, mnist.target.astype(int)
 # Train/test split (e.g., 80/20)
@@ -763,41 +740,33 @@ X_train, X_test, y_train, y_test = train_test_split(
 # 1. Load MNIST and restrict to digits 0–4
 # -------------------------
 # (X_train, y_train), (X_test, y_test) = mnist.load_data()
-
 # keep only digits 0-4
 train_mask = y_train &lt; 5 
 test_mask = y_test &lt; 5
-
 X_train = X_train[train_mask]
 y_train = y_train[train_mask]
 X_test = X_test[test_mask]
 y_test = y_test[test_mask]
-
 # flatten images from 28x28 → 784
 X_train = X_train.reshape(X_train.shape[0], -1).astype(np.float32)
 X_test = X_test.reshape(X_test.shape[0], -1).astype(np.float32)
-
 # normalize
 scaler = StandardScaler()
 X_train = scaler.fit_transform(X_train)
 X_test = scaler.transform(X_test)
-
 # one-hot labels
 num_classes = len(np.unique(y_train))
 y_train_oh = np.eye(num_classes)[y_train]
 y_test_oh = np.eye(num_classes)[y_test]
-
 # -------------------------
 # 2. Softmax + loss
 # -------------------------
 def softmax(logits):
     exp_logits = np.exp(logits - np.max(logits, axis=1, keepdims=True))
     return exp_logits / np.sum(exp_logits, axis=1, keepdims=True)
-
 def cross_entropy_loss(y_true, y_pred):
     eps = 1e-15
     return -np.mean(np.sum(y_true * np.log(y_pred + eps), axis=1))
-
 # -------------------------
 # 3. Gradient descent training
 # -------------------------
@@ -806,47 +775,35 @@ def train_softmax_classification(X, y, num_classes, lr=0.1, epochs=300):
     W = np.zeros((n_features, num_classes))
     b = np.zeros((1, num_classes))
     losses = []
-
     for epoch in range(epochs):
         logits = X @ W + b
         y_pred = softmax(logits)
-
         loss = cross_entropy_loss(y, y_pred)
         losses.append(loss)
-
         grad_W = (X.T @ (y_pred - y)) / n_samples
         grad_b = np.mean(y_pred - y, axis=0, keepdims=True)
-
         W -= lr * grad_W
         b -= lr * grad_b
-
         if (epoch+1) % 50 == 0:
             print(f"Epoch {epoch+1}, Loss: {loss:.4f}")
-
     return W, b, losses
-
 # -------------------------
 # 4. Train
 # -------------------------
 W, b, losses = train_softmax_classification(X_train, y_train_oh, 
 num_classes, lr=0.5, epochs=500)
-
 # -------------------------
 # 5. Evaluate
 # -------------------------
 def predict(X, W, b):
     logits = X @ W + b
     return np.argmax(softmax(logits), axis=1)
-
 y_pred_train = predict(X_train, W, b)
 y_pred_test = predict(X_test, W, b)
-
 train_acc = accuracy_score(y_train, y_pred_train)
 test_acc = accuracy_score(y_test, y_pred_test)
-
 print(f"Training accuracy: {train_acc:.4f}")
 print(f"Test accuracy: {test_acc:.4f}")
-
 # -------------------------
 # 6. Plot loss curve
 # -------------------------
@@ -857,13 +814,11 @@ plt.ylabel("Cross-Entropy Loss")
 plt.title("Loss Curve")
 plt.legend()
 plt.show()
-
 # -------------------------
 # 7. Plot sample predictions
 # -------------------------
 fig, axes = plt.subplots(2, 5, figsize=(10,5))
 indices = np.random.choice(len(X_test), size=10, replace=False)
-
 for ax, idx in zip(axes.flat, indices):
     img = X_test[idx].reshape(28, 28)
     ax.imshow(img, cmap="gray")
@@ -871,13 +826,9 @@ for ax, idx in zip(axes.flat, indices):
     pred = y_pred_test[idx]
     true = y_test[idx]
     ax.set_title(f"P:{pred}, T:{true}")
-
 plt.suptitle("Sample Predictions (P=Predicted, T=True)")
 plt.show()
-</code></pre></div></article></section><section class="subsection" id="subsec-Model-Evaluations"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.4.3</span><span class="space"> </span><span class="title">Model Evaluations</span>
-</h3>
-<div class="para" id="subsec-Model-Evaluations-2"></div></section></section></div>
+</code></pre></div></article></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec-Multi-Feature-Problems.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-Evaluating-Predictions.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

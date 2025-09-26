@@ -12,7 +12,7 @@
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
-<meta property="book:title" content="ML Notes">
+<meta property="book:title" content="">
 <script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
@@ -133,6 +133,9 @@ window.MathJax = {
 #sec-Hypothesis-Tests-2-6-1 { counter-set: sec-Hypothesis-Tests-2-6-1 0; }
 #sec-Hypothesis-Tests-2-6-1 > li::marker { content: ""counter(sec-Hypothesis-Tests-2-6-1,decimal)"."; }
 #sec-Hypothesis-Tests-2-6-1 > li { counter-increment: sec-Hypothesis-Tests-2-6-1; }
+#sec-Regression-2-2-1 { counter-set: sec-Regression-2-2-1 0; }
+#sec-Regression-2-2-1 > li::marker { content: ""counter(sec-Regression-2-2-1,decimal)"."; }
+#sec-Regression-2-2-1 > li { counter-increment: sec-Regression-2-2-1; }
 #subsec-derivative-of-multiclass-loss-function-3-2-2 { counter-set: subsec-derivative-of-multiclass-loss-function-3-2-2 0; }
 #subsec-derivative-of-multiclass-loss-function-3-2-2 > li::marker { content: ""counter(subsec-derivative-of-multiclass-loss-function-3-2-2,decimal)"."; }
 #subsec-derivative-of-multiclass-loss-function-3-2-2 > li { counter-increment: subsec-derivative-of-multiclass-loss-function-3-2-2; }
@@ -147,7 +150,7 @@ window.MathJax = {
 <body id="ML-Notes" class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
 <a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
-<h1 class="heading"><a href="my-ML-Notes.html"><span class="title">ML Notes:</span> <span class="subtitle">Theoretical and Practical ML Concepts</span></a></h1>
+<h1 class="heading"><a href="my-ML-Notes.html"><span class="title"></span></a></h1>
 <p class="byline"></p>
 </div>
 </div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
@@ -161,7 +164,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="ch-supervised-learning-basics.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-supervised-learning-basics.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-Binary-Classification.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="ch-supervised-learning-basics.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-supervised-learning-basics.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-Regression.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -341,70 +344,73 @@ window.MathJax = {
 <ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section active">
 <div class="toc-title-box"><a href="sec-Statistical-Decision-Theory.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Statistical Decision Theory</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Statistical-Decision-Theory.html#subsec-KNN-method" class="internal"><span class="codenumber">2.1.1</span> <span class="title">The kNN Method</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Regression.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Regression</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Regression.html#subsec-The-Simple-Linear-Regresson" class="internal"><span class="codenumber">2.2.1</span> <span class="title">The Simple Linear Regresson</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Binary-Classification.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Binary Classification</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Statistical-Decision-Theory.html#subsec-Squared-Error-Loss-Function" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Regression</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Statistical-Decision-Theory.html#subsec-KNN-method" class="internal"><span class="codenumber">2.1.2</span> <span class="title">The kNN Method</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Statistical-Decision-Theory.html#subsec-The-Simple-Linear-Regresson" class="internal"><span class="codenumber">2.1.3</span> <span class="title">The Simple Linear Regresson</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Binary-Classification.html#subsecThe-Classification-Variable" class="internal"><span class="codenumber">2.3.1</span> <span class="title">The Classification Variable <span class="process-math">\(Y\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Binary-Classification.html#subsec-binary-classification-scalar-feature" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Binary Classification with Scalar <span class="process-math">\(X\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Binary-Classification.html#subsec-gradient-descent" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Gradient Descent for Logistic Regression</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-Binary-Classification.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Binary Classification</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Binary-Classification.html#subsecThe-Classification-Variable" class="internal"><span class="codenumber">2.2.1</span> <span class="title">The Classification Variable <span class="process-math">\(Y\)</span></span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Binary-Classification.html#subsec-binary-classification-scalar-feature" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Binary Classification with Scalar <span class="process-math">\(X\)</span></span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Binary-Classification.html#subsec-gradient-descent" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Gradient Descent for Logistic Regression</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Multi-Feature Problems</span></a></div>
+<div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Multi-Feature Problems</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Linear-Regression" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Multi-Feature Linear Regression</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Linear-Regression-3" class="internal"><span class="codenumber">2.3.1.1</span> <span class="title">Taking Derivatives With Respect To A Vector</span></a></div></li></ul>
+<div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Linear-Regression" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Multi-Feature Linear Regression</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Linear-Regression-3" class="internal"><span class="codenumber">2.4.1.1</span> <span class="title">Taking Derivatives With Respect To A Vector</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Logistic-Regression" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Multi-Feature Logistic Regression</span></a></div>
+<div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Logistic-Regression" class="internal"><span class="codenumber">2.4.2</span> <span class="title">Multi-Feature Logistic Regression</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Logistic-Regression-3" class="internal"><span class="codenumber">2.3.2.1</span> <span class="title">Derivatives of the Loss Function</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsubsec-logistic-regression-multivariate" class="internal"><span class="codenumber">2.3.2.2</span> <span class="title">A Python Program for the Logistic Regression</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsec-Multi-Feature-Logistic-Regression-3" class="internal"><span class="codenumber">2.4.2.1</span> <span class="title">Derivatives of the Loss Function</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Multi-Feature-Problems.html#subsubsec-logistic-regression-multivariate" class="internal"><span class="codenumber">2.4.2.2</span> <span class="title">A Python Program for the Logistic Regression</span></a></div></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-MultiClass-Classification.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Multi-Class Classification</span></a></div>
+<div class="toc-title-box"><a href="sec-MultiClass-Classification.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Multi-Class Classification</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-MultiClass-Classification.html#subsec-Loss-Function-of-Multi-class-Classification" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Loss Function of Multiclass Classification</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-MultiClass-Classification.html#subsec-derivative-of-multiclass-loss-function" class="internal"><span class="codenumber">2.4.2</span> <span class="title">Derivative of Multiclass Loss Function</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-MultiClass-Classification.html#subsec-Model-Evaluations" class="internal"><span class="codenumber">2.4.3</span> <span class="title">Model Evaluations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-MultiClass-Classification.html#subsec-Loss-Function-of-Multi-class-Classification" class="internal"><span class="codenumber">2.5.1</span> <span class="title">Loss Function of Multiclass Classification</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-MultiClass-Classification.html#subsec-derivative-of-multiclass-loss-function" class="internal"><span class="codenumber">2.5.2</span> <span class="title">Derivative of Multiclass Loss Function</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-Evaluating-Predictions.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Evaluating Predictions</span></a></div>
+<div class="toc-title-box"><a href="sec-Evaluating-Predictions.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Evaluating Predictions</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsec-Evaluating-Regression-Tasks" class="internal"><span class="codenumber">2.5.1</span> <span class="title">Evaluating Regression Tasks</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsec-Evaluating-Regression-Tasks" class="internal"><span class="codenumber">2.6.1</span> <span class="title">Evaluating Regression Tasks</span></a></div></li>
 <li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsec-Evaluating-Binary-Classification" class="internal"><span class="codenumber">2.5.2</span> <span class="title">Evaluating Binary Classification</span></a></div>
+<div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsec-Evaluating-Binary-Classification" class="internal"><span class="codenumber">2.6.2</span> <span class="title">Evaluating Binary Classification</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsubsec-Metrics-of-Binary-Classification" class="internal"><span class="codenumber">2.5.2.1</span> <span class="title">Metrics of BinaryClassification</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsubsec-ROC-PR-Curves-AUC-2" class="internal"><span class="codenumber">2.5.2.2</span> <span class="title">Evaluating Model Performance Across Thresholds</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsubsec-Metrics-of-Binary-Classification" class="internal"><span class="codenumber">2.6.2.1</span> <span class="title">Metrics of BinaryClassification</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-Evaluating-Predictions.html#subsubsec-ROC-PR-Curves-AUC-2" class="internal"><span class="codenumber">2.6.2.2</span> <span class="title">Evaluating Model Performance Across Thresholds</span></a></div></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-Bayesian-Methods.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Bayesian Methods</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Bayesian-Methods.html#subsec-Naive-Bayes" class="internal"><span class="codenumber">2.6.1</span> <span class="title">Naive Bayes Algorithm</span></a></div></li></ul>
+<div class="toc-title-box"><a href="sec-Bayesian-Methods.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Bayesian Methods</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Bayesian-Methods.html#subsec-Naive-Bayes" class="internal"><span class="codenumber">2.7.1</span> <span class="title">Naive Bayes Algorithm</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-Model-Selection.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Model Selection</span></a></div>
+<div class="toc-title-box"><a href="sec-Model-Selection.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Model Selection</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Validation-Data" class="internal"><span class="codenumber">2.7.1</span> <span class="title">Validation Data</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Out-of-Sample-Error" class="internal"><span class="codenumber">2.7.2</span> <span class="title">Generalization Error</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Sources-of-Generalization-Error" class="internal"><span class="codenumber">2.7.3</span> <span class="title">Bias and Variance of Model in Generalization Error</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Bias-Variance-in-Practice" class="internal"><span class="codenumber">2.7.4</span> <span class="title">Bias-Variance Tradeoff in Practice</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-K-fold-cross-validation" class="internal"><span class="codenumber">2.7.5</span> <span class="title">K-fold Cross Validation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Validation-Data" class="internal"><span class="codenumber">2.8.1</span> <span class="title">Validation Data</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Out-of-Sample-Error" class="internal"><span class="codenumber">2.8.2</span> <span class="title">Generalization Error</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Sources-of-Generalization-Error" class="internal"><span class="codenumber">2.8.3</span> <span class="title">Bias and Variance of Model in Generalization Error</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-Bias-Variance-in-Practice" class="internal"><span class="codenumber">2.8.4</span> <span class="title">Bias-Variance Tradeoff in Practice</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Model-Selection.html#subsec-K-fold-cross-validation" class="internal"><span class="codenumber">2.8.5</span> <span class="title">K-fold Cross Validation</span></a></div></li>
 </ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Multivariate-Regression-Project.html" class="internal"><span class="codenumber">2.9</span> <span class="title">A Multivariate Regression Project</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Multivariate-Regression-Project.html#subsec-" class="internal"><span class="codenumber">2.9.1</span> <span class="title"></span></a></div></li></ul>
 </li>
 </ul>
 </li>
@@ -468,69 +474,11 @@ y^{n+1} = \hat{f}(x^{n+1}).
 \hat f =  \min\limits_{f}\ \int\, dy\, \rho_{Y\mid X}\ \mathcal{L}(Y, f(X)).\tag{2.1.1}
 \end{equation}
 </div>
-<div class="para">The <dfn class="terminology">supervised learning</dfn> algorithms of Machine Learning are all based on this equation. Various algorithms try to “learn” the function <span class="process-math">\(\hat{f}\)</span> from the data and use them to make predictions on new datapoints. In this section, I will illustrate the application of this formula to a <em class="alert">regression task</em>. In the next section, we will discuss <em class="alert">a binary classification task</em>. </div>
-</div></section><section class="subsection" id="subsec-Squared-Error-Loss-Function"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.1.1</span><span class="space"> </span><span class="title">Regression</span>
-</h3>
-<div class="para logical" id="subsec-Squared-Error-Loss-Function-2">
-<div class="para">A common loss function for regression tasks for predicting continuous variable <span class="process-math">\(Y\)</span> is the <dfn class="terminology">squared error</dfn>.</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\mathcal{L}( X, Y) = (Y - f(X))^2.
-\end{equation*}
-</div>
-<div class="para">For arbitrary point <span class="process-math">\((x,y)\)</span> in the random variable space of <span class="process-math">\((X,Y)\text{,}\)</span>  the error will be</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\mathcal{l} = (y - f(x))^2.
-\end{equation*}
-</div>
-<div class="para">Therefore, the equation for optimal <span class="process-math">\(f\)</span> becomes</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\hat f = \min\limits_{f}\ \int\, dy\, (y - f(x))^2\, \rho_{Y\mid X}(y\mid x).
-\end{equation*}
-</div>
-<div class="para">Setting the functional derivative of the integral on the right side to zero shoudl give us the extremum function, say <span class="process-math">\(\tilde{f}\text{.}\)</span>
-</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\left[\frac{\delta}{\delta f}\,\int\, dy\ (y - f(x))^2\right]_{f = \tilde{f}}\, \rho_{Y\mid X}(y\mid x) = 0
-\end{equation*}
-</div>
-<div class="para">This will give us (Think of a regular partial derivative with <span class="process-math">\(f\)</span> as an independent variable.)</div>
-<div class="displaymath process-math" id="subsec-Squared-Error-Loss-Function-2-12">
-\begin{align*}
-\int\, dy\, y \amp \, \rho_{Y\mid X}(y\mid x)= \int\, dy\, \tilde{f}(x)\, \rho_{Y\mid X}(y\mid x).\\
-\amp = \tilde{f}(x)\,\int\, dy\, \rho_{Y\mid X}(y\mid x) \quad (\text{since integraing over }y \text{ keeping } x \text{ fixed.})\\
-\amp = \tilde{f}(x)\quad (\text{ since the PDF is normalized})
-\end{align*}
-</div>
-<div class="para">That is the extremum of the squared loss occurs at  \tilde{f}.</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\tilde{f} = \int\, dy\, y\, \rho_{Y\mid X}(y\mid x) = \mathbb{E}_{Y\mid X}[Y].
-\end{equation*}
-</div>
-<div class="para">Is it mimimum? To show that it is a minimum, try finding the second derivative and use the expectation symbol to hide away the integration.</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\frac{\delta }{\delta\, f}\left( \frac{\delta }{\delta\, f}\, \mathbb{E}_{Y \mid X}[\mathcal{L}(Y, f(X))] \right) = 2 \gt 0.
-\end{equation*}
-</div>
-<div class="para">That means the extremum value is actualy a minimum. Thus, the optimal funtion that minimizes the squared error is the one that maps <span class="process-math">\(x\)</span> to the mean value of <span class="process-math">\(Y\)</span> in the conditional probability <span class="process-math">\(\rho_{Y\mid X}\text{.}\)</span> Hence, in terms of the random variables, the optimal function is</div>
-<div class="displaymath process-math" id="eqn-optimal-function-for-squared-error">
-\begin{equation}
-\hat{f}(X) = \mathbb{E}_{Y \mid X}[Y] = \int\ dy\  y\ \rho_{Y\mid X}(y\mid x).\tag{2.1.2}
-\end{equation}
-</div>
-<div class="para">This is a theretical result of the prediction function. To apply this result to obtain <span class="process-math">\(y^{n+1}\)</span> that gies with <span class="process-math">\(x^{n+1}\text{,}\)</span> further assumptions are made. For instance, as we will see below in k-NN algorithm, each datapoint in the dataset <span class="process-math">\(\mathcal{D}\)</span> is given probaility <span class="process-math">\(1/k\text{,}\)</span> where <span class="process-math">\(k\)</span> is the number of nearest neighbors of <span class="process-math">\(x^{n+1}\)</span> in the training dataset.</div>
-</div>
-<div class="para" id="subsec-Squared-Error-Loss-Function-3">In some approached, we invoke a functional form of <span class="process-math">\(f\text{,}\)</span> e.g., a linear function of <span class="process-math">\(X\text{,}\)</span> then you can use the points in the dataset <span class="process-math">\(\mathcal{D}\)</span> to estimate parameters of that function which you can then use to make prediction for the new point <span class="process-math">\(x^{n+1}\text{.}\)</span>
+<div class="para">The <dfn class="terminology">supervised learning</dfn> algorithms of Machine Learning are all based on this equation. Various algorithms try to “learn” the function <span class="process-math">\(\hat{f}\)</span> from the data and use them to make predictions on new datapoints. In this section, I will illustrate the application of this formula to a <em class="alert">regression task</em>. In the next section, we will discuss <em class="alert">a binary classification task</em>.</div>
 </div></section><section class="subsection" id="subsec-KNN-method"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.1.2</span><span class="space"> </span><span class="title">The kNN Method</span>
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.1.1</span><span class="space"> </span><span class="title">The kNN Method</span>
 </h3>
-<div class="para" id="subsec-KNN-method-2">A straightforward way of implementing the result in Eq. <a href="sec-Statistical-Decision-Theory.html#eqn-optimal-function-for-squared-error" class="xref" data-knowl="./knowl/xref/eqn-optimal-function-for-squared-error.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.1.2">(2.1.2)</a> for making prediction of <span class="process-math">\(y^{n+1}\)</span> for a new point with <span class="process-math">\(X = x^{n+1}\)</span> is to average the <span class="process-math">\(Y\)</span> values of points in the dataset <span class="process-math">\(\mathcal{D} = \{ (x^{(1)},y^{(1)}), (x^{(2)},y^{(2)}), \cdots, (x^{(n)},y^{(n)}) \}\)</span> closest to <span class="process-math">\(X = x^{n+1}\)</span> their <span class="process-math">\(X\)</span>-distances.</div>
+<div class="para" id="subsec-KNN-method-2">A straightforward way of implementing the result in Eq. <a href="sec-Regression.html#eqn-optimal-function-for-squared-error" class="xref" data-knowl="./knowl/xref/eqn-optimal-function-for-squared-error.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.2.1">(2.2.1)</a> for making prediction of <span class="process-math">\(y^{n+1}\)</span> for a new point with <span class="process-math">\(X = x^{n+1}\)</span> is to average the <span class="process-math">\(Y\)</span> values of points in the dataset <span class="process-math">\(\mathcal{D} = \{ (x^{(1)},y^{(1)}), (x^{(2)},y^{(2)}), \cdots, (x^{(n)},y^{(n)}) \}\)</span> closest to <span class="process-math">\(X = x^{n+1}\)</span> their <span class="process-math">\(X\)</span>-distances.</div>
 <div class="para" id="subsec-KNN-method-3">The simplest is, of course, to just look at the <em class="alert">nearest neightbor</em>, say “distance” to <span class="process-math">\(x^{a}\)</span> from <span class="process-math">\(x^{n+1}\)</span> is smallest, assuming unique for simplicity, then, you would say that that <span class="process-math">\(y^{n+1}\)</span> is same as <span class="process-math">\(y^{a}\text{.}\)</span>
 </div>
 <div class="para logical" id="subsec-KNN-method-4">
@@ -547,138 +495,9 @@ y^{n+1} = \frac{1}{k}\left( y^{i_1} + y^{i_2} +\cdots + y^{i_k} \right).
 \end{equation*}
 </div>
 </div>
-<div class="para" id="subsec-KNN-method-5">For scalar functions <span class="process-math">\(X\text{,}\)</span> the k-NN method works quite well if you have sufficiently dense coverage of the <span class="process-math">\((X,Y)\)</span> by the data, but for vector variables, such as <span class="process-math">\(\vec{X}\)</span> with several components, say <span class="process-math">\(d\)</span>-coponents, the number of neighbors grows exponetially with <span class="process-math">\(d\text{,}\)</span> and the method become impractical. You can prove a theoretical result that shows that at some point it will become impossible since almost all datapoints will be included in any search and hence you will be predicting same <span class="process-math">\(y\)</span> for every <span class="process-math">\(x^{n+1}\text{.}\)</span> This result goes by the ominous phrase “the <dfn class="terminology">curse of dimensionality</dfn>”.</div></section><section class="subsection" id="subsec-The-Simple-Linear-Regresson"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.1.3</span><span class="space"> </span><span class="title">The Simple Linear Regresson</span>
-</h3>
-<div class="para logical" id="subsec-The-Simple-Linear-Regresson-2">
-<div class="para">For <span class="process-math">\(X\)</span> a scalar variable, a linear dependency of <span class="process-math">\(Y\)</span> on <span class="process-math">\(X\)</span> will be</div>
-<div class="displaymath process-math">
-\begin{equation*}
-Y = f(X) = \beta_0 + \beta_1\,X,
-\end{equation*}
-</div>
-<div class="para">where <span class="process-math">\(\beta_0\)</span> is the <span class="process-math">\(y\text{-intercept}\)</span> and <span class="process-math">\(\beta_1\)</span> the slope. The task is to find the optimal values of <span class="process-math">\(\beta_0\)</span> and <span class="process-math">\(\beta_1\)</span> that minimizes the squared error, where we now include a factor <span class="process-math">\(1/2\)</span> for cancling out a factor <span class="process-math">\(2\)</span> that results when you take derivatives.</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\mathcal{L}(Y, f(X)) = \frac{1}{2} (Y - \beta_0 - \beta_1\,X)^2.
-\end{equation*}
-</div>
-<div class="para">Assuming the the dataset <span class="process-math">\(\mathcal{D}\)</span> is representative of the entire <span class="process-math">\(\rho_{Y\mid X}(y\mid x)\text{,}\)</span> we find approximation of the <span class="process-math">\(\mathbb{E}[L]\)</span> by setting</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\rho_{Y\mid X}(y^{(i)}\mid x^{(i)}) = \frac{1}{n},
-\end{equation*}
-</div>
-<div class="para">and repacing the integration by the sum. Let’s call this expectation value of <span class="process-math">\(\mathcal{L}\)</span> by <span class="process-math">\(\mathcal{L}_D\)</span>
-</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\mathcal{L}_D = \frac{1}{2n}\sum_{i=1}^{n}\,\left(y^{(i)} - \beta_0 - \beta_1\,x^{(i)}\right)^2.
-\end{equation*}
-</div>
-<div class="para">Now, to find the optimal function <span class="process-math">\(f\text{,}\)</span> here the optimal parameters <span class="process-math">\(\beta_0\)</span> and <span class="process-math">\(\beta_1\text{,}\)</span> we just have to take partials with each and set to zero.</div>
-<div class="displaymath process-math" id="subsec-The-Simple-Linear-Regresson-2-23">
-\begin{align*}
-\amp \frac{\partial \mathcal{L}_D}{\partial \beta_0} = 0\\
-\amp \frac{\partial \mathcal{L}_D}{\partial \beta_1} = 0
-\end{align*}
-</div>
-<div class="para">These result in two linear equations in <span class="process-math">\(\beta_0\)</span> and <span class="process-math">\(\beta_1\)</span> which are easily solved. We denote the solutions by <span class="process-math">\(\hat{\beta}_0\)</span> and <span class="process-math">\(\hat{\beta}_1\text{.}\)</span> You will find that the following sums help in doing the algebra.</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\bar{x} = \frac{1}{n}\,\sum_{i=1}^n\,x^{(i)},\quad \bar{y} = \frac{1}{n}\,\sum_{i=1}^n\,y^{(i)}.
-\end{equation*}
-</div>
-<div class="para">After algebra that you should do out, you will find the following expressions for the optimal parameters.</div>
-<div class="displaymath process-math" id="subsec-The-Simple-Linear-Regresson-2-29">
-\begin{align*}
-\amp \hat{\beta}_1 = \frac{ \sum_{i=1}^n\, ( x^{(i)} - \bar x )( y^{(i)} - \bar y ) }{ \sum_{i=1}^n\, \left( x^{(i)} - \bar{x} \right)^2 }\\
-\amp \hat{\beta}_0 = \bar{y} - \beta_1 \bar{x}
-\end{align*}
-</div>
-</div>
-<article class="example example-like" id="subsec-The-Simple-Linear-Regresson-3"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.1</span><span class="period">.</span>
-</h4>
-<div class="para logical" id="subsec-The-Simple-Linear-Regresson-3-1">
-<div class="para">
-<a href="sec-Statistical-Decision-Theory.html#fig-simple_linear_regression" class="xref" data-knowl="./knowl/xref/fig-simple_linear_regression.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.1.2">Figure 2.1.2</a> shows a simple linear regression on a dataset <span class="process-math">\(\mathcal{D}\)</span> consisting of <span class="process-math">\(100\)</span> datapoints generated by adding noise to a linear deterministic function by</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-simple_linear_regression.html">
-\begin{equation*}
-Y = f(X) = 1.0 + 2.0 * X + \epsilon,
-\end{equation*}
-</div>
-<div class="para">where</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-simple_linear_regression.html">
-\begin{equation*}
-\epsilon \sim \mathcal{N}(0,1).
-\end{equation*}
-</div>
-<div class="para">Here, we have chosen known values of <span class="process-math">\(\beta_0 = 1.0\)</span> and <span class="process-math">\(\beta_1 = 2.0\)</span> to generate the data and want to know how well the simple linear regression produces estimates of these parameters.</div>
-</div> <div class="para logical" id="subsec-The-Simple-Linear-Regresson-3-2">
-<div class="para">The simple linear regression using <span class="process-math">\(100\)</span> datapoints gave the predicting funtion to be</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\hat{Y} = \hat{f}(X) = \hat{\beta}_0 + \hat{\beta}_1\, X,
-\end{equation*}
-</div>
-<div class="para">with</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\hat{\beta}_0 = 0.83,\quad \hat{\beta}_1 = 2.01.
-\end{equation*}
-</div>
-<div class="para">Compare them to the “true” values:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\beta_0 = 1.0,\quad \beta = 2.0.
-\end{equation*}
-</div>
-<div class="para">From the data, we appear to get a better estimate for the slope than that of the intercept.</div>
-</div> <div class="para logical" id="subsec-The-Simple-Linear-Regresson-3-3">
-<div class="para">Note that since the dataset, coming from a random sampling process, is a random variable. Therefore, the estimates <span class="process-math">\(\hat{\beta}_0\)</span> and <span class="process-math">\(\hat{\beta}_1\)</span> deduced from using <span class="process-math">\(\mathcal{D}\)</span> are also random variables with their own distributions.</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\hat{\beta}_0 \sim \rho(\hat{\beta}_0),\quad \hat{\beta}_1 \sim \rho(\hat{\beta}_1).
-\end{equation*}
-</div>
-</div> <div class="para" id="subsec-The-Simple-Linear-Regresson-3-4">The estimates we gave above are just estimates of their mean values. And, of course, you can do an entire analysis of the significance level of these estimates. While important in statistics books, they will be largely ignored in the Machine Learning work. We take the view that the estimates of the parameters give us the best we can do.</div> <figure class="figure figure-like" id="fig-simple_linear_regression"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/./images/supervised-learning-basics/simple_linear_regression.png" class="contained" alt="The image shows that linear fit to a scatter data."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.1.2<span class="period">.</span></span><span class="space"> </span>Illustration of a simple linear regression.</figcaption></figure> <div class="para" id="subsec-The-Simple-Linear-Regresson-3-6">The figure was generated by the following Python code.</div> <div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-py">import numpy as np
-import matplotlib.pyplot as plt
-
-# Sample dataset
-np.random.seed(42) # for reproducibility
-X = np.linspace(0, 10, 100)
-Y = 1.0+ 2.0 * X  + np.random.normal(0, 1, 100)  # Y = 2X + 1 + noise
-
-# Calculate means
-x_bar = np.mean(X)
-y_bar = np.mean(Y)
-
-# Calculate beta_1 (slope)
-numerator = np.sum((X - x_bar) * (Y - y_bar))
-denominator = np.sum((X - x_bar) ** 2)
-beta_1 = numerator / denominator
-
-# Calculate beta_0 (intercept)
-beta_0 = y_bar - beta_1 * x_bar
-
-# Print results
-print(f"Estimated beta_0 (intercept): {beta_0:.2f}")
-print(f"Estimated beta_1 (slope): {beta_1:.2f}")
-
-# Plot the data and regression line
-plt.scatter(X, Y, facecolors='none', edgecolors='blue', color='blue', label='Data points')
-plt.plot(X, beta_0 + beta_1 * X, color='red', label='Regression line')
-plt.xlabel('X')
-plt.ylabel('Y')
-plt.title('Simple Linear Regression Example')
-plt.legend()
-plt.grid(True)
-plt.show()
-</code></pre></div></article></section></section></div>
+<div class="para" id="subsec-KNN-method-5">For scalar functions <span class="process-math">\(X\text{,}\)</span> the k-NN method works quite well if you have sufficiently dense coverage of the <span class="process-math">\((X,Y)\)</span> by the data, but for vector variables, such as <span class="process-math">\(\vec{X}\)</span> with several components, say <span class="process-math">\(d\)</span>-coponents, the number of neighbors grows exponetially with <span class="process-math">\(d\text{,}\)</span> and the method become impractical. You can prove a theoretical result that shows that at some point it will become impossible since almost all datapoints will be included in any search and hence you will be predicting same <span class="process-math">\(y\)</span> for every <span class="process-math">\(x^{n+1}\text{.}\)</span> This result goes by the ominous phrase “the <dfn class="terminology">curse of dimensionality</dfn>”.</div></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="ch-supervised-learning-basics.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-Binary-Classification.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="ch-supervised-learning-basics.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-Regression.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
